@@ -1,4 +1,4 @@
-apiVersion: pkgr24.io.pkgr24.io/v1alpha1
+apiVersion: pkgr24.io/v1alpha1
 kind: Requirements
 metadata:
   name: requirements-sample

@@ -5,7 +5,7 @@ metadata:
   name: requirements-viewer-role
 rules:
 - apiGroups:
-  - pkgr24.io.pkgr24.io
+  - pkgr24.io
   resources:
   - requirements
   verbs:
@@ -13,7 +13,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - pkgr24.io.pkgr24.io
+  - pkgr24.io
   resources:
   - requirements/status
   verbs:

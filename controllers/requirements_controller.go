@@ -33,9 +33,9 @@ type RequirementsReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=pkgr24.io.pkgr24.io,resources=requirements,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=pkgr24.io.pkgr24.io,resources=requirements/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=pkgr24.io.pkgr24.io,resources=requirements/finalizers,verbs=update
+//+kubebuilder:rbac:groups=pkgr24.io,resources=requirements,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=pkgr24.io,resources=requirements/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=pkgr24.io,resources=requirements/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.

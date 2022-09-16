@@ -17,7 +17,8 @@ limitations under the License.
 package v1alpha1
 
 import (
-	v1 "k8s.io/api/core/v1"
+	"encoding/json"
+
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -27,49 +28,18 @@ import (
 // +kubebuilder:validation:Required
 
 const (
-	RemovalPolicyCascade          = "cascade"
-	RemovalPolicyKeepDependencies = "keepDependencies"
-
-	StateNotInstalled = "NotInstalled"
-	StateInstalled    = "Installed"
-	StateInstalling   = "Installing"
-	StateRemoving     = "Removing"
-	StateFailure      = "Failure"
-	StateUpgradeable  = "Upgradable"
-	StateNoState      = ""
-
-	PhaseResolvingDependencies  = "ResolvingDependencies"
-	PhaseInstallingDependencies = "InstallingDependencies"
-	PhaseDeployingBundle        = "DeployingBundle"
-	PhaseInstallingBundle       = "InstallingBundle"
-	PhaseRemovingDependencies   = "RemovingDependencies"
-	PhaseRemovingBundle         = "RemovingBundle"
-	PhaseFailure                = "Failure"
-	PhaseNoPhase                = ""
-
-	ReasonNoReason = ""
+	StateReady   = "Ready"
+	StateNoState = ""
 )
 
-type RemovalPolicy string
 type State string
-type Phase string
 
 // PackageSpec defines the desired state of Package
 type PackageSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 	// +kubebuilder:default=false
-	Install bool `json:"install"`
-
-	// +optional
-	Version string `json:"version,omitempty"`
-
-	// +kubebuilder:validation:MinItems=1
-	Bundles []Bundle `json:"bundles"`
-
-	// +kubebuilder:validation:Enum={"cascade", "keepDependencies"}
-	// +kubebuilder:default="cascade"
-	RemovalPolicy RemovalPolicy `json:"removalPolicy"`
+	PackageFBC json.RawMessage `json:"packageFBC"`
 }
 
 // PackageStatus defines the observed state of Package
@@ -77,51 +47,6 @@ type PackageStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 	State State `json:"state"`
-
-	// +optional
-	CurrentVersion string `json:"currentVersion,omitempty"`
-
-	// +optional
-	Phase Phase `json:"phase,omitempty"`
-
-	// +optional
-	Reason string `json:"reason,omitempty"`
-
-	// +optional
-	BundleRef *v1.ObjectReference `json:"bundleRef,omitempty"`
-
-	// +optional
-	Dependencies []DependencyRef `json:"dependencies"`
-}
-
-type Bundle struct {
-	Version string `json:"version"`
-	Repo    string `json:"repo"`
-
-	// +optional
-	Dependencies []Dependency `json:"dependencies,omitempty"`
-
-	// +optional
-	Replaces string `json:"replaces,omitempty"`
-}
-
-type Dependency struct {
-	Package string `json:"package"`
-	Version string `json:"version"`
-}
-
-type DependencyRef struct {
-	Package string `json:"package"`
-	Version string `json:"version"`
-
-	// +optional
-	BundleRef *v1.ObjectReference `json:"bundleRef,omitempty"`
-
-	// +optional
-	State State `json:"state"`
-
-	// +optional
-	Reason string `json:"reason,omitempty"`
 }
 
 //+kubebuilder:object:root=true

@@ -3,7 +3,7 @@
 # It should be run by config/default
 resources:
 - bases/pkgr24.io_packages.yaml
-- bases/pkgr24.io.pkgr24.io_requirements.yaml
+- bases/pkgr24.io_requirements.yaml
 #+kubebuilder:scaffold:crdkustomizeresource
 
 patchesStrategicMerge:

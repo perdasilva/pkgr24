@@ -5,7 +5,7 @@ metadata:
   name: requirements-editor-role
 rules:
 - apiGroups:
-  - pkgr24.io.pkgr24.io
+  - pkgr24.io
   resources:
   - requirements
   verbs:
@@ -17,7 +17,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - pkgr24.io.pkgr24.io
+  - pkgr24.io
   resources:
   - requirements/status
   verbs:

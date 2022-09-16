@@ -31,3 +31,29 @@ rules:
   - get
   - patch
   - update
+- apiGroups:
+  - pkgr24.io
+  resources:
+  - requirements
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - pkgr24.io
+  resources:
+  - requirements/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - pkgr24.io
+  resources:
+  - requirements/status
+  verbs:
+  - get
+  - patch
+  - update

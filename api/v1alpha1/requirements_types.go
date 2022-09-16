@@ -29,17 +29,22 @@ type RequirementsSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Requirements. Edit requirements_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Requirements []string `json:"requirements,omitempty"`
 }
 
 // RequirementsStatus defines the observed state of Requirements
 type RequirementsStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	Bundles []string `json:"bundles"`
+
+	// +optional
+	Message string `json:"message"`
 }
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
+//+kubebuilder:resource:scope=Cluster,shortName={"req","reqs"}
 
 // Requirements is the Schema for the requirements API
 type Requirements struct {

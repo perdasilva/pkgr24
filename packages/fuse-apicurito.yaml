@@ -1,0 +1,520 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: fuse-apicurito
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "fuse-apicurito",
+        "defaultChannel": "fuse-apicurito-7.11.x"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "fuse-apicurito-7.10.x",
+        "package": "fuse-apicurito",
+        "entries": [
+            {
+                "name": "fuse-apicurito.v7.10.0",
+                "replaces": "fuse-apicurito.v7.9.3",
+                "skipRange": ">=7.7.0 <7.10.0"
+            },
+            {
+                "name": "fuse-apicurito.v7.10.1",
+                "replaces": "fuse-apicurito.v7.10.0",
+                "skipRange": ">=7.7.0 <7.10.1"
+            },
+            {
+                "name": "fuse-apicurito.v7.10.2-0.1648491130.p",
+                "skipRange": ">=7.7.0 <7.10.2"
+            },
+            {
+                "name": "fuse-apicurito.v7.10.2-0.1649640025.p",
+                "replaces": "fuse-apicurito.v7.10.1",
+                "skips": [
+                    "fuse-apicurito.v7.10.2-0.1648491130.p",
+                    "fuse-apicurito.v7.10.2"
+                ],
+                "skipRange": ">=7.7.0 <7.10.2"
+            },
+            {
+                "name": "fuse-apicurito.v7.10.3",
+                "replaces": "fuse-apicurito.v7.10.2-0.1649640025.p",
+                "skipRange": ">=7.7.0 <7.10.3"
+            },
+            {
+                "name": "fuse-apicurito.v7.9.3",
+                "skipRange": ">=7.7.0 <7.9.3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "fuse-apicurito-7.11.x",
+        "package": "fuse-apicurito",
+        "entries": [
+            {
+                "name": "fuse-apicurito.v7.10.0",
+                "replaces": "fuse-apicurito.v7.9.3",
+                "skipRange": ">=7.7.0 <7.10.0"
+            },
+            {
+                "name": "fuse-apicurito.v7.10.1",
+                "replaces": "fuse-apicurito.v7.10.0",
+                "skipRange": ">=7.7.0 <7.10.1"
+            },
+            {
+                "name": "fuse-apicurito.v7.10.2-0.1648491130.p",
+                "skipRange": ">=7.7.0 <7.10.2"
+            },
+            {
+                "name": "fuse-apicurito.v7.10.2-0.1649640025.p",
+                "replaces": "fuse-apicurito.v7.10.1",
+                "skips": [
+                    "fuse-apicurito.v7.10.2-0.1648491130.p",
+                    "fuse-apicurito.v7.10.2"
+                ],
+                "skipRange": ">=7.7.0 <7.10.2"
+            },
+            {
+                "name": "fuse-apicurito.v7.10.3",
+                "replaces": "fuse-apicurito.v7.10.2-0.1649640025.p",
+                "skipRange": ">=7.7.0 <7.10.3"
+            },
+            {
+                "name": "fuse-apicurito.v7.11.0",
+                "skipRange": ">=7.7.0 <7.11.0"
+            },
+            {
+                "name": "fuse-apicurito.v7.11.0-0.1659517292.p",
+                "replaces": "fuse-apicurito.v7.10.3",
+                "skips": [
+                    "fuse-apicurito.v7.11.0"
+                ],
+                "skipRange": ">=7.7.0 <7.11.0"
+            },
+            {
+                "name": "fuse-apicurito.v7.9.3",
+                "skipRange": ">=7.7.0 <7.9.3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "fuse-apicurito-7.9.x",
+        "package": "fuse-apicurito",
+        "entries": [
+            {
+                "name": "fuse-apicurito.v7.9.3",
+                "skipRange": ">=7.7.0 <7.9.3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-apicurito.v7.10.0",
+        "package": "fuse-apicurito",
+        "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:613a32c8779195db74efe441d67d497318cc9700ba28869d96f2e7b8024df925",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-apicurito",
+                    "version": "7.10.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "generator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-generator-rhel8@sha256:0bd4a2e8093a13849dd1c3e2b2de5d3d86a6e495c9a6fb1624734c16a7b6bb0f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:613a32c8779195db74efe441d67d497318cc9700ba28869d96f2e7b8024df925"
+            },
+            {
+                "name": "fuse-apicurito-rhel8-operator-626c697fae713493be3c21a7250aa6645f101aa7ec525c06f0c097959a0b3b64-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:626c697fae713493be3c21a7250aa6645f101aa7ec525c06f0c097959a0b3b64"
+            },
+            {
+                "name": "fuse-apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:626c697fae713493be3c21a7250aa6645f101aa7ec525c06f0c097959a0b3b64"
+            },
+            {
+                "name": "apicurito_operator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:626c697fae713493be3c21a7250aa6645f101aa7ec525c06f0c097959a0b3b64"
+            },
+            {
+                "name": "apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8@sha256:93d1fb5be2cf67e665636b473708b264155011c0aaa8f8b1e428830dbcc1c992"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-apicurito.v7.10.1",
+        "package": "fuse-apicurito",
+        "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:4c3ff86aeb810a3417cd261a96a06255147026d06049e4e87000eec1379a2ca9",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-apicurito",
+                    "version": "7.10.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "generator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-generator-rhel8@sha256:e746e5e9e1eb3c4f63078a802aefddb3b18b62db86cf853cbb8d1a37b5def135"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:4c3ff86aeb810a3417cd261a96a06255147026d06049e4e87000eec1379a2ca9"
+            },
+            {
+                "name": "fuse-apicurito-rhel8-operator-de9155f765e8c741260270ee747b074b55b6d0aabcb09a89a1c251d41492f2b4-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:de9155f765e8c741260270ee747b074b55b6d0aabcb09a89a1c251d41492f2b4"
+            },
+            {
+                "name": "fuse-apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:de9155f765e8c741260270ee747b074b55b6d0aabcb09a89a1c251d41492f2b4"
+            },
+            {
+                "name": "apicurito_operator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:de9155f765e8c741260270ee747b074b55b6d0aabcb09a89a1c251d41492f2b4"
+            },
+            {
+                "name": "apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8@sha256:510cf0df88276a2ca76dd395304a0f716377f83bb77fb96156b8033c3425cdbd"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-apicurito.v7.10.2-0.1648491130.p",
+        "package": "fuse-apicurito",
+        "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:a829fbc4bf080c26b71dac73e5ec519a58071c81055733d6efdee62d42b43add",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-apicurito",
+                    "version": "7.10.2+0.1648491130.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "generator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-generator-rhel8@sha256:6f2dc0a4db0606ac480a07fa3d85f5b753aeb43ed5fa4a877872e168c2a6d59b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:a829fbc4bf080c26b71dac73e5ec519a58071c81055733d6efdee62d42b43add"
+            },
+            {
+                "name": "fuse-apicurito-rhel8-operator-c43032e8bc5807b99ea7088a0190914ef45ae5b6b3f102cfe345d17eb626a2c3-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:c43032e8bc5807b99ea7088a0190914ef45ae5b6b3f102cfe345d17eb626a2c3"
+            },
+            {
+                "name": "fuse-apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:c43032e8bc5807b99ea7088a0190914ef45ae5b6b3f102cfe345d17eb626a2c3"
+            },
+            {
+                "name": "apicurito_operator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:c43032e8bc5807b99ea7088a0190914ef45ae5b6b3f102cfe345d17eb626a2c3"
+            },
+            {
+                "name": "apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8@sha256:47508bf29a6ffb7be26821ec6a728f6568472c38ac45d37b6e03f27032f79375"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-apicurito.v7.10.2-0.1649640025.p",
+        "package": "fuse-apicurito",
+        "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:b7b9cba93aa0684b9f2da744bca77e84fc621fd333afcc92435b23962a4b4570",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-apicurito",
+                    "version": "7.10.2+0.1649640025.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "generator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-generator-rhel8@sha256:4e74a65315bde3e701e5bb5fefd17422a52dc3fb215382ddbf17712a359bbf43"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:b7b9cba93aa0684b9f2da744bca77e84fc621fd333afcc92435b23962a4b4570"
+            },
+            {
+                "name": "fuse-apicurito-rhel8-operator-abce8b4acca0b12428b00521dbb558e181ec7cb7e003c7426c5a7d425f1a1ca7-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:abce8b4acca0b12428b00521dbb558e181ec7cb7e003c7426c5a7d425f1a1ca7"
+            },
+            {
+                "name": "fuse-apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:abce8b4acca0b12428b00521dbb558e181ec7cb7e003c7426c5a7d425f1a1ca7"
+            },
+            {
+                "name": "apicurito_operator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:abce8b4acca0b12428b00521dbb558e181ec7cb7e003c7426c5a7d425f1a1ca7"
+            },
+            {
+                "name": "apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8@sha256:89aca6a89c1cb06f40668ef472f47d1d2c54f881a740fed481a630432afa4fa7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-apicurito.v7.10.3",
+        "package": "fuse-apicurito",
+        "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:4530ed52522a74051aaedabd62b99d5c5274a0ab72eb28d4e75207d9e9d3391b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-apicurito",
+                    "version": "7.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "generator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-generator-rhel8@sha256:c02c218ccfbb385ea29af98409995a3d9c26cb0b4c76caf2e0779fa233b5ff8c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:4530ed52522a74051aaedabd62b99d5c5274a0ab72eb28d4e75207d9e9d3391b"
+            },
+            {
+                "name": "fuse-apicurito-rhel8-operator-8d19ad579f874d6b9a08f127c8900906913a5a7c1e69cbe4b5cb0333b8d86152-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:8d19ad579f874d6b9a08f127c8900906913a5a7c1e69cbe4b5cb0333b8d86152"
+            },
+            {
+                "name": "fuse-apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:8d19ad579f874d6b9a08f127c8900906913a5a7c1e69cbe4b5cb0333b8d86152"
+            },
+            {
+                "name": "apicurito_operator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:8d19ad579f874d6b9a08f127c8900906913a5a7c1e69cbe4b5cb0333b8d86152"
+            },
+            {
+                "name": "apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8@sha256:8dbeeb8b04c81f41d896f71db90813de57e67493fa85389b63ac23f390785043"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-apicurito.v7.11.0",
+        "package": "fuse-apicurito",
+        "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:3acf40b790a01c0bb32c5b8b2b9b764523ab9a466bfd4ada4644cd54a46ad189",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-apicurito",
+                    "version": "7.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "generator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-generator-rhel8@sha256:3c1929ce24bd9247fdb2cefe89fbb78ed2f87b5aaf7183d4920e177642b8f454"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:3acf40b790a01c0bb32c5b8b2b9b764523ab9a466bfd4ada4644cd54a46ad189"
+            },
+            {
+                "name": "fuse-apicurito-rhel8-operator-0682604e7c1ee755997726e98aa77f7dbe9684c500a3b57d5bfa252d08644cb0-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:0682604e7c1ee755997726e98aa77f7dbe9684c500a3b57d5bfa252d08644cb0"
+            },
+            {
+                "name": "fuse-apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:0682604e7c1ee755997726e98aa77f7dbe9684c500a3b57d5bfa252d08644cb0"
+            },
+            {
+                "name": "apicurito_operator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:0682604e7c1ee755997726e98aa77f7dbe9684c500a3b57d5bfa252d08644cb0"
+            },
+            {
+                "name": "apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8@sha256:a3cc2879410605ed9939192b6ddad7f761a813a7e8da5c1aff0fe4dfcb7d458c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-apicurito.v7.11.0-0.1659517292.p",
+        "package": "fuse-apicurito",
+        "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:cb542880456e4e57c2b67d9393979d1aea7facab0fae9a9130fc68b6219276a2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-apicurito",
+                    "version": "7.11.0+0.1659517292.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "generator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-generator-rhel8@sha256:b18a4c98e2be068da1cba023d9586cc32f9189a6be57bdbbb6d2dd9db194e17a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:cb542880456e4e57c2b67d9393979d1aea7facab0fae9a9130fc68b6219276a2"
+            },
+            {
+                "name": "fuse-apicurito-rhel8-operator-0682604e7c1ee755997726e98aa77f7dbe9684c500a3b57d5bfa252d08644cb0-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:0682604e7c1ee755997726e98aa77f7dbe9684c500a3b57d5bfa252d08644cb0"
+            },
+            {
+                "name": "fuse-apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:0682604e7c1ee755997726e98aa77f7dbe9684c500a3b57d5bfa252d08644cb0"
+            },
+            {
+                "name": "apicurito_operator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:0682604e7c1ee755997726e98aa77f7dbe9684c500a3b57d5bfa252d08644cb0"
+            },
+            {
+                "name": "apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8@sha256:a3cc2879410605ed9939192b6ddad7f761a813a7e8da5c1aff0fe4dfcb7d458c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-apicurito.v7.9.3",
+        "package": "fuse-apicurito",
+        "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:8ce258f36d3baab3175b29d5ed6df89588f128d249285bb1e7cb45539933c511",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apicur.io",
+                    "kind": "Apicurito",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-apicurito",
+                    "version": "7.9.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "generator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-generator-rhel8@sha256:dc39b79c360511ff999eba5b2c299db3e08c9c244a0a1f3da8c90c02695e506d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator-bundle@sha256:8ce258f36d3baab3175b29d5ed6df89588f128d249285bb1e7cb45539933c511"
+            },
+            {
+                "name": "fuse-apicurito-rhel8-operator-05c9676aada2d34a985a59abcf55105a3765d75b0d3764089d2b32e9ca5d367c-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:05c9676aada2d34a985a59abcf55105a3765d75b0d3764089d2b32e9ca5d367c"
+            },
+            {
+                "name": "fuse-apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:05c9676aada2d34a985a59abcf55105a3765d75b0d3764089d2b32e9ca5d367c"
+            },
+            {
+                "name": "apicurito_operator",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8-operator@sha256:05c9676aada2d34a985a59abcf55105a3765d75b0d3764089d2b32e9ca5d367c"
+            },
+            {
+                "name": "apicurito",
+                "image": "registry.redhat.io/fuse7/fuse-apicurito-rhel8@sha256:5535864ce393ae0ae5ee52ed0c7661e0351fb7df2f9235da70608245519530b2"
+            }
+        ]
+    }

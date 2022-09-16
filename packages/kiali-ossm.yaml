@@ -1,0 +1,747 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: kiali-ossm
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "kiali-ossm",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "kiali-ossm",
+        "entries": [
+            {
+                "name": "kiali-operator.v1.24.10",
+                "replaces": "kiali-operator.v1.24.9"
+            },
+            {
+                "name": "kiali-operator.v1.24.9"
+            },
+            {
+                "name": "kiali-operator.v1.36.10",
+                "replaces": "kiali-operator.v1.36.9"
+            },
+            {
+                "name": "kiali-operator.v1.36.5",
+                "replaces": "kiali-operator.v1.24.10"
+            },
+            {
+                "name": "kiali-operator.v1.36.6",
+                "replaces": "kiali-operator.v1.36.5"
+            },
+            {
+                "name": "kiali-operator.v1.36.7",
+                "replaces": "kiali-operator.v1.36.6"
+            },
+            {
+                "name": "kiali-operator.v1.36.8",
+                "replaces": "kiali-operator.v1.36.7"
+            },
+            {
+                "name": "kiali-operator.v1.36.9",
+                "replaces": "kiali-operator.v1.36.8"
+            },
+            {
+                "name": "kiali-operator.v1.48.0",
+                "replaces": "kiali-operator.v1.36.10",
+                "skipRange": ">=1.0.0 <1.48.0"
+            },
+            {
+                "name": "kiali-operator.v1.48.1",
+                "replaces": "kiali-operator.v1.48.0",
+                "skipRange": ">=1.0.0 <1.48.1"
+            },
+            {
+                "name": "kiali-operator.v1.48.2",
+                "replaces": "kiali-operator.v1.48.1",
+                "skipRange": ">=1.0.0 <1.48.2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.24.10",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:1857b653f1cdcfec127c6bb7e3f1293781c3b71da5dd097358e9f327716a2525",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.24.10"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:1857b653f1cdcfec127c6bb7e3f1293781c3b71da5dd097358e9f327716a2525"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:89b110d30435e5af92fd8dc24d46488c4169e9587527ab9d0ede5a1b015e3e44"
+            },
+            {
+                "name": "kiali-rhel8-operator-3594968be8bd3ba23222258fe913d9e606b8fb92a9c77606a5473f9cd4a0113e-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:3594968be8bd3ba23222258fe913d9e606b8fb92a9c77606a5473f9cd4a0113e"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:3594968be8bd3ba23222258fe913d9e606b8fb92a9c77606a5473f9cd4a0113e"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:f85ca80b5a0063faf100e7a3fc65109c35f3e74a61aa1fd21d41f72148b8c1a4"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:f85ca80b5a0063faf100e7a3fc65109c35f3e74a61aa1fd21d41f72148b8c1a4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.24.9",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:fcaa88dab30ec894006228fd60eec076c45b5321be46760c67ac743c6fd9ba61",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.24.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:fcaa88dab30ec894006228fd60eec076c45b5321be46760c67ac743c6fd9ba61"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:89b110d30435e5af92fd8dc24d46488c4169e9587527ab9d0ede5a1b015e3e44"
+            },
+            {
+                "name": "kiali-rhel8-operator-863b54756ef80d8eac72122b350bb522c3b59fe38361c798e45a9b2eebd97d50-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:863b54756ef80d8eac72122b350bb522c3b59fe38361c798e45a9b2eebd97d50"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:863b54756ef80d8eac72122b350bb522c3b59fe38361c798e45a9b2eebd97d50"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:f85ca80b5a0063faf100e7a3fc65109c35f3e74a61aa1fd21d41f72148b8c1a4"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:f85ca80b5a0063faf100e7a3fc65109c35f3e74a61aa1fd21d41f72148b8c1a4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.36.10",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:094c56e17999371dd3192fdcd4d0b76a8c67ab666c62cd59e06915eeaa7f2bd4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.36.10"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:094c56e17999371dd3192fdcd4d0b76a8c67ab666c62cd59e06915eeaa7f2bd4"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:3d9cfa614d71a7a239267d24575471975a34cf447f3d1fe58073714b348af111"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:bcf437298ce136883eb62699be5847b87553f132b7fcc712a1cf0c2df3eb7e31"
+            },
+            {
+                "name": "kiali-rhel8-operator-bcf437298ce136883eb62699be5847b87553f132b7fcc712a1cf0c2df3eb7e31-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:bcf437298ce136883eb62699be5847b87553f132b7fcc712a1cf0c2df3eb7e31"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:6bb3bd64cc2b3d8291fd95ecff029d8c5d7ad1c7a30dcb77392bbbdba3b65784"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:bdf672ccbe43b05ae66ff83952437f2ea21549f3f010dc57a8f31d6644ade013"
+            },
+            {
+                "name": "kiali_v1_36",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:bdf672ccbe43b05ae66ff83952437f2ea21549f3f010dc57a8f31d6644ade013"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.36.5",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:405aa9ea70730726d95a004806b5dfa5684b3ad6426608c2654c0f2edcdf2f07",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.36.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:405aa9ea70730726d95a004806b5dfa5684b3ad6426608c2654c0f2edcdf2f07"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:727e4b4174407906d185b09332e6d30e355cbb28053e97b00d10db390ba6b0f5"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:4c3b9404230229d3a21ce78f0d47b83383e85b5f8ac5ac699cf61c663d8d599c"
+            },
+            {
+                "name": "kiali-rhel8-operator-4c3b9404230229d3a21ce78f0d47b83383e85b5f8ac5ac699cf61c663d8d599c-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:4c3b9404230229d3a21ce78f0d47b83383e85b5f8ac5ac699cf61c663d8d599c"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:4c9651cfee3ee14d46f3ccd497bdb9ea49061071cfe74e613213ee7da9721963"
+            },
+            {
+                "name": "kiali_v1_36",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:4c9651cfee3ee14d46f3ccd497bdb9ea49061071cfe74e613213ee7da9721963"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:f85ca80b5a0063faf100e7a3fc65109c35f3e74a61aa1fd21d41f72148b8c1a4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.36.6",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:6c1dca8dd2a7a5ce8253937d91a63dc45db292f431216e14bb586a60473f61ce",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.36.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:6c1dca8dd2a7a5ce8253937d91a63dc45db292f431216e14bb586a60473f61ce"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:727e4b4174407906d185b09332e6d30e355cbb28053e97b00d10db390ba6b0f5"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:2c67c4dafd14cce6bab635243906515e26d21c3ad720892d5b725d2a02d24acd"
+            },
+            {
+                "name": "kiali-rhel8-operator-2c67c4dafd14cce6bab635243906515e26d21c3ad720892d5b725d2a02d24acd-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:2c67c4dafd14cce6bab635243906515e26d21c3ad720892d5b725d2a02d24acd"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:95fd32bd72db2f77e12cda2f32716d30f2210335d93d3ce64fe77467c263b202"
+            },
+            {
+                "name": "kiali_v1_36",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:95fd32bd72db2f77e12cda2f32716d30f2210335d93d3ce64fe77467c263b202"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:f85ca80b5a0063faf100e7a3fc65109c35f3e74a61aa1fd21d41f72148b8c1a4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.36.7",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:f44758b522b09d80c8dc0de7b67532fd9b2b17c6000dc287d3192592c078e199",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.36.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:f44758b522b09d80c8dc0de7b67532fd9b2b17c6000dc287d3192592c078e199"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:727e4b4174407906d185b09332e6d30e355cbb28053e97b00d10db390ba6b0f5"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:5fe82607b0f607d0c4c5fd73b73f39c72b9f58aaf1fe2e54be862d047b217e05"
+            },
+            {
+                "name": "kiali-rhel8-operator-5fe82607b0f607d0c4c5fd73b73f39c72b9f58aaf1fe2e54be862d047b217e05-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:5fe82607b0f607d0c4c5fd73b73f39c72b9f58aaf1fe2e54be862d047b217e05"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:376aab4049578fcfcccac6bdb0bfdce71111fbcfc092ab2510cc58ccb7ba265f"
+            },
+            {
+                "name": "kiali_v1_36",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:376aab4049578fcfcccac6bdb0bfdce71111fbcfc092ab2510cc58ccb7ba265f"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:f85ca80b5a0063faf100e7a3fc65109c35f3e74a61aa1fd21d41f72148b8c1a4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.36.8",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:61107651b85732a152fd81cdfc937f105c60051faadf4a7de8e557f8eb1c943e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.36.8"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:61107651b85732a152fd81cdfc937f105c60051faadf4a7de8e557f8eb1c943e"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:be5c04e7c0a952f9d812cc561409f4670fc633a898ae64f31b52ee1ace33cb9b"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:f277547eedf42a4c923666ea11d3f4487a1dbfbb9462a93b3950b9ab7f303ecf"
+            },
+            {
+                "name": "kiali-rhel8-operator-f277547eedf42a4c923666ea11d3f4487a1dbfbb9462a93b3950b9ab7f303ecf-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:f277547eedf42a4c923666ea11d3f4487a1dbfbb9462a93b3950b9ab7f303ecf"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:10dd3822bd6d0232d6894d0d4c02d3734a05a804a0c95339ed39fc6f1ae24083"
+            },
+            {
+                "name": "kiali_v1_36",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:10dd3822bd6d0232d6894d0d4c02d3734a05a804a0c95339ed39fc6f1ae24083"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:589aeeaa1ea7e0f902cfddd1622083c52e978ecbef6f4fc8473159b52c060998"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.36.9",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:27d614b0f0f237b47d99eb35f8df5d2aa1a456b902a57220d4585d5a5732e230",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.36.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:27d614b0f0f237b47d99eb35f8df5d2aa1a456b902a57220d4585d5a5732e230"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:095dc870d59c46a9f7f5ce27a50297372287ef72d69e4e01dd28a459bdc7ebeb"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:d72c4de0077098376478441fc61763e8e0f858bb7d8fa77d8c88fb660e9ee0f8"
+            },
+            {
+                "name": "kiali-rhel8-operator-d72c4de0077098376478441fc61763e8e0f858bb7d8fa77d8c88fb660e9ee0f8-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:d72c4de0077098376478441fc61763e8e0f858bb7d8fa77d8c88fb660e9ee0f8"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:0b1a9522287f8e6674fc2e64e5c506f0047143b2863d078afff0a093716ede2b"
+            },
+            {
+                "name": "kiali_v1_36",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:0b1a9522287f8e6674fc2e64e5c506f0047143b2863d078afff0a093716ede2b"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:32a3f1ab1a5dd35fff29856658e6818ebc903358f1b2346034cfc80581d92a4e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.48.0",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:6d1581d305f0a0264b79b4e640484857cd3519cdc759eded2d244895aaa7e499",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.48.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:6d1581d305f0a0264b79b4e640484857cd3519cdc759eded2d244895aaa7e499"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:3d9cfa614d71a7a239267d24575471975a34cf447f3d1fe58073714b348af111"
+            },
+            {
+                "name": "kiali-rhel8-operator-4e4089fa8d4f291b9e524a50552611484c14e494f58e2412546bb92fa43e28e6-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:4e4089fa8d4f291b9e524a50552611484c14e494f58e2412546bb92fa43e28e6"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:4e4089fa8d4f291b9e524a50552611484c14e494f58e2412546bb92fa43e28e6"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:6bb3bd64cc2b3d8291fd95ecff029d8c5d7ad1c7a30dcb77392bbbdba3b65784"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:b625a33b617c0aa535fc848310405b5672259a06b9ff51bb1f971860e2efd124"
+            },
+            {
+                "name": "kiali_v1_48",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:b625a33b617c0aa535fc848310405b5672259a06b9ff51bb1f971860e2efd124"
+            },
+            {
+                "name": "kiali_v1_36",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:bdf672ccbe43b05ae66ff83952437f2ea21549f3f010dc57a8f31d6644ade013"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.48.1",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:da8579a6f14aedcb8ee389ac12d6c4d75bb7808aa677260675d936b07e6351cc",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.48.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:da8579a6f14aedcb8ee389ac12d6c4d75bb7808aa677260675d936b07e6351cc"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:3d9cfa614d71a7a239267d24575471975a34cf447f3d1fe58073714b348af111"
+            },
+            {
+                "name": "kiali-rhel8-operator-65256f1c04c44732c9a769fa9c9f7e86ec085bee9be0eb109b1bfed7b3391358-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:65256f1c04c44732c9a769fa9c9f7e86ec085bee9be0eb109b1bfed7b3391358"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:65256f1c04c44732c9a769fa9c9f7e86ec085bee9be0eb109b1bfed7b3391358"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:7d11273b5b01218c4f753a1489c5378a1aea067026d79b87b47d7c98ca2ec8f0"
+            },
+            {
+                "name": "kiali_v1_48",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:7d11273b5b01218c4f753a1489c5378a1aea067026d79b87b47d7c98ca2ec8f0"
+            },
+            {
+                "name": "kiali_v1_36",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:7e277e6a7b3bf689bd2c0cf91970b855b46159009cb18fd82a0a50ebdad0d2fe"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:db2d9283670da326083a1a5b26d0940b6b44d714da11683b8305309218889fea"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kiali-operator.v1.48.2",
+        "package": "kiali-ossm",
+        "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:4f51ded0810fa15c4276e9f9e21f6a490d8226783c2e06bdea6e985af6d2317f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kiali.io",
+                    "kind": "Kiali",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "monitoring.kiali.io",
+                    "kind": "MonitoringDashboard",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kiali-ossm",
+                    "version": "1.48.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-istio/kiali-operator-metadata@sha256:4f51ded0810fa15c4276e9f9e21f6a490d8226783c2e06bdea6e985af6d2317f"
+            },
+            {
+                "name": "kiali_v1_12",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel7@sha256:3d9cfa614d71a7a239267d24575471975a34cf447f3d1fe58073714b348af111"
+            },
+            {
+                "name": "kiali-rhel8-operator-cfa0f5600a06524db342a71370eaf957f67e556cbcdc99217d5a228c92d004aa-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:cfa0f5600a06524db342a71370eaf957f67e556cbcdc99217d5a228c92d004aa"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8-operator@sha256:cfa0f5600a06524db342a71370eaf957f67e556cbcdc99217d5a228c92d004aa"
+            },
+            {
+                "name": "kiali_v1_36",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:5532ccaf95d75ca7f297cb678747cac872f2bacdcc1e818dd3c965d1abceaf4a"
+            },
+            {
+                "name": "kiali_default",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:b0adce2fbbf776f82850462da47c1a6fce04dc725b478d06faafd1f458da8594"
+            },
+            {
+                "name": "kiali_v1_48",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:b0adce2fbbf776f82850462da47c1a6fce04dc725b478d06faafd1f458da8594"
+            },
+            {
+                "name": "kiali_v1_24",
+                "image": "registry.redhat.io/openshift-service-mesh/kiali-rhel8@sha256:e8b085bd91fda1b7f19801f6a6aded7455ce1834c35dbb2d0fd98d78d8509493"
+            }
+        ]
+    }

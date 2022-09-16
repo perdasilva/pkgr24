@@ -1,0 +1,450 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: amq7-interconnect-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "amq7-interconnect-operator",
+        "defaultChannel": "1.10.x"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "1.10.x",
+        "package": "amq7-interconnect-operator",
+        "entries": [
+            {
+                "name": "amq7-interconnect-operator.v1.10.2",
+                "skipRange": ">=1.2.0 <1.10.2"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.3",
+                "replaces": "amq7-interconnect-operator.v1.10.2"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.4",
+                "replaces": "amq7-interconnect-operator.v1.10.3"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.5"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.6"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.7"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.8"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.9",
+                "replaces": "amq7-interconnect-operator.v1.10.4",
+                "skips": [
+                    "amq7-interconnect-operator.v1.10.5",
+                    "amq7-interconnect-operator.v1.10.6",
+                    "amq7-interconnect-operator.v1.10.7",
+                    "amq7-interconnect-operator.v1.10.8"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "1.2.0",
+        "package": "amq7-interconnect-operator",
+        "entries": [
+            {
+                "name": "amq7-interconnect-operator.v1.10.2",
+                "skipRange": ">=1.2.0 <1.10.2"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.3",
+                "replaces": "amq7-interconnect-operator.v1.10.2"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.4",
+                "replaces": "amq7-interconnect-operator.v1.10.3"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.5"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.6"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.7"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.8"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.9",
+                "replaces": "amq7-interconnect-operator.v1.10.4",
+                "skips": [
+                    "amq7-interconnect-operator.v1.10.5",
+                    "amq7-interconnect-operator.v1.10.6",
+                    "amq7-interconnect-operator.v1.10.7",
+                    "amq7-interconnect-operator.v1.10.8"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "latest",
+        "package": "amq7-interconnect-operator",
+        "entries": [
+            {
+                "name": "amq7-interconnect-operator.v1.10.2",
+                "skipRange": ">=1.2.0 <1.10.2"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.3",
+                "replaces": "amq7-interconnect-operator.v1.10.2"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.4",
+                "replaces": "amq7-interconnect-operator.v1.10.3"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.5"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.6"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.7"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.8"
+            },
+            {
+                "name": "amq7-interconnect-operator.v1.10.9",
+                "replaces": "amq7-interconnect-operator.v1.10.4",
+                "skips": [
+                    "amq7-interconnect-operator.v1.10.5",
+                    "amq7-interconnect-operator.v1.10.6",
+                    "amq7-interconnect-operator.v1.10.7",
+                    "amq7-interconnect-operator.v1.10.8"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq7-interconnect-operator.v1.10.2",
+        "package": "amq7-interconnect-operator",
+        "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:42423c3f03b4fd07bc82ce0314049149e91bb5a13ad3c85ecb7e090019c2aaec",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "interconnectedcloud.github.io",
+                    "kind": "Interconnect",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq7-interconnect-operator",
+                    "version": "1.10.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:42423c3f03b4fd07bc82ce0314049149e91bb5a13ad3c85ecb7e090019c2aaec"
+            },
+            {
+                "name": "amq-interconnect-operator-df0827f193bc82367a6e0aace1e6f5defe1d7bad20dfe0eed1ade98af2461297-annotation",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:df0827f193bc82367a6e0aace1e6f5defe1d7bad20dfe0eed1ade98af2461297"
+            },
+            {
+                "name": "interconnect-operator",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:df0827f193bc82367a6e0aace1e6f5defe1d7bad20dfe0eed1ade98af2461297"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq7-interconnect-operator.v1.10.3",
+        "package": "amq7-interconnect-operator",
+        "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:ba0f49603976246d26ffe46d937757daad7db57734c2468667e13e4deae32764",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "interconnectedcloud.github.io",
+                    "kind": "Interconnect",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq7-interconnect-operator",
+                    "version": "1.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:ba0f49603976246d26ffe46d937757daad7db57734c2468667e13e4deae32764"
+            },
+            {
+                "name": "amq-interconnect-operator-f717195e2a4e2f2234f022f5d8c0790d8909526319afe5b09344853e7f881e9b-annotation",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:f717195e2a4e2f2234f022f5d8c0790d8909526319afe5b09344853e7f881e9b"
+            },
+            {
+                "name": "interconnect-operator",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:f717195e2a4e2f2234f022f5d8c0790d8909526319afe5b09344853e7f881e9b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq7-interconnect-operator.v1.10.4",
+        "package": "amq7-interconnect-operator",
+        "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:11428282f06ceb477423f9e9cc6ddc64cf7d1949efe6467f62852f1df60cad8c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "interconnectedcloud.github.io",
+                    "kind": "Interconnect",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq7-interconnect-operator",
+                    "version": "1.10.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:11428282f06ceb477423f9e9cc6ddc64cf7d1949efe6467f62852f1df60cad8c"
+            },
+            {
+                "name": "amq-interconnect-operator-ac5de4e508d3d5f1a557c5ae4cc9d57258c14dd6ab2d0f7e00b644801669a9c6-annotation",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:ac5de4e508d3d5f1a557c5ae4cc9d57258c14dd6ab2d0f7e00b644801669a9c6"
+            },
+            {
+                "name": "interconnect-operator",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:ac5de4e508d3d5f1a557c5ae4cc9d57258c14dd6ab2d0f7e00b644801669a9c6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq7-interconnect-operator.v1.10.5",
+        "package": "amq7-interconnect-operator",
+        "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:799ce48905d5d2a91b42e2a7943ce9b756aa9da80f6924be06b2a6275ac90214",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "interconnectedcloud.github.io",
+                    "kind": "Interconnect",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq7-interconnect-operator",
+                    "version": "1.10.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:799ce48905d5d2a91b42e2a7943ce9b756aa9da80f6924be06b2a6275ac90214"
+            },
+            {
+                "name": "amq-interconnect-operator-8dd53290c909589590b88a1544d854b4ad9f8b4a639189597c0a59579bc60c40-annotation",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:8dd53290c909589590b88a1544d854b4ad9f8b4a639189597c0a59579bc60c40"
+            },
+            {
+                "name": "interconnect-operator",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:8dd53290c909589590b88a1544d854b4ad9f8b4a639189597c0a59579bc60c40"
+            },
+            {
+                "name": "qdrouterd_image",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:6101cc735e4d19cd67c6d80895c425ecf6f1d2604d88f999fa0cae57a7d6abaf"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq7-interconnect-operator.v1.10.6",
+        "package": "amq7-interconnect-operator",
+        "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:bc7e9f5a6c3267f9ce24bbc8e7668bfeaddbaaf2c11d0874d637456bb2826254",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "interconnectedcloud.github.io",
+                    "kind": "Interconnect",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq7-interconnect-operator",
+                    "version": "1.10.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:bc7e9f5a6c3267f9ce24bbc8e7668bfeaddbaaf2c11d0874d637456bb2826254"
+            },
+            {
+                "name": "amq-interconnect-operator-8dd53290c909589590b88a1544d854b4ad9f8b4a639189597c0a59579bc60c40-annotation",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:8dd53290c909589590b88a1544d854b4ad9f8b4a639189597c0a59579bc60c40"
+            },
+            {
+                "name": "interconnect-operator",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:8dd53290c909589590b88a1544d854b4ad9f8b4a639189597c0a59579bc60c40"
+            },
+            {
+                "name": "qdrouterd_image",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:6101cc735e4d19cd67c6d80895c425ecf6f1d2604d88f999fa0cae57a7d6abaf"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq7-interconnect-operator.v1.10.7",
+        "package": "amq7-interconnect-operator",
+        "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:43918871630237117f4ced07d4cc06bee8daabfbf756c739571da80b729e029b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "interconnectedcloud.github.io",
+                    "kind": "Interconnect",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq7-interconnect-operator",
+                    "version": "1.10.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:43918871630237117f4ced07d4cc06bee8daabfbf756c739571da80b729e029b"
+            },
+            {
+                "name": "amq-interconnect-operator-b54ac5373f0f6c373e75d162e5fdee141bd70b72d78057e8d3ffafe535ac7e4f-annotation",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:b54ac5373f0f6c373e75d162e5fdee141bd70b72d78057e8d3ffafe535ac7e4f"
+            },
+            {
+                "name": "interconnect-operator",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:b54ac5373f0f6c373e75d162e5fdee141bd70b72d78057e8d3ffafe535ac7e4f"
+            },
+            {
+                "name": "qdrouterd_image",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:9a51ed1c5ac9893b1db2a88be7da735ab244b2a92fccd20a120b3690dd6a914c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq7-interconnect-operator.v1.10.8",
+        "package": "amq7-interconnect-operator",
+        "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:6b099bb2a31c64f006a36ae0adc7a179d5270429828711ca81561e535f95bbad",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "interconnectedcloud.github.io",
+                    "kind": "Interconnect",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq7-interconnect-operator",
+                    "version": "1.10.8"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:6b099bb2a31c64f006a36ae0adc7a179d5270429828711ca81561e535f95bbad"
+            },
+            {
+                "name": "amq-interconnect-operator-b54ac5373f0f6c373e75d162e5fdee141bd70b72d78057e8d3ffafe535ac7e4f-annotation",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:b54ac5373f0f6c373e75d162e5fdee141bd70b72d78057e8d3ffafe535ac7e4f"
+            },
+            {
+                "name": "interconnect-operator",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:b54ac5373f0f6c373e75d162e5fdee141bd70b72d78057e8d3ffafe535ac7e4f"
+            },
+            {
+                "name": "qdrouterd_image",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:9a51ed1c5ac9893b1db2a88be7da735ab244b2a92fccd20a120b3690dd6a914c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq7-interconnect-operator.v1.10.9",
+        "package": "amq7-interconnect-operator",
+        "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:f482abbfee7d676ddbb732a6a747aec8f7515bfb4f368de4499827c02bef041c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "interconnectedcloud.github.io",
+                    "kind": "Interconnect",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq7-interconnect-operator",
+                    "version": "1.10.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator-metadata@sha256:f482abbfee7d676ddbb732a6a747aec8f7515bfb4f368de4499827c02bef041c"
+            },
+            {
+                "name": "amq-interconnect-operator-c7c692a7355f423779cdfa47e08317ea9475908276d7034d2f621e11038f8cf1-annotation",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:c7c692a7355f423779cdfa47e08317ea9475908276d7034d2f621e11038f8cf1"
+            },
+            {
+                "name": "interconnect-operator",
+                "image": "registry.redhat.io/amq7/amq-interconnect-operator@sha256:c7c692a7355f423779cdfa47e08317ea9475908276d7034d2f621e11038f8cf1"
+            },
+            {
+                "name": "qdrouterd_image",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:174cffae608ba02f9777d07fdbb27ea99eb2178760de87f091f3b934a924bf9b"
+            }
+        ]
+    }

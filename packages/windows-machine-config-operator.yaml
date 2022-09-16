@@ -1,0 +1,58 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: windows-machine-config-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "windows-machine-config-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "preview",
+        "package": "windows-machine-config-operator",
+        "entries": [
+            {
+                "name": "windows-machine-config-operator.v6.0.0",
+                "skipRange": ">=5.0.0 <6.0.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "windows-machine-config-operator",
+        "entries": [
+            {
+                "name": "windows-machine-config-operator.v6.0.0",
+                "skipRange": ">=5.0.0 <6.0.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "windows-machine-config-operator.v6.0.0",
+        "package": "windows-machine-config-operator",
+        "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:17b5c18bacb38a2e4d0c3e53e166857af9c53f9e02dd0416b34974c1376f4f5e",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "windows-machine-config-operator",
+                    "version": "6.0.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:17b5c18bacb38a2e4d0c3e53e166857af9c53f9e02dd0416b34974c1376f4f5e"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel8-operator@sha256:18a5b621627e9d8bb5110a828a81afba34fceb3dbd3011eca68b3abc55d9cb59"
+            }
+        ]
+    }

@@ -1,0 +1,70 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: clusterresourceoverride
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "clusterresourceoverride",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "4.11",
+        "package": "clusterresourceoverride",
+        "entries": [
+            {
+                "name": "clusterresourceoverride-operator.4.11.0-202208031306",
+                "skipRange": ">=4.3.0 <4.11.0-202208031306"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "clusterresourceoverride",
+        "entries": [
+            {
+                "name": "clusterresourceoverride-operator.4.11.0-202208031306",
+                "skipRange": ">=4.3.0 <4.11.0-202208031306"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "clusterresourceoverride-operator.4.11.0-202208031306",
+        "package": "clusterresourceoverride",
+        "image": "registry.redhat.io/openshift4/ose-clusterresourceoverride-operator-bundle@sha256:3c0ac4e1593e10d14549e8d85b904d58e44f4a44e97340faed8fd42eaadd6c34",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.autoscaling.openshift.io",
+                    "kind": "ClusterResourceOverride",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "clusterresourceoverride",
+                    "version": "4.11.0-202208031306"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/ose-clusterresourceoverride-operator-bundle@sha256:3c0ac4e1593e10d14549e8d85b904d58e44f4a44e97340faed8fd42eaadd6c34"
+            },
+            {
+                "name": "ose-clusterresourceoverride-rhel8-operator",
+                "image": "registry.redhat.io/openshift4/ose-clusterresourceoverride-rhel8-operator@sha256:c836db12b378333656811ff9ff3938e9735d3a81e1a6a2f47c7ce94d96e7b227"
+            },
+            {
+                "name": "ose-clusterresourceoverride-rhel8",
+                "image": "registry.redhat.io/openshift4/ose-clusterresourceoverride-rhel8@sha256:a424b0ab8c0f90626969c827302678cde22d093dcd9069021ebf55d7e2deb980"
+            }
+        ]
+    }

@@ -1,0 +1,688 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: devworkspace-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "devworkspace-operator",
+        "defaultChannel": "fast"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "fast",
+        "package": "devworkspace-operator",
+        "entries": [
+            {
+                "name": "devworkspace-operator.v0.10.0",
+                "replaces": "devworkspace-operator.v0.9.0"
+            },
+            {
+                "name": "devworkspace-operator.v0.11.0",
+                "replaces": "devworkspace-operator.v0.10.0"
+            },
+            {
+                "name": "devworkspace-operator.v0.12.0",
+                "replaces": "devworkspace-operator.v0.11.0"
+            },
+            {
+                "name": "devworkspace-operator.v0.13.0",
+                "replaces": "devworkspace-operator.v0.12.0"
+            },
+            {
+                "name": "devworkspace-operator.v0.14.1",
+                "replaces": "devworkspace-operator.v0.13.0"
+            },
+            {
+                "name": "devworkspace-operator.v0.15.2",
+                "replaces": "devworkspace-operator.v0.14.1"
+            },
+            {
+                "name": "devworkspace-operator.v0.9.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devworkspace-operator.v0.10.0",
+        "package": "devworkspace-operator",
+        "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:131de4d63163b032261d1772a015bbee0226bcc96a2147dba91cb666a7f8b0e1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceOperatorConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceRouting",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "version": "0.10.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:131de4d63163b032261d1772a015bbee0226bcc96a2147dba91cb666a7f8b0e1"
+            },
+            {
+                "name": "project_clone",
+                "image": "registry.redhat.io/devworkspace/devworkspace-project-clone-rhel8@sha256:fcf5fd51ee4f6ba7598702798574226f81af45ce3b107b46f37e88959e51a36a"
+            },
+            {
+                "name": "devworkspace_webhook_server",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:7934ff930283013a9c02a216555e44b509b602927d90469c45cee3af318f975b"
+            },
+            {
+                "name": "devworkspace-controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:7934ff930283013a9c02a216555e44b509b602927d90469c45cee3af318f975b"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7f6a280132b9746c51e44a4e795a0f861ec932c454d597a60a421b882ef924ff"
+            },
+            {
+                "name": "kube_rbac_proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7f6a280132b9746c51e44a4e795a0f861ec932c454d597a60a421b882ef924ff"
+            },
+            {
+                "name": "pvc_cleanup_job",
+                "image": "registry.redhat.io/ubi8-micro@sha256:8b932917a156acbb1fb71b137c02c048d32abbf258babd9596d5ef89dfe8d401"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devworkspace-operator.v0.11.0",
+        "package": "devworkspace-operator",
+        "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:3878fd72c22043b98e468d44f6c7ba17a03f8c0f04afdceb0d84a1bdebfbccf0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceOperatorConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceRouting",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "version": "0.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:3878fd72c22043b98e468d44f6c7ba17a03f8c0f04afdceb0d84a1bdebfbccf0"
+            },
+            {
+                "name": "project_clone",
+                "image": "registry.redhat.io/devworkspace/devworkspace-project-clone-rhel8@sha256:0ff126c773198d7da9cdf5df062a3740ee859c36ed03a85460c5ccf7fe91900a"
+            },
+            {
+                "name": "devworkspace_webhook_server",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:14bb0f103013870f54d415b29350709650fa38ebc4111f2906def5434d50ce1e"
+            },
+            {
+                "name": "devworkspace-controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:14bb0f103013870f54d415b29350709650fa38ebc4111f2906def5434d50ce1e"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:86e5fa1fa294987114be200890c2e516501e424aee0fb98ece25c95e7716295b"
+            },
+            {
+                "name": "kube_rbac_proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:86e5fa1fa294987114be200890c2e516501e424aee0fb98ece25c95e7716295b"
+            },
+            {
+                "name": "pvc_cleanup_job",
+                "image": "registry.redhat.io/ubi8-micro@sha256:8b932917a156acbb1fb71b137c02c048d32abbf258babd9596d5ef89dfe8d401"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devworkspace-operator.v0.12.0",
+        "package": "devworkspace-operator",
+        "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:b7f2ad180414461293558e52b26dfcf47b06a5573c1a6275bc171b51a3215cad",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceOperatorConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceRouting",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "version": "0.12.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:b7f2ad180414461293558e52b26dfcf47b06a5573c1a6275bc171b51a3215cad"
+            },
+            {
+                "name": "project_clone",
+                "image": "registry.redhat.io/devworkspace/devworkspace-project-clone-rhel8@sha256:33647adc9587824f1118b1841c8a1809252edd7c220d51ebb4ab4447b4fb9438"
+            },
+            {
+                "name": "devworkspace_webhook_server",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:3f96fb70c3f56dea3384ea31b9252a5c6aca8e0f33dc53be590f134912244078"
+            },
+            {
+                "name": "devworkspace-controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:3f96fb70c3f56dea3384ea31b9252a5c6aca8e0f33dc53be590f134912244078"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3e10e2c966e42f1944791298f8e31de6fd89d1e836ee0b1349ce153d33a44240"
+            },
+            {
+                "name": "kube_rbac_proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3e10e2c966e42f1944791298f8e31de6fd89d1e836ee0b1349ce153d33a44240"
+            },
+            {
+                "name": "pvc_cleanup_job",
+                "image": "registry.redhat.io/ubi8-micro@sha256:8b932917a156acbb1fb71b137c02c048d32abbf258babd9596d5ef89dfe8d401"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devworkspace-operator.v0.13.0",
+        "package": "devworkspace-operator",
+        "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:0ea5e708ff8c1e508f3cffd98e4fafc1359cdb946e98ab3d68a8655ecf752052",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceOperatorConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceRouting",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "version": "0.13.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:0ea5e708ff8c1e508f3cffd98e4fafc1359cdb946e98ab3d68a8655ecf752052"
+            },
+            {
+                "name": "project_clone",
+                "image": "registry.redhat.io/devworkspace/devworkspace-project-clone-rhel8@sha256:39bba44bde2e64f10af618ddc80e7dd627496b2bf0398c073bae0b871d3242ef"
+            },
+            {
+                "name": "devworkspace_webhook_server",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "devworkspace-controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:4ec150e42d6cf1bc7786cc9a5ffdf2e97e5700c2c904ed69e1b9290e173bc0b2"
+            },
+            {
+                "name": "kube_rbac_proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:4ec150e42d6cf1bc7786cc9a5ffdf2e97e5700c2c904ed69e1b9290e173bc0b2"
+            },
+            {
+                "name": "pvc_cleanup_job",
+                "image": "registry.redhat.io/ubi8-micro@sha256:8b932917a156acbb1fb71b137c02c048d32abbf258babd9596d5ef89dfe8d401"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devworkspace-operator.v0.14.1",
+        "package": "devworkspace-operator",
+        "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:22f0ac6cabaf087aebf5384b4c6174a6b5d7b6d8369f2b77f50bb6d34ce5d7d1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceOperatorConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceRouting",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "version": "0.14.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:22f0ac6cabaf087aebf5384b4c6174a6b5d7b6d8369f2b77f50bb6d34ce5d7d1"
+            },
+            {
+                "name": "project_clone",
+                "image": "registry.redhat.io/devworkspace/devworkspace-project-clone-rhel8@sha256:849575f92158b89e95ff57fdd7c3ce431cddbb25cdf31f744c5a9c57e5065f36"
+            },
+            {
+                "name": "devworkspace_webhook_server",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:483edea2b579835a6bd0e2e8d8316811e83e14a920b6e952ad0144cc7f7d14da"
+            },
+            {
+                "name": "devworkspace-controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:483edea2b579835a6bd0e2e8d8316811e83e14a920b6e952ad0144cc7f7d14da"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:d3226d151463bf7af90479cb46d9da22ae1d04e7fbb8db82af3d4f9fa1685fdb"
+            },
+            {
+                "name": "kube_rbac_proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:d3226d151463bf7af90479cb46d9da22ae1d04e7fbb8db82af3d4f9fa1685fdb"
+            },
+            {
+                "name": "pvc_cleanup_job",
+                "image": "registry.redhat.io/ubi8-micro@sha256:8b932917a156acbb1fb71b137c02c048d32abbf258babd9596d5ef89dfe8d401"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devworkspace-operator.v0.15.2",
+        "package": "devworkspace-operator",
+        "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:893fbc134718a8a7716c6d9226c32da460f3c17b6d03af5987f12ee3fbf69719",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceOperatorConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceRouting",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "version": "0.15.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:893fbc134718a8a7716c6d9226c32da460f3c17b6d03af5987f12ee3fbf69719"
+            },
+            {
+                "name": "project_clone",
+                "image": "registry.redhat.io/devworkspace/devworkspace-project-clone-rhel8@sha256:aa3f0e5b5223e6703fd5928653eb59bafc156cb0a49cec05f821b7241b417a01"
+            },
+            {
+                "name": "devworkspace_webhook_server",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:d6a95121ba43bf80dc6bfa341527484841432e686af7bc6663e82634b7041553"
+            },
+            {
+                "name": "devworkspace-controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:d6a95121ba43bf80dc6bfa341527484841432e686af7bc6663e82634b7041553"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3a13919e5b2b0afe318476c71e94dd48cc52a44935d824de315f34a9b941a5ea"
+            },
+            {
+                "name": "kube_rbac_proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3a13919e5b2b0afe318476c71e94dd48cc52a44935d824de315f34a9b941a5ea"
+            },
+            {
+                "name": "pvc_cleanup_job",
+                "image": "registry.redhat.io/ubi8-micro@sha256:8b932917a156acbb1fb71b137c02c048d32abbf258babd9596d5ef89dfe8d401"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devworkspace-operator.v0.9.0",
+        "package": "devworkspace-operator",
+        "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:415f985032e1bad7afac310ac4d05c15fc7cdcd35ea017ee19c568c31ad0c663",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "controller.devfile.io",
+                    "kind": "DevWorkspaceRouting",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspace",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "workspace.devfile.io",
+                    "kind": "DevWorkspaceTemplate",
+                    "version": "v1alpha2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "version": "0.9.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/devworkspace/devworkspace-operator-bundle@sha256:415f985032e1bad7afac310ac4d05c15fc7cdcd35ea017ee19c568c31ad0c663"
+            },
+            {
+                "name": "project_clone",
+                "image": "registry.redhat.io/devworkspace/devworkspace-project-clone-rhel8@sha256:57b27f3bf3c80f5a5b06718d3101e872bad481fe7a70e5d5bb1f09f576dbd696"
+            },
+            {
+                "name": "devworkspace_webhook_server",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:e68ec2fe7ac27e59641bdfc7794ae99fdfaa60e5b6d0cc0e3f20ab3f7a31bc11"
+            },
+            {
+                "name": "devworkspace-controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:e68ec2fe7ac27e59641bdfc7794ae99fdfaa60e5b6d0cc0e3f20ab3f7a31bc11"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:518f5e036a6c67257c2926d9cad073e46ba0663c1386b97aadbf51d3a27ab559"
+            },
+            {
+                "name": "kube_rbac_proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:518f5e036a6c67257c2926d9cad073e46ba0663c1386b97aadbf51d3a27ab559"
+            },
+            {
+                "name": "pvc_cleanup_job",
+                "image": "registry.redhat.io/ubi8-micro@sha256:8b932917a156acbb1fb71b137c02c048d32abbf258babd9596d5ef89dfe8d401"
+            }
+        ]
+    }

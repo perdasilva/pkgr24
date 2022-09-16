@@ -1,0 +1,91 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: vertical-pod-autoscaler
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "vertical-pod-autoscaler",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "vertical-pod-autoscaler",
+        "entries": [
+            {
+                "name": "verticalpodautoscaler.4.11.0-202208031306",
+                "skipRange": ">=4.5.0 <4.11.0-202208031306"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "verticalpodautoscaler.4.11.0-202208031306",
+        "package": "vertical-pod-autoscaler",
+        "image": "registry.redhat.io/openshift4/ose-vertical-pod-autoscaler-operator-metadata@sha256:aab542cb160b3653205635d56c962db3c27d2313c74cecad82bb27570c11e004",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "autoscaling.k8s.io",
+                    "kind": "VerticalPodAutoscaler",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "autoscaling.k8s.io",
+                    "kind": "VerticalPodAutoscaler",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "autoscaling.k8s.io",
+                    "kind": "VerticalPodAutoscalerCheckpoint",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "autoscaling.k8s.io",
+                    "kind": "VerticalPodAutoscalerCheckpoint",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "autoscaling.openshift.io",
+                    "kind": "VerticalPodAutoscalerController",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "vertical-pod-autoscaler",
+                    "version": "4.11.0-202208031306"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/ose-vertical-pod-autoscaler-operator-metadata@sha256:aab542cb160b3653205635d56c962db3c27d2313c74cecad82bb27570c11e004"
+            },
+            {
+                "name": "ose-vertical-pod-autoscaler-rhel8-operator",
+                "image": "registry.redhat.io/openshift4/ose-vertical-pod-autoscaler-rhel8-operator@sha256:98132c16c9b98d88251aa5d82d1e14281bdfebcb360269a458eac045343b1212"
+            },
+            {
+                "name": "ose-vertical-pod-autoscaler-rhel8",
+                "image": "registry.redhat.io/openshift4/ose-vertical-pod-autoscaler-rhel8@sha256:b14b750fe59834cf46097ad79af36085a5fb264d9bb946f98cee498a0c3dc2ee"
+            }
+        ]
+    }

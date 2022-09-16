@@ -1,0 +1,1231 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: devspaces
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "devspaces",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "devspaces",
+        "entries": [
+            {
+                "name": "devspacesoperator.v3.0.0"
+            },
+            {
+                "name": "devspacesoperator.v3.0.0-0.1655378545.p"
+            },
+            {
+                "name": "devspacesoperator.v3.0.0-0.1655413715.p"
+            },
+            {
+                "name": "devspacesoperator.v3.0.0-0.1655729426.p"
+            },
+            {
+                "name": "devspacesoperator.v3.0.0-0.1657548302.p"
+            },
+            {
+                "name": "devspacesoperator.v3.0.1"
+            },
+            {
+                "name": "devspacesoperator.v3.0.1-0.1660823057.p",
+                "skips": [
+                    "devspacesoperator.v3.0.0-0.1655729426.p",
+                    "devspacesoperator.v3.0.0-0.1655413715.p",
+                    "devspacesoperator.v3.0.0-0.1655378545.p",
+                    "devspacesoperator.v3.0.0",
+                    "devspacesoperator.v3.0.1",
+                    "devspacesoperator.v3.0.0-0.1657548302.p"
+                ]
+            },
+            {
+                "name": "devspacesoperator.v3.1.0",
+                "replaces": "devspacesoperator.v3.0.1-0.1660823057.p"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devspacesoperator.v3.0.0",
+        "package": "devspaces",
+        "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:947c417b605dbe17a7cd89d306272c4a4218d95f4598495b16f28d926e479b00",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "org.eclipse.che",
+                    "kind": "CheCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devspaces",
+                    "version": "3.0.0"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "versionRange": ">=0.12.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "single_host_gateway_config_sidecar",
+                "image": "registry.redhat.io/devspaces/configbump-rhel8@sha256:5eac00c3da2cd5542ba655fa93e99a92a90719bf96556bb0e199eb53803fd6ca"
+            },
+            {
+                "name": "dashboard",
+                "image": "registry.redhat.io/devspaces/dashboard-rhel8@sha256:f1f79db84c6f4bd74148f3ef3d6a7b3a7e99964f91fc90527875eac9d3964d7c"
+            },
+            {
+                "name": "devfile_registry",
+                "image": "registry.redhat.io/devspaces/devfileregistry-rhel8@sha256:9261c68ec68dc2f29bb376798c923190100ae32b36c120eaa02fe6f72b2b011d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:947c417b605dbe17a7cd89d306272c4a4218d95f4598495b16f28d926e479b00"
+            },
+            {
+                "name": "devspaces-operator",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4"
+            },
+            {
+                "name": "devspaces-rhel8-operator-3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4-annotation",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4"
+            },
+            {
+                "name": "devspaces_idea_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:f0e2a84f9b7a90c3738afee178e30fd4b0f8bdd81643ba612448175aa33d9747"
+            },
+            {
+                "name": "devspaces_idea_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:f0e2a84f9b7a90c3738afee178e30fd4b0f8bdd81643ba612448175aa33d9747"
+            },
+            {
+                "name": "devspaces_machineexec_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "devspaces_machineexec_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "plugin_registry",
+                "image": "registry.redhat.io/devspaces/pluginregistry-rhel8@sha256:6a4bd8539c099e613a903de7afb2c203d9ff9228bb23ce0255d139062cb41779"
+            },
+            {
+                "name": "che_server",
+                "image": "registry.redhat.io/devspaces/server-rhel8@sha256:09cf293f6908ecb4fa535b0e84c795eadb9509b76f71abb798189dca8734f465"
+            },
+            {
+                "name": "devspaces_theia_endpoint_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:6a3f5f25b18349d81137bfba85c3cf38315694f3bff0c80e104a803731e9875a"
+            },
+            {
+                "name": "devspaces_theia_endpoint_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:6a3f5f25b18349d81137bfba85c3cf38315694f3bff0c80e104a803731e9875a"
+            },
+            {
+                "name": "devspaces_theia_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:5dc6fd7d5a8dd761b140665ef3fa61335eb019130271b653bf0bcda3d1a9a2b3"
+            },
+            {
+                "name": "devspaces_theia_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:5dc6fd7d5a8dd761b140665ef3fa61335eb019130271b653bf0bcda3d1a9a2b3"
+            },
+            {
+                "name": "single_host_gateway",
+                "image": "registry.redhat.io/devspaces/traefik-rhel8@sha256:e2c094e2bc527ac355a03032995adcb25a6b81836002135078b5eb804e469746"
+            },
+            {
+                "name": "devspaces_udi_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:aed2d0df14feebbc5536c4f66184bb9cdcc7c1177351708467fa64f69c8d6e40"
+            },
+            {
+                "name": "devspaces_udi_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:aed2d0df14feebbc5536c4f66184bb9cdcc7c1177351708467fa64f69c8d6e40"
+            },
+            {
+                "name": "devworkspace_controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "jboss_eap_7_eap_xp3_openjdk11_openshift_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8@sha256:10bb25f6e4cd71a6e8f9a017e7a7bac1926487fe1cffadef2dc8027819eb2898"
+            },
+            {
+                "name": "jboss_eap_7_eap74_openjdk11_openshift_devfile_registry_image_g4xdilrubi______",
+                "image": "registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8@sha256:ccd43d785e346bd9e88fc8a312ad148a7605ae587df9ed7560b3c6c0ceb8dd01"
+            },
+            {
+                "name": "gateway_authorization_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:c9d0a5a2871c24c0b1058e419f2b090429363a319856397855412fd2c0037395"
+            },
+            {
+                "name": "gateway_authentication_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:341fc9ebbe33dbf52af02f282d851d19bf5e1c935deaff007f4e076b12e8a915"
+            },
+            {
+                "name": "postgres_13_3",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:4b31f3c4586d164ce75ff82d5570106f2f554b02c33390a55ff4139498fe6905"
+            },
+            {
+                "name": "postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-96@sha256:314747a4a64ac16c33ead6a34479dccf16b9a07abf440ea7eeef7cda4cd19e32"
+            },
+            {
+                "name": "rhscl_mongodb_36_rhel7_devfile_registry_image_gewtkmak",
+                "image": "registry.redhat.io/rhscl/mongodb-36-rhel7@sha256:9f799d356d7d2e442bde9d401b720600fd9059a3d8eefea6f3b2ffa721c0dc73"
+            },
+            {
+                "name": "pvc_jobs",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:3f32ebba0cbf3849a48372d4fc3a4ce70816f248d39eb50da7ea5f15c7f9d120"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devspacesoperator.v3.0.0-0.1655378545.p",
+        "package": "devspaces",
+        "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:d462bae4d24069a5fb37339f32c249819b4ca9928857578d83336d19e83b768b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "org.eclipse.che",
+                    "kind": "CheCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devspaces",
+                    "version": "3.0.0+0.1655378545.p"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "versionRange": ">=0.12.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "single_host_gateway_config_sidecar",
+                "image": "registry.redhat.io/devspaces/configbump-rhel8@sha256:5eac00c3da2cd5542ba655fa93e99a92a90719bf96556bb0e199eb53803fd6ca"
+            },
+            {
+                "name": "dashboard",
+                "image": "registry.redhat.io/devspaces/dashboard-rhel8@sha256:f1f79db84c6f4bd74148f3ef3d6a7b3a7e99964f91fc90527875eac9d3964d7c"
+            },
+            {
+                "name": "devfile_registry",
+                "image": "registry.redhat.io/devspaces/devfileregistry-rhel8@sha256:9261c68ec68dc2f29bb376798c923190100ae32b36c120eaa02fe6f72b2b011d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:d462bae4d24069a5fb37339f32c249819b4ca9928857578d83336d19e83b768b"
+            },
+            {
+                "name": "devspaces-operator",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4"
+            },
+            {
+                "name": "devspaces-rhel8-operator-3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4-annotation",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4"
+            },
+            {
+                "name": "devspaces_idea_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:01f66a585c9d0f38c4630144880aabcfd2c81008f9cf7ebed7b869590398c57a"
+            },
+            {
+                "name": "devspaces_idea_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:01f66a585c9d0f38c4630144880aabcfd2c81008f9cf7ebed7b869590398c57a"
+            },
+            {
+                "name": "devspaces_machineexec_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "devspaces_machineexec_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "plugin_registry",
+                "image": "registry.redhat.io/devspaces/pluginregistry-rhel8@sha256:6a4bd8539c099e613a903de7afb2c203d9ff9228bb23ce0255d139062cb41779"
+            },
+            {
+                "name": "che_server",
+                "image": "registry.redhat.io/devspaces/server-rhel8@sha256:a8f72f06e954b7ac590b7a1a5793619d85ba09f5636ab0496e6cdd777ed50db7"
+            },
+            {
+                "name": "devspaces_theia_endpoint_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:6a3f5f25b18349d81137bfba85c3cf38315694f3bff0c80e104a803731e9875a"
+            },
+            {
+                "name": "devspaces_theia_endpoint_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:6a3f5f25b18349d81137bfba85c3cf38315694f3bff0c80e104a803731e9875a"
+            },
+            {
+                "name": "devspaces_theia_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:5dc6fd7d5a8dd761b140665ef3fa61335eb019130271b653bf0bcda3d1a9a2b3"
+            },
+            {
+                "name": "devspaces_theia_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:5dc6fd7d5a8dd761b140665ef3fa61335eb019130271b653bf0bcda3d1a9a2b3"
+            },
+            {
+                "name": "single_host_gateway",
+                "image": "registry.redhat.io/devspaces/traefik-rhel8@sha256:e2c094e2bc527ac355a03032995adcb25a6b81836002135078b5eb804e469746"
+            },
+            {
+                "name": "devspaces_udi_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:4f78956e00986cd2520a297168a0e83552cb245289fb4ab35704b0c5d35775c7"
+            },
+            {
+                "name": "devspaces_udi_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:4f78956e00986cd2520a297168a0e83552cb245289fb4ab35704b0c5d35775c7"
+            },
+            {
+                "name": "devworkspace_controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "jboss_eap_7_eap_xp3_openjdk11_openshift_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8@sha256:10bb25f6e4cd71a6e8f9a017e7a7bac1926487fe1cffadef2dc8027819eb2898"
+            },
+            {
+                "name": "jboss_eap_7_eap74_openjdk11_openshift_devfile_registry_image_g4xdilrubi______",
+                "image": "registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8@sha256:ccd43d785e346bd9e88fc8a312ad148a7605ae587df9ed7560b3c6c0ceb8dd01"
+            },
+            {
+                "name": "gateway_authorization_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:c9d0a5a2871c24c0b1058e419f2b090429363a319856397855412fd2c0037395"
+            },
+            {
+                "name": "gateway_authentication_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:341fc9ebbe33dbf52af02f282d851d19bf5e1c935deaff007f4e076b12e8a915"
+            },
+            {
+                "name": "postgres_13_3",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:4b31f3c4586d164ce75ff82d5570106f2f554b02c33390a55ff4139498fe6905"
+            },
+            {
+                "name": "postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-96@sha256:314747a4a64ac16c33ead6a34479dccf16b9a07abf440ea7eeef7cda4cd19e32"
+            },
+            {
+                "name": "rhscl_mongodb_36_rhel7_devfile_registry_image_gewtkmak",
+                "image": "registry.redhat.io/rhscl/mongodb-36-rhel7@sha256:9f799d356d7d2e442bde9d401b720600fd9059a3d8eefea6f3b2ffa721c0dc73"
+            },
+            {
+                "name": "pvc_jobs",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:3f32ebba0cbf3849a48372d4fc3a4ce70816f248d39eb50da7ea5f15c7f9d120"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devspacesoperator.v3.0.0-0.1655413715.p",
+        "package": "devspaces",
+        "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:e6387017882dbf7517404844abf5384849036ff8f79f5210032563d26df6f1a2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "org.eclipse.che",
+                    "kind": "CheCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devspaces",
+                    "version": "3.0.0+0.1655413715.p"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "versionRange": ">=0.12.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "single_host_gateway_config_sidecar",
+                "image": "registry.redhat.io/devspaces/configbump-rhel8@sha256:5eac00c3da2cd5542ba655fa93e99a92a90719bf96556bb0e199eb53803fd6ca"
+            },
+            {
+                "name": "dashboard",
+                "image": "registry.redhat.io/devspaces/dashboard-rhel8@sha256:b06f48eaf6cd0d3eab7bc0e1206fad3e39569fd8dc3b30d5f9e96c2d882d163a"
+            },
+            {
+                "name": "devfile_registry",
+                "image": "registry.redhat.io/devspaces/devfileregistry-rhel8@sha256:9261c68ec68dc2f29bb376798c923190100ae32b36c120eaa02fe6f72b2b011d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:e6387017882dbf7517404844abf5384849036ff8f79f5210032563d26df6f1a2"
+            },
+            {
+                "name": "devspaces-operator",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4"
+            },
+            {
+                "name": "devspaces-rhel8-operator-3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4-annotation",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4"
+            },
+            {
+                "name": "devspaces_idea_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:f0e2a84f9b7a90c3738afee178e30fd4b0f8bdd81643ba612448175aa33d9747"
+            },
+            {
+                "name": "devspaces_idea_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:f0e2a84f9b7a90c3738afee178e30fd4b0f8bdd81643ba612448175aa33d9747"
+            },
+            {
+                "name": "devspaces_machineexec_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "devspaces_machineexec_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "plugin_registry",
+                "image": "registry.redhat.io/devspaces/pluginregistry-rhel8@sha256:6a4bd8539c099e613a903de7afb2c203d9ff9228bb23ce0255d139062cb41779"
+            },
+            {
+                "name": "che_server",
+                "image": "registry.redhat.io/devspaces/server-rhel8@sha256:09cf293f6908ecb4fa535b0e84c795eadb9509b76f71abb798189dca8734f465"
+            },
+            {
+                "name": "devspaces_theia_endpoint_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:6a3f5f25b18349d81137bfba85c3cf38315694f3bff0c80e104a803731e9875a"
+            },
+            {
+                "name": "devspaces_theia_endpoint_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:6a3f5f25b18349d81137bfba85c3cf38315694f3bff0c80e104a803731e9875a"
+            },
+            {
+                "name": "devspaces_theia_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:5dc6fd7d5a8dd761b140665ef3fa61335eb019130271b653bf0bcda3d1a9a2b3"
+            },
+            {
+                "name": "devspaces_theia_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:5dc6fd7d5a8dd761b140665ef3fa61335eb019130271b653bf0bcda3d1a9a2b3"
+            },
+            {
+                "name": "single_host_gateway",
+                "image": "registry.redhat.io/devspaces/traefik-rhel8@sha256:e2c094e2bc527ac355a03032995adcb25a6b81836002135078b5eb804e469746"
+            },
+            {
+                "name": "devspaces_udi_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:aed2d0df14feebbc5536c4f66184bb9cdcc7c1177351708467fa64f69c8d6e40"
+            },
+            {
+                "name": "devspaces_udi_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:aed2d0df14feebbc5536c4f66184bb9cdcc7c1177351708467fa64f69c8d6e40"
+            },
+            {
+                "name": "devworkspace_controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "jboss_eap_7_eap_xp3_openjdk11_openshift_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8@sha256:10bb25f6e4cd71a6e8f9a017e7a7bac1926487fe1cffadef2dc8027819eb2898"
+            },
+            {
+                "name": "jboss_eap_7_eap74_openjdk11_openshift_devfile_registry_image_g4xdilrubi______",
+                "image": "registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8@sha256:ccd43d785e346bd9e88fc8a312ad148a7605ae587df9ed7560b3c6c0ceb8dd01"
+            },
+            {
+                "name": "gateway_authorization_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:c9d0a5a2871c24c0b1058e419f2b090429363a319856397855412fd2c0037395"
+            },
+            {
+                "name": "gateway_authentication_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:341fc9ebbe33dbf52af02f282d851d19bf5e1c935deaff007f4e076b12e8a915"
+            },
+            {
+                "name": "postgres_13_3",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:4b31f3c4586d164ce75ff82d5570106f2f554b02c33390a55ff4139498fe6905"
+            },
+            {
+                "name": "postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-96@sha256:314747a4a64ac16c33ead6a34479dccf16b9a07abf440ea7eeef7cda4cd19e32"
+            },
+            {
+                "name": "rhscl_mongodb_36_rhel7_devfile_registry_image_gewtkmak",
+                "image": "registry.redhat.io/rhscl/mongodb-36-rhel7@sha256:9f799d356d7d2e442bde9d401b720600fd9059a3d8eefea6f3b2ffa721c0dc73"
+            },
+            {
+                "name": "pvc_jobs",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:3f32ebba0cbf3849a48372d4fc3a4ce70816f248d39eb50da7ea5f15c7f9d120"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devspacesoperator.v3.0.0-0.1655729426.p",
+        "package": "devspaces",
+        "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:7f429540e351c68d8d880321c030311820eec9d8cef72f68105c9e8e0fe01dd0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "org.eclipse.che",
+                    "kind": "CheCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devspaces",
+                    "version": "3.0.0+0.1655729426.p"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "versionRange": ">=0.12.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "single_host_gateway_config_sidecar",
+                "image": "registry.redhat.io/devspaces/configbump-rhel8@sha256:5eac00c3da2cd5542ba655fa93e99a92a90719bf96556bb0e199eb53803fd6ca"
+            },
+            {
+                "name": "dashboard",
+                "image": "registry.redhat.io/devspaces/dashboard-rhel8@sha256:f1f79db84c6f4bd74148f3ef3d6a7b3a7e99964f91fc90527875eac9d3964d7c"
+            },
+            {
+                "name": "devfile_registry",
+                "image": "registry.redhat.io/devspaces/devfileregistry-rhel8@sha256:9261c68ec68dc2f29bb376798c923190100ae32b36c120eaa02fe6f72b2b011d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:7f429540e351c68d8d880321c030311820eec9d8cef72f68105c9e8e0fe01dd0"
+            },
+            {
+                "name": "devspaces-operator",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4"
+            },
+            {
+                "name": "devspaces-rhel8-operator-3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4-annotation",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:3a43163a1f1d83969fc059886411afcd5a2b4b26c8aef375bfdfe8d0e0e61ad4"
+            },
+            {
+                "name": "devspaces_idea_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:f0e2a84f9b7a90c3738afee178e30fd4b0f8bdd81643ba612448175aa33d9747"
+            },
+            {
+                "name": "devspaces_idea_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:f0e2a84f9b7a90c3738afee178e30fd4b0f8bdd81643ba612448175aa33d9747"
+            },
+            {
+                "name": "devspaces_machineexec_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "devspaces_machineexec_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "plugin_registry",
+                "image": "registry.redhat.io/devspaces/pluginregistry-rhel8@sha256:6a4bd8539c099e613a903de7afb2c203d9ff9228bb23ce0255d139062cb41779"
+            },
+            {
+                "name": "che_server",
+                "image": "registry.redhat.io/devspaces/server-rhel8@sha256:09cf293f6908ecb4fa535b0e84c795eadb9509b76f71abb798189dca8734f465"
+            },
+            {
+                "name": "devspaces_theia_endpoint_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:6a3f5f25b18349d81137bfba85c3cf38315694f3bff0c80e104a803731e9875a"
+            },
+            {
+                "name": "devspaces_theia_endpoint_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:6a3f5f25b18349d81137bfba85c3cf38315694f3bff0c80e104a803731e9875a"
+            },
+            {
+                "name": "devspaces_theia_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:5dc6fd7d5a8dd761b140665ef3fa61335eb019130271b653bf0bcda3d1a9a2b3"
+            },
+            {
+                "name": "devspaces_theia_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:5dc6fd7d5a8dd761b140665ef3fa61335eb019130271b653bf0bcda3d1a9a2b3"
+            },
+            {
+                "name": "single_host_gateway",
+                "image": "registry.redhat.io/devspaces/traefik-rhel8@sha256:e2c094e2bc527ac355a03032995adcb25a6b81836002135078b5eb804e469746"
+            },
+            {
+                "name": "devspaces_udi_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:aed2d0df14feebbc5536c4f66184bb9cdcc7c1177351708467fa64f69c8d6e40"
+            },
+            {
+                "name": "devspaces_udi_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:aed2d0df14feebbc5536c4f66184bb9cdcc7c1177351708467fa64f69c8d6e40"
+            },
+            {
+                "name": "devworkspace_controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "jboss_eap_7_eap_xp3_openjdk11_openshift_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8@sha256:10bb25f6e4cd71a6e8f9a017e7a7bac1926487fe1cffadef2dc8027819eb2898"
+            },
+            {
+                "name": "jboss_eap_7_eap74_openjdk11_openshift_devfile_registry_image_g4xdilrubi______",
+                "image": "registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8@sha256:ccd43d785e346bd9e88fc8a312ad148a7605ae587df9ed7560b3c6c0ceb8dd01"
+            },
+            {
+                "name": "gateway_authorization_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:c9d0a5a2871c24c0b1058e419f2b090429363a319856397855412fd2c0037395"
+            },
+            {
+                "name": "gateway_authentication_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:341fc9ebbe33dbf52af02f282d851d19bf5e1c935deaff007f4e076b12e8a915"
+            },
+            {
+                "name": "postgres_13_3",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:fd88f0893f0ee293319a2dadb8df5e41a1bad127ba1ec3ad6a7aca09b04094d8"
+            },
+            {
+                "name": "postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-96@sha256:314747a4a64ac16c33ead6a34479dccf16b9a07abf440ea7eeef7cda4cd19e32"
+            },
+            {
+                "name": "rhscl_mongodb_36_rhel7_devfile_registry_image_gewtkmak",
+                "image": "registry.redhat.io/rhscl/mongodb-36-rhel7@sha256:9f799d356d7d2e442bde9d401b720600fd9059a3d8eefea6f3b2ffa721c0dc73"
+            },
+            {
+                "name": "pvc_jobs",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:3f32ebba0cbf3849a48372d4fc3a4ce70816f248d39eb50da7ea5f15c7f9d120"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devspacesoperator.v3.0.0-0.1657548302.p",
+        "package": "devspaces",
+        "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:141e4011c6119bda8ac3009fe0b7b8535934e6692b46631d0660df8fda87c804",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "org.eclipse.che",
+                    "kind": "CheCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devspaces",
+                    "version": "3.0.0+0.1657548302.p"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "versionRange": ">=0.12.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "single_host_gateway_config_sidecar",
+                "image": "registry.redhat.io/devspaces/configbump-rhel8@sha256:57b7680bbc9095ca8c09bce4a222b1174d8c887e057e350fca6bcca9227814ad"
+            },
+            {
+                "name": "dashboard",
+                "image": "registry.redhat.io/devspaces/dashboard-rhel8@sha256:f1f79db84c6f4bd74148f3ef3d6a7b3a7e99964f91fc90527875eac9d3964d7c"
+            },
+            {
+                "name": "devfile_registry",
+                "image": "registry.redhat.io/devspaces/devfileregistry-rhel8@sha256:b027b05a97d1386d1f9f841dacec072c6c9a634a3665be8e29a3cedfddf9149a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:141e4011c6119bda8ac3009fe0b7b8535934e6692b46631d0660df8fda87c804"
+            },
+            {
+                "name": "devspaces-operator",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:e5813f94d603a3ec8a1c9fd1b88250af124d23e29d4c66ed4700b4fc250dc567"
+            },
+            {
+                "name": "devspaces-rhel8-operator-e5813f94d603a3ec8a1c9fd1b88250af124d23e29d4c66ed4700b4fc250dc567-annotation",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:e5813f94d603a3ec8a1c9fd1b88250af124d23e29d4c66ed4700b4fc250dc567"
+            },
+            {
+                "name": "devspaces_idea_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:f0e2a84f9b7a90c3738afee178e30fd4b0f8bdd81643ba612448175aa33d9747"
+            },
+            {
+                "name": "devspaces_idea_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:f0e2a84f9b7a90c3738afee178e30fd4b0f8bdd81643ba612448175aa33d9747"
+            },
+            {
+                "name": "devspaces_machineexec_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "devspaces_machineexec_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "plugin_registry",
+                "image": "registry.redhat.io/devspaces/pluginregistry-rhel8@sha256:e151af74715a484bda3bb803f740490a5acf4b05a85011d42f3809d1410fb2b6"
+            },
+            {
+                "name": "che_server",
+                "image": "registry.redhat.io/devspaces/server-rhel8@sha256:09cf293f6908ecb4fa535b0e84c795eadb9509b76f71abb798189dca8734f465"
+            },
+            {
+                "name": "devspaces_theia_endpoint_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:ce74edd6ee3ce12b1ce30d7b3dae5efd6bd997b1184b4822230a913d3f9bf067"
+            },
+            {
+                "name": "devspaces_theia_endpoint_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:ce74edd6ee3ce12b1ce30d7b3dae5efd6bd997b1184b4822230a913d3f9bf067"
+            },
+            {
+                "name": "devspaces_theia_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:72b712f20bbf8ac7c9084d347a1b600990badd3132034399a558851434f80b58"
+            },
+            {
+                "name": "devspaces_theia_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:72b712f20bbf8ac7c9084d347a1b600990badd3132034399a558851434f80b58"
+            },
+            {
+                "name": "single_host_gateway",
+                "image": "registry.redhat.io/devspaces/traefik-rhel8@sha256:2b5f61d16bcc309390e1f403bca5ab9d49e9d3497d212b34b5f0bd9044dc6c83"
+            },
+            {
+                "name": "devspaces_udi_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:aed2d0df14feebbc5536c4f66184bb9cdcc7c1177351708467fa64f69c8d6e40"
+            },
+            {
+                "name": "devspaces_udi_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:aed2d0df14feebbc5536c4f66184bb9cdcc7c1177351708467fa64f69c8d6e40"
+            },
+            {
+                "name": "devworkspace_controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "jboss_eap_7_eap_xp3_openjdk11_openshift_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8@sha256:10bb25f6e4cd71a6e8f9a017e7a7bac1926487fe1cffadef2dc8027819eb2898"
+            },
+            {
+                "name": "jboss_eap_7_eap74_openjdk11_openshift_devfile_registry_image_g4xdilrubi______",
+                "image": "registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8@sha256:ccd43d785e346bd9e88fc8a312ad148a7605ae587df9ed7560b3c6c0ceb8dd01"
+            },
+            {
+                "name": "gateway_authorization_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:c9d0a5a2871c24c0b1058e419f2b090429363a319856397855412fd2c0037395"
+            },
+            {
+                "name": "gateway_authentication_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:341fc9ebbe33dbf52af02f282d851d19bf5e1c935deaff007f4e076b12e8a915"
+            },
+            {
+                "name": "postgres_13_3",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:fd88f0893f0ee293319a2dadb8df5e41a1bad127ba1ec3ad6a7aca09b04094d8"
+            },
+            {
+                "name": "postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-96@sha256:314747a4a64ac16c33ead6a34479dccf16b9a07abf440ea7eeef7cda4cd19e32"
+            },
+            {
+                "name": "rhscl_mongodb_36_rhel7_devfile_registry_image_gewtkmak",
+                "image": "registry.redhat.io/rhscl/mongodb-36-rhel7@sha256:9f799d356d7d2e442bde9d401b720600fd9059a3d8eefea6f3b2ffa721c0dc73"
+            },
+            {
+                "name": "pvc_jobs",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:3f32ebba0cbf3849a48372d4fc3a4ce70816f248d39eb50da7ea5f15c7f9d120"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devspacesoperator.v3.0.1",
+        "package": "devspaces",
+        "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:bef1e21e2b2c0ebdd721f5d0bfeb857a3b2cd477cb9fa333a944dc7368a04b7a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "org.eclipse.che",
+                    "kind": "CheCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devspaces",
+                    "version": "3.0.1"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "versionRange": ">=0.12.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "single_host_gateway_config_sidecar",
+                "image": "registry.redhat.io/devspaces/configbump-rhel8@sha256:57b7680bbc9095ca8c09bce4a222b1174d8c887e057e350fca6bcca9227814ad"
+            },
+            {
+                "name": "dashboard",
+                "image": "registry.redhat.io/devspaces/dashboard-rhel8@sha256:b06f48eaf6cd0d3eab7bc0e1206fad3e39569fd8dc3b30d5f9e96c2d882d163a"
+            },
+            {
+                "name": "devfile_registry",
+                "image": "registry.redhat.io/devspaces/devfileregistry-rhel8@sha256:b027b05a97d1386d1f9f841dacec072c6c9a634a3665be8e29a3cedfddf9149a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:bef1e21e2b2c0ebdd721f5d0bfeb857a3b2cd477cb9fa333a944dc7368a04b7a"
+            },
+            {
+                "name": "devspaces-operator",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:6a3d7588e21ce79587cc0ed11821a33f70993d5085d456f1c674ca31c0112da0"
+            },
+            {
+                "name": "devspaces-rhel8-operator-6a3d7588e21ce79587cc0ed11821a33f70993d5085d456f1c674ca31c0112da0-annotation",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:6a3d7588e21ce79587cc0ed11821a33f70993d5085d456f1c674ca31c0112da0"
+            },
+            {
+                "name": "devspaces_idea_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:01f66a585c9d0f38c4630144880aabcfd2c81008f9cf7ebed7b869590398c57a"
+            },
+            {
+                "name": "devspaces_idea_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:01f66a585c9d0f38c4630144880aabcfd2c81008f9cf7ebed7b869590398c57a"
+            },
+            {
+                "name": "devspaces_machineexec_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "devspaces_machineexec_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "plugin_registry",
+                "image": "registry.redhat.io/devspaces/pluginregistry-rhel8@sha256:e151af74715a484bda3bb803f740490a5acf4b05a85011d42f3809d1410fb2b6"
+            },
+            {
+                "name": "che_server",
+                "image": "registry.redhat.io/devspaces/server-rhel8@sha256:7527fd5df0bdfd83b132c1a7a69e7fcca8a637438936e2f7e77050573a6ed891"
+            },
+            {
+                "name": "devspaces_theia_endpoint_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:ce74edd6ee3ce12b1ce30d7b3dae5efd6bd997b1184b4822230a913d3f9bf067"
+            },
+            {
+                "name": "devspaces_theia_endpoint_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:ce74edd6ee3ce12b1ce30d7b3dae5efd6bd997b1184b4822230a913d3f9bf067"
+            },
+            {
+                "name": "devspaces_theia_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:72b712f20bbf8ac7c9084d347a1b600990badd3132034399a558851434f80b58"
+            },
+            {
+                "name": "devspaces_theia_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:72b712f20bbf8ac7c9084d347a1b600990badd3132034399a558851434f80b58"
+            },
+            {
+                "name": "single_host_gateway",
+                "image": "registry.redhat.io/devspaces/traefik-rhel8@sha256:2b5f61d16bcc309390e1f403bca5ab9d49e9d3497d212b34b5f0bd9044dc6c83"
+            },
+            {
+                "name": "devspaces_udi_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:b9553a59c57b10d7e0fae9fc9a96f258d7b0c47f1d347054aab90bf25bb1e4ce"
+            },
+            {
+                "name": "devspaces_udi_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:b9553a59c57b10d7e0fae9fc9a96f258d7b0c47f1d347054aab90bf25bb1e4ce"
+            },
+            {
+                "name": "devworkspace_controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "jboss_eap_7_eap_xp3_openjdk11_openshift_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8@sha256:cafc2d5e045cfc19c599780395f2ff7624c3324f2e3bb7c0a0d07c58b64bfbda"
+            },
+            {
+                "name": "jboss_eap_7_eap74_openjdk11_openshift_devfile_registry_image_g4xdilrubi______",
+                "image": "registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8@sha256:ccd43d785e346bd9e88fc8a312ad148a7605ae587df9ed7560b3c6c0ceb8dd01"
+            },
+            {
+                "name": "gateway_authorization_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:99dc6b5af811bb33892c17334dd4e1a7eddc6982d49a793b1789f505e00f49b1"
+            },
+            {
+                "name": "gateway_authentication_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:61fbda4386dc45dbfbb27a4501a93dd4ca7eb17912a4de59ad76d25ada8ffbe2"
+            },
+            {
+                "name": "postgres_13_3",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:d8ec037e60575b86320fdc162117600240ce53038fb8b9b7296ce525d2b8e605"
+            },
+            {
+                "name": "postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-96@sha256:314747a4a64ac16c33ead6a34479dccf16b9a07abf440ea7eeef7cda4cd19e32"
+            },
+            {
+                "name": "rhscl_mongodb_36_rhel7_devfile_registry_image_gewtkmak",
+                "image": "registry.redhat.io/rhscl/mongodb-36-rhel7@sha256:9f799d356d7d2e442bde9d401b720600fd9059a3d8eefea6f3b2ffa721c0dc73"
+            },
+            {
+                "name": "pvc_jobs",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:6e79406e33049907e875cb65a31ee2f0575f47afa0f06e3a2a9316b01ee379eb"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devspacesoperator.v3.0.1-0.1660823057.p",
+        "package": "devspaces",
+        "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:c93ce56dfb7b29e897c3d559eaf8c851e894f0fe513b0bc506e733826ec37dfc",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "org.eclipse.che",
+                    "kind": "CheCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devspaces",
+                    "version": "3.0.1+0.1660823057.p"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "versionRange": ">=0.12.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "single_host_gateway_config_sidecar",
+                "image": "registry.redhat.io/devspaces/configbump-rhel8@sha256:57b7680bbc9095ca8c09bce4a222b1174d8c887e057e350fca6bcca9227814ad"
+            },
+            {
+                "name": "dashboard",
+                "image": "registry.redhat.io/devspaces/dashboard-rhel8@sha256:b06f48eaf6cd0d3eab7bc0e1206fad3e39569fd8dc3b30d5f9e96c2d882d163a"
+            },
+            {
+                "name": "devfile_registry",
+                "image": "registry.redhat.io/devspaces/devfileregistry-rhel8@sha256:b027b05a97d1386d1f9f841dacec072c6c9a634a3665be8e29a3cedfddf9149a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:c93ce56dfb7b29e897c3d559eaf8c851e894f0fe513b0bc506e733826ec37dfc"
+            },
+            {
+                "name": "devspaces-operator",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:6a3d7588e21ce79587cc0ed11821a33f70993d5085d456f1c674ca31c0112da0"
+            },
+            {
+                "name": "devspaces-rhel8-operator-6a3d7588e21ce79587cc0ed11821a33f70993d5085d456f1c674ca31c0112da0-annotation",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:6a3d7588e21ce79587cc0ed11821a33f70993d5085d456f1c674ca31c0112da0"
+            },
+            {
+                "name": "devspaces_idea_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:6f6a8413d49ed8ee9f722d1140c4d2b55cc646c117afab24448d8a33801bc43a"
+            },
+            {
+                "name": "devspaces_idea_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:6f6a8413d49ed8ee9f722d1140c4d2b55cc646c117afab24448d8a33801bc43a"
+            },
+            {
+                "name": "devspaces_machineexec_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "devspaces_machineexec_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:dbcf3db66bf3976cd53d08e5887df54287184ca78c80b58b95528fc1c9f73dde"
+            },
+            {
+                "name": "plugin_registry",
+                "image": "registry.redhat.io/devspaces/pluginregistry-rhel8@sha256:e151af74715a484bda3bb803f740490a5acf4b05a85011d42f3809d1410fb2b6"
+            },
+            {
+                "name": "che_server",
+                "image": "registry.redhat.io/devspaces/server-rhel8@sha256:fa16c543213d4b162387a866a637177538e53cc73d58a520f4fbb23f844d6a67"
+            },
+            {
+                "name": "devspaces_theia_endpoint_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:ce74edd6ee3ce12b1ce30d7b3dae5efd6bd997b1184b4822230a913d3f9bf067"
+            },
+            {
+                "name": "devspaces_theia_endpoint_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:ce74edd6ee3ce12b1ce30d7b3dae5efd6bd997b1184b4822230a913d3f9bf067"
+            },
+            {
+                "name": "devspaces_theia_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:72b712f20bbf8ac7c9084d347a1b600990badd3132034399a558851434f80b58"
+            },
+            {
+                "name": "devspaces_theia_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:72b712f20bbf8ac7c9084d347a1b600990badd3132034399a558851434f80b58"
+            },
+            {
+                "name": "single_host_gateway",
+                "image": "registry.redhat.io/devspaces/traefik-rhel8@sha256:2b5f61d16bcc309390e1f403bca5ab9d49e9d3497d212b34b5f0bd9044dc6c83"
+            },
+            {
+                "name": "devspaces_udi_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:11dbee7a5ffd7abaa05561449a0dd97cfad982af5fccdecd4df65ca6b21b67b3"
+            },
+            {
+                "name": "devspaces_udi_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:11dbee7a5ffd7abaa05561449a0dd97cfad982af5fccdecd4df65ca6b21b67b3"
+            },
+            {
+                "name": "devworkspace_controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "jboss_eap_7_eap_xp3_openjdk11_openshift_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8@sha256:cafc2d5e045cfc19c599780395f2ff7624c3324f2e3bb7c0a0d07c58b64bfbda"
+            },
+            {
+                "name": "jboss_eap_7_eap74_openjdk11_openshift_devfile_registry_image_g4xdilrubi______",
+                "image": "registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8@sha256:ccd43d785e346bd9e88fc8a312ad148a7605ae587df9ed7560b3c6c0ceb8dd01"
+            },
+            {
+                "name": "gateway_authorization_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:99dc6b5af811bb33892c17334dd4e1a7eddc6982d49a793b1789f505e00f49b1"
+            },
+            {
+                "name": "gateway_authentication_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:61fbda4386dc45dbfbb27a4501a93dd4ca7eb17912a4de59ad76d25ada8ffbe2"
+            },
+            {
+                "name": "postgres_13_3",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:d8ec037e60575b86320fdc162117600240ce53038fb8b9b7296ce525d2b8e605"
+            },
+            {
+                "name": "postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-96@sha256:314747a4a64ac16c33ead6a34479dccf16b9a07abf440ea7eeef7cda4cd19e32"
+            },
+            {
+                "name": "rhscl_mongodb_36_rhel7_devfile_registry_image_gewtkmak",
+                "image": "registry.redhat.io/rhscl/mongodb-36-rhel7@sha256:9f799d356d7d2e442bde9d401b720600fd9059a3d8eefea6f3b2ffa721c0dc73"
+            },
+            {
+                "name": "pvc_jobs",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:6e79406e33049907e875cb65a31ee2f0575f47afa0f06e3a2a9316b01ee379eb"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "devspacesoperator.v3.1.0",
+        "package": "devspaces",
+        "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:64d738bbd7ba986288f749af6f27c6ec44e8a942f1ee34681ceb916d013d584b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "org.eclipse.che",
+                    "kind": "CheCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "org.eclipse.che",
+                    "kind": "CheCluster",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "devspaces",
+                    "version": "3.1.0"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "devworkspace-operator",
+                    "versionRange": ">=0.12.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "devspaces_code_plugin_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/code-rhel8@sha256:497406878c9821fab167bda228f315f8fa7873091648e3a902605fb645c22a4d"
+            },
+            {
+                "name": "devspaces_code_devfile_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/code-rhel8@sha256:497406878c9821fab167bda228f315f8fa7873091648e3a902605fb645c22a4d"
+            },
+            {
+                "name": "single_host_gateway_config_sidecar",
+                "image": "registry.redhat.io/devspaces/configbump-rhel8@sha256:61e9fdf11079667a50ebbb3f3d79b98c1e7aba3ce94801216cde8de6b5d6cf64"
+            },
+            {
+                "name": "dashboard",
+                "image": "registry.redhat.io/devspaces/dashboard-rhel8@sha256:d35bbff71e5688605a75280be1bb65ada79711a1f33e53dbe10efa70a9120c0d"
+            },
+            {
+                "name": "devfile_registry",
+                "image": "registry.redhat.io/devspaces/devfileregistry-rhel8@sha256:2add07e7630d646bd2e35a190952d420aea6bdd3b36a74f9f0dd5d1609ff06e8"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/devspaces/devspaces-operator-bundle@sha256:64d738bbd7ba986288f749af6f27c6ec44e8a942f1ee34681ceb916d013d584b"
+            },
+            {
+                "name": "devspaces-operator",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:1f93020b4dd2bab3fea8645abb0390676f075f6a5a97896a8925e65412e2016a"
+            },
+            {
+                "name": "devspaces-rhel8-operator-1f93020b4dd2bab3fea8645abb0390676f075f6a5a97896a8925e65412e2016a-annotation",
+                "image": "registry.redhat.io/devspaces/devspaces-rhel8-operator@sha256:1f93020b4dd2bab3fea8645abb0390676f075f6a5a97896a8925e65412e2016a"
+            },
+            {
+                "name": "devspaces_idea_plugin_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:6bb24e48e9ffb09fe6192b0e234fae0a5e920ebef0bf471271a624dbb1f14fbd"
+            },
+            {
+                "name": "devspaces_idea_devfile_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/idea-rhel8@sha256:6bb24e48e9ffb09fe6192b0e234fae0a5e920ebef0bf471271a624dbb1f14fbd"
+            },
+            {
+                "name": "devspaces_machineexec_devfile_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:655a1ad265b5829f053d4ef3c7160cccbc92d85dcb8659f98fc4dc28563b78bc"
+            },
+            {
+                "name": "devspaces_machineexec_plugin_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/machineexec-rhel8@sha256:655a1ad265b5829f053d4ef3c7160cccbc92d85dcb8659f98fc4dc28563b78bc"
+            },
+            {
+                "name": "plugin_registry",
+                "image": "registry.redhat.io/devspaces/pluginregistry-rhel8@sha256:479161f0355ec69a8e72b51f0fb85524b1e135d1164c1ca3ebf75fa175fc647e"
+            },
+            {
+                "name": "che_server",
+                "image": "registry.redhat.io/devspaces/server-rhel8@sha256:73ef4ad89bcce1ca19695f8b5f6a67f928bb725810ceef004307c44ad17af4e6"
+            },
+            {
+                "name": "devspaces_theia_endpoint_devfile_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:117a5b3aa5141153726057ed88a7f49e6a94a4332ddcd483d6158ffeb6cb1829"
+            },
+            {
+                "name": "devspaces_theia_endpoint_plugin_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/theia-endpoint-rhel8@sha256:117a5b3aa5141153726057ed88a7f49e6a94a4332ddcd483d6158ffeb6cb1829"
+            },
+            {
+                "name": "devspaces_theia_plugin_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:933457f98945a0ba477ef090183b863ddf93ae6ec72574bb38605797d5401c2a"
+            },
+            {
+                "name": "devspaces_theia_devfile_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/theia-rhel8@sha256:933457f98945a0ba477ef090183b863ddf93ae6ec72574bb38605797d5401c2a"
+            },
+            {
+                "name": "single_host_gateway",
+                "image": "registry.redhat.io/devspaces/traefik-rhel8@sha256:bca36a7a19cf561f04a6ff76d2932c475ac677651160014219a7f86c87e9751f"
+            },
+            {
+                "name": "devspaces_udi_devfile_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:d55549aad15742f6f7310da0c7abc1e65dd5d3ad2e3efb8fbf414cf91b9efac7"
+            },
+            {
+                "name": "devspaces_udi_plugin_registry_image_gmxdccq_",
+                "image": "registry.redhat.io/devspaces/udi-rhel8@sha256:d55549aad15742f6f7310da0c7abc1e65dd5d3ad2e3efb8fbf414cf91b9efac7"
+            },
+            {
+                "name": "devworkspace_controller",
+                "image": "registry.redhat.io/devworkspace/devworkspace-rhel8-operator@sha256:f03c80ddc410d25b59de26837825fa0626b0eff5eaa4780aab5f96ebe210af19"
+            },
+            {
+                "name": "jboss_eap_7_eap_xp3_openjdk11_openshift_devfile_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8@sha256:ede8f51e311a129c877a227841ececd63a1b0c4d04fb4ec01f9e81d491737287"
+            },
+            {
+                "name": "jboss_eap_7_eap_xp3_openjdk11_openshift_plugin_registry_image_gmxdacq_",
+                "image": "registry.redhat.io/jboss-eap-7/eap-xp3-openjdk11-openshift-rhel8@sha256:ede8f51e311a129c877a227841ececd63a1b0c4d04fb4ec01f9e81d491737287"
+            },
+            {
+                "name": "jboss_eap_7_eap74_openjdk11_openshift_plugin_registry_image_g4xdilrubi______",
+                "image": "registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8@sha256:ccd43d785e346bd9e88fc8a312ad148a7605ae587df9ed7560b3c6c0ceb8dd01"
+            },
+            {
+                "name": "jboss_eap_7_eap74_openjdk11_openshift_devfile_registry_image_g4xdilrubi______",
+                "image": "registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8@sha256:ccd43d785e346bd9e88fc8a312ad148a7605ae587df9ed7560b3c6c0ceb8dd01"
+            },
+            {
+                "name": "gateway_authorization_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:99dc6b5af811bb33892c17334dd4e1a7eddc6982d49a793b1789f505e00f49b1"
+            },
+            {
+                "name": "gateway_authentication_sidecar",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:61fbda4386dc45dbfbb27a4501a93dd4ca7eb17912a4de59ad76d25ada8ffbe2"
+            },
+            {
+                "name": "postgres_13_3",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:d8ec037e60575b86320fdc162117600240ce53038fb8b9b7296ce525d2b8e605"
+            },
+            {
+                "name": "postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-96@sha256:314747a4a64ac16c33ead6a34479dccf16b9a07abf440ea7eeef7cda4cd19e32"
+            },
+            {
+                "name": "rhscl_mongodb_36_rhel7_devfile_registry_image_gewtkmak",
+                "image": "registry.redhat.io/rhscl/mongodb-36-rhel7@sha256:9f799d356d7d2e442bde9d401b720600fd9059a3d8eefea6f3b2ffa721c0dc73"
+            },
+            {
+                "name": "rhscl_mongodb_36_rhel7_plugin_registry_image_gewtkmak",
+                "image": "registry.redhat.io/rhscl/mongodb-36-rhel7@sha256:9f799d356d7d2e442bde9d401b720600fd9059a3d8eefea6f3b2ffa721c0dc73"
+            },
+            {
+                "name": "pvc_jobs",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:6e79406e33049907e875cb65a31ee2f0575f47afa0f06e3a2a9316b01ee379eb"
+            }
+        ]
+    }

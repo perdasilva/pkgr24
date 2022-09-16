@@ -1,0 +1,239 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: jaeger-product
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "jaeger-product",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "jaeger-product",
+        "entries": [
+            {
+                "name": "jaeger-operator.v1.30.2",
+                "skipRange": ">=1.13.0 <1.30.2"
+            },
+            {
+                "name": "jaeger-operator.v1.34.1-5",
+                "replaces": "jaeger-operator.v1.30.2",
+                "skipRange": ">=1.13.0 <1.34.1-5"
+            },
+            {
+                "name": "jaeger-operator.v1.36.0-2",
+                "replaces": "jaeger-operator.v1.34.1-5",
+                "skipRange": ">=1.13.0 <1.36.0-2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "jaeger-operator.v1.30.2",
+        "package": "jaeger-product",
+        "image": "registry.redhat.io/rhosdt/jaeger-operator-bundle@sha256:7ba469ddaa5bf0290a57d10820857273631fabe642e3e0fff38a159e1c5d3487",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "jaegertracing.io",
+                    "kind": "Jaeger",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "jaeger-product",
+                    "version": "1.30.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:f000432f07cd187469f0310e3ed9dcf9a5db2be14b8bab9c5293dd1ee8518176"
+            },
+            {
+                "name": "jaeger_agent",
+                "image": "registry.redhat.io/rhosdt/jaeger-agent-rhel8@sha256:7e6f0d33d2b780c00d251ea539d9d8bf6536211de33e4dd5dc6768d7730018b9"
+            },
+            {
+                "name": "jaeger_all_in_one",
+                "image": "registry.redhat.io/rhosdt/jaeger-all-in-one-rhel8@sha256:6f7f0cd20204a27d09b80bd6dc34e9e8f5e73cda0cb8667c1f253444f5831cb9"
+            },
+            {
+                "name": "jaeger_collector",
+                "image": "registry.redhat.io/rhosdt/jaeger-collector-rhel8@sha256:dcf679a8a91afab1736d14ecaa795b6a8bce18440cd1d877c7b75d361df6b3cf"
+            },
+            {
+                "name": "jaeger_es_index_cleaner",
+                "image": "registry.redhat.io/rhosdt/jaeger-es-index-cleaner-rhel8@sha256:f137cba9fe55dc4d14a50157b444f06142deeb1d9a1e8330b3fd9c0dbbcc4586"
+            },
+            {
+                "name": "jaeger_es_rollover",
+                "image": "registry.redhat.io/rhosdt/jaeger-es-rollover-rhel8@sha256:1190e1fba6fb319cc6265bcc3d6fe2afaca9bfba97eb0156fd8df64442365055"
+            },
+            {
+                "name": "jaeger_ingester",
+                "image": "registry.redhat.io/rhosdt/jaeger-ingester-rhel8@sha256:c4442fe7809ededcfade2a66d263c259bafa322479a648c6e5d767e0c224206b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhosdt/jaeger-operator-bundle@sha256:7ba469ddaa5bf0290a57d10820857273631fabe642e3e0fff38a159e1c5d3487"
+            },
+            {
+                "name": "jaeger_query",
+                "image": "registry.redhat.io/rhosdt/jaeger-query-rhel8@sha256:e57c905da1940d56565184d078092795a4098294b6060115b7d38c2e354562dd"
+            },
+            {
+                "name": "jaeger-rhel8-operator-dd9bb3d0a09240317520c52bca62cf678d88a488895f7790a58c1eaea4470f40-annotation",
+                "image": "registry.redhat.io/rhosdt/jaeger-rhel8-operator@sha256:dd9bb3d0a09240317520c52bca62cf678d88a488895f7790a58c1eaea4470f40"
+            },
+            {
+                "name": "jaeger-operator",
+                "image": "registry.redhat.io/rhosdt/jaeger-rhel8-operator@sha256:dd9bb3d0a09240317520c52bca62cf678d88a488895f7790a58c1eaea4470f40"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "jaeger-operator.v1.34.1-5",
+        "package": "jaeger-product",
+        "image": "registry.redhat.io/rhosdt/jaeger-operator-bundle@sha256:acd977614725bdeb405d0b5e60f45d928ce2d5936b7052fef77012375a0c0b7a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "jaegertracing.io",
+                    "kind": "Jaeger",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "jaeger-product",
+                    "version": "1.34.1-5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3658954f199040b0f244945c94955f794ee68008657421002e1b32962e7c30fc"
+            },
+            {
+                "name": "jaeger_agent",
+                "image": "registry.redhat.io/rhosdt/jaeger-agent-rhel8@sha256:1abd4fb796c97c0b3cbff44097b89de2c248b09b89da49f7a9e1ee65f4323538"
+            },
+            {
+                "name": "jaeger_all_in_one",
+                "image": "registry.redhat.io/rhosdt/jaeger-all-in-one-rhel8@sha256:fc406efab4b0b6000443da3c795196903136ce00a1f1b73691951eb664f2db10"
+            },
+            {
+                "name": "jaeger_collector",
+                "image": "registry.redhat.io/rhosdt/jaeger-collector-rhel8@sha256:8afef496c682d0f8781e2e3e55e71d3df51510954c1cd992a69ca5ddb64156e9"
+            },
+            {
+                "name": "jaeger_es_index_cleaner",
+                "image": "registry.redhat.io/rhosdt/jaeger-es-index-cleaner-rhel8@sha256:7983d9d761e2b209c238570bea1d639d127cab3f3d78dbcdb4d6301f5c5032ae"
+            },
+            {
+                "name": "jaeger_es_rollover",
+                "image": "registry.redhat.io/rhosdt/jaeger-es-rollover-rhel8@sha256:1d58099b27147efbf32b9a26372484a8d92e3377d146e7db14999b0d2fbac361"
+            },
+            {
+                "name": "jaeger_ingester",
+                "image": "registry.redhat.io/rhosdt/jaeger-ingester-rhel8@sha256:854e0b6997d254d467d25e839b5a3c2b00c224d200023c8139126bbee5c5fc86"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhosdt/jaeger-operator-bundle@sha256:acd977614725bdeb405d0b5e60f45d928ce2d5936b7052fef77012375a0c0b7a"
+            },
+            {
+                "name": "jaeger_query",
+                "image": "registry.redhat.io/rhosdt/jaeger-query-rhel8@sha256:4bc5e465e8a72e1f2274d66e40a1b461c4871700ba0ccf140d4137782acfeb1e"
+            },
+            {
+                "name": "jaeger-rhel8-operator-7ed7376258fcb20a0ddd27eb602b0d31a7c01b8e91fdebd73f503968952c41e2-annotation",
+                "image": "registry.redhat.io/rhosdt/jaeger-rhel8-operator@sha256:7ed7376258fcb20a0ddd27eb602b0d31a7c01b8e91fdebd73f503968952c41e2"
+            },
+            {
+                "name": "jaeger-operator",
+                "image": "registry.redhat.io/rhosdt/jaeger-rhel8-operator@sha256:7ed7376258fcb20a0ddd27eb602b0d31a7c01b8e91fdebd73f503968952c41e2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "jaeger-operator.v1.36.0-2",
+        "package": "jaeger-product",
+        "image": "registry.redhat.io/rhosdt/jaeger-operator-bundle@sha256:6d34cbeeac2df0368c1fe4bc00547e5a08408f61d274010572b140e10c3400db",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "jaegertracing.io",
+                    "kind": "Jaeger",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "jaeger-product",
+                    "version": "1.36.0-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:5788b159ae45b1ec72445700b3c34d5ad0aa9451234a06ed7e465034fa79edc2"
+            },
+            {
+                "name": "jaeger_agent",
+                "image": "registry.redhat.io/rhosdt/jaeger-agent-rhel8@sha256:9d05ee825746d617753c2c89a074dbf4f9820e0bf9acd5c477bd01c130e9f40f"
+            },
+            {
+                "name": "jaeger_all_in_one",
+                "image": "registry.redhat.io/rhosdt/jaeger-all-in-one-rhel8@sha256:9ef1f5870f4cf518c9c60441a969108b9f9bec3ec24881ee8faca6e535d801bd"
+            },
+            {
+                "name": "jaeger_collector",
+                "image": "registry.redhat.io/rhosdt/jaeger-collector-rhel8@sha256:115116eb1a449604fbe4aaf0b3a374a3e761b1c5036ee28c68d9f290999816e1"
+            },
+            {
+                "name": "jaeger_es_index_cleaner",
+                "image": "registry.redhat.io/rhosdt/jaeger-es-index-cleaner-rhel8@sha256:6adce2fc9bcd7e02eca60312a586104f5c2b48cef35d9d908a8317e47fe81ffa"
+            },
+            {
+                "name": "jaeger_es_rollover",
+                "image": "registry.redhat.io/rhosdt/jaeger-es-rollover-rhel8@sha256:9e88b9ff7f550f14216921982a215eaad5a0364d75ac23f4b50d6b2644b43943"
+            },
+            {
+                "name": "jaeger_ingester",
+                "image": "registry.redhat.io/rhosdt/jaeger-ingester-rhel8@sha256:70389601dbc8768a033eb4ff82b210c6931a8a462ba5efc50fd380036afa66d8"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhosdt/jaeger-operator-bundle@sha256:6d34cbeeac2df0368c1fe4bc00547e5a08408f61d274010572b140e10c3400db"
+            },
+            {
+                "name": "jaeger_query",
+                "image": "registry.redhat.io/rhosdt/jaeger-query-rhel8@sha256:cfb04f94dd0524801ef490c32f30b3ed22da9c9fe7a4cbec58d477d115ce229d"
+            },
+            {
+                "name": "jaeger-rhel8-operator-344e17bbc22b94defdcc94e6c1e9899337ae4f7516f4f1170f1bf560ac2ed01f-annotation",
+                "image": "registry.redhat.io/rhosdt/jaeger-rhel8-operator@sha256:344e17bbc22b94defdcc94e6c1e9899337ae4f7516f4f1170f1bf560ac2ed01f"
+            },
+            {
+                "name": "jaeger-operator",
+                "image": "registry.redhat.io/rhosdt/jaeger-rhel8-operator@sha256:344e17bbc22b94defdcc94e6c1e9899337ae4f7516f4f1170f1bf560ac2ed01f"
+            }
+        ]
+    }

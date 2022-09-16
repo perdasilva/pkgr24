@@ -1,0 +1,70 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: cluster-kube-descheduler-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "cluster-kube-descheduler-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "4.11",
+        "package": "cluster-kube-descheduler-operator",
+        "entries": [
+            {
+                "name": "clusterkubedescheduleroperator.4.11.0-202208150736",
+                "skipRange": ">=4.8.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "cluster-kube-descheduler-operator",
+        "entries": [
+            {
+                "name": "clusterkubedescheduleroperator.4.11.0-202208150736",
+                "skipRange": ">=4.8.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "clusterkubedescheduleroperator.4.11.0-202208150736",
+        "package": "cluster-kube-descheduler-operator",
+        "image": "registry.redhat.io/openshift4/ose-cluster-kube-descheduler-operator-bundle@sha256:293931b6b9a2b3cb31e82b8585649a755287a5862b84970fc1afc329912d36ec",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.openshift.io",
+                    "kind": "KubeDescheduler",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cluster-kube-descheduler-operator",
+                    "version": "4.11.0-202208150736"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/ose-cluster-kube-descheduler-operator-bundle@sha256:293931b6b9a2b3cb31e82b8585649a755287a5862b84970fc1afc329912d36ec"
+            },
+            {
+                "name": "ose-cluster-kube-descheduler-operator",
+                "image": "registry.redhat.io/openshift4/ose-cluster-kube-descheduler-operator@sha256:1f5e227e432f53bd802ee1b989b98e885f1feabed0f8a67d9f5e473708b4da9d"
+            },
+            {
+                "name": "ose-descheduler",
+                "image": "registry.redhat.io/openshift4/ose-descheduler@sha256:1b05327819a91575e152798e5827340b19b87450f789c1fb3682cfcfea1295ae"
+            }
+        ]
+    }

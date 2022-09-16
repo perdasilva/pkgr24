@@ -1,0 +1,58 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: tang-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "tang-operator",
+        "defaultChannel": "0.0.24"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "0.0.24",
+        "package": "tang-operator",
+        "entries": [
+            {
+                "name": "tang-operator.v0.0.24"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "tang-operator.v0.0.24",
+        "package": "tang-operator",
+        "image": "registry.redhat.io/rhel9-beta/tang-operator-bundle@sha256:be7053361e3a0e2639b4f4e242aca4ed28aa467f41273ee303228e159d0fef04",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "daemons.redhat.com",
+                    "kind": "TangServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "tang-operator",
+                    "version": "0.0.24"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:8b4f814c112d7b91dc5e7904d4f3c684f3d77227344d2b553a84d4a1bc2829d3"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhel9-beta/tang-operator-bundle@sha256:be7053361e3a0e2639b4f4e242aca4ed28aa467f41273ee303228e159d0fef04"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhel9-beta/tang-operator@sha256:9963167fe37897473167d5b1af578881592479093e086d2ffb7ff4b7bec4d39e"
+            }
+        ]
+    }

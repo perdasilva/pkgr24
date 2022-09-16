@@ -1,0 +1,241 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: fuse-console
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "fuse-console",
+        "defaultChannel": "7.11.x"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "7.10.x",
+        "package": "fuse-console",
+        "entries": [
+            {
+                "name": "fuse-console.v7.10.3",
+                "skipRange": ">=7.7.0 <7.10.3"
+            },
+            {
+                "name": "fuse-console.v7.10.3-0.1652362834.p",
+                "skipRange": ">=7.7.0 <7.10.3"
+            },
+            {
+                "name": "fuse-console.v7.10.3-0.1655306919.p",
+                "skips": [
+                    "fuse-console.v7.10.3-0.1652362834.p",
+                    "fuse-console.v7.10.3"
+                ],
+                "skipRange": ">=7.7.0 <7.10.3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "7.11.x",
+        "package": "fuse-console",
+        "entries": [
+            {
+                "name": "fuse-console.v7.11.0",
+                "skipRange": ">=7.7.0 <7.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "7.9.x",
+        "package": "fuse-console",
+        "entries": [
+            {
+                "name": "fuse-console.v7.9.0",
+                "skipRange": ">=7.7.0 <7.9.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-console.v7.10.3",
+        "package": "fuse-console",
+        "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:aaf0951c3d99ad273c67af39d9fa00ee213596c7ba5fa3783f2b7c971ac17b5e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "hawt.io",
+                    "kind": "Hawtio",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-console",
+                    "version": "7.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:aaf0951c3d99ad273c67af39d9fa00ee213596c7ba5fa3783f2b7c971ac17b5e"
+            },
+            {
+                "name": "fuse-console-rhel8-operator-f721823833a3bc2016c8eee2c1aebb11e3ea3f5262ed8322c9d6425ba71a8c00-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:f721823833a3bc2016c8eee2c1aebb11e3ea3f5262ed8322c9d6425ba71a8c00"
+            },
+            {
+                "name": "fuse-console-operator",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:f721823833a3bc2016c8eee2c1aebb11e3ea3f5262ed8322c9d6425ba71a8c00"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-console.v7.10.3-0.1652362834.p",
+        "package": "fuse-console",
+        "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:4dd4c64b1bac4348f8687ece2eacab986cd18c5aab4a67079d9ba98f26eaf384",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "hawt.io",
+                    "kind": "Hawtio",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-console",
+                    "version": "7.10.3+0.1652362834.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:4dd4c64b1bac4348f8687ece2eacab986cd18c5aab4a67079d9ba98f26eaf384"
+            },
+            {
+                "name": "fuse-console-rhel8-operator-46f0fd19d65c959aaa460450043a5658ad22f326f80d12f631e25da551bc10f4-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:46f0fd19d65c959aaa460450043a5658ad22f326f80d12f631e25da551bc10f4"
+            },
+            {
+                "name": "fuse-console-operator",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:46f0fd19d65c959aaa460450043a5658ad22f326f80d12f631e25da551bc10f4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-console.v7.10.3-0.1655306919.p",
+        "package": "fuse-console",
+        "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:bbfddd7cb4a6cb7a131a0cef174054890fd39956d63e737c92fe8233ad8f98e4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "hawt.io",
+                    "kind": "Hawtio",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-console",
+                    "version": "7.10.3+0.1655306919.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:bbfddd7cb4a6cb7a131a0cef174054890fd39956d63e737c92fe8233ad8f98e4"
+            },
+            {
+                "name": "fuse-console-rhel8-operator-37dc38375f5d553ac1d9f20f66ce005ed9495354b81d7915ae3bd7dd6af132f3-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:37dc38375f5d553ac1d9f20f66ce005ed9495354b81d7915ae3bd7dd6af132f3"
+            },
+            {
+                "name": "fuse-console-operator",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:37dc38375f5d553ac1d9f20f66ce005ed9495354b81d7915ae3bd7dd6af132f3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-console.v7.11.0",
+        "package": "fuse-console",
+        "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:a0e49eb653b9d59301feb139921df92f47ccc9c9de0fe466659cf3e53b3b1051",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "hawt.io",
+                    "kind": "Hawtio",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-console",
+                    "version": "7.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:a0e49eb653b9d59301feb139921df92f47ccc9c9de0fe466659cf3e53b3b1051"
+            },
+            {
+                "name": "fuse-console-rhel8-operator-e81d22534ac531e5c3e7bdb0d7c91667c8ec328168d5249c6f88b0ef3e772a76-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:e81d22534ac531e5c3e7bdb0d7c91667c8ec328168d5249c6f88b0ef3e772a76"
+            },
+            {
+                "name": "fuse-console-operator",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:e81d22534ac531e5c3e7bdb0d7c91667c8ec328168d5249c6f88b0ef3e772a76"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-console.v7.9.0",
+        "package": "fuse-console",
+        "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:ddfdf850c9238a6988889e1840efe3175f03dad2489a5651e21cac62ac44e23e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "hawt.io",
+                    "kind": "Hawtio",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-console",
+                    "version": "7.9.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator-bundle@sha256:ddfdf850c9238a6988889e1840efe3175f03dad2489a5651e21cac62ac44e23e"
+            },
+            {
+                "name": "fuse-console-rhel8-operator-846d57f3fd9f307a98b0169b6733c26299209d99ed189f219c48f36ba771b198-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:846d57f3fd9f307a98b0169b6733c26299209d99ed189f219c48f36ba771b198"
+            },
+            {
+                "name": "fuse-console-operator",
+                "image": "registry.redhat.io/fuse7/fuse-console-rhel8-operator@sha256:846d57f3fd9f307a98b0169b6733c26299209d99ed189f219c48f36ba771b198"
+            }
+        ]
+    }

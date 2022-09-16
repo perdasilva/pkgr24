@@ -1,0 +1,339 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: multicluster-engine
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "multicluster-engine",
+        "defaultChannel": "stable-2.0"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-2.0",
+        "package": "multicluster-engine",
+        "entries": [
+            {
+                "name": "multicluster-engine.v2.0.0"
+            },
+            {
+                "name": "multicluster-engine.v2.0.1",
+                "replaces": "multicluster-engine.v2.0.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "multicluster-engine.v2.0.0",
+        "package": "multicluster-engine",
+        "image": "registry.redhat.io/multicluster-engine/mce-operator-bundle@sha256:a353490da46c9bc1464773874eca6bc327f531aaa02fc8ec739079f42bd3894e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "multicluster.openshift.io",
+                    "kind": "MultiClusterEngine",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "multicluster-engine",
+                    "version": "2.0.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "assisted_service",
+                "image": "registry.redhat.io/multicluster-engine/agent-service-rhel8@sha256:c95530e3aeb1b7c72d329f866a0f7827aa3649e41f666490d80c10a1b699ffea"
+            },
+            {
+                "name": "apiserver_network_proxy",
+                "image": "registry.redhat.io/multicluster-engine/apiserver-network-proxy-rhel8@sha256:4f0f784b66d4807d93a10d09b9d68ce225d5bbfa1d78018676c85f9f90ca9131"
+            },
+            {
+                "name": "assisted_image_service",
+                "image": "registry.redhat.io/multicluster-engine/assisted-image-service-rhel8@sha256:8c4a146d76ae624b3f57a766241ed18fe40be39cadded85df5a83d06a79e1d7b"
+            },
+            {
+                "name": "assisted_installer_agent",
+                "image": "registry.redhat.io/multicluster-engine/assisted-installer-agent-rhel8@sha256:0ca02b4786ff62b10f7f93a34de79c734e8cd6965297a4cb1ac1b0826bbe8665"
+            },
+            {
+                "name": "assisted_installer_controller",
+                "image": "registry.redhat.io/multicluster-engine/assisted-installer-reporter-rhel8@sha256:a07454cd1864371863f2cefce241f90b039e8149716ed0028622893b8fe52efb"
+            },
+            {
+                "name": "assisted_installer",
+                "image": "registry.redhat.io/multicluster-engine/assisted-installer-rhel8@sha256:0f17b87db2295cced965f59c91ca061893b0dfee1e29a1a755fe3679ed7e56a6"
+            },
+            {
+                "name": "aws_encryption_provider",
+                "image": "registry.redhat.io/multicluster-engine/aws-encryption-provider-rhel8@sha256:f0a0a6d092caa3660f94a433ebad817fa0fa4feafdd7b30605dd616dc7d10c30"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/multicluster-engine/backplane-rhel8-operator@sha256:02dbdf8ad3842d8ef86d46d51aa6d604a9a10d8d026ae3d16e04c7bc6f552a9e"
+            },
+            {
+                "name": "cluster_api_provider_agent",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-provider-agent-rhel8@sha256:05571b0eb9706bae42d62c4bb3497d0acdced028c24d38ea453955de86cb2e3d"
+            },
+            {
+                "name": "cluster_api_provider_aws",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-provider-aws-rhel8@sha256:68a6d4a4ae84a03e51c550b91903eb937776adea67017e950c135f51196d5bd3"
+            },
+            {
+                "name": "cluster_api_provider_azure",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-provider-azure-rhel8@sha256:7161cc67fbd17f2a785ac2cda6d07266ec2f398184baf4331cc3996b0b1b1568"
+            },
+            {
+                "name": "cluster_api_provider_kubevirt",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-provider-kubevirt-rhel8@sha256:af4ea6c7bf786708f2ddb25378413cf0d5e2eb1e46c81ce606383a29a87d21b0"
+            },
+            {
+                "name": "cluster_api",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-rhel8@sha256:888fc9ec91dc511a1e60a8d1dbeaf73fabef5a303b51630f7073a29a88c641f2"
+            },
+            {
+                "name": "cluster_curator_controller",
+                "image": "registry.redhat.io/multicluster-engine/cluster-curator-controller-rhel8@sha256:f97ace529de374de26721bc964bfeeecb8bbc7c9e4421acaf1371dad536d6c3c"
+            },
+            {
+                "name": "clusterclaims_controller",
+                "image": "registry.redhat.io/multicluster-engine/clusterclaims-controller-rhel8@sha256:a18339b5d9acdc1afc42656290d4949a16151093c190f5a030abdfa6a10747d0"
+            },
+            {
+                "name": "clusterlifecycle_state_metrics",
+                "image": "registry.redhat.io/multicluster-engine/clusterlifecycle-state-metrics-rhel8@sha256:084e305ba5cb7ba081cc8f27c3c78a51444fa3b9a70d1fa7fcb65e2209643f5d"
+            },
+            {
+                "name": "console_mce",
+                "image": "registry.redhat.io/multicluster-engine/console-mce-rhel8@sha256:ab70eec455b70f0256e14d86c611e132b1c0243d8e1f88186edfd58dcf71b652"
+            },
+            {
+                "name": "discovery_operator",
+                "image": "registry.redhat.io/multicluster-engine/discovery-rhel8@sha256:260ce01920a672b00a09ecd3c9c154971541e4d0da20080981a826a2d92ef857"
+            },
+            {
+                "name": "openshift_hive",
+                "image": "registry.redhat.io/multicluster-engine/hive-rhel8@sha256:e5381c0664c4ea5149e353312a3b46fafcf6fa0cfb72b78df540f88905be641a"
+            },
+            {
+                "name": "hypershift_addon_operator",
+                "image": "registry.redhat.io/multicluster-engine/hypershift-addon-rhel8-operator@sha256:c898afab14d525498b6cb284507dde7104cd21f285bf4ff39c52d75b6fe02a18"
+            },
+            {
+                "name": "hypershift_deployment_controller",
+                "image": "registry.redhat.io/multicluster-engine/hypershift-deployment-controller-rhel8@sha256:fe67b601a468b8e824216edb5b0fdd9d64ac62fa0e2c5db9f51774c67e915b92"
+            },
+            {
+                "name": "hypershift_operator",
+                "image": "registry.redhat.io/multicluster-engine/hypershift-rhel8-operator@sha256:db09eda3a016f63a36466b8d3644cfe43eb3ad81fa4a5f57f3e36b38ee9190fc"
+            },
+            {
+                "name": "managed_serviceaccount",
+                "image": "registry.redhat.io/multicluster-engine/managed-serviceaccount-rhel8@sha256:e7c88c7ff0aaefdf83b7a7a09c13e0df7962565812346606e11cc58044bd8ab7"
+            },
+            {
+                "name": "managedcluster_import_controller",
+                "image": "registry.redhat.io/multicluster-engine/managedcluster-import-controller-rhel8@sha256:d010f9a868e36f9b4a08f9a290751c65263d6fd699e778ae456f39dee4e21dd9"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/multicluster-engine/mce-operator-bundle@sha256:a353490da46c9bc1464773874eca6bc327f531aaa02fc8ec739079f42bd3894e"
+            },
+            {
+                "name": "multicloud_manager",
+                "image": "registry.redhat.io/multicluster-engine/multicloud-manager-rhel8@sha256:ef0c122b4a2bef1b4b8f56b9f6a173eba4639f61b208c8f065e66b1d425a3ab3"
+            },
+            {
+                "name": "backplane_must_gather",
+                "image": "registry.redhat.io/multicluster-engine/must-gather-rhel8@sha256:56db9aae1e58922b91c563a8fb5ac003f921e28f7f7dc0f57ffba1eebc79611a"
+            },
+            {
+                "name": "placement",
+                "image": "registry.redhat.io/multicluster-engine/placement-rhel8@sha256:4952f83a2115029699768f9814ccc438da5aa5b24ff06bfcac9670e3d5d9407f"
+            },
+            {
+                "name": "provider_credential_controller",
+                "image": "registry.redhat.io/multicluster-engine/provider-credential-controller-rhel8@sha256:fca91ea44aa76182bc65df5f27d736a4f04770001a3bb932f8cd4287f3aee277"
+            },
+            {
+                "name": "registration_operator",
+                "image": "registry.redhat.io/multicluster-engine/registration-operator-rhel8@sha256:9b76e08ec74d0c479669e1da2ceff04f12b53b189b333fba35ac326eb110737e"
+            },
+            {
+                "name": "registration",
+                "image": "registry.redhat.io/multicluster-engine/registration-rhel8@sha256:a7432dd156004ed31b2f2d6b8569b530f2f38822d996da836ff4dc99b0b8be78"
+            },
+            {
+                "name": "work",
+                "image": "registry.redhat.io/multicluster-engine/work-rhel8@sha256:15534c2b4eda0017be0521dc5582a8acc94b9b780bcb8b51e5fd3412d6fdb449"
+            },
+            {
+                "name": "postgresql_12",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:fa920188f567e51d75aacd723f0964026e42ac060fed392036e8d4b3c7a8129f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "multicluster-engine.v2.0.1",
+        "package": "multicluster-engine",
+        "image": "registry.redhat.io/multicluster-engine/mce-operator-bundle@sha256:e9d2cf4b2adf5dc065f50032686d29fb2be6c25b52e2d0bcb882a482bcf6acdb",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "multicluster.openshift.io",
+                    "kind": "MultiClusterEngine",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "multicluster-engine",
+                    "version": "2.0.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "assisted_service",
+                "image": "registry.redhat.io/multicluster-engine/agent-service-rhel8@sha256:88323413f906d87c1e83a3480cdfc59ddec21ef7383c2e502fa6e49f2c9f9a60"
+            },
+            {
+                "name": "apiserver_network_proxy",
+                "image": "registry.redhat.io/multicluster-engine/apiserver-network-proxy-rhel8@sha256:da0c99951067ac77aaf414e4a6f0ad5ba4ca2625e0b3ba3e0d7fdad5d2a32e6b"
+            },
+            {
+                "name": "assisted_image_service",
+                "image": "registry.redhat.io/multicluster-engine/assisted-image-service-rhel8@sha256:db5a515ac162db2aff951f7ed962347e9acb401921953306ff333f7b62219ec6"
+            },
+            {
+                "name": "assisted_installer_agent",
+                "image": "registry.redhat.io/multicluster-engine/assisted-installer-agent-rhel8@sha256:54f7376e521a3b22ddeef63623fc7256addf62a9323fa004c7f48efa7388fe39"
+            },
+            {
+                "name": "assisted_installer_controller",
+                "image": "registry.redhat.io/multicluster-engine/assisted-installer-reporter-rhel8@sha256:51f99f3bb1d3fdde84c6f870048c9aabc2f0616423aac58b81504cc7b34f8d47"
+            },
+            {
+                "name": "assisted_installer",
+                "image": "registry.redhat.io/multicluster-engine/assisted-installer-rhel8@sha256:3ea0582b14e78714b229ad381911256a397e0f07a91f5102667e2ccefe7e7f7f"
+            },
+            {
+                "name": "aws_encryption_provider",
+                "image": "registry.redhat.io/multicluster-engine/aws-encryption-provider-rhel8@sha256:bbdd9dd48b45bc642847d93992c78935fcaa103c1f6230957b11ab18c85d0fdc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/multicluster-engine/backplane-rhel8-operator@sha256:cb211751e09b0bd028a11e0acdc2e0ebe1c475f451dad33bf869b79e822275f9"
+            },
+            {
+                "name": "cluster_api_provider_agent",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-provider-agent-rhel8@sha256:bbccd576706efc5fac5db93cea7d4089ba817fd9d3f05dcae706d2d4dcec1f65"
+            },
+            {
+                "name": "cluster_api_provider_aws",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-provider-aws-rhel8@sha256:9814453d4eda7124e9c4c482c678466c2a4e270e13653c02a53e3b22f55c21f0"
+            },
+            {
+                "name": "cluster_api_provider_azure",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-provider-azure-rhel8@sha256:31e980f50e6842cb1f0be7ffffb06647bbbdd711921e6baf70d9874c40085cbc"
+            },
+            {
+                "name": "cluster_api_provider_kubevirt",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-provider-kubevirt-rhel8@sha256:d1eabb2fb9996933d62916126097aa30e758d4e37baa0aae697a9038b2e814c8"
+            },
+            {
+                "name": "cluster_api",
+                "image": "registry.redhat.io/multicluster-engine/cluster-api-rhel8@sha256:0e7178b6040d881da9942b4573385dcd29b18b833f6dc9250b4077d22923d8d8"
+            },
+            {
+                "name": "cluster_curator_controller",
+                "image": "registry.redhat.io/multicluster-engine/cluster-curator-controller-rhel8@sha256:864b3fe5644fb03a4efd220a4390c9db2bb096c356f4fd483a8b937135e21c8a"
+            },
+            {
+                "name": "clusterclaims_controller",
+                "image": "registry.redhat.io/multicluster-engine/clusterclaims-controller-rhel8@sha256:2b1c5f4650291b1ec112db8506bde65850d66b35281850e16d4f98c1780fc26d"
+            },
+            {
+                "name": "clusterlifecycle_state_metrics",
+                "image": "registry.redhat.io/multicluster-engine/clusterlifecycle-state-metrics-rhel8@sha256:38dc29995b03cdddbc620c76264be2ff3c3f9e47a516f828d4f1fae4e9e27d7a"
+            },
+            {
+                "name": "console_mce",
+                "image": "registry.redhat.io/multicluster-engine/console-mce-rhel8@sha256:dac0fb92abbb820f3332e8d42fb6ff8941c71cfe44cd6c61df77ee21b3fc809f"
+            },
+            {
+                "name": "discovery_operator",
+                "image": "registry.redhat.io/multicluster-engine/discovery-rhel8@sha256:82f4c01d1387d86c99a458e07f48ebfdf03b492e5adb3e6160a35de16d5e345c"
+            },
+            {
+                "name": "openshift_hive",
+                "image": "registry.redhat.io/multicluster-engine/hive-rhel8@sha256:ae42e65181c4b1db7cfd83458c6d9855066694e5b42c583999e0d236c61cad2f"
+            },
+            {
+                "name": "hypershift_addon_operator",
+                "image": "registry.redhat.io/multicluster-engine/hypershift-addon-rhel8-operator@sha256:b4ea56590507e9b5252971bf6b0c40eb1175f637ba5daf48b1ba9bbba53e3c61"
+            },
+            {
+                "name": "hypershift_deployment_controller",
+                "image": "registry.redhat.io/multicluster-engine/hypershift-deployment-controller-rhel8@sha256:c1137c3fd8742e6d830d77aac81410460aa0351901d6a2388254462a0eaa487e"
+            },
+            {
+                "name": "hypershift_operator",
+                "image": "registry.redhat.io/multicluster-engine/hypershift-rhel8-operator@sha256:f34df268bccc85f773b235245922a6976b4cfbb39af20a6fb0eaf23138579b48"
+            },
+            {
+                "name": "managed_serviceaccount",
+                "image": "registry.redhat.io/multicluster-engine/managed-serviceaccount-rhel8@sha256:2c8380dcbbb86fa3d6aa10dc0e08457335df528c4be261f2fe1e25c0a3daf4cf"
+            },
+            {
+                "name": "managedcluster_import_controller",
+                "image": "registry.redhat.io/multicluster-engine/managedcluster-import-controller-rhel8@sha256:34f96d93552d2c109a01669d8b109099b478921616180b9c57dfee2346dd1411"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/multicluster-engine/mce-operator-bundle@sha256:e9d2cf4b2adf5dc065f50032686d29fb2be6c25b52e2d0bcb882a482bcf6acdb"
+            },
+            {
+                "name": "multicloud_manager",
+                "image": "registry.redhat.io/multicluster-engine/multicloud-manager-rhel8@sha256:9bd17c50f483764917de0e320d4faffdf0ed976b1f2ffd513d68ca1b1a584b05"
+            },
+            {
+                "name": "backplane_must_gather",
+                "image": "registry.redhat.io/multicluster-engine/must-gather-rhel8@sha256:ac38b68e3dd2f9b18032d267ea519eff3c7edfeff62cfbdfb430d3e76f421375"
+            },
+            {
+                "name": "placement",
+                "image": "registry.redhat.io/multicluster-engine/placement-rhel8@sha256:b779bc0d55c2d945d12edf5fca3744c78ff18bc1afbfd8e4357f3ff62f1c7971"
+            },
+            {
+                "name": "provider_credential_controller",
+                "image": "registry.redhat.io/multicluster-engine/provider-credential-controller-rhel8@sha256:1c317ee5d11dbe7f540cf9521dc3d7791adf67094de3c3b47f5819a6c69fdacf"
+            },
+            {
+                "name": "registration_operator",
+                "image": "registry.redhat.io/multicluster-engine/registration-operator-rhel8@sha256:071a11f2e907309af46d403b8b68aadca1d4cb17126536a44d8a53f95153c93e"
+            },
+            {
+                "name": "registration",
+                "image": "registry.redhat.io/multicluster-engine/registration-rhel8@sha256:5216a7ec018976fa8a08cffccd9367a620842838efa4bb3439fcde5c5c63b566"
+            },
+            {
+                "name": "work",
+                "image": "registry.redhat.io/multicluster-engine/work-rhel8@sha256:27c4315e70b9e07139053830c04e61a9116a13b04e0d46aae669beb86ecdc1a3"
+            },
+            {
+                "name": "postgresql_12",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:82d171ab0ce78a0157408662155b53d4f637947a303bfecb684f6132f5f468be"
+            }
+        ]
+    }

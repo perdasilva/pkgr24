@@ -1,0 +1,2073 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: amq-online
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "amq-online",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "amq-online",
+        "entries": [
+            {
+                "name": "amq-online.1.5.0"
+            },
+            {
+                "name": "amq-online.1.6.2",
+                "skipRange": ">=1.5.4 <1.6.0"
+            },
+            {
+                "name": "amq-online.1.7.0",
+                "replaces": "amq-online.1.6.2",
+                "skips": [
+                    "amq-online.1.5.0"
+                ]
+            },
+            {
+                "name": "amq-online.1.7.1"
+            },
+            {
+                "name": "amq-online.1.7.1-0.1628610187.p",
+                "replaces": "amq-online.1.7.0",
+                "skips": [
+                    "amq-online.1.5.0",
+                    "amq-online.1.7.1"
+                ]
+            },
+            {
+                "name": "amq-online.1.7.2",
+                "replaces": "amq-online.1.7.1-0.1628610187.p",
+                "skips": [
+                    "amq-online.1.5.0"
+                ]
+            },
+            {
+                "name": "amq-online.1.7.3",
+                "replaces": "amq-online.1.7.2",
+                "skips": [
+                    "amq-online.1.5.0"
+                ]
+            },
+            {
+                "name": "amq-online.1.7.4"
+            },
+            {
+                "name": "amq-online.1.7.4-0.1657725339.p",
+                "replaces": "amq-online.1.7.3",
+                "skips": [
+                    "amq-online.1.5.0",
+                    "amq-online.1.7.4"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq-online.1.5.0",
+        "package": "amq-online",
+        "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:b350796e748ac56aeaf71711f4eaae06d2b9f77fc1c9aeec1680c9ab096e663c",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AuthenticationService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "ConsoleService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "Address",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpace",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpaceSchema",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "iot.enmasse.io",
+                    "kind": "IoTConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "iot.enmasse.io",
+                    "kind": "IoTProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "user.enmasse.io",
+                    "kind": "MessagingUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-online",
+                    "version": "1.5.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "iot_sigfox_adapter",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-adapters-rhel7@sha256:efa4eb841820d9b58c75d5be761cf88b207419e26d4c7f5b42cf1aa49b0dbd4f"
+            },
+            {
+                "name": "iot_http_adapter",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-adapters-rhel7@sha256:efa4eb841820d9b58c75d5be761cf88b207419e26d4c7f5b42cf1aa49b0dbd4f"
+            },
+            {
+                "name": "iot_mqtt_adapter",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-adapters-rhel7@sha256:efa4eb841820d9b58c75d5be761cf88b207419e26d4c7f5b42cf1aa49b0dbd4f"
+            },
+            {
+                "name": "iot_lorawan_adapter",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-adapters-rhel7@sha256:efa4eb841820d9b58c75d5be761cf88b207419e26d4c7f5b42cf1aa49b0dbd4f"
+            },
+            {
+                "name": "iot_auth_service",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-auth-service@sha256:e02d4b1239bbdb053606cd00bbdbffeb193f42d6c63880ac4a6ef1cec6ce77d3"
+            },
+            {
+                "name": "iot_device_registry_infinispan",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-device-registry-rhel7@sha256:4e2ba35a57fdcbdf06a1ecd3ac7ab21f87011089def0b6a9d930ea25eeef3aad"
+            },
+            {
+                "name": "iot_device_registry_jdbc",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-device-registry-rhel7@sha256:4e2ba35a57fdcbdf06a1ecd3ac7ab21f87011089def0b6a9d930ea25eeef3aad"
+            },
+            {
+                "name": "iot_device_connection_jdbc",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-device-registry-rhel7@sha256:4e2ba35a57fdcbdf06a1ecd3ac7ab21f87011089def0b6a9d930ea25eeef3aad"
+            },
+            {
+                "name": "iot_device_connection_infinispan",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-device-registry-rhel7@sha256:4e2ba35a57fdcbdf06a1ecd3ac7ab21f87011089def0b6a9d930ea25eeef3aad"
+            },
+            {
+                "name": "iot_proxy_configurator",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-proxy-configurator@sha256:3026776165d67686712b6fb43af37710b599c47eb371d2b2b8ad0b3def5deb2e"
+            },
+            {
+                "name": "iot_tenant_cleaner",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-tenant-cleaner-rhel7@sha256:c881b0e70d782929f31f08d7141c34955b1d63d58ed90ec6a71fe668b5596fb5"
+            },
+            {
+                "name": "iot_tenant_service",
+                "image": "registry.redhat.io/amq7-tech-preview/amq-online-1-iot-tenant-service@sha256:154a7575b1d36d719dc84afb30ca9b60f22d22770ab3ea88d2342935daf7f779"
+            },
+            {
+                "name": "broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:53b2fae48ae08288b92debc6f6a82fa073779289beb78e7320febb3b1c3c2c37"
+            },
+            {
+                "name": "router",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:4eb032b32aa200b45d238a9d662e14fd575ca7ccc8c3daa59d42f812fbe2e57e"
+            },
+            {
+                "name": "address_space_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-address-space-controller@sha256:43dffa9e2657119cdb61181b8e0775ad7387bb10bc25a877067cbf04499a5217"
+            },
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/amq7/amq-online-1-agent@sha256:ff76cd616e6c5e7d3b4584935e1d8c45e586f9bc1b7de9baec48cb245c3e33b8"
+            },
+            {
+                "name": "keycloak_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-auth-plugin@sha256:f5fe89a3126a21eceb76fa77d88fea7bbccfe1a4cd359f049161dc82710d1005"
+            },
+            {
+                "name": "broker_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-broker-plugin@sha256:20f0464f9b2d2604ef9b935c8b9f9a6bd8d5dc98be1206c64cb6ef651b8a4c93"
+            },
+            {
+                "name": "console_init",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-init@sha256:4eaffad62387e2e9d162c77591c92b22964f010520880a21377710d32f23d0e8"
+            },
+            {
+                "name": "console_server",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-server-rhel7@sha256:5ae47054e725bbd316d78a378135f0d33433058c6ab57aa16e0a806fb0395781"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:b350796e748ac56aeaf71711f4eaae06d2b9f77fc1c9aeec1680c9ab096e663c"
+            },
+            {
+                "name": "controller_manager",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:5e2f396eeac184d27fc17f33eadc800d5ed8fbef708e20cd33a206655aabd701"
+            },
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:5e2f396eeac184d27fc17f33eadc800d5ed8fbef708e20cd33a206655aabd701"
+            },
+            {
+                "name": "amq-online-1-controller-manager-rhel7-operator-5e2f396eeac184d27fc17f33eadc800d5ed8fbef708e20cd33a206655aabd701-annotation",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:5e2f396eeac184d27fc17f33eadc800d5ed8fbef708e20cd33a206655aabd701"
+            },
+            {
+                "name": "mqtt_gateway",
+                "image": "registry.redhat.io/amq7/amq-online-1-mqtt-gateway@sha256:82559653d213c5f6d8aa10ac75debcae8f1720cefa968a7a5ba8882e07edd45f"
+            },
+            {
+                "name": "mqtt_lwt",
+                "image": "registry.redhat.io/amq7/amq-online-1-mqtt-lwt@sha256:211ab1127809eb4ee7a94e6584576a5e7ed5a46022d08bbfcaee7b964cd806e7"
+            },
+            {
+                "name": "none_authservice",
+                "image": "registry.redhat.io/amq7/amq-online-1-none-auth-service@sha256:b3e1992fb09a2c8eed5c32a2c3665e9062ea9f831ae1d056ec760380b7afc4f0"
+            },
+            {
+                "name": "standard_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-standard-controller@sha256:5d91fd8e79b0459e19a803221da79a25fb2874c84653a9e5d006ffada277284f"
+            },
+            {
+                "name": "topic_forwarder",
+                "image": "registry.redhat.io/amq7/amq-online-1-topic-forwarder@sha256:727c6e53ee57958548a35f496cd6a31eaf9a81c120e9857d1049e654aa2e3def"
+            },
+            {
+                "name": "console_proxy_openshift",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:64a4481962053d062b1213bd8fdcb00a5353a6a26252df192a5bb3b11ebb8001"
+            },
+            {
+                "name": "keycloak",
+                "image": "registry.redhat.io/redhat-sso-7/sso73-openshift@sha256:18d15980f28f0d0c6b8582131a1f062d84463577512875b5391a612c3d7d1096"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq-online.1.6.2",
+        "package": "amq-online",
+        "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:debf79ef45e0fdd229bdfae29ff9a40926854278b39b4aa0d364f5ae9c02c6dc",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AuthenticationService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "ConsoleService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "Address",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpace",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpaceSchema",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "user.enmasse.io",
+                    "kind": "MessagingUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-online",
+                    "version": "1.6.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:6cdd36d43872146e852daadae6882370f657a60a3b1e88318767fa9641f5e882"
+            },
+            {
+                "name": "router",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:84f13c37d734f410225e777c350f8be5870c851d7cf0a3bcbf0db9d682c0dbdb"
+            },
+            {
+                "name": "address_space_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-address-space-controller@sha256:5676528ada0f97389a09b99bd4c0d5a85fb8617117745d6cf651d4668696deb3"
+            },
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/amq7/amq-online-1-agent@sha256:13f9e5ccc10376596015f2a0f9b9d700bcc9eb505759ddb9497c8c4c90d3534a"
+            },
+            {
+                "name": "keycloak_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-auth-plugin@sha256:669c7889c9a6031b253215936d625688807aee9957bd660ffd1655be91c71529"
+            },
+            {
+                "name": "broker_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-broker-plugin@sha256:150bc32735db443853a4d1ab5c2f222bee4b86c4701a2fbf0bc286db613a99e2"
+            },
+            {
+                "name": "console_init",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-init@sha256:43c3ee25c0661698e70cc7c11d748ce9667791a9a0e8ffde9dc54d523ccb3ac1"
+            },
+            {
+                "name": "console_server",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-server-rhel7@sha256:4c13ce69399ac9734b0838fc224bfa5a1b38e66803184da91c4c5d5bd4c231ce"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:debf79ef45e0fdd229bdfae29ff9a40926854278b39b4aa0d364f5ae9c02c6dc"
+            },
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:7cdc13fac996bffb1afe60bbc9e02b2a07b38ec1d06d8a345bdd38381d713e43"
+            },
+            {
+                "name": "controller_manager",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:7cdc13fac996bffb1afe60bbc9e02b2a07b38ec1d06d8a345bdd38381d713e43"
+            },
+            {
+                "name": "amq-online-1-controller-manager-rhel7-operator-7cdc13fac996bffb1afe60bbc9e02b2a07b38ec1d06d8a345bdd38381d713e43-annotation",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:7cdc13fac996bffb1afe60bbc9e02b2a07b38ec1d06d8a345bdd38381d713e43"
+            },
+            {
+                "name": "none_authservice",
+                "image": "registry.redhat.io/amq7/amq-online-1-none-auth-service@sha256:c7176fadd42157620355632378b582d33bce4e80e609f5c782a02d0dbdd13093"
+            },
+            {
+                "name": "standard_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-standard-controller@sha256:73627b56a996337effd0c35e1a73c12257492bb8ba0b3c0c6d0822392e085212"
+            },
+            {
+                "name": "topic_forwarder",
+                "image": "registry.redhat.io/amq7/amq-online-1-topic-forwarder@sha256:9e0dfc2ca056c4b66a0c9243ebf4d39eb7119f9fbef05ae00ac982d33adb7f86"
+            },
+            {
+                "name": "console_proxy_openshift3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:bbdba78602bd0fd83358f0138d56f959070f637de4972edb53fed4f4fdb3169d"
+            },
+            {
+                "name": "console_proxy_openshift",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:cfc0f526bfc396bc53ecc0588b0a863d38d1bcca22689d90ec63e7b1f43e297b"
+            },
+            {
+                "name": "keycloak",
+                "image": "registry.redhat.io/redhat-sso-7/sso73-openshift@sha256:18d15980f28f0d0c6b8582131a1f062d84463577512875b5391a612c3d7d1096"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq-online.1.7.0",
+        "package": "amq-online",
+        "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:5f582e82bd357530a7d66bdf25598b69ad75e79e2b28ca028cd656fb52a8259f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AuthenticationService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "ConsoleService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "Address",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpace",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpaceSchema",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "user.enmasse.io",
+                    "kind": "MessagingUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-online",
+                    "version": "1.7.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:26c4a8e8d42d51229a34058cc470aa0221a7e34459f60cf1d30040d1879293c8"
+            },
+            {
+                "name": "router",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:70252db7ac95aa7a993c888286aded15014744ae51114385b0e95e9b8db1ed71"
+            },
+            {
+                "name": "address_space_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-address-space-controller@sha256:f8bfb0947ebf08b326c8ffe3dda657b84a7c714b06f8e071d84228b05abe3e9b"
+            },
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/amq7/amq-online-1-agent@sha256:d196b51010c29cd85555936b2b29d8e0d95734320d297bc5aefc9718d8c51b26"
+            },
+            {
+                "name": "keycloak_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-auth-plugin@sha256:8469c67562e0bf7adeb6a3b60281381c6aad8efa3cfce11d9dc617fa00a65508"
+            },
+            {
+                "name": "broker_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-broker-plugin@sha256:aae402f981ad7afc538ec1c711eb2271645e81c0de72a5da64b78a161459fada"
+            },
+            {
+                "name": "console_init",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-init@sha256:3f10c66490f8645222c25bd8682eef1401a50762175ea63262186fb4a337e6b0"
+            },
+            {
+                "name": "console_server",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-server-rhel7@sha256:aea1e631415fbd1ce757d24905f7d1edf4e80fb08597cbf0aeec6af873f1860d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:5f582e82bd357530a7d66bdf25598b69ad75e79e2b28ca028cd656fb52a8259f"
+            },
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "controller_manager",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "amq-online-1-controller-manager-rhel7-operator-e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710-annotation",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "none_authservice",
+                "image": "registry.redhat.io/amq7/amq-online-1-none-auth-service@sha256:17875d61243245865f14b201c737b8d24e420820a567d33d5140ef8630044d40"
+            },
+            {
+                "name": "standard_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-standard-controller@sha256:88fd8428423fb5db2c8c3e757d7c8e8e627be4a8036321089f91ac2446dd0e50"
+            },
+            {
+                "name": "topic_forwarder",
+                "image": "registry.redhat.io/amq7/amq-online-1-topic-forwarder@sha256:e530274e3e6b6652503df4ce1b26c40c999966a1171e566aefd185084b79cb86"
+            },
+            {
+                "name": "console_proxy_openshift3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:91860f3e97a2c2056bbec79a6eb1d991d85831618e32237eb3b2c4f78c18c9d7"
+            },
+            {
+                "name": "console_proxy_openshift",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:fc78a1487ec08dd0ceade275c3d9fa292e3f2d0953e2dd57a18147a59bc352e7"
+            },
+            {
+                "name": "keycloak",
+                "image": "registry.redhat.io/redhat-sso-7/sso73-openshift@sha256:18d15980f28f0d0c6b8582131a1f062d84463577512875b5391a612c3d7d1096"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq-online.1.7.1",
+        "package": "amq-online",
+        "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:c838ae843b44b9c812bb0f79002cefbc49e68a7eabcb96f242974bb606408a3f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AuthenticationService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "ConsoleService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "Address",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpace",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpaceSchema",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "user.enmasse.io",
+                    "kind": "MessagingUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-online",
+                    "version": "1.7.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:b6a16a7f5b4bd2a27fb4ef237e2f7b15653ddb2a048e08be0e98656eecc95c79"
+            },
+            {
+                "name": "router",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:8601ffaeaa16d9d259d2b6137992f241d58d40df93a22b14499458ec6ce1e21c"
+            },
+            {
+                "name": "address_space_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-address-space-controller@sha256:42ebf8d8addc17d959c0f1d1cf542ef184b220bc5c628d5bd303d4be10eaffa8"
+            },
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/amq7/amq-online-1-agent@sha256:d196b51010c29cd85555936b2b29d8e0d95734320d297bc5aefc9718d8c51b26"
+            },
+            {
+                "name": "keycloak_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-auth-plugin@sha256:8469c67562e0bf7adeb6a3b60281381c6aad8efa3cfce11d9dc617fa00a65508"
+            },
+            {
+                "name": "broker_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-broker-plugin@sha256:aae402f981ad7afc538ec1c711eb2271645e81c0de72a5da64b78a161459fada"
+            },
+            {
+                "name": "console_init",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-init@sha256:3f10c66490f8645222c25bd8682eef1401a50762175ea63262186fb4a337e6b0"
+            },
+            {
+                "name": "console_server",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-server-rhel7@sha256:aea1e631415fbd1ce757d24905f7d1edf4e80fb08597cbf0aeec6af873f1860d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:c838ae843b44b9c812bb0f79002cefbc49e68a7eabcb96f242974bb606408a3f"
+            },
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "controller_manager",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "amq-online-1-controller-manager-rhel7-operator-e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710-annotation",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "none_authservice",
+                "image": "registry.redhat.io/amq7/amq-online-1-none-auth-service@sha256:17875d61243245865f14b201c737b8d24e420820a567d33d5140ef8630044d40"
+            },
+            {
+                "name": "standard_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-standard-controller@sha256:88fd8428423fb5db2c8c3e757d7c8e8e627be4a8036321089f91ac2446dd0e50"
+            },
+            {
+                "name": "topic_forwarder",
+                "image": "registry.redhat.io/amq7/amq-online-1-topic-forwarder@sha256:e530274e3e6b6652503df4ce1b26c40c999966a1171e566aefd185084b79cb86"
+            },
+            {
+                "name": "console_proxy_openshift3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:43abf8fcc02558a81a197de491755c5d5df20aa582bc5cc5676b68787775bfb9"
+            },
+            {
+                "name": "console_proxy_openshift",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3c99e0eb68ca247286ae88f49bc59843293d602339f46799410495552bee5a86"
+            },
+            {
+                "name": "keycloak",
+                "image": "registry.redhat.io/redhat-sso-7/sso73-openshift@sha256:18d15980f28f0d0c6b8582131a1f062d84463577512875b5391a612c3d7d1096"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq-online.1.7.1-0.1628610187.p",
+        "package": "amq-online",
+        "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:74a449ae0c1c85c4c203e13b7d0ff489aa8769e3866e8dca9c784ea63a16c4c0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AuthenticationService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "ConsoleService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "Address",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpace",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpaceSchema",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "user.enmasse.io",
+                    "kind": "MessagingUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-online",
+                    "version": "1.7.1+0.1628610187.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:b6a16a7f5b4bd2a27fb4ef237e2f7b15653ddb2a048e08be0e98656eecc95c79"
+            },
+            {
+                "name": "router",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:8601ffaeaa16d9d259d2b6137992f241d58d40df93a22b14499458ec6ce1e21c"
+            },
+            {
+                "name": "address_space_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-address-space-controller@sha256:e2bc6379ad5c8a6a87c588fc8b7cf38a805edcaee04842d4f021cde7527fff55"
+            },
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/amq7/amq-online-1-agent@sha256:d196b51010c29cd85555936b2b29d8e0d95734320d297bc5aefc9718d8c51b26"
+            },
+            {
+                "name": "keycloak_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-auth-plugin@sha256:8469c67562e0bf7adeb6a3b60281381c6aad8efa3cfce11d9dc617fa00a65508"
+            },
+            {
+                "name": "broker_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-broker-plugin@sha256:aae402f981ad7afc538ec1c711eb2271645e81c0de72a5da64b78a161459fada"
+            },
+            {
+                "name": "console_init",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-init@sha256:3f10c66490f8645222c25bd8682eef1401a50762175ea63262186fb4a337e6b0"
+            },
+            {
+                "name": "console_server",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-server-rhel7@sha256:aea1e631415fbd1ce757d24905f7d1edf4e80fb08597cbf0aeec6af873f1860d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:74a449ae0c1c85c4c203e13b7d0ff489aa8769e3866e8dca9c784ea63a16c4c0"
+            },
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "controller_manager",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "amq-online-1-controller-manager-rhel7-operator-e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710-annotation",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "none_authservice",
+                "image": "registry.redhat.io/amq7/amq-online-1-none-auth-service@sha256:17875d61243245865f14b201c737b8d24e420820a567d33d5140ef8630044d40"
+            },
+            {
+                "name": "standard_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-standard-controller@sha256:88fd8428423fb5db2c8c3e757d7c8e8e627be4a8036321089f91ac2446dd0e50"
+            },
+            {
+                "name": "topic_forwarder",
+                "image": "registry.redhat.io/amq7/amq-online-1-topic-forwarder@sha256:e530274e3e6b6652503df4ce1b26c40c999966a1171e566aefd185084b79cb86"
+            },
+            {
+                "name": "console_proxy_openshift3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:43abf8fcc02558a81a197de491755c5d5df20aa582bc5cc5676b68787775bfb9"
+            },
+            {
+                "name": "console_proxy_openshift",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3c99e0eb68ca247286ae88f49bc59843293d602339f46799410495552bee5a86"
+            },
+            {
+                "name": "keycloak",
+                "image": "registry.redhat.io/redhat-sso-7/sso73-openshift@sha256:18d15980f28f0d0c6b8582131a1f062d84463577512875b5391a612c3d7d1096"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq-online.1.7.2",
+        "package": "amq-online",
+        "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:c3693f67dc746764051253bcb9be4105cb0b98096f27f76cdb993bc645f87bab",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AuthenticationService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "ConsoleService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "Address",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpace",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpaceSchema",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "user.enmasse.io",
+                    "kind": "MessagingUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-online",
+                    "version": "1.7.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:4168dbd75ddc198ddbcc51f911f76c237e3a255596ed00dc812c1a568b6195c6"
+            },
+            {
+                "name": "router",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:2cf286476800a9fb4aeac0631bfb2c3f6376b229f894f7cd455b2fde0bb11ebb"
+            },
+            {
+                "name": "address_space_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-address-space-controller@sha256:42ebf8d8addc17d959c0f1d1cf542ef184b220bc5c628d5bd303d4be10eaffa8"
+            },
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/amq7/amq-online-1-agent@sha256:d196b51010c29cd85555936b2b29d8e0d95734320d297bc5aefc9718d8c51b26"
+            },
+            {
+                "name": "keycloak_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-auth-plugin@sha256:6a56237ca28a835997d60cea72d4697de5e747e0f6e094a04abb2efd22ef83f5"
+            },
+            {
+                "name": "broker_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-broker-plugin@sha256:21308e994b536c2e1d4563a71c881ad9fd23b2547e933f40a0445ae9c6b4169e"
+            },
+            {
+                "name": "console_init",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-init@sha256:3f10c66490f8645222c25bd8682eef1401a50762175ea63262186fb4a337e6b0"
+            },
+            {
+                "name": "console_server",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-server-rhel7@sha256:aea1e631415fbd1ce757d24905f7d1edf4e80fb08597cbf0aeec6af873f1860d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:c3693f67dc746764051253bcb9be4105cb0b98096f27f76cdb993bc645f87bab"
+            },
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "controller_manager",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "amq-online-1-controller-manager-rhel7-operator-e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710-annotation",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "none_authservice",
+                "image": "registry.redhat.io/amq7/amq-online-1-none-auth-service@sha256:17875d61243245865f14b201c737b8d24e420820a567d33d5140ef8630044d40"
+            },
+            {
+                "name": "standard_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-standard-controller@sha256:88fd8428423fb5db2c8c3e757d7c8e8e627be4a8036321089f91ac2446dd0e50"
+            },
+            {
+                "name": "topic_forwarder",
+                "image": "registry.redhat.io/amq7/amq-online-1-topic-forwarder@sha256:e530274e3e6b6652503df4ce1b26c40c999966a1171e566aefd185084b79cb86"
+            },
+            {
+                "name": "console_proxy_openshift3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:ef9e7b40ad46351bdde2cf6a774979c7a916a6562c07993b3fe4725ae444f74a"
+            },
+            {
+                "name": "console_proxy_openshift",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:19c6a058c7646705174697d7be674e84d080c759964dc56cfdf7c8b519e7d0cf"
+            },
+            {
+                "name": "keycloak",
+                "image": "registry.redhat.io/redhat-sso-7/sso73-openshift@sha256:18d15980f28f0d0c6b8582131a1f062d84463577512875b5391a612c3d7d1096"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq-online.1.7.3",
+        "package": "amq-online",
+        "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:912214021cac94c6c963314385082ad7b23872c03826f9c7795640aea1e8cf6e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AuthenticationService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "ConsoleService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "Address",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpace",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpaceSchema",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "user.enmasse.io",
+                    "kind": "MessagingUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-online",
+                    "version": "1.7.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:83c251ff4569437bf815821e175968044056db4821add02edfca87374683157a"
+            },
+            {
+                "name": "router",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:2cf286476800a9fb4aeac0631bfb2c3f6376b229f894f7cd455b2fde0bb11ebb"
+            },
+            {
+                "name": "address_space_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-address-space-controller@sha256:42ebf8d8addc17d959c0f1d1cf542ef184b220bc5c628d5bd303d4be10eaffa8"
+            },
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/amq7/amq-online-1-agent@sha256:d196b51010c29cd85555936b2b29d8e0d95734320d297bc5aefc9718d8c51b26"
+            },
+            {
+                "name": "keycloak_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-auth-plugin@sha256:6a56237ca28a835997d60cea72d4697de5e747e0f6e094a04abb2efd22ef83f5"
+            },
+            {
+                "name": "broker_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-broker-plugin@sha256:21308e994b536c2e1d4563a71c881ad9fd23b2547e933f40a0445ae9c6b4169e"
+            },
+            {
+                "name": "console_init",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-init@sha256:3f10c66490f8645222c25bd8682eef1401a50762175ea63262186fb4a337e6b0"
+            },
+            {
+                "name": "console_server",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-server-rhel7@sha256:aea1e631415fbd1ce757d24905f7d1edf4e80fb08597cbf0aeec6af873f1860d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:912214021cac94c6c963314385082ad7b23872c03826f9c7795640aea1e8cf6e"
+            },
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "controller_manager",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "amq-online-1-controller-manager-rhel7-operator-e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710-annotation",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:e0bf67cfbb60286f0d54645b9581bf1f72cc4f64b4671a396c313691d80ce710"
+            },
+            {
+                "name": "none_authservice",
+                "image": "registry.redhat.io/amq7/amq-online-1-none-auth-service@sha256:17875d61243245865f14b201c737b8d24e420820a567d33d5140ef8630044d40"
+            },
+            {
+                "name": "standard_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-standard-controller@sha256:88fd8428423fb5db2c8c3e757d7c8e8e627be4a8036321089f91ac2446dd0e50"
+            },
+            {
+                "name": "topic_forwarder",
+                "image": "registry.redhat.io/amq7/amq-online-1-topic-forwarder@sha256:e530274e3e6b6652503df4ce1b26c40c999966a1171e566aefd185084b79cb86"
+            },
+            {
+                "name": "console_proxy_openshift3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:ea9d7cc1c34d77c8a9e6fd4285cde3f3182f309d0670d0d8a194685ea6aa72eb"
+            },
+            {
+                "name": "console_proxy_openshift",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:c550413c0c6fa66ff5b0a4f92008af8cf2ce216924cf8f1a3d394bf3ec0c572f"
+            },
+            {
+                "name": "keycloak",
+                "image": "registry.redhat.io/redhat-sso-7/sso73-openshift@sha256:18d15980f28f0d0c6b8582131a1f062d84463577512875b5391a612c3d7d1096"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq-online.1.7.4",
+        "package": "amq-online",
+        "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:47cf8757b24854c77bd2054b7d7404bc842cfaa0485b41018eac11a052d628ee",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AuthenticationService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "ConsoleService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "Address",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpace",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpaceSchema",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "user.enmasse.io",
+                    "kind": "MessagingUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-online",
+                    "version": "1.7.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:1ec0437bbd82722148fdbb02dc55682b114c311cd6f521a8bc621a8c1cb4b32b"
+            },
+            {
+                "name": "router",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:5ebd4c4a0ed0db2725ae466550c915531b32933c420344cc2083c616da3f326f"
+            },
+            {
+                "name": "address_space_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-address-space-controller@sha256:5e9707770e89bf3347bd91d16c61ef41fe4db1bc008744e44e618f7697790a1c"
+            },
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/amq7/amq-online-1-agent@sha256:c74e9d783c0b260612fa1ac4a8d6764e0966669a52ecca45707c732bdaabfc08"
+            },
+            {
+                "name": "keycloak_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-auth-plugin@sha256:8ec1c7f4621a40200ab85fe29ed5131ca8e9b0854345ec0dea48b4f12ae3a39a"
+            },
+            {
+                "name": "broker_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-broker-plugin@sha256:e1231dcb1c6c4f4b7814069d8fac910d6659dd1d9840548c9dba05ba8b6322c8"
+            },
+            {
+                "name": "console_init",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-init@sha256:f18e73a6e51aab5fcb09c18752abdd91735ea61496db996050fc254b54e352d0"
+            },
+            {
+                "name": "console_server",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-server-rhel7@sha256:bb5c9119ece636bd43010efa5518d5f9e80b24d0de7f4ea9b992f5fb9fca9be8"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:47cf8757b24854c77bd2054b7d7404bc842cfaa0485b41018eac11a052d628ee"
+            },
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:150e532ef9948ca3554f276821439a10d049e237e73c93bb4693db42c055245f"
+            },
+            {
+                "name": "controller_manager",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:150e532ef9948ca3554f276821439a10d049e237e73c93bb4693db42c055245f"
+            },
+            {
+                "name": "amq-online-1-controller-manager-rhel7-operator-150e532ef9948ca3554f276821439a10d049e237e73c93bb4693db42c055245f-annotation",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:150e532ef9948ca3554f276821439a10d049e237e73c93bb4693db42c055245f"
+            },
+            {
+                "name": "none_authservice",
+                "image": "registry.redhat.io/amq7/amq-online-1-none-auth-service@sha256:23f8b90538fb22ede08e4d107c7d2f66f2ddce211b3f3046f236615b6575ab5c"
+            },
+            {
+                "name": "standard_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-standard-controller@sha256:8223b6fe3c78fac3bad4f80d81269bff9d7892b7b7489486aea48d8342b8fbc3"
+            },
+            {
+                "name": "topic_forwarder",
+                "image": "registry.redhat.io/amq7/amq-online-1-topic-forwarder@sha256:da1d2a01c4e70386bb500ca0e75017b8d8e22edef545f29fb725b85547888112"
+            },
+            {
+                "name": "console_proxy_openshift3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:59b20f23c03d0012ec5c95c4725892ee64277c22dedc9d0a90a7b6b0bc80fc72"
+            },
+            {
+                "name": "console_proxy_openshift",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:6d489a7897bd831ec273034f1ff0e223427a40afd01b9835ebb020a8bf9ddc66"
+            },
+            {
+                "name": "keycloak",
+                "image": "registry.redhat.io/redhat-sso-7/sso73-openshift@sha256:18d15980f28f0d0c6b8582131a1f062d84463577512875b5391a612c3d7d1096"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amq-online.1.7.4-0.1657725339.p",
+        "package": "amq-online",
+        "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:d6d0e71f5451e8255edfff87ef28ba7743fe7057efd53b25bbbd01bf9e1d0307",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressPlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AddressSpacePlan",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "AuthenticationService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "BrokeredInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "ConsoleService",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "admin.enmasse.io",
+                    "kind": "StandardInfraConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "Address",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpace",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "enmasse.io",
+                    "kind": "AddressSpaceSchema",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "user.enmasse.io",
+                    "kind": "MessagingUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-online",
+                    "version": "1.7.4+0.1657725339.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:1ec0437bbd82722148fdbb02dc55682b114c311cd6f521a8bc621a8c1cb4b32b"
+            },
+            {
+                "name": "router",
+                "image": "registry.redhat.io/amq7/amq-interconnect@sha256:5ebd4c4a0ed0db2725ae466550c915531b32933c420344cc2083c616da3f326f"
+            },
+            {
+                "name": "address_space_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-address-space-controller@sha256:9acc555c8e869aec7d72f53b60320e1a96cc82d748638e0d50970837229fdbee"
+            },
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/amq7/amq-online-1-agent@sha256:f98ed8ee97ac59d8fdd40ec8b2c063a5afd360a3e183057c186e7a77a32801ee"
+            },
+            {
+                "name": "keycloak_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-auth-plugin@sha256:68926f434b2f6ce4d9698938bc3c53d514c21c3f76c73b6b4cdf7fcf51f7cb0d"
+            },
+            {
+                "name": "broker_plugin",
+                "image": "registry.redhat.io/amq7/amq-online-1-broker-plugin@sha256:2466a336c0d78b196635de3fad636aeff2d9265839f7271b8ef94f3ba97d9bc0"
+            },
+            {
+                "name": "console_init",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-init@sha256:0970804909b82fdc3d4e7d5d88280e41157d743107de8bfa2d1baa1367543176"
+            },
+            {
+                "name": "console_server",
+                "image": "registry.redhat.io/amq7/amq-online-1-console-server-rhel7@sha256:1dcb3d0cc7bc6e84f4f96962ff88849511b7a7686a1f5dbd9300c4c2c8c05e2f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator-metadata@sha256:d6d0e71f5451e8255edfff87ef28ba7743fe7057efd53b25bbbd01bf9e1d0307"
+            },
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:2aaf87224a96aa56dc595e96d8e7ec8d138aaf20240afa25a1e805b405941355"
+            },
+            {
+                "name": "controller_manager",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:2aaf87224a96aa56dc595e96d8e7ec8d138aaf20240afa25a1e805b405941355"
+            },
+            {
+                "name": "amq-online-1-controller-manager-rhel7-operator-2aaf87224a96aa56dc595e96d8e7ec8d138aaf20240afa25a1e805b405941355-annotation",
+                "image": "registry.redhat.io/amq7/amq-online-1-controller-manager-rhel7-operator@sha256:2aaf87224a96aa56dc595e96d8e7ec8d138aaf20240afa25a1e805b405941355"
+            },
+            {
+                "name": "none_authservice",
+                "image": "registry.redhat.io/amq7/amq-online-1-none-auth-service@sha256:a013fb1806c002b408a7753ff943cee24fbcdf8a657eff1e9582c42b5a7b0844"
+            },
+            {
+                "name": "standard_controller",
+                "image": "registry.redhat.io/amq7/amq-online-1-standard-controller@sha256:070349af30cec52fa8efc185fc940077a64bb40e3e36310d7cc6e39ce0971436"
+            },
+            {
+                "name": "topic_forwarder",
+                "image": "registry.redhat.io/amq7/amq-online-1-topic-forwarder@sha256:de33a701339d91a4e9275f7cf65f917ff75368a59b8ab36dd66c90bc306875aa"
+            },
+            {
+                "name": "console_proxy_openshift3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:59b20f23c03d0012ec5c95c4725892ee64277c22dedc9d0a90a7b6b0bc80fc72"
+            },
+            {
+                "name": "console_proxy_openshift",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:6d489a7897bd831ec273034f1ff0e223427a40afd01b9835ebb020a8bf9ddc66"
+            },
+            {
+                "name": "keycloak",
+                "image": "registry.redhat.io/redhat-sso-7/sso73-openshift@sha256:18d15980f28f0d0c6b8582131a1f062d84463577512875b5391a612c3d7d1096"
+            }
+        ]
+    }

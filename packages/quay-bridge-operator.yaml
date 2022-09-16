@@ -1,0 +1,1058 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: quay-bridge-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "quay-bridge-operator",
+        "defaultChannel": "stable-3.7"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "quay-v3.4",
+        "package": "quay-bridge-operator",
+        "entries": [
+            {
+                "name": "quay-bridge-operator.v3.3.4",
+                "skipRange": ">=3.3.0 <3.3.4"
+            },
+            {
+                "name": "quay-bridge-operator.v3.4.6",
+                "skipRange": ">=3.3.x <3.4.6"
+            },
+            {
+                "name": "quay-bridge-operator.v3.4.7",
+                "skips": [
+                    "quay-bridge-operator.v3.4.3",
+                    "quay-bridge-operator.v3.4.2",
+                    "quay-bridge-operator.v3.4.1",
+                    "quay-bridge-operator.v3.4.0",
+                    "quay-bridge-operator.v3.3.4",
+                    "quay-bridge-operator.v3.4.6",
+                    "quay-bridge-operator.v3.4.5",
+                    "quay-bridge-operator.v3.4.4"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "quay-v3.5",
+        "package": "quay-bridge-operator",
+        "entries": [
+            {
+                "name": "quay-bridge-operator.v3.5.6",
+                "skipRange": ">=3.4.x <3.5.6"
+            },
+            {
+                "name": "quay-bridge-operator.v3.5.7",
+                "replaces": "quay-bridge-operator.v3.5.6",
+                "skipRange": ">=3.4.x <3.5.7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-3.6",
+        "package": "quay-bridge-operator",
+        "entries": [
+            {
+                "name": "quay-bridge-operator.v3.6.0",
+                "skipRange": ">=3.3.x <3.6.0"
+            },
+            {
+                "name": "quay-bridge-operator.v3.6.1",
+                "replaces": "quay-bridge-operator.v3.6.0",
+                "skipRange": ">=3.3.x <3.6.1"
+            },
+            {
+                "name": "quay-bridge-operator.v3.6.10",
+                "replaces": "quay-bridge-operator.v3.6.9",
+                "skipRange": ">=3.3.x <3.6.10"
+            },
+            {
+                "name": "quay-bridge-operator.v3.6.2",
+                "replaces": "quay-bridge-operator.v3.6.1",
+                "skipRange": ">=3.4.x <3.6.2"
+            },
+            {
+                "name": "quay-bridge-operator.v3.6.4",
+                "replaces": "quay-bridge-operator.v3.6.2",
+                "skipRange": ">=3.4.x <3.6.4"
+            },
+            {
+                "name": "quay-bridge-operator.v3.6.5",
+                "replaces": "quay-bridge-operator.v3.6.4",
+                "skipRange": ">=3.3.x <3.6.5"
+            },
+            {
+                "name": "quay-bridge-operator.v3.6.6",
+                "replaces": "quay-bridge-operator.v3.6.5",
+                "skipRange": ">=3.3.x <3.6.6"
+            },
+            {
+                "name": "quay-bridge-operator.v3.6.7",
+                "replaces": "quay-bridge-operator.v3.6.6",
+                "skipRange": ">=3.3.x <3.6.7"
+            },
+            {
+                "name": "quay-bridge-operator.v3.6.8",
+                "replaces": "quay-bridge-operator.v3.6.7",
+                "skipRange": ">=3.3.x <3.6.8"
+            },
+            {
+                "name": "quay-bridge-operator.v3.6.9",
+                "replaces": "quay-bridge-operator.v3.6.8",
+                "skipRange": ">=3.3.x <3.6.9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-3.7",
+        "package": "quay-bridge-operator",
+        "entries": [
+            {
+                "name": "quay-bridge-operator.v3.7.0",
+                "skipRange": ">=3.4.x <3.7.0"
+            },
+            {
+                "name": "quay-bridge-operator.v3.7.1",
+                "replaces": "quay-bridge-operator.v3.7.0",
+                "skipRange": ">=3.4.x <3.7.1"
+            },
+            {
+                "name": "quay-bridge-operator.v3.7.2",
+                "replaces": "quay-bridge-operator.v3.7.1",
+                "skipRange": ">=3.4.x <3.7.2"
+            },
+            {
+                "name": "quay-bridge-operator.v3.7.3",
+                "replaces": "quay-bridge-operator.v3.7.2",
+                "skipRange": ">=3.4.x <3.7.3"
+            },
+            {
+                "name": "quay-bridge-operator.v3.7.4",
+                "replaces": "quay-bridge-operator.v3.7.3",
+                "skipRange": ">=3.4.x <3.7.4"
+            },
+            {
+                "name": "quay-bridge-operator.v3.7.5",
+                "replaces": "quay-bridge-operator.v3.7.4",
+                "skipRange": ">=3.4.x <3.7.5"
+            },
+            {
+                "name": "quay-bridge-operator.v3.7.6",
+                "replaces": "quay-bridge-operator.v3.7.5",
+                "skipRange": ">=3.4.x <3.7.6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.3.4",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-openshift-bridge-rhel8-operator-metadata@sha256:6e6b6b8c141ade81231d69ebe9b7eedbb60d32573cc0bf037040e64c304eff74",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayIntegration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.3.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-openshift-bridge-rhel8-operator-metadata@sha256:6e6b6b8c141ade81231d69ebe9b7eedbb60d32573cc0bf037040e64c304eff74"
+            },
+            {
+                "name": "quay-openshift-bridge-rhel8-operator-f6823fed3965f7b664b2b4fe4bf528b19cdb824b041ceb212d6e123fc4b60491-annotation",
+                "image": "registry.redhat.io/quay/quay-openshift-bridge-rhel8-operator@sha256:f6823fed3965f7b664b2b4fe4bf528b19cdb824b041ceb212d6e123fc4b60491"
+            },
+            {
+                "name": "quay-bridge-operator",
+                "image": "registry.redhat.io/quay/quay-openshift-bridge-rhel8-operator@sha256:f6823fed3965f7b664b2b4fe4bf528b19cdb824b041ceb212d6e123fc4b60491"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.4.6",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:e21ee1efdff187ac2f8a6ae61e5e9001543a17072c5008a9c30c8649d48fc6d0",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayIntegration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.4.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:e21ee1efdff187ac2f8a6ae61e5e9001543a17072c5008a9c30c8649d48fc6d0"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-03bedf520d9c503e3e042d78a210bae09a42b92d34d96eb83a0a7db1ad629e48-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:03bedf520d9c503e3e042d78a210bae09a42b92d34d96eb83a0a7db1ad629e48"
+            },
+            {
+                "name": "quay-bridge-operator",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:03bedf520d9c503e3e042d78a210bae09a42b92d34d96eb83a0a7db1ad629e48"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.4.7",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:4478b8a78bdde23e0d40476f8ad9e4bf0628fba7603a390e8de7e6a319abc1ec",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayIntegration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.4.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:4478b8a78bdde23e0d40476f8ad9e4bf0628fba7603a390e8de7e6a319abc1ec"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-501fe9b003b5066b3936def0ef4de05abd1a12e795e718d6c9a62d2c6c804c2e-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:501fe9b003b5066b3936def0ef4de05abd1a12e795e718d6c9a62d2c6c804c2e"
+            },
+            {
+                "name": "quay-bridge-operator",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:501fe9b003b5066b3936def0ef4de05abd1a12e795e718d6c9a62d2c6c804c2e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.5.6",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:d0cbc8dc1577ec4b5812664d1c5ff7c6043057b21a8ccd8a0ffc09bf8002276f",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayIntegration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.5.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:d0cbc8dc1577ec4b5812664d1c5ff7c6043057b21a8ccd8a0ffc09bf8002276f"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-a4d9b757beaa6e903e74b6d42b0240a2a50c82ba7544bb46701ea894523d8af6-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:a4d9b757beaa6e903e74b6d42b0240a2a50c82ba7544bb46701ea894523d8af6"
+            },
+            {
+                "name": "quay-bridge-operator",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:a4d9b757beaa6e903e74b6d42b0240a2a50c82ba7544bb46701ea894523d8af6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.5.7",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:6c2ab763239f6e5a2a72890120bf1f20f6277850cec59a7e11cea2b6a06f12e8",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayIntegration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.5.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:6c2ab763239f6e5a2a72890120bf1f20f6277850cec59a7e11cea2b6a06f12e8"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-9149df5ffc83dce6593072b7f72805e07e700b84527e45b4b7486b9c38f70731-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:9149df5ffc83dce6593072b7f72805e07e700b84527e45b4b7486b9c38f70731"
+            },
+            {
+                "name": "quay-bridge-operator",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:9149df5ffc83dce6593072b7f72805e07e700b84527e45b4b7486b9c38f70731"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.0",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:89ff146ee1ca5fd079bfc1d1dc2f84d3215edbeb7b540f7dde390d1508133229",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:a5c16c64229aac3564c66816c123e81a849ff93b8a443cd6ff14bd8d63c06644"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:89ff146ee1ca5fd079bfc1d1dc2f84d3215edbeb7b540f7dde390d1508133229"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-6d7cf84f18b7061c9b75ba3e004edad135e08c774af18191e8f562d4a55a935b-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:6d7cf84f18b7061c9b75ba3e004edad135e08c774af18191e8f562d4a55a935b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:6d7cf84f18b7061c9b75ba3e004edad135e08c774af18191e8f562d4a55a935b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.1",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:0d26d051081e4216e0526f37784bbb1af80e907708e2baffe5a10d993f1c9594",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7f6a280132b9746c51e44a4e795a0f861ec932c454d597a60a421b882ef924ff"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:0d26d051081e4216e0526f37784bbb1af80e907708e2baffe5a10d993f1c9594"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-2d31e7aba3bf9962010eeab45e4cfa7e7c967d14773433ca92fcecd7047702c5-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:2d31e7aba3bf9962010eeab45e4cfa7e7c967d14773433ca92fcecd7047702c5"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:2d31e7aba3bf9962010eeab45e4cfa7e7c967d14773433ca92fcecd7047702c5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.10",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:f7c4ed28a549fe7414312bd22c2ae140f1f28d30656fb9fb0c8ade05a8f82088",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.10"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:99dc6b5af811bb33892c17334dd4e1a7eddc6982d49a793b1789f505e00f49b1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:f7c4ed28a549fe7414312bd22c2ae140f1f28d30656fb9fb0c8ade05a8f82088"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-0ad7af440c6e00fb578ef40e6d600964324fd94ce7835a28d0ec355b7415093f-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:0ad7af440c6e00fb578ef40e6d600964324fd94ce7835a28d0ec355b7415093f"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:0ad7af440c6e00fb578ef40e6d600964324fd94ce7835a28d0ec355b7415093f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.2",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:44059d58c26d48d75a096b8c2ee353cc32d5e2939557432c997566bebb4d36e3",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:86e5fa1fa294987114be200890c2e516501e424aee0fb98ece25c95e7716295b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:44059d58c26d48d75a096b8c2ee353cc32d5e2939557432c997566bebb4d36e3"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-534f2ab91bed9f5b6f15780edacf59d710247c659e8ac0b9714be0c0f9f6d4e5-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:534f2ab91bed9f5b6f15780edacf59d710247c659e8ac0b9714be0c0f9f6d4e5"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:534f2ab91bed9f5b6f15780edacf59d710247c659e8ac0b9714be0c0f9f6d4e5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.4",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:b879a4b6f2869a5b2a3501b5a578ad3ef5e4449bede0035d5f572a5571e46e38",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:1dc542b5ab33368443f698305a90c617385b4e9b101acc4acc0aa7b4bf58a292"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:b879a4b6f2869a5b2a3501b5a578ad3ef5e4449bede0035d5f572a5571e46e38"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-984701555be2b382b8828593aaf95eba567ee077044b15afb55127e8536ee015-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:984701555be2b382b8828593aaf95eba567ee077044b15afb55127e8536ee015"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:984701555be2b382b8828593aaf95eba567ee077044b15afb55127e8536ee015"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.5",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:ae90a8652db4c07f67cbe24f72040b6547ed48a2c197826a2b92fc74f5455df5",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:d3226d151463bf7af90479cb46d9da22ae1d04e7fbb8db82af3d4f9fa1685fdb"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:ae90a8652db4c07f67cbe24f72040b6547ed48a2c197826a2b92fc74f5455df5"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-a2477ff1834aa7544f208fe7e13b04063c36313ad27cf2fdcde18f0301338bdb-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:a2477ff1834aa7544f208fe7e13b04063c36313ad27cf2fdcde18f0301338bdb"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:a2477ff1834aa7544f208fe7e13b04063c36313ad27cf2fdcde18f0301338bdb"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.6",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:e3e2d184d8740f2a23b682b36c522a91b01edd11d3452afee5c5c383eb3d1aa2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:94cd08d995c3a8de15a3c7e68b14ccb1cf2a9edb5878a67f509e9625bc6b2a0e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:e3e2d184d8740f2a23b682b36c522a91b01edd11d3452afee5c5c383eb3d1aa2"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-b0521d6b16e188aa3c0afc1e83bd7d00827e4ff24d89f8fd288f46e4cbdc76ed-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:b0521d6b16e188aa3c0afc1e83bd7d00827e4ff24d89f8fd288f46e4cbdc76ed"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:b0521d6b16e188aa3c0afc1e83bd7d00827e4ff24d89f8fd288f46e4cbdc76ed"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.7",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:13043772a6103c0293183d18c8811f4a8f7df14f753cf1736aa59b7a0f1015a3",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b84aac512df4a09499b50a1f6942c1ed68b20ffb0ee690fff3e15c5aad61c8ef"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:13043772a6103c0293183d18c8811f4a8f7df14f753cf1736aa59b7a0f1015a3"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-b0119bbb6e6d409a4eb2a03064a79d613cc4d1f32f6b9343e5a085789f42aacd-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:b0119bbb6e6d409a4eb2a03064a79d613cc4d1f32f6b9343e5a085789f42aacd"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:b0119bbb6e6d409a4eb2a03064a79d613cc4d1f32f6b9343e5a085789f42aacd"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.8",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:cd11eeedfe3e5e3ce51e95d441e2d930138df02744b1b808bf7f5e63c75fcba7",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.8"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:08a7d8c892fad69c589b81ad8fbd21d36c8fa4078530dba361cfa9a8f9f05950"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:cd11eeedfe3e5e3ce51e95d441e2d930138df02744b1b808bf7f5e63c75fcba7"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-f6a9564362aa475954a662c34b837023f77ddddb19a7683bfbe60d012db28398-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:f6a9564362aa475954a662c34b837023f77ddddb19a7683bfbe60d012db28398"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:f6a9564362aa475954a662c34b837023f77ddddb19a7683bfbe60d012db28398"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.6.9",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:1646c4c35b6b66440381f10ee26a79f83bd327e6a42b61bfd303125ea385d046",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.6.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3a13919e5b2b0afe318476c71e94dd48cc52a44935d824de315f34a9b941a5ea"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:1646c4c35b6b66440381f10ee26a79f83bd327e6a42b61bfd303125ea385d046"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-508c242f57ceaf801929931ce37f74432f28c3d14b7006ddddf366fa059e5616-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:508c242f57ceaf801929931ce37f74432f28c3d14b7006ddddf366fa059e5616"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:508c242f57ceaf801929931ce37f74432f28c3d14b7006ddddf366fa059e5616"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.7.0",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:d0d220d44e72dbdcb8a054d34c92490526d6d23df41ef9c4834ce6ff3640c1f9",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.7.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b84aac512df4a09499b50a1f6942c1ed68b20ffb0ee690fff3e15c5aad61c8ef"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:d0d220d44e72dbdcb8a054d34c92490526d6d23df41ef9c4834ce6ff3640c1f9"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-7c27d0a864cdc3d0b09bb51ad6d0d9731427cac28e3e62c4b7f790f15e5393f2-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:7c27d0a864cdc3d0b09bb51ad6d0d9731427cac28e3e62c4b7f790f15e5393f2"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:7c27d0a864cdc3d0b09bb51ad6d0d9731427cac28e3e62c4b7f790f15e5393f2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.7.1",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:caea1b02611b119c70e5c117d757bb31add6477cb37468ca4ca2180ef9312c78",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.7.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b84aac512df4a09499b50a1f6942c1ed68b20ffb0ee690fff3e15c5aad61c8ef"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:caea1b02611b119c70e5c117d757bb31add6477cb37468ca4ca2180ef9312c78"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-1ab907b57a2365e9ca4186204825661e83aca50ceadaf86a9bd22418962b6ce9-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:1ab907b57a2365e9ca4186204825661e83aca50ceadaf86a9bd22418962b6ce9"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:1ab907b57a2365e9ca4186204825661e83aca50ceadaf86a9bd22418962b6ce9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.7.2",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:28771170fc296fa2519b1381df8e50dbffa25622d35eece121c5b44dca5dd467",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.7.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:c9d0a5a2871c24c0b1058e419f2b090429363a319856397855412fd2c0037395"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:28771170fc296fa2519b1381df8e50dbffa25622d35eece121c5b44dca5dd467"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-ef3095570c0eb9b2182dc014ddb1a7ea47b217727ea9bfb543091b0856c02645-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:ef3095570c0eb9b2182dc014ddb1a7ea47b217727ea9bfb543091b0856c02645"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:ef3095570c0eb9b2182dc014ddb1a7ea47b217727ea9bfb543091b0856c02645"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.7.3",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:61c5340de89708c5e8e6798ab789eae9e65906bc15c811611441b60b4520e39a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.7.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:08a7d8c892fad69c589b81ad8fbd21d36c8fa4078530dba361cfa9a8f9f05950"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:61c5340de89708c5e8e6798ab789eae9e65906bc15c811611441b60b4520e39a"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-883e99b92433dd9deca636c240af0c7c8a9ffb341c39751921bf3bb2d06da45e-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:883e99b92433dd9deca636c240af0c7c8a9ffb341c39751921bf3bb2d06da45e"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:883e99b92433dd9deca636c240af0c7c8a9ffb341c39751921bf3bb2d06da45e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.7.4",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:4fad42370f01dddeebfd6e2746e8801ea5db64bbd0035bae6cf157870034d62c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.7.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:08a7d8c892fad69c589b81ad8fbd21d36c8fa4078530dba361cfa9a8f9f05950"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:4fad42370f01dddeebfd6e2746e8801ea5db64bbd0035bae6cf157870034d62c"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-aee86025da076509e72be1164ccfb938f5902cc110fd534c77915a7ac0976fc5-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:aee86025da076509e72be1164ccfb938f5902cc110fd534c77915a7ac0976fc5"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:aee86025da076509e72be1164ccfb938f5902cc110fd534c77915a7ac0976fc5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.7.5",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:f4a225c03c7a4063601018b4b4b7a2663d567e8ceda8e8c59102122567a473b4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.7.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3a13919e5b2b0afe318476c71e94dd48cc52a44935d824de315f34a9b941a5ea"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:f4a225c03c7a4063601018b4b4b7a2663d567e8ceda8e8c59102122567a473b4"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-7cf1fe85f09efeacccbd38416e90bd5e5915a0c6b73f22ccf90ad5c4ebc21493-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:7cf1fe85f09efeacccbd38416e90bd5e5915a0c6b73f22ccf90ad5c4ebc21493"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:7cf1fe85f09efeacccbd38416e90bd5e5915a0c6b73f22ccf90ad5c4ebc21493"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-bridge-operator.v3.7.6",
+        "package": "quay-bridge-operator",
+        "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:0a7df836629943e11a7c09f1dae5ff4046b2a3814fdec07c6de837f9ee75d205",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayIntegration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-bridge-operator",
+                    "version": "3.7.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3a13919e5b2b0afe318476c71e94dd48cc52a44935d824de315f34a9b941a5ea"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-bundle@sha256:0a7df836629943e11a7c09f1dae5ff4046b2a3814fdec07c6de837f9ee75d205"
+            },
+            {
+                "name": "quay-bridge-operator-rhel8-0773934cd81975313373cebe699a7243e6db43439326ff58b89a3cd43ad33136-annotation",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:0773934cd81975313373cebe699a7243e6db43439326ff58b89a3cd43ad33136"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/quay/quay-bridge-operator-rhel8@sha256:0773934cd81975313373cebe699a7243e6db43439326ff58b89a3cd43ad33136"
+            }
+        ]
+    }

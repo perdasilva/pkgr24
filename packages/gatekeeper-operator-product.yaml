@@ -1,0 +1,166 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: gatekeeper-operator-product
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "gatekeeper-operator-product",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "gatekeeper-operator-product",
+        "entries": [
+            {
+                "name": "gatekeeper-operator-product.v0.2.2"
+            },
+            {
+                "name": "gatekeeper-operator-product.v0.2.3"
+            },
+            {
+                "name": "gatekeeper-operator-product.v0.2.3-0.1655383639.p",
+                "replaces": "gatekeeper-operator-product.v0.2.2",
+                "skips": [
+                    "gatekeeper-operator-product.v0.2.3"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "gatekeeper-operator-product.v0.2.2",
+        "package": "gatekeeper-operator-product",
+        "image": "registry.redhat.io/rhacm2/gatekeeper-operator-bundle@sha256:45d089924f550f50ed5c1e56b249bcd7aeb29ff502bb80b8bdf05bac8a3bc394",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.gatekeeper.sh",
+                    "kind": "Gatekeeper",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "gatekeeper-operator-product",
+                    "version": "0.2.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:efea852b9c783d10f43dbfb7930446c8d3cdcb3c36ce01ed875b044983355b32"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-operator-bundle@sha256:45d089924f550f50ed5c1e56b249bcd7aeb29ff502bb80b8bdf05bac8a3bc394"
+            },
+            {
+                "name": "gatekeeper-rhel8-operator-6e748929ffdda7cdb749352d57e24baecabb5240dae4d86aa88fb6603a26afca-annotation",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-rhel8-operator@sha256:6e748929ffdda7cdb749352d57e24baecabb5240dae4d86aa88fb6603a26afca"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-rhel8-operator@sha256:6e748929ffdda7cdb749352d57e24baecabb5240dae4d86aa88fb6603a26afca"
+            },
+            {
+                "name": "gatekeeper",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-rhel8@sha256:28b6527e56018ad7bc235bfa31f6aae331dae7e9cfc34681d6ced04549a9df15"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "gatekeeper-operator-product.v0.2.3",
+        "package": "gatekeeper-operator-product",
+        "image": "registry.redhat.io/rhacm2/gatekeeper-operator-bundle@sha256:35dcdb52a7990afff32bbf2454f1c856907562d15ca978163bfe54ac49fe6ffa",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.gatekeeper.sh",
+                    "kind": "Gatekeeper",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "gatekeeper-operator-product",
+                    "version": "0.2.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:27540b17bf6e76916c60a650fa15f0ef034c2b4f8dfe2832c1a9da57368b744c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-operator-bundle@sha256:35dcdb52a7990afff32bbf2454f1c856907562d15ca978163bfe54ac49fe6ffa"
+            },
+            {
+                "name": "gatekeeper-rhel8-operator-b77b2b384ef080bea51eedacfc38a3c1280be68d4a1ab9e347567ec6bde1d810-annotation",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-rhel8-operator@sha256:b77b2b384ef080bea51eedacfc38a3c1280be68d4a1ab9e347567ec6bde1d810"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-rhel8-operator@sha256:b77b2b384ef080bea51eedacfc38a3c1280be68d4a1ab9e347567ec6bde1d810"
+            },
+            {
+                "name": "gatekeeper",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-rhel8@sha256:8b56d575b5fe3d4ac0188affebba3a179941363207e4e726bb6f79faaed4e0fb"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "gatekeeper-operator-product.v0.2.3-0.1655383639.p",
+        "package": "gatekeeper-operator-product",
+        "image": "registry.redhat.io/rhacm2/gatekeeper-operator-bundle@sha256:942c1fcc654f67654156119aa31ae77a210bc0fed1cd964144cccf4b4d2cdb72",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.gatekeeper.sh",
+                    "kind": "Gatekeeper",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "gatekeeper-operator-product",
+                    "version": "0.2.3+0.1655383639.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:27540b17bf6e76916c60a650fa15f0ef034c2b4f8dfe2832c1a9da57368b744c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-operator-bundle@sha256:942c1fcc654f67654156119aa31ae77a210bc0fed1cd964144cccf4b4d2cdb72"
+            },
+            {
+                "name": "gatekeeper-rhel8-operator-d07be6296245275b0688717f5fbb71ee988ab7cccb25697f9a296f7066299beb-annotation",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-rhel8-operator@sha256:d07be6296245275b0688717f5fbb71ee988ab7cccb25697f9a296f7066299beb"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-rhel8-operator@sha256:d07be6296245275b0688717f5fbb71ee988ab7cccb25697f9a296f7066299beb"
+            },
+            {
+                "name": "gatekeeper",
+                "image": "registry.redhat.io/rhacm2/gatekeeper-rhel8@sha256:35a49360a6bbb7a2518c1db1f2cca31dd92421ab91d4e940ed8d918377ef775c"
+            }
+        ]
+    }

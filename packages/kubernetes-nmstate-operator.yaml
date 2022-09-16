@@ -1,0 +1,78 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: kubernetes-nmstate-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "kubernetes-nmstate-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "4.11",
+        "package": "kubernetes-nmstate-operator",
+        "entries": [
+            {
+                "name": "kubernetes-nmstate-operator.4.11.0-202208152036",
+                "skipRange": ">=4.3.0 <4.11.0-202208152036"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "kubernetes-nmstate-operator",
+        "entries": [
+            {
+                "name": "kubernetes-nmstate-operator.4.11.0-202208152036",
+                "skipRange": ">=4.3.0 <4.11.0-202208152036"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "kubernetes-nmstate-operator.4.11.0-202208152036",
+        "package": "kubernetes-nmstate-operator",
+        "image": "registry.redhat.io/openshift4/kubernetes-nmstate-operator-bundle@sha256:8339f1ebc62850a605771192d7214dc2a82524be3c95ac8231a356f153e938aa",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nmstate.io",
+                    "kind": "NMState",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nmstate.io",
+                    "kind": "NMState",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "kubernetes-nmstate-operator",
+                    "version": "4.11.0-202208152036"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/kubernetes-nmstate-operator-bundle@sha256:8339f1ebc62850a605771192d7214dc2a82524be3c95ac8231a356f153e938aa"
+            },
+            {
+                "name": "kubernetes-nmstate-rhel8-operator",
+                "image": "registry.redhat.io/openshift4/kubernetes-nmstate-rhel8-operator@sha256:e164d974ecdffbd57acfb5a6ff88557677cd5445bdf5d5622c48c98772ecbdd3"
+            },
+            {
+                "name": "ose-kubernetes-nmstate-handler-rhel8",
+                "image": "registry.redhat.io/openshift4/ose-kubernetes-nmstate-handler-rhel8@sha256:71ceb4be448ee988cc182c06d2c4e370d1c4a3dde1c23aa139461d2ae405e40e"
+            }
+        ]
+    }

@@ -1,0 +1,304 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: costmanagement-metrics-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "costmanagement-metrics-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "costmanagement-metrics-operator",
+        "entries": [
+            {
+                "name": "costmanagement-metrics-operator.1.0.0"
+            },
+            {
+                "name": "costmanagement-metrics-operator.1.1.0",
+                "replaces": "costmanagement-metrics-operator.1.0.0"
+            },
+            {
+                "name": "costmanagement-metrics-operator.1.1.3",
+                "replaces": "costmanagement-metrics-operator.1.1.0"
+            },
+            {
+                "name": "costmanagement-metrics-operator.1.1.4",
+                "replaces": "costmanagement-metrics-operator.1.1.3"
+            },
+            {
+                "name": "costmanagement-metrics-operator.1.1.5",
+                "replaces": "costmanagement-metrics-operator.1.1.4"
+            },
+            {
+                "name": "costmanagement-metrics-operator.1.1.6",
+                "replaces": "costmanagement-metrics-operator.1.1.5"
+            },
+            {
+                "name": "costmanagement-metrics-operator.1.1.7",
+                "replaces": "costmanagement-metrics-operator.1.1.6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "costmanagement-metrics-operator.1.0.0",
+        "package": "costmanagement-metrics-operator",
+        "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:70fa64452d13ec5e1ed1abb9b87029cc8e9fec9a5288640326a43d854d01f087",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "costmanagement-metrics-cfg.openshift.io",
+                    "kind": "CostManagementMetricsConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "costmanagement-metrics-operator",
+                    "version": "1.0.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:70fa64452d13ec5e1ed1abb9b87029cc8e9fec9a5288640326a43d854d01f087"
+            },
+            {
+                "name": "costmanagement-metrics-rhel8-operator-806ddc53720ba0a6b0e6b9ab7b1c4da5502c66dae3008bfdfce36edeb23eb8d8-annotation",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:806ddc53720ba0a6b0e6b9ab7b1c4da5502c66dae3008bfdfce36edeb23eb8d8"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:806ddc53720ba0a6b0e6b9ab7b1c4da5502c66dae3008bfdfce36edeb23eb8d8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "costmanagement-metrics-operator.1.1.0",
+        "package": "costmanagement-metrics-operator",
+        "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:f2455392ddf7fe8506a2485835cbbd9c633476344a0cd9353e46c6fa44e4667c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "costmanagement-metrics-cfg.openshift.io",
+                    "kind": "CostManagementMetricsConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "costmanagement-metrics-operator",
+                    "version": "1.1.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:f2455392ddf7fe8506a2485835cbbd9c633476344a0cd9353e46c6fa44e4667c"
+            },
+            {
+                "name": "costmanagement-metrics-rhel8-operator-36f3f6385d872f86f498fe221fd4e114b26d7b31f90969e57cd9637db9ea004c-annotation",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:36f3f6385d872f86f498fe221fd4e114b26d7b31f90969e57cd9637db9ea004c"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:36f3f6385d872f86f498fe221fd4e114b26d7b31f90969e57cd9637db9ea004c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "costmanagement-metrics-operator.1.1.3",
+        "package": "costmanagement-metrics-operator",
+        "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:6393be8e83443f0039d5cefd2f4df992986b6b3ec16f7ed38b1a902aa7051091",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "costmanagement-metrics-cfg.openshift.io",
+                    "kind": "CostManagementMetricsConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "costmanagement-metrics-operator",
+                    "version": "1.1.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:6393be8e83443f0039d5cefd2f4df992986b6b3ec16f7ed38b1a902aa7051091"
+            },
+            {
+                "name": "costmanagement-metrics-rhel8-operator-76c5b8f887c88d79b0225259afeddf41be0bdde316b4dbf85bbc610462127e1b-annotation",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:76c5b8f887c88d79b0225259afeddf41be0bdde316b4dbf85bbc610462127e1b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:76c5b8f887c88d79b0225259afeddf41be0bdde316b4dbf85bbc610462127e1b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "costmanagement-metrics-operator.1.1.4",
+        "package": "costmanagement-metrics-operator",
+        "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:e14493e3b02509690c65016297cf95fc2e4a11a7c97e0f8ca5812e66acbc6c26",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "costmanagement-metrics-cfg.openshift.io",
+                    "kind": "CostManagementMetricsConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "costmanagement-metrics-operator",
+                    "version": "1.1.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:e14493e3b02509690c65016297cf95fc2e4a11a7c97e0f8ca5812e66acbc6c26"
+            },
+            {
+                "name": "costmanagement-metrics-rhel8-operator-2ce0ccd1c76080d4f97683eb3a11bac6848dfa13d231a8ad3f40c2463d977691-annotation",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:2ce0ccd1c76080d4f97683eb3a11bac6848dfa13d231a8ad3f40c2463d977691"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:2ce0ccd1c76080d4f97683eb3a11bac6848dfa13d231a8ad3f40c2463d977691"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "costmanagement-metrics-operator.1.1.5",
+        "package": "costmanagement-metrics-operator",
+        "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:ce775e3dac0fc6a04698c6a53fc38d73593cbd3100dacafb41d7b1bd9505c4e4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "costmanagement-metrics-cfg.openshift.io",
+                    "kind": "CostManagementMetricsConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "costmanagement-metrics-operator",
+                    "version": "1.1.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:ce775e3dac0fc6a04698c6a53fc38d73593cbd3100dacafb41d7b1bd9505c4e4"
+            },
+            {
+                "name": "costmanagement-metrics-rhel8-operator-fe14a37527faed6262630c6f76cd862598244a318d40ea7d6ebaea14661b8e9b-annotation",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:fe14a37527faed6262630c6f76cd862598244a318d40ea7d6ebaea14661b8e9b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:fe14a37527faed6262630c6f76cd862598244a318d40ea7d6ebaea14661b8e9b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "costmanagement-metrics-operator.1.1.6",
+        "package": "costmanagement-metrics-operator",
+        "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:020d5d1777d0dec2ae432a1cd93f7a306c7860ad05cabe19c59f9359b5d4e44e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "costmanagement-metrics-cfg.openshift.io",
+                    "kind": "CostManagementMetricsConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "costmanagement-metrics-operator",
+                    "version": "1.1.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:020d5d1777d0dec2ae432a1cd93f7a306c7860ad05cabe19c59f9359b5d4e44e"
+            },
+            {
+                "name": "costmanagement-metrics-rhel8-operator-523b662fb05098ec9410cc0665556495f6409b44b8c8030c1c456eeee864da66-annotation",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:523b662fb05098ec9410cc0665556495f6409b44b8c8030c1c456eeee864da66"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:523b662fb05098ec9410cc0665556495f6409b44b8c8030c1c456eeee864da66"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "costmanagement-metrics-operator.1.1.7",
+        "package": "costmanagement-metrics-operator",
+        "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:0abc9b30a48080d2a4a413f7818770ea4dd7b78c715a816fe5818ec75326bb69",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "costmanagement-metrics-cfg.openshift.io",
+                    "kind": "CostManagementMetricsConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "costmanagement-metrics-operator",
+                    "version": "1.1.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-operator-bundle@sha256:0abc9b30a48080d2a4a413f7818770ea4dd7b78c715a816fe5818ec75326bb69"
+            },
+            {
+                "name": "costmanagement-metrics-rhel8-operator-4c9153b33cc942134e2bd857a8cae47ded38eb789874fde089d67b00d0c2e6f6-annotation",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:4c9153b33cc942134e2bd857a8cae47ded38eb789874fde089d67b00d0c2e6f6"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/costmanagement/costmanagement-metrics-rhel8-operator@sha256:4c9153b33cc942134e2bd857a8cae47ded38eb789874fde089d67b00d0c2e6f6"
+            }
+        ]
+    }

@@ -1,0 +1,422 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: odf-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "odf-operator",
+        "defaultChannel": "stable-4.11"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.10",
+        "package": "odf-operator",
+        "entries": [
+            {
+                "name": "odf-operator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.0"
+            },
+            {
+                "name": "odf-operator.v4.10.1",
+                "replaces": "odf-operator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.1"
+            },
+            {
+                "name": "odf-operator.v4.10.2",
+                "replaces": "odf-operator.v4.10.1",
+                "skipRange": ">=4.2.0 <4.10.2"
+            },
+            {
+                "name": "odf-operator.v4.10.3",
+                "replaces": "odf-operator.v4.10.2",
+                "skipRange": ">=4.2.0 <4.10.3"
+            },
+            {
+                "name": "odf-operator.v4.10.4",
+                "replaces": "odf-operator.v4.10.3",
+                "skipRange": ">=4.2.0 <4.10.4"
+            },
+            {
+                "name": "odf-operator.v4.10.5",
+                "replaces": "odf-operator.v4.10.4",
+                "skipRange": ">=4.2.0 <4.10.5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.11",
+        "package": "odf-operator",
+        "entries": [
+            {
+                "name": "odf-operator.v4.11.0",
+                "skipRange": ">=4.11.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-operator.v4.10.0",
+        "package": "odf-operator",
+        "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:dc4d9a53dea5573e3020ad5d1ea1018705b6be25294c722d29f57bd90564c58c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "odf.openshift.io",
+                    "kind": "StorageSystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-operator",
+                    "version": "4.10.0"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "versionRange": ">=4.9.0 <4.10.0 || 4.10.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-console",
+                "image": "registry.redhat.io/odf4/odf-console-rhel8@sha256:7eeb65458c924f183658b54548463450ddc828a4d7f3fd9746b263c88a6cbbba"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:dc4d9a53dea5573e3020ad5d1ea1018705b6be25294c722d29f57bd90564c58c"
+            },
+            {
+                "name": "odf-operator",
+                "image": "registry.redhat.io/odf4/odf-rhel8-operator@sha256:4860ed22df4ac49573bcf2434266585ba48ff33c8f25ec2a36f616bd349c4e25"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b8109aa8cb1f87d52afdfcb3e87382e197ca5983121409a6aaa1c7340004cc19"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-operator.v4.10.1",
+        "package": "odf-operator",
+        "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:bc2cac50a38866218646cb8b9af10cc8fa03cb01467878ebf412e783150350ea",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "odf.openshift.io",
+                    "kind": "StorageSystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-operator",
+                    "version": "4.10.1"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "versionRange": ">=4.9.0 <4.10.0 || 4.10.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-console",
+                "image": "registry.redhat.io/odf4/odf-console-rhel8@sha256:c676426bfc0eeeace11aaeb46167e5a90f54be4c4320ffb2f5a71fde054dba54"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:bc2cac50a38866218646cb8b9af10cc8fa03cb01467878ebf412e783150350ea"
+            },
+            {
+                "name": "odf-operator",
+                "image": "registry.redhat.io/odf4/odf-rhel8-operator@sha256:752fe3d8d6c48b640d482dd592282ca3fb4fbed8b7b3caac3d43ceb152bccf78"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:004362f4560a23975e9b453d18da6ddd99d4131589952b395b84df49cb125f8c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-operator.v4.10.2",
+        "package": "odf-operator",
+        "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:a00e90621b5a6f94abd890c9ffa1dd9703f213b6a418b49570f692fb85affafb",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "odf.openshift.io",
+                    "kind": "StorageSystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-operator",
+                    "version": "4.10.2"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "versionRange": ">=4.9.0 <4.10.0 || 4.10.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-console",
+                "image": "registry.redhat.io/odf4/odf-console-rhel8@sha256:ab6d793450e1ed2129e813525e888cc2dc0e4b96cfcac38cce1e99d36b94ffe8"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:a00e90621b5a6f94abd890c9ffa1dd9703f213b6a418b49570f692fb85affafb"
+            },
+            {
+                "name": "odf-operator",
+                "image": "registry.redhat.io/odf4/odf-rhel8-operator@sha256:9e3fa922c7d390a2c897964e72f01a3656214c60aa9c6f93a1bde41aacd9a7c5"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:20954f1fd9c2bac5cabaedbeec25d60b31546ffc05f3e4c38ffcf45e2ed41be9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-operator.v4.10.3",
+        "package": "odf-operator",
+        "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:0651850ea45cad985998ede7e625e22ae3ffc50442142fbe49eef558cffc81a0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "odf.openshift.io",
+                    "kind": "StorageSystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-operator",
+                    "version": "4.10.3"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "versionRange": ">=4.9.0 <4.10.0 || 4.10.3"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "versionRange": ">=4.9.0 <4.10.0 || 4.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-console",
+                "image": "registry.redhat.io/odf4/odf-console-rhel8@sha256:65167c53c27c19f5d35961b71e61c6fe0d6f35f8a03ad1d79937f3109f3c416a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:0651850ea45cad985998ede7e625e22ae3ffc50442142fbe49eef558cffc81a0"
+            },
+            {
+                "name": "odf-operator",
+                "image": "registry.redhat.io/odf4/odf-rhel8-operator@sha256:af1e3b76a959bc9570f7347fa1515045e7f7a81ee025e45d0afeff2b3532ae18"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:8503a9bab5ea92bc6f7f8cdc00b4dab8e73103973d17b0bfdbf921d15cd9a4c0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-operator.v4.10.4",
+        "package": "odf-operator",
+        "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:662ec108960703f41652ff47b49e6a509a52fe244d52891d320b821dd9521f55",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "odf.openshift.io",
+                    "kind": "StorageSystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-operator",
+                    "version": "4.10.4"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "versionRange": ">=4.9.0 <4.10.0 || 4.10.4"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "versionRange": ">=4.9.0 <4.10.0 || 4.10.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-console",
+                "image": "registry.redhat.io/odf4/odf-console-rhel8@sha256:031c6e5327bcf765773b6326287e9ac86a616a0833c8daf6c4c22a271e47b8a0"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:662ec108960703f41652ff47b49e6a509a52fe244d52891d320b821dd9521f55"
+            },
+            {
+                "name": "odf-operator",
+                "image": "registry.redhat.io/odf4/odf-rhel8-operator@sha256:db35b81f6655a08014e843d79fa09c8c40fe18f1eadc285cd7db5866546d87d0"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3658954f199040b0f244945c94955f794ee68008657421002e1b32962e7c30fc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-operator.v4.10.5",
+        "package": "odf-operator",
+        "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:182d966cb488b188075d2ffd3f6451eec179429ac4bff55e2e26245049953a82",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "odf.openshift.io",
+                    "kind": "StorageSystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-operator",
+                    "version": "4.10.5"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "versionRange": ">=4.9.0 <4.10.0 || 4.10.5"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "versionRange": ">=4.9.0 <4.10.0 || 4.10.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-console",
+                "image": "registry.redhat.io/odf4/odf-console-rhel8@sha256:e61cb3f5c56771f94b6c80a99c644be560b1b5569d9fac7b5cc2860edb00e0b8"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:182d966cb488b188075d2ffd3f6451eec179429ac4bff55e2e26245049953a82"
+            },
+            {
+                "name": "odf-operator",
+                "image": "registry.redhat.io/odf4/odf-rhel8-operator@sha256:7473ccb3651cda84119af3f73bc05d9634f7999461d7fca1ded03f067a942238"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3658954f199040b0f244945c94955f794ee68008657421002e1b32962e7c30fc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-operator.v4.11.0",
+        "package": "odf-operator",
+        "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:45695f266a4b31df6805ab24977e490f8d71b0e32ff4dfb2e0b397c66de66b21",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "odf.openshift.io",
+                    "kind": "StorageSystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-operator",
+                    "version": "4.11.0"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "versionRange": ">=4.9.0 <4.11.0 || 4.11.0"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "versionRange": ">=4.9.0 <4.11.0 || 4.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-console",
+                "image": "registry.redhat.io/odf4/odf-console-rhel8@sha256:4317a0fddb49d1504b47f64ea7a9e7096790b3c4261499c076424d7d32657a14"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-operator-bundle@sha256:45695f266a4b31df6805ab24977e490f8d71b0e32ff4dfb2e0b397c66de66b21"
+            },
+            {
+                "name": "odf-operator",
+                "image": "registry.redhat.io/odf4/odf-rhel8-operator@sha256:5aa3e2098a78478aed1b6ad62a78198145f8ef9a339d3a32a791ce2506b83131"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b5786bbbef725badf3dfcc2c2c7a86ead5ebb584c978c47aae8b9a62e241b80d"
+            }
+        ]
+    }

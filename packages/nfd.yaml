@@ -1,0 +1,79 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: nfd
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "nfd",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "nfd",
+        "entries": [
+            {
+                "name": "nfd.4.11.0-202208031306",
+                "skipRange": ">=4.9.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "nfd.4.11.0-202208031306",
+        "package": "nfd",
+        "image": "registry.redhat.io/openshift4/ose-cluster-nfd-operator-bundle@sha256:c2b15e2ee10dd8d72872dbef26d689e39b0837fa6ea5194fc6545ca8b3e4199d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nfd.openshift.io",
+                    "kind": "NodeFeatureDiscovery",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nfd.openshift.io",
+                    "kind": "NodeFeatureRule",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "topology.node.k8s.io",
+                    "kind": "NodeResourceTopology",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "nfd",
+                    "version": "4.11.0-202208031306"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/ose-cluster-nfd-operator-bundle@sha256:c2b15e2ee10dd8d72872dbef26d689e39b0837fa6ea5194fc6545ca8b3e4199d"
+            },
+            {
+                "name": "ose-cluster-nfd-operator",
+                "image": "registry.redhat.io/openshift4/ose-cluster-nfd-operator@sha256:7f8e4cccffa57ec85c2d9aa292b823190aed4fbb8120acc5d339ecc84c311b8b"
+            },
+            {
+                "name": "ose-kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7abede2caee5a935f87219f51732cff5a8c3bfca1eab1f0e9725ca93fd347b89"
+            },
+            {
+                "name": "ose-node-feature-discovery",
+                "image": "registry.redhat.io/openshift4/ose-node-feature-discovery@sha256:79e97f9993a5807606e15c8e472c5f2a35b83bdd9fd24208641f107c16d6fea2"
+            }
+        ]
+    }

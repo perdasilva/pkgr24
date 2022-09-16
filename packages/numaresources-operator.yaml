@@ -1,0 +1,63 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: numaresources-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "numaresources-operator",
+        "defaultChannel": "4.11"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "4.11",
+        "package": "numaresources-operator",
+        "entries": [
+            {
+                "name": "numaresources-operator.v4.11.1",
+                "skipRange": ">=4.10.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "numaresources-operator.v4.11.1",
+        "package": "numaresources-operator",
+        "image": "registry.redhat.io/openshift4/numaresources-operator-bundle@sha256:d5f0672c6a72a6a13524745bde3f2574ae295c840e76466ab4f04788b666a154",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nodetopology.openshift.io",
+                    "kind": "NUMAResourcesOperator",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nodetopology.openshift.io",
+                    "kind": "NUMAResourcesScheduler",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "numaresources-operator",
+                    "version": "4.11.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/numaresources-operator-bundle@sha256:d5f0672c6a72a6a13524745bde3f2574ae295c840e76466ab4f04788b666a154"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift4/numaresources-rhel8-operator@sha256:2010c932cdacccebbd99b2e6e95a12d5508ace5c73d04e7efe2d755277e32a3a"
+            }
+        ]
+    }

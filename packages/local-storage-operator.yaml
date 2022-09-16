@@ -1,0 +1,87 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: local-storage-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "local-storage-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "local-storage-operator",
+        "entries": [
+            {
+                "name": "local-storage-operator.4.11.0-202208031306",
+                "skipRange": ">=4.3.0 <4.11.0-202208031306"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "local-storage-operator.4.11.0-202208031306",
+        "package": "local-storage-operator",
+        "image": "registry.redhat.io/openshift4/ose-local-storage-operator-bundle@sha256:6ee70cccd3881871bcc43ee54bcf28f47d16daaecb407f2264ed8d51bb89bc6f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "local.storage.openshift.io",
+                    "kind": "LocalVolume",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "local.storage.openshift.io",
+                    "kind": "LocalVolumeDiscovery",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "local.storage.openshift.io",
+                    "kind": "LocalVolumeDiscoveryResult",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "local.storage.openshift.io",
+                    "kind": "LocalVolumeSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "local-storage-operator",
+                    "version": "4.11.0-202208031306"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "ose-kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7abede2caee5a935f87219f51732cff5a8c3bfca1eab1f0e9725ca93fd347b89"
+            },
+            {
+                "name": "ose-local-storage-diskmaker",
+                "image": "registry.redhat.io/openshift4/ose-local-storage-diskmaker@sha256:d6f3ebe5fdeee7d0c207e5f5130c5068efc87c95249a694ebaa4c7a39685a2bd"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/ose-local-storage-operator-bundle@sha256:6ee70cccd3881871bcc43ee54bcf28f47d16daaecb407f2264ed8d51bb89bc6f"
+            },
+            {
+                "name": "ose-local-storage-operator",
+                "image": "registry.redhat.io/openshift4/ose-local-storage-operator@sha256:8950898324715ad87be192582f5fd8bcb0d04c55eb4cba04d792b41485ebafea"
+            }
+        ]
+    }

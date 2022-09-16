@@ -1,0 +1,83 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: ptp-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "ptp-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "ptp-operator",
+        "entries": [
+            {
+                "name": "ptp-operator.4.11.0-202208111458",
+                "skipRange": ">=4.3.0-0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "ptp-operator.4.11.0-202208111458",
+        "package": "ptp-operator",
+        "image": "registry.redhat.io/openshift4/ose-ptp-operator-metadata@sha256:322ec1504e76ebf2502d8b6a368a7efd2bf215ec93f922627c2eadbbfeaf64df",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ptp.openshift.io",
+                    "kind": "NodePtpDevice",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ptp.openshift.io",
+                    "kind": "PtpConfig",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ptp.openshift.io",
+                    "kind": "PtpOperatorConfig",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ptp-operator",
+                    "version": "4.11.0-202208111458"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "ose-cloud-event-proxy",
+                "image": "registry.redhat.io/openshift4/ose-cloud-event-proxy@sha256:bb8ab07175938ae14515c38258fcd4f3d9a26daed75d33593e15553ba66cd0f0"
+            },
+            {
+                "name": "ose-kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7abede2caee5a935f87219f51732cff5a8c3bfca1eab1f0e9725ca93fd347b89"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/ose-ptp-operator-metadata@sha256:322ec1504e76ebf2502d8b6a368a7efd2bf215ec93f922627c2eadbbfeaf64df"
+            },
+            {
+                "name": "ose-ptp-operator",
+                "image": "registry.redhat.io/openshift4/ose-ptp-operator@sha256:31d6853e0e387e0c3ef034eb9ab27af2256062764d484754aa690fa9e854561f"
+            },
+            {
+                "name": "ose-ptp",
+                "image": "registry.redhat.io/openshift4/ose-ptp@sha256:011a1e89a3de595965da3cdd61f3786a0131130ebebd456a502f1253176d663e"
+            }
+        ]
+    }

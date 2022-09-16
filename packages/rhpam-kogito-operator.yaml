@@ -1,0 +1,367 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: rhpam-kogito-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "rhpam-kogito-operator",
+        "defaultChannel": "7.x"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "7.x",
+        "package": "rhpam-kogito-operator",
+        "entries": [
+            {
+                "name": "rhpam-kogito-operator.v7.11.0"
+            },
+            {
+                "name": "rhpam-kogito-operator.v7.11.1-1",
+                "replaces": "rhpam-kogito-operator.v7.11.0"
+            },
+            {
+                "name": "rhpam-kogito-operator.v7.12.0",
+                "replaces": "rhpam-kogito-operator.v7.11.1-1"
+            },
+            {
+                "name": "rhpam-kogito-operator.v7.12.0-2",
+                "replaces": "rhpam-kogito-operator.v7.12.0"
+            },
+            {
+                "name": "rhpam-kogito-operator.v7.12.0-3",
+                "replaces": "rhpam-kogito-operator.v7.12.0-2"
+            },
+            {
+                "name": "rhpam-kogito-operator.v7.12.0-4",
+                "replaces": "rhpam-kogito-operator.v7.12.0-3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhpam-kogito-operator.v7.11.0",
+        "package": "rhpam-kogito-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:cf48fb54b64296f5df188496a31b7d1828d43082144ba019995e00c0d4423d38",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoBuild",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoRuntime",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhpam-kogito-operator",
+                    "version": "7.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:10252238f921d720b8af7e2ca8e90be6e8516efefc1633697aa048a74041f1c3"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:cf48fb54b64296f5df188496a31b7d1828d43082144ba019995e00c0d4423d38"
+            },
+            {
+                "name": "rhpam-kogito-rhel8-operator-eb58b860eafb316d4661c8c8f25c066af5abc46cebaa1e6141a6fe4a004168d8-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:eb58b860eafb316d4661c8c8f25c066af5abc46cebaa1e6141a6fe4a004168d8"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:eb58b860eafb316d4661c8c8f25c066af5abc46cebaa1e6141a6fe4a004168d8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhpam-kogito-operator.v7.11.1-1",
+        "package": "rhpam-kogito-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:551f44cac671aecabca7261bba5e263836e63c497d22868b970be38a2dfe8e77",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoBuild",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoRuntime",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhpam-kogito-operator",
+                    "version": "7.11.1-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:6d0286b8a8f6f3cd9d6cd8319400acf27b70fbb52df5808ec6fe2d9849be7d8c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:551f44cac671aecabca7261bba5e263836e63c497d22868b970be38a2dfe8e77"
+            },
+            {
+                "name": "rhpam-kogito-rhel8-operator-93dbf2e1ef29da860145d93c0306f40d1ebb72b73272a683e5c11182fc89a8f2-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:93dbf2e1ef29da860145d93c0306f40d1ebb72b73272a683e5c11182fc89a8f2"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:93dbf2e1ef29da860145d93c0306f40d1ebb72b73272a683e5c11182fc89a8f2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhpam-kogito-operator.v7.12.0",
+        "package": "rhpam-kogito-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:fbe0ade7f5956274ccf1fa883f0a10c9b503021e78ba7c0e41be399a4a843dfc",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoBuild",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoInfra",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoRuntime",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhpam-kogito-operator",
+                    "version": "7.12.0-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:6a770b64dc5c1e0986ed9f913db01facc17e3beccb677797ed7a36338ec476df"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:fbe0ade7f5956274ccf1fa883f0a10c9b503021e78ba7c0e41be399a4a843dfc"
+            },
+            {
+                "name": "rhpam-kogito-rhel8-operator-7aa5491e5d26b29cd0e271d24996e587a65b50f5a8d871bd004b53da65ee0038-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:7aa5491e5d26b29cd0e271d24996e587a65b50f5a8d871bd004b53da65ee0038"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:7aa5491e5d26b29cd0e271d24996e587a65b50f5a8d871bd004b53da65ee0038"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhpam-kogito-operator.v7.12.0-2",
+        "package": "rhpam-kogito-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:ed8b2000b90cda466a92135fcdc610d53c3ce2d345fd93aa3b070789196d5fde",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoBuild",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoInfra",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoRuntime",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhpam-kogito-operator",
+                    "version": "7.12.0-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:ba5426d9d97a3815c489649c782c44f29f9b21053936a6a5a80b221f3d36e4c2"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:ed8b2000b90cda466a92135fcdc610d53c3ce2d345fd93aa3b070789196d5fde"
+            },
+            {
+                "name": "rhpam-kogito-rhel8-operator-b1d965fa04ad0af764b9ba71bc686a6efadf9f6882cdbbe7bd48e8de2dce378c-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:b1d965fa04ad0af764b9ba71bc686a6efadf9f6882cdbbe7bd48e8de2dce378c"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:b1d965fa04ad0af764b9ba71bc686a6efadf9f6882cdbbe7bd48e8de2dce378c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhpam-kogito-operator.v7.12.0-3",
+        "package": "rhpam-kogito-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:53f27bf3362240c4518460558b832922079a8d7620a128da81527c858aa4769b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoBuild",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoInfra",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoRuntime",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhpam-kogito-operator",
+                    "version": "7.12.0-3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:2a665bc4fba791f9d32e6920ef2623e47f451aabba4d1abafa0b9b409572f953"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:53f27bf3362240c4518460558b832922079a8d7620a128da81527c858aa4769b"
+            },
+            {
+                "name": "rhpam-kogito-rhel8-operator-bf2f6d39a8aea45b030b92ff03eabe4ba266906412b03234b8a2d56a16232cfc-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:bf2f6d39a8aea45b030b92ff03eabe4ba266906412b03234b8a2d56a16232cfc"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:bf2f6d39a8aea45b030b92ff03eabe4ba266906412b03234b8a2d56a16232cfc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhpam-kogito-operator.v7.12.0-4",
+        "package": "rhpam-kogito-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:3c4755977ed2a86baa7ecb0dd691ce0d45800bed51e1ac984c36946d529f21df",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoBuild",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoInfra",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoRuntime",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhpam-kogito-operator",
+                    "version": "7.12.0-4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:af49f9410980545c47514bf8191d88dc0640e7698c74581f66f87e3205360d60"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator-bundle@sha256:3c4755977ed2a86baa7ecb0dd691ce0d45800bed51e1ac984c36946d529f21df"
+            },
+            {
+                "name": "rhpam-kogito-rhel8-operator-d6aa216fe31a766eaf58c2cfcf81ff1c9e2b56884ded539bee6a4107a32d3117-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:d6aa216fe31a766eaf58c2cfcf81ff1c9e2b56884ded539bee6a4107a32d3117"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kogito-rhel8-operator@sha256:d6aa216fe31a766eaf58c2cfcf81ff1c9e2b56884ded539bee6a4107a32d3117"
+            }
+        ]
+    }

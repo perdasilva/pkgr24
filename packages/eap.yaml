@@ -1,0 +1,396 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: eap
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "eap",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "eap",
+        "entries": [
+            {
+                "name": "eap-operator.v2.1.4"
+            },
+            {
+                "name": "eap-operator.v2.2.0",
+                "replaces": "eap-operator.v2.1.4"
+            },
+            {
+                "name": "eap-operator.v2.2.1",
+                "replaces": "eap-operator.v2.2.0"
+            },
+            {
+                "name": "eap-operator.v2.2.2",
+                "replaces": "eap-operator.v2.2.1"
+            },
+            {
+                "name": "eap-operator.v2.3.0"
+            },
+            {
+                "name": "eap-operator.v2.3.1",
+                "replaces": "eap-operator.v2.2.2",
+                "skips": [
+                    "eap-operator.v2.3.0"
+                ]
+            },
+            {
+                "name": "eap-operator.v2.3.2",
+                "replaces": "eap-operator.v2.3.1"
+            },
+            {
+                "name": "eap-operator.v2.3.3",
+                "replaces": "eap-operator.v2.3.2"
+            },
+            {
+                "name": "eap-operator.v2.3.4",
+                "replaces": "eap-operator.v2.3.3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "eap-operator.v2.1.4",
+        "package": "eap",
+        "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:80c4952d54adfc853560e60e8fe218ae9d74f7b34c96eebb95b87e6baeaaf268",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "wildfly.org",
+                    "kind": "WildFlyServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "eap",
+                    "version": "2.1.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:80c4952d54adfc853560e60e8fe218ae9d74f7b34c96eebb95b87e6baeaaf268"
+            },
+            {
+                "name": "eap73-rhel8-operator-3b52000b169d2a885bc5289098f824b10cbc9eae422b3ea9cebf5bc3a47a9ea7-annotation",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:3b52000b169d2a885bc5289098f824b10cbc9eae422b3ea9cebf5bc3a47a9ea7"
+            },
+            {
+                "name": "eap-operator",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:3b52000b169d2a885bc5289098f824b10cbc9eae422b3ea9cebf5bc3a47a9ea7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "eap-operator.v2.2.0",
+        "package": "eap",
+        "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:8139305c7f154076cda2db41faad08f04e8f5424efcace11065250089f81fd48",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "wildfly.org",
+                    "kind": "WildFlyServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "eap",
+                    "version": "2.2.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:8139305c7f154076cda2db41faad08f04e8f5424efcace11065250089f81fd48"
+            },
+            {
+                "name": "eap73-rhel8-operator-89778ff9cd402860410f15cdf52e299398aaa24966ca5bdf4de77f28d47f9988-annotation",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:89778ff9cd402860410f15cdf52e299398aaa24966ca5bdf4de77f28d47f9988"
+            },
+            {
+                "name": "eap-operator",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:89778ff9cd402860410f15cdf52e299398aaa24966ca5bdf4de77f28d47f9988"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "eap-operator.v2.2.1",
+        "package": "eap",
+        "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:6c81990583d45da3bd2b8331d15a523f41282cfd38647faba6f6bb4a21fb2b1c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "wildfly.org",
+                    "kind": "WildFlyServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "eap",
+                    "version": "2.2.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:6c81990583d45da3bd2b8331d15a523f41282cfd38647faba6f6bb4a21fb2b1c"
+            },
+            {
+                "name": "eap73-rhel8-operator-393034f5df728b90b0ede3689ac0d2758b963c90ce03988f143f8a7d9500d914-annotation",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:393034f5df728b90b0ede3689ac0d2758b963c90ce03988f143f8a7d9500d914"
+            },
+            {
+                "name": "eap-operator",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:393034f5df728b90b0ede3689ac0d2758b963c90ce03988f143f8a7d9500d914"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "eap-operator.v2.2.2",
+        "package": "eap",
+        "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:ad98c90067733d311aa55098533da3508912ea46196cefa7ac9ac9077144853f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "wildfly.org",
+                    "kind": "WildFlyServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "eap",
+                    "version": "2.2.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:ad98c90067733d311aa55098533da3508912ea46196cefa7ac9ac9077144853f"
+            },
+            {
+                "name": "eap73-rhel8-operator-0d2fa7f4e9ca1ef2f8198af5e8219aeb139f50df83327573e30cccc5c8f3dc05-annotation",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:0d2fa7f4e9ca1ef2f8198af5e8219aeb139f50df83327573e30cccc5c8f3dc05"
+            },
+            {
+                "name": "eap-operator",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:0d2fa7f4e9ca1ef2f8198af5e8219aeb139f50df83327573e30cccc5c8f3dc05"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "eap-operator.v2.3.0",
+        "package": "eap",
+        "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:28ae1d482b83ec93303edc39eb26050a650e6483cf901cd28086c2af471ce0d4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "wildfly.org",
+                    "kind": "WildFlyServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "eap",
+                    "version": "2.3.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:28ae1d482b83ec93303edc39eb26050a650e6483cf901cd28086c2af471ce0d4"
+            },
+            {
+                "name": "eap73-rhel8-operator-38c8d9f7bc0f38aad9ed99adbc912fc0bdcad89336652b8400c4f652a456a8de-annotation",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:38c8d9f7bc0f38aad9ed99adbc912fc0bdcad89336652b8400c4f652a456a8de"
+            },
+            {
+                "name": "eap-operator",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:38c8d9f7bc0f38aad9ed99adbc912fc0bdcad89336652b8400c4f652a456a8de"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "eap-operator.v2.3.1",
+        "package": "eap",
+        "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:621ad4470ed3f678c8b3ebfc0e31c910a9bd758f98208817454a9c3d5c984383",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "wildfly.org",
+                    "kind": "WildFlyServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "eap",
+                    "version": "2.3.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:621ad4470ed3f678c8b3ebfc0e31c910a9bd758f98208817454a9c3d5c984383"
+            },
+            {
+                "name": "eap73-rhel8-operator-38c8d9f7bc0f38aad9ed99adbc912fc0bdcad89336652b8400c4f652a456a8de-annotation",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:38c8d9f7bc0f38aad9ed99adbc912fc0bdcad89336652b8400c4f652a456a8de"
+            },
+            {
+                "name": "eap-operator",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:38c8d9f7bc0f38aad9ed99adbc912fc0bdcad89336652b8400c4f652a456a8de"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "eap-operator.v2.3.2",
+        "package": "eap",
+        "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:45d84cd60bc606b06bcf1b6e6c49f22c3f4e8102c479ebb9470c73b132e416e6",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "wildfly.org",
+                    "kind": "WildFlyServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "eap",
+                    "version": "2.3.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:45d84cd60bc606b06bcf1b6e6c49f22c3f4e8102c479ebb9470c73b132e416e6"
+            },
+            {
+                "name": "eap73-rhel8-operator-14efa0f18e10633f5a3e4ae7c1d8e20423a0809ddc798418b21b336d87eff37d-annotation",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:14efa0f18e10633f5a3e4ae7c1d8e20423a0809ddc798418b21b336d87eff37d"
+            },
+            {
+                "name": "eap-operator",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:14efa0f18e10633f5a3e4ae7c1d8e20423a0809ddc798418b21b336d87eff37d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "eap-operator.v2.3.3",
+        "package": "eap",
+        "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:21ad1f525ec631b7d53c08b9c4915b3bfbbe6370dbf11030cb9aeb17f4926e42",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "wildfly.org",
+                    "kind": "WildFlyServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "eap",
+                    "version": "2.3.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:21ad1f525ec631b7d53c08b9c4915b3bfbbe6370dbf11030cb9aeb17f4926e42"
+            },
+            {
+                "name": "eap73-rhel8-operator-3c2ed32eee5a8afb4ff11239bb1e473f4f89056e8a3da8049f45d7fde45e7ebc-annotation",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:3c2ed32eee5a8afb4ff11239bb1e473f4f89056e8a3da8049f45d7fde45e7ebc"
+            },
+            {
+                "name": "eap-operator",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:3c2ed32eee5a8afb4ff11239bb1e473f4f89056e8a3da8049f45d7fde45e7ebc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "eap-operator.v2.3.4",
+        "package": "eap",
+        "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:74b6d49e4c0105e27b4db84ac3ae994e769ca92f4772a2b145e77b49058fc91a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "wildfly.org",
+                    "kind": "WildFlyServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "eap",
+                    "version": "2.3.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator-bundle@sha256:74b6d49e4c0105e27b4db84ac3ae994e769ca92f4772a2b145e77b49058fc91a"
+            },
+            {
+                "name": "eap73-rhel8-operator-5cf45ffc8d8584b9d83a1b1c3f98604c0c2f0d3eb59bdc656581f8aab0d95388-annotation",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:5cf45ffc8d8584b9d83a1b1c3f98604c0c2f0d3eb59bdc656581f8aab0d95388"
+            },
+            {
+                "name": "eap-operator",
+                "image": "registry.redhat.io/jboss-eap-7/eap73-rhel8-operator@sha256:5cf45ffc8d8584b9d83a1b1c3f98604c0c2f0d3eb59bdc656581f8aab0d95388"
+            }
+        ]
+    }

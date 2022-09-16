@@ -1,0 +1,1662 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: quay-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "quay-operator",
+        "defaultChannel": "stable-3.7"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "quay-v3.4",
+        "package": "quay-operator",
+        "entries": [
+            {
+                "name": "quay-operator.v3.4.6",
+                "skipRange": ">=3.3.x <3.4.6"
+            },
+            {
+                "name": "quay-operator.v3.4.7",
+                "skips": [
+                    "red-hat-quay.v3.3.4",
+                    "quay-operator.v3.4.6",
+                    "quay-operator.v3.4.5",
+                    "quay-operator.v3.4.4",
+                    "quay-operator.v3.4.3",
+                    "quay-operator.v3.4.2",
+                    "quay-operator.v3.4.1",
+                    "quay-operator.v3.4.0"
+                ]
+            },
+            {
+                "name": "red-hat-quay.v3.3.4",
+                "skipRange": ">=3.3.0 <3.3.4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "quay-v3.5",
+        "package": "quay-operator",
+        "entries": [
+            {
+                "name": "quay-operator.v3.5.6",
+                "skipRange": ">=3.4.x <3.5.6"
+            },
+            {
+                "name": "quay-operator.v3.5.7",
+                "replaces": "quay-operator.v3.5.6",
+                "skipRange": ">=3.4.x <3.5.7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-3.6",
+        "package": "quay-operator",
+        "entries": [
+            {
+                "name": "quay-operator.v3.6.0",
+                "skipRange": ">=3.3.x <3.6.0"
+            },
+            {
+                "name": "quay-operator.v3.6.1",
+                "replaces": "quay-operator.v3.6.0",
+                "skipRange": ">=3.3.x <3.6.1"
+            },
+            {
+                "name": "quay-operator.v3.6.10",
+                "replaces": "quay-operator.v3.6.9",
+                "skipRange": ">=3.3.x <3.6.10"
+            },
+            {
+                "name": "quay-operator.v3.6.2",
+                "replaces": "quay-operator.v3.6.1",
+                "skipRange": ">=3.3.x <3.6.2"
+            },
+            {
+                "name": "quay-operator.v3.6.4",
+                "replaces": "quay-operator.v3.6.2",
+                "skipRange": ">=3.3.x <3.6.4"
+            },
+            {
+                "name": "quay-operator.v3.6.5",
+                "replaces": "quay-operator.v3.6.4",
+                "skipRange": ">=3.3.x <3.6.5"
+            },
+            {
+                "name": "quay-operator.v3.6.6",
+                "replaces": "quay-operator.v3.6.5",
+                "skipRange": ">=3.3.x <3.6.6"
+            },
+            {
+                "name": "quay-operator.v3.6.7",
+                "replaces": "quay-operator.v3.6.6",
+                "skipRange": ">=3.3.x <3.6.7"
+            },
+            {
+                "name": "quay-operator.v3.6.8",
+                "replaces": "quay-operator.v3.6.7",
+                "skipRange": ">=3.3.x <3.6.8"
+            },
+            {
+                "name": "quay-operator.v3.6.9",
+                "replaces": "quay-operator.v3.6.8",
+                "skipRange": ">=3.3.x <3.6.9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-3.7",
+        "package": "quay-operator",
+        "entries": [
+            {
+                "name": "quay-operator.v3.7.0",
+                "skipRange": ">=3.4.x <3.7.0"
+            },
+            {
+                "name": "quay-operator.v3.7.1",
+                "replaces": "quay-operator.v3.7.0",
+                "skipRange": ">=3.4.x <3.7.1"
+            },
+            {
+                "name": "quay-operator.v3.7.2",
+                "replaces": "quay-operator.v3.7.1",
+                "skipRange": ">=3.4.x <3.7.2"
+            },
+            {
+                "name": "quay-operator.v3.7.3",
+                "replaces": "quay-operator.v3.7.2",
+                "skipRange": ">=3.4.x <3.7.3"
+            },
+            {
+                "name": "quay-operator.v3.7.4",
+                "replaces": "quay-operator.v3.7.3",
+                "skipRange": ">=3.4.x <3.7.4"
+            },
+            {
+                "name": "quay-operator.v3.7.5",
+                "replaces": "quay-operator.v3.7.4",
+                "skipRange": ">=3.4.x <3.7.5"
+            },
+            {
+                "name": "quay-operator.v3.7.6",
+                "replaces": "quay-operator.v3.7.5",
+                "skipRange": ">=3.4.x <3.7.6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.4.6",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:69e10b27a15d15a17b09b381c40e4f984e16cbb88bdaec2ea581b5d2020c8376",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.4.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:fa433a03655b4d533b833c132304d88561cb8e00d72ac0be5d6ad4cf31ba7fb0"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:0172691fb73c1a95adcd6803dec53bf67d81641cceda23a3cbe3e2341a73137d"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:8b98bc59da681474e56679ff4fdb110543b6fd68ab81f4675fd31ed4c6b13f53"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:69e10b27a15d15a17b09b381c40e4f984e16cbb88bdaec2ea581b5d2020c8376"
+            },
+            {
+                "name": "quay-operator-rhel8-ae692ce950655e325ed760c3adf9a2dd90320c4c61efedf9cd1a30a235fe1086-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:ae692ce950655e325ed760c3adf9a2dd90320c4c61efedf9cd1a30a235fe1086"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:ae692ce950655e325ed760c3adf9a2dd90320c4c61efedf9cd1a30a235fe1086"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:9a22e5ac1bf8a29d328134f78599320a44715ec8633e9701b5b99ff204ab0625"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:05f69e06541e1b01fc7b7b93a3ee46c314c2eec853703706b30b9f9a7df1c289"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:5a057f2024fdf9513cae5fc8d68ebd3ba6ff316193e1b9cc4fce0cf1d0e5e981"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.4.7",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:b793aef88881aa75d47a22377d8932efc0b497bb01b2f3f376d64891d1dace54",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.4.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:af5e2fd1543365b365b1a6cce00b86e44fe5e66cde6491e9b113324c21f629c8"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:0e6bef51caf479074925115fa11621c41bcada375cc1925d0511a73084b93543"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:2a471300f70d3995ab7e9fcc3df35c5513e73fcc1d140fb4d651a1c3eae949eb"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:b793aef88881aa75d47a22377d8932efc0b497bb01b2f3f376d64891d1dace54"
+            },
+            {
+                "name": "quay-operator-rhel8-d73321dfa6dcced943405fae45c2ccf841663e0ab57e8be8cc1ddba251b7ce08-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:d73321dfa6dcced943405fae45c2ccf841663e0ab57e8be8cc1ddba251b7ce08"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:d73321dfa6dcced943405fae45c2ccf841663e0ab57e8be8cc1ddba251b7ce08"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:ed8c4249d376b4226e35bf088ffe5bf688bf68b059718c5e218aa1184fe048d0"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:b2695e9af379624621bef9ec785f0cb618bfdabae98c5f17eea82ff5f8d2d5cb"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:8d7e66927ce4b3050ca15ab4df4dbaeb593cb855e16fb0a6f5dde950e9db7db9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.5.6",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:1d91ca01625eed740e8ffb88074be8ae5dfa83b5e78aa097cb0b68aa48d226d9",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.5.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:1c95b2a6c8e9e1a11360991b7d5feb7c39efb40b41d74705961a11e91a0e6656"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:37d69a759153ce4b9c03acf8886cf01b03e0dc3ee794158c255078d6cb84c6df"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:2a03759f0427d5d78cf718c2d1ac68ba3d399d976f6b7a479285b287d7068636"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:1d91ca01625eed740e8ffb88074be8ae5dfa83b5e78aa097cb0b68aa48d226d9"
+            },
+            {
+                "name": "quay-operator-rhel8-8aef3cc1920685650e2a9288eff5307c0f4a258922303da2517db3380667a81c-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:8aef3cc1920685650e2a9288eff5307c0f4a258922303da2517db3380667a81c"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:8aef3cc1920685650e2a9288eff5307c0f4a258922303da2517db3380667a81c"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:cbdf7ef33eb57c77563cbee5180e5c925d7c25d29545c8c8a70bc6d84ac1c375"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:a723bb3a7a5046527b9a5b628ddfb211c526e3814cc4242262c4f8a016f38edd"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:7916760ff03af5ca230df5e96b2bf353fbf1829386de1c063c05f623837be7f7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.5.7",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:722cf3c05eb5663a737cb1385b971b6d1f0c8b2595d5ac425f7b100c25e2fd26",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.5.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:d242bd9d37f95b2a5a8267b3f1eba02c671d46121712baae43466c86d1da89f9"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:5d72577ccfd63c6d9ad712b376b604c40d2d3ecb53e391e2ee0d18caa6e0225a"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:7fe408a1e428b2d0660cb578c1dcd4b961f838e37166fe7b21b2bed70d288594"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:722cf3c05eb5663a737cb1385b971b6d1f0c8b2595d5ac425f7b100c25e2fd26"
+            },
+            {
+                "name": "quay-operator-rhel8-1f5e4cc9ec2d9b8b89d82f1a698acfa1ac2764ca4ebc5c85b3417da7730b5867-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:1f5e4cc9ec2d9b8b89d82f1a698acfa1ac2764ca4ebc5c85b3417da7730b5867"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:1f5e4cc9ec2d9b8b89d82f1a698acfa1ac2764ca4ebc5c85b3417da7730b5867"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:c599892160ac20c744d833603d9375923af7aec1edfd86982b7513e02fb6d463"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:a723bb3a7a5046527b9a5b628ddfb211c526e3814cc4242262c4f8a016f38edd"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:7916760ff03af5ca230df5e96b2bf353fbf1829386de1c063c05f623837be7f7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.0",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:7eeea8b3c3f9ddade8e989a5227fe2e01b7dff0546350017117a10155f16fbe1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:5e5415c0688053a19b04171ffcdb7777ce32930757d4f3dab09ddc8bc51ec7e7"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:be2559ba51155ba46014e5f9fdc3428e9330536ade2ff2f2240a3fea6ab898f5"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:44a1cd315552f38f256beb0fb3c92ba99b2523ccca28bb5b3fa46b546f1b8a3d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:7eeea8b3c3f9ddade8e989a5227fe2e01b7dff0546350017117a10155f16fbe1"
+            },
+            {
+                "name": "quay-operator-rhel8-5f274f06ab25ca7fe8b8ff376c6136bcacef9a8624ccf09bbcc3f4b90866646b-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:5f274f06ab25ca7fe8b8ff376c6136bcacef9a8624ccf09bbcc3f4b90866646b"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:5f274f06ab25ca7fe8b8ff376c6136bcacef9a8624ccf09bbcc3f4b90866646b"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:3325a62367a93c1cc05db9e9d652e275edba17f62b265ba6b76f9b0d5fd63d7b"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:98ca35fdf08068b49216a35ed4e81507bf91c8babf30c92d5f200cbfb2df35ed"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:4fd508f1bde15fd16e6f2bcd53ec782ce5abcacd55a52ec995066aff19a0951e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.1",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:b4646e5ca603c7f28606825f905fed369105579532c146fbf3f978fe92e04db8",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:3c1f7e84de62ba28615cb49ac9f976231447fa757e08782399f8cd9503c0ae4a"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:2b0b042e48a61c72e9e66069d1048c926b275bdbab85dff8bd3e97b83444c174"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:8a0afcf7fe7fd1660510d645d27dc1a5440f9c21b76dff52d62f690c0d4f3939"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:b4646e5ca603c7f28606825f905fed369105579532c146fbf3f978fe92e04db8"
+            },
+            {
+                "name": "quay-operator-rhel8-ed4bd0462c25674816db58242bf4631663a22731db58f958b69bd34937e01255-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:ed4bd0462c25674816db58242bf4631663a22731db58f958b69bd34937e01255"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:ed4bd0462c25674816db58242bf4631663a22731db58f958b69bd34937e01255"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:26b682c1b528e390626d48a2d03efdee8d06fac96aaa2f6b8e7a367bf0c23118"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:b2695e9af379624621bef9ec785f0cb618bfdabae98c5f17eea82ff5f8d2d5cb"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:8d7e66927ce4b3050ca15ab4df4dbaeb593cb855e16fb0a6f5dde950e9db7db9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.10",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:55a5e6297109aea029bd40fac09a9fbc10c28a8c5558f9afc9b9b86c5dc7a4d4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.10"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:cbafddd1eb50c1c0f9159ffafd86f44a8c0b976194903c96c6f144bfe62e749d"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:75df6b8e6bef14844a08f7d994470fa6ec4ffa66d4b15faaa0a3ba373f612fbb"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:ec36241f0a9a2983b1894cd8501898e6b70379af51a81b1e09b0ba0e9b54b33f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:55a5e6297109aea029bd40fac09a9fbc10c28a8c5558f9afc9b9b86c5dc7a4d4"
+            },
+            {
+                "name": "quay-operator-rhel8-7a6e592d7f5f760b4451f9c974dbb96f56b1d3de92f039adcbf284f78ba13a02-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:7a6e592d7f5f760b4451f9c974dbb96f56b1d3de92f039adcbf284f78ba13a02"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:7a6e592d7f5f760b4451f9c974dbb96f56b1d3de92f039adcbf284f78ba13a02"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:e75e4d084eba9bb65b9cc72e38294af314d49316b12a0beb75db808dc057830b"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:4b912c80085b88a03309aeb7907efcc29dd3342fa3952b6ea067afb1914bfe53"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.2",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:f09b4448a109871b3e156b308f8f872d9be40a8c14929770ab89ad063c5f3760",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:0d457d6123821b0af5cf5d49d9f9f37f6be5fa83ea4d68afb37becc23100835d"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:4c0876c0cd80fc3ece055b116dea1646b3c5eec4a491d0ff4b8b8fc918f1376b"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:b2cbb3f06fdb76e81fa7c84fa56bfcf1fe11b912c63521c568dda3edda81c0cc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:f09b4448a109871b3e156b308f8f872d9be40a8c14929770ab89ad063c5f3760"
+            },
+            {
+                "name": "quay-operator-rhel8-e6dd630bc1931c3ee623a74f3bd586c90b1e610f782eb41e02bdc17f28d257bd-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:e6dd630bc1931c3ee623a74f3bd586c90b1e610f782eb41e02bdc17f28d257bd"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:e6dd630bc1931c3ee623a74f3bd586c90b1e610f782eb41e02bdc17f28d257bd"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:80ddb329fe7a309c5950febfd57a053ff88bdde022e060a5bc5404651a4dbdfd"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:8c478323435c05c5115b435ffc4d91184be277be1c220d68d7a741392708d893"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:697c358426508ef17d7cccc580ab78bc5c8ae396a5e60508b265312cc92f18ac"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.4",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:0f60945064eb846c3ebe5d30d707af4c0e12a499a5437e283bfc96a333f29047",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:438b8eb1982325da3908e965336e980128b20451e7d91e1edf23a267a6be60ca"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:c3ed85e2635b3c3b483a431ec49362c2693484f9d059ec2ee98513aa10d456a7"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:f4ec4f92b649da84da65c21e15f8550fe69d6c0df32c5ac31f0803440f7b3682"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:0f60945064eb846c3ebe5d30d707af4c0e12a499a5437e283bfc96a333f29047"
+            },
+            {
+                "name": "quay-operator-rhel8-99de3a47361e3d16479a506088a82558079afecfd6345f2a3ef25daef57d1d82-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:99de3a47361e3d16479a506088a82558079afecfd6345f2a3ef25daef57d1d82"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:99de3a47361e3d16479a506088a82558079afecfd6345f2a3ef25daef57d1d82"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:2d035f7177b4a8621e5bf2058f04b5fa1105e4965fbd3e0bbc6a63039847ccbe"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:c9455e224f2598bb2ca981fe8f6826dd017352e60e5287ebb621c274d1ec38b8"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b711e9f796376353db77a337befb39c31e844caaa2ab46985c9e5ad0b5e92996"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.5",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:4c7e9aa2647280a78e92bff05be4ed3c74af07931f0d69dcd07c3555632a6786",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:cdac00978d3caa8d28773c190600761ca8c751ed2a320564e8eb58388799f1fb"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:a4ab78b72455be1402eca693514cd132e1a038e9fcd1d5f54cc45a4acf6141f7"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:df844e7420bd468d8e7323ba895f8e5c7bda15bef8a8a24ca102f8f64ae1c360"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:4c7e9aa2647280a78e92bff05be4ed3c74af07931f0d69dcd07c3555632a6786"
+            },
+            {
+                "name": "quay-operator-rhel8-f1ba56ab81cb53e882489c3f982674809d9ce66a988906265bb4c7318175f1bf-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:f1ba56ab81cb53e882489c3f982674809d9ce66a988906265bb4c7318175f1bf"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:f1ba56ab81cb53e882489c3f982674809d9ce66a988906265bb4c7318175f1bf"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:cdfb9b481c7ea19ce9b7afd55e6c25e565764453bd540a1bf63659d159c03634"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:5fee8740fc75098fc552444752b34aa5d8966974c88688e734a306e46ffc839a"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:a4b62680bf5f8644e39fd25ca8e333b7d6d1e98c902b695a4c98984675ff195c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.6",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:58175c576381fdea5a9b4124c5a240a0699140922298fe4ef6538adfa82e0edd",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:99b9477df8e65a914d646c08035880db9f81e773d6e50714c94db676376dd617"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:547bd49779dce0c9b6495d75b8411bc30c50aa6e0922d21e8bda26eaffe7d255"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:f4a6ac91d2adfe7a7eacf51d42d3f33260ef31d36d82f71eec5fd4038e7d79bc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:58175c576381fdea5a9b4124c5a240a0699140922298fe4ef6538adfa82e0edd"
+            },
+            {
+                "name": "quay-operator-rhel8-cbcc63ac35c1bb6d6d7f5139a3d7d72503f049abc4bcb2da7840855375f4cffe-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:cbcc63ac35c1bb6d6d7f5139a3d7d72503f049abc4bcb2da7840855375f4cffe"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:cbcc63ac35c1bb6d6d7f5139a3d7d72503f049abc4bcb2da7840855375f4cffe"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:8a0f20a95be19614d74fad176c51c57376ddf18fb3b5d8e688078221094f13cb"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:5fee8740fc75098fc552444752b34aa5d8966974c88688e734a306e46ffc839a"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:a4b62680bf5f8644e39fd25ca8e333b7d6d1e98c902b695a4c98984675ff195c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.7",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:57758f6bd3465a8240769ddfa7b04b526306254dad843beabd32843dadc8122d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:2e383321df73847980e197470492b9bf71d8105b60eac533cb84a2e911120327"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:ee24a13d492df021c66b80a39557f29ce6b674d40287acfd4ec7030cf456de51"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:afdcae96ed1df67b706a4ef9edc42adfd3f7c5ccb8aea397471f76c1a3aa787d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:57758f6bd3465a8240769ddfa7b04b526306254dad843beabd32843dadc8122d"
+            },
+            {
+                "name": "quay-operator-rhel8-27f84c3f0d0ad90bce80ec194ca6555b30da58bd4614253d53e4bec709614cc5-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:27f84c3f0d0ad90bce80ec194ca6555b30da58bd4614253d53e4bec709614cc5"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:27f84c3f0d0ad90bce80ec194ca6555b30da58bd4614253d53e4bec709614cc5"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:3936a8d2d2e97bdbbb19bd7c75ed5ad7dba75e8c192570279e6bbcdca3589f1c"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:faa833223012392309dfc8bca799b858e5eddc2ae5b945ea6c3db689a7a78a2c"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:8774cad84ba8e5a277da4f2af4b971dbfa715120e3a29399b9b873825e18f0a2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.8",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:6e8a0d2094643d7ad2b7cdab564a7a3995417985d6d248d9eaee159ae64ab365",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.8"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:ce6225617da914b3961bef330ebaa02128f43895bf84a32c4c5df42fad58e47f"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:1876e24324e003413c3aacfe0f1087d8fef1307bfd7a5d4cd94cf139b3dfe979"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:68d1c073b3fa744c6c0371ca890c7d530ab9b5bd37b779f0c45254e2fb4df6cd"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:6e8a0d2094643d7ad2b7cdab564a7a3995417985d6d248d9eaee159ae64ab365"
+            },
+            {
+                "name": "quay-operator-rhel8-9633145c8d91f18eda553337cda715e4da87bf7fbaff219314fec28a2adfb890-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:9633145c8d91f18eda553337cda715e4da87bf7fbaff219314fec28a2adfb890"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:9633145c8d91f18eda553337cda715e4da87bf7fbaff219314fec28a2adfb890"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:d03191af850ee0703bb12ee1aabbf98a06e2b320f1b24e3914157d8fa5b243ad"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:11a69d52ff89005e9a36db90be759495efd66cd31c0240f89821d80c7e6b2c8a"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:68d227bd49d49fe5636c5ee79ec3b1b297110dedf39d836287b2dff700f4efe5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.6.9",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:9742c270b51fc7dc87d73808be6eb22866e51b9a66f51d95574f1baebd53b433",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.6.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:c7007f24b846706a10faa5980eebf468127c57f6c15d8113f971af89c00fd624"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:f05a59e4d9708fa4cd9c1c92dc41a13e457e95cddbfa46830d4e6ec81f4349b3"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:e72398a0f301235565db20c6ac356d4d1aa99875e220960debec6bb9ecb8b2e2"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:9742c270b51fc7dc87d73808be6eb22866e51b9a66f51d95574f1baebd53b433"
+            },
+            {
+                "name": "quay-operator-rhel8-fa22ec76e5db595355df39c1a9065116f5ecb9229391f350fa99737c4e6f7f7d-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:fa22ec76e5db595355df39c1a9065116f5ecb9229391f350fa99737c4e6f7f7d"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:fa22ec76e5db595355df39c1a9065116f5ecb9229391f350fa99737c4e6f7f7d"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:2db0c553b121a667464b47984535dc2d5aa324e2684b0034b6cff6618111b53b"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:4b912c80085b88a03309aeb7907efcc29dd3342fa3952b6ea067afb1914bfe53"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.7.0",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:0ff77676222483ee29496951eba594fbdbc925f78fc1dc7c35a3c79fde7c8dcc",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.7.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:86d45aaf6f783f119d9ed9acf9fc962b037564b32ba2b68e9075282f7e1d6e5b"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:3c5ca9604ced0f227b5f1c36843e78e0a143d85020d8c523f4e9c7c473f11ff7"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:4c17a2825378a21b7ac0ecc695960383eee111152446e5dec398d87e9df22beb"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:0ff77676222483ee29496951eba594fbdbc925f78fc1dc7c35a3c79fde7c8dcc"
+            },
+            {
+                "name": "quay-operator-rhel8-105be0f9237a6aeca8b885cbc6d0fa417edc5684746ae7e6b2c985e72a2c7239-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:105be0f9237a6aeca8b885cbc6d0fa417edc5684746ae7e6b2c985e72a2c7239"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:105be0f9237a6aeca8b885cbc6d0fa417edc5684746ae7e6b2c985e72a2c7239"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:5576284ca4f57dce09f8f2e2ac2428dfb4a3128cdc9edc36de36408531524654"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:80a71b80006dafd56a9b65ac933f2edb0a27a3dd95c556add3c706c7c135ae50"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:84f28f53b43548e5c2821d26815e38e4dda0f84b241cf93f296458a8e146ab32"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.7.1",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:efcdbb64bb9a01fddf5a39430de392231715551ce1a56f6fea8fb49ceda7aff8",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.7.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:ea5ec9f7cb9e93b1a2985321fdfa05d114c8ce128a5b9687b945815bd157c6a6"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:4c17209e9aeb5487bb80950c0cd4bd0c91422488add94da6339ad5126eede6a1"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:317d45f5a936b4291089450d3e9d7c9a983f67f683375278fcda36cd3bd2face"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:efcdbb64bb9a01fddf5a39430de392231715551ce1a56f6fea8fb49ceda7aff8"
+            },
+            {
+                "name": "quay-operator-rhel8-5619aa0fab34e963116c1a0f4416a6183c575437dfe035ca7a131121fe7b4146-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:5619aa0fab34e963116c1a0f4416a6183c575437dfe035ca7a131121fe7b4146"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:5619aa0fab34e963116c1a0f4416a6183c575437dfe035ca7a131121fe7b4146"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:b879e556c4b253df898c799237991173eb3b000a1d1172bac036b57d79d77a39"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:faa833223012392309dfc8bca799b858e5eddc2ae5b945ea6c3db689a7a78a2c"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:8774cad84ba8e5a277da4f2af4b971dbfa715120e3a29399b9b873825e18f0a2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.7.2",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:c70439cfd134e347593a5f9ab2a22312f644698043a3dece56913a8989dc2048",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.7.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:f1dcb0abe715b4658504efc7ef8ae12e6829c6ff31e03dc6d4427d79fb5c42cc"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:c85e19dd9e05d06c7f534fcc0b38c25bad60a73c49d424a6a80a767e0a13a208"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:8a2ac7491b4b85c5291f54deed9e7748a2b9896da93a6e03ff577345ba202bf7"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:c70439cfd134e347593a5f9ab2a22312f644698043a3dece56913a8989dc2048"
+            },
+            {
+                "name": "quay-operator-rhel8-d44c9b02da1c299fd4dd7d2233aae7693ceaafe582abcc90f74ddb92e12aad8f-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:d44c9b02da1c299fd4dd7d2233aae7693ceaafe582abcc90f74ddb92e12aad8f"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:d44c9b02da1c299fd4dd7d2233aae7693ceaafe582abcc90f74ddb92e12aad8f"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:f93a4b4b0668f0257121a07e5eb2900631199bebb9a3f9a35a08ffc76f18492b"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:11a69d52ff89005e9a36db90be759495efd66cd31c0240f89821d80c7e6b2c8a"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:68d227bd49d49fe5636c5ee79ec3b1b297110dedf39d836287b2dff700f4efe5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.7.3",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:5c050f9ea28f2d5f13b4d5dba23d0ed47410af3fcea639c51f60f8c692041ec6",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.7.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:2f597574cb4a8a4345f5a5dcb23f4dcad5b7604c6beeff2a43f2872369259013"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:a352ee9fec9ebe64cf6bc711e27c2f043817308fb9bbbe27b6ad1a6e20e5e7ac"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:969a40392f74d28cd635a32f4448b0b8704eb09a447dcb0a74be5a0687e598cc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:5c050f9ea28f2d5f13b4d5dba23d0ed47410af3fcea639c51f60f8c692041ec6"
+            },
+            {
+                "name": "quay-operator-rhel8-1eaed6852349933b683fee66b4402b87d0dfe78a303febd0b8625368095fa175-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:1eaed6852349933b683fee66b4402b87d0dfe78a303febd0b8625368095fa175"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:1eaed6852349933b683fee66b4402b87d0dfe78a303febd0b8625368095fa175"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:77906e2ad23c4b12c42c12418498d3e927bf513bf6e2a605425e3b170769c674"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:514d40eb741ebc74443220457a5a77efde898873008480e88c171a459b22bfc7"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.7.4",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:337956a26fee8fb22cecdb5b0920a896801094c78452c54ce6ffd2fc9a06c7d9",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.7.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:3ca32e5a853a61697c4049537d06aaa12401652eab07eff2b3a748d4d6235138"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:3145329372ab124e5f1a5098e297143fab615853b4d4d7e0c47fea28f9e9396f"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:85abca5202a31519290ee9e99036f57b02fc6acca57400cb21ef7c005b646e5a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:337956a26fee8fb22cecdb5b0920a896801094c78452c54ce6ffd2fc9a06c7d9"
+            },
+            {
+                "name": "quay-operator-rhel8-51645134587371cce944c4db22b63b59bcbd1831d22d5f9dc502569060d1e906-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:51645134587371cce944c4db22b63b59bcbd1831d22d5f9dc502569060d1e906"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:51645134587371cce944c4db22b63b59bcbd1831d22d5f9dc502569060d1e906"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:a4103f67a327acb27e94422faf19524af280820d480d5bc7c1c5cab1270d79db"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:514d40eb741ebc74443220457a5a77efde898873008480e88c171a459b22bfc7"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.7.5",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:94a863d7ceebb87a1bced9356947608566c74eb7f6f0687572234dd972f6d4f5",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.7.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:6c1e4963f69984414aba0e911cff934a4057daf57745a632d5799f4817915800"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:6107f1b59d75472c72cf9465e482550c7d2de13e823b6072c18ad28744a91c62"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:1080ae68282edd2540187aeb650089489ca7a448d80962dbb8d2d63e2fccfbdc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:94a863d7ceebb87a1bced9356947608566c74eb7f6f0687572234dd972f6d4f5"
+            },
+            {
+                "name": "quay-operator-rhel8-9fb57e981d7fbc3ef8982542792684f47dd748eca80e181c5edbb9a964db672f-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:9fb57e981d7fbc3ef8982542792684f47dd748eca80e181c5edbb9a964db672f"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:9fb57e981d7fbc3ef8982542792684f47dd748eca80e181c5edbb9a964db672f"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:c3bf540d5108746968057c9166f46a04ba08e68dfc383d5938c146deae68ab8e"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:514d40eb741ebc74443220457a5a77efde898873008480e88c171a459b22bfc7"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "quay-operator.v3.7.6",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:8262d817e5f94e5effb6d8aa12683a69fc2a7b133eaf92e239938310a23bedb7",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "quay.redhat.com",
+                    "kind": "QuayRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.7.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "component_clair",
+                "image": "registry.redhat.io/quay/clair-rhel8@sha256:956fbe960c3d4ef48fd55b2a5f8d98c10c8d3d63c8a29759f3378fbb236f5d2a"
+            },
+            {
+                "name": "component_builder_qemu",
+                "image": "registry.redhat.io/quay/quay-builder-qemu-rhcos-rhel8@sha256:a3a0998408d8b74ae3b73f30d97da3fd58ba69f966ef7de79f288a0a27e70757"
+            },
+            {
+                "name": "component_builder",
+                "image": "registry.redhat.io/quay/quay-builder-rhel8@sha256:ad326f7ee47de6c324648ec18976cc1015aadf352841533619aa84a7b019f802"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:8262d817e5f94e5effb6d8aa12683a69fc2a7b133eaf92e239938310a23bedb7"
+            },
+            {
+                "name": "quay-operator-rhel8-757629cf61ebf116c209d6613607bfb49cf9df8c521ede5a3a8415fe77500c0b-annotation",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:757629cf61ebf116c209d6613607bfb49cf9df8c521ede5a3a8415fe77500c0b"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-operator-rhel8@sha256:757629cf61ebf116c209d6613607bfb49cf9df8c521ede5a3a8415fe77500c0b"
+            },
+            {
+                "name": "component_quay",
+                "image": "registry.redhat.io/quay/quay-rhel8@sha256:52eed9bdf493a8bef6f0dc2c582357aa708ccee2116f9013263adcd1db464003"
+            },
+            {
+                "name": "component_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-10@sha256:4b912c80085b88a03309aeb7907efcc29dd3342fa3952b6ea067afb1914bfe53"
+            },
+            {
+                "name": "component_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-quay.v3.3.4",
+        "package": "quay-operator",
+        "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:2dda41a155c4c05fb8781f262d7e99529fa7f8dd9f28eaeb120cd6f70946cf44",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "redhatcop.redhat.io",
+                    "kind": "QuayEcosystem",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "quay-operator",
+                    "version": "3.3.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-operator-bundle@sha256:2dda41a155c4c05fb8781f262d7e99529fa7f8dd9f28eaeb120cd6f70946cf44"
+            },
+            {
+                "name": "quay-rhel8-operator-58efe0bae1eab082aff22e9213b94e21456c197543418e2397ca7b3b8d1e739d-annotation",
+                "image": "registry.redhat.io/quay/quay-rhel8-operator@sha256:58efe0bae1eab082aff22e9213b94e21456c197543418e2397ca7b3b8d1e739d"
+            },
+            {
+                "name": "quay-operator",
+                "image": "registry.redhat.io/quay/quay-rhel8-operator@sha256:58efe0bae1eab082aff22e9213b94e21456c197543418e2397ca7b3b8d1e739d"
+            }
+        ]
+    }

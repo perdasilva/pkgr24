@@ -1,0 +1,681 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: mcg-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "mcg-operator",
+        "defaultChannel": "stable-4.11"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.10",
+        "package": "mcg-operator",
+        "entries": [
+            {
+                "name": "mcg-operator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.0"
+            },
+            {
+                "name": "mcg-operator.v4.10.1",
+                "replaces": "mcg-operator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.1"
+            },
+            {
+                "name": "mcg-operator.v4.10.2",
+                "replaces": "mcg-operator.v4.10.1",
+                "skipRange": ">=4.2.0 <4.10.2"
+            },
+            {
+                "name": "mcg-operator.v4.10.3",
+                "replaces": "mcg-operator.v4.10.2",
+                "skipRange": ">=4.2.0 <4.10.3"
+            },
+            {
+                "name": "mcg-operator.v4.10.4",
+                "replaces": "mcg-operator.v4.10.3",
+                "skipRange": ">=4.2.0 <4.10.4"
+            },
+            {
+                "name": "mcg-operator.v4.10.5",
+                "replaces": "mcg-operator.v4.10.4",
+                "skipRange": ">=4.2.0 <4.10.5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.11",
+        "package": "mcg-operator",
+        "entries": [
+            {
+                "name": "mcg-operator.v4.11.0",
+                "skipRange": ">=4.11.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mcg-operator.v4.10.0",
+        "package": "mcg-operator",
+        "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:e1ae5ed85e17ad3cdbdc5049f5c3064f2616c5a6f445ec9d38e7f915d494776b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BackingStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BucketClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NamespaceStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaaAccount",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mcg-operator",
+                    "version": "4.10.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "noboaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:4ff2d65ea16dd1026fe278a0f8ca920f300dfcee205b4b8ede0ab28be1aa43a6"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:e1ae5ed85e17ad3cdbdc5049f5c3064f2616c5a6f445ec9d38e7f915d494776b"
+            },
+            {
+                "name": "noobaa-operator",
+                "image": "registry.redhat.io/odf4/mcg-rhel8-operator@sha256:a94616d282a27ddae1c69ae73ffd1917e141ca3b3d6d0dcf1ec5268293f211fc"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:be7212e938d1ef314a75aca070c28b6433cd0346704d0d3523c8ef403ff0c69e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mcg-operator.v4.10.1",
+        "package": "mcg-operator",
+        "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:4bed96d7bbbe247a6bf0b83bb3d9d174bbef10c9508f7f43bd1f6802022f32cd",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BackingStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BucketClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NamespaceStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaaAccount",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mcg-operator",
+                    "version": "4.10.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "noboaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:40da9aaf63ead51b72bc2a25e36f2a178fbbc404653b7c90dc1f36e1c191316b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:4bed96d7bbbe247a6bf0b83bb3d9d174bbef10c9508f7f43bd1f6802022f32cd"
+            },
+            {
+                "name": "noobaa-operator",
+                "image": "registry.redhat.io/odf4/mcg-rhel8-operator@sha256:704398c98def956a4b4fd6cc09fb9367d706f8f7a05bdc66152c6d57325d7610"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:96d2472910fd59acd4fc4371de03dd44071cab7d4f095f4e3bf30e646c9b0a82"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mcg-operator.v4.10.2",
+        "package": "mcg-operator",
+        "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:baf051a5c64d8f85ae2701131ee96cb100a81ce4bed77d3a8962fd44d4d2b6b0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BackingStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BucketClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NamespaceStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaaAccount",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mcg-operator",
+                    "version": "4.10.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "noboaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:80897f0ac2df4039b98cfda43118d2b00f4ccef9a9495e733dfaab75ab1ecfb0"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:baf051a5c64d8f85ae2701131ee96cb100a81ce4bed77d3a8962fd44d4d2b6b0"
+            },
+            {
+                "name": "noobaa-operator",
+                "image": "registry.redhat.io/odf4/mcg-rhel8-operator@sha256:96d1590494e8d4d402426affba7f79239ecdc92195b8888220d2a4cdd229b0af"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:fa920188f567e51d75aacd723f0964026e42ac060fed392036e8d4b3c7a8129f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mcg-operator.v4.10.3",
+        "package": "mcg-operator",
+        "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:1ef46ddbbee55cc94fb69e55517483d9191c6ddd64f3161cccfa0727f0a50d1d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BackingStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BucketClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NamespaceStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaaAccount",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mcg-operator",
+                    "version": "4.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "noboaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:40192e6b43abb91b01cfb12e9c6c2132b529c8a52b0ee0c4a4e5502337d1135e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:1ef46ddbbee55cc94fb69e55517483d9191c6ddd64f3161cccfa0727f0a50d1d"
+            },
+            {
+                "name": "noobaa-operator",
+                "image": "registry.redhat.io/odf4/mcg-rhel8-operator@sha256:f017b85cd6469eca2c95b9a695ccf424de49d5807dd25143fd9f1255506c00a8"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:66fa333966bf08f3ac0d5e270b6ffb03717b5b6a3df30663f88acfd3f8566d13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mcg-operator.v4.10.4",
+        "package": "mcg-operator",
+        "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:338f2ded01b446ca9e6e1d83d904e7e78ba2a15694cb8216433dca1bc16c977d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BackingStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BucketClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NamespaceStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaaAccount",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mcg-operator",
+                    "version": "4.10.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "noboaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:0d8f33ac4bdc4bb095bcfc4e32ddf44b110a48cc44d1b1bda8ca5dd4cccb72a4"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:338f2ded01b446ca9e6e1d83d904e7e78ba2a15694cb8216433dca1bc16c977d"
+            },
+            {
+                "name": "noobaa-operator",
+                "image": "registry.redhat.io/odf4/mcg-rhel8-operator@sha256:f2a27a9a9d70b92f8141ad64426eeb245a2eda7319a65f8652b109df66d9c8fe"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:44215c5b244b190c82d9d371a8ffd39b0c83576bd85c980cc72782a5cf9e6e1b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mcg-operator.v4.10.5",
+        "package": "mcg-operator",
+        "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:9a029ef220e1ff32bdb95be3221803d68f3550fdb2a75a241adf89b447636e43",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BackingStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BucketClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NamespaceStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaaAccount",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mcg-operator",
+                    "version": "4.10.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "noboaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:512e708ecb13c608430a5edd11fd2c52a47bebed33851d7aa80ef35003a15076"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:9a029ef220e1ff32bdb95be3221803d68f3550fdb2a75a241adf89b447636e43"
+            },
+            {
+                "name": "noobaa-operator",
+                "image": "registry.redhat.io/odf4/mcg-rhel8-operator@sha256:84a562d0337bbac13c098bee7eb29f383d2e1b019b2d8fc823e68b19ce41be60"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:81d9bf20387ecfa85bf24dd53167242393075544a4368636a4bbda79d8769f49"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mcg-operator.v4.11.0",
+        "package": "mcg-operator",
+        "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:4c9db259686a6de3247892d1ec915d185d5276e0d4de3545e4cf81ec8310c87d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BackingStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "BucketClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NamespaceStore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaaAccount",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mcg-operator",
+                    "version": "4.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "noobaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:36c9e3fbdb4232a48e16f06bec2d4c506629c4b56bf8ba4bcf9212503b2ca0a8"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/mcg-operator-bundle@sha256:4c9db259686a6de3247892d1ec915d185d5276e0d4de3545e4cf81ec8310c87d"
+            },
+            {
+                "name": "noobaa-operator",
+                "image": "registry.redhat.io/odf4/mcg-rhel8-operator@sha256:a77d6f80f76735274753444de22db179a3763caae9282140ece7532b21765442"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:78ed1e1f454c49664ae653b3d52af3d77ef1e9cad37a7b0fff09feeaa8294e01"
+            }
+        ]
+    }

@@ -1,0 +1,990 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: container-security-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "container-security-operator",
+        "defaultChannel": "stable-3.7"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "quay-v3.4",
+        "package": "container-security-operator",
+        "entries": [
+            {
+                "name": "container-security-operator.v3.3.4",
+                "skipRange": ">=3.3.0 <3.3.4"
+            },
+            {
+                "name": "container-security-operator.v3.4.6",
+                "skipRange": ">=3.3.x <3.4.6"
+            },
+            {
+                "name": "container-security-operator.v3.4.7",
+                "skips": [
+                    "container-security-operator.v3.3.4",
+                    "container-security-operator.v3.4.6",
+                    "container-security-operator.v3.4.5",
+                    "container-security-operator.v3.4.4",
+                    "container-security-operator.v3.4.3",
+                    "container-security-operator.v3.4.2",
+                    "container-security-operator.v3.4.1",
+                    "container-security-operator.v3.4.0"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "quay-v3.5",
+        "package": "container-security-operator",
+        "entries": [
+            {
+                "name": "container-security-operator.v3.5.6",
+                "skipRange": ">=3.4.x <3.5.6"
+            },
+            {
+                "name": "container-security-operator.v3.5.7",
+                "replaces": "container-security-operator.v3.5.6",
+                "skipRange": ">=3.4.x <3.5.7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-3.6",
+        "package": "container-security-operator",
+        "entries": [
+            {
+                "name": "container-security-operator.v3.6.0",
+                "skipRange": ">=3.3.x <3.6.0"
+            },
+            {
+                "name": "container-security-operator.v3.6.1",
+                "replaces": "container-security-operator.v3.6.0",
+                "skipRange": ">=3.3.x <3.6.1"
+            },
+            {
+                "name": "container-security-operator.v3.6.10",
+                "replaces": "container-security-operator.v3.6.9",
+                "skipRange": ">=3.3.x <3.6.10"
+            },
+            {
+                "name": "container-security-operator.v3.6.2",
+                "replaces": "container-security-operator.v3.6.1",
+                "skipRange": ">=3.4.x <3.6.2"
+            },
+            {
+                "name": "container-security-operator.v3.6.4",
+                "replaces": "container-security-operator.v3.6.2",
+                "skipRange": ">=3.3.x <3.6.4"
+            },
+            {
+                "name": "container-security-operator.v3.6.5",
+                "replaces": "container-security-operator.v3.6.4",
+                "skipRange": ">=3.3.x <3.6.5"
+            },
+            {
+                "name": "container-security-operator.v3.6.6",
+                "replaces": "container-security-operator.v3.6.5",
+                "skipRange": ">=3.3.x <3.6.6"
+            },
+            {
+                "name": "container-security-operator.v3.6.7",
+                "replaces": "container-security-operator.v3.6.6",
+                "skipRange": ">=3.3.x <3.6.7"
+            },
+            {
+                "name": "container-security-operator.v3.6.8",
+                "replaces": "container-security-operator.v3.6.7",
+                "skipRange": ">=3.3.x <3.6.8"
+            },
+            {
+                "name": "container-security-operator.v3.6.9",
+                "replaces": "container-security-operator.v3.6.8",
+                "skipRange": ">=3.3.x <3.6.9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-3.7",
+        "package": "container-security-operator",
+        "entries": [
+            {
+                "name": "container-security-operator.v3.7.0",
+                "skipRange": ">=3.4.x <3.7.0"
+            },
+            {
+                "name": "container-security-operator.v3.7.1",
+                "replaces": "container-security-operator.v3.7.0",
+                "skipRange": ">=3.4.x <3.7.1"
+            },
+            {
+                "name": "container-security-operator.v3.7.2",
+                "replaces": "container-security-operator.v3.7.1",
+                "skipRange": ">=3.4.x <3.7.2"
+            },
+            {
+                "name": "container-security-operator.v3.7.3",
+                "replaces": "container-security-operator.v3.7.2",
+                "skipRange": ">=3.4.x <3.7.3"
+            },
+            {
+                "name": "container-security-operator.v3.7.4",
+                "replaces": "container-security-operator.v3.7.3",
+                "skipRange": ">=3.4.x <3.7.4"
+            },
+            {
+                "name": "container-security-operator.v3.7.5",
+                "replaces": "container-security-operator.v3.7.4",
+                "skipRange": ">=3.4.x <3.7.5"
+            },
+            {
+                "name": "container-security-operator.v3.7.6",
+                "replaces": "container-security-operator.v3.7.5",
+                "skipRange": ">=3.4.x <3.7.6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.3.4",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-rhel8-operator-metadata@sha256:87b32fd8753bc35f72a9087bd20c1de120094885ced267a0802f89b26283f828",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.3.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-rhel8-operator-metadata@sha256:87b32fd8753bc35f72a9087bd20c1de120094885ced267a0802f89b26283f828"
+            },
+            {
+                "name": "quay-container-security-rhel8-operator-70b79676954e43d291e2bd38fabba1db0ca52805457fb8e72d03c230daadb19d-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-rhel8-operator@sha256:70b79676954e43d291e2bd38fabba1db0ca52805457fb8e72d03c230daadb19d"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-rhel8-operator@sha256:70b79676954e43d291e2bd38fabba1db0ca52805457fb8e72d03c230daadb19d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.4.6",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:e1ecc2949bf4e612d77d378961c8f65b9f463064a50590ec3313897528a317cd",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.4.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:e1ecc2949bf4e612d77d378961c8f65b9f463064a50590ec3313897528a317cd"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-9f8a8719698abb4c37b02969235370664b1f08404ac9014c3baf2b7f48ded798-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:9f8a8719698abb4c37b02969235370664b1f08404ac9014c3baf2b7f48ded798"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:9f8a8719698abb4c37b02969235370664b1f08404ac9014c3baf2b7f48ded798"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.4.7",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:246712ce23cdd590ff83d84e9800b4ed761886ed5bab9f9cda4125a5d930e7e5",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.4.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:246712ce23cdd590ff83d84e9800b4ed761886ed5bab9f9cda4125a5d930e7e5"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-447e05859134a0455ca55f8aae16c8a27ce06af4c18c191b41f6339df553f1bf-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:447e05859134a0455ca55f8aae16c8a27ce06af4c18c191b41f6339df553f1bf"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:447e05859134a0455ca55f8aae16c8a27ce06af4c18c191b41f6339df553f1bf"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.5.6",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:6c5cfc41ee97e91dafc75ee466b88f755994c6406026de4d1a80256d6700a117",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.5.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:6c5cfc41ee97e91dafc75ee466b88f755994c6406026de4d1a80256d6700a117"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-f4d1ad208c3cd8fa17ee009d121e8cfbe0e19bc688090aa30154992ff143b6c5-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:f4d1ad208c3cd8fa17ee009d121e8cfbe0e19bc688090aa30154992ff143b6c5"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:f4d1ad208c3cd8fa17ee009d121e8cfbe0e19bc688090aa30154992ff143b6c5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.5.7",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:68e766235bdcd8f3335e2ab6e09942d98b183b3e498abb65acab6481664d46ed",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.5.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:68e766235bdcd8f3335e2ab6e09942d98b183b3e498abb65acab6481664d46ed"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-6b3581e62550d6a615d36eee6eaf4c89b9c35ba53cab8433bd93c68393a9d115-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:6b3581e62550d6a615d36eee6eaf4c89b9c35ba53cab8433bd93c68393a9d115"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:6b3581e62550d6a615d36eee6eaf4c89b9c35ba53cab8433bd93c68393a9d115"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.0",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:bbb7a3a4cfd9c98df1037c58d3e68e1cd8e554c0af336b08a04a914285c68edb",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:bbb7a3a4cfd9c98df1037c58d3e68e1cd8e554c0af336b08a04a914285c68edb"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-a6b6c954e834a5f7641d08b3a01731b47e8514aadea426b3fd29f8f37860d5fe-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:a6b6c954e834a5f7641d08b3a01731b47e8514aadea426b3fd29f8f37860d5fe"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:a6b6c954e834a5f7641d08b3a01731b47e8514aadea426b3fd29f8f37860d5fe"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.1",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:f0291ba39a4e84027109926ddd75e67988eccbcc4348de4d2d6997da2adda62b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:f0291ba39a4e84027109926ddd75e67988eccbcc4348de4d2d6997da2adda62b"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-98812779e4f70126d7aa5e43ebde4bdd55756f3191c84c97495fb8f86d2d62eb-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:98812779e4f70126d7aa5e43ebde4bdd55756f3191c84c97495fb8f86d2d62eb"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:98812779e4f70126d7aa5e43ebde4bdd55756f3191c84c97495fb8f86d2d62eb"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.10",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:aca3d91b7b9f8c1e8a1e0d045c42ba5f27444e0c1c0bc4a87c697b428c2fff78",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.10"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:aca3d91b7b9f8c1e8a1e0d045c42ba5f27444e0c1c0bc4a87c697b428c2fff78"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-641b80df8d7102d49a5dfd5b99245669f60393880a6f1bc8ba8450b88a640d96-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:641b80df8d7102d49a5dfd5b99245669f60393880a6f1bc8ba8450b88a640d96"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:641b80df8d7102d49a5dfd5b99245669f60393880a6f1bc8ba8450b88a640d96"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.2",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:174ac455bc8e93e29df207b9b66c3ee93938cea0efbc45ef840dd431b6c5a87d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:174ac455bc8e93e29df207b9b66c3ee93938cea0efbc45ef840dd431b6c5a87d"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-080923d6e267966d037906093f5617199d1b3653362683a47d907379859c44b2-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:080923d6e267966d037906093f5617199d1b3653362683a47d907379859c44b2"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:080923d6e267966d037906093f5617199d1b3653362683a47d907379859c44b2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.4",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:65dc42f12e588b5cf4ed32900685ddb0a81d09a92fba3913a37255fb7b3b4ccf",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:65dc42f12e588b5cf4ed32900685ddb0a81d09a92fba3913a37255fb7b3b4ccf"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-75fb5c52abd81f41a2e26b541afca6c4e3d1ee11178c95ae44d6fa45c53f103b-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:75fb5c52abd81f41a2e26b541afca6c4e3d1ee11178c95ae44d6fa45c53f103b"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:75fb5c52abd81f41a2e26b541afca6c4e3d1ee11178c95ae44d6fa45c53f103b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.5",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:aaa3afc62f592cd93f7cc305a70fb3bc790cb052665a2b260ec64f604322bed4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:aaa3afc62f592cd93f7cc305a70fb3bc790cb052665a2b260ec64f604322bed4"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-a26cd7a68815dbe5201f09b1909dfc06e2535e0bc0aa70c91842e420362beebe-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:a26cd7a68815dbe5201f09b1909dfc06e2535e0bc0aa70c91842e420362beebe"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:a26cd7a68815dbe5201f09b1909dfc06e2535e0bc0aa70c91842e420362beebe"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.6",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:e815991be928d7c039e9e78f06cb6bb9de191dc37849a54cc307f681056f041c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:e815991be928d7c039e9e78f06cb6bb9de191dc37849a54cc307f681056f041c"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-0f0babf49db7f2de9ff4d05f9dde41895e2ad26fb3453fcfca45d3d603ac9148-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:0f0babf49db7f2de9ff4d05f9dde41895e2ad26fb3453fcfca45d3d603ac9148"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:0f0babf49db7f2de9ff4d05f9dde41895e2ad26fb3453fcfca45d3d603ac9148"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.7",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:d80d5165a94d6f4032a3fe570a280fa80ca8c76b6d6035df8d487a69eaff35d0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:d80d5165a94d6f4032a3fe570a280fa80ca8c76b6d6035df8d487a69eaff35d0"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-768327d5ce2392228aa2ec4a6189410fda02bab570f713db897cbd243f1fba27-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:768327d5ce2392228aa2ec4a6189410fda02bab570f713db897cbd243f1fba27"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:768327d5ce2392228aa2ec4a6189410fda02bab570f713db897cbd243f1fba27"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.8",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:0df5e354d434b757be15816de835b637134ff730e3d5debb5f271cdab5ab848e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.8"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:0df5e354d434b757be15816de835b637134ff730e3d5debb5f271cdab5ab848e"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-cc65afb6461fb68a0592a81663db74eb82fc0aa6a43f601f7bc3f75dacbf12c0-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:cc65afb6461fb68a0592a81663db74eb82fc0aa6a43f601f7bc3f75dacbf12c0"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:cc65afb6461fb68a0592a81663db74eb82fc0aa6a43f601f7bc3f75dacbf12c0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.6.9",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:d8a98f880c082850fd15456e2239deccaf10411bea18454517148a80b8134682",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.6.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:d8a98f880c082850fd15456e2239deccaf10411bea18454517148a80b8134682"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-751838465ed72240ca9b8ef8cdd511dc75acbf3b144b08b341c2bd3b93334fa0-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:751838465ed72240ca9b8ef8cdd511dc75acbf3b144b08b341c2bd3b93334fa0"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:751838465ed72240ca9b8ef8cdd511dc75acbf3b144b08b341c2bd3b93334fa0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.7.0",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:eb015851508fcf55817c148f830f54291cc59fbafa80273cce25bf935a57f688",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.7.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:eb015851508fcf55817c148f830f54291cc59fbafa80273cce25bf935a57f688"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-031d1730b84707d7b0ec96df6906b61d247f44d2aec6402f7e5c4f7a09146e52-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:031d1730b84707d7b0ec96df6906b61d247f44d2aec6402f7e5c4f7a09146e52"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:031d1730b84707d7b0ec96df6906b61d247f44d2aec6402f7e5c4f7a09146e52"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.7.1",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:4dd7e897fc6984e4122adbf979f11fd9a5cd70d67790a8d08c4d218b45044212",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.7.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:4dd7e897fc6984e4122adbf979f11fd9a5cd70d67790a8d08c4d218b45044212"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-c5852c46c30f47aa567db0b361637e75f7b39cad6cf0d0182bf78c07272572b8-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:c5852c46c30f47aa567db0b361637e75f7b39cad6cf0d0182bf78c07272572b8"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:c5852c46c30f47aa567db0b361637e75f7b39cad6cf0d0182bf78c07272572b8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.7.2",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:2ceb3e4e5c32d30119e84147e8c61e89eaf7ed44045724bbcfaa4942734a66e1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.7.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:2ceb3e4e5c32d30119e84147e8c61e89eaf7ed44045724bbcfaa4942734a66e1"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-023bb8457d5cf555cf23a1d6a017121ecaf7d990555ea07b5fafd52c9531594a-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:023bb8457d5cf555cf23a1d6a017121ecaf7d990555ea07b5fafd52c9531594a"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:023bb8457d5cf555cf23a1d6a017121ecaf7d990555ea07b5fafd52c9531594a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.7.3",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:a1eb6b4c405413b7049b8802715e7700863b57c30c45d7bc554fa8765660597e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.7.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:a1eb6b4c405413b7049b8802715e7700863b57c30c45d7bc554fa8765660597e"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-c08e48bc0678405b1000c919ea7fd4941beeef2b4866864307d151e133bdf8f8-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:c08e48bc0678405b1000c919ea7fd4941beeef2b4866864307d151e133bdf8f8"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:c08e48bc0678405b1000c919ea7fd4941beeef2b4866864307d151e133bdf8f8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.7.4",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:a5b74ab7d84097365e099c499e89751e08beb19458103753b5401544d7537019",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.7.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:a5b74ab7d84097365e099c499e89751e08beb19458103753b5401544d7537019"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-9ac470bce420e63550defa361c21eb804c7bea6748359af4699dc814daee0a1c-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:9ac470bce420e63550defa361c21eb804c7bea6748359af4699dc814daee0a1c"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:9ac470bce420e63550defa361c21eb804c7bea6748359af4699dc814daee0a1c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.7.5",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:b3e3c0e445c99798647cdb31c984bc8ba21f1d38480155f51c531c5f32c29453",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.7.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:b3e3c0e445c99798647cdb31c984bc8ba21f1d38480155f51c531c5f32c29453"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-8e80cb03883851f4a6c18e64f3ac30f9939be1537aa387f91fc2af17cb295466-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:8e80cb03883851f4a6c18e64f3ac30f9939be1537aa387f91fc2af17cb295466"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:8e80cb03883851f4a6c18e64f3ac30f9939be1537aa387f91fc2af17cb295466"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "container-security-operator.v3.7.6",
+        "package": "container-security-operator",
+        "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:1381ff92c7049c15189c257e8fdd03fa753d05f088f6eef8b44da9fad69b1e84",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "secscan.quay.redhat.com",
+                    "kind": "ImageManifestVuln",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "container-security-operator",
+                    "version": "3.7.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-bundle@sha256:1381ff92c7049c15189c257e8fdd03fa753d05f088f6eef8b44da9fad69b1e84"
+            },
+            {
+                "name": "quay-container-security-operator-rhel8-d5c4223cfbf7d4ef5d775883aa4287a204b82f3b0dd150ac96a0f98ea63d7f60-annotation",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:d5c4223cfbf7d4ef5d775883aa4287a204b82f3b0dd150ac96a0f98ea63d7f60"
+            },
+            {
+                "name": "container-security-operator",
+                "image": "registry.redhat.io/quay/quay-container-security-operator-rhel8@sha256:d5c4223cfbf7d4ef5d775883aa4287a204b82f3b0dd150ac96a0f98ea63d7f60"
+            }
+        ]
+    }

@@ -1,0 +1,161 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: volsync-product
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "volsync-product",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "acm-2.5",
+        "package": "volsync-product",
+        "entries": [
+            {
+                "name": "volsync-product.v0.4.0"
+            },
+            {
+                "name": "volsync-product.v0.4.1",
+                "replaces": "volsync-product.v0.4.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "volsync-product",
+        "entries": [
+            {
+                "name": "volsync-product.v0.4.0"
+            },
+            {
+                "name": "volsync-product.v0.4.1",
+                "replaces": "volsync-product.v0.4.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "volsync-product.v0.4.0",
+        "package": "volsync-product",
+        "image": "registry.redhat.io/rhacm2/volsync-operator-bundle@sha256:6f84f50eaca0edc440118d8107716181d4bc6d5ce55c94c674139f42f99bd1c7",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "volsync.backube",
+                    "kind": "ReplicationDestination",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "volsync.backube",
+                    "kind": "ReplicationSource",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "volsync-product",
+                    "version": "0.4.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:27540b17bf6e76916c60a650fa15f0ef034c2b4f8dfe2832c1a9da57368b744c"
+            },
+            {
+                "name": "rclone_container",
+                "image": "registry.redhat.io/rhacm2/volsync-mover-rclone-rhel8@sha256:1d1cb85901c7df6c2b617d88d0777198e4f6fd477cfca96074d9923b7a4d6e18"
+            },
+            {
+                "name": "restic_container",
+                "image": "registry.redhat.io/rhacm2/volsync-mover-restic-rhel8@sha256:c537eb9b1f2d29e69d23c0973c1c4b91848ecb6cf9f1b63701309bfa65a647bf"
+            },
+            {
+                "name": "rsync_container",
+                "image": "registry.redhat.io/rhacm2/volsync-mover-rsync-rhel8@sha256:48ca42c14903659520d1fb5193af111f85434f4cb008362e81a936fad880dc1e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/volsync-operator-bundle@sha256:6f84f50eaca0edc440118d8107716181d4bc6d5ce55c94c674139f42f99bd1c7"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhacm2/volsync-rhel8@sha256:e0d6feb9c9c76ccbd5e64f5ef096a29c714c455b3ed441398e2c0b82fb8e0c13"
+            },
+            {
+                "name": "volsync-rhel8-e0d6feb9c9c76ccbd5e64f5ef096a29c714c455b3ed441398e2c0b82fb8e0c13-annotation",
+                "image": "registry.redhat.io/rhacm2/volsync-rhel8@sha256:e0d6feb9c9c76ccbd5e64f5ef096a29c714c455b3ed441398e2c0b82fb8e0c13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "volsync-product.v0.4.1",
+        "package": "volsync-product",
+        "image": "registry.redhat.io/rhacm2/volsync-operator-bundle@sha256:27a100789114af5a621dc9ae223b66f3ca6842537396b076bfc2ba12dcf4675f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "volsync.backube",
+                    "kind": "ReplicationDestination",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "volsync.backube",
+                    "kind": "ReplicationSource",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "volsync-product",
+                    "version": "0.4.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b6e06bf125c2c919f4a74098d9bf9bec05122b421213dd6d442de800f5ef3cf7"
+            },
+            {
+                "name": "rclone_container",
+                "image": "registry.redhat.io/rhacm2/volsync-mover-rclone-rhel8@sha256:e39f9f36b0ff65bff5f151d1200b5e855ac1972661c4e531c5138111baac608b"
+            },
+            {
+                "name": "restic_container",
+                "image": "registry.redhat.io/rhacm2/volsync-mover-restic-rhel8@sha256:37cf9057f86d7b9f5d1dc44ac16f5cba274527391cffcc6d012af2c0bd0ee54b"
+            },
+            {
+                "name": "rsync_container",
+                "image": "registry.redhat.io/rhacm2/volsync-mover-rsync-rhel8@sha256:e575a16d023af99f0a4f86b1f220c0abaae1e8973e60cb770df82eb5da362ca2"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/volsync-operator-bundle@sha256:27a100789114af5a621dc9ae223b66f3ca6842537396b076bfc2ba12dcf4675f"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhacm2/volsync-rhel8@sha256:df630925f29753454f0d7de74ac1f2c751921bd73f4c4defaefe4b83154e494c"
+            },
+            {
+                "name": "volsync-rhel8-df630925f29753454f0d7de74ac1f2c751921bd73f4c4defaefe4b83154e494c-annotation",
+                "image": "registry.redhat.io/rhacm2/volsync-rhel8@sha256:df630925f29753454f0d7de74ac1f2c751921bd73f4c4defaefe4b83154e494c"
+            }
+        ]
+    }

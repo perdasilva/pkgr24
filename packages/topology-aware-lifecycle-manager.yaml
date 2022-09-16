@@ -1,0 +1,76 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: topology-aware-lifecycle-manager
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "topology-aware-lifecycle-manager",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "4.11",
+        "package": "topology-aware-lifecycle-manager",
+        "entries": [
+            {
+                "name": "topology-aware-lifecycle-manager.v4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "topology-aware-lifecycle-manager",
+        "entries": [
+            {
+                "name": "topology-aware-lifecycle-manager.v4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "topology-aware-lifecycle-manager.v4.11.0",
+        "package": "topology-aware-lifecycle-manager",
+        "image": "registry.redhat.io/openshift4/topology-aware-lifecycle-manager-operator-bundle@sha256:6025e0fb6a337912ce25f1c47debbfb7e7a09f68d2e911b54d7fe98b495a5ac9",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ran.openshift.io",
+                    "kind": "ClusterGroupUpgrade",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "topology-aware-lifecycle-manager",
+                    "version": "4.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b5786bbbef725badf3dfcc2c2c7a86ead5ebb584c978c47aae8b9a62e241b80d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/topology-aware-lifecycle-manager-operator-bundle@sha256:6025e0fb6a337912ce25f1c47debbfb7e7a09f68d2e911b54d7fe98b495a5ac9"
+            },
+            {
+                "name": "precache_img",
+                "image": "registry.redhat.io/openshift4/topology-aware-lifecycle-manager-precache-rhel8@sha256:572f42fa2786d48e5af967183e96180ec07078ab9079c9b93451e0394286a5ea"
+            },
+            {
+                "name": "recovery_img",
+                "image": "registry.redhat.io/openshift4/topology-aware-lifecycle-manager-recovery-rhel8@sha256:d99516eb5a55ccfb3d98d50e9e1a62ff1618d9bea914b8828593bfd21fb8d257"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift4/topology-aware-lifecycle-manager-rhel8-operator@sha256:2bb0b935b381e8f2dbcf3b1b33588d17b56640fb9e60c62cfa0c0fcd42023738"
+            }
+        ]
+    }

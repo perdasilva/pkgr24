@@ -1,0 +1,82 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: node-observability-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "node-observability-operator",
+        "defaultChannel": "alpha"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "alpha",
+        "package": "node-observability-operator",
+        "entries": [
+            {
+                "name": "node-observability-operator.v0.1.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "node-observability-operator.v0.1.0",
+        "package": "node-observability-operator",
+        "image": "registry.redhat.io/noo/node-observability-operator-bundle-rhel8@sha256:25b8e1c8ed635364d4dcba7814ad504570b1c6053d287ab7e26c8d6a97ae3f6a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nodeobservability.olm.openshift.io",
+                    "kind": "NodeObservability",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nodeobservability.olm.openshift.io",
+                    "kind": "NodeObservabilityMachineConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nodeobservability.olm.openshift.io",
+                    "kind": "NodeObservabilityRun",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "node-observability-operator",
+                    "version": "0.1.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "agent",
+                "image": "registry.redhat.io/noo/node-observability-agent-rhel8@sha256:59bd5b8cefae5d5769d33dafcaff083b583a552e1df61194a3cc078b75cb1fdc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/noo/node-observability-operator-bundle-rhel8@sha256:25b8e1c8ed635364d4dcba7814ad504570b1c6053d287ab7e26c8d6a97ae3f6a"
+            },
+            {
+                "name": "node-observability-rhel8-operator-0040925e971e4bb3ac34278c3fb5c1325367fe41ad73641e6502ec2104bc4e19-annotation",
+                "image": "registry.redhat.io/noo/node-observability-rhel8-operator@sha256:0040925e971e4bb3ac34278c3fb5c1325367fe41ad73641e6502ec2104bc4e19"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/noo/node-observability-rhel8-operator@sha256:0040925e971e4bb3ac34278c3fb5c1325367fe41ad73641e6502ec2104bc4e19"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:bb54bc66185afa09853744545d52ea22f88b67756233a47b9f808fe59cda925e"
+            }
+        ]
+    }

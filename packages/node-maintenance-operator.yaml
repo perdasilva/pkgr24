@@ -1,0 +1,59 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: node-maintenance-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "node-maintenance-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "node-maintenance-operator",
+        "entries": [
+            {
+                "name": "node-maintenance-operator.v4.11.1",
+                "skipRange": ">=4.10.0 <4.11.1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "node-maintenance-operator.v4.11.1",
+        "package": "node-maintenance-operator",
+        "image": "registry.redhat.io/workload-availability/node-maintenance-operator-bundle@sha256:fffb33c8f94a53a1b55bc23be12d8469e280ecbf5fa43057c5618d0f9dfb2d45",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "nodemaintenance.medik8s.io",
+                    "kind": "NodeMaintenance",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "node-maintenance-operator",
+                    "version": "4.11.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/workload-availability/node-maintenance-operator-bundle@sha256:fffb33c8f94a53a1b55bc23be12d8469e280ecbf5fa43057c5618d0f9dfb2d45"
+            },
+            {
+                "name": "node-maintenance-rhel8-operator-1ccca839c6499d8f7674f72068561cd499331937ccb19fe46c8294abf0fa0a7d-annotation",
+                "image": "registry.redhat.io/workload-availability/node-maintenance-rhel8-operator@sha256:1ccca839c6499d8f7674f72068561cd499331937ccb19fe46c8294abf0fa0a7d"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/workload-availability/node-maintenance-rhel8-operator@sha256:1ccca839c6499d8f7674f72068561cd499331937ccb19fe46c8294abf0fa0a7d"
+            }
+        ]
+    }

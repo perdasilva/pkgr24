@@ -1,0 +1,207 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: sandboxed-containers-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "sandboxed-containers-operator",
+        "defaultChannel": "stable-1.3"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "preview-1.0",
+        "package": "sandboxed-containers-operator",
+        "entries": [
+            {
+                "name": "sandboxed-containers-operator.v1.0.2",
+                "skipRange": "<1.0.2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "preview-1.1",
+        "package": "sandboxed-containers-operator",
+        "entries": [
+            {
+                "name": "sandboxed-containers-operator.v1.0.2",
+                "skipRange": "<1.0.2"
+            },
+            {
+                "name": "sandboxed-containers-operator.v1.1.0",
+                "replaces": "sandboxed-containers-operator.v1.0.2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-1.2",
+        "package": "sandboxed-containers-operator",
+        "entries": [
+            {
+                "name": "sandboxed-containers-operator.v1.2.2",
+                "skipRange": ">=1.1.0 <1.2.2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-1.3",
+        "package": "sandboxed-containers-operator",
+        "entries": [
+            {
+                "name": "sandboxed-containers-operator.v1.3.0",
+                "skipRange": ">=1.1.0 <1.3.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "sandboxed-containers-operator.v1.0.2",
+        "package": "sandboxed-containers-operator",
+        "image": "registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-operator-bundle@sha256:2808a0397495982b4ea0001ede078803a043d5c9b0285662b08044fe4c11f243",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kataconfiguration.openshift.io",
+                    "kind": "KataConfig",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "sandboxed-containers-operator",
+                    "version": "1.0.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-operator-bundle@sha256:2808a0397495982b4ea0001ede078803a043d5c9b0285662b08044fe4c11f243"
+            },
+            {
+                "name": "osc-rhel8-operator-051bd7f1dad8cc3251430fee32184be8d64077aba78580184cef0255d267bdcf-annotation",
+                "image": "registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-rhel8-operator@sha256:051bd7f1dad8cc3251430fee32184be8d64077aba78580184cef0255d267bdcf"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-rhel8-operator@sha256:c6c589d5e47ba9564c66c84fc2bc7e5e046dae1d56a3dc99d7343f01e42e4d31"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "sandboxed-containers-operator.v1.1.0",
+        "package": "sandboxed-containers-operator",
+        "image": "registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-operator-bundle@sha256:a91cee14f47824ce49759628d06bf4e48276e67dae00b50123d3233d78531720",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kataconfiguration.openshift.io",
+                    "kind": "KataConfig",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "sandboxed-containers-operator",
+                    "version": "1.1.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-operator-bundle@sha256:a91cee14f47824ce49759628d06bf4e48276e67dae00b50123d3233d78531720"
+            },
+            {
+                "name": "osc-rhel8-operator-b1e824e126c579db0f56d04c3d1796d82ed033110c6bc923de66d95b67099611-annotation",
+                "image": "registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-rhel8-operator@sha256:b1e824e126c579db0f56d04c3d1796d82ed033110c6bc923de66d95b67099611"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-sandboxed-containers-tech-preview/osc-rhel8-operator@sha256:b1e824e126c579db0f56d04c3d1796d82ed033110c6bc923de66d95b67099611"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "sandboxed-containers-operator.v1.2.2",
+        "package": "sandboxed-containers-operator",
+        "image": "registry.redhat.io/openshift-sandboxed-containers/osc-operator-bundle@sha256:ff2bb666c2696fed365df55de78141a02e372044647b8031e6d06e7583478af4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kataconfiguration.openshift.io",
+                    "kind": "KataConfig",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "sandboxed-containers-operator",
+                    "version": "1.2.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-sandboxed-containers/osc-operator-bundle@sha256:ff2bb666c2696fed365df55de78141a02e372044647b8031e6d06e7583478af4"
+            },
+            {
+                "name": "osc-rhel8-operator-8f30a9129d817c3f4e404d2c43fb47e196d8c8da3badba4c48f65d440a4d7584-annotation",
+                "image": "registry.redhat.io/openshift-sandboxed-containers/osc-rhel8-operator@sha256:8f30a9129d817c3f4e404d2c43fb47e196d8c8da3badba4c48f65d440a4d7584"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-sandboxed-containers/osc-rhel8-operator@sha256:a660f0b54b9139bed9a3aeef3408001c0d50ba60648364a98a09059b466fbcc1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "sandboxed-containers-operator.v1.3.0",
+        "package": "sandboxed-containers-operator",
+        "image": "registry.redhat.io/openshift-sandboxed-containers/osc-operator-bundle@sha256:6c8e39442283d6ab8ec84d82bfe83e124ffdf37943b37e8e8819392537f3b270",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kataconfiguration.openshift.io",
+                    "kind": "KataConfig",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "sandboxed-containers-operator",
+                    "version": "1.3.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-sandboxed-containers/osc-operator-bundle@sha256:6c8e39442283d6ab8ec84d82bfe83e124ffdf37943b37e8e8819392537f3b270"
+            },
+            {
+                "name": "osc-rhel8-operator-537426ab811ad4760c285e3fb4f2e94e30d0f093df530aadb652cc4a5f7a78e0-annotation",
+                "image": "registry.redhat.io/openshift-sandboxed-containers/osc-rhel8-operator@sha256:537426ab811ad4760c285e3fb4f2e94e30d0f093df530aadb652cc4a5f7a78e0"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-sandboxed-containers/osc-rhel8-operator@sha256:537426ab811ad4760c285e3fb4f2e94e30d0f093df530aadb652cc4a5f7a78e0"
+            }
+        ]
+    }

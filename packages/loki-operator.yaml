@@ -1,0 +1,214 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: loki-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "loki-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "candidate",
+        "package": "loki-operator",
+        "entries": [
+            {
+                "name": "loki-operator.5.4.4-29",
+                "skipRange": ">=5.4.0-0 <5.4.4-29"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "loki-operator",
+        "entries": [
+            {
+                "name": "loki-operator.5.5.0",
+                "skipRange": ">=5.4.0-0 <5.5.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-5.5",
+        "package": "loki-operator",
+        "entries": [
+            {
+                "name": "loki-operator.5.5.0",
+                "skipRange": ">=5.4.0-0 <5.5.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "loki-operator.5.4.4-29",
+        "package": "loki-operator",
+        "image": "registry.redhat.io/openshift-logging/loki-operator-bundle@sha256:3734735398bb3148d7d8bac316165fd994261241fcc6bbadd358ec0c7cba8562",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "loki.grafana.com",
+                    "kind": "AlertingRule",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "loki.grafana.com",
+                    "kind": "LokiStack",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "loki.grafana.com",
+                    "kind": "RecordingRule",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "loki.grafana.com",
+                    "kind": "RulerConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": "4.11"
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "loki-operator",
+                    "version": "5.4.4-29"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "loki",
+                "image": "registry.redhat.io/openshift-logging/logging-loki-rhel8@sha256:ea850177bb0a51143c90f15747182d3e226dd2361f0dac97b52db8e03427d4a2"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/loki-operator-bundle@sha256:3734735398bb3148d7d8bac316165fd994261241fcc6bbadd358ec0c7cba8562"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-logging/loki-rhel8-operator@sha256:d12a2f79fdc1ac7cb73e8cf46db63c1d8f78daf357ed2f0f0c6b46f3af25d6df"
+            },
+            {
+                "name": "loki-rhel8-operator-d12a2f79fdc1ac7cb73e8cf46db63c1d8f78daf357ed2f0f0c6b46f3af25d6df-annotation",
+                "image": "registry.redhat.io/openshift-logging/loki-rhel8-operator@sha256:d12a2f79fdc1ac7cb73e8cf46db63c1d8f78daf357ed2f0f0c6b46f3af25d6df"
+            },
+            {
+                "name": "gateway",
+                "image": "registry.redhat.io/openshift-logging/lokistack-gateway-rhel8@sha256:db950226508ef3bff50416649f32bfb89c27a4200fdb0c63ddbc0b10384fe3d5"
+            },
+            {
+                "name": "opa",
+                "image": "registry.redhat.io/openshift-logging/opa-openshift-rhel8@sha256:1c0c2cdd0076f8d12743a7e6bf2cb213d2480e616bd297a0ff746c26d89247bc"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:036c78fea970d6bbe45aa1097a8ed701c72ce1117404450dd7e717a1bedd2b2a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "loki-operator.5.5.0",
+        "package": "loki-operator",
+        "image": "registry.redhat.io/openshift-logging/loki-operator-bundle@sha256:39d18c04f9d6091980640bea1869bdcb28574431c8374c731adaf0aa75f4dbaf",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "loki.grafana.com",
+                    "kind": "AlertingRule",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "loki.grafana.com",
+                    "kind": "LokiStack",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "loki.grafana.com",
+                    "kind": "LokiStack",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "loki.grafana.com",
+                    "kind": "RecordingRule",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "loki.grafana.com",
+                    "kind": "RulerConfig",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.11
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "loki-operator",
+                    "version": "5.5.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "loki",
+                "image": "registry.redhat.io/openshift-logging/logging-loki-rhel8@sha256:c690912f1f2b55e3cfb03e9d6f446e541350a5138bfef89e9516b2de2ac36ee2"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/loki-operator-bundle@sha256:39d18c04f9d6091980640bea1869bdcb28574431c8374c731adaf0aa75f4dbaf"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-logging/loki-rhel8-operator@sha256:0a0d79740df42fc6a1de96cc88d4ebc5c18ff530064efc5d894debd37fc93128"
+            },
+            {
+                "name": "loki-rhel8-operator-0a0d79740df42fc6a1de96cc88d4ebc5c18ff530064efc5d894debd37fc93128-annotation",
+                "image": "registry.redhat.io/openshift-logging/loki-rhel8-operator@sha256:0a0d79740df42fc6a1de96cc88d4ebc5c18ff530064efc5d894debd37fc93128"
+            },
+            {
+                "name": "gateway",
+                "image": "registry.redhat.io/openshift-logging/lokistack-gateway-rhel8@sha256:27d89094406ab3a2df2bee0e3c373f7087f3b844a7a5f955fc5b561a6b53871d"
+            },
+            {
+                "name": "opa",
+                "image": "registry.redhat.io/openshift-logging/opa-openshift-rhel8@sha256:9219dd7ebb566d606aa28d2668a8821c1053ef76d74e38905144bfe5f2b5655e"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:260ebab52c1e825e354bfa60827e314388fb7878bfa16d1dc061707962e95bea"
+            }
+        ]
+    }

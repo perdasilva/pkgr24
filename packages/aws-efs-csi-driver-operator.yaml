@@ -1,0 +1,67 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: aws-efs-csi-driver-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "aws-efs-csi-driver-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "aws-efs-csi-driver-operator",
+        "entries": [
+            {
+                "name": "aws-efs-csi-driver-operator.4.11.0-202208150437",
+                "skipRange": ">=4.9.0-0 <4.11.0-202208150437"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aws-efs-csi-driver-operator.4.11.0-202208150437",
+        "package": "aws-efs-csi-driver-operator",
+        "image": "registry.redhat.io/openshift4/ose-aws-efs-csi-driver-operator-bundle@sha256:1092fcc9b39e97ac1ed8449fae9bfa0cffcf4f5aa33755f3d9d8dcdc20b1450b",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "aws-efs-csi-driver-operator",
+                    "version": "4.11.0-202208150437"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "ose-aws-efs-csi-driver-container-rhel8",
+                "image": "registry.redhat.io/openshift4/ose-aws-efs-csi-driver-container-rhel8@sha256:5c0222a0ae6e15749dbd5f7d5d06c0b7def4532b47d882fcdaf1b6d4b4d21008"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/ose-aws-efs-csi-driver-operator-bundle@sha256:1092fcc9b39e97ac1ed8449fae9bfa0cffcf4f5aa33755f3d9d8dcdc20b1450b"
+            },
+            {
+                "name": "ose-aws-efs-csi-driver-rhel8-operator",
+                "image": "registry.redhat.io/openshift4/ose-aws-efs-csi-driver-rhel8-operator@sha256:70abd2ebbd7d5b0316648d2342ab555d18b8033cda232cae3721527b3a054746"
+            },
+            {
+                "name": "ose-csi-external-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:3d7a7e72a5afd846a5ba74e7c90184f9909b8e1fbb6774cd4339491af60024be"
+            },
+            {
+                "name": "ose-csi-livenessprobe",
+                "image": "registry.redhat.io/openshift4/ose-csi-livenessprobe@sha256:7fd23ff555f3747e7eb68864ff0e9d154943dcc386f0a363d2ebc33c18089519"
+            },
+            {
+                "name": "ose-csi-node-driver-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:3641cdf2c6f5b7bb30bd9908a096d1df354b20f54e9fece244a64b2669b4b989"
+            },
+            {
+                "name": "ose-kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7abede2caee5a935f87219f51732cff5a8c3bfca1eab1f0e9725ca93fd347b89"
+            }
+        ]
+    }

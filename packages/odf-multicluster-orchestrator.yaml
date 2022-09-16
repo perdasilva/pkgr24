@@ -1,0 +1,300 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: odf-multicluster-orchestrator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "odf-multicluster-orchestrator",
+        "defaultChannel": "stable-4.11"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.10",
+        "package": "odf-multicluster-orchestrator",
+        "entries": [
+            {
+                "name": "odf-multicluster-orchestrator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.0"
+            },
+            {
+                "name": "odf-multicluster-orchestrator.v4.10.1",
+                "replaces": "odf-multicluster-orchestrator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.1"
+            },
+            {
+                "name": "odf-multicluster-orchestrator.v4.10.2",
+                "replaces": "odf-multicluster-orchestrator.v4.10.1",
+                "skipRange": ">=4.2.0 <4.10.2"
+            },
+            {
+                "name": "odf-multicluster-orchestrator.v4.10.3",
+                "replaces": "odf-multicluster-orchestrator.v4.10.2",
+                "skipRange": ">=4.2.0 <4.10.3"
+            },
+            {
+                "name": "odf-multicluster-orchestrator.v4.10.4",
+                "replaces": "odf-multicluster-orchestrator.v4.10.3",
+                "skipRange": ">=4.2.0 <4.10.4"
+            },
+            {
+                "name": "odf-multicluster-orchestrator.v4.10.5",
+                "replaces": "odf-multicluster-orchestrator.v4.10.4",
+                "skipRange": ">=4.2.0 <4.10.5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.11",
+        "package": "odf-multicluster-orchestrator",
+        "entries": [
+            {
+                "name": "odf-multicluster-orchestrator.v4.11.0",
+                "skipRange": ">=4.11.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-multicluster-orchestrator.v4.10.0",
+        "package": "odf-multicluster-orchestrator",
+        "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:bba27843af4366260fc01c4c67652bc8e84c038e2bbc69274cb090f6048ef448",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "multicluster.odf.openshift.io",
+                    "kind": "MirrorPeer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-multicluster-orchestrator",
+                    "version": "4.10.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:bba27843af4366260fc01c4c67652bc8e84c038e2bbc69274cb090f6048ef448"
+            },
+            {
+                "name": "odf-multicluster-operator",
+                "image": "registry.redhat.io/odf4/odf-multicluster-rhel8-operator@sha256:b3a2152dbe7ea2bad4025c15aab740eaef7c29c528ec8869f378d78153843fa2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-multicluster-orchestrator.v4.10.1",
+        "package": "odf-multicluster-orchestrator",
+        "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:119a134e8de0b8779e5a339d60fae4b05285356b5feda85d382ecd4c279060e7",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "multicluster.odf.openshift.io",
+                    "kind": "MirrorPeer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-multicluster-orchestrator",
+                    "version": "4.10.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:119a134e8de0b8779e5a339d60fae4b05285356b5feda85d382ecd4c279060e7"
+            },
+            {
+                "name": "odf-multicluster-operator",
+                "image": "registry.redhat.io/odf4/odf-multicluster-rhel8-operator@sha256:7dcef89792d8af84cd5c7fd225682394b38d5a1180d0ee1c493a6925f699dd0f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-multicluster-orchestrator.v4.10.2",
+        "package": "odf-multicluster-orchestrator",
+        "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:e51d73a1644d7b79048a18688f2420a352c6fe795d3de0e3ae95b5f3061674a5",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "multicluster.odf.openshift.io",
+                    "kind": "MirrorPeer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-multicluster-orchestrator",
+                    "version": "4.10.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:e51d73a1644d7b79048a18688f2420a352c6fe795d3de0e3ae95b5f3061674a5"
+            },
+            {
+                "name": "odf-multicluster-operator",
+                "image": "registry.redhat.io/odf4/odf-multicluster-rhel8-operator@sha256:7a1327897d44b03b6f04cc61a4d925e00bdb440b06e0bb6431786641e233866d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-multicluster-orchestrator.v4.10.3",
+        "package": "odf-multicluster-orchestrator",
+        "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:b605564b3fa23398175a99117ddd93d96bf0451add9373590bdc45d8d9b84699",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "multicluster.odf.openshift.io",
+                    "kind": "MirrorPeer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-multicluster-orchestrator",
+                    "version": "4.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:b605564b3fa23398175a99117ddd93d96bf0451add9373590bdc45d8d9b84699"
+            },
+            {
+                "name": "odf-multicluster-operator",
+                "image": "registry.redhat.io/odf4/odf-multicluster-rhel8-operator@sha256:e4abaf52c43fe47dfafb3c0c3fe9311a52eb43da6fc9f25f517caa62492620fa"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-multicluster-orchestrator.v4.10.4",
+        "package": "odf-multicluster-orchestrator",
+        "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:5a161b73c42c7e8613a4d95d2a5282380954fe6754825975b9418c1bec116cd1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "multicluster.odf.openshift.io",
+                    "kind": "MirrorPeer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-multicluster-orchestrator",
+                    "version": "4.10.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:5a161b73c42c7e8613a4d95d2a5282380954fe6754825975b9418c1bec116cd1"
+            },
+            {
+                "name": "odf-multicluster-operator",
+                "image": "registry.redhat.io/odf4/odf-multicluster-rhel8-operator@sha256:18b75fced618768870ddbd11a939e688d2dbdd9abc56b80f58ff67d8abeaa46b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-multicluster-orchestrator.v4.10.5",
+        "package": "odf-multicluster-orchestrator",
+        "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:9d54be104faef0329aa7e8de01008be6174b716877e234283420627ba177277c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "multicluster.odf.openshift.io",
+                    "kind": "MirrorPeer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-multicluster-orchestrator",
+                    "version": "4.10.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:9d54be104faef0329aa7e8de01008be6174b716877e234283420627ba177277c"
+            },
+            {
+                "name": "odf-multicluster-operator",
+                "image": "registry.redhat.io/odf4/odf-multicluster-rhel8-operator@sha256:aa53ebbab8f20911ac70790b704109ec9da80ed080f37efd44e59a7890d7b38a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-multicluster-orchestrator.v4.11.0",
+        "package": "odf-multicluster-orchestrator",
+        "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:30fadecc3fc709d2b63ba88f66abcf8b4a2912dd43a99025211391961c7c4899",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "multicluster.odf.openshift.io",
+                    "kind": "MirrorPeer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-multicluster-orchestrator",
+                    "version": "4.11.0"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "odr-hub-operator",
+                    "versionRange": "<4.11.0 || 4.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-multicluster-console",
+                "image": "registry.redhat.io/odf4/odf-multicluster-console-rhel8@sha256:65ac28fe1bfe345a4f45229eb27b575973d030e58749784cdbe613437b648a86"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-multicluster-operator-bundle@sha256:30fadecc3fc709d2b63ba88f66abcf8b4a2912dd43a99025211391961c7c4899"
+            },
+            {
+                "name": "odf-multicluster-operator",
+                "image": "registry.redhat.io/odf4/odf-multicluster-rhel8-operator@sha256:a1f5d915c5262e16fe7ac1e1848742b9613a4c94cce4172fa06fed9428340111"
+            }
+        ]
+    }

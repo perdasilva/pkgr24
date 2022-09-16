@@ -1,0 +1,130 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: external-dns-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "external-dns-operator",
+        "defaultChannel": "stable-v1.0"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "alpha",
+        "package": "external-dns-operator",
+        "entries": [
+            {
+                "name": "external-dns-operator.v0.1.2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-v1.0",
+        "package": "external-dns-operator",
+        "entries": [
+            {
+                "name": "external-dns-operator.v1.0.0",
+                "skipRange": "<1.0.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "external-dns-operator.v0.1.2",
+        "package": "external-dns-operator",
+        "image": "registry.redhat.io/edo/external-dns-operator-bundle@sha256:a6399dfd6fe0e8dc9f59fac4382320d23f9e1709e48ed6da7db69e76354b2646",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "externaldns.olm.openshift.io",
+                    "kind": "ExternalDNS",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "external-dns-operator",
+                    "version": "0.1.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/edo/external-dns-operator-bundle@sha256:a6399dfd6fe0e8dc9f59fac4382320d23f9e1709e48ed6da7db69e76354b2646"
+            },
+            {
+                "name": "external-dns-rhel8-operator-6be1403e418f9b63ec8ebcc8858e602409bc41fdee4586acc627623a78b50eb5-annotation",
+                "image": "registry.redhat.io/edo/external-dns-rhel8-operator@sha256:6be1403e418f9b63ec8ebcc8858e602409bc41fdee4586acc627623a78b50eb5"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/edo/external-dns-rhel8-operator@sha256:6be1403e418f9b63ec8ebcc8858e602409bc41fdee4586acc627623a78b50eb5"
+            },
+            {
+                "name": "external_dns",
+                "image": "registry.redhat.io/edo/external-dns-rhel8@sha256:c1134bb46172997ef7278b6cefbb0da44e72a9f808a7cd67b3c65d464754cab9"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b6fde43491c2e0733c8fe6ee8660f7f6435fe20c0b6d435cfc7f86eeab8b4748"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "external-dns-operator.v1.0.0",
+        "package": "external-dns-operator",
+        "image": "registry.redhat.io/edo/external-dns-operator-bundle@sha256:9a81303e7ea9a43f1791d80d1c4a9196bb59425fd3a15a1dd342d8ae8d6b981c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "externaldns.olm.openshift.io",
+                    "kind": "ExternalDNS",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "externaldns.olm.openshift.io",
+                    "kind": "ExternalDNS",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "external-dns-operator",
+                    "version": "1.0.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/edo/external-dns-operator-bundle@sha256:9a81303e7ea9a43f1791d80d1c4a9196bb59425fd3a15a1dd342d8ae8d6b981c"
+            },
+            {
+                "name": "external-dns-rhel8-operator-d38b0fd94084371a7fb9b5c0eb846f755cdcfca13ba32d2095a3cfd74194ef56-annotation",
+                "image": "registry.redhat.io/edo/external-dns-rhel8-operator@sha256:d38b0fd94084371a7fb9b5c0eb846f755cdcfca13ba32d2095a3cfd74194ef56"
+            },
+            {
+                "name": "external-dns-operator",
+                "image": "registry.redhat.io/edo/external-dns-rhel8-operator@sha256:d38b0fd94084371a7fb9b5c0eb846f755cdcfca13ba32d2095a3cfd74194ef56"
+            },
+            {
+                "name": "external_dns",
+                "image": "registry.redhat.io/edo/external-dns-rhel8@sha256:e8c50c1c158d08a99b1f388c65860c533209299fd0ff87f5c9fe29d7c9b5a4d1"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:5788b159ae45b1ec72445700b3c34d5ad0aa9451234a06ed7e465034fa79edc2"
+            }
+        ]
+    }

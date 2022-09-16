@@ -1,0 +1,406 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: mtv-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "mtv-operator",
+        "defaultChannel": "release-v2.3"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "release-v2.1.0",
+        "package": "mtv-operator",
+        "entries": [
+            {
+                "name": "mtv-operator.2.1.0",
+                "skipRange": ">=0.0.0 <2.1.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "release-v2.2.0",
+        "package": "mtv-operator",
+        "entries": [
+            {
+                "name": "mtv-operator.v2.2.0",
+                "skipRange": ">=0.0.0 <2.2.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "release-v2.3",
+        "package": "mtv-operator",
+        "entries": [
+            {
+                "name": "mtv-operator.v2.3.2",
+                "skipRange": ">=0.0.0 <2.3.2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "release-v2.3.0",
+        "package": "mtv-operator",
+        "entries": [
+            {
+                "name": "mtv-operator.v2.3.2",
+                "skipRange": ">=0.0.0 <2.3.2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mtv-operator.2.1.0",
+        "package": "mtv-operator",
+        "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-operator-bundle@sha256:4f178e34278607749f6323c4c4e28159beeb25221c8f36ca4a334acbd5d2d386",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "ForkliftController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Hook",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Host",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Migration",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "NetworkMap",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Plan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Provider",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Provisioner",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "StorageMap",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mtv-operator",
+                    "version": "2.1.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-controller-rhel8@sha256:8c6758c2d81f807c3875f41cec14d9e39f1fe7710584794de57a1449510110db"
+            },
+            {
+                "name": "must-gather",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-must-gather-rhel8@sha256:584a696270554f4fb64755cdc5b525bc6852925e6780f776fb309b1bd8d81d0f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-operator-bundle@sha256:4f178e34278607749f6323c4c4e28159beeb25221c8f36ca4a334acbd5d2d386"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-rhel8-operator@sha256:74a740878707470ea79c7bf03a7f045c2ea77d924d0890042ba3554dc5613a33"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-ui-rhel8@sha256:8089b0889f8956f2abf5a69f4ab8f4382919bc15a48663b98551fb0b865d8af7"
+            },
+            {
+                "name": "validation",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-validation-rhel8@sha256:aead9b494562985e20fa466888f28119ab302d64e93d7f23bc7d8da1c60267e7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mtv-operator.v2.2.0",
+        "package": "mtv-operator",
+        "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-operator-bundle@sha256:8052eca4ff2643bc7be9cd72e00b18015c9a7abc6421f61a454b418c84342c94",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "ForkliftController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Hook",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Host",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Migration",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "NetworkMap",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Plan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Provider",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Provisioner",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "StorageMap",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mtv-operator",
+                    "version": "2.2.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-controller-rhel8@sha256:097a3c667e594060844cbe5d16adcc278d35402d1965ff3fca249c8f84a688dc"
+            },
+            {
+                "name": "must-gather-api",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-must-gather-api-rhel8@sha256:d6bf2bb018c471f8f86f85c62ef52f4a99510b748ac8b6b7b177fc44fa53fb44"
+            },
+            {
+                "name": "must-gather",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-must-gather-rhel8@sha256:02ec1b0dbc12ba31fce85ee164c97560ba3a3184316324ab7c871989a319bf8d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-operator-bundle@sha256:8052eca4ff2643bc7be9cd72e00b18015c9a7abc6421f61a454b418c84342c94"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-rhel8-operator@sha256:3d28138500d6b715e7d11983684db12ced28dfef9c97c619044f0b830534f4ed"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-ui-rhel8@sha256:697b20d6423ac25c0d2f41b2598f4909b6863e85265a4f52bc23b8ce77afc732"
+            },
+            {
+                "name": "validation",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-validation-rhel8@sha256:220d8f97173292dc8389bf4b1a350843757f01ea7861bbcebcf75749366b450b"
+            },
+            {
+                "name": "virt-v2v",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-virt-v2v-rhel8@sha256:6f332be2991b026d5ce2b22e5bdef8d17da06c8b437fb3e5b26e8d35b75e3f95"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mtv-operator.v2.3.2",
+        "package": "mtv-operator",
+        "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-operator-bundle@sha256:29846891c56dcdcfc3f8474eb204fe173e8bedce67a242ec6a7df472c8a90173",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "ForkliftController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Hook",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Host",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Migration",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "NetworkMap",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Plan",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "Provider",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "forklift.konveyor.io",
+                    "kind": "StorageMap",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mtv-operator",
+                    "version": "2.3.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-controller-rhel8@sha256:2949338c600e50f181f21c8911e7a33d73e8e8c7418eb9f23675f9eb5223fda6"
+            },
+            {
+                "name": "must_gather_api",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-must-gather-api-rhel8@sha256:83f177a821c2a37b3c81875a6e7305c6c46f57fde639a7ae471977e550ae9ecb"
+            },
+            {
+                "name": "must_gather",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-must-gather-rhel8@sha256:616791df4b93c11ad9bdd384cf5b578b8f379adbd727f3554be7e41b1acace01"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-operator-bundle@sha256:29846891c56dcdcfc3f8474eb204fe173e8bedce67a242ec6a7df472c8a90173"
+            },
+            {
+                "name": "mtv-rhel8-operator-08fc1170813cbd7bd9d568aabf5f32d7ac4cb35fb1344376bdaae8bfdb166629-annotation",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-rhel8-operator@sha256:08fc1170813cbd7bd9d568aabf5f32d7ac4cb35fb1344376bdaae8bfdb166629"
+            },
+            {
+                "name": "forklift-operator",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-rhel8-operator@sha256:08fc1170813cbd7bd9d568aabf5f32d7ac4cb35fb1344376bdaae8bfdb166629"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-ui-rhel8@sha256:0b923cb5cbbcbec42f55c40398217b39b516f2c52cbe8abff78b38d8061652dc"
+            },
+            {
+                "name": "validation",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-validation-rhel8@sha256:14dd17a64260544c4b62748db28952c9c3d7b003beea37fc1f3976052790b41c"
+            },
+            {
+                "name": "virt_v2v",
+                "image": "registry.redhat.io/migration-toolkit-virtualization/mtv-virt-v2v-rhel8@sha256:4e682deaab0f9e9368313c4879fa680a6f4774c158ba0e61921cfd945fa7fc62"
+            }
+        ]
+    }

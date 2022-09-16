@@ -1,0 +1,141 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: node-healthcheck-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "node-healthcheck-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "alpha",
+        "package": "node-healthcheck-operator",
+        "entries": [
+            {
+                "name": "node-healthcheck-operator.v0.1.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "candidate",
+        "package": "node-healthcheck-operator",
+        "entries": [
+            {
+                "name": "node-healthcheck-operator.v0.3.0",
+                "skipRange": ">=0.2.0 <0.3.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "node-healthcheck-operator",
+        "entries": [
+            {
+                "name": "node-healthcheck-operator.v0.3.0",
+                "skipRange": ">=0.2.0 <0.3.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "node-healthcheck-operator.v0.1.0",
+        "package": "node-healthcheck-operator",
+        "image": "registry.redhat.io/node-healthcheck-operator-tech-preview/node-healthcheck-operator-bundle@sha256:241776e219c068c3bb3b821aed52b2d0cb7fa5c1b8d6822514dfa5077ef73673",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "remediation.medik8s.io",
+                    "kind": "NodeHealthCheck",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "poison-pill.medik8s.io",
+                    "kind": "PoisonPillRemediation",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "node-healthcheck-operator",
+                    "version": "0.1.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/node-healthcheck-operator-tech-preview/node-healthcheck-operator-bundle@sha256:241776e219c068c3bb3b821aed52b2d0cb7fa5c1b8d6822514dfa5077ef73673"
+            },
+            {
+                "name": "node-healthcheck-operator-rhel8-10db7010240d669c3931e30654c46b57f53831129e4f7972b057347c0040d3f7-annotation",
+                "image": "registry.redhat.io/node-healthcheck-operator-tech-preview/node-healthcheck-operator-rhel8@sha256:10db7010240d669c3931e30654c46b57f53831129e4f7972b057347c0040d3f7"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/node-healthcheck-operator-tech-preview/node-healthcheck-operator-rhel8@sha256:10db7010240d669c3931e30654c46b57f53831129e4f7972b057347c0040d3f7"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:076093ea58ca42a77839d911193977a7985728607187f31d3652ce189d79900d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "node-healthcheck-operator.v0.3.0",
+        "package": "node-healthcheck-operator",
+        "image": "registry.redhat.io/workload-availability/node-healthcheck-operator-bundle@sha256:149950363c0d47be86b6d8c1c158fc75276b32fe794c0b73e3489b69f14c9b02",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "remediation.medik8s.io",
+                    "kind": "NodeHealthCheck",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "self-node-remediation.medik8s.io",
+                    "kind": "SelfNodeRemediation",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "node-healthcheck-operator",
+                    "version": "0.3.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:011909289ad5a6e6dd012fafaab83117777073febb15536ee7e66a4d5830f303"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/workload-availability/node-healthcheck-operator-bundle@sha256:149950363c0d47be86b6d8c1c158fc75276b32fe794c0b73e3489b69f14c9b02"
+            },
+            {
+                "name": "node-healthcheck-rhel8-operator-6222f2733bf6f58041d48ee01bde569191d64c702bf6915b1a1baff5d1a9e765-annotation",
+                "image": "registry.redhat.io/workload-availability/node-healthcheck-rhel8-operator@sha256:6222f2733bf6f58041d48ee01bde569191d64c702bf6915b1a1baff5d1a9e765"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/workload-availability/node-healthcheck-rhel8-operator@sha256:6222f2733bf6f58041d48ee01bde569191d64c702bf6915b1a1baff5d1a9e765"
+            }
+        ]
+    }

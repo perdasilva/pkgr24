@@ -1,0 +1,512 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: odf-csi-addons-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "odf-csi-addons-operator",
+        "defaultChannel": "stable-4.11"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.10",
+        "package": "odf-csi-addons-operator",
+        "entries": [
+            {
+                "name": "odf-csi-addons-operator.v4.10.0"
+            },
+            {
+                "name": "odf-csi-addons-operator.v4.10.1",
+                "replaces": "odf-csi-addons-operator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.1"
+            },
+            {
+                "name": "odf-csi-addons-operator.v4.10.2",
+                "replaces": "odf-csi-addons-operator.v4.10.1",
+                "skipRange": ">=4.2.0 <4.10.2"
+            },
+            {
+                "name": "odf-csi-addons-operator.v4.10.3",
+                "replaces": "odf-csi-addons-operator.v4.10.2",
+                "skipRange": ">=4.2.0 <4.10.3"
+            },
+            {
+                "name": "odf-csi-addons-operator.v4.10.4",
+                "replaces": "odf-csi-addons-operator.v4.10.3",
+                "skipRange": ">=4.2.0 <4.10.4"
+            },
+            {
+                "name": "odf-csi-addons-operator.v4.10.5",
+                "replaces": "odf-csi-addons-operator.v4.10.4",
+                "skipRange": ">=4.2.0 <4.10.5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.11",
+        "package": "odf-csi-addons-operator",
+        "entries": [
+            {
+                "name": "odf-csi-addons-operator.v4.11.0",
+                "skipRange": ">=4.11.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-csi-addons-operator.v4.10.0",
+        "package": "odf-csi-addons-operator",
+        "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:84407db398089fe2b60b83f4cbd94fd30581d928d6edf614de5d34cec3f21014",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "CSIAddonsNode",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "NetworkFence",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceCronJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "version": "4.10.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:84407db398089fe2b60b83f4cbd94fd30581d928d6edf614de5d34cec3f21014"
+            },
+            {
+                "name": "odf-csi-addons-operator",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-rhel8-operator@sha256:9ee9de9bc7ed8955ee04b2aca075f7ac44b394dbd4f2230dc791844553d84149"
+            },
+            {
+                "name": "csi-addons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:0f23899af9031663308ea7501b35236387238567bafd5d10295bc4726f45c2ae"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b8109aa8cb1f87d52afdfcb3e87382e197ca5983121409a6aaa1c7340004cc19"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-csi-addons-operator.v4.10.1",
+        "package": "odf-csi-addons-operator",
+        "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:ea1c6fbf4bd3f36cc1fd01f40aa8bbb7bb4ad243ec766a0d1388c07fac69a31e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "CSIAddonsNode",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "NetworkFence",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceCronJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "version": "4.10.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:ea1c6fbf4bd3f36cc1fd01f40aa8bbb7bb4ad243ec766a0d1388c07fac69a31e"
+            },
+            {
+                "name": "odf-csi-addons-operator",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-rhel8-operator@sha256:a91bb49c60231d4993d464a15f874c7f879976480cdd18159a630b486c8d0e2d"
+            },
+            {
+                "name": "csi-addons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:ad9e7a8bae4e1d93ea1ceb9a8b57564e29639fbdc3bdd166a786e77eb120459a"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:004362f4560a23975e9b453d18da6ddd99d4131589952b395b84df49cb125f8c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-csi-addons-operator.v4.10.2",
+        "package": "odf-csi-addons-operator",
+        "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:7383ecfcee2124e652335e8e20f7203210289eb99f778b1a659736ac8c30e38f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "CSIAddonsNode",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "NetworkFence",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceCronJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "version": "4.10.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:7383ecfcee2124e652335e8e20f7203210289eb99f778b1a659736ac8c30e38f"
+            },
+            {
+                "name": "odf-csi-addons-operator",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-rhel8-operator@sha256:56d64b9aaa646c432930b1d0ba9a00fb551df28439b40235e9970a582d290b71"
+            },
+            {
+                "name": "csi-addons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:84e379d6eef40ca05830c29fad2f2a5c15dd7158e9dd1277105e276413859144"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:20954f1fd9c2bac5cabaedbeec25d60b31546ffc05f3e4c38ffcf45e2ed41be9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-csi-addons-operator.v4.10.3",
+        "package": "odf-csi-addons-operator",
+        "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:b89625d39585def00c85fb7d267000cd205cfdec8d391382b7bc6c1bb8241b7a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "CSIAddonsNode",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "NetworkFence",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceCronJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "version": "4.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:b89625d39585def00c85fb7d267000cd205cfdec8d391382b7bc6c1bb8241b7a"
+            },
+            {
+                "name": "odf-csi-addons-operator",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-rhel8-operator@sha256:9ca68ff20b805c4ed458c8f6dcab6833bcd8c656278ab3e69aa945960a699fe0"
+            },
+            {
+                "name": "csi-addons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:9dc3002750d465847390cc481f1ca8d9f9e1a7d7f1102583a1f9182565cc3695"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:8503a9bab5ea92bc6f7f8cdc00b4dab8e73103973d17b0bfdbf921d15cd9a4c0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-csi-addons-operator.v4.10.4",
+        "package": "odf-csi-addons-operator",
+        "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:33d5a81a5f78a4a63c1fd4c7bad0b0ec82beef5b847025ae1d097248a59705d2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "CSIAddonsNode",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "NetworkFence",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceCronJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "version": "4.10.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:33d5a81a5f78a4a63c1fd4c7bad0b0ec82beef5b847025ae1d097248a59705d2"
+            },
+            {
+                "name": "odf-csi-addons-operator",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-rhel8-operator@sha256:38eb3ad7e6c186e6a6ea06d7bf080601526a93c63aad538d67213904ae6a5db3"
+            },
+            {
+                "name": "csi-addons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:d9f60aed2f3fc928f5814c864f2cdb59f77bc0fa0a81c48f89c66870faccd570"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3658954f199040b0f244945c94955f794ee68008657421002e1b32962e7c30fc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-csi-addons-operator.v4.10.5",
+        "package": "odf-csi-addons-operator",
+        "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:be095b227df301a7067f1663405faf2b984441613f14576606b98c781f0353dd",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "CSIAddonsNode",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "NetworkFence",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceCronJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "version": "4.10.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:be095b227df301a7067f1663405faf2b984441613f14576606b98c781f0353dd"
+            },
+            {
+                "name": "odf-csi-addons-operator",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-rhel8-operator@sha256:83b24d46f98858fd9d7a7545f4e1b0bdd810b3e4c615ec6f8d46a51bf5ab003a"
+            },
+            {
+                "name": "csi-addons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:550221e4c4ddb57da3a811f5bdda5003079670fe84ebd7e74d3ce4177d5ea831"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3658954f199040b0f244945c94955f794ee68008657421002e1b32962e7c30fc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-csi-addons-operator.v4.11.0",
+        "package": "odf-csi-addons-operator",
+        "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:d969a8b0b2871ada6387543aef2482f42e8d7572da48f143e0ef3b66a1916cf5",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "CSIAddonsNode",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "NetworkFence",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceCronJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "csiaddons.openshift.io",
+                    "kind": "ReclaimSpaceJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-csi-addons-operator",
+                    "version": "4.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-operator-bundle@sha256:d969a8b0b2871ada6387543aef2482f42e8d7572da48f143e0ef3b66a1916cf5"
+            },
+            {
+                "name": "odf-csi-addons-operator",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-rhel8-operator@sha256:a66fa2ff73435af664adfd63242cb579c36bb81c56b95134dd66b71f8240ab57"
+            },
+            {
+                "name": "csi-addons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:bc645344d3ac118f78b1df91a7f9cc998f3ed3731546ca02bf8db2b9cc7159a7"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b5786bbbef725badf3dfcc2c2c7a86ead5ebb584c978c47aae8b9a62e241b80d"
+            }
+        ]
+    }

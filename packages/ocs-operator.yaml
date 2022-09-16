@@ -1,0 +1,1909 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: ocs-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "ocs-operator",
+        "defaultChannel": "stable-4.11"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.10",
+        "package": "ocs-operator",
+        "entries": [
+            {
+                "name": "ocs-operator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.0"
+            },
+            {
+                "name": "ocs-operator.v4.10.1",
+                "replaces": "ocs-operator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.1"
+            },
+            {
+                "name": "ocs-operator.v4.10.2",
+                "replaces": "ocs-operator.v4.10.1",
+                "skipRange": ">=4.2.0 <4.10.2"
+            },
+            {
+                "name": "ocs-operator.v4.10.3",
+                "replaces": "ocs-operator.v4.10.2",
+                "skipRange": ">=4.2.0 <4.10.3"
+            },
+            {
+                "name": "ocs-operator.v4.10.4",
+                "replaces": "ocs-operator.v4.10.3",
+                "skipRange": ">=4.2.0 <4.10.4"
+            },
+            {
+                "name": "ocs-operator.v4.10.5",
+                "replaces": "ocs-operator.v4.10.4",
+                "skipRange": ">=4.2.0 <4.10.5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.11",
+        "package": "ocs-operator",
+        "entries": [
+            {
+                "name": "ocs-operator.v4.11.0",
+                "skipRange": ">=4.11.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "ocs-operator.v4.10.0",
+        "package": "ocs-operator",
+        "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:a640d9395a7dad7c5d2306af3ba60a3430358e705b647ebf272e38e27282ad4c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBlockPool",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketNotification",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketTopic",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephClient",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystem",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemSubVolumeGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephNFS",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectRealm",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStore",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStoreUser",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZone",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZoneGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephRBDMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "OCSInitialization",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageConsumer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplication",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplicationClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "version": "4.10.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "rook-csi",
+                "image": "registry.redhat.io/odf4/cephcsi-rhel8@sha256:e686b5214871c516a7f5b6b03be43126de363c3c47630440a1dd2f42c2d49aee"
+            },
+            {
+                "name": "noobaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:4ff2d65ea16dd1026fe278a0f8ca920f300dfcee205b4b8ede0ab28be1aa43a6"
+            },
+            {
+                "name": "ocs-must-gather",
+                "image": "registry.redhat.io/odf4/ocs-must-gather-rhel8@sha256:bb839a801a703a0b6850e7af8948a9546a8fc75822a88266a31c40874834cdb3"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:a640d9395a7dad7c5d2306af3ba60a3430358e705b647ebf272e38e27282ad4c"
+            },
+            {
+                "name": "ocs-operator",
+                "image": "registry.redhat.io/odf4/ocs-rhel8-operator@sha256:ecbd1c11787ec0a70afc230530f358ce104e553eb13d6093ec26ee80870da068"
+            },
+            {
+                "name": "csiaddons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:0f23899af9031663308ea7501b35236387238567bafd5d10295bc4726f45c2ae"
+            },
+            {
+                "name": "rook-container",
+                "image": "registry.redhat.io/odf4/rook-ceph-rhel8-operator@sha256:39431c0f4359b85b1a09bf239761672b906375a08163d3f98a5c30de2ea76a1f"
+            },
+            {
+                "name": "volume-replication-operator",
+                "image": "registry.redhat.io/odf4/volume-replication-rhel8-operator@sha256:fe08ba03de51d04bdbc4ef4559106643b0ed422c26146c72069a2831f4bb08cb"
+            },
+            {
+                "name": "rook-csi-attacher",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-attacher@sha256:7840134d92c918aa3e80f93d24630566be07b3afc16515d5525217e554e8f35d"
+            },
+            {
+                "name": "rook-csi-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:60883fd78b799de9c8320c46263bd67fa4ed46ae8ce84fa3440fdd66a4c51355"
+            },
+            {
+                "name": "rook-csi-resizer",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-resizer@sha256:519a0e644866b001f1b975ec05fd271f73c27bd45f713746e812e7827b6770c9"
+            },
+            {
+                "name": "rook-csi-snapshotter",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-snapshotter@sha256:af51ccc5af0c59d3795f1872104a441edd79c2de93038076c697b35ec189bffb"
+            },
+            {
+                "name": "rook-csi-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:3308ef98afab494b80aa1a702924407cf114bce6e0ad92436e508d7dc951521c"
+            },
+            {
+                "name": "ceph-container",
+                "image": "registry.redhat.io/rhceph/rhceph-5-rhel8@sha256:5c75d05c7c532072ec97bba9951cc225bcb16c3f0c9ba9c0a293cb7a00b53b5a"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:be7212e938d1ef314a75aca070c28b6433cd0346704d0d3523c8ef403ff0c69e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "ocs-operator.v4.10.1",
+        "package": "ocs-operator",
+        "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:dedbaa13ec89f3f8217ed23722ae0589fedc96f319d61cd2a79c9afc66dce340",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBlockPool",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketNotification",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketTopic",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephClient",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystem",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemSubVolumeGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephNFS",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectRealm",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStore",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStoreUser",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZone",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZoneGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephRBDMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "OCSInitialization",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageConsumer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplication",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplicationClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "version": "4.10.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "rook-csi",
+                "image": "registry.redhat.io/odf4/cephcsi-rhel8@sha256:6e6a505d33ebe7a8a8c4b7b9235bbb34347224ccfdfb2cc927d3b93b730725e8"
+            },
+            {
+                "name": "noobaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:40da9aaf63ead51b72bc2a25e36f2a178fbbc404653b7c90dc1f36e1c191316b"
+            },
+            {
+                "name": "ocs-must-gather",
+                "image": "registry.redhat.io/odf4/ocs-must-gather-rhel8@sha256:83fa1802f532c4c17aebe2fecdc4a49a6308efa12b1e03c62c527ae5a8ce261d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:dedbaa13ec89f3f8217ed23722ae0589fedc96f319d61cd2a79c9afc66dce340"
+            },
+            {
+                "name": "ocs-operator",
+                "image": "registry.redhat.io/odf4/ocs-rhel8-operator@sha256:a295b5db13342aa596d8936615b80df86259a0658a4190bd66453df1db450cae"
+            },
+            {
+                "name": "csiaddons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:ad9e7a8bae4e1d93ea1ceb9a8b57564e29639fbdc3bdd166a786e77eb120459a"
+            },
+            {
+                "name": "rook-container",
+                "image": "registry.redhat.io/odf4/rook-ceph-rhel8-operator@sha256:b574d632936d350ce69f554a5da65a43227ab2105ec0cb890eadf2ec5f0c5e33"
+            },
+            {
+                "name": "volume-replication-operator",
+                "image": "registry.redhat.io/odf4/volume-replication-rhel8-operator@sha256:d15076109b87ebfbca4dad174d5cdc46d6f1c911cfc8fea3fe6d743bc1891847"
+            },
+            {
+                "name": "rook-csi-attacher",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-attacher@sha256:47d907d24cf9a0cb4496af688785a8485eddfebd70379f082bd58fd2883a46bc"
+            },
+            {
+                "name": "rook-csi-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:0521f532c721ca946d802966633d9bc5bc08e642f3a765fee293b449441f90bb"
+            },
+            {
+                "name": "rook-csi-resizer",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-resizer@sha256:e2fb943852ae1c55f88a1d1668b6f375a60cbc0f7373559aff190775ad2a7f87"
+            },
+            {
+                "name": "rook-csi-snapshotter",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-snapshotter@sha256:8aba608ee3fcca4a1e0cef679fd61778cc071a91871bb6146eb46b38bae22260"
+            },
+            {
+                "name": "rook-csi-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:07963513c4699736be182a50f4bb11e215d0f95bffc5bb3c4fa88894df52e7a1"
+            },
+            {
+                "name": "ceph-container",
+                "image": "registry.redhat.io/rhceph/rhceph-5-rhel8@sha256:5c75d05c7c532072ec97bba9951cc225bcb16c3f0c9ba9c0a293cb7a00b53b5a"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:96d2472910fd59acd4fc4371de03dd44071cab7d4f095f4e3bf30e646c9b0a82"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "ocs-operator.v4.10.2",
+        "package": "ocs-operator",
+        "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:ef2c06eaaf145efaabc638045f92bec3a4e50c892b261eb35a706446a0ffe7f5",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBlockPool",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketNotification",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketTopic",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephClient",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystem",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemSubVolumeGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephNFS",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectRealm",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStore",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStoreUser",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZone",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZoneGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephRBDMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "OCSInitialization",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageConsumer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplication",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplicationClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "version": "4.10.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "rook-csi",
+                "image": "registry.redhat.io/odf4/cephcsi-rhel8@sha256:98f3cea84e4f25fbd0e55439c31d7a7870449fea050bf41cad3867d9036cacf0"
+            },
+            {
+                "name": "noobaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:80897f0ac2df4039b98cfda43118d2b00f4ccef9a9495e733dfaab75ab1ecfb0"
+            },
+            {
+                "name": "ocs-must-gather",
+                "image": "registry.redhat.io/odf4/ocs-must-gather-rhel8@sha256:42c85dd18d7da2286a9a07602cf18abe578a93fa6ce4feeaffed1bbbdcbfa3de"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:ef2c06eaaf145efaabc638045f92bec3a4e50c892b261eb35a706446a0ffe7f5"
+            },
+            {
+                "name": "ocs-operator",
+                "image": "registry.redhat.io/odf4/ocs-rhel8-operator@sha256:3b359006d7b17b3416f9b29dad7bc35e26c6d0d21feacdb71282514b2c76e151"
+            },
+            {
+                "name": "csiaddons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:84e379d6eef40ca05830c29fad2f2a5c15dd7158e9dd1277105e276413859144"
+            },
+            {
+                "name": "rook-container",
+                "image": "registry.redhat.io/odf4/rook-ceph-rhel8-operator@sha256:fbb33bb93afdb1d668fcdde4ba53b57adc8629fabd92ef900956c14796035bbf"
+            },
+            {
+                "name": "volume-replication-operator",
+                "image": "registry.redhat.io/odf4/volume-replication-rhel8-operator@sha256:ac97b59f8f5aa7e10730c0b43c8d94ebf344bb65b5f04ef864b3155fde11edf9"
+            },
+            {
+                "name": "rook-csi-attacher",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-attacher@sha256:9f6674a2dfc651e47bd9b9cbea8368324e6c2404f4478538f29c3d67b41892bd"
+            },
+            {
+                "name": "rook-csi-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:106141d7e11e5495f75f497d0eeab106080224a504d3792501bd61722902bbfe"
+            },
+            {
+                "name": "rook-csi-resizer",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-resizer@sha256:1140505cccb1f88e2caccb4d6ae4d1b878381d531b0d9c029d1aaba3dbecd0ef"
+            },
+            {
+                "name": "rook-csi-snapshotter",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-snapshotter@sha256:997ff97cbdac7786bc5c8b9c2f0efa667ff0fc4bd02c0345225d79babcb2a912"
+            },
+            {
+                "name": "rook-csi-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:8db12de76d7f7e80439ac2a9fb731993fcb46447749664ee804bcc9cf9301859"
+            },
+            {
+                "name": "ceph-container",
+                "image": "registry.redhat.io/rhceph/rhceph-5-rhel8@sha256:5c75d05c7c532072ec97bba9951cc225bcb16c3f0c9ba9c0a293cb7a00b53b5a"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:fa920188f567e51d75aacd723f0964026e42ac060fed392036e8d4b3c7a8129f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "ocs-operator.v4.10.3",
+        "package": "ocs-operator",
+        "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:28161864968ee4dc66ed6600697c469c714538cf27c66a2096e4443a6eef52b4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBlockPool",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketNotification",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketTopic",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephClient",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystem",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemSubVolumeGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephNFS",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectRealm",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStore",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStoreUser",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZone",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZoneGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephRBDMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "OCSInitialization",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageConsumer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplication",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplicationClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "version": "4.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "rook-csi",
+                "image": "registry.redhat.io/odf4/cephcsi-rhel8@sha256:79c96fb77a37f46706dd156090ab39489975506bce3d01aa3852c5d90b4d4aec"
+            },
+            {
+                "name": "noobaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:40192e6b43abb91b01cfb12e9c6c2132b529c8a52b0ee0c4a4e5502337d1135e"
+            },
+            {
+                "name": "ocs-must-gather",
+                "image": "registry.redhat.io/odf4/ocs-must-gather-rhel8@sha256:b1973f451d16bbe48a3bd1cba22019724c4de8252baf52c8f09239b8e7434e64"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:28161864968ee4dc66ed6600697c469c714538cf27c66a2096e4443a6eef52b4"
+            },
+            {
+                "name": "ocs-operator",
+                "image": "registry.redhat.io/odf4/ocs-rhel8-operator@sha256:60cb495cd4230eb5709c71dbcf64d8380438bde845abe026f06237bc6dede58f"
+            },
+            {
+                "name": "csiaddons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:9dc3002750d465847390cc481f1ca8d9f9e1a7d7f1102583a1f9182565cc3695"
+            },
+            {
+                "name": "rook-container",
+                "image": "registry.redhat.io/odf4/rook-ceph-rhel8-operator@sha256:9e2380c42a6c00fe2cced9baadb71d3dcb78ec0e64034203033b3c1d7d82b233"
+            },
+            {
+                "name": "volume-replication-operator",
+                "image": "registry.redhat.io/odf4/volume-replication-rhel8-operator@sha256:179b50f0e2d2cd1ac9db869a67781610e8335424310983bb581487503c6b5498"
+            },
+            {
+                "name": "rook-csi-attacher",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-attacher@sha256:cdaf874ffaff5e3e4cae473c40372ef45f7d9e3bb35a93c7a715bcc30ff03a4f"
+            },
+            {
+                "name": "rook-csi-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:95010584242f9705ffad17632bd11cf1299955b986d1e5b4b8892f9fda75bb00"
+            },
+            {
+                "name": "rook-csi-resizer",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-resizer@sha256:34386f8c0227015c1abd9d7dfd8e9b687cba7047ec021d393ab39133e67178b9"
+            },
+            {
+                "name": "rook-csi-snapshotter",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-snapshotter@sha256:cb781aff7b4ead2e0535274186b5e97274d734e19e9ef404e187bc39d11bb2cc"
+            },
+            {
+                "name": "rook-csi-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:90792483c531bfa2c51e5be45efdc0e52e3e2461a4c9a6921428d719415dc8b0"
+            },
+            {
+                "name": "ceph-container",
+                "image": "registry.redhat.io/rhceph/rhceph-5-rhel8@sha256:b20a05e20403da9775408fde0f10ba9c81c5610a3814db7786dd43ce4b2aba4a"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:66fa333966bf08f3ac0d5e270b6ffb03717b5b6a3df30663f88acfd3f8566d13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "ocs-operator.v4.10.4",
+        "package": "ocs-operator",
+        "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:18da22ffcea86ef09c61d20ae81cd6f82cbf73c292dc4ef206dfd976ec7c5971",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBlockPool",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketNotification",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketTopic",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephClient",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystem",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemSubVolumeGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephNFS",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectRealm",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStore",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStoreUser",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZone",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZoneGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephRBDMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "OCSInitialization",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageConsumer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplication",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplicationClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "version": "4.10.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "rook-csi",
+                "image": "registry.redhat.io/odf4/cephcsi-rhel8@sha256:01caee70dcd8eec596863049256c757e0f39cbf87dfdfde557053f3be58bea3d"
+            },
+            {
+                "name": "noobaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:0d8f33ac4bdc4bb095bcfc4e32ddf44b110a48cc44d1b1bda8ca5dd4cccb72a4"
+            },
+            {
+                "name": "ocs-must-gather",
+                "image": "registry.redhat.io/odf4/ocs-must-gather-rhel8@sha256:e2e9a3697dd3cf8ae1030eadf840a7e946131f11605e4d3fc46be27e0d1bf417"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:18da22ffcea86ef09c61d20ae81cd6f82cbf73c292dc4ef206dfd976ec7c5971"
+            },
+            {
+                "name": "ocs-operator",
+                "image": "registry.redhat.io/odf4/ocs-rhel8-operator@sha256:522a3496e76a921df258f09509e8532ad963fedbc74c282b6e412e0cce7c2f28"
+            },
+            {
+                "name": "csiaddons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:d9f60aed2f3fc928f5814c864f2cdb59f77bc0fa0a81c48f89c66870faccd570"
+            },
+            {
+                "name": "rook-container",
+                "image": "registry.redhat.io/odf4/rook-ceph-rhel8-operator@sha256:9c99f8318724c94346db4c9079705537ae177d276108bbc2e8c080fd95b58440"
+            },
+            {
+                "name": "volume-replication-operator",
+                "image": "registry.redhat.io/odf4/volume-replication-rhel8-operator@sha256:6fe55db39e35676eeb62a5ab685baea8c402fdcb9f67a32484f0663f53c59327"
+            },
+            {
+                "name": "rook-csi-attacher",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-attacher@sha256:9b1c595785ebf3dacef11bcb95829a785456d7c0dad6b595a9c8284d559b079b"
+            },
+            {
+                "name": "rook-csi-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:42563eb25efb2b6f277944b627bea420fa58fe950b46a1bd1487122b8a387e75"
+            },
+            {
+                "name": "rook-csi-resizer",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-resizer@sha256:75017593988025df444c8b3849b6ba867c3a7f6fc83212aeff2dfc3de4fabd21"
+            },
+            {
+                "name": "rook-csi-snapshotter",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-snapshotter@sha256:84982def260a1f03a0299528182951993d5c105676c7dd7fe502d12fa167aaae"
+            },
+            {
+                "name": "rook-csi-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:376f21cfa8308dc1b61a3e8401b7023d903eda768912699f39403de742ab88b1"
+            },
+            {
+                "name": "ceph-container",
+                "image": "registry.redhat.io/rhceph/rhceph-5-rhel8@sha256:b20a05e20403da9775408fde0f10ba9c81c5610a3814db7786dd43ce4b2aba4a"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:44215c5b244b190c82d9d371a8ffd39b0c83576bd85c980cc72782a5cf9e6e1b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "ocs-operator.v4.10.5",
+        "package": "ocs-operator",
+        "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:1cbe53d6e1ebbbacef1bcb5459aa3ad882568aa006b059bd334287363eb35aae",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBlockPool",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketNotification",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketTopic",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephClient",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystem",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemSubVolumeGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephNFS",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectRealm",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStore",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStoreUser",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZone",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZoneGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephRBDMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "OCSInitialization",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageConsumer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplication",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplicationClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "version": "4.10.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "rook-csi",
+                "image": "registry.redhat.io/odf4/cephcsi-rhel8@sha256:5db2f10f6a73ad0c3598e407ae2dba25bf4d0655d0c1b3c7fdab9802a44da796"
+            },
+            {
+                "name": "noobaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:512e708ecb13c608430a5edd11fd2c52a47bebed33851d7aa80ef35003a15076"
+            },
+            {
+                "name": "ocs-must-gather",
+                "image": "registry.redhat.io/odf4/ocs-must-gather-rhel8@sha256:65c4b98de58f052d1e2650fc356a3e828364b048289a38186564c95b1a5f7a85"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:1cbe53d6e1ebbbacef1bcb5459aa3ad882568aa006b059bd334287363eb35aae"
+            },
+            {
+                "name": "ocs-operator",
+                "image": "registry.redhat.io/odf4/ocs-rhel8-operator@sha256:cdd4838430fde2c9fcec7cd37429c2cc99c8f4bbdc27e4069f8abe4bff88498f"
+            },
+            {
+                "name": "csiaddons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:550221e4c4ddb57da3a811f5bdda5003079670fe84ebd7e74d3ce4177d5ea831"
+            },
+            {
+                "name": "rook-container",
+                "image": "registry.redhat.io/odf4/rook-ceph-rhel8-operator@sha256:dfe11ebccdc711a0b303d78c93998dac5fa41e8946beb7536b8a5e42c6d9ad05"
+            },
+            {
+                "name": "volume-replication-operator",
+                "image": "registry.redhat.io/odf4/volume-replication-rhel8-operator@sha256:7de13e9bc57cf408d805b91eba5d6062407bc725aed03aadf1905874a9580d88"
+            },
+            {
+                "name": "rook-csi-attacher",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-attacher@sha256:9b1c595785ebf3dacef11bcb95829a785456d7c0dad6b595a9c8284d559b079b"
+            },
+            {
+                "name": "rook-csi-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:42563eb25efb2b6f277944b627bea420fa58fe950b46a1bd1487122b8a387e75"
+            },
+            {
+                "name": "rook-csi-resizer",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-resizer@sha256:75017593988025df444c8b3849b6ba867c3a7f6fc83212aeff2dfc3de4fabd21"
+            },
+            {
+                "name": "rook-csi-snapshotter",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-snapshotter@sha256:84982def260a1f03a0299528182951993d5c105676c7dd7fe502d12fa167aaae"
+            },
+            {
+                "name": "rook-csi-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:376f21cfa8308dc1b61a3e8401b7023d903eda768912699f39403de742ab88b1"
+            },
+            {
+                "name": "ceph-container",
+                "image": "registry.redhat.io/rhceph/rhceph-5-rhel8@sha256:fc25524ccb0ea78526257778ab54bfb1a25772b75fcc97df98eb06a0e67e1bf6"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:81d9bf20387ecfa85bf24dd53167242393075544a4368636a4bbda79d8769f49"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "ocs-operator.v4.11.0",
+        "package": "ocs-operator",
+        "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:088b8dc1d459270629610aab02666f99262c9675336d812b24e43df135d9e96a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBlockPool",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBlockPoolRadosNamespace",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketNotification",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephBucketTopic",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephClient",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystem",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephFilesystemSubVolumeGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephNFS",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectRealm",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStore",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectStoreUser",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZone",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephObjectZoneGroup",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ceph.rook.io",
+                    "kind": "CephRBDMirror",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucket",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "objectbucket.io",
+                    "kind": "ObjectBucketClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "OCSInitialization",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageClassClaim",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageCluster",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ocs.openshift.io",
+                    "kind": "StorageConsumer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplication",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "replication.storage.openshift.io",
+                    "kind": "VolumeReplicationClass",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk.required",
+                "value": {
+                    "group": "noobaa.io",
+                    "kind": "NooBaa",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ocs-operator",
+                    "version": "4.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "rook-csi",
+                "image": "registry.redhat.io/odf4/cephcsi-rhel8@sha256:7d015719d62d9a26b5a8f1ddc7b1789501b8889638b711ac3cef07e355f96a59"
+            },
+            {
+                "name": "noobaa-core",
+                "image": "registry.redhat.io/odf4/mcg-core-rhel8@sha256:36c9e3fbdb4232a48e16f06bec2d4c506629c4b56bf8ba4bcf9212503b2ca0a8"
+            },
+            {
+                "name": "ocs-metrics-exporter",
+                "image": "registry.redhat.io/odf4/ocs-metrics-exporter-rhel8@sha256:fda2cf85f3d4efa47852978d1ac672c1a9f42975e0e80f5be734d87b6a021183"
+            },
+            {
+                "name": "ocs-must-gather",
+                "image": "registry.redhat.io/odf4/ocs-must-gather-rhel8@sha256:f2f104564bd5dcc46283e3b0f0d42db71b508b0ecb4abcb904487960e30ffd43"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/ocs-operator-bundle@sha256:088b8dc1d459270629610aab02666f99262c9675336d812b24e43df135d9e96a"
+            },
+            {
+                "name": "ocs-operator",
+                "image": "registry.redhat.io/odf4/ocs-rhel8-operator@sha256:7811f92dc0393dc766f6fab1552e56d06ad69e3e4d667a492efa8f54f62fac96"
+            },
+            {
+                "name": "csiaddons-sidecar",
+                "image": "registry.redhat.io/odf4/odf-csi-addons-sidecar-rhel8@sha256:bc645344d3ac118f78b1df91a7f9cc998f3ed3731546ca02bf8db2b9cc7159a7"
+            },
+            {
+                "name": "rook-container",
+                "image": "registry.redhat.io/odf4/rook-ceph-rhel8-operator@sha256:bd6c0c83a76969490d846bf8029d541f898357be40dc42500f52885121ad573a"
+            },
+            {
+                "name": "volume-replication-operator",
+                "image": "registry.redhat.io/odf4/volume-replication-rhel8-operator@sha256:68302a78b87c91024f508a7419dc6df90dd4fbac89b9fc0f21bc17c0cc0f1391"
+            },
+            {
+                "name": "rook-csi-nfs",
+                "image": "registry.redhat.io/openshift4/ose-csi-driver-nfs-rhel8@sha256:42ab4290f6df4fceb26a20cc2cf91e60093b42d4fa4a27a7dbe582ea5edd81f8"
+            },
+            {
+                "name": "rook-csi-attacher",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-attacher-rhel8@sha256:a68efde44a8d3f5a693803966d592fa5d84f3b55b7a84eeefa2f35b1e63f0c5d"
+            },
+            {
+                "name": "rook-csi-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:34581b3ad230c153ce8cffe9229f2abf37f90c40d82896741fbef64a1f05fafb"
+            },
+            {
+                "name": "rook-csi-resizer",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-resizer@sha256:971867e19bd7645ec7c1d73a03a2559ba6c8bd729e44dd2513ba5b7ad8bc66a8"
+            },
+            {
+                "name": "rook-csi-snapshotter",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-snapshotter-rhel8@sha256:eb0477a9fa74ad83bdba84696c5181222be3c001312fd282da48802968d33434"
+            },
+            {
+                "name": "rook-csi-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:9bd4e84e62834eb92e81764a8f5a753ea0520e85165c0e4cd33142825837c9c9"
+            },
+            {
+                "name": "ceph-container",
+                "image": "registry.redhat.io/rhceph/rhceph-5-rhel8@sha256:7892e9da0a70b2d7e3efd98d2cb980e485f07eddff6a0dac6d6bd6c516914f3c"
+            },
+            {
+                "name": "noobaa-db",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:78ed1e1f454c49664ae653b3d52af3d77ef1e9cad37a7b0fff09feeaa8294e01"
+            }
+        ]
+    }

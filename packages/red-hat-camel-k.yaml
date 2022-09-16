@@ -1,0 +1,1468 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: red-hat-camel-k
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "red-hat-camel-k",
+        "defaultChannel": "1.6.x"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "1.4.x",
+        "package": "red-hat-camel-k",
+        "entries": [
+            {
+                "name": "red-hat-camel-k-operator.v1.3.3"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.4.0",
+                "replaces": "red-hat-camel-k-operator.v1.3.3"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.4.1",
+                "replaces": "red-hat-camel-k-operator.v1.4.0"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.4.2",
+                "replaces": "red-hat-camel-k-operator.v1.4.1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "1.6.x",
+        "package": "red-hat-camel-k",
+        "entries": [
+            {
+                "name": "red-hat-camel-k-operator.v1.6.10",
+                "replaces": "red-hat-camel-k-operator.v1.6.9",
+                "skipRange": ">=1.6.7 <=1.6.8"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.9",
+                "skipRange": ">=1.6.7 <=1.6.8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "candidate",
+        "package": "red-hat-camel-k",
+        "entries": [
+            {
+                "name": "red-hat-camel-k-operator.v1.3.3"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.4.0",
+                "replaces": "red-hat-camel-k-operator.v1.3.3"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.4.1",
+                "replaces": "red-hat-camel-k-operator.v1.4.0"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.4.2",
+                "replaces": "red-hat-camel-k-operator.v1.4.1"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.0",
+                "replaces": "red-hat-camel-k-operator.v1.4.2"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.1",
+                "replaces": "red-hat-camel-k-operator.v1.6.0"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.2",
+                "replaces": "red-hat-camel-k-operator.v1.6.1"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.3",
+                "replaces": "red-hat-camel-k-operator.v1.6.2"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.4"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.4-0.1648537022.p",
+                "replaces": "red-hat-camel-k-operator.v1.6.3",
+                "skips": [
+                    "red-hat-camel-k-operator.v1.6.4"
+                ]
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.5",
+                "replaces": "red-hat-camel-k-operator.v1.6.4-0.1648537022.p"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.6",
+                "replaces": "red-hat-camel-k-operator.v1.6.5"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.7",
+                "replaces": "red-hat-camel-k-operator.v1.6.6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "latest",
+        "package": "red-hat-camel-k",
+        "entries": [
+            {
+                "name": "red-hat-camel-k-operator.v1.3.3"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.4.0",
+                "replaces": "red-hat-camel-k-operator.v1.3.3"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.4.1",
+                "replaces": "red-hat-camel-k-operator.v1.4.0"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.4.2",
+                "replaces": "red-hat-camel-k-operator.v1.4.1"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.0",
+                "replaces": "red-hat-camel-k-operator.v1.4.2"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.1",
+                "replaces": "red-hat-camel-k-operator.v1.6.0"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.2",
+                "replaces": "red-hat-camel-k-operator.v1.6.1"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.3",
+                "replaces": "red-hat-camel-k-operator.v1.6.2"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.4"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.4-0.1648537022.p",
+                "replaces": "red-hat-camel-k-operator.v1.6.3",
+                "skips": [
+                    "red-hat-camel-k-operator.v1.6.4"
+                ]
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.5",
+                "replaces": "red-hat-camel-k-operator.v1.6.4-0.1648537022.p"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.6",
+                "replaces": "red-hat-camel-k-operator.v1.6.5"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.7",
+                "replaces": "red-hat-camel-k-operator.v1.6.6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "red-hat-camel-k",
+        "entries": [
+            {
+                "name": "red-hat-camel-k-operator.v1.6.10",
+                "replaces": "red-hat-camel-k-operator.v1.6.9",
+                "skipRange": ">=1.6.7 <=1.6.8"
+            },
+            {
+                "name": "red-hat-camel-k-operator.v1.6.9",
+                "skipRange": ">=1.6.7 <=1.6.8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.3.3",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:d133ea9aa66646d493443dcabccebcbdb1e7a70dd84939ed772e912f4b3090b5",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.3.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "camel-k-rhel8-operator-20e9f0473d03bccaecabc629ffa398fb87a7adca74d57c040b215be584a92011-annotation",
+                "image": "registry.redhat.io/integration-tech-preview/camel-k-rhel8-operator@sha256:20e9f0473d03bccaecabc629ffa398fb87a7adca74d57c040b215be584a92011"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration-tech-preview/camel-k-rhel8-operator@sha256:20e9f0473d03bccaecabc629ffa398fb87a7adca74d57c040b215be584a92011"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:d133ea9aa66646d493443dcabccebcbdb1e7a70dd84939ed772e912f4b3090b5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.4.0",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:ad80937e3fd953972d69a0a2b6cab9d8dc6fded2dd60484d2cd05dfa8f7f5429",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.4.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:ad80937e3fd953972d69a0a2b6cab9d8dc6fded2dd60484d2cd05dfa8f7f5429"
+            },
+            {
+                "name": "camel-k-rhel8-operator-33df2e71677911fe3a8b569e85061696e88a47308859252d8ef00b36fff2a922-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:33df2e71677911fe3a8b569e85061696e88a47308859252d8ef00b36fff2a922"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:33df2e71677911fe3a8b569e85061696e88a47308859252d8ef00b36fff2a922"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.4.1",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:c3cba573855279c6384ef313a7fa4aa6967ae684c87d3cc5dc54680da0f5bb8c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.4.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:c3cba573855279c6384ef313a7fa4aa6967ae684c87d3cc5dc54680da0f5bb8c"
+            },
+            {
+                "name": "camel-k-rhel8-operator-d5c4f95fd4376e906da765fd51294e58d80b16eb5367bec5aae27b3e09f871e8-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:d5c4f95fd4376e906da765fd51294e58d80b16eb5367bec5aae27b3e09f871e8"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:d5c4f95fd4376e906da765fd51294e58d80b16eb5367bec5aae27b3e09f871e8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.4.2",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:c60664e5da8eb23bbd918b1c13b83565b1f33a1aa8961b425232fa1ef4d1a6f1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.4.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:c60664e5da8eb23bbd918b1c13b83565b1f33a1aa8961b425232fa1ef4d1a6f1"
+            },
+            {
+                "name": "camel-k-rhel8-operator-9e4fb5369e0479d4a68f60725e7d12abdc66c552babe59f1358f6e6b0f26357d-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:9e4fb5369e0479d4a68f60725e7d12abdc66c552babe59f1358f6e6b0f26357d"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:9e4fb5369e0479d4a68f60725e7d12abdc66c552babe59f1358f6e6b0f26357d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.0",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:5bda7c85af39155c69ac964a22ae8817d51c0e6278f09a5d9dc1998ba3d048c3",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:5bda7c85af39155c69ac964a22ae8817d51c0e6278f09a5d9dc1998ba3d048c3"
+            },
+            {
+                "name": "camel-k-rhel8-operator-a9be306f11e077adf1ef8dae20f1d3f6dfdfe6a1e63b3be56193a67badb9473b-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:a9be306f11e077adf1ef8dae20f1d3f6dfdfe6a1e63b3be56193a67badb9473b"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:a9be306f11e077adf1ef8dae20f1d3f6dfdfe6a1e63b3be56193a67badb9473b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.1",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:f5548e2ff0cd48e7b92983c0722ba095ee9432e133ae96adca55b24ddfb3a13a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:f5548e2ff0cd48e7b92983c0722ba095ee9432e133ae96adca55b24ddfb3a13a"
+            },
+            {
+                "name": "camel-k-rhel8-operator-ab2942f85a3c007f2b2e60fca5d4dd7dbcf5da8930fd6828eb9ba9f133e3894a-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:ab2942f85a3c007f2b2e60fca5d4dd7dbcf5da8930fd6828eb9ba9f133e3894a"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:ab2942f85a3c007f2b2e60fca5d4dd7dbcf5da8930fd6828eb9ba9f133e3894a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.10",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:bcc0ef48ec42c88d212173167615feb2cf276c133b26b866ae3453af7ab1ee80",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.10"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:bcc0ef48ec42c88d212173167615feb2cf276c133b26b866ae3453af7ab1ee80"
+            },
+            {
+                "name": "camel-k-rhel8-operator-244e22723124ac6e13a417a94396383f872f15d6f772c80bbd3693a148657526-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:244e22723124ac6e13a417a94396383f872f15d6f772c80bbd3693a148657526"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:244e22723124ac6e13a417a94396383f872f15d6f772c80bbd3693a148657526"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.2",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:c6473864638cb5320a075869773adc568adc52df30cd6c0c59feee66c4b54c00",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:c6473864638cb5320a075869773adc568adc52df30cd6c0c59feee66c4b54c00"
+            },
+            {
+                "name": "camel-k-rhel8-operator-67f69108d91f05c428d3332ccc6f5937c734c2d1ea26775257745b3591d95f1f-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:67f69108d91f05c428d3332ccc6f5937c734c2d1ea26775257745b3591d95f1f"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:67f69108d91f05c428d3332ccc6f5937c734c2d1ea26775257745b3591d95f1f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.3",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:6c2f8aee9af1e99465f1781e2bb0969cb32d8c8822545f63f1a6510553f521e7",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:6c2f8aee9af1e99465f1781e2bb0969cb32d8c8822545f63f1a6510553f521e7"
+            },
+            {
+                "name": "camel-k-rhel8-operator-7577cae4488893878de2a6e750c938977be19636e0e38b7938f6ffa9d37c0afd-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:7577cae4488893878de2a6e750c938977be19636e0e38b7938f6ffa9d37c0afd"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:7577cae4488893878de2a6e750c938977be19636e0e38b7938f6ffa9d37c0afd"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.4",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:d3719d6b94129cde0e70a82515bdf6d7205a651171b210847d6dadf19edae5ec",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:d3719d6b94129cde0e70a82515bdf6d7205a651171b210847d6dadf19edae5ec"
+            },
+            {
+                "name": "camel-k-rhel8-operator-0f3360d74549ec050dac18d12718f62ee90f6dda0411e61c6d946cdb4ca6051e-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:0f3360d74549ec050dac18d12718f62ee90f6dda0411e61c6d946cdb4ca6051e"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:0f3360d74549ec050dac18d12718f62ee90f6dda0411e61c6d946cdb4ca6051e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.4-0.1648537022.p",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:fad96ad6d6625fd84c2c8aab550da763e6ce937a5fdbf597cb1e70bd2e1569b4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.4+0.1648537022.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:fad96ad6d6625fd84c2c8aab550da763e6ce937a5fdbf597cb1e70bd2e1569b4"
+            },
+            {
+                "name": "camel-k-rhel8-operator-eb8dadcc14b0ccd669be4cf21663f6b2b403548098c48b6696d099f29fac392f-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:eb8dadcc14b0ccd669be4cf21663f6b2b403548098c48b6696d099f29fac392f"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:eb8dadcc14b0ccd669be4cf21663f6b2b403548098c48b6696d099f29fac392f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.5",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:16fb4bc1baee229afc2bad803c0156cd389c2b89d04267b47ac7630a4261b08b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:16fb4bc1baee229afc2bad803c0156cd389c2b89d04267b47ac7630a4261b08b"
+            },
+            {
+                "name": "camel-k-rhel8-operator-6f6aaca9aa3203b695404b0bb24917edce1a8ae320669121ba5329d5e4b02c9a-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:6f6aaca9aa3203b695404b0bb24917edce1a8ae320669121ba5329d5e4b02c9a"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:6f6aaca9aa3203b695404b0bb24917edce1a8ae320669121ba5329d5e4b02c9a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.6",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:504279e783a78d6f0fab76f2ed217d17862afee115cc495e4683092bae892e5c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:504279e783a78d6f0fab76f2ed217d17862afee115cc495e4683092bae892e5c"
+            },
+            {
+                "name": "camel-k-rhel8-operator-19f8a89918bfb90bd0e146bf99a1e4fdb19e368f66f9760948c51efc5b250e6f-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:19f8a89918bfb90bd0e146bf99a1e4fdb19e368f66f9760948c51efc5b250e6f"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:19f8a89918bfb90bd0e146bf99a1e4fdb19e368f66f9760948c51efc5b250e6f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.7",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:b11b40e14bc256d73a54cafad635976b77329974d5f89f59894b7d311aece31d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:b11b40e14bc256d73a54cafad635976b77329974d5f89f59894b7d311aece31d"
+            },
+            {
+                "name": "camel-k-rhel8-operator-91ab57cc3ced3ea38329cc013fbf897167bd6bb08e2bf526320235dd645167b7-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:91ab57cc3ced3ea38329cc013fbf897167bd6bb08e2bf526320235dd645167b7"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:91ab57cc3ced3ea38329cc013fbf897167bd6bb08e2bf526320235dd645167b7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "red-hat-camel-k-operator.v1.6.9",
+        "package": "red-hat-camel-k",
+        "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:a4ec46cad0db4b543c2d43ba0dc6e9ccce029f7878e930e12f1a981aa3d1ff5a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Build",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "CamelCatalog",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Integration",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationKit",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "IntegrationPlatform",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "Kamelet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "camel.apache.org",
+                    "kind": "KameletBinding",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "red-hat-camel-k",
+                    "version": "1.6.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator-bundle@sha256:a4ec46cad0db4b543c2d43ba0dc6e9ccce029f7878e930e12f1a981aa3d1ff5a"
+            },
+            {
+                "name": "camel-k-rhel8-operator-12532f22a10ae16f49ba69dfdee652526d7d821d5fec666755c8284722069719-annotation",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:12532f22a10ae16f49ba69dfdee652526d7d821d5fec666755c8284722069719"
+            },
+            {
+                "name": "camel-k-operator",
+                "image": "registry.redhat.io/integration/camel-k-rhel8-operator@sha256:12532f22a10ae16f49ba69dfdee652526d7d821d5fec666755c8284722069719"
+            }
+        ]
+    }

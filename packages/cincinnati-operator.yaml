@@ -1,0 +1,149 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: cincinnati-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "cincinnati-operator",
+        "defaultChannel": "v1"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "v1",
+        "package": "cincinnati-operator",
+        "entries": [
+            {
+                "name": "update-service-operator.v4.9.0",
+                "skips": [
+                    "update-service-operator.v4.6.0"
+                ]
+            },
+            {
+                "name": "update-service-operator.v4.9.1",
+                "replaces": "update-service-operator.v4.9.0",
+                "skips": [
+                    "update-service-operator.v4.6.0"
+                ]
+            },
+            {
+                "name": "update-service-operator.v5.0.0",
+                "replaces": "update-service-operator.v4.9.1",
+                "skips": [
+                    "update-service-operator.v4.6.0"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "update-service-operator.v4.9.0",
+        "package": "cincinnati-operator",
+        "image": "registry.redhat.io/openshift-update-service/cincinnati-operator-bundle@sha256:2743f74cc102c059d7c1dc6698eb947cca75a3cc4230905f09703666ae7a4dbf",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "updateservice.operator.openshift.io",
+                    "kind": "UpdateService",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cincinnati-operator",
+                    "version": "4.9.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-update-service/cincinnati-operator-bundle@sha256:2743f74cc102c059d7c1dc6698eb947cca75a3cc4230905f09703666ae7a4dbf"
+            },
+            {
+                "name": "updateservice-operator",
+                "image": "registry.redhat.io/openshift-update-service/openshift-update-service-rhel8-operator@sha256:66db743f2d61dddab7363ab36252812ffb63653510124c3b32d26f0ddfeb5def"
+            },
+            {
+                "name": "operand",
+                "image": "registry.redhat.io/openshift-update-service/openshift-update-service-rhel8@sha256:6e65da919ed05274e4a0101f67a149188801b715cf073dd517d0dd311a4572a4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "update-service-operator.v4.9.1",
+        "package": "cincinnati-operator",
+        "image": "registry.redhat.io/openshift-update-service/cincinnati-operator-bundle@sha256:71b8f7816a01503a4af5d6f93b9b3a057f6c011aef3b560b408ee4d7abf02165",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "updateservice.operator.openshift.io",
+                    "kind": "UpdateService",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cincinnati-operator",
+                    "version": "4.9.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-update-service/cincinnati-operator-bundle@sha256:71b8f7816a01503a4af5d6f93b9b3a057f6c011aef3b560b408ee4d7abf02165"
+            },
+            {
+                "name": "updateservice-operator",
+                "image": "registry.redhat.io/openshift-update-service/openshift-update-service-rhel8-operator@sha256:c8f156f73bb3e5fd92c024513c9446ed30d5231e33ef0d0952b365a1fbd69db4"
+            },
+            {
+                "name": "operand",
+                "image": "registry.redhat.io/openshift-update-service/openshift-update-service-rhel8@sha256:4bbed256e300088500ae3eb8475b3457d7a6765999e1102dc482e086e2cc0b43"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "update-service-operator.v5.0.0",
+        "package": "cincinnati-operator",
+        "image": "registry.redhat.io/openshift-update-service/cincinnati-operator-bundle@sha256:3feccb95e912f2d710958e701a1b52acf16a676fde9a8219491ad9381e6284ea",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "updateservice.operator.openshift.io",
+                    "kind": "UpdateService",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cincinnati-operator",
+                    "version": "5.0.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-update-service/cincinnati-operator-bundle@sha256:3feccb95e912f2d710958e701a1b52acf16a676fde9a8219491ad9381e6284ea"
+            },
+            {
+                "name": "updateservice-operator",
+                "image": "registry.redhat.io/openshift-update-service/openshift-update-service-rhel8-operator@sha256:ce7b16803bb2bd058014a3783ed1f0a8a93819dd5769fcd8772228cf96814bf9"
+            },
+            {
+                "name": "operand",
+                "image": "registry.redhat.io/openshift-update-service/openshift-update-service-rhel8@sha256:389c339253271477440c5f470c08a3b149f1795647b1df7b104ae95fc63af22c"
+            }
+        ]
+    }

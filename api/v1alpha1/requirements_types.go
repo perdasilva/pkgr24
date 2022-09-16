@@ -36,7 +36,7 @@ type RequirementsSpec struct {
 type RequirementsStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
-	Bundles []string `json:"bundles"`
+	Solution []string `json:"solution"`
 
 	// +optional
 	Message string `json:"message"`

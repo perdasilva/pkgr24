@@ -1,0 +1,867 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: service-registry-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "service-registry-operator",
+        "defaultChannel": "2.0.x"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "2.0.x",
+        "package": "service-registry-operator",
+        "entries": [
+            {
+                "name": "service-registry-operator.v2.0.0"
+            },
+            {
+                "name": "service-registry-operator.v2.0.1",
+                "replaces": "service-registry-operator.v2.0.0"
+            },
+            {
+                "name": "service-registry-operator.v2.0.2",
+                "replaces": "service-registry-operator.v2.0.1"
+            },
+            {
+                "name": "service-registry-operator.v2.0.3",
+                "replaces": "service-registry-operator.v2.0.2"
+            },
+            {
+                "name": "service-registry-operator.v2.0.4",
+                "replaces": "service-registry-operator.v2.0.3"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1646309885.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1647938417.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1648813064.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1651047781.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1652429755.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1652887585.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1654503709.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1655396591.p",
+                "replaces": "service-registry-operator.v2.0.4",
+                "skips": [
+                    "service-registry-operator.v2.0.5-0.1654503709.p",
+                    "service-registry-operator.v2.0.5-0.1652887585.p",
+                    "service-registry-operator.v2.0.5-0.1652429755.p",
+                    "service-registry-operator.v2.0.5-0.1651047781.p",
+                    "service-registry-operator.v2.0.5-0.1648813064.p",
+                    "service-registry-operator.v2.0.5-0.1647938417.p",
+                    "service-registry-operator.v2.0.5-0.1646309885.p",
+                    "service-registry-operator.v2.0.5"
+                ]
+            },
+            {
+                "name": "service-registry-operator.v2.0.6",
+                "replaces": "service-registry-operator.v2.0.5-0.1655396591.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.7",
+                "replaces": "service-registry-operator.v2.0.6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "2.x",
+        "package": "service-registry-operator",
+        "entries": [
+            {
+                "name": "service-registry-operator.v2.0.0"
+            },
+            {
+                "name": "service-registry-operator.v2.0.1",
+                "replaces": "service-registry-operator.v2.0.0"
+            },
+            {
+                "name": "service-registry-operator.v2.0.2",
+                "replaces": "service-registry-operator.v2.0.1"
+            },
+            {
+                "name": "service-registry-operator.v2.0.3",
+                "replaces": "service-registry-operator.v2.0.2"
+            },
+            {
+                "name": "service-registry-operator.v2.0.4",
+                "replaces": "service-registry-operator.v2.0.3"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1646309885.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1647938417.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1648813064.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1651047781.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1652429755.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1652887585.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1654503709.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.5-0.1655396591.p",
+                "replaces": "service-registry-operator.v2.0.4",
+                "skips": [
+                    "service-registry-operator.v2.0.5-0.1654503709.p",
+                    "service-registry-operator.v2.0.5-0.1652887585.p",
+                    "service-registry-operator.v2.0.5-0.1652429755.p",
+                    "service-registry-operator.v2.0.5-0.1651047781.p",
+                    "service-registry-operator.v2.0.5-0.1648813064.p",
+                    "service-registry-operator.v2.0.5-0.1647938417.p",
+                    "service-registry-operator.v2.0.5-0.1646309885.p",
+                    "service-registry-operator.v2.0.5"
+                ]
+            },
+            {
+                "name": "service-registry-operator.v2.0.6",
+                "replaces": "service-registry-operator.v2.0.5-0.1655396591.p"
+            },
+            {
+                "name": "service-registry-operator.v2.0.7",
+                "replaces": "service-registry-operator.v2.0.6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.0",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:93da36db720902a958cfe3df7b0c67a96bd0fc2cf57f52c205f1e0dde8764bcd",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "service-registry-kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:dd8e52ace2582c6300c73743314618f3b52eb6e56ab3e8c04b5a9746fbad5717"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:93da36db720902a958cfe3df7b0c67a96bd0fc2cf57f52c205f1e0dde8764bcd"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:d8fbd6887a189e09882ed678f801be79aa8a179838a3a5d642f047c389d5f4d5"
+            },
+            {
+                "name": "service-registry-sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:5b0312f2fd99619c1b6ea3d091d63a92be1879157705a4d45ef5cf2b731e83d9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.1",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:042a75d8910d68719bdc28a59d735a871986e3ceeb11ed135ebd1d7991a6df7c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "service-registry-kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:44acf151ce5688660eb6a4e6e42de168481a9cf1784ed17da9bbb22dfcc2683d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:042a75d8910d68719bdc28a59d735a871986e3ceeb11ed135ebd1d7991a6df7c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:4b1e04e0d5a7e4b7f238dece97989902c9c1454ed63faba04908f9a2318d0874"
+            },
+            {
+                "name": "service-registry-sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:0beabf8ba6fe04ae2c592840161c12b1dfe25a9bf8eefc93b0173d54374fa362"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.2",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:eebda62ff6e6fa9f141dd14680f385aabcdacfe95d8a77dda83b0039876bf3c5",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:a5bb49171a6b12d8d6d418956a185e5c79a72ce4722d2ffeff91ab75a9b67960"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:eebda62ff6e6fa9f141dd14680f385aabcdacfe95d8a77dda83b0039876bf3c5"
+            },
+            {
+                "name": "service-registry-rhel8-operator-9bb116a69ccc8bdae62af161a1efc6b4a0701e4573e5e31e1f383ef676bd7760-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:9bb116a69ccc8bdae62af161a1efc6b4a0701e4573e5e31e1f383ef676bd7760"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:9bb116a69ccc8bdae62af161a1efc6b4a0701e4573e5e31e1f383ef676bd7760"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:123de0d60c8b03c312876203e2e34e5645b342af2a59b8a75dfd6fd269bf5482"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.3",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:106a4bd03f1e53ae8639f4b372e29d8315d3c740c3c80249934b0608f0d2630e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:bf7a076f0f81229be6439a046c84967e245def9df0cb2955169c3d000cb3f2b1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:106a4bd03f1e53ae8639f4b372e29d8315d3c740c3c80249934b0608f0d2630e"
+            },
+            {
+                "name": "service-registry-rhel8-operator-41c96defe21a7b610e0003fdbfcf94c96bf4f8f2ac762acd4e85d97383258219-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:41c96defe21a7b610e0003fdbfcf94c96bf4f8f2ac762acd4e85d97383258219"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:41c96defe21a7b610e0003fdbfcf94c96bf4f8f2ac762acd4e85d97383258219"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:667fd4360994d67c0d2f148bfa6d5d6353dee33868f1497d0ffed172efe7e264"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.4",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:e539a35805767000bf1b12031ab6d3e2bdd48980260d13d370882424757e6519",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:c2bb5159c62e32264ffc076afed773469992224485ae0089487a7072c2063a0b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:e539a35805767000bf1b12031ab6d3e2bdd48980260d13d370882424757e6519"
+            },
+            {
+                "name": "service-registry-rhel8-operator-fae9b4108356f94a61e485fd5888c368fd6b244a7b5966789b27618826c3eb7a-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:fae9b4108356f94a61e485fd5888c368fd6b244a7b5966789b27618826c3eb7a"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:fae9b4108356f94a61e485fd5888c368fd6b244a7b5966789b27618826c3eb7a"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:ae91fb2613457cf5629d0c2a0ea63511937c36f1b5c0a9c14597a0eb28e25439"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.5",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:8e8d9b191e9acd606d69819c73351e9815f5db4af759e982772f392a92db3704",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:93e091aa5447cc58805368c3101e71afed3cc02e68a1b8b568586875e76cdcba"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:8e8d9b191e9acd606d69819c73351e9815f5db4af759e982772f392a92db3704"
+            },
+            {
+                "name": "service-registry-rhel8-operator-fae9b4108356f94a61e485fd5888c368fd6b244a7b5966789b27618826c3eb7a-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:fae9b4108356f94a61e485fd5888c368fd6b244a7b5966789b27618826c3eb7a"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:fae9b4108356f94a61e485fd5888c368fd6b244a7b5966789b27618826c3eb7a"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:e07276a26c96631733dd1c98f655a11e54d65c2e91e3ba6f3ee8c2e097206431"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.5-0.1646309885.p",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:99192b998714a42c783c39ec8de8bd42886d5b1621107955522b6d6a727a3da8",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.5+0.1646309885.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:31e82f441c9ace5d2a13fc9469ce1c2c3ee85c39b013085591bbad676f6760bb"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:99192b998714a42c783c39ec8de8bd42886d5b1621107955522b6d6a727a3da8"
+            },
+            {
+                "name": "service-registry-rhel8-operator-b0bfb95bf91432468dadd5dae149d2d793f2e201dc91d464bbaf18c856ad83aa-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:b0bfb95bf91432468dadd5dae149d2d793f2e201dc91d464bbaf18c856ad83aa"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:b0bfb95bf91432468dadd5dae149d2d793f2e201dc91d464bbaf18c856ad83aa"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:110a8440559508f8855a90028cd703b456f11e3549644f92696dd45cec700db1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.5-0.1647938417.p",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:78d8e6beca2c52169492a4fee8297d8661ff0d57243b7a418322320fad427815",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.5+0.1647938417.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:44d1a72cc4b07c8adb8b0860ae9bbc09d70cfadb45324426440d6d9d2fbb2d9e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:78d8e6beca2c52169492a4fee8297d8661ff0d57243b7a418322320fad427815"
+            },
+            {
+                "name": "service-registry-rhel8-operator-b0bfb95bf91432468dadd5dae149d2d793f2e201dc91d464bbaf18c856ad83aa-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:b0bfb95bf91432468dadd5dae149d2d793f2e201dc91d464bbaf18c856ad83aa"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:b0bfb95bf91432468dadd5dae149d2d793f2e201dc91d464bbaf18c856ad83aa"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:cd7fa47f7a532388fa044162212005aacf2420be0c616e96e6325b29a49484be"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.5-0.1648813064.p",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:334065bb42d201bb30fb2b1f230555a628e546f455654c03ba773da0e52c7ccf",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.5+0.1648813064.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:7cd78c8846e1e8a4e2cd7a95bf4f5618cb9926cd79ca7cf9987282941dc94bd5"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:334065bb42d201bb30fb2b1f230555a628e546f455654c03ba773da0e52c7ccf"
+            },
+            {
+                "name": "service-registry-rhel8-operator-57cdd0e19a900063aebead7ca1a04a68d928d86fa2f75b0b1fe2296e6b6202a6-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:57cdd0e19a900063aebead7ca1a04a68d928d86fa2f75b0b1fe2296e6b6202a6"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:57cdd0e19a900063aebead7ca1a04a68d928d86fa2f75b0b1fe2296e6b6202a6"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:83fd55727a48170c67f02db9f3003a752a8981c7e35edd784604f6cb9927dea0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.5-0.1651047781.p",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:0f7fa76bb08857a4092058931ac213edfc15423151dc8405442ac55838ec4a27",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.5+0.1651047781.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:2cfda3be05c75087c500cdc70efbf36cb497200f658b9b050a3535676f0e11c4"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:0f7fa76bb08857a4092058931ac213edfc15423151dc8405442ac55838ec4a27"
+            },
+            {
+                "name": "service-registry-rhel8-operator-57cdd0e19a900063aebead7ca1a04a68d928d86fa2f75b0b1fe2296e6b6202a6-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:57cdd0e19a900063aebead7ca1a04a68d928d86fa2f75b0b1fe2296e6b6202a6"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:57cdd0e19a900063aebead7ca1a04a68d928d86fa2f75b0b1fe2296e6b6202a6"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:ecdd81f6ade2f215e2d6bd651961f1a5eb208955ee129bbea668dc96fec9585a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.5-0.1652429755.p",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:60ee868879f3204f882b6ccd7065ac3244ecb28db37df8eac44020f266764d0b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.5+0.1652429755.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:64b0a3fabb0e272d3d247a1e4b406576d5cf57822236ce4dad8af48eb7e36fd0"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:60ee868879f3204f882b6ccd7065ac3244ecb28db37df8eac44020f266764d0b"
+            },
+            {
+                "name": "service-registry-rhel8-operator-561c703fc851aabbea5b570381a9798230bcb18e0e1e1d5698fec25b422a6b19-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:561c703fc851aabbea5b570381a9798230bcb18e0e1e1d5698fec25b422a6b19"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:561c703fc851aabbea5b570381a9798230bcb18e0e1e1d5698fec25b422a6b19"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:1d6148d4167326dea74bdb4289f103b45b439886ef049a9b585885d7cbd13b1e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.5-0.1652887585.p",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:c280a19a3b9fefc3ed74e8f0551c2fa145e2e7bd757526fa058963e5290e83a1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.5+0.1652887585.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:0461855b824bc2cd5dcdbc437e80e4163ce25a15738738d3058c8e1999b5e498"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:c280a19a3b9fefc3ed74e8f0551c2fa145e2e7bd757526fa058963e5290e83a1"
+            },
+            {
+                "name": "service-registry-rhel8-operator-561c703fc851aabbea5b570381a9798230bcb18e0e1e1d5698fec25b422a6b19-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:561c703fc851aabbea5b570381a9798230bcb18e0e1e1d5698fec25b422a6b19"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:561c703fc851aabbea5b570381a9798230bcb18e0e1e1d5698fec25b422a6b19"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:19beadedda13c41a51628ded9e2e3116f7ee9e108c95eed3a14b77b836d22f3f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.5-0.1654503709.p",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:21fc017a518221b7fd792cf37be2ae4689801be51aee4eb0e4bf5e33399c4e46",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.5+0.1654503709.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:c757abdc1cc3498abba7fe580e247f8794823132ec5d2bc224b93e6cfe89323d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:21fc017a518221b7fd792cf37be2ae4689801be51aee4eb0e4bf5e33399c4e46"
+            },
+            {
+                "name": "service-registry-rhel8-operator-561c703fc851aabbea5b570381a9798230bcb18e0e1e1d5698fec25b422a6b19-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:561c703fc851aabbea5b570381a9798230bcb18e0e1e1d5698fec25b422a6b19"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:561c703fc851aabbea5b570381a9798230bcb18e0e1e1d5698fec25b422a6b19"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:966681b3084c9551435b2f3c24e254c01c4f1fc3740984124a7f461828280983"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.5-0.1655396591.p",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:42cf1d379047658fe8808a3253b557ea1b20a6a8b1f2522767aad3cac78a1640",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.5+0.1655396591.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:377b0710ca1b669b4269eaa8ee670dd8f1daf13f043ee16394fa0bb742b351bd"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:42cf1d379047658fe8808a3253b557ea1b20a6a8b1f2522767aad3cac78a1640"
+            },
+            {
+                "name": "service-registry-rhel8-operator-a6d9c85892ac8a8f171a7d00c3c97f6b1bcfc5fc5426275d75c1b114dd3e73f2-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:a6d9c85892ac8a8f171a7d00c3c97f6b1bcfc5fc5426275d75c1b114dd3e73f2"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:a6d9c85892ac8a8f171a7d00c3c97f6b1bcfc5fc5426275d75c1b114dd3e73f2"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:1fe394fbd44a8567bcb2ebbd880af9e0fb8c375ae6083cb9ee515ab4f18e58a2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.6",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:ed025aff17cc3150f6734d4698506583f76aa9a52d7d855bac29157cc92c92ab",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:93e091aa5447cc58805368c3101e71afed3cc02e68a1b8b568586875e76cdcba"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:ed025aff17cc3150f6734d4698506583f76aa9a52d7d855bac29157cc92c92ab"
+            },
+            {
+                "name": "service-registry-rhel8-operator-fae9b4108356f94a61e485fd5888c368fd6b244a7b5966789b27618826c3eb7a-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:fae9b4108356f94a61e485fd5888c368fd6b244a7b5966789b27618826c3eb7a"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:fae9b4108356f94a61e485fd5888c368fd6b244a7b5966789b27618826c3eb7a"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:e07276a26c96631733dd1c98f655a11e54d65c2e91e3ba6f3ee8c2e097206431"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "service-registry-operator.v2.0.7",
+        "package": "service-registry-operator",
+        "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:96091cbc399627608c6d60d940bea077ece2372de3ee37750b36c7a1333ce203",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "registry.apicur.io",
+                    "kind": "ApicurioRegistry",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "service-registry-operator",
+                    "version": "2.0.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "registry_image_kafkasql",
+                "image": "registry.redhat.io/integration/service-registry-kafkasql-rhel8@sha256:18e4e5de70caa30f5fea9a29c303deb5f5ecf5342761309e5734a80d333d5f79"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator-metadata@sha256:96091cbc399627608c6d60d940bea077ece2372de3ee37750b36c7a1333ce203"
+            },
+            {
+                "name": "service-registry-rhel8-operator-a6d9c85892ac8a8f171a7d00c3c97f6b1bcfc5fc5426275d75c1b114dd3e73f2-annotation",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:a6d9c85892ac8a8f171a7d00c3c97f6b1bcfc5fc5426275d75c1b114dd3e73f2"
+            },
+            {
+                "name": "apicurio-registry-operator",
+                "image": "registry.redhat.io/integration/service-registry-rhel8-operator@sha256:a6d9c85892ac8a8f171a7d00c3c97f6b1bcfc5fc5426275d75c1b114dd3e73f2"
+            },
+            {
+                "name": "registry_image_sql",
+                "image": "registry.redhat.io/integration/service-registry-sql-rhel8@sha256:6ac190871103aa2b3939e08a6f0462e1cd0651aefa658caa8d1fa45361227098"
+            }
+        ]
+    }

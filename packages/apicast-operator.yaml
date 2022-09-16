@@ -1,0 +1,568 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: apicast-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "apicast-operator",
+        "defaultChannel": "threescale-2.12"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "threescale-2.11",
+        "package": "apicast-operator",
+        "entries": [
+            {
+                "name": "apicast-operator.v0.5.0",
+                "skipRange": ">=0.4.0 <0.5.0"
+            },
+            {
+                "name": "apicast-operator.v0.5.0-0.1638885516.p",
+                "skipRange": ">=0.4.0 <0.5.0"
+            },
+            {
+                "name": "apicast-operator.v0.5.0-0.1638984223.p",
+                "skips": [
+                    "apicast-operator.v0.5.0-0.1638885516.p",
+                    "apicast-operator.v0.5.0"
+                ],
+                "skipRange": ">=0.4.0 <0.5.0"
+            },
+            {
+                "name": "apicast-operator.v0.5.1",
+                "replaces": "apicast-operator.v0.5.0-0.1638984223.p"
+            },
+            {
+                "name": "apicast-operator.v0.5.2"
+            },
+            {
+                "name": "apicast-operator.v0.5.2-0.1646742993.p"
+            },
+            {
+                "name": "apicast-operator.v0.5.2-0.1649688685.p",
+                "replaces": "apicast-operator.v0.5.1",
+                "skips": [
+                    "apicast-operator.v0.5.2-0.1646742993.p",
+                    "apicast-operator.v0.5.2"
+                ]
+            },
+            {
+                "name": "apicast-operator.v0.5.3",
+                "replaces": "apicast-operator.v0.5.2-0.1649688685.p"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "threescale-2.12",
+        "package": "apicast-operator",
+        "entries": [
+            {
+                "name": "apicast-operator.v0.5.0",
+                "skipRange": ">=0.4.0 <0.5.0"
+            },
+            {
+                "name": "apicast-operator.v0.5.0-0.1638885516.p",
+                "skipRange": ">=0.4.0 <0.5.0"
+            },
+            {
+                "name": "apicast-operator.v0.5.0-0.1638984223.p",
+                "skips": [
+                    "apicast-operator.v0.5.0-0.1638885516.p",
+                    "apicast-operator.v0.5.0"
+                ],
+                "skipRange": ">=0.4.0 <0.5.0"
+            },
+            {
+                "name": "apicast-operator.v0.5.1",
+                "replaces": "apicast-operator.v0.5.0-0.1638984223.p"
+            },
+            {
+                "name": "apicast-operator.v0.5.2"
+            },
+            {
+                "name": "apicast-operator.v0.5.2-0.1646742993.p"
+            },
+            {
+                "name": "apicast-operator.v0.5.2-0.1649688685.p",
+                "replaces": "apicast-operator.v0.5.1",
+                "skips": [
+                    "apicast-operator.v0.5.2-0.1646742993.p",
+                    "apicast-operator.v0.5.2"
+                ]
+            },
+            {
+                "name": "apicast-operator.v0.6.0",
+                "replaces": "apicast-operator.v0.5.2-0.1649688685.p"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "threescale-mas",
+        "package": "apicast-operator",
+        "entries": [
+            {
+                "name": "apicast-operator.v0.5.0",
+                "skipRange": ">=0.4.0 <0.5.0"
+            },
+            {
+                "name": "apicast-operator.v0.5.0-0.1638885516.p",
+                "skipRange": ">=0.4.0 <0.5.0"
+            },
+            {
+                "name": "apicast-operator.v0.5.0-0.1638984223.p",
+                "skips": [
+                    "apicast-operator.v0.5.0-0.1638885516.p",
+                    "apicast-operator.v0.5.0"
+                ],
+                "skipRange": ">=0.4.0 <0.5.0"
+            },
+            {
+                "name": "apicast-operator.v0.5.1",
+                "replaces": "apicast-operator.v0.5.0-0.1638984223.p"
+            },
+            {
+                "name": "apicast-operator.v0.5.2"
+            },
+            {
+                "name": "apicast-operator.v0.5.2-0.1646742993.p"
+            },
+            {
+                "name": "apicast-operator.v0.5.2-0.1649688685.p",
+                "replaces": "apicast-operator.v0.5.1",
+                "skips": [
+                    "apicast-operator.v0.5.2-0.1646742993.p",
+                    "apicast-operator.v0.5.2"
+                ]
+            },
+            {
+                "name": "apicast-operator.v0.6.0-mas",
+                "replaces": "apicast-operator.v0.5.2-0.1649688685.p"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.5.0",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:dd0064cef53df333a09ffc4157cdc5a0e0b0148387c5398f23fae61955f8d15a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.5.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:b1e7e399175b0afafbf75ffd105fde52bf2b9c340cd4091116e2ac9467f3b0ba"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:dd0064cef53df333a09ffc4157cdc5a0e0b0148387c5398f23fae61955f8d15a"
+            },
+            {
+                "name": "apicast-rhel7-operator-e6ef541eabe7294978e9f629c008b2f876592c54744e1679a7287532a261e8e5-annotation",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:e6ef541eabe7294978e9f629c008b2f876592c54744e1679a7287532a261e8e5"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:e6ef541eabe7294978e9f629c008b2f876592c54744e1679a7287532a261e8e5"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:484e26e348354e6dd28934aedbcd139c786284a88a4e16a7652b5a52bd0beeac"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.5.0-0.1638885516.p",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:ba8eee775a76734923be5cc708efbfcd707b70aa09b702e37eab86275122bf1b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.5.0+0.1638885516.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:b1e7e399175b0afafbf75ffd105fde52bf2b9c340cd4091116e2ac9467f3b0ba"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:ba8eee775a76734923be5cc708efbfcd707b70aa09b702e37eab86275122bf1b"
+            },
+            {
+                "name": "apicast-rhel7-operator-520e43cee8391ac299fdb7b9f6db845a497e04a68c5058f2d38571fdaabf9672-annotation",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:520e43cee8391ac299fdb7b9f6db845a497e04a68c5058f2d38571fdaabf9672"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:520e43cee8391ac299fdb7b9f6db845a497e04a68c5058f2d38571fdaabf9672"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:484e26e348354e6dd28934aedbcd139c786284a88a4e16a7652b5a52bd0beeac"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.5.0-0.1638984223.p",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:cf7151b6af04f5a2aaf2c3123020abf03a778d0f5efc56470533b0e3be135439",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.5.0+0.1638984223.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:c3f31617cdf80bbec0fa712af6b6e3f149cc577c0788aee3ef2e28ec800a9996"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:cf7151b6af04f5a2aaf2c3123020abf03a778d0f5efc56470533b0e3be135439"
+            },
+            {
+                "name": "apicast-rhel7-operator-e6ef541eabe7294978e9f629c008b2f876592c54744e1679a7287532a261e8e5-annotation",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:e6ef541eabe7294978e9f629c008b2f876592c54744e1679a7287532a261e8e5"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:e6ef541eabe7294978e9f629c008b2f876592c54744e1679a7287532a261e8e5"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:484e26e348354e6dd28934aedbcd139c786284a88a4e16a7652b5a52bd0beeac"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.5.1",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:3cdddf4944527a760c6b9b83a80761ca103a54bef52c29c6554b64fcf932892d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.5.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:3cdddf4944527a760c6b9b83a80761ca103a54bef52c29c6554b64fcf932892d"
+            },
+            {
+                "name": "apicast-rhel7-operator-793291fef1b7600168c184230db1c98141159b19f0a9cb84d6cb20f0392fb67b-annotation",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:793291fef1b7600168c184230db1c98141159b19f0a9cb84d6cb20f0392fb67b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:793291fef1b7600168c184230db1c98141159b19f0a9cb84d6cb20f0392fb67b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.5.2",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:39ac97f6c5640fad1c6a3bf6fa4e36acde3b2520dbd380dd906cc2111922ab6e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.5.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:39ac97f6c5640fad1c6a3bf6fa4e36acde3b2520dbd380dd906cc2111922ab6e"
+            },
+            {
+                "name": "apicast-rhel7-operator-0b73523d16d880f1e5ecaa76048334de29881208fab57616cb3465cb11b357ec-annotation",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:0b73523d16d880f1e5ecaa76048334de29881208fab57616cb3465cb11b357ec"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:0b73523d16d880f1e5ecaa76048334de29881208fab57616cb3465cb11b357ec"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.5.2-0.1646742993.p",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:eb0c678691e1e44911d91e98fd70a3698bd71a6e444bca768214988e85420d26",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.5.2+0.1646742993.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:eb0c678691e1e44911d91e98fd70a3698bd71a6e444bca768214988e85420d26"
+            },
+            {
+                "name": "apicast-rhel7-operator-6da7250636e07de57555fafa39f8ee44cf1b403289aca59c2ad5f2465dd5b98b-annotation",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:6da7250636e07de57555fafa39f8ee44cf1b403289aca59c2ad5f2465dd5b98b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:6da7250636e07de57555fafa39f8ee44cf1b403289aca59c2ad5f2465dd5b98b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.5.2-0.1649688685.p",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:d9b7ba360a53a6f40a02948a51b74953dceb6532bed2ac71270b8f3c21746fec",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.5.2+0.1649688685.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:d9b7ba360a53a6f40a02948a51b74953dceb6532bed2ac71270b8f3c21746fec"
+            },
+            {
+                "name": "apicast-rhel7-operator-bcb2325fb47a8a6299642e437c67f100fa8bdd37404fd72fc7b04aeed86cfe0c-annotation",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:bcb2325fb47a8a6299642e437c67f100fa8bdd37404fd72fc7b04aeed86cfe0c"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:bcb2325fb47a8a6299642e437c67f100fa8bdd37404fd72fc7b04aeed86cfe0c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.5.3",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:9db455e082454734d2a17811dcfec53d3d60c28df6e7fe8bc979a45b28a35061",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.5.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:f0e9f64c353fdbee3bf7ec0eaf070c3b75330ef659a881ec4ebc874ba584d085"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:9db455e082454734d2a17811dcfec53d3d60c28df6e7fe8bc979a45b28a35061"
+            },
+            {
+                "name": "apicast-rhel7-operator-ccd64090b85536ddaf1b81ca07d40279c9f277b1c5911628f11d678b98dc3bad-annotation",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:ccd64090b85536ddaf1b81ca07d40279c9f277b1c5911628f11d678b98dc3bad"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:ccd64090b85536ddaf1b81ca07d40279c9f277b1c5911628f11d678b98dc3bad"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.6.0",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:e7c3be65e5067ae7ad9f94ed8628e40ce43c04a6614646ea7b1e1a7e3890560d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.6.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:d7af57e97f10c4f2d8ac1ae8f4c4436b6323d2d2ba60dbbb3b50d6328c92133f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator-metadata@sha256:e7c3be65e5067ae7ad9f94ed8628e40ce43c04a6614646ea7b1e1a7e3890560d"
+            },
+            {
+                "name": "apicast-rhel7-operator-8ec67ef519c009145ebd757b7ec69a638d14d4dd82a968559d16e71571effe7b-annotation",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:8ec67ef519c009145ebd757b7ec69a638d14d4dd82a968559d16e71571effe7b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/apicast-rhel7-operator@sha256:8ec67ef519c009145ebd757b7ec69a638d14d4dd82a968559d16e71571effe7b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "apicast-operator.v0.6.0-mas",
+        "package": "apicast-operator",
+        "image": "registry.redhat.io/3scale-mas/apicast-operator-bundle@sha256:fca62b03989aa8e7cba260d211588670a7047b153a65ebab3d0edf36da27341b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIcast",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "apicast-operator",
+                    "version": "0.6.0-mas"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-mas/apicast-gateway-rhel8@sha256:fa44e65ff88bd58a9ab26d278e852667af2ea557040484925078d7d3c0183e44"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-mas/apicast-operator-bundle@sha256:fca62b03989aa8e7cba260d211588670a7047b153a65ebab3d0edf36da27341b"
+            },
+            {
+                "name": "apicast-rhel7-operator-440629bc4407bf3b07b397f064dc5a4f712d539766af2334f4e948bb53ad457b-annotation",
+                "image": "registry.redhat.io/3scale-mas/apicast-rhel7-operator@sha256:440629bc4407bf3b07b397f064dc5a4f712d539766af2334f4e948bb53ad457b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-mas/apicast-rhel7-operator@sha256:440629bc4407bf3b07b397f064dc5a4f712d539766af2334f4e948bb53ad457b"
+            }
+        ]
+    }

@@ -1,0 +1,1278 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: datagrid
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "datagrid",
+        "defaultChannel": "8.3.x"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "8.2.x",
+        "package": "datagrid",
+        "entries": [
+            {
+                "name": "datagrid-operator.v8.2.0"
+            },
+            {
+                "name": "datagrid-operator.v8.2.3"
+            },
+            {
+                "name": "datagrid-operator.v8.2.4",
+                "replaces": "datagrid-operator.v8.2.3",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.2.5",
+                "replaces": "datagrid-operator.v8.2.4",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.2.6",
+                "replaces": "datagrid-operator.v8.2.5",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.2.7",
+                "replaces": "datagrid-operator.v8.2.6",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.2.8",
+                "replaces": "datagrid-operator.v8.2.7",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "8.3.x",
+        "package": "datagrid",
+        "entries": [
+            {
+                "name": "datagrid-operator.v8.2.0"
+            },
+            {
+                "name": "datagrid-operator.v8.2.3"
+            },
+            {
+                "name": "datagrid-operator.v8.2.4",
+                "replaces": "datagrid-operator.v8.2.3",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.2.5",
+                "replaces": "datagrid-operator.v8.2.4",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.2.6",
+                "replaces": "datagrid-operator.v8.2.5",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.2.7",
+                "replaces": "datagrid-operator.v8.2.6",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.2.8",
+                "replaces": "datagrid-operator.v8.2.7",
+                "skips": [
+                    "datagrid-operator.v8.2.0"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.3.0"
+            },
+            {
+                "name": "datagrid-operator.v8.3.1"
+            },
+            {
+                "name": "datagrid-operator.v8.3.2"
+            },
+            {
+                "name": "datagrid-operator.v8.3.3",
+                "replaces": "datagrid-operator.v8.2.8",
+                "skips": [
+                    "datagrid-operator.v8.3.0",
+                    "datagrid-operator.v8.3.1",
+                    "datagrid-operator.v8.3.2"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.3.4"
+            },
+            {
+                "name": "datagrid-operator.v8.3.5"
+            },
+            {
+                "name": "datagrid-operator.v8.3.6",
+                "replaces": "datagrid-operator.v8.3.3",
+                "skips": [
+                    "datagrid-operator.v8.3.4",
+                    "datagrid-operator.v8.3.5"
+                ]
+            },
+            {
+                "name": "datagrid-operator.v8.3.7",
+                "replaces": "datagrid-operator.v8.3.6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.2.0",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:b35b91095373da362968febdfe8d977930d4046e6cd3798960544ada025a665a",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.2.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "openj9",
+                "image": "registry.redhat.io/datagrid/datagrid-8-openj9-11-rhel8@sha256:201d872d5fa61114a09e50328bddd3f7f98368befdf8984219cf8cc75567b30a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:b35b91095373da362968febdfe8d977930d4046e6cd3798960544ada025a665a"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-d558eb59b63134ae8c49a028575d7fe0f78270f9f77ed41e275745bb5f2924b5-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:d558eb59b63134ae8c49a028575d7fe0f78270f9f77ed41e275745bb5f2924b5"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:d558eb59b63134ae8c49a028575d7fe0f78270f9f77ed41e275745bb5f2924b5"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:34327d8d2a26a7807f5dcb7c243d31073a16981e7d125aadbb5f96bcbc9de3b1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.2.3",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:517964e827e483f7bd2af4ed60bd23356f4a5d296b1401a14fac03ba7ec8619b",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.2.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "openj9",
+                "image": "registry.redhat.io/datagrid/datagrid-8-openj9-11-rhel8@sha256:979c66922f1ca37559f3e48668cd4c3dbbf3a124cc491d59170d00d79546dd8e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:517964e827e483f7bd2af4ed60bd23356f4a5d296b1401a14fac03ba7ec8619b"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-1edde0e9441f7a7504aa04fc16deaa6c11aa39a5057e6bef419b0ff6285cd264-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1edde0e9441f7a7504aa04fc16deaa6c11aa39a5057e6bef419b0ff6285cd264"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1edde0e9441f7a7504aa04fc16deaa6c11aa39a5057e6bef419b0ff6285cd264"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:e4f1862e798442a905a9b70bc5db7d9603f040d0f938d32cb137e4274487b6ed"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.2.4",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:e604315b9e87ac692da59b9355f58b58bd5c09c813d5c32fbf97b9f65ef15a3c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.2.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "openj9",
+                "image": "registry.redhat.io/datagrid/datagrid-8-openj9-11-rhel8@sha256:979c66922f1ca37559f3e48668cd4c3dbbf3a124cc491d59170d00d79546dd8e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:e604315b9e87ac692da59b9355f58b58bd5c09c813d5c32fbf97b9f65ef15a3c"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:e4f1862e798442a905a9b70bc5db7d9603f040d0f938d32cb137e4274487b6ed"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.2.5",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:1ee48038ec73204947a948f5aefee59f8e11ed3f1863a2a101eb58f37100c1cf",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.2.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "openj9",
+                "image": "registry.redhat.io/datagrid/datagrid-8-openj9-11-rhel8@sha256:979c66922f1ca37559f3e48668cd4c3dbbf3a124cc491d59170d00d79546dd8e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:1ee48038ec73204947a948f5aefee59f8e11ed3f1863a2a101eb58f37100c1cf"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:cdeb1dc9c3a75db87666da9975cc3de36aec14e68093294c2d61350f12f1ab6d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.2.6",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:68a218a1dd178e267dc2a499aafbadf2f571f1f888562e2f1586ff06635b12cb",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.2.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "openj9",
+                "image": "registry.redhat.io/datagrid/datagrid-8-openj9-11-rhel8@sha256:979c66922f1ca37559f3e48668cd4c3dbbf3a124cc491d59170d00d79546dd8e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:68a218a1dd178e267dc2a499aafbadf2f571f1f888562e2f1586ff06635b12cb"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:c977c5e835a22c6849b0ce9ccd0c33c3ede0d435af8954bc32ef1602b1501391"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.2.7",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:67b99bc2f5e78a02449d70cf36a08eccc2c1e37fcf09df76452ac62117e973ac",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.2.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "openj9",
+                "image": "registry.redhat.io/datagrid/datagrid-8-openj9-11-rhel8@sha256:1beeb18cf9af6795074342c88b17454b6c3f80739539b1bf6e2d17773041823c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:67b99bc2f5e78a02449d70cf36a08eccc2c1e37fcf09df76452ac62117e973ac"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:4cf858a473f8233ad4778ac2566bfdb8ac1f7841c28082ce32848694b7a9d016"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.2.8",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:a7641fc5f4c7aed4b73d7d98ccb58ef64cf14ab16d72378f56dba3ad4b8714c6",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.2.8"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "openj9",
+                "image": "registry.redhat.io/datagrid/datagrid-8-openj9-11-rhel8@sha256:c8607d6538a7528e27e6ecb138e0a93a03b3c9fa1f8a9a5aad3fd9f4a6814448"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:a7641fc5f4c7aed4b73d7d98ccb58ef64cf14ab16d72378f56dba3ad4b8714c6"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:1435aa60e8ab4d25c86daae68dcb93d14999f50d7c1e11a3c5726a86d3d30453"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:4d8057709958ef60bcabdcec52f05eae8df121fd3f4762c3218abca38130f638"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.3.0",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:7326ddcb3e8357e9bd3de35ace21a645f38c504cff04cd2bc30b831de06e45e0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.3.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:7326ddcb3e8357e9bd3de35ace21a645f38c504cff04cd2bc30b831de06e45e0"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-2ad28953ec16c02f13c74c400026e37a4dade0558d9d931b88f9b393423c99a3-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:2ad28953ec16c02f13c74c400026e37a4dade0558d9d931b88f9b393423c99a3"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:2ad28953ec16c02f13c74c400026e37a4dade0558d9d931b88f9b393423c99a3"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:e78338a9548ab39a3f2c43d1367b7a129c0684f48556285288be3b4c0d6578f3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.3.1",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:8949eb9dbf4ad1792c4fa8ac85ccc03d7cf930e0405e49d8d84cea28a82f9ad0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.3.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:8949eb9dbf4ad1792c4fa8ac85ccc03d7cf930e0405e49d8d84cea28a82f9ad0"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-80ae6a877ca3aee16b0d1bd9ea94441067864b4077c8db397370d9e0570be9b5-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:80ae6a877ca3aee16b0d1bd9ea94441067864b4077c8db397370d9e0570be9b5"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:80ae6a877ca3aee16b0d1bd9ea94441067864b4077c8db397370d9e0570be9b5"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:fece483d511100d5daabf24ccf001f86c7eb09a704b9c021e584343f07deed1d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.3.2",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:20a429adad087fef7f6aacfc6c4bea728e5a43f04baf5b3ec504dbf93ee22b04",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.3.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:20a429adad087fef7f6aacfc6c4bea728e5a43f04baf5b3ec504dbf93ee22b04"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-80ae6a877ca3aee16b0d1bd9ea94441067864b4077c8db397370d9e0570be9b5-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:80ae6a877ca3aee16b0d1bd9ea94441067864b4077c8db397370d9e0570be9b5"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:80ae6a877ca3aee16b0d1bd9ea94441067864b4077c8db397370d9e0570be9b5"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:b1595bd7f5e942d37536d54aee7ce9397160d25c3a4133cc5bc28ecfdad97c3a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.3.3",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:5a3916083bd6aa1acaae81ffd1646ede9e7f305f557416de8323424395c7ef65",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.3.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:5a3916083bd6aa1acaae81ffd1646ede9e7f305f557416de8323424395c7ef65"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-8aa8c21c3b1a134fe63ad0614b2c8da2ca5904e6569d33660be94342ee260a17-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:8aa8c21c3b1a134fe63ad0614b2c8da2ca5904e6569d33660be94342ee260a17"
+            },
+            {
+                "name": "infinispan-operator",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:8aa8c21c3b1a134fe63ad0614b2c8da2ca5904e6569d33660be94342ee260a17"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:872de31bcdf515f1e340e94cef10924dc0504bea6fe93727f5e71ede1ba1d71e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.3.4",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:8bc7da7eae9203792488ff05eaabd39ade16b473d4305d8f038991ff46a2b51c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.3.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:8bc7da7eae9203792488ff05eaabd39ade16b473d4305d8f038991ff46a2b51c"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-af9479f4f2c9a6f494e6684d5f7e399c463da2ebcf7f5534fc3c8c6ae2fa1651-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:af9479f4f2c9a6f494e6684d5f7e399c463da2ebcf7f5534fc3c8c6ae2fa1651"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:af9479f4f2c9a6f494e6684d5f7e399c463da2ebcf7f5534fc3c8c6ae2fa1651"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:b2529eb6af0579148185834deac1dcb33e4cfabeafb30b98882cb6378b537fd9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.3.5",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:f56ace2f4521cbf2c45eab351ee88a05b5404ffb87d71f8fb42f2bc3f200d0c2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.3.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:f56ace2f4521cbf2c45eab351ee88a05b5404ffb87d71f8fb42f2bc3f200d0c2"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-af9479f4f2c9a6f494e6684d5f7e399c463da2ebcf7f5534fc3c8c6ae2fa1651-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:af9479f4f2c9a6f494e6684d5f7e399c463da2ebcf7f5534fc3c8c6ae2fa1651"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:af9479f4f2c9a6f494e6684d5f7e399c463da2ebcf7f5534fc3c8c6ae2fa1651"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:0fd12545763aab8907747382ab47d5df40b27e3121175e1b20eebfca306eb8ce"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.3.6",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:a29708737148bee978dfe612759e834b6efb61fb52c68e6a657c7f723dc66bb2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.3.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:a29708737148bee978dfe612759e834b6efb61fb52c68e6a657c7f723dc66bb2"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-8040361398886e639ee4e83d1c637e7d4cdfbe128dda0ebc276d7fc65b0ef4d5-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:8040361398886e639ee4e83d1c637e7d4cdfbe128dda0ebc276d7fc65b0ef4d5"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:8040361398886e639ee4e83d1c637e7d4cdfbe128dda0ebc276d7fc65b0ef4d5"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:ec0185d369c661f0da8a477e7bd60437f32a2aabba21a7a89f8aeefba19cc895"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "datagrid-operator.v8.3.7",
+        "package": "datagrid",
+        "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:73da17804e7bfcf4a18547b92d4d918a233f1052fc47c9d3bb068d3dce4ab12c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Backup",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Batch",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Cache",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Infinispan",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "infinispan.org",
+                    "kind": "Restore",
+                    "version": "v2alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "datagrid",
+                    "version": "8.3.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/datagrid/datagrid-8-prod-operator-bundle@sha256:73da17804e7bfcf4a18547b92d4d918a233f1052fc47c9d3bb068d3dce4ab12c"
+            },
+            {
+                "name": "datagrid-8-rhel8-operator-0c72a89e5492b059b5c96fc89e6b6ab0fbc4e09a961feab3958b59b6e3b914c2-annotation",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:0c72a89e5492b059b5c96fc89e6b6ab0fbc4e09a961feab3958b59b6e3b914c2"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8-operator@sha256:0c72a89e5492b059b5c96fc89e6b6ab0fbc4e09a961feab3958b59b6e3b914c2"
+            },
+            {
+                "name": "openjdk",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:6bf330a70a8a2ba0700b43dbe813e52af115db79bfd1cf278ff340e69da3aa6c"
+            }
+        ]
+    }

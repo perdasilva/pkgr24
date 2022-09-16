@@ -1,0 +1,66 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: klusterlet-product
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "klusterlet-product",
+        "defaultChannel": "backplane-2.0"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "backplane-2.0",
+        "package": "klusterlet-product",
+        "entries": [
+            {
+                "name": "klusterlet-product.v2.0.1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "klusterlet-product.v2.0.1",
+        "package": "klusterlet-product",
+        "image": "registry.redhat.io/multicluster-engine/klusterlet-operator-bundle@sha256:78c211e6c341a09653d076e4258ef4a6db5a62966f9234f4d46100115c06ea91",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.open-cluster-management.io",
+                    "kind": "Klusterlet",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "klusterlet-product",
+                    "version": "2.0.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/multicluster-engine/klusterlet-operator-bundle@sha256:78c211e6c341a09653d076e4258ef4a6db5a62966f9234f4d46100115c06ea91"
+            },
+            {
+                "name": "registration-operator-rhel8-071a11f2e907309af46d403b8b68aadca1d4cb17126536a44d8a53f95153c93e-annotation",
+                "image": "registry.redhat.io/multicluster-engine/registration-operator-rhel8@sha256:071a11f2e907309af46d403b8b68aadca1d4cb17126536a44d8a53f95153c93e"
+            },
+            {
+                "name": "klusterlet",
+                "image": "registry.redhat.io/multicluster-engine/registration-operator-rhel8@sha256:071a11f2e907309af46d403b8b68aadca1d4cb17126536a44d8a53f95153c93e"
+            },
+            {
+                "name": "registration-rhel8-5216a7ec018976fa8a08cffccd9367a620842838efa4bb3439fcde5c5c63b566-annotation",
+                "image": "registry.redhat.io/multicluster-engine/registration-rhel8@sha256:5216a7ec018976fa8a08cffccd9367a620842838efa4bb3439fcde5c5c63b566"
+            },
+            {
+                "name": "work-rhel8-27c4315e70b9e07139053830c04e61a9116a13b04e0d46aae669beb86ecdc1a3-annotation",
+                "image": "registry.redhat.io/multicluster-engine/work-rhel8@sha256:27c4315e70b9e07139053830c04e61a9116a13b04e0d46aae669beb86ecdc1a3"
+            }
+        ]
+    }

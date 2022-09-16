@@ -1,0 +1,1935 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: ansible-automation-platform-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "ansible-automation-platform-operator",
+        "defaultChannel": "stable-2.2-cluster-scoped"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-2.1",
+        "package": "ansible-automation-platform-operator",
+        "entries": [
+            {
+                "name": "aap-operator.v2.1.1-0.1645830494"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-2.1-cluster-scoped",
+        "package": "ansible-automation-platform-operator",
+        "entries": [
+            {
+                "name": "aap-operator.v2.1.1-0.1645831476"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-2.2",
+        "package": "ansible-automation-platform-operator",
+        "entries": [
+            {
+                "name": "aap-operator.v2.2.0-0.1656026171"
+            },
+            {
+                "name": "aap-operator.v2.2.0-0.1657062063",
+                "skipRange": ">=2.0.1-0.1635279521 <2.2.0"
+            },
+            {
+                "name": "aap-operator.v2.2.0-0.1659937764",
+                "skipRange": ">=2.0.1-0.1635279521 <2.2.0"
+            },
+            {
+                "name": "aap-operator.v2.2.0-0.1660256073",
+                "skipRange": ">=2.0.1-0.1635279521 <2.2.0"
+            },
+            {
+                "name": "aap-operator.v2.2.0-0.1660690526",
+                "skips": [
+                    "aap-operator.v2.2.0-0.1653444770",
+                    "aap-operator.v2.2.0-0.1657062063",
+                    "aap-operator.v2.2.0-0.1659937764",
+                    "aap-operator.v2.2.0-0.1660256073",
+                    "aap-operator.v2.2.0-0.1654658348",
+                    "aap-operator.v2.2.0-0.1656026171"
+                ],
+                "skipRange": ">=2.0.1-0.1635279521 <2.2.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-2.2-cluster-scoped",
+        "package": "ansible-automation-platform-operator",
+        "entries": [
+            {
+                "name": "aap-operator.v2.2.0-0.1656026531"
+            },
+            {
+                "name": "aap-operator.v2.2.0-0.1657062951",
+                "skipRange": ">=2.0.1-0.1635283332 <2.2.0"
+            },
+            {
+                "name": "aap-operator.v2.2.0-0.1659938252",
+                "skipRange": ">=2.0.1-0.1635283332 <2.2.0"
+            },
+            {
+                "name": "aap-operator.v2.2.0-0.1660256471",
+                "skipRange": ">=2.0.1-0.1635283332 <2.2.0"
+            },
+            {
+                "name": "aap-operator.v2.2.0-0.1660690990",
+                "skips": [
+                    "aap-operator.v2.2.0-0.1657062951",
+                    "aap-operator.v2.2.0-0.1659938252",
+                    "aap-operator.v2.2.0-0.1660256471",
+                    "aap-operator.v2.2.0-0.1654658826",
+                    "aap-operator.v2.2.0-0.1656026531",
+                    "aap-operator.v2.2.0-0.1653445566"
+                ],
+                "skipRange": ">=2.0.1-0.1635283332 <2.2.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.1.1-0.1645830494",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:6d0deccbc9afc28d79ab33b74c148d6dc1f5c0128b66d347b95849d42e6679d9",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.1.1+0.1645830494"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-21/controller-rhel8-operator@sha256:85c4d7ccf0a7d6a7ab44e0338a2402bb4407ecb298df15cd92050bb0a20f3452"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-21/controller-rhel8@sha256:f1d583578c1b2004d92565b4692f73f7f9bdc167e458c43c23fca682f1026158"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-21/ee-29-rhel8@sha256:b5fc2ac1c7f77f22205bad2e13a77d86b14af2fe4a07565302fcbf9628a4ebc6"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8@sha256:d29c4d2d81f10b21ba8779ec330abd5a8fab322e1185240133131078ed019dab"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8@sha256:153bcee40f7c4a394509f12d1681dcacb1ebd7f89f48a3bcd27f8d4c235bae04"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8@sha256:153bcee40f7c4a394509f12d1681dcacb1ebd7f89f48a3bcd27f8d4c235bae04"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-21/hub-rhel8-operator@sha256:c6277addd451c0978d12a692d4934421ebbe02bf7366d3244db382fe304b480c"
+            },
+            {
+                "name": "hub_app",
+                "image": "registry.redhat.io/ansible-automation-platform-21/hub-rhel8@sha256:8daaf9bcd3fa3e68133c3bb852fbc1cf974b8b6bade7839198fa3547aa01b7ca"
+            },
+            {
+                "name": "hub_app_web",
+                "image": "registry.redhat.io/ansible-automation-platform-21/hub-web-rhel8@sha256:31280232ccbc3960b4863bf8bf19f7fed7145b7cde7f67f9da09220a4bcc7277"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-21/platform-resource-rhel8-operator@sha256:f9f7c2e60da9ce10e2b886550bb344e422d7a4d23b605bb28a21dc3971d54b63"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-21/platform-resource-runner-rhel8@sha256:e3d52e0ed7e4f69679feaa34db57bb788efc20ae0a942375626af23bd7374286"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:6d0deccbc9afc28d79ab33b74c148d6dc1f5c0128b66d347b95849d42e6679d9"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b6fde43491c2e0733c8fe6ee8660f7f6435fe20c0b6d435cfc7f86eeab8b4748"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:b006af9af125adce28546d0ed9d77421abe54182741f6b5e1d31c88dd763580b"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:b006af9af125adce28546d0ed9d77421abe54182741f6b5e1d31c88dd763580b"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b711e9f796376353db77a337befb39c31e844caaa2ab46985c9e5ad0b5e92996"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b711e9f796376353db77a337befb39c31e844caaa2ab46985c9e5ad0b5e92996"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.1.1-0.1645831476",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:b24d5974d917763c0bad304d984846bdef4c424b7229b6d0962d7dda728ac7c0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.1.1+0.1645831476"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-21/controller-rhel8-operator@sha256:85c4d7ccf0a7d6a7ab44e0338a2402bb4407ecb298df15cd92050bb0a20f3452"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-21/controller-rhel8@sha256:f1d583578c1b2004d92565b4692f73f7f9bdc167e458c43c23fca682f1026158"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-21/ee-29-rhel8@sha256:b5fc2ac1c7f77f22205bad2e13a77d86b14af2fe4a07565302fcbf9628a4ebc6"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8@sha256:d29c4d2d81f10b21ba8779ec330abd5a8fab322e1185240133131078ed019dab"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8@sha256:153bcee40f7c4a394509f12d1681dcacb1ebd7f89f48a3bcd27f8d4c235bae04"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8@sha256:153bcee40f7c4a394509f12d1681dcacb1ebd7f89f48a3bcd27f8d4c235bae04"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-21/hub-rhel8-operator@sha256:c6277addd451c0978d12a692d4934421ebbe02bf7366d3244db382fe304b480c"
+            },
+            {
+                "name": "hub_app",
+                "image": "registry.redhat.io/ansible-automation-platform-21/hub-rhel8@sha256:8daaf9bcd3fa3e68133c3bb852fbc1cf974b8b6bade7839198fa3547aa01b7ca"
+            },
+            {
+                "name": "hub_app_web",
+                "image": "registry.redhat.io/ansible-automation-platform-21/hub-web-rhel8@sha256:31280232ccbc3960b4863bf8bf19f7fed7145b7cde7f67f9da09220a4bcc7277"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-21/platform-resource-rhel8-operator@sha256:f9f7c2e60da9ce10e2b886550bb344e422d7a4d23b605bb28a21dc3971d54b63"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-21/platform-resource-runner-rhel8@sha256:e3d52e0ed7e4f69679feaa34db57bb788efc20ae0a942375626af23bd7374286"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:b24d5974d917763c0bad304d984846bdef4c424b7229b6d0962d7dda728ac7c0"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b6fde43491c2e0733c8fe6ee8660f7f6435fe20c0b6d435cfc7f86eeab8b4748"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:b006af9af125adce28546d0ed9d77421abe54182741f6b5e1d31c88dd763580b"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:b006af9af125adce28546d0ed9d77421abe54182741f6b5e1d31c88dd763580b"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b711e9f796376353db77a337befb39c31e844caaa2ab46985c9e5ad0b5e92996"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b711e9f796376353db77a337befb39c31e844caaa2ab46985c9e5ad0b5e92996"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1656026171",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:9fb9a6c07153f9a6b598281eca51ccba97b94f9d208c261de2fe94bc93bf544e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1656026171"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:ba782b0307fa27ed04f79ee1bf4f869eedd763d5a17179f00da56b4d0c470b9c"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:95e6cabf80833d0d1875d287fb3d550c442a1c89bf38b5ada89aa70ec67bef5e"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:df454784c7f52ce762bfd8e0605898ba4737e0b3644691b24082b933d8288708"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:b0459d5067254fa0fff705d0dd8dea978f5e72279a01c7915435aff0cf629e04"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:85ea22485951aed6bcc016debbbe71286b633e24a3f97923eccde465e50d6adc"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:85ea22485951aed6bcc016debbbe71286b633e24a3f97923eccde465e50d6adc"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:b14d1977b06f0584623635d3fa917b1b0be1966c63995d37d7f67f8ff8687b22"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:8adf5fce31405fccc12221a6c853d55b119f32676cc941db976810b7a0d52a54"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:99630195b63b1da9b731397a76ba39992d11712483ed0096bc71f6990f06a4a7"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:c518631c2de1b3faa0bbac17e83d959ebb7cbc978237b6cd9eb052298ce0de57"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:9ac442a61fee56aa1adb588f3448161c8e538609e02eb2c91384c41342fbb86e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:9fb9a6c07153f9a6b598281eca51ccba97b94f9d208c261de2fe94bc93bf544e"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b6e06bf125c2c919f4a74098d9bf9bec05122b421213dd6d442de800f5ef3cf7"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1656026531",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:a4ef628c69716c6c7193553f94753a89e1fba587f443df708bc4e71633ebe654",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1656026531"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:ba782b0307fa27ed04f79ee1bf4f869eedd763d5a17179f00da56b4d0c470b9c"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:95e6cabf80833d0d1875d287fb3d550c442a1c89bf38b5ada89aa70ec67bef5e"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:df454784c7f52ce762bfd8e0605898ba4737e0b3644691b24082b933d8288708"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:b0459d5067254fa0fff705d0dd8dea978f5e72279a01c7915435aff0cf629e04"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:85ea22485951aed6bcc016debbbe71286b633e24a3f97923eccde465e50d6adc"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:85ea22485951aed6bcc016debbbe71286b633e24a3f97923eccde465e50d6adc"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:b14d1977b06f0584623635d3fa917b1b0be1966c63995d37d7f67f8ff8687b22"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:8adf5fce31405fccc12221a6c853d55b119f32676cc941db976810b7a0d52a54"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:99630195b63b1da9b731397a76ba39992d11712483ed0096bc71f6990f06a4a7"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:c518631c2de1b3faa0bbac17e83d959ebb7cbc978237b6cd9eb052298ce0de57"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:9ac442a61fee56aa1adb588f3448161c8e538609e02eb2c91384c41342fbb86e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:a4ef628c69716c6c7193553f94753a89e1fba587f443df708bc4e71633ebe654"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b6e06bf125c2c919f4a74098d9bf9bec05122b421213dd6d442de800f5ef3cf7"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1657062063",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:e6901a1d06998f7144c40dc236adb8a3a39476dde4407119c8a9c265cd949e74",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1657062063"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:6967e86671f0b283de1ca25fb31e0d595dcbbf2878345a0feed0d1c680a2fd19"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:59ad50cd80455365a08b137502b697eb4196dff9e7a94c43607aec4070f84867"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:6b6763bd181367f2d76f4af4fca7a926db2015c23c103640b2e037efb2ee9279"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:bd0f923f5643bbefc071807717028fa1b90dbaadab0e2210c8cf9c573ed76f62"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:d134e198b179d1b21d3f067d745dd1a8e28167235c312cdc233860410ea3ec3e"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:d134e198b179d1b21d3f067d745dd1a8e28167235c312cdc233860410ea3ec3e"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:68182d5c9ed09c64066d8bda6e0604248d258ce300d6edd946fe3bd0f33cde73"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:77a8a0a44a52e366bf46dfb9c7b81849325d1b53df0375309b78341939be1a31"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:a980eefe7ff724ffa275f29f0f60904383b9a5ec3545407c953780c790a8cd5c"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:669364d69d3af09bb128fc02ac5f6c7dc9708bc638cd3d77fc1699e32e36bf1d"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:bcd3bb6ea6e537899ce6a556a981c1bc92aa1c5d6916656be0ba4de5d6c5a4e4"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:e6901a1d06998f7144c40dc236adb8a3a39476dde4407119c8a9c265cd949e74"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:54406b529b0e9993f3421fafabb1b06305ed5234e456faa9408f0afbb41d0322"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1657062951",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:eb2f365c009417e61f408f59baecfc062d3251721601fd079c4523016444faad",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1657062951"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:6967e86671f0b283de1ca25fb31e0d595dcbbf2878345a0feed0d1c680a2fd19"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:59ad50cd80455365a08b137502b697eb4196dff9e7a94c43607aec4070f84867"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:6b6763bd181367f2d76f4af4fca7a926db2015c23c103640b2e037efb2ee9279"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:bd0f923f5643bbefc071807717028fa1b90dbaadab0e2210c8cf9c573ed76f62"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:d134e198b179d1b21d3f067d745dd1a8e28167235c312cdc233860410ea3ec3e"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:d134e198b179d1b21d3f067d745dd1a8e28167235c312cdc233860410ea3ec3e"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:68182d5c9ed09c64066d8bda6e0604248d258ce300d6edd946fe3bd0f33cde73"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:77a8a0a44a52e366bf46dfb9c7b81849325d1b53df0375309b78341939be1a31"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:a980eefe7ff724ffa275f29f0f60904383b9a5ec3545407c953780c790a8cd5c"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:669364d69d3af09bb128fc02ac5f6c7dc9708bc638cd3d77fc1699e32e36bf1d"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:bcd3bb6ea6e537899ce6a556a981c1bc92aa1c5d6916656be0ba4de5d6c5a4e4"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:eb2f365c009417e61f408f59baecfc062d3251721601fd079c4523016444faad"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:54406b529b0e9993f3421fafabb1b06305ed5234e456faa9408f0afbb41d0322"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:2f65f46b25d84a3cb41a6a10f93786bcab47b7354ca9ac13a8e602ea833eba60"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1659937764",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:db392549f992381c4304b62ea0c8ac10c7026a4a14546ff40fd5f0473d497ace",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1659937764"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:e7c1d3f863fadbd1ec58f79aa70ebb44f32ff5f7315e648918bed59357de00ca"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:678bcc19da979f2d85bbf8dbc598b148ca49c5efc3c929210d40742978bea2da"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:a2b29e9878f4e46e54ac14b81ec3bf1d4730ef9458154b762a3f791b150505e1"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:ebc2e67ee9f22702a5d2756cb7d9e0f8d93f811935ea3bca1c78fe30a418846f"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:8b8cdac85133daaa051d2d4d42cebb15ed41c01caf7dc75e5eeb8a895a0045b5"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:8b8cdac85133daaa051d2d4d42cebb15ed41c01caf7dc75e5eeb8a895a0045b5"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:1256c61d7dbdff12e4a890671e8fe07c93815a2a14a8fb5893fe618daba771d9"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:992bca26f71ad8b940a4585dd551d48b91889489ffa01c2b684ac3881f498d99"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:ee8ed2004fc2907452686455d557d1334b05ae1fbd926bd47854a9552b0f4e89"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:792241b474131f776c2e20f340081209252d8ad392ded42eb315cd6b6dd0ca29"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:dd29f397a5c4fba729b31c9b346136bd96d7981eaf4707c988d8b1618647f4cc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:db392549f992381c4304b62ea0c8ac10c7026a4a14546ff40fd5f0473d497ace"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:036c78fea970d6bbe45aa1097a8ed701c72ce1117404450dd7e717a1bedd2b2a"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1659938252",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:4d7f3f12f3b28aa537493887de5a4b01ea4a914d84debbb24d210474126751d1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1659938252"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:e7c1d3f863fadbd1ec58f79aa70ebb44f32ff5f7315e648918bed59357de00ca"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:678bcc19da979f2d85bbf8dbc598b148ca49c5efc3c929210d40742978bea2da"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:a2b29e9878f4e46e54ac14b81ec3bf1d4730ef9458154b762a3f791b150505e1"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:ebc2e67ee9f22702a5d2756cb7d9e0f8d93f811935ea3bca1c78fe30a418846f"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:8b8cdac85133daaa051d2d4d42cebb15ed41c01caf7dc75e5eeb8a895a0045b5"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:8b8cdac85133daaa051d2d4d42cebb15ed41c01caf7dc75e5eeb8a895a0045b5"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:1256c61d7dbdff12e4a890671e8fe07c93815a2a14a8fb5893fe618daba771d9"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:992bca26f71ad8b940a4585dd551d48b91889489ffa01c2b684ac3881f498d99"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:ee8ed2004fc2907452686455d557d1334b05ae1fbd926bd47854a9552b0f4e89"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:792241b474131f776c2e20f340081209252d8ad392ded42eb315cd6b6dd0ca29"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:dd29f397a5c4fba729b31c9b346136bd96d7981eaf4707c988d8b1618647f4cc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:4d7f3f12f3b28aa537493887de5a4b01ea4a914d84debbb24d210474126751d1"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:036c78fea970d6bbe45aa1097a8ed701c72ce1117404450dd7e717a1bedd2b2a"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1660256073",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:af15146cd601ec862add6f25204f117eab936b90802568d69af98a41210115de",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1660256073"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:aec1524c2a9dea6bd70bac60812fee495cfbd0b0856c8c27586953662fcd9c3b"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:bf7367d11bd3cae1796ecdf174351380fcb4555516497347f2f8517ab8f88b9f"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:7909d2e59cda11a8e1cf8d0f24b91d836d836aa36f852192d849e8c229b7ab82"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:b65f1017d58623b4c68da75adec70238ce6b5a9d0029b8426f12efff3b626831"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:c48e5e8eedb25f2b427daa5a7e355a7ee26389e5794ab8db0084fef7d0bc4582"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:c48e5e8eedb25f2b427daa5a7e355a7ee26389e5794ab8db0084fef7d0bc4582"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:02a5b6ce49385a65237a20587634e0025ab5c1eb879cd91566584f8dd3430cac"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:4429dee6b6cc7fa81cc41cce5dfc5ec12138c82a4d1c08a8d4686b7eb75a13f5"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:b9386e34b82f5523793e89be661aa8e311bbcd8869f6fc261ac4f7c730b1960b"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:db2ed879fb690652d45680f960e66498431f4dac9fe428c9a1bb8ec7470ef4cf"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:15d936477af79f21e9f4d36b3ff7b5875d6cef15cb26e5bcfd40eb36f6e2c4fa"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:af15146cd601ec862add6f25204f117eab936b90802568d69af98a41210115de"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:260ebab52c1e825e354bfa60827e314388fb7878bfa16d1dc061707962e95bea"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1660256471",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:dd2fa09ddf6dab798b589d739941f26bcc562dd60a83a624711e97b1ef1a6be5",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1660256471"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:aec1524c2a9dea6bd70bac60812fee495cfbd0b0856c8c27586953662fcd9c3b"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:bf7367d11bd3cae1796ecdf174351380fcb4555516497347f2f8517ab8f88b9f"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:7909d2e59cda11a8e1cf8d0f24b91d836d836aa36f852192d849e8c229b7ab82"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:b65f1017d58623b4c68da75adec70238ce6b5a9d0029b8426f12efff3b626831"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:c48e5e8eedb25f2b427daa5a7e355a7ee26389e5794ab8db0084fef7d0bc4582"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:c48e5e8eedb25f2b427daa5a7e355a7ee26389e5794ab8db0084fef7d0bc4582"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:02a5b6ce49385a65237a20587634e0025ab5c1eb879cd91566584f8dd3430cac"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:4429dee6b6cc7fa81cc41cce5dfc5ec12138c82a4d1c08a8d4686b7eb75a13f5"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:b9386e34b82f5523793e89be661aa8e311bbcd8869f6fc261ac4f7c730b1960b"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:db2ed879fb690652d45680f960e66498431f4dac9fe428c9a1bb8ec7470ef4cf"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:15d936477af79f21e9f4d36b3ff7b5875d6cef15cb26e5bcfd40eb36f6e2c4fa"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:dd2fa09ddf6dab798b589d739941f26bcc562dd60a83a624711e97b1ef1a6be5"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:260ebab52c1e825e354bfa60827e314388fb7878bfa16d1dc061707962e95bea"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1660690526",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:c177652f82dfe6964b28152daf6bb91224a17a43cc8daead1af9bdb3e463a0bd",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1660690526"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:e1a939e28005f6d7ee95754599495312ae58b3da0f375bc18962e6f7b00d4676"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:0f254deb891bf69dd92d766ba8e73b14effd008fbac97dd4299441e9401a44c8"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:706310befe132fef2288e2e16b6f59ab35cf829d108bd575ab80da96054ae6f6"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:5af0d5320c797103ac34aaa33620c12dfdff7fcdcb9a96b2eb1e2bb34afb91b0"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:f1bd44cb3aff459f05af7855f0bcea8a0d7a44c85acd6d0f2c64148d137502e8"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:f1bd44cb3aff459f05af7855f0bcea8a0d7a44c85acd6d0f2c64148d137502e8"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:88d20e394baee456df73f3c35f3866b9dd658c5ca585f4cb33a7dcafd0ca63e3"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:69a80384a5f2e8d8ab71c7537fba087c57a24b84a4f0088a3c7c69a97e437ed0"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:5329479ebe031fdff81ca600dd1fd1a876edec1c7e90d4c282d4aac5727bf081"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:802a7134d71939f643b9558d0e7a193c2e72cef6fa300011e5a5051da90bc166"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:006451baa500bc588bba0499f489b2cb3c145e75a016304a20a3e3e194f675e6"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:c177652f82dfe6964b28152daf6bb91224a17a43cc8daead1af9bdb3e463a0bd"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:260ebab52c1e825e354bfa60827e314388fb7878bfa16d1dc061707962e95bea"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aap-operator.v2.2.0-0.1660690990",
+        "package": "ansible-automation-platform-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:f1f3f4c33fe49d97f13a1ada5fd9bf6cf774f4f0c56238d77f4b174408548751",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationController",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationcontroller.ansible.com",
+                    "kind": "AutomationControllerRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHub",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubBackup",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "automationhub.ansible.com",
+                    "kind": "AutomationHubRestore",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "AnsibleJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "tower.ansible.com",
+                    "kind": "JobTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-automation-platform-operator",
+                    "version": "2.2.0+0.1660690990"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "automation-controller-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8-operator@sha256:e1a939e28005f6d7ee95754599495312ae58b3da0f375bc18962e6f7b00d4676"
+            },
+            {
+                "name": "controller_app",
+                "image": "registry.redhat.io/ansible-automation-platform-22/controller-rhel8@sha256:0f254deb891bf69dd92d766ba8e73b14effd008fbac97dd4299441e9401a44c8"
+            },
+            {
+                "name": "ee_29",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8@sha256:706310befe132fef2288e2e16b6f59ab35cf829d108bd575ab80da96054ae6f6"
+            },
+            {
+                "name": "ee_minimal",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8@sha256:5af0d5320c797103ac34aaa33620c12dfdff7fcdcb9a96b2eb1e2bb34afb91b0"
+            },
+            {
+                "name": "ee_supported",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:f1bd44cb3aff459f05af7855f0bcea8a0d7a44c85acd6d0f2c64148d137502e8"
+            },
+            {
+                "name": "control_plane_ee",
+                "image": "registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8@sha256:f1bd44cb3aff459f05af7855f0bcea8a0d7a44c85acd6d0f2c64148d137502e8"
+            },
+            {
+                "name": "automation-hub-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8-operator@sha256:88d20e394baee456df73f3c35f3866b9dd658c5ca585f4cb33a7dcafd0ca63e3"
+            },
+            {
+                "name": "hub",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-rhel8@sha256:69a80384a5f2e8d8ab71c7537fba087c57a24b84a4f0088a3c7c69a97e437ed0"
+            },
+            {
+                "name": "hub_web",
+                "image": "registry.redhat.io/ansible-automation-platform-22/hub-web-rhel8@sha256:5329479ebe031fdff81ca600dd1fd1a876edec1c7e90d4c282d4aac5727bf081"
+            },
+            {
+                "name": "platform-resource-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-rhel8-operator@sha256:802a7134d71939f643b9558d0e7a193c2e72cef6fa300011e5a5051da90bc166"
+            },
+            {
+                "name": "ansible_job_runner_image",
+                "image": "registry.redhat.io/ansible-automation-platform-22/platform-resource-runner-rhel8@sha256:006451baa500bc588bba0499f489b2cb3c145e75a016304a20a3e3e194f675e6"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/platform-operator-bundle@sha256:f1f3f4c33fe49d97f13a1ada5fd9bf6cf774f4f0c56238d77f4b174408548751"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:260ebab52c1e825e354bfa60827e314388fb7878bfa16d1dc061707962e95bea"
+            },
+            {
+                "name": "hub_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_postgres",
+                "image": "registry.redhat.io/rhel8/postgresql-13@sha256:cf0c33620cf579c7fb25e7787c1e73cc916becf3e33b7f5f52912a49a00c47a8"
+            },
+            {
+                "name": "controller_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "hub_redis",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:d7c7852338717308cbb59e9303e1ea35cc8e5c01ceb2818569be20c15f3f943d"
+            },
+            {
+                "name": "controller_init_container",
+                "image": "registry.redhat.io/ubi8/ubi-minimal@sha256:c536d4c63253318fdfc1db499f8f4bb0881db7fbd6f3d1554b4d54c812f85cc7"
+            }
+        ]
+    }

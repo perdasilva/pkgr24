@@ -1,0 +1,205 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: odf-lvm-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "odf-lvm-operator",
+        "defaultChannel": "stable-4.11"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.10",
+        "package": "odf-lvm-operator",
+        "entries": [
+            {
+                "name": "odf-lvm-operator.v4.10.5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.11",
+        "package": "odf-lvm-operator",
+        "entries": [
+            {
+                "name": "odf-lvm-operator.v4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-lvm-operator.v4.10.5",
+        "package": "odf-lvm-operator",
+        "image": "registry.redhat.io/odf4/odf-lvm-operator-bundle@sha256:236b19e57f329717c552a2bc2d8ac889b0db939488347ded07bb9f03a18e118d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "lvm.topolvm.io",
+                    "kind": "LVMCluster",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "lvm.topolvm.io",
+                    "kind": "LVMVolumeGroup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "lvm.topolvm.io",
+                    "kind": "LVMVolumeGroupNodeStatus",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "topolvm.cybozu.com",
+                    "kind": "LogicalVolume",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-lvm-operator",
+                    "version": "4.10.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-lvm-must-gather",
+                "image": "registry.redhat.io/odf4/odf-lvm-must-gather-rhel8@sha256:804882900371b66bfb916921b5daf1e9f15f74006dc4fc120c4b21179bba9967"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-lvm-operator-bundle@sha256:236b19e57f329717c552a2bc2d8ac889b0db939488347ded07bb9f03a18e118d"
+            },
+            {
+                "name": "odf-lvm-operator",
+                "image": "registry.redhat.io/odf4/odf-lvm-rhel8-operator@sha256:7d33c20d1c53be1581793f4ff3d6f027a8e9731eea9ca9a7af8c3adb2a34275f"
+            },
+            {
+                "name": "topolvm-csi",
+                "image": "registry.redhat.io/odf4/odf-topolvm-rhel8@sha256:69425447c0b97716a0075cfe7c3c9f8022edf51e266a3f0577092db9e2de0b0d"
+            },
+            {
+                "name": "topolvm-csi-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:42563eb25efb2b6f277944b627bea420fa58fe950b46a1bd1487122b8a387e75"
+            },
+            {
+                "name": "topolvm-csi-resizer",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-resizer@sha256:75017593988025df444c8b3849b6ba867c3a7f6fc83212aeff2dfc3de4fabd21"
+            },
+            {
+                "name": "topolvm-csi-livenessprobe",
+                "image": "registry.redhat.io/openshift4/ose-csi-livenessprobe@sha256:058fd6f949218cd3a76d8974ff1ea27fd45cba4662d14e3561285c779f0f0de5"
+            },
+            {
+                "name": "topolvm-csi-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:376f21cfa8308dc1b61a3e8401b7023d903eda768912699f39403de742ab88b1"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3658954f199040b0f244945c94955f794ee68008657421002e1b32962e7c30fc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odf-lvm-operator.v4.11.0",
+        "package": "odf-lvm-operator",
+        "image": "registry.redhat.io/odf4/odf-lvm-operator-bundle@sha256:f25a6bce26e7464a67d77f8a598c5935ea81e125ae8e6cccaacb8b1ffc6b15f9",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "lvm.topolvm.io",
+                    "kind": "LVMCluster",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "lvm.topolvm.io",
+                    "kind": "LVMVolumeGroup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "lvm.topolvm.io",
+                    "kind": "LVMVolumeGroupNodeStatus",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "topolvm.cybozu.com",
+                    "kind": "LogicalVolume",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odf-lvm-operator",
+                    "version": "4.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "odf-lvm-must-gather",
+                "image": "registry.redhat.io/odf4/odf-lvm-must-gather-rhel8@sha256:34424dbb33fd0347e4d34156bc6026b963faafc52c4b500b36f7fa04ad73a09c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odf-lvm-operator-bundle@sha256:f25a6bce26e7464a67d77f8a598c5935ea81e125ae8e6cccaacb8b1ffc6b15f9"
+            },
+            {
+                "name": "odf-lvm-operator",
+                "image": "registry.redhat.io/odf4/odf-lvm-rhel8-operator@sha256:ca6b5fc9f2cf9ba0c72d4300ce243c9394e4e06676a2ce02210300ab7fc7a8ef"
+            },
+            {
+                "name": "topolvm-csi",
+                "image": "registry.redhat.io/odf4/odf-topolvm-rhel8@sha256:7a40b9071eb37594d03c0bf943852cc9fc64494c7ef2de2e8f20d25a40f02071"
+            },
+            {
+                "name": "topolvm-csi-provisioner",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:34581b3ad230c153ce8cffe9229f2abf37f90c40d82896741fbef64a1f05fafb"
+            },
+            {
+                "name": "topolvm-csi-resizer",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-resizer@sha256:971867e19bd7645ec7c1d73a03a2559ba6c8bd729e44dd2513ba5b7ad8bc66a8"
+            },
+            {
+                "name": "topolvm-csi-snapshotter",
+                "image": "registry.redhat.io/openshift4/ose-csi-external-snapshotter-rhel8@sha256:eb0477a9fa74ad83bdba84696c5181222be3c001312fd282da48802968d33434"
+            },
+            {
+                "name": "topolvm-csi-livenessprobe",
+                "image": "registry.redhat.io/openshift4/ose-csi-livenessprobe@sha256:42946f57db3ed5e0e850502282bb9e61a6863bbaf8a40554df2b4554a0861c2c"
+            },
+            {
+                "name": "topolvm-csi-registrar",
+                "image": "registry.redhat.io/openshift4/ose-csi-node-driver-registrar@sha256:9bd4e84e62834eb92e81764a8f5a753ea0520e85165c0e4cd33142825837c9c9"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b5786bbbef725badf3dfcc2c2c7a86ead5ebb584c978c47aae8b9a62e241b80d"
+            }
+        ]
+    }

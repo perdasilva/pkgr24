@@ -1,0 +1,86 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: bamoe-kogito-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "bamoe-kogito-operator",
+        "defaultChannel": "8.x"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "8.x",
+        "package": "bamoe-kogito-operator",
+        "entries": [
+            {
+                "name": "bamoe-kogito-operator.8.0.0-1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "bamoe-kogito-operator.8.0.0-1",
+        "package": "bamoe-kogito-operator",
+        "image": "registry.redhat.io/ibm-bamoe/bamoe-kogito-rhel8-operator-bundle@sha256:0c92f5eb1f8cc5368450ca1d8bc60a2c4812a489d39d5ea15434f78af0cbb78e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoBuild",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoInfra",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoRuntime",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "rhpam.kiegroup.org",
+                    "kind": "KogitoSupportingService",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "bamoe-kogito-operator",
+                    "version": "8.0.0-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-kogito-rhel8-operator-bundle@sha256:0c92f5eb1f8cc5368450ca1d8bc60a2c4812a489d39d5ea15434f78af0cbb78e"
+            },
+            {
+                "name": "bamoe-kogito-rhel8-operator-c1a90ac73cc35d65b5b07dfae33c19387971a8895cddd86876f6f4a17b4aa165-annotation",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-kogito-rhel8-operator@sha256:c1a90ac73cc35d65b5b07dfae33c19387971a8895cddd86876f6f4a17b4aa165"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-kogito-rhel8-operator@sha256:c1a90ac73cc35d65b5b07dfae33c19387971a8895cddd86876f6f4a17b4aa165"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:011909289ad5a6e6dd012fafaab83117777073febb15536ee7e66a4d5830f303"
+            }
+        ]
+    }

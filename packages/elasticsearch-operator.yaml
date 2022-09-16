@@ -1,0 +1,330 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: elasticsearch-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "elasticsearch-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "elasticsearch-operator",
+        "entries": [
+            {
+                "name": "elasticsearch-operator.5.5.0",
+                "skipRange": ">=4.6.0-0 <5.5.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-5.2",
+        "package": "elasticsearch-operator",
+        "entries": [
+            {
+                "name": "elasticsearch-operator.5.2.12",
+                "skipRange": ">=4.6.0-0 <5.2.12"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-5.3",
+        "package": "elasticsearch-operator",
+        "entries": [
+            {
+                "name": "elasticsearch-operator.5.3.9",
+                "skipRange": ">=4.6.0-0 <5.3.9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-5.4",
+        "package": "elasticsearch-operator",
+        "entries": [
+            {
+                "name": "elasticsearch-operator.5.4.4",
+                "skipRange": ">=4.6.0-0 <5.4.4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-5.5",
+        "package": "elasticsearch-operator",
+        "entries": [
+            {
+                "name": "elasticsearch-operator.5.5.0",
+                "skipRange": ">=4.6.0-0 <5.5.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "elasticsearch-operator.5.2.12",
+        "package": "elasticsearch-operator",
+        "image": "registry.redhat.io/openshift-logging/elasticsearch-operator-bundle@sha256:a909c412c3f41c780d193e55611561b89f42e140f02dd2057f9877104beea263",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "Elasticsearch",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "Kibana",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "elasticsearch-operator",
+                    "version": "5.2.12"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-operator-bundle@sha256:a909c412c3f41c780d193e55611561b89f42e140f02dd2057f9877104beea263"
+            },
+            {
+                "name": "openshift-logging/elasticsearch-proxy-rhel8",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-proxy-rhel8@sha256:4229507d8b89b1a24f16477661b41a4a7a6925d90fed348dd609978297fe88c4"
+            },
+            {
+                "name": "openshift-logging/elasticsearch-rhel8-operator",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-rhel8-operator@sha256:0fd6cac32b8d10b0eaeecdd38c50df577067bd9ef27f20a8d03dba053e3aab04"
+            },
+            {
+                "name": "openshift-logging/elasticsearch6-rhel8",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch6-rhel8@sha256:6654f0fb5a4cc17a7b202c8348ee1a73ec95b2176d07562e4219554ebe9f174f"
+            },
+            {
+                "name": "openshift-logging/kibana6-rhel8",
+                "image": "registry.redhat.io/openshift-logging/kibana6-rhel8@sha256:46752e10e726c84be876c1dfd565fba4815054afd71db84af16a854346930a8f"
+            },
+            {
+                "name": "openshift-logging/logging-curator5-rhel8",
+                "image": "registry.redhat.io/openshift-logging/logging-curator5-rhel8@sha256:119265db56646a10f10947f14ed12e5b409ff8c5cc3bdc3ef9d3f3d3364b82f6"
+            },
+            {
+                "name": "openshift4/ose-kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:d4c60531f59953f399c6a2b0f8239128cdc2640f72f2d1e9ac4d6add618f9f01"
+            },
+            {
+                "name": "openshift4/ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:96810c770f75057b8bba6b78a5ba414c8289315d8af1a387f681ae5e4fb7d6dd"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "elasticsearch-operator.5.3.9",
+        "package": "elasticsearch-operator",
+        "image": "registry.redhat.io/openshift-logging/elasticsearch-operator-bundle@sha256:88223a315adef617e57a038cf825ac2b52a255d64e63b7461ab15e1f7683baf5",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "Elasticsearch",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "Kibana",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "elasticsearch-operator",
+                    "version": "5.3.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-operator-bundle@sha256:88223a315adef617e57a038cf825ac2b52a255d64e63b7461ab15e1f7683baf5"
+            },
+            {
+                "name": "openshift-logging/elasticsearch-proxy-rhel8",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-proxy-rhel8@sha256:88e1f72874ad9bf690ca1cf51b12b51899b5ba3ebf6def43924ff2d41dfad790"
+            },
+            {
+                "name": "openshift-logging/elasticsearch-rhel8-operator",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-rhel8-operator@sha256:3abcc68a0f4d0eba2efa37e686f7dc0088ac25821c080e7f883728c9689fcb26"
+            },
+            {
+                "name": "openshift-logging/elasticsearch6-rhel8",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch6-rhel8@sha256:ae7857c4e5558e5d8dc3664aee1a52de8e3715eacd63c5542de7ccf51fdc040b"
+            },
+            {
+                "name": "openshift-logging/kibana6-rhel8",
+                "image": "registry.redhat.io/openshift-logging/kibana6-rhel8@sha256:fe5137e61f0805edb8281ba35a4d1135a1b00ef849c020a34467d1cb1232c238"
+            },
+            {
+                "name": "openshift-logging/logging-curator5-rhel8",
+                "image": "registry.redhat.io/openshift-logging/logging-curator5-rhel8@sha256:5e6d9ea0fcb086eda29ac52300b93639976691b9359fb2a7337756d213ca5b46"
+            },
+            {
+                "name": "openshift4/ose-kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:d4c60531f59953f399c6a2b0f8239128cdc2640f72f2d1e9ac4d6add618f9f01"
+            },
+            {
+                "name": "openshift4/ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:96810c770f75057b8bba6b78a5ba414c8289315d8af1a387f681ae5e4fb7d6dd"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "elasticsearch-operator.5.4.4",
+        "package": "elasticsearch-operator",
+        "image": "registry.redhat.io/openshift-logging/elasticsearch-operator-bundle@sha256:7af1bcccd4219e6f0678bd0570e65e00e6924d0c7013a081a8036168badba724",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "Elasticsearch",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "Kibana",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": "4.11"
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "elasticsearch-operator",
+                    "version": "5.4.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-operator-bundle@sha256:7af1bcccd4219e6f0678bd0570e65e00e6924d0c7013a081a8036168badba724"
+            },
+            {
+                "name": "openshift-logging/elasticsearch-proxy-rhel8",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-proxy-rhel8@sha256:bbe43427c7cbd4007ff673afbae66070c4ed0302d82068ab987a996076d68d79"
+            },
+            {
+                "name": "openshift-logging/elasticsearch-rhel8-operator",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-rhel8-operator@sha256:32072064d66d79c1464a4f36bdba832e7ece25ed0c011b6e4a17d132408767aa"
+            },
+            {
+                "name": "openshift-logging/elasticsearch6-rhel8",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch6-rhel8@sha256:dcd19739325a15140f8bbfe20f384b404552a382f02d353233470f59af9d5ee9"
+            },
+            {
+                "name": "openshift-logging/kibana6-rhel8",
+                "image": "registry.redhat.io/openshift-logging/kibana6-rhel8@sha256:a7863257f2bd010979de552d78252195f077b17ff28af140f066102fa0893afb"
+            },
+            {
+                "name": "openshift-logging/logging-curator5-rhel8",
+                "image": "registry.redhat.io/openshift-logging/logging-curator5-rhel8@sha256:f7893725ed892239b1896ecfe3e0bb8152a70881e277c0def2df1b5e18f96c56"
+            },
+            {
+                "name": "openshift4/ose-kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:036c78fea970d6bbe45aa1097a8ed701c72ce1117404450dd7e717a1bedd2b2a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "elasticsearch-operator.5.5.0",
+        "package": "elasticsearch-operator",
+        "image": "registry.redhat.io/openshift-logging/elasticsearch-operator-bundle@sha256:bb9d01a501c0f268fd7ec7d99b5af455bd772dd251d24220e39988dc0e58ba69",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "Elasticsearch",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "Kibana",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.11
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "elasticsearch-operator",
+                    "version": "5.5.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-operator-bundle@sha256:bb9d01a501c0f268fd7ec7d99b5af455bd772dd251d24220e39988dc0e58ba69"
+            },
+            {
+                "name": "elasticsearch_proxy",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-proxy-rhel8@sha256:bf60539e16938c30b7b835a981656a56e2580b68bc5b733596b77cd7e443e9bc"
+            },
+            {
+                "name": "elasticsearch-rhel8-operator-e79549f924a411fc212cee90668eafa6dda8635507b0809b58af03fed5b3a1ff-annotation",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-rhel8-operator@sha256:e79549f924a411fc212cee90668eafa6dda8635507b0809b58af03fed5b3a1ff"
+            },
+            {
+                "name": "elasticsearch-operator",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch-rhel8-operator@sha256:e79549f924a411fc212cee90668eafa6dda8635507b0809b58af03fed5b3a1ff"
+            },
+            {
+                "name": "elasticsearch",
+                "image": "registry.redhat.io/openshift-logging/elasticsearch6-rhel8@sha256:a756c5cca74937df86177481656e4f7f689cfdfb5ed7689df039e707b26884de"
+            },
+            {
+                "name": "kibana",
+                "image": "registry.redhat.io/openshift-logging/kibana6-rhel8@sha256:fe5da521bcb2e8db3822f0d592ef3e55f72c33ec8d1a840ec99c1fe6b4f6ebc9"
+            },
+            {
+                "name": "curator",
+                "image": "registry.redhat.io/openshift-logging/logging-curator5-rhel8@sha256:85f5b655e8282c1fefb966210ace1fef79207e3cc293b223f79310a2ea678662"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:260ebab52c1e825e354bfa60827e314388fb7878bfa16d1dc061707962e95bea"
+            }
+        ]
+    }

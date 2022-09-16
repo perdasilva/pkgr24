@@ -1,0 +1,711 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: mtc-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "mtc-operator",
+        "defaultChannel": "release-v1.7"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "release-v1.7",
+        "package": "mtc-operator",
+        "entries": [
+            {
+                "name": "mtc-operator.v1.7.0",
+                "skipRange": ">=1.5.0 <1.7.0"
+            },
+            {
+                "name": "mtc-operator.v1.7.1",
+                "skipRange": ">=1.5.0 <1.7.1"
+            },
+            {
+                "name": "mtc-operator.v1.7.2",
+                "skipRange": ">=1.5.0 <1.7.2"
+            },
+            {
+                "name": "mtc-operator.v1.7.3",
+                "skips": [
+                    "mtc-operator.v1.7.1",
+                    "mtc-operator.v1.7.0",
+                    "mtc-operator.v1.7.2"
+                ],
+                "skipRange": ">=1.5.0 <1.7.3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mtc-operator.v1.7.0",
+        "package": "mtc-operator",
+        "image": "registry.redhat.io/rhmtc/openshift-migration-operator-bundle@sha256:2cd90506d88c4fabbed5ff589c1bcd90a823828c8f20f03180f206a81fc7ed81",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectImageMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectImageStreamMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectVolumeMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectVolumeMigrationProgress",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigAnalytic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigCluster",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigHook",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigStorage",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigrationController",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mtc-operator",
+                    "version": "1.7.0"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "redhat-oadp-operator",
+                    "versionRange": ">=1.0.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-controller-rhel8@sha256:5152fd968f5ba154045af93ad16e352724b07dbe95b98dd40d937fbeef719eee"
+            },
+            {
+                "name": "hook_runner",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-hook-runner-rhel7@sha256:3dcd7c93577e6bb7d784298446717f91b4c29d4b7da9d50299124ac0199f16df"
+            },
+            {
+                "name": "mig_log_reader",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-log-reader-rhel8@sha256:6e9279b40d0dc280ccd20d7d3032ec9481bdd1c84614f95123525dff16499d80"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-operator-bundle@sha256:2cd90506d88c4fabbed5ff589c1bcd90a823828c8f20f03180f206a81fc7ed81"
+            },
+            {
+                "name": "registry",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-registry-rhel8@sha256:35202f71589ab9c97766724c0f417c9b64492ac8c81829b45b3fa8f4caf5db3a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-rhel8-operator@sha256:d1321f7a29ade7d379642b4ec4236c6f46e6aad600c72dea00e8130579c556bd"
+            },
+            {
+                "name": "rsync_transfer",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-rsync-transfer-rhel8@sha256:541100402d0b6c634d66ddda18d1cfa1dd6ad4e69facd4bfa333e92f41667e87"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-ui-rhel8@sha256:188d8930887b7bfccc2b7a8ac0be3b392c1b1d8fa662c7a44fe0a45cfea851e7"
+            },
+            {
+                "name": "aws_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-aws-rhel8@sha256:6a3cd2001c64b2dd29904d37cd4e0d33ed70865365e4aa4ef53fa07d599a8b76"
+            },
+            {
+                "name": "gcp_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-gcp-rhel8@sha256:c4a8f97f103b6a28414cabd740792025e7cbbd87b1e1612eed1febf895a516f4"
+            },
+            {
+                "name": "azure_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-microsoft-azure-rhel8@sha256:79ee6609f9ffc371ee8e77c384cb221a927ee5ea3a0e0c54b9f40574b88abbbe"
+            },
+            {
+                "name": "velero_restic_restore_helper",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-restic-restore-helper-rhel8@sha256:571034a11cf1ab6bc165871c8345b311f203f1cd51255324784e7c4ef4f266fc"
+            },
+            {
+                "name": "velero",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-rhel8@sha256:dc4adb2da0a284e44069de24df345b47e25ba9532afea456dc6d6b382407bf9f"
+            },
+            {
+                "name": "migration_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-velero-plugin-rhel8@sha256:b132519761189de1f7dcc8c428bf0c47634c06f8ec41c072927a543dc03e3f67"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mtc-operator.v1.7.1",
+        "package": "mtc-operator",
+        "image": "registry.redhat.io/rhmtc/openshift-migration-operator-bundle@sha256:3303e24aa4a705a7f45e2e47073fbeec3e8a6f9b3139b9c9cc903eeeec5e8a01",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectImageMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectImageStreamMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectVolumeMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectVolumeMigrationProgress",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigAnalytic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigCluster",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigHook",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigStorage",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigrationController",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mtc-operator",
+                    "version": "1.7.1"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "redhat-oadp-operator",
+                    "versionRange": ">=1.0.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-controller-rhel8@sha256:b7b466bd7c170ae51560bdd2e53fde0033f9620e655c5bf8f36c688bd35791c8"
+            },
+            {
+                "name": "hook_runner",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-hook-runner-rhel7@sha256:0ed9b7330032e27075499d3eecac778b89b17a60ca5c916b100dbe01585058c5"
+            },
+            {
+                "name": "mig_log_reader",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-log-reader-rhel8@sha256:ec6dfb36637ee2fd245fb44219d5cf6e0a75cb12bfb25b91fa4fc080b06a6429"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-operator-bundle@sha256:3303e24aa4a705a7f45e2e47073fbeec3e8a6f9b3139b9c9cc903eeeec5e8a01"
+            },
+            {
+                "name": "registry",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-registry-rhel8@sha256:5567e8f6d7339932f1a3ba5947670ae167566726e038767043ee8166bb541a3f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-rhel8-operator@sha256:a8c8ef7854104b8c1e3f1792e5e49733e1f79373ef5c0b2ad49356db75be47c4"
+            },
+            {
+                "name": "rsync_transfer",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-rsync-transfer-rhel8@sha256:421e3d1146f8f5794d6a0886ff62dac976b05cd3aafa238903a86cae03e95470"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-ui-rhel8@sha256:099c1a0ee62d3d0a8810dac74ef769b284e0e0910224d52e789008b82f4eef3c"
+            },
+            {
+                "name": "aws_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-aws-rhel8@sha256:44dd32f4cefe29c97e302b6d72df6678abee3adfba4de3ab754f7a322b35148e"
+            },
+            {
+                "name": "gcp_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-gcp-rhel8@sha256:bb63c2f4f9a65190248b968e7cdbc981245cdbb0313d525c257bfc1cd34748aa"
+            },
+            {
+                "name": "azure_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-microsoft-azure-rhel8@sha256:fc18ccb4f1e4b8d754d0185749b120024f08fcffb44b9bffa3ae9b29232ea084"
+            },
+            {
+                "name": "velero_restic_restore_helper",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-restic-restore-helper-rhel8@sha256:04d0f47a1b05de5228685c8001ade09bf453ca9bd4483a5ee947e340f4a1bbea"
+            },
+            {
+                "name": "velero",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-rhel8@sha256:b0b8078b7a4275f3b7ea74426659f83246ac67ddda821dd6898e87baac8d10b7"
+            },
+            {
+                "name": "migration_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-velero-plugin-rhel8@sha256:65a45b37faf1852978bd440dde247feeb566bd236b08e8df49890de88f238ab8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mtc-operator.v1.7.2",
+        "package": "mtc-operator",
+        "image": "registry.redhat.io/rhmtc/openshift-migration-operator-bundle@sha256:697a0375f3ff849b4b3d17c203ba8df25d194482655932de7af1bdd35b4cc07a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectImageMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectImageStreamMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectVolumeMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectVolumeMigrationProgress",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigAnalytic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigCluster",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigHook",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigStorage",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigrationController",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mtc-operator",
+                    "version": "1.7.2"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "redhat-oadp-operator",
+                    "versionRange": ">=1.0.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-controller-rhel8@sha256:8588d504a366aeb1bdb8f6ebe943ef95be111c091c3a77bfefbef4d435b26bec"
+            },
+            {
+                "name": "hook_runner",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-hook-runner-rhel7@sha256:4c81871f38f04ce6f62eed9124d79a60ee0c1df3f681b36b1b5401527aae1647"
+            },
+            {
+                "name": "mig_log_reader",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-log-reader-rhel8@sha256:eb88b9ae5a4c20fe7efa8d4d74e35612c0c8e185b7324623eec4b50f7ef165ae"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-operator-bundle@sha256:697a0375f3ff849b4b3d17c203ba8df25d194482655932de7af1bdd35b4cc07a"
+            },
+            {
+                "name": "registry",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-registry-rhel8@sha256:9de41f6beba74c13631ff22f75ab1b9bfc84aa2c6b582333f80dba09d9daf50b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-rhel8-operator@sha256:2276c34d4cc9d7e856740579de5a60183afd7edec0bc3b9ca662e35879af7483"
+            },
+            {
+                "name": "rsync_transfer",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-rsync-transfer-rhel8@sha256:c37c4aa0d91e29ef19942c44c50d83ff2003aaaecc503a0cd46c2435a70d3a6c"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-ui-rhel8@sha256:4ef77a5451522d33b769b8d3a134b3088ec6a273c84e56b0622a7fab3620a0f8"
+            },
+            {
+                "name": "aws_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-aws-rhel8@sha256:c0c694ad70e090fbc5ae5e6431278826af24d5f414f49ea7296048d28832bad1"
+            },
+            {
+                "name": "gcp_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-gcp-rhel8@sha256:70ab7c125812f334deeb5a4d4feb947d89e37239b855150e9b85672c1a1f6ddb"
+            },
+            {
+                "name": "azure_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-microsoft-azure-rhel8@sha256:1fc061d61c0503f0bf52495c7d92d726453d5a111a016d0af3b2804c64122d76"
+            },
+            {
+                "name": "velero_restic_restore_helper",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-restic-restore-helper-rhel8@sha256:e5c079e230098665aed5372e18932ff7e0af8b642f06b8035112c5c55041453c"
+            },
+            {
+                "name": "velero",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-rhel8@sha256:9d6f1d632dc99434542679c85708a19fd539364854c98b19a8de4ad598e3a994"
+            },
+            {
+                "name": "migration_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-velero-plugin-rhel8@sha256:040c2db2aacc3c743eb85836c8c01ca4e615182faf09309ddb3d3566ed9ac374"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "mtc-operator.v1.7.3",
+        "package": "mtc-operator",
+        "image": "registry.redhat.io/rhmtc/openshift-migration-operator-bundle@sha256:30464ddc47f4f0120b09d2743c67bfa334e0492e425bdc56ebe8995dc445c641",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectImageMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectImageStreamMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectVolumeMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "DirectVolumeMigrationProgress",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigAnalytic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigCluster",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigHook",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigMigration",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigPlan",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigStorage",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "migration.openshift.io",
+                    "kind": "MigrationController",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "mtc-operator",
+                    "version": "1.7.3"
+                }
+            },
+            {
+                "type": "olm.package.required",
+                "value": {
+                    "packageName": "redhat-oadp-operator",
+                    "versionRange": ">=1.0.3 <1.1.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "controller",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-controller-rhel8@sha256:5497c9a6ff6c65b9e678a9f9dcadcb82d9aa21f50ace5cd0a7ef41edcb8593c1"
+            },
+            {
+                "name": "hook_runner",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-hook-runner-rhel7@sha256:a3e5db699f42c48cf2562b5b7d2c5533b2937b16dd67eb6b609f38981e8756e3"
+            },
+            {
+                "name": "mig_log_reader",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-log-reader-rhel8@sha256:dc4a6f207dac35d54a6db8b6323a089fe6b308624c0b25949ad1b55d44f2e23f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-operator-bundle@sha256:30464ddc47f4f0120b09d2743c67bfa334e0492e425bdc56ebe8995dc445c641"
+            },
+            {
+                "name": "registry",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-registry-rhel8@sha256:e8fd84d0ca974c964087631aac03acc8c4e84a444abaf10769ab9657e0588916"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-rhel8-operator@sha256:c2a5ea3efd897f1cdca37dd578c13a03f5b24c1cf0e3e1ef77e214f97f4b1d83"
+            },
+            {
+                "name": "rsync_transfer",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-rsync-transfer-rhel8@sha256:c9ba39cbdfb7a67a7ded74246d30d2e0c1f1f80437a3d4a4b1a6cfc74b870deb"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-ui-rhel8@sha256:48a29f4046a8af5df006959b0cc40f67f38d0b403169c8ebe0ea3268d692c45c"
+            },
+            {
+                "name": "aws_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-aws-rhel8@sha256:a14ec66cafbaa4cd7d588f634b615a4e9da93b561d0e6e2094b2a80544cc2f1d"
+            },
+            {
+                "name": "gcp_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-gcp-rhel8@sha256:ba8a516c334a46407593f190d6fb511da07be5df2a21144b051a889820e85039"
+            },
+            {
+                "name": "azure_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-plugin-for-microsoft-azure-rhel8@sha256:791151809fbe5ed4fb6f49661e8310b2b3f8f88cf670635979b7924e66ba60b4"
+            },
+            {
+                "name": "velero_restic_restore_helper",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-restic-restore-helper-rhel8@sha256:257fcd3d3124a81eb82acb3e8c77c7e251653a8d4f3ebe705448be11bcda3a78"
+            },
+            {
+                "name": "velero",
+                "image": "registry.redhat.io/rhmtc/openshift-migration-velero-rhel8@sha256:886efcff955871c6c3171f0a360673c7be11ae902baf53b21721c286fe336798"
+            },
+            {
+                "name": "migration_plugin",
+                "image": "registry.redhat.io/rhmtc/openshift-velero-plugin-rhel8@sha256:77d6710bf456936e605c27f627109c7758ff3e9cff392a436bbae6623a6f02ab"
+            }
+        ]
+    }

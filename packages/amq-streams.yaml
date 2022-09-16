@@ -1,0 +1,3165 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: amq-streams
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "amq-streams",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "amq-streams-1.8.x",
+        "package": "amq-streams",
+        "entries": [
+            {
+                "name": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.0",
+                "replaces": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.1",
+                "replaces": "amqstreams.v1.8.0"
+            },
+            {
+                "name": "amqstreams.v1.8.2",
+                "replaces": "amqstreams.v1.8.1"
+            },
+            {
+                "name": "amqstreams.v1.8.3",
+                "replaces": "amqstreams.v1.8.2"
+            },
+            {
+                "name": "amqstreams.v1.8.4",
+                "replaces": "amqstreams.v1.8.3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "amq-streams-1.x",
+        "package": "amq-streams",
+        "entries": [
+            {
+                "name": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.0",
+                "replaces": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.1",
+                "replaces": "amqstreams.v1.8.0"
+            },
+            {
+                "name": "amqstreams.v1.8.2",
+                "replaces": "amqstreams.v1.8.1"
+            },
+            {
+                "name": "amqstreams.v1.8.3",
+                "replaces": "amqstreams.v1.8.2"
+            },
+            {
+                "name": "amqstreams.v1.8.4",
+                "replaces": "amqstreams.v1.8.3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "amq-streams-2.0.x",
+        "package": "amq-streams",
+        "entries": [
+            {
+                "name": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.0",
+                "replaces": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.1",
+                "replaces": "amqstreams.v1.8.0"
+            },
+            {
+                "name": "amqstreams.v1.8.2",
+                "replaces": "amqstreams.v1.8.1"
+            },
+            {
+                "name": "amqstreams.v1.8.3",
+                "replaces": "amqstreams.v1.8.2"
+            },
+            {
+                "name": "amqstreams.v1.8.4",
+                "replaces": "amqstreams.v1.8.3"
+            },
+            {
+                "name": "amqstreams.v2.0.0-0",
+                "replaces": "amqstreams.v1.8.4",
+                "skipRange": ">=1.8.0 <2.0.0-0"
+            },
+            {
+                "name": "amqstreams.v2.0.1-0",
+                "replaces": "amqstreams.v2.0.0-0",
+                "skipRange": ">=1.8.0 <2.0.1-0"
+            },
+            {
+                "name": "amqstreams.v2.0.1-1",
+                "replaces": "amqstreams.v2.0.1-0",
+                "skipRange": ">=1.8.0 <2.0.1-1"
+            },
+            {
+                "name": "amqstreams.v2.0.1-2",
+                "replaces": "amqstreams.v2.0.1-1",
+                "skipRange": ">=1.8.0 <2.0.1-2"
+            },
+            {
+                "name": "amqstreams.v2.0.1-3",
+                "replaces": "amqstreams.v2.0.1-2",
+                "skipRange": ">=1.8.0 <2.0.1-3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "amq-streams-2.1.x",
+        "package": "amq-streams",
+        "entries": [
+            {
+                "name": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.0",
+                "replaces": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.1",
+                "replaces": "amqstreams.v1.8.0"
+            },
+            {
+                "name": "amqstreams.v1.8.2",
+                "replaces": "amqstreams.v1.8.1"
+            },
+            {
+                "name": "amqstreams.v1.8.3",
+                "replaces": "amqstreams.v1.8.2"
+            },
+            {
+                "name": "amqstreams.v1.8.4",
+                "replaces": "amqstreams.v1.8.3"
+            },
+            {
+                "name": "amqstreams.v2.0.0-0",
+                "replaces": "amqstreams.v1.8.4",
+                "skipRange": ">=1.8.0 <2.0.0-0"
+            },
+            {
+                "name": "amqstreams.v2.0.1-0",
+                "replaces": "amqstreams.v2.0.0-0",
+                "skipRange": ">=1.8.0 <2.0.1-0"
+            },
+            {
+                "name": "amqstreams.v2.1.0-0",
+                "replaces": "amqstreams.v2.0.1-0",
+                "skipRange": ">=2.0.0-0 <2.1.0-0"
+            },
+            {
+                "name": "amqstreams.v2.1.0-1",
+                "replaces": "amqstreams.v2.1.0-0",
+                "skipRange": ">=2.0.0-0 <2.1.0-1"
+            },
+            {
+                "name": "amqstreams.v2.1.0-2",
+                "replaces": "amqstreams.v2.1.0-1",
+                "skipRange": ">=2.0.0-0 <2.1.0-2"
+            },
+            {
+                "name": "amqstreams.v2.1.0-3",
+                "replaces": "amqstreams.v2.1.0-2",
+                "skipRange": ">=2.0.0-0 <2.1.0-3"
+            },
+            {
+                "name": "amqstreams.v2.1.0-4",
+                "replaces": "amqstreams.v2.1.0-3",
+                "skipRange": ">=2.0.0-0 <2.1.0-4"
+            },
+            {
+                "name": "amqstreams.v2.1.0-5",
+                "replaces": "amqstreams.v2.1.0-4",
+                "skipRange": ">=2.0.0-0 <2.1.0-5"
+            },
+            {
+                "name": "amqstreams.v2.1.0-6",
+                "replaces": "amqstreams.v2.1.0-5",
+                "skipRange": ">=2.0.0-0 <2.1.0-6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "amq-streams-2.x",
+        "package": "amq-streams",
+        "entries": [
+            {
+                "name": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.0",
+                "replaces": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.1",
+                "replaces": "amqstreams.v1.8.0"
+            },
+            {
+                "name": "amqstreams.v1.8.2",
+                "replaces": "amqstreams.v1.8.1"
+            },
+            {
+                "name": "amqstreams.v1.8.3",
+                "replaces": "amqstreams.v1.8.2"
+            },
+            {
+                "name": "amqstreams.v1.8.4",
+                "replaces": "amqstreams.v1.8.3"
+            },
+            {
+                "name": "amqstreams.v2.0.0-0",
+                "replaces": "amqstreams.v1.8.4",
+                "skipRange": ">=1.8.0 <2.0.0-0"
+            },
+            {
+                "name": "amqstreams.v2.0.1-0",
+                "replaces": "amqstreams.v2.0.0-0",
+                "skipRange": ">=1.8.0 <2.0.1-0"
+            },
+            {
+                "name": "amqstreams.v2.1.0-0",
+                "replaces": "amqstreams.v2.0.1-0",
+                "skipRange": ">=2.0.0-0 <2.1.0-0"
+            },
+            {
+                "name": "amqstreams.v2.1.0-1",
+                "replaces": "amqstreams.v2.1.0-0",
+                "skipRange": ">=2.0.0-0 <2.1.0-1"
+            },
+            {
+                "name": "amqstreams.v2.1.0-2",
+                "replaces": "amqstreams.v2.1.0-1",
+                "skipRange": ">=2.0.0-0 <2.1.0-2"
+            },
+            {
+                "name": "amqstreams.v2.1.0-3",
+                "replaces": "amqstreams.v2.1.0-2",
+                "skipRange": ">=2.0.0-0 <2.1.0-3"
+            },
+            {
+                "name": "amqstreams.v2.1.0-4",
+                "replaces": "amqstreams.v2.1.0-3",
+                "skipRange": ">=2.0.0-0 <2.1.0-4"
+            },
+            {
+                "name": "amqstreams.v2.1.0-5",
+                "replaces": "amqstreams.v2.1.0-4",
+                "skipRange": ">=2.0.0-0 <2.1.0-5"
+            },
+            {
+                "name": "amqstreams.v2.1.0-6",
+                "replaces": "amqstreams.v2.1.0-5",
+                "skipRange": ">=2.0.0-0 <2.1.0-6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "amq-streams",
+        "entries": [
+            {
+                "name": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.0",
+                "replaces": "amqstreams.v1.7.3"
+            },
+            {
+                "name": "amqstreams.v1.8.1",
+                "replaces": "amqstreams.v1.8.0"
+            },
+            {
+                "name": "amqstreams.v1.8.2",
+                "replaces": "amqstreams.v1.8.1"
+            },
+            {
+                "name": "amqstreams.v1.8.3",
+                "replaces": "amqstreams.v1.8.2"
+            },
+            {
+                "name": "amqstreams.v1.8.4",
+                "replaces": "amqstreams.v1.8.3"
+            },
+            {
+                "name": "amqstreams.v2.0.0-0",
+                "replaces": "amqstreams.v1.8.4",
+                "skipRange": ">=1.8.0 <2.0.0-0"
+            },
+            {
+                "name": "amqstreams.v2.0.1-0",
+                "replaces": "amqstreams.v2.0.0-0",
+                "skipRange": ">=1.8.0 <2.0.1-0"
+            },
+            {
+                "name": "amqstreams.v2.1.0-0",
+                "replaces": "amqstreams.v2.0.1-0",
+                "skipRange": ">=2.0.0-0 <2.1.0-0"
+            },
+            {
+                "name": "amqstreams.v2.1.0-1",
+                "replaces": "amqstreams.v2.1.0-0",
+                "skipRange": ">=2.0.0-0 <2.1.0-1"
+            },
+            {
+                "name": "amqstreams.v2.1.0-2",
+                "replaces": "amqstreams.v2.1.0-1",
+                "skipRange": ">=2.0.0-0 <2.1.0-2"
+            },
+            {
+                "name": "amqstreams.v2.1.0-3",
+                "replaces": "amqstreams.v2.1.0-2",
+                "skipRange": ">=2.0.0-0 <2.1.0-3"
+            },
+            {
+                "name": "amqstreams.v2.1.0-4",
+                "replaces": "amqstreams.v2.1.0-3",
+                "skipRange": ">=2.0.0-0 <2.1.0-4"
+            },
+            {
+                "name": "amqstreams.v2.1.0-5",
+                "replaces": "amqstreams.v2.1.0-4",
+                "skipRange": ">=2.0.0-0 <2.1.0-5"
+            },
+            {
+                "name": "amqstreams.v2.1.0-6",
+                "replaces": "amqstreams.v2.1.0-5",
+                "skipRange": ">=2.0.0-0 <2.1.0-6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v1.7.3",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-rhel7-operator-metadata@sha256:e07c00d943b6951f66c2b629f1086fc4357746b09f647856d8802c4fcb4105fc",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnectS2I",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnectS2I",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnectS2I",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "1.7.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel7@sha256:d2ce796f9e7ad407bac31b9d56ec1822039c267ac5a8449f2463834442b7beb0"
+            },
+            {
+                "name": "strimzi-kafka-260",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-26-rhel7@sha256:69460396757c8ff976428e7c842c6ba722ed386ceaa89e78144f7af53ee2caac"
+            },
+            {
+                "name": "strimzi-kafka-270",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-27-rhel7@sha256:842f119f3610fa0458510715d0f03e099ee42399b8b066dde9345610c87c4d30"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel7-operator-metadata@sha256:e07c00d943b6951f66c2b629f1086fc4357746b09f647856d8802c4fcb4105fc"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel7-operator@sha256:e29051cd5972196f8a85fcc51f526e52569d3d78a57454330dcb7b2f7d88342d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v1.8.0",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:c25cce924c28e22c8c2edf9b71553f2399e091b9dd35dd596a54f26c24af2454",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnectS2I",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": "4.9"
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "1.8.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:5adf5de272559ba2a9dee238b514c1550eeff524843fa567ec7391fe8462f91c"
+            },
+            {
+                "name": "strimzi-kafka-270",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-27-rhel8@sha256:bfe4faf0ea7755a5c7e41c6eaa84c0249d84446337671050a3973214fb3e4383"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:ca4555a22e5aae302264c57003d6972357429083c55c4cf5d92f76b7f33ef46e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:c25cce924c28e22c8c2edf9b71553f2399e091b9dd35dd596a54f26c24af2454"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:d0fe815fbb60d3dba8a0fe61a64cbc7aaaa02493423f0853a295152b8fbc0e38"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v1.8.1",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:1c9faa3d8c5993401efc9986b3edb82ad3ce4f45228ff2f3c5246c758528822a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnectS2I",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": "4.9"
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "1.8.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:5adf5de272559ba2a9dee238b514c1550eeff524843fa567ec7391fe8462f91c"
+            },
+            {
+                "name": "strimzi-kafka-270",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-27-rhel8@sha256:bfe4faf0ea7755a5c7e41c6eaa84c0249d84446337671050a3973214fb3e4383"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:ca4555a22e5aae302264c57003d6972357429083c55c4cf5d92f76b7f33ef46e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:1c9faa3d8c5993401efc9986b3edb82ad3ce4f45228ff2f3c5246c758528822a"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:d0fe815fbb60d3dba8a0fe61a64cbc7aaaa02493423f0853a295152b8fbc0e38"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v1.8.2",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:918f252499bd7124daa86e4613ca7a67bb18a4b0afc9db954813106a14defac6",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnectS2I",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": "4.9"
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "1.8.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:2153521b999d8fa8c16ea4e9b4983fca1a178dbe16d6f3c5a31cffe03e037159"
+            },
+            {
+                "name": "strimzi-kafka-270",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-27-rhel8@sha256:c1c929ee508e9ebbb5498ecf861e9f9ecf26fe1e70814d5c70f0fd33b83e819e"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:32fbd2ee6afeb580a41d13b3ac0a8f3877e69ed59b851dd129b9e99626313262"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:918f252499bd7124daa86e4613ca7a67bb18a4b0afc9db954813106a14defac6"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:1ec8f94ae67f879777f0f574bbf56513fd5cbb9f9eda459b989785e65e86eac2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v1.8.3",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:60626a7499901acf7957aa2d7ec25d87c3e5d70f58d48534f0c5c8aacb1357d4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnectS2I",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": "4.9"
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "1.8.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:c6478cda6b6fcf0e6ca487299f7f13ac2b939e5c7b2bc5e37ca88bda604202d1"
+            },
+            {
+                "name": "strimzi-kafka-270",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-27-rhel8@sha256:21ef8ea8fc0d3bf8c123b9b200a816b1ee10f52c7fabbf4cffbd3a6183086bbc"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:e1f8507eb4a6c6361117458a8461e07615189ffae1e09d150c1a6720b398be11"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:60626a7499901acf7957aa2d7ec25d87c3e5d70f58d48534f0c5c8aacb1357d4"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:e675fec0be8f6671f268ad9bcfebf4b5e0d1eaaf83d624ec9aa608ad25511298"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v1.8.4",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:ea3342beb9260e19a72df1e683a6dd87e6cd5e888f396d269e62d9c4ef2c814d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnectS2I",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": "4.9"
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "1.8.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:453bfda914d9d84d59a157bc19aec3cd9368a0921ccd510f2e064248726240ca"
+            },
+            {
+                "name": "strimzi-kafka-270",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-27-rhel8@sha256:dc9399239b3f06b6c2a020af25cf6be60d3931cb5ff3cb79b9f2e40075d2ad18"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:9ff876a14837681a28fb5c4b92b3b63f0f07506cbb32421c6bcc18b7d27e453e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:ea3342beb9260e19a72df1e683a6dd87e6cd5e888f396d269e62d9c4ef2c814d"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:fc53553d3c4e127851a5679bb7838209d74e21d2cdf5ca4fe56ca5eea953592c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.0.0-0",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:92f66ae73b65940f6433d2f5bc2d664e003e6128f1c018c98b6c47030d19c1c2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.0.0-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:d906213cc8331dd39c32cbb89642473bae5c9a61d3c3703f3353f8918d3a21e9"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:8b1bfb0862b379555cab1762014891fbf741c1e284b34c94c7a3d08e2dad799e"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:a127eb0c0b8dd417bf113fe0bee418d4805d7a4fc8ca1fe2b997f0ad0252d8e0"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:92f66ae73b65940f6433d2f5bc2d664e003e6128f1c018c98b6c47030d19c1c2"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:567bd2c0157d3f19c217375a64df091719574e8ed6ba1cfd1655c8a93e763932"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.0.1-0",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:01ce4d3f09f11c4e3eb5e1c34dc446a6072b599e2010486e05d4043423cf395f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.0.1-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:066aad2b571efd2dbce365215bfcbe7ef9427c9417e107998675a7f5c14236ba"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:88e88a2f98249ee36410271365c4dd793906df03fdbdb996052d8139875a2439"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:b540f4bed36eb46d6ccec7827fd99e12eeaae5d3ebc031bdace0d647c130ceb5"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:01ce4d3f09f11c4e3eb5e1c34dc446a6072b599e2010486e05d4043423cf395f"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:965b29f3c27b125ad12e5ea9f8f6deb8ae9ed8e12746ec9396d6acbbdd89a09b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.0.1-1",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:aa95d36c086c9c0c4d4fc799971b6dd2f6c2e01be151aaa9177015221e864d72",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.0.1-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:d11b0b600010dc1b70d28550712fecfc3608773b78f0caf321132751affb62e4"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:284c2330399ae2150e26a4def207c88140a9ae07466f91ecdac004139ee2eabd"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:5bcbe5187b255d557898acb9b9f2933e3d778f60d5d871f3f157a6f8de4184bf"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:aa95d36c086c9c0c4d4fc799971b6dd2f6c2e01be151aaa9177015221e864d72"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:da1026312c71613723745dcee0845460f5a84986bcd459537d8a7ca95af471da"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.0.1-2",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:16feb66699e32ff21482e9f4c8ae6e7d16f8205bc3d7981857153c483735211f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.0.1-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:a85c55864e12c3edae6c687b78754e361035ddebe3dbb9b28a52b118e4be65c3"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:d76ee5681b07bc5547272677853375e6b400e77f9587d0f86207824f817d8a8b"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:0f0c71e86f7c5599f04e403958b9d98c451cf19d5c42a28f53e8596084c6ef07"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:16feb66699e32ff21482e9f4c8ae6e7d16f8205bc3d7981857153c483735211f"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:348434a3fc57fdc1944e9b20323a43be60cf8df417f91f65abe5c11b490539d4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.0.1-3",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:7ae140fff243f2bf4b80be2b9eb7f50b3ac823c24f4881d871f02b6296446b15",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.0.1-3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:80a4b7d3d4a69e3f3134466a386f2a5709efdaf10aa5df95dc408dfdf5d97453"
+            },
+            {
+                "name": "strimzi-kafka-280",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-28-rhel8@sha256:30c66ebd838a43d3c56ae3844b8493a61a9274ecad490b809ed2c08991f90c54"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:826bcf7c89ef1b2013430c52c745d8059a02c7661995a80c13f65d61bd572901"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:7ae140fff243f2bf4b80be2b9eb7f50b3ac823c24f4881d871f02b6296446b15"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:55adfe9952d347285b0fc8ebc84fd420e5224fc64211fdf96e7ec4fcf0d3aba3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.1.0-0",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:e675c64ba07aeeb53fed4dce9c916a1023f2946d91081a8e6232ba69b8171aca",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "core.strimzi.io",
+                    "kind": "StrimziPodSet",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.1.0-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:f4fbd9e9cc4dcd05a0d201af38a587cbc8ca6519ef6bc2b0bb8866cd9e13b328"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:d09131eaadfd36d1e7a59f00721cd83fdf760a949b7f64acbbcad47ed4adfa8f"
+            },
+            {
+                "name": "strimzi-kafka-310",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-31-rhel8@sha256:73baff94235238c763d0c62b174ae5baa4657cbfdfc62fdacded279223f6c09e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:e675c64ba07aeeb53fed4dce9c916a1023f2946d91081a8e6232ba69b8171aca"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:c31978ec31036b458570ed598de58bcd12b205693e5e726dab97c697ece725fe"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.1.0-1",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:e287eb9470632cdb4c692b9a9180e4a2a22be261cab95458e773df30398f4018",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "core.strimzi.io",
+                    "kind": "StrimziPodSet",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.1.0-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:5db489fd03afc91f3d6443e3b0e889810cbe06c5e7d98a1d791af0421eb525cb"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:3eac619549b3b817817ecd66cee43f24806ac367fd352816adfd654f885fecf3"
+            },
+            {
+                "name": "strimzi-kafka-310",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-31-rhel8@sha256:659c89ac56da3736e8c1a4daf4a1eeac89779f5b8e81b4b123c20871ab0c7880"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:e287eb9470632cdb4c692b9a9180e4a2a22be261cab95458e773df30398f4018"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:58505ebd8918dde3f1fdd3f76a2e74d8f6842abcb8105c862573e8e675aa13ce"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.1.0-2",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:9ee1dc3e986c6c1c7f43b521bbd35a5e0fbedf864cad200db80e7b2930cb15b6",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "core.strimzi.io",
+                    "kind": "StrimziPodSet",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.1.0-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:5770c7858143f565cb2e31008a1261d2986f06f19860164df0af7c97ebd0a58c"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:ba94ff98deb787eb3bda356312b9f58636263660054b852a97da2b3a54d0a31b"
+            },
+            {
+                "name": "strimzi-kafka-310",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-31-rhel8@sha256:8412bb925ebd8cfc50c50f1ede8140ac9ded02cc919ffb6b665f5376175a337b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:9ee1dc3e986c6c1c7f43b521bbd35a5e0fbedf864cad200db80e7b2930cb15b6"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:869ba4b4d9ab867bf70e9fe2f44e9df61889a7ceb77c5c94cdbcc4e8a6566496"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.1.0-3",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:7d6c060c0f5d0ef25a6d8949f344364b931611280cb38b357e9b6e67e13850dc",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "core.strimzi.io",
+                    "kind": "StrimziPodSet",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.1.0-3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:b707c5796529f1672309e498a55974fd70293fba739a7abd1275812a96fd18a4"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:3e32cd8e149eec3b73f16e349700b4d8d612a204dbbcb6480f398ee268740f60"
+            },
+            {
+                "name": "strimzi-kafka-310",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-31-rhel8@sha256:3e5a0ceb0e2b66343e446b2e4bb7931595823993dda7713e2ddb348641927aa3"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:7d6c060c0f5d0ef25a6d8949f344364b931611280cb38b357e9b6e67e13850dc"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:946340db64ea2f8ae48aabb33159721a6531059332b7086b2177a9a51c3154d7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.1.0-4",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:4c44c587be953a2cf52848e4075e7cd6f8ed6fa58557a8f563f74b6d2ed30465",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "core.strimzi.io",
+                    "kind": "StrimziPodSet",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.1.0-4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:4ec17a333f8c2032a92ac8d2182e0b1b0eba0e4e2be975e58096507b8ba305c6"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:163aff675cc53d33beb3c93f40b642106424a3eeef37256ed6c47de58c780a17"
+            },
+            {
+                "name": "strimzi-kafka-310",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-31-rhel8@sha256:11b16b5545e67016d373b0e6e5065d52abe8f686bdbc41a26cb36761f5f2e428"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:4c44c587be953a2cf52848e4075e7cd6f8ed6fa58557a8f563f74b6d2ed30465"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:71c0245438c9b0ec6aa9c942f26f9abafcc95737c631c73fe2be33b300eb5db2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.1.0-5",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:f96b7d037bcfb6da0c1ee9f593a2984a03c955eb0922913212d6c613a48ada94",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "core.strimzi.io",
+                    "kind": "StrimziPodSet",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.1.0-5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:de20bc533a8ba0f0fa720d5189346bc87330cce34ba103c8fec475acbd4efd7f"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:96ae80659103ed6f40fe676b647d1e9ddd1ed4f1ef98b15fea24b5784c34faa3"
+            },
+            {
+                "name": "strimzi-kafka-310",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-31-rhel8@sha256:030511435bfda574d28be829f4f4cfea201d30541c145dce1b8ff412b5c6fc1d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:f96b7d037bcfb6da0c1ee9f593a2984a03c955eb0922913212d6c613a48ada94"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:c1a98649ba33febede789ac26d541632ff979cc8817bdd9f6188ffa755e6c7ec"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "amqstreams.v2.1.0-6",
+        "package": "amq-streams",
+        "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:b30d1f9ea628b096d11abc5cb1e1657d5a876d334c56a685b01cbb94aa1e19e7",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "core.strimzi.io",
+                    "kind": "StrimziPodSet",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "Kafka",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaBridge",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnect",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaConnector",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaMirrorMaker2",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaRebalance",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaTopic",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "kafka.strimzi.io",
+                    "kind": "KafkaUser",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "amq-streams",
+                    "version": "2.1.0-6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "strimzi-maven-builder",
+                "image": "registry.access.redhat.com/ubi8/openjdk-11@sha256:f7f9aa6620e7d179fceea7de8831f799586cbd59bd5e13544bd5344d20170d79"
+            },
+            {
+                "name": "strimzi-bridge",
+                "image": "registry.redhat.io/amq7/amq-streams-bridge-rhel8@sha256:fa44fbf6405daae628c370ed180b5fe27ae26b42b75e212e2c777630328574be"
+            },
+            {
+                "name": "strimzi-kafka-300",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-30-rhel8@sha256:f64e81252d92d8e1eecfb40fa64509f8e439424553199a67d4acf49224d60caf"
+            },
+            {
+                "name": "strimzi-kafka-310",
+                "image": "registry.redhat.io/amq7/amq-streams-kafka-31-rhel8@sha256:c113eefe89a40c96e190a24bcdf1b0823865e3c80ffb883bc8ed4b7bb2661df6"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/amq7/amq-streams-operator-bundle@sha256:b30d1f9ea628b096d11abc5cb1e1657d5a876d334c56a685b01cbb94aa1e19e7"
+            },
+            {
+                "name": "strimzi-cluster-operator",
+                "image": "registry.redhat.io/amq7/amq-streams-rhel8-operator@sha256:0b916581138c729931575e5f344aabb1d9082aec70d7f79295dcac1fb71ebbcc"
+            }
+        ]
+    }

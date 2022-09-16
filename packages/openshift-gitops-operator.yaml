@@ -1,0 +1,2070 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: openshift-gitops-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "openshift-gitops-operator",
+        "defaultChannel": "latest"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "gitops-1.3",
+        "package": "openshift-gitops-operator",
+        "entries": [
+            {
+                "name": "openshift-gitops-operator.v1.3.0"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.3.1",
+                "replaces": "openshift-gitops-operator.v1.3.0"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.3.11",
+                "replaces": "openshift-gitops-operator.v1.3.9"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.3.13",
+                "replaces": "openshift-gitops-operator.v1.3.11"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.3.2"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.3.4"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.3.6",
+                "replaces": "openshift-gitops-operator.v1.3.1",
+                "skips": [
+                    "openshift-gitops-operator.v1.3.4",
+                    "openshift-gitops-operator.v1.3.2"
+                ]
+            },
+            {
+                "name": "openshift-gitops-operator.v1.3.7",
+                "replaces": "openshift-gitops-operator.v1.3.6",
+                "skipRange": ">=1.0.0 <1.3.7"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.3.9",
+                "replaces": "openshift-gitops-operator.v1.3.7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "gitops-1.4",
+        "package": "openshift-gitops-operator",
+        "entries": [
+            {
+                "name": "openshift-gitops-operator.v1.4.10",
+                "replaces": "openshift-gitops-operator.v1.4.9"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.4.11",
+                "replaces": "openshift-gitops-operator.v1.4.10"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.4.8",
+                "skipRange": ">=1.0.0 <1.4.8"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.4.9",
+                "replaces": "openshift-gitops-operator.v1.4.8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "gitops-1.5",
+        "package": "openshift-gitops-operator",
+        "entries": [
+            {
+                "name": "openshift-gitops-operator.v1.5.2",
+                "skipRange": ">=1.0.0 <1.5.2"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.3",
+                "replaces": "openshift-gitops-operator.v1.5.2"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.4",
+                "replaces": "openshift-gitops-operator.v1.5.3"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.5",
+                "replaces": "openshift-gitops-operator.v1.5.4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "gitops-1.6",
+        "package": "openshift-gitops-operator",
+        "entries": [
+            {
+                "name": "openshift-gitops-operator.v1.5.2",
+                "skipRange": ">=1.0.0 <1.5.2"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.3",
+                "replaces": "openshift-gitops-operator.v1.5.2"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.4",
+                "replaces": "openshift-gitops-operator.v1.5.3"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.6.0",
+                "replaces": "openshift-gitops-operator.v1.5.4",
+                "skipRange": ">=1.0.0 <1.6.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "latest",
+        "package": "openshift-gitops-operator",
+        "entries": [
+            {
+                "name": "openshift-gitops-operator.v1.5.2",
+                "skipRange": ">=1.0.0 <1.5.2"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.3",
+                "replaces": "openshift-gitops-operator.v1.5.2"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.4",
+                "replaces": "openshift-gitops-operator.v1.5.3"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.6.0",
+                "replaces": "openshift-gitops-operator.v1.5.4",
+                "skipRange": ">=1.0.0 <1.6.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "preview",
+        "package": "openshift-gitops-operator",
+        "entries": [
+            {
+                "name": "openshift-gitops-operator.v1.4.8",
+                "skipRange": ">=1.0.0 <1.4.8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "openshift-gitops-operator",
+        "entries": [
+            {
+                "name": "openshift-gitops-operator.v1.5.2",
+                "skipRange": ">=1.0.0 <1.5.2"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.3",
+                "replaces": "openshift-gitops-operator.v1.5.2"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.4",
+                "replaces": "openshift-gitops-operator.v1.5.3"
+            },
+            {
+                "name": "openshift-gitops-operator.v1.5.5",
+                "replaces": "openshift-gitops-operator.v1.5.4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.3.0",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:2366162e7405209f8a816119cf05c4b8b9815706555696fad562997d5fd33725",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.3.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:36984033c70240cb7d817dc4a8db24a7dd45611814eed41d6433e389523cb753"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:6a90ca3d902d63617b14f25fd08720be7d89ad6af8e105a4b190673bfafc7bd4"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:4198486aff0a0f2e724e2307ea84e867e29c8547e53a302140bbe65d67537cea"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:2366162e7405209f8a816119cf05c4b8b9815706555696fad562997d5fd33725"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:4435f0d0085f0ea6a5e45246d740da4efc7a231d2c8b814cc0034bc02d6d9814"
+            },
+            {
+                "name": "gitops-rhel8-operator-4435f0d0085f0ea6a5e45246d740da4efc7a231d2c8b814cc0034bc02d6d9814-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:4435f0d0085f0ea6a5e45246d740da4efc7a231d2c8b814cc0034bc02d6d9814"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:f54a000878cf5c7dd79a76b4966b61c629540ebc4c5cd740d6c6e28b62264957"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:aaacd275f03aaf9eb4d07b554852bc7a7c35889b2d7799e14b5f7c0b4c06513d"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.3.1",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:0cdebf3ba98925458191cea3a94f5bb4cb6c9331cea2593107cc420116430f91",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.3.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:945dd585634af5b3762dda5fae6f04f3f5decec423f78d4fa620773faed48f37"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:6087f905ccb8192fd640109694ba836ae87d107234a157b98723f175ce14c97d"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:1ebeac64a8a4316ff4a8c5d540c2cfc07357c401fd13b8d917ff9c1fdc4e580a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:0cdebf3ba98925458191cea3a94f5bb4cb6c9331cea2593107cc420116430f91"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:80c3004fcdf3769eb7bf0c4d06a032d4572a454bdc9eeb409286a4802ff0d326"
+            },
+            {
+                "name": "gitops-rhel8-operator-80c3004fcdf3769eb7bf0c4d06a032d4572a454bdc9eeb409286a4802ff0d326-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:80c3004fcdf3769eb7bf0c4d06a032d4572a454bdc9eeb409286a4802ff0d326"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:6b086b40440892a1371cefcf2010f8d61c1adff3aa6381749fd2451ee167be59"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:9caed248269f78f62ae21300d6b243b75e4176f26c0d6e8666277db3444558e8"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.3.11",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:93a1cbe44b5009f700e85e2f5a88de0fc3d4f7a3fe30240456899ea5e097ac5b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.3.11"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:09205347de0a01bdd7c3e70c86e7a0cf60572a5723d47b9772e518dcd202632c"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:3f28c4a4d35354d9ebf91327149bd15a7a6402d959803c4b5b0e53dbc18f5874"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:cd0275c6ad8575e9f1262d5aa5a1cf6a0f199bc7869d6463d19b887027f1ffea"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:93a1cbe44b5009f700e85e2f5a88de0fc3d4f7a3fe30240456899ea5e097ac5b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:565a84305a6408de51363085efa8499f2402d5a8324fb1fec009f5d230d25466"
+            },
+            {
+                "name": "gitops-rhel8-operator-565a84305a6408de51363085efa8499f2402d5a8324fb1fec009f5d230d25466-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:565a84305a6408de51363085efa8499f2402d5a8324fb1fec009f5d230d25466"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:02eac8b3e96deabebeca842ce9057b1c899a3366ac1e12d9624663b6257b4784"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:b696fa0fed3fe2204769ccae59a7b36d6044b102d382f51f312ddd317c136d15"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.3.13",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:d59bacd666db02bd85a265f71188aca9327b53d58090a4d1490e02cd657c5e52",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.3.13"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:ea758da9c687165d1072d5997e7a9d77a23fd326fa7e185811dba624a28e3d85"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:97cd86e97450116ddb912835f9ecbe20d409ceba092367a19b0fc7534af1791f"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:f05f3b00025dbf4779a22546ce2eb2a39e5e50241169bcef1f3be9a9da278535"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:d59bacd666db02bd85a265f71188aca9327b53d58090a4d1490e02cd657c5e52"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:95507997601dbb5d879edfe78075392b03c64e6ff1d82b1b252326b0d6d8c94a"
+            },
+            {
+                "name": "gitops-rhel8-operator-95507997601dbb5d879edfe78075392b03c64e6ff1d82b1b252326b0d6d8c94a-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:95507997601dbb5d879edfe78075392b03c64e6ff1d82b1b252326b0d6d8c94a"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:475420c833ed59dade39632b57d3604b0b543752bcbef0b6f81b1a853c1067d3"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:93f6721e53076225cb5c16b1e2005c500b68daadf3b4e80cddf20e43512b2def"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.3.2",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:4e441ee14fa8ddd9a110f5490af0fbea9b58ab4fbdc0f207413eb5d766179285",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.3.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:a52bf8eee096555c8ffe33f8c86fd4db5095180c96a6b3b9e95438fd2e842f31"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:876358be7dd8d6858a40f23b314d408685b6e92dfad4d6183b592e8f2612d630"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:503312ec073e41ea95f2173582ad41a2eed7ec332dc4611d435f2367c7a102f1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:4e441ee14fa8ddd9a110f5490af0fbea9b58ab4fbdc0f207413eb5d766179285"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:67cd9f0b3c969fda1a62a732be1f7ca356c32c4d4913eefe689674408cabbb8c"
+            },
+            {
+                "name": "gitops-rhel8-operator-67cd9f0b3c969fda1a62a732be1f7ca356c32c4d4913eefe689674408cabbb8c-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:67cd9f0b3c969fda1a62a732be1f7ca356c32c4d4913eefe689674408cabbb8c"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:8e9335fd118cfc1e75bdb41a74bf8569d068897e5d71ce2301b55207936a9941"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:0b32d1a92445901589c8bbd7863ca3c11b425167a8c20c0bb2a3e65f9ab4e477"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.3.4",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:1d18cfdb839ff44dff1e2fdc9da4008c91ce25758328f200b9e282bfd8c7c08e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.3.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:9fb417ed268ab8fa64575f0c881c61f06dc02333e36c1de69d2ed6aa912b719c"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:2a9cb491e1a84f3e8b4a93d08ae7c3eaff276ea05fed1141f8f159d311d5f56b"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:ef73b436d846b48bf7637d963087a45836e5097fa373f3bc4b882a4db28d3ec1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:1d18cfdb839ff44dff1e2fdc9da4008c91ce25758328f200b9e282bfd8c7c08e"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:73e6a8dad2c99bad403309449c554681261fb0939c7b348a0181cc12d08ba952"
+            },
+            {
+                "name": "gitops-rhel8-operator-73e6a8dad2c99bad403309449c554681261fb0939c7b348a0181cc12d08ba952-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:73e6a8dad2c99bad403309449c554681261fb0939c7b348a0181cc12d08ba952"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:f29527660b789eac4d1e877dedd3582e8e2b65c81ac3c37830557e434554e3b8"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:a06be2cb215f19f2e149c4a8f280f8b58e9af2dc59db53a350ad69819497c980"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.3.6",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:298334efb11a7ae3bbefa376070e13c8a295fbb302eb9ccdcebfc67739257c26",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.3.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:c7266324ddf398cabde998aa8eb09b7ab498f1f4b997b1023e8e68d0c01f1916"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:091bb47f112c2b71ae82c539ef79c596029293d6a83a597e729d55819b0ec6fc"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:40d1f961cc33936ad879e6314b51a1e9906b756c08d1321c3e53008af2e0a514"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:298334efb11a7ae3bbefa376070e13c8a295fbb302eb9ccdcebfc67739257c26"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:019e9a0ee07ce510330970c592a262198a91b6da57e16894c7bdc7f72629854b"
+            },
+            {
+                "name": "gitops-rhel8-operator-019e9a0ee07ce510330970c592a262198a91b6da57e16894c7bdc7f72629854b-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:019e9a0ee07ce510330970c592a262198a91b6da57e16894c7bdc7f72629854b"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:dd96f952ecc1287d5ab0d20b33f160550b9368a40d468fe2b8a31222de963112"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:87ee39c8d24206828352d1bc6625c0354fe80be50476008cc4b1a317a846538d"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.3.7",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:715bf8744ad01e1eb0edae405b746a318ff3e33ec76d3117d1cb2105cf2f5c63",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.3.7"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:c7430747553ba35fe2d9204d2d5a73076cf77c0765ac64aec7074d1c4a8d1b66"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:44e95e15eab26a21c2361d70c024ea82646f60687c75f09eaf479c6ca565d8e9"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:88e98f8f0c2bfa832279a995eebaeeaa4fdc37a7f6f1cd2af70440df980618e9"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:715bf8744ad01e1eb0edae405b746a318ff3e33ec76d3117d1cb2105cf2f5c63"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:f15894f54c9430de0eb353f2c5b7289b137bf05b92cafccaf080c5061b5ea396"
+            },
+            {
+                "name": "gitops-rhel8-operator-f15894f54c9430de0eb353f2c5b7289b137bf05b92cafccaf080c5061b5ea396-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:f15894f54c9430de0eb353f2c5b7289b137bf05b92cafccaf080c5061b5ea396"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:d303f94d6913243bbaa9b98758e35767dbfd5efa20943af5270cae2e81baeeac"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:e81591575a1f6a3110eadcabfe827efe8ef15bf344fb4a0504c4762624709314"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.3.9",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:cf03b9810510a741c56c55f085832de2f8dd324cb21fb27f5085dbbc2e350f4c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.3.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:fe7bf6b9c3c45964d408550d9e951245cd12151fe2dbee206acf920752159e69"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:161e19f197af13d53f257e9e47b428f746b2ffbcdb41fb3524a0c8d618c7f61d"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:9e69d8395c82adec8ef60fb78a6d2bc5ec09da57d4d9a19f4548e914f41cfac2"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:cf03b9810510a741c56c55f085832de2f8dd324cb21fb27f5085dbbc2e350f4c"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:c7c0b01344db31bcb4fa73a502c610d7b7ab39cc2c40bfc38251393dd2c679fe"
+            },
+            {
+                "name": "gitops-rhel8-operator-c7c0b01344db31bcb4fa73a502c610d7b7ab39cc2c40bfc38251393dd2c679fe-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:c7c0b01344db31bcb4fa73a502c610d7b7ab39cc2c40bfc38251393dd2c679fe"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:8a48d6191ed13b46253f5bf5728eec0d51e9bab6bfc0d5d69c52bf966df862c1"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:943a0e3dd90d08f5f1c1c014e37e4257df0f82d41249253c9d324500e3af7242"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.4.10",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:97e5a457e3c1f7d6f815e215fe044fed33c24325d7244f37b6eb93fda941fc6c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.4.10"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:3be297272fc8d486286b85f8e9e183b7e419c2e01cb1fad0c84f06404c03f491"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:08ed375fe9c8b02ad64232e8059d8cb0c0f4be6b83027b84aae4355375d6efda"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:169d3208ba2ca01440ea0425285bc05938cad15c532fb3c03d03776973445585"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:97e5a457e3c1f7d6f815e215fe044fed33c24325d7244f37b6eb93fda941fc6c"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:8e47b87419f5b6499b4ae696614faf06d109f052aadcb59e3582aeeb6609567e"
+            },
+            {
+                "name": "gitops-rhel8-operator-8e47b87419f5b6499b4ae696614faf06d109f052aadcb59e3582aeeb6609567e-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:8e47b87419f5b6499b4ae696614faf06d109f052aadcb59e3582aeeb6609567e"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:a3b9f4f7ad742ae6d7520e6cb1fe438344aa097b9da7bd9458a2445a0cc65558"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:0605ca30da08b8338ce22fe556f023f743918e283fea15e2cd1c18db75d8d4b2"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.4.11",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:5e49743ef53f233b1012ac3523b79b9067b98ddf12fa34d7e75ccac19b0ce01b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.4.11"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:c25862813d07b6810f4ef834946b55a32cb495d1880c0184f30c980b993cbabb"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:d6889b997cca132f16c5750082b351f5f02816643b953bc736e38aa38c4b2eca"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:14643c63174200339832628bf625279dd2841c70c347160148d17b5def3110d6"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:5e49743ef53f233b1012ac3523b79b9067b98ddf12fa34d7e75ccac19b0ce01b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:950d02ebae4ac98ade80035c0380c5a91fb24f052cc34dd04d8151141fec2526"
+            },
+            {
+                "name": "gitops-rhel8-operator-950d02ebae4ac98ade80035c0380c5a91fb24f052cc34dd04d8151141fec2526-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:950d02ebae4ac98ade80035c0380c5a91fb24f052cc34dd04d8151141fec2526"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:cd11610267fd316c5bc2967869de0ec78654d66b53a808db2916e23893310d87"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:ede612c1df6463035443d508de09262db569928964650c1b0264dc430cf38217"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.4.8",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:41f3e23c3fb5ba5e66950b0736d2332e1fdd3612b3ecc10cd301e78316bdcd80",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.4.8"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:aec29900aec848b05998f4a2df8ac777199775ba4b4f9e4d0586384cc39879de"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:6773d2d55c131ea9b9a7b4ebe10e774262870c9287f231bfa811f0db34a76473"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:4cfe39f10fcee0134e427d5bac195665413c2fc8542636466e7b79e5daf6222e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:41f3e23c3fb5ba5e66950b0736d2332e1fdd3612b3ecc10cd301e78316bdcd80"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:17330322d351a91b314b326a54ad464225a5336cb386b0b52868f9255bb3da2b"
+            },
+            {
+                "name": "gitops-rhel8-operator-17330322d351a91b314b326a54ad464225a5336cb386b0b52868f9255bb3da2b-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:17330322d351a91b314b326a54ad464225a5336cb386b0b52868f9255bb3da2b"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:cda2d41998440370a8e6a8c83712aa7415edd72e134f959f94d92c0fcd164527"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:afc8f0d65d42d6b57e062fd578655c8ede0629f54f941dc4a1152dd482fd743b"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.4.9",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:d20149f6061e14edf0214ef2da7018eeb8c90b53d04ce3951429391391e59556",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.4.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:956ae96faa4f4ce146c725eb76d1a8fa7f996d6b594cee7803e23bff573ee2bb"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:cd0f062db746577b1d48fb056f491546a4eace62c691e8e5fb8887c83b3f48f0"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:4fd854c38ef65bcba7381a79ea104c2693455e686602c6c411bb9a14f817dc8c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:d20149f6061e14edf0214ef2da7018eeb8c90b53d04ce3951429391391e59556"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:270e3930874792638948f216577edd841af55e5293e7453cd5ce8f01b6502c91"
+            },
+            {
+                "name": "gitops-rhel8-operator-270e3930874792638948f216577edd841af55e5293e7453cd5ce8f01b6502c91-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:270e3930874792638948f216577edd841af55e5293e7453cd5ce8f01b6502c91"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:85cb5b94947221cc74c26f6ba644a89d371c47cd4efadac1f33d3a419dbb4fcf"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:e676af24eaf61359738b139a9c835fad1c60acc3172e53f180896d582120e20d"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso74-openshift-rhel8@sha256:39d752173fc97c29373cd44477b48bcb078531def0a897ee81a60e8d1d0212cc"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.5.2",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:e391887f298db38faeb11b5d12c58611aa381ff14d4eff88b605d64f6c3590ed",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.5.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:c473e1a9dffa98df2325d2053a302f9281c52c39b244cad581d6b454da430234"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:2e5605a97cbd94c43b754b44b231b055b0d2651b46828a40b857bc2336f1fb8b"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:04bf08acb07a21ff4e7b5dcac556a1d563400f07c9cd8183916425ce23802ac1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:e391887f298db38faeb11b5d12c58611aa381ff14d4eff88b605d64f6c3590ed"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:bda056e712af71fb56b055230e13c78130fb6841df0b1c9a578466db1e88fd95"
+            },
+            {
+                "name": "gitops-rhel8-operator-bda056e712af71fb56b055230e13c78130fb6841df0b1c9a578466db1e88fd95-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:bda056e712af71fb56b055230e13c78130fb6841df0b1c9a578466db1e88fd95"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:8594156a4654a3dc7df7f2f2290cf63d5bd3298867ca8887b203e41cb6dadbc8"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:6d88505dfd19579c81f36cfb6a2b9f37324589e95b3bb6981368f811d3be1562"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:720a7e4c4926c41c1219a90daaea3b971a3d0da5a152a96fed4fb544d80f52e3"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.5.3",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:2e0f97c28dcfadc2c754a2297939c29742ad0e61ecda56f315c5d85d6283ac51",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.5.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:cdd37324c6ec2fdd451daf119fda385d1cca3427043539e1b8a8422bac9b619e"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:ba46db5be3a47c766e50b21aa78763c094d7d787bff4ba6e5e8e95e754eff6ea"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:208efe235a177700c3cfa88ec6b231cc4b97ac6006be7e9d9eac9f79604cc3f0"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:2e0f97c28dcfadc2c754a2297939c29742ad0e61ecda56f315c5d85d6283ac51"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:1f62bca8718c3abc7fb46513fc9c6011ac1f2f453fa133f9c7676eabed8e53b0"
+            },
+            {
+                "name": "gitops-rhel8-operator-1f62bca8718c3abc7fb46513fc9c6011ac1f2f453fa133f9c7676eabed8e53b0-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:1f62bca8718c3abc7fb46513fc9c6011ac1f2f453fa133f9c7676eabed8e53b0"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:c3727b91e729b79b465cb99ed05730faf5b9dcc562d4c62549dfb1e0d03531f0"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:3c90880b4d8c85834d4c90e9ee972c47d3b5efd5a013ae0741a24d9502aa6f5e"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:720a7e4c4926c41c1219a90daaea3b971a3d0da5a152a96fed4fb544d80f52e3"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:bbe1ee2913d69649f7630222681245b9ad94b74940974d58a64d8fe0a05d8b13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.5.4",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:5222e68ce95bbdf8b1b7a4cf8f7f1793d7a7ad0a5393a01a56fb66085cdbb1e3",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.5.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:df5b34cb458b27a0f9da6d0eddb6d8039f59c87cdabc24109df89d5c3d61ce0d"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:6b89c342ccec84f4bf2351ae97a12763bedc2408821bc49b6edd80f7a4f856c0"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:20cb34d1ba5b7cfb868546e55844cddcca19c7756426529d9102d7852f8d127b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:5222e68ce95bbdf8b1b7a4cf8f7f1793d7a7ad0a5393a01a56fb66085cdbb1e3"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:4d857e524b0dc386657e579de7cf52da627b0092038bf36e40063fbe42130732"
+            },
+            {
+                "name": "gitops-rhel8-operator-4d857e524b0dc386657e579de7cf52da627b0092038bf36e40063fbe42130732-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:4d857e524b0dc386657e579de7cf52da627b0092038bf36e40063fbe42130732"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:9a0add35076f15c8aa8928bb23f2c093413807618ae3d6fb5f00e8c72901ef75"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:c013012156129820109af6a12ab99f406c962fdad452d0f9e56e3ceed7c9c3ab"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:720a7e4c4926c41c1219a90daaea3b971a3d0da5a152a96fed4fb544d80f52e3"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.5.5",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:644473454b7c406aa0294e6a047fae3eb49b0a924cbdb471eb3e6ff5e8b585bf",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.5.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_applicationset_image",
+                "image": "registry.redhat.io/openshift-gitops-1/applicationset-rhel8@sha256:2ab75ec3abf77736c6484a19e61ad2b41da8078bdd2a0ce469e30b6849253fcf"
+            },
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:e30c5eff392ddf75d17182e3deec97661de808b762715ed611e1d5d861e690bf"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:0da3e73cc9a949f3b48ffe4dd2c2ac484592275fdd72e1ee1bf2ef3a4611f0a9"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:644473454b7c406aa0294e6a047fae3eb49b0a924cbdb471eb3e6ff5e8b585bf"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:a4c217cd0947d3959beef6b7ff43d5cbf0360d6dd2ce2c9c6aadbdb28afed2c5"
+            },
+            {
+                "name": "gitops-rhel8-operator-a4c217cd0947d3959beef6b7ff43d5cbf0360d6dd2ce2c9c6aadbdb28afed2c5-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:a4c217cd0947d3959beef6b7ff43d5cbf0360d6dd2ce2c9c6aadbdb28afed2c5"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:69cf87e6eb0b69e339a5a076f693b2fc43d624b8bcc937f47112c79e10b8d2e8"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:b83eff8ba8c9667ee37128dc46883d0d1cfcae7068d580aaf449d01aef310186"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:2bde84d46bbba8f00718d994824dd7bd5a3db8f0b32c19d6d34efd1f4fef4fa7"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:720a7e4c4926c41c1219a90daaea3b971a3d0da5a152a96fed4fb544d80f52e3"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-5@sha256:b4aa364cc2a15a6eef2fabc72d9c570791e61ab561e241d9995bd9dec3d1d21e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-gitops-operator.v1.6.0",
+        "package": "openshift-gitops-operator",
+        "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:a782f27b301fd2c06e94125cca735590a21d87cbe18cf15f06197679462bb65d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "AppProject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "Application",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ApplicationSet",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "argoproj.io",
+                    "kind": "ArgoCD",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "pipelines.openshift.io",
+                    "kind": "GitopsService",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-gitops-operator",
+                    "version": "1.6.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "argocd_image",
+                "image": "registry.redhat.io/openshift-gitops-1/argocd-rhel8@sha256:b4bf65d972f03d40d669de7f4086d2fd47a733db5e20aa7fcf79f6ecf4ff26c7"
+            },
+            {
+                "name": "argocd_dex_image",
+                "image": "registry.redhat.io/openshift-gitops-1/dex-rhel8@sha256:36fcc642b33a5cf82e331003fb8a0329107b9accd285a5b0b1facfc899b6c1ae"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-operator-bundle@sha256:a782f27b301fd2c06e94125cca735590a21d87cbe18cf15f06197679462bb65d"
+            },
+            {
+                "name": "gitops-rhel8-operator-1e0ecee8a40196b3ceab977868e0e671c112b2e5f80be39b72cda4b86a09ae1f-annotation",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:1e0ecee8a40196b3ceab977868e0e671c112b2e5f80be39b72cda4b86a09ae1f"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8-operator@sha256:1e0ecee8a40196b3ceab977868e0e671c112b2e5f80be39b72cda4b86a09ae1f"
+            },
+            {
+                "name": "backend_image",
+                "image": "registry.redhat.io/openshift-gitops-1/gitops-rhel8@sha256:4435ab18a7415e522fbd47bd193286f22e8a7513b97c3496e3d850e427cc7a3e"
+            },
+            {
+                "name": "kam_image",
+                "image": "registry.redhat.io/openshift-gitops-1/kam-delivery-rhel8@sha256:09c95d88d9a5ec0c92536053524d25b8c724e7b5c7e4ea5d267d886b47824484"
+            },
+            {
+                "name": "argocd_redis_ha_proxy_image",
+                "image": "registry.redhat.io/openshift4/ose-haproxy-router@sha256:edf7ce748b703e195220b7bd7b42fa2caa4cdfd96840445e096036a0d85f1ff2"
+            },
+            {
+                "name": "argocd_keycloak_image",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:d5829e880db4b82a50a4962d61ea148522a93644174931b256d7ad866eadcf40"
+            },
+            {
+                "name": "argocd_redis_image",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:53598a6effeb90e4f1b005b2521beffd2fa2b0c52d0e7f2347ee2abd2577cab3"
+            },
+            {
+                "name": "argocd_redis_ha_image",
+                "image": "registry.redhat.io/rhel8/redis-6@sha256:53598a6effeb90e4f1b005b2521beffd2fa2b0c52d0e7f2347ee2abd2577cab3"
+            }
+        ]
+    }

@@ -1,0 +1,909 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: cryostat-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "cryostat-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "cryostat-operator",
+        "entries": [
+            {
+                "name": "cryostat-operator.v2.0.0"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-0.1635463320.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1639085863.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1639592385.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1641316447.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1643302967.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1646075159.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1647887957.p",
+                "skips": [
+                    "cryostat-operator.v2.0.0-6.1639592385.p",
+                    "cryostat-operator.v2.0.0-6.1639085863.p",
+                    "cryostat-operator.v2.0.0-0.1635463320.p",
+                    "cryostat-operator.v2.0.0",
+                    "cryostat-operator.v2.0.0-6.1646075159.p",
+                    "cryostat-operator.v2.0.0-6.1643302967.p",
+                    "cryostat-operator.v2.0.0-6.1641316447.p"
+                ]
+            },
+            {
+                "name": "cryostat-operator.v2.1.0",
+                "replaces": "cryostat-operator.v2.0.0-6.1647887957.p",
+                "skipRange": ">=2.0.0 <2.1.0"
+            },
+            {
+                "name": "cryostat-operator.v2.1.1",
+                "skipRange": ">=2.0.0 <2.1.1"
+            },
+            {
+                "name": "cryostat-operator.v2.1.1-2.1655334614.p",
+                "skipRange": ">=2.0.0 <2.1.1"
+            },
+            {
+                "name": "cryostat-operator.v2.1.1-2.1659469835.p",
+                "replaces": "cryostat-operator.v2.1.0",
+                "skips": [
+                    "cryostat-operator.v2.1.1",
+                    "cryostat-operator.v2.1.1-2.1655334614.p"
+                ],
+                "skipRange": ">=2.0.0 <2.1.1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-2.0",
+        "package": "cryostat-operator",
+        "entries": [
+            {
+                "name": "cryostat-operator.v2.0.0"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-0.1635463320.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1639085863.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1639592385.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1641316447.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1643302967.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1646075159.p"
+            },
+            {
+                "name": "cryostat-operator.v2.0.0-6.1647887957.p",
+                "skips": [
+                    "cryostat-operator.v2.0.0-6.1639592385.p",
+                    "cryostat-operator.v2.0.0-6.1639085863.p",
+                    "cryostat-operator.v2.0.0-0.1635463320.p",
+                    "cryostat-operator.v2.0.0",
+                    "cryostat-operator.v2.0.0-6.1646075159.p",
+                    "cryostat-operator.v2.0.0-6.1643302967.p",
+                    "cryostat-operator.v2.0.0-6.1641316447.p"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.0.0",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:e1027ff0045a852857953692aaa9eb7eb9136046c230c35f8c2aa43ffb1b318e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.0.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:eb78c0ecf80578e7949bf748e716d7f379e0aa53cf9c459395a5b66a4162297f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:e1027ff0045a852857953692aaa9eb7eb9136046c230c35f8c2aa43ffb1b318e"
+            },
+            {
+                "name": "cryostat-rhel8-operator-56e80c1ae03c985df2d3e1ca97d5331aa11cd2c6aabb7c1519956ea1ad1dd373-annotation",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:56e80c1ae03c985df2d3e1ca97d5331aa11cd2c6aabb7c1519956ea1ad1dd373"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:56e80c1ae03c985df2d3e1ca97d5331aa11cd2c6aabb7c1519956ea1ad1dd373"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8@sha256:4db77df418d9c81f620ca672a6738de934f0f3db304123de4bb12419ab629123"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/jfr-datasource-rhel8@sha256:8595ffcc7e2ab0fea1c909328d47a302ee6f9916c38d668f192bf563d2f369a5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.0.0-0.1635463320.p",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:2ed4d2cf34ca035546a8544d1fef14e533a6309db15eff98187e705cd199437c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.0.0+0.1635463320.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:eb78c0ecf80578e7949bf748e716d7f379e0aa53cf9c459395a5b66a4162297f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:2ed4d2cf34ca035546a8544d1fef14e533a6309db15eff98187e705cd199437c"
+            },
+            {
+                "name": "cryostat-rhel8-operator-56e80c1ae03c985df2d3e1ca97d5331aa11cd2c6aabb7c1519956ea1ad1dd373-annotation",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:56e80c1ae03c985df2d3e1ca97d5331aa11cd2c6aabb7c1519956ea1ad1dd373"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:56e80c1ae03c985df2d3e1ca97d5331aa11cd2c6aabb7c1519956ea1ad1dd373"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8@sha256:258eac9d4613c6883c1c61caaf179e3d23d19aac041c1fd3cf7dfa96e6859666"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/jfr-datasource-rhel8@sha256:b124ad91eb835781ca02e22021e8c3ca861742c93598e5bea2a2f8f4d0ad2b14"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.0.0-6.1639085863.p",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:afb5bdabd4353342627a4dac51df35472c944884eb7cfe051133527eb819860d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.0.0+6.1639085863.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:386f92e0fa561f8b51f01dcb306362a4969783690b94ca669cc62a8fe801eae9"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:afb5bdabd4353342627a4dac51df35472c944884eb7cfe051133527eb819860d"
+            },
+            {
+                "name": "cryostat-rhel8-operator-9811c7090c1c2de2052cfbc2070ba7ceb1c19be6575f057047f794ab4101fe0f-annotation",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:9811c7090c1c2de2052cfbc2070ba7ceb1c19be6575f057047f794ab4101fe0f"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:9811c7090c1c2de2052cfbc2070ba7ceb1c19be6575f057047f794ab4101fe0f"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8@sha256:bd24355720b7a282ea7d5d83847f61d9cf1c276a495d805af3154b75c4996d17"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/jfr-datasource-rhel8@sha256:207682e23fbb8e9e9d3e59862dc1587cee79fa1262d439d42973f170285791d1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.0.0-6.1639592385.p",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:a9bd2a9ee2e62ebf4e2d19f5c16bf7876d062ea079db2e71305b7906c5cf24c4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.0.0+6.1639592385.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:386f92e0fa561f8b51f01dcb306362a4969783690b94ca669cc62a8fe801eae9"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:a9bd2a9ee2e62ebf4e2d19f5c16bf7876d062ea079db2e71305b7906c5cf24c4"
+            },
+            {
+                "name": "cryostat-rhel8-operator-bd097748c1f87b935c6cad8ec8dd4973a0f849d0cf8af304ab34b7d78758de22-annotation",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:bd097748c1f87b935c6cad8ec8dd4973a0f849d0cf8af304ab34b7d78758de22"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:bd097748c1f87b935c6cad8ec8dd4973a0f849d0cf8af304ab34b7d78758de22"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8@sha256:bd24355720b7a282ea7d5d83847f61d9cf1c276a495d805af3154b75c4996d17"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/jfr-datasource-rhel8@sha256:207682e23fbb8e9e9d3e59862dc1587cee79fa1262d439d42973f170285791d1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.0.0-6.1641316447.p",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:7e22170562b9a35a66eaf9f3e05e9214581dda56a8f1a9c55a7cb81bd3d3cafa",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.0.0+6.1641316447.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:dab950e61dc80079283a0ea28dce77ff856d12cd179a5bb4715a1b9f1921776c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:7e22170562b9a35a66eaf9f3e05e9214581dda56a8f1a9c55a7cb81bd3d3cafa"
+            },
+            {
+                "name": "cryostat-rhel8-operator-cf69b4a6f5250d82a2053cb95c6eb8c20bbf721faec23752bb683d2591ad80c8-annotation",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:cf69b4a6f5250d82a2053cb95c6eb8c20bbf721faec23752bb683d2591ad80c8"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:cf69b4a6f5250d82a2053cb95c6eb8c20bbf721faec23752bb683d2591ad80c8"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8@sha256:bd24355720b7a282ea7d5d83847f61d9cf1c276a495d805af3154b75c4996d17"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/jfr-datasource-rhel8@sha256:207682e23fbb8e9e9d3e59862dc1587cee79fa1262d439d42973f170285791d1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.0.0-6.1643302967.p",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:3109befde1d4bb37fc08ffdfc40f8d36bcf1ab06dbc6bb20fb2c407cc8582e5e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.0.0+6.1643302967.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:dab950e61dc80079283a0ea28dce77ff856d12cd179a5bb4715a1b9f1921776c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:3109befde1d4bb37fc08ffdfc40f8d36bcf1ab06dbc6bb20fb2c407cc8582e5e"
+            },
+            {
+                "name": "cryostat-rhel8-operator-cf69b4a6f5250d82a2053cb95c6eb8c20bbf721faec23752bb683d2591ad80c8-annotation",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:cf69b4a6f5250d82a2053cb95c6eb8c20bbf721faec23752bb683d2591ad80c8"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:cf69b4a6f5250d82a2053cb95c6eb8c20bbf721faec23752bb683d2591ad80c8"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8@sha256:ba59cfae5a21cf46771d094822d0e08537a470bdc148da485d711412de2beeea"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/jfr-datasource-rhel8@sha256:a3f86f89631d3b3f163adfbe469fe7421b7f5f268fe398e36a2124522f96cd15"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.0.0-6.1646075159.p",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:93ec2dafffedc98f8581ad35909224b68fcbb9238198d0ca44a81f84eca23e33",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.0.0+6.1646075159.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:760765aeb19f95ddd7fd7ad30bc5d0f85cd35f4b9d7005968f765be30d43c907"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:93ec2dafffedc98f8581ad35909224b68fcbb9238198d0ca44a81f84eca23e33"
+            },
+            {
+                "name": "cryostat-rhel8-operator-397c07549457780a2fd1926e37a0238391b3f8c75930fdc4ccbe68a43f485b1f-annotation",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:397c07549457780a2fd1926e37a0238391b3f8c75930fdc4ccbe68a43f485b1f"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:397c07549457780a2fd1926e37a0238391b3f8c75930fdc4ccbe68a43f485b1f"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8@sha256:75cd6768fce13929f6f1eaca3b32c7b080efab81cefd87f831c71d3e51f57bb3"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/jfr-datasource-rhel8@sha256:2282704bb837eca185176bfdad6e77e078dae3bf7794a0a2506e949e3e4d1046"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.0.0-6.1647887957.p",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:d69c8442572be7d252be9deae6ab8644a29374cf421e8a0a6e2e99c10f0defd7",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.0.0+6.1647887957.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:27413cb6a3a572d1eea8ce69721c9edecdcfaef809724e15c6d9160bbce1bcd7"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-operator-bundle@sha256:d69c8442572be7d252be9deae6ab8644a29374cf421e8a0a6e2e99c10f0defd7"
+            },
+            {
+                "name": "cryostat-rhel8-operator-397c07549457780a2fd1926e37a0238391b3f8c75930fdc4ccbe68a43f485b1f-annotation",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:397c07549457780a2fd1926e37a0238391b3f8c75930fdc4ccbe68a43f485b1f"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8-operator@sha256:397c07549457780a2fd1926e37a0238391b3f8c75930fdc4ccbe68a43f485b1f"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/cryostat-rhel8@sha256:4c47c8e6c6b319924e50b44c246af2800030bed19931735a96d36346ca7312a7"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-20-tech-preview/jfr-datasource-rhel8@sha256:993cc720333d24063b014e586158a942f460533dc67be2b907eb1f15e5a95416"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.1.0",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-tech-preview/cryostat-operator-bundle@sha256:4214fe35d5e888f5c5e9b314da5ca7604b42a09b3612dd254b6a357e46ee248b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.1.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:d497d35d1a3db6fb19ddafd6d9a169af5cd2bc8da0b95c8ad4ee4d6dc4c98349"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-operator-bundle@sha256:4214fe35d5e888f5c5e9b314da5ca7604b42a09b3612dd254b6a357e46ee248b"
+            },
+            {
+                "name": "reports",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-reports-rhel8@sha256:ac2928a8d436e3902f23ce0d92cb9e6c38521737af9be63f82362d9fe53419d8"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8-operator@sha256:616df2b0364e6ac25f0f5443c3810ad35f4921273a70ce290d25096306962a96"
+            },
+            {
+                "name": "cryostat-rhel8-operator-616df2b0364e6ac25f0f5443c3810ad35f4921273a70ce290d25096306962a96-annotation",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8-operator@sha256:616df2b0364e6ac25f0f5443c3810ad35f4921273a70ce290d25096306962a96"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8@sha256:eb972d1348c9554cfcf14a6f9ba971dd1f4b6a360a4cf331007cc61c899af4c6"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-tech-preview/jfr-datasource-rhel8@sha256:e4f77a33cee579b3f5df2dd54346ef811e23f7310352ed0cd7c52c404a5539e7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.1.1",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-tech-preview/cryostat-operator-bundle@sha256:701458696ba8788f5c2516e7dd892b4bee992d3d9af6888aa6f4d6a203c8a8b8",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.1.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:d497d35d1a3db6fb19ddafd6d9a169af5cd2bc8da0b95c8ad4ee4d6dc4c98349"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-operator-bundle@sha256:701458696ba8788f5c2516e7dd892b4bee992d3d9af6888aa6f4d6a203c8a8b8"
+            },
+            {
+                "name": "reports",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-reports-rhel8@sha256:7503f955d854006c6b12e7faa6e5bdaf6306bf072d3d78f67e2f676ecda387a8"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8-operator@sha256:7e8292a5ddd1e85edf43099d8b27de94ca81dab520e3070f99f850f97277b11c"
+            },
+            {
+                "name": "cryostat-rhel8-operator-7e8292a5ddd1e85edf43099d8b27de94ca81dab520e3070f99f850f97277b11c-annotation",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8-operator@sha256:7e8292a5ddd1e85edf43099d8b27de94ca81dab520e3070f99f850f97277b11c"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8@sha256:bbe753d837e00697147b2b23aba4eccb36853fc9a0ff11cd5b046675b37397ad"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-tech-preview/jfr-datasource-rhel8@sha256:7b6b0b8ae46187472147014ebbb1feab66761662aebc890ae2108e2ffc9956c6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.1.1-2.1655334614.p",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-tech-preview/cryostat-operator-bundle@sha256:481485e072348bf996ff69c8ac2a9e93f6ea648c6cd661eadc5d9b279a96459d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.1.1+2.1655334614.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:9202d188ca4ed2168f1730540a8e1d712b46e6cfa2f1efaf60a93725530754c1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-operator-bundle@sha256:481485e072348bf996ff69c8ac2a9e93f6ea648c6cd661eadc5d9b279a96459d"
+            },
+            {
+                "name": "reports",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-reports-rhel8@sha256:0811661a376b1e23668d0cb2093bb6bac54277b4b03f00c8f0c42844ad1993db"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8-operator@sha256:8cc89831388c3164f4e7c1175f5484b0c4187d7dea613a55e40a4b177a19d547"
+            },
+            {
+                "name": "cryostat-rhel8-operator-8cc89831388c3164f4e7c1175f5484b0c4187d7dea613a55e40a4b177a19d547-annotation",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8-operator@sha256:8cc89831388c3164f4e7c1175f5484b0c4187d7dea613a55e40a4b177a19d547"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8@sha256:e064bc1e68047ddc42e8a202ca35630fee980893d5f080c2eb791410bb08ac97"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-tech-preview/jfr-datasource-rhel8@sha256:26b1daa4e829918189f1d68dcd129c39912c7fce98e290851f75e3ab60e0e4d5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cryostat-operator.v2.1.1-2.1659469835.p",
+        "package": "cryostat-operator",
+        "image": "registry.redhat.io/cryostat-tech-preview/cryostat-operator-bundle@sha256:db7d306cea982973000594f0a0523dd93784a26590c715e73a70cb73f18a920e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Cryostat",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "FlightRecorder",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.cryostat.io",
+                    "kind": "Recording",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cryostat-operator",
+                    "version": "2.1.1+2.1659469835.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-grafana-dashboard-rhel8@sha256:831c50087dd68d546556dd768e1cf2178e343d95c2ca2949d3713086f0373134"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-operator-bundle@sha256:db7d306cea982973000594f0a0523dd93784a26590c715e73a70cb73f18a920e"
+            },
+            {
+                "name": "reports",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-reports-rhel8@sha256:253c0878ad2aa71e5077665686685d4ec2ae0b5e1d48af3c16fa8ffb1189e813"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8-operator@sha256:8cc89831388c3164f4e7c1175f5484b0c4187d7dea613a55e40a4b177a19d547"
+            },
+            {
+                "name": "cryostat-rhel8-operator-8cc89831388c3164f4e7c1175f5484b0c4187d7dea613a55e40a4b177a19d547-annotation",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8-operator@sha256:8cc89831388c3164f4e7c1175f5484b0c4187d7dea613a55e40a4b177a19d547"
+            },
+            {
+                "name": "core",
+                "image": "registry.redhat.io/cryostat-tech-preview/cryostat-rhel8@sha256:edf34f65b7fa29032b3e1960c7fb6188ee6b9b10036743147b1bd060d75a4a4a"
+            },
+            {
+                "name": "datasource",
+                "image": "registry.redhat.io/cryostat-tech-preview/jfr-datasource-rhel8@sha256:6b6e3031831740d4551c61969a28dc88775f7cf80a8c400554397ba1e1eedff8"
+            }
+        ]
+    }

@@ -1,0 +1,127 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: file-integrity-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "file-integrity-operator",
+        "defaultChannel": "release-0.1"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "4.7",
+        "package": "file-integrity-operator",
+        "entries": [
+            {
+                "name": "file-integrity-operator.v0.1.13",
+                "skipRange": ">=0.1.6 <0.1.13"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "release-0.1",
+        "package": "file-integrity-operator",
+        "entries": [
+            {
+                "name": "file-integrity-operator.v0.1.30",
+                "skipRange": ">=0.1.6 <0.1.30"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "file-integrity-operator.v0.1.13",
+        "package": "file-integrity-operator",
+        "image": "registry.redhat.io/openshift4/file-integrity-rhel8-operator-metadata@sha256:7fb2750941193d64f8cca278ff7d81d3ca5e29a2ad0568dff7ddae4396548bb3",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "fileintegrity.openshift.io",
+                    "kind": "FileIntegrity",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "fileintegrity.openshift.io",
+                    "kind": "FileIntegrityNodeStatus",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "file-integrity-operator",
+                    "version": "0.1.13"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/file-integrity-rhel8-operator-metadata@sha256:7fb2750941193d64f8cca278ff7d81d3ca5e29a2ad0568dff7ddae4396548bb3"
+            },
+            {
+                "name": "file-integrity-operator",
+                "image": "registry.redhat.io/openshift4/file-integrity-rhel8-operator@sha256:a65f1244636649734763164a5d6155a6f6a7b79b3950ecc03fb3c58188583599"
+            },
+            {
+                "name": "aide",
+                "image": "registry.redhat.io/openshift4/file-integrity-rhel8-operator@sha256:a65f1244636649734763164a5d6155a6f6a7b79b3950ecc03fb3c58188583599"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/openshift4/file-integrity-rhel8-operator@sha256:a65f1244636649734763164a5d6155a6f6a7b79b3950ecc03fb3c58188583599"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "file-integrity-operator.v0.1.30",
+        "package": "file-integrity-operator",
+        "image": "registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:f242d6d67529194deb80a81e44ee984c18183dc82539bba8feb6f750883a9042",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "fileintegrity.openshift.io",
+                    "kind": "FileIntegrity",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "fileintegrity.openshift.io",
+                    "kind": "FileIntegrityNodeStatus",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "file-integrity-operator",
+                    "version": "0.1.30"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/compliance/openshift-file-integrity-operator-bundle@sha256:f242d6d67529194deb80a81e44ee984c18183dc82539bba8feb6f750883a9042"
+            },
+            {
+                "name": "file-integrity-operator",
+                "image": "registry.redhat.io/compliance/openshift-file-integrity-rhel8-operator@sha256:dd8352174ba8e1f570bd648b9530bf05a38fbe5fe023c6ca77e55209a8415a0d"
+            },
+            {
+                "name": "operator",
+                "image": "registry.redhat.io/compliance/openshift-file-integrity-rhel8-operator@sha256:dd8352174ba8e1f570bd648b9530bf05a38fbe5fe023c6ca77e55209a8415a0d"
+            }
+        ]
+    }

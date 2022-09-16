@@ -1,0 +1,1757 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: rhsso-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "rhsso-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "alpha",
+        "package": "rhsso-operator",
+        "entries": [
+            {
+                "name": "rhsso-operator.7.5.0",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-001",
+                "replaces": "rhsso-operator.7.5.0",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-002",
+                "replaces": "rhsso-operator.7.5.1-opr-001",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-003",
+                "replaces": "rhsso-operator.7.5.1-opr-002",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-004",
+                "replaces": "rhsso-operator.7.5.1-opr-003",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-005",
+                "replaces": "rhsso-operator.7.5.1-opr-004",
+                "skipRange": "<7.5.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "rhsso-operator",
+        "entries": [
+            {
+                "name": "rhsso-operator.7.5.0",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-001",
+                "replaces": "rhsso-operator.7.5.0",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-002",
+                "replaces": "rhsso-operator.7.5.1-opr-001",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-003",
+                "replaces": "rhsso-operator.7.5.1-opr-002",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-004",
+                "replaces": "rhsso-operator.7.5.1-opr-003",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-005",
+                "replaces": "rhsso-operator.7.5.1-opr-004",
+                "skipRange": "<7.5.0"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-006",
+                "replaces": "rhsso-operator.7.5.1-opr-005"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-007",
+                "replaces": "rhsso-operator.7.5.1-opr-006"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-008",
+                "replaces": "rhsso-operator.7.5.1-opr-007"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-009"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-009-0.1646836600.p",
+                "replaces": "rhsso-operator.7.5.1-opr-008",
+                "skips": [
+                    "rhsso-operator.7.5.1-opr-009"
+                ]
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-010",
+                "replaces": "rhsso-operator.7.5.1-opr-009-0.1646836600.p"
+            },
+            {
+                "name": "rhsso-operator.7.5.1-opr-011",
+                "replaces": "rhsso-operator.7.5.1-opr-010"
+            },
+            {
+                "name": "rhsso-operator.7.5.2-opr-001",
+                "replaces": "rhsso-operator.7.5.1-opr-011"
+            },
+            {
+                "name": "rhsso-operator.7.5.2-opr-002",
+                "replaces": "rhsso-operator.7.5.2-opr-001"
+            },
+            {
+                "name": "rhsso-operator.7.5.2-opr-003",
+                "replaces": "rhsso-operator.7.5.2-opr-002"
+            },
+            {
+                "name": "rhsso-operator.7.6.0-opr-001"
+            },
+            {
+                "name": "rhsso-operator.7.6.0-opr-002",
+                "replaces": "rhsso-operator.7.5.2-opr-003",
+                "skips": [
+                    "rhsso-operator.7.6.0-opr-001"
+                ]
+            },
+            {
+                "name": "rhsso-operator.7.6.0-opr-003",
+                "replaces": "rhsso-operator.7.6.0-opr-002",
+                "skips": [
+                    "rhsso-operator.7.6.0-opr-001"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.0",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:fd96d129e0a093819415382997312c2be7fcfe1306eaa746dc0aaa8eb91efca0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:a831019a9e37ca8abf2dee8cc925562e362c07c28bfd9b0f284dc0f8a797f017"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:a831019a9e37ca8abf2dee8cc925562e362c07c28bfd9b0f284dc0f8a797f017"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:fd96d129e0a093819415382997312c2be7fcfe1306eaa746dc0aaa8eb91efca0"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:9bea517542d1b0a5bcc872b7ea7564662ccb29fa240fcd52519385928e9f42e3"
+            },
+            {
+                "name": "sso7-rhel8-operator-9bea517542d1b0a5bcc872b7ea7564662ccb29fa240fcd52519385928e9f42e3-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:9bea517542d1b0a5bcc872b7ea7564662ccb29fa240fcd52519385928e9f42e3"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:31bf3937c4cd8d00555bf00f4fc6e42b02796da72165c3f0245e62fc199664e8"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:b92b2180440481827745c29857875f1169f0f5373efe07a447bd67909e70f601"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-001",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:82f0b59323d13f3040e679d99ccb0b9140cec854cdd65bcbf2bca55fc8dc7bc4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-001"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:a831019a9e37ca8abf2dee8cc925562e362c07c28bfd9b0f284dc0f8a797f017"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:a831019a9e37ca8abf2dee8cc925562e362c07c28bfd9b0f284dc0f8a797f017"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:82f0b59323d13f3040e679d99ccb0b9140cec854cdd65bcbf2bca55fc8dc7bc4"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:4a023ef6a482a9ea37ccbc7304fbbc2ed54463933d68abfcd13ee23fa7bf90d0"
+            },
+            {
+                "name": "sso7-rhel8-operator-4a023ef6a482a9ea37ccbc7304fbbc2ed54463933d68abfcd13ee23fa7bf90d0-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:4a023ef6a482a9ea37ccbc7304fbbc2ed54463933d68abfcd13ee23fa7bf90d0"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:31bf3937c4cd8d00555bf00f4fc6e42b02796da72165c3f0245e62fc199664e8"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:6799c62b702843d18b505f2c1946037cbc193175f48fdc01bee09220935c608c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-002",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:36ba56f1a7d0043090486e218754fc5371f6da5ad423e30d48ff37c9b0e26fab",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-002"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:a831019a9e37ca8abf2dee8cc925562e362c07c28bfd9b0f284dc0f8a797f017"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:a831019a9e37ca8abf2dee8cc925562e362c07c28bfd9b0f284dc0f8a797f017"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:36ba56f1a7d0043090486e218754fc5371f6da5ad423e30d48ff37c9b0e26fab"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:3e23626bfde96153dc2d35f65786b6057c338b6b2a6d12b81935644587365769"
+            },
+            {
+                "name": "sso7-rhel8-operator-4a023ef6a482a9ea37ccbc7304fbbc2ed54463933d68abfcd13ee23fa7bf90d0-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:4a023ef6a482a9ea37ccbc7304fbbc2ed54463933d68abfcd13ee23fa7bf90d0"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:a7455465e7eeaa60e32f90e24fceb307d71121405716afd80f65e3c900e3b142"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:d711da0fce3075154bbc2c6ffe0efb9f801af0051c37a17943448bd3fd9dbe34"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-003",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:8f7d878df76889ebd94974325aeb2150ad771c44d6ea4102e1d7ec8719c701e2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-003"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:614a9b1d7975769e8559e0b8c1578d16f6e3f7fee0778283797f4d62f5fc2100"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:614a9b1d7975769e8559e0b8c1578d16f6e3f7fee0778283797f4d62f5fc2100"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:8f7d878df76889ebd94974325aeb2150ad771c44d6ea4102e1d7ec8719c701e2"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:66577ec32a9a975f304e52b8ab49b9f7602158dcab1ef5d8c28a5d3455491336"
+            },
+            {
+                "name": "sso7-rhel8-operator-66577ec32a9a975f304e52b8ab49b9f7602158dcab1ef5d8c28a5d3455491336-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:66577ec32a9a975f304e52b8ab49b9f7602158dcab1ef5d8c28a5d3455491336"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:82257eb30bc7c1e64008b6b2ac839f438af4e403724c2d2a4b9127494ad99cfc"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:5f243a09cc53aae0f7a10a93e5a9010e17c164ea3318283a220c38cdb071d24a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-004",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:9614b8eff9db947fc8677fe77a7b1b658373940b5df9bb38405e0384cc8032d1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-004"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:614a9b1d7975769e8559e0b8c1578d16f6e3f7fee0778283797f4d62f5fc2100"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:614a9b1d7975769e8559e0b8c1578d16f6e3f7fee0778283797f4d62f5fc2100"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:9614b8eff9db947fc8677fe77a7b1b658373940b5df9bb38405e0384cc8032d1"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:66577ec32a9a975f304e52b8ab49b9f7602158dcab1ef5d8c28a5d3455491336"
+            },
+            {
+                "name": "sso7-rhel8-operator-66577ec32a9a975f304e52b8ab49b9f7602158dcab1ef5d8c28a5d3455491336-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:66577ec32a9a975f304e52b8ab49b9f7602158dcab1ef5d8c28a5d3455491336"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:82257eb30bc7c1e64008b6b2ac839f438af4e403724c2d2a4b9127494ad99cfc"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:5f0840a69642d13016430151892ec987fd67e711563b1dfb1a57353037c3bf79"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-005",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:9fcdfa4615b91a5bb919aff71fc4df046365b2ee6d540b5f5f47f9ccaeb9877c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-005"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:614a9b1d7975769e8559e0b8c1578d16f6e3f7fee0778283797f4d62f5fc2100"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:614a9b1d7975769e8559e0b8c1578d16f6e3f7fee0778283797f4d62f5fc2100"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:9fcdfa4615b91a5bb919aff71fc4df046365b2ee6d540b5f5f47f9ccaeb9877c"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:66577ec32a9a975f304e52b8ab49b9f7602158dcab1ef5d8c28a5d3455491336"
+            },
+            {
+                "name": "sso7-rhel8-operator-66577ec32a9a975f304e52b8ab49b9f7602158dcab1ef5d8c28a5d3455491336-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:66577ec32a9a975f304e52b8ab49b9f7602158dcab1ef5d8c28a5d3455491336"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:2d4ea7226f43e7e8e8d3fcef6d425eb5104a15acf07791355033300b80db2901"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:5f0840a69642d13016430151892ec987fd67e711563b1dfb1a57353037c3bf79"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-006",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:c450b741635a4194c5d74ad110eb5a8c55d896fd46ebd371f2847139538b2104",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-006"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:ec0c7149132da0ec9ae22e178115ac316760de4a502878d2a985d49094affe01"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:ec0c7149132da0ec9ae22e178115ac316760de4a502878d2a985d49094affe01"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:c450b741635a4194c5d74ad110eb5a8c55d896fd46ebd371f2847139538b2104"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af"
+            },
+            {
+                "name": "sso7-rhel8-operator-77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:a0ce110bf7573dc6f932dc6592611c322e96eafa5081c13fb61a25cdd0d38674"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:2b1486ed706ca77c3dd30fd4e7f2675ccce4938f24309a897bffeb9ad8d434c6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-007",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:99c12cac1194fe477fcffa1d1952f6c5d255365040161445599388c357bc8973",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-007"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:ec0c7149132da0ec9ae22e178115ac316760de4a502878d2a985d49094affe01"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:ec0c7149132da0ec9ae22e178115ac316760de4a502878d2a985d49094affe01"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:99c12cac1194fe477fcffa1d1952f6c5d255365040161445599388c357bc8973"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af"
+            },
+            {
+                "name": "sso7-rhel8-operator-77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:75f668e33a01c22e0739ecc3473ef9d29af737c0d02c6d1b61715b6e7f632a30"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:6a86e6528722e35920f59fddd9a5dbc55a604a055c6b521e3b954e58df5d1b66"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-008",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:ad87192dfe806d6ca2a156c0bdf475d82dbe9dad55e626c3e727c02d805e6463",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-008"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:ec0c7149132da0ec9ae22e178115ac316760de4a502878d2a985d49094affe01"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:ec0c7149132da0ec9ae22e178115ac316760de4a502878d2a985d49094affe01"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:ad87192dfe806d6ca2a156c0bdf475d82dbe9dad55e626c3e727c02d805e6463"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af"
+            },
+            {
+                "name": "sso7-rhel8-operator-77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:bf1b4afd0694f198e9eb6f761a0e9d95aa7d941af1a59208c27c0290a3af7291"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:88aa00c18bfbd5cb264c8bdbd11034bf98ed50ad2dcb70d8adb7ba82f4dcb497"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-009",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:cda48b243b3e1905da0d00dd7917c3b6e819e18f85bc8ea4be9b253a35eebd2e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-009"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:ec0c7149132da0ec9ae22e178115ac316760de4a502878d2a985d49094affe01"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:ec0c7149132da0ec9ae22e178115ac316760de4a502878d2a985d49094affe01"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:cda48b243b3e1905da0d00dd7917c3b6e819e18f85bc8ea4be9b253a35eebd2e"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af"
+            },
+            {
+                "name": "sso7-rhel8-operator-77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:77f08c2ada2386264305736f8f6f3250614d30371450240d2a4cc583f19103af"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:bf1b4afd0694f198e9eb6f761a0e9d95aa7d941af1a59208c27c0290a3af7291"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:dd4ea229521fb58dda7e547ea6db993156f4c61aa8a00f2fd1375bb77168b6e6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-009-0.1646836600.p",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:2134c318b9e9910bcba39a97c1eb908c8631de576cd961eb6fa422bddb429b5f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-009+0.1646836600.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:24bd5f7c474226096aedce07155cdc0693eb48337e2183131f5541e9a97f5331"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:24bd5f7c474226096aedce07155cdc0693eb48337e2183131f5541e9a97f5331"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:2134c318b9e9910bcba39a97c1eb908c8631de576cd961eb6fa422bddb429b5f"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:82eb17e825b71dc42a57341164f15938342e7c470076738d09c340e6c42ad483"
+            },
+            {
+                "name": "sso7-rhel8-operator-82eb17e825b71dc42a57341164f15938342e7c470076738d09c340e6c42ad483-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:82eb17e825b71dc42a57341164f15938342e7c470076738d09c340e6c42ad483"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openj9-openshift-rhel8@sha256:bf1b4afd0694f198e9eb6f761a0e9d95aa7d941af1a59208c27c0290a3af7291"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:dd4ea229521fb58dda7e547ea6db993156f4c61aa8a00f2fd1375bb77168b6e6"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-010",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:e99682f13582c7d6fc64f86cbfa8e3e09e201cf87905cfad47f0cb7268534102",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-010"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:24bd5f7c474226096aedce07155cdc0693eb48337e2183131f5541e9a97f5331"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:24bd5f7c474226096aedce07155cdc0693eb48337e2183131f5541e9a97f5331"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:e99682f13582c7d6fc64f86cbfa8e3e09e201cf87905cfad47f0cb7268534102"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:82eb17e825b71dc42a57341164f15938342e7c470076738d09c340e6c42ad483"
+            },
+            {
+                "name": "sso7-rhel8-operator-82eb17e825b71dc42a57341164f15938342e7c470076738d09c340e6c42ad483-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:82eb17e825b71dc42a57341164f15938342e7c470076738d09c340e6c42ad483"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:3c8ea7a152b2fab8158cd6a97ba0b76cab5591115c867e2ce59c2c249fad0658"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:3c8ea7a152b2fab8158cd6a97ba0b76cab5591115c867e2ce59c2c249fad0658"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.1-opr-011",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:5bcbd6fb6693ef245b61ebe5aed5dd5fd0392ef63f173378142b5e48a311d21a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.1-opr-011"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:afaaa43b5c87b0020fbd5bbeb1c6dee1d5b966d6effa98e66840b5730703cb55"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:afaaa43b5c87b0020fbd5bbeb1c6dee1d5b966d6effa98e66840b5730703cb55"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:5bcbd6fb6693ef245b61ebe5aed5dd5fd0392ef63f173378142b5e48a311d21a"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:d6c6004da55ff2dda8a4bda7325df52827a501a2dc2d933c64fec2ddccf58f00"
+            },
+            {
+                "name": "sso7-rhel8-operator-d6c6004da55ff2dda8a4bda7325df52827a501a2dc2d933c64fec2ddccf58f00-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:d6c6004da55ff2dda8a4bda7325df52827a501a2dc2d933c64fec2ddccf58f00"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:1bbeabbca19e745653d07e20c089fa6edf0b9bea3f816054f0d57eaba6f640de"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:1bbeabbca19e745653d07e20c089fa6edf0b9bea3f816054f0d57eaba6f640de"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.2-opr-001",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:505eb4c2dc90da3d2c11827629de9c8cbed34b28a6a27a32ef086494e844bc47",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.2-opr-001"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:cb51c0e4d2c19aadac417b0c283859f263d8e6cf2c31145a3336e0d843a43fba"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:cb51c0e4d2c19aadac417b0c283859f263d8e6cf2c31145a3336e0d843a43fba"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:505eb4c2dc90da3d2c11827629de9c8cbed34b28a6a27a32ef086494e844bc47"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:9d2cd70a55c9cc3fb1a8088170aba6bd2cbcdbdb36136cd0c6f8008513d0f497"
+            },
+            {
+                "name": "sso7-rhel8-operator-9d2cd70a55c9cc3fb1a8088170aba6bd2cbcdbdb36136cd0c6f8008513d0f497-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:9d2cd70a55c9cc3fb1a8088170aba6bd2cbcdbdb36136cd0c6f8008513d0f497"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:5f5183be60bc1cef4b24cc7a8791b1b5c0df5e6564fa60f029d1822fe9f6c69f"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:5f5183be60bc1cef4b24cc7a8791b1b5c0df5e6564fa60f029d1822fe9f6c69f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.2-opr-002",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:1146766ce249aac1b2e06f5c7098ac6a5e76b158ac18c5c39d4898b21c119639",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.2-opr-002"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:cb51c0e4d2c19aadac417b0c283859f263d8e6cf2c31145a3336e0d843a43fba"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:cb51c0e4d2c19aadac417b0c283859f263d8e6cf2c31145a3336e0d843a43fba"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:1146766ce249aac1b2e06f5c7098ac6a5e76b158ac18c5c39d4898b21c119639"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:9d2cd70a55c9cc3fb1a8088170aba6bd2cbcdbdb36136cd0c6f8008513d0f497"
+            },
+            {
+                "name": "sso7-rhel8-operator-9d2cd70a55c9cc3fb1a8088170aba6bd2cbcdbdb36136cd0c6f8008513d0f497-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:9d2cd70a55c9cc3fb1a8088170aba6bd2cbcdbdb36136cd0c6f8008513d0f497"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:d5829e880db4b82a50a4962d61ea148522a93644174931b256d7ad866eadcf40"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:d5829e880db4b82a50a4962d61ea148522a93644174931b256d7ad866eadcf40"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.5.2-opr-003",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:b876206d3c34f07aa0fbdbddc69e9434a238da1550d4120af264652de2972a3f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.5.2-opr-003"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:c0966b7320b0c9225402b1f3cefdb04be231c19919c4448eb4d404f690a1ea4e"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:c0966b7320b0c9225402b1f3cefdb04be231c19919c4448eb4d404f690a1ea4e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:b876206d3c34f07aa0fbdbddc69e9434a238da1550d4120af264652de2972a3f"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:e676a36004be34cbb9121492832aea35ceb3d0526b86b8acf89441bca4183381"
+            },
+            {
+                "name": "sso7-rhel8-operator-e676a36004be34cbb9121492832aea35ceb3d0526b86b8acf89441bca4183381-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:e676a36004be34cbb9121492832aea35ceb3d0526b86b8acf89441bca4183381"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:9b02ab4dbd6d4f15a77822690eefe32a14187f5e351961bb2326e00e8d53f9db"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso75-openshift-rhel8@sha256:9b02ab4dbd6d4f15a77822690eefe32a14187f5e351961bb2326e00e8d53f9db"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.6.0-opr-001",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:fae62c9816bcc9496c2d3306713dcc4c5e3f1141195c13cf81f57568fadc19e1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.6.0-opr-001"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:7cfd440a9040f1fdeb0f3c30b7e283cd907671b57e8bec19a8c3249a76904c43"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:7cfd440a9040f1fdeb0f3c30b7e283cd907671b57e8bec19a8c3249a76904c43"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:fae62c9816bcc9496c2d3306713dcc4c5e3f1141195c13cf81f57568fadc19e1"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:6c1ee2243eb01cc422da28a3266639d90070f3ef7e7a903041f71dad780e33db"
+            },
+            {
+                "name": "sso7-rhel8-operator-6c1ee2243eb01cc422da28a3266639d90070f3ef7e7a903041f71dad780e33db-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:6c1ee2243eb01cc422da28a3266639d90070f3ef7e7a903041f71dad780e33db"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso76-openshift-rhel8@sha256:77b1c48998cb1b151f92ed379fe0c1ea1e263791cb2d1c438e6bde3d57f234cc"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso76-openshift-rhel8@sha256:77b1c48998cb1b151f92ed379fe0c1ea1e263791cb2d1c438e6bde3d57f234cc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.6.0-opr-002",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:4e2b8c657a8e433c2fdc39d12dd8e471f5a91aab8380a73ad2fb7c39be4e7745",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.6.0-opr-002"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:7cfd440a9040f1fdeb0f3c30b7e283cd907671b57e8bec19a8c3249a76904c43"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:7cfd440a9040f1fdeb0f3c30b7e283cd907671b57e8bec19a8c3249a76904c43"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:4e2b8c657a8e433c2fdc39d12dd8e471f5a91aab8380a73ad2fb7c39be4e7745"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:f69187d16e22f42173b99a1c4f0ce6cd212260da263b4a7a1eb08e5822cf4f66"
+            },
+            {
+                "name": "sso7-rhel8-operator-f69187d16e22f42173b99a1c4f0ce6cd212260da263b4a7a1eb08e5822cf4f66-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:f69187d16e22f42173b99a1c4f0ce6cd212260da263b4a7a1eb08e5822cf4f66"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso76-openshift-rhel8@sha256:77b1c48998cb1b151f92ed379fe0c1ea1e263791cb2d1c438e6bde3d57f234cc"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso76-openshift-rhel8@sha256:77b1c48998cb1b151f92ed379fe0c1ea1e263791cb2d1c438e6bde3d57f234cc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "rhsso-operator.7.6.0-opr-003",
+        "package": "rhsso-operator",
+        "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:3be46506071c51284e3a53e8da8a6da9f8d25389c220c380d3248a46d4f2ebed",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "Keycloak",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakClient",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakRealm",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keycloak.org",
+                    "kind": "KeycloakUser",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "rhsso-operator",
+                    "version": "7.6.0-opr-003"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "keycloak_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:7cfd440a9040f1fdeb0f3c30b7e283cd907671b57e8bec19a8c3249a76904c43"
+            },
+            {
+                "name": "rhsso_init_container",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-init-container@sha256:7cfd440a9040f1fdeb0f3c30b7e283cd907671b57e8bec19a8c3249a76904c43"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:3be46506071c51284e3a53e8da8a6da9f8d25389c220c380d3248a46d4f2ebed"
+            },
+            {
+                "name": "rhsso-operator",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:f69187d16e22f42173b99a1c4f0ce6cd212260da263b4a7a1eb08e5822cf4f66"
+            },
+            {
+                "name": "sso7-rhel8-operator-f69187d16e22f42173b99a1c4f0ce6cd212260da263b4a7a1eb08e5822cf4f66-annotation",
+                "image": "registry.redhat.io/rh-sso-7/sso7-rhel8-operator@sha256:f69187d16e22f42173b99a1c4f0ce6cd212260da263b4a7a1eb08e5822cf4f66"
+            },
+            {
+                "name": "rhsso_openjdk",
+                "image": "registry.redhat.io/rh-sso-7/sso76-openshift-rhel8@sha256:6a2507d7f42f7eb9f71087179f1c6464dd45a4c0cb9d82999b10c2e008427f37"
+            },
+            {
+                "name": "rhsso_openj9",
+                "image": "registry.redhat.io/rh-sso-7/sso76-openshift-rhel8@sha256:6a2507d7f42f7eb9f71087179f1c6464dd45a4c0cb9d82999b10c2e008427f37"
+            }
+        ]
+    }

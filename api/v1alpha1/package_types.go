@@ -17,8 +17,6 @@ limitations under the License.
 package v1alpha1
 
 import (
-	"encoding/json"
-
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -38,8 +36,7 @@ type State string
 type PackageSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
-	// +kubebuilder:default=false
-	PackageFBC json.RawMessage `json:"packageFBC"`
+	PackageFBC string `json:"packageFBC"`
 }
 
 // PackageStatus defines the observed state of Package

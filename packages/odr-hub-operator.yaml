@@ -1,0 +1,381 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: odr-hub-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "odr-hub-operator",
+        "defaultChannel": "stable-4.11"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.10",
+        "package": "odr-hub-operator",
+        "entries": [
+            {
+                "name": "odr-hub-operator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.0"
+            },
+            {
+                "name": "odr-hub-operator.v4.10.1",
+                "replaces": "odr-hub-operator.v4.10.0",
+                "skipRange": ">=4.2.0 <4.10.1"
+            },
+            {
+                "name": "odr-hub-operator.v4.10.2",
+                "replaces": "odr-hub-operator.v4.10.1",
+                "skipRange": ">=4.2.0 <4.10.2"
+            },
+            {
+                "name": "odr-hub-operator.v4.10.3",
+                "replaces": "odr-hub-operator.v4.10.2",
+                "skipRange": ">=4.2.0 <4.10.3"
+            },
+            {
+                "name": "odr-hub-operator.v4.10.4",
+                "replaces": "odr-hub-operator.v4.10.3",
+                "skipRange": ">=4.2.0 <4.10.4"
+            },
+            {
+                "name": "odr-hub-operator.v4.10.5",
+                "replaces": "odr-hub-operator.v4.10.4",
+                "skipRange": ">=4.2.0 <4.10.5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-4.11",
+        "package": "odr-hub-operator",
+        "entries": [
+            {
+                "name": "odr-hub-operator.v4.11.0",
+                "skipRange": ">=4.11.0 <4.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odr-hub-operator.v4.10.0",
+        "package": "odr-hub-operator",
+        "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:bfa02459d18d144adddebcc6ee8f612071065fc0fd5305bdaa2ed4338cbd9382",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPlacementControl",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPolicy",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odr-hub-operator",
+                    "version": "4.10.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:bfa02459d18d144adddebcc6ee8f612071065fc0fd5305bdaa2ed4338cbd9382"
+            },
+            {
+                "name": "odr-operator",
+                "image": "registry.redhat.io/odf4/odr-rhel8-operator@sha256:79d21aff4d2ddfb8dbeb0b28573a2a20d723fa79932ec27ac348663fa9492a47"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b8109aa8cb1f87d52afdfcb3e87382e197ca5983121409a6aaa1c7340004cc19"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odr-hub-operator.v4.10.1",
+        "package": "odr-hub-operator",
+        "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:176351c8a3c68d276c1a47b8270e53a4acefc47a8fb97078ca033da58e1e28ec",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPlacementControl",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPolicy",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odr-hub-operator",
+                    "version": "4.10.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:176351c8a3c68d276c1a47b8270e53a4acefc47a8fb97078ca033da58e1e28ec"
+            },
+            {
+                "name": "odr-operator",
+                "image": "registry.redhat.io/odf4/odr-rhel8-operator@sha256:184f62ff09483c8581738dd10992503096bae9bb017ef7c228a6af8f956bc643"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:004362f4560a23975e9b453d18da6ddd99d4131589952b395b84df49cb125f8c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odr-hub-operator.v4.10.2",
+        "package": "odr-hub-operator",
+        "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:99756d4684667729a7802236098cb41ed66a078fc8e9d54e82279fcdecee21a0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPlacementControl",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPolicy",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odr-hub-operator",
+                    "version": "4.10.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:99756d4684667729a7802236098cb41ed66a078fc8e9d54e82279fcdecee21a0"
+            },
+            {
+                "name": "odr-operator",
+                "image": "registry.redhat.io/odf4/odr-rhel8-operator@sha256:248c36be17d9453e3907a5ff94d48fcb12a3d1334522a802a970eb9b5a97a9d7"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:20954f1fd9c2bac5cabaedbeec25d60b31546ffc05f3e4c38ffcf45e2ed41be9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odr-hub-operator.v4.10.3",
+        "package": "odr-hub-operator",
+        "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:7439bb809f0f2aaad5adaaf827993ee960f54c98c4d448330c1e4d1ed6175b1e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPlacementControl",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPolicy",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odr-hub-operator",
+                    "version": "4.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:7439bb809f0f2aaad5adaaf827993ee960f54c98c4d448330c1e4d1ed6175b1e"
+            },
+            {
+                "name": "odr-operator",
+                "image": "registry.redhat.io/odf4/odr-rhel8-operator@sha256:a8ea4b2bfdb2892f2655ba582640ca0ba4d3c0b512d364dcba8de60ef0fafd59"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:8503a9bab5ea92bc6f7f8cdc00b4dab8e73103973d17b0bfdbf921d15cd9a4c0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odr-hub-operator.v4.10.4",
+        "package": "odr-hub-operator",
+        "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:b907d28f738933fea530637ddaabe2e205ea12f0a54ab7188c52aee69b091e3c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPlacementControl",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPolicy",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odr-hub-operator",
+                    "version": "4.10.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:b907d28f738933fea530637ddaabe2e205ea12f0a54ab7188c52aee69b091e3c"
+            },
+            {
+                "name": "odr-operator",
+                "image": "registry.redhat.io/odf4/odr-rhel8-operator@sha256:31b7a67cc62527f7da3dfad845f82a996d2c00671027eb2efb19a035db42c3d0"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3658954f199040b0f244945c94955f794ee68008657421002e1b32962e7c30fc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odr-hub-operator.v4.10.5",
+        "package": "odr-hub-operator",
+        "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:877416a35ab0930c4c8d5ccefcf91fefebc9b2cfac81cbce726c9ada4a51ba5e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPlacementControl",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPolicy",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odr-hub-operator",
+                    "version": "4.10.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:877416a35ab0930c4c8d5ccefcf91fefebc9b2cfac81cbce726c9ada4a51ba5e"
+            },
+            {
+                "name": "odr-operator",
+                "image": "registry.redhat.io/odf4/odr-rhel8-operator@sha256:5644ae6e4492ddc191de56efb533f2c0c19060ea1b6e5b053b09589cfc1b6a88"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:3658954f199040b0f244945c94955f794ee68008657421002e1b32962e7c30fc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "odr-hub-operator.v4.11.0",
+        "package": "odr-hub-operator",
+        "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:f5fc8d49a34bbcb6e18985593cb7f6ced9a4a81cb2d5dcc3207464f4eec8afe6",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRCluster",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPlacementControl",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "ramendr.openshift.io",
+                    "kind": "DRPolicy",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "odr-hub-operator",
+                    "version": "4.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/odf4/odr-hub-operator-bundle@sha256:f5fc8d49a34bbcb6e18985593cb7f6ced9a4a81cb2d5dcc3207464f4eec8afe6"
+            },
+            {
+                "name": "odr-operator",
+                "image": "registry.redhat.io/odf4/odr-rhel8-operator@sha256:ccedf350e5a7a5ce994efdf34193cb90f5db080bb2846e857a11f6b0edf83762"
+            },
+            {
+                "name": "rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b5786bbbef725badf3dfcc2c2c7a86ead5ebb584c978c47aae8b9a62e241b80d"
+            }
+        ]
+    }

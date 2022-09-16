@@ -1,0 +1,1779 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: servicemeshoperator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "servicemeshoperator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "1.0",
+        "package": "servicemeshoperator",
+        "entries": [
+            {
+                "name": "servicemeshoperator.v2.0.7.1",
+                "skipRange": ">=1.0.2 <2.0.7-1"
+            },
+            {
+                "name": "servicemeshoperator.v2.0.8",
+                "replaces": "servicemeshoperator.v2.0.7.1",
+                "skipRange": ">=1.0.2 <2.0.8-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.1.0",
+                "replaces": "servicemeshoperator.v2.0.8",
+                "skipRange": ">=1.0.2 <2.1.0-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.1.1",
+                "replaces": "servicemeshoperator.v2.1.0",
+                "skipRange": ">=1.0.2 <2.1.1-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.1.2",
+                "replaces": "servicemeshoperator.v2.1.1",
+                "skipRange": ">=1.0.2 <2.1.2-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.1.3",
+                "replaces": "servicemeshoperator.v2.1.2",
+                "skipRange": ">=1.0.2 <2.1.3-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.2.0",
+                "replaces": "servicemeshoperator.v2.1.3",
+                "skipRange": ">=1.0.2 <2.2.0-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.2.1",
+                "replaces": "servicemeshoperator.v2.2.0",
+                "skipRange": ">=1.0.2 <2.2.1-0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "servicemeshoperator",
+        "entries": [
+            {
+                "name": "servicemeshoperator.v2.0.7.1",
+                "skipRange": ">=1.0.2 <2.0.7-1"
+            },
+            {
+                "name": "servicemeshoperator.v2.0.8",
+                "replaces": "servicemeshoperator.v2.0.7.1",
+                "skipRange": ">=1.0.2 <2.0.8-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.1.0",
+                "replaces": "servicemeshoperator.v2.0.8",
+                "skipRange": ">=1.0.2 <2.1.0-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.1.1",
+                "replaces": "servicemeshoperator.v2.1.0",
+                "skipRange": ">=1.0.2 <2.1.1-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.1.2",
+                "replaces": "servicemeshoperator.v2.1.1",
+                "skipRange": ">=1.0.2 <2.1.2-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.1.3",
+                "replaces": "servicemeshoperator.v2.1.2",
+                "skipRange": ">=1.0.2 <2.1.3-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.2.0",
+                "replaces": "servicemeshoperator.v2.1.3",
+                "skipRange": ">=1.0.2 <2.2.0-0"
+            },
+            {
+                "name": "servicemeshoperator.v2.2.1",
+                "replaces": "servicemeshoperator.v2.2.0",
+                "skipRange": ">=1.0.2 <2.2.1-0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "servicemeshoperator.v2.0.7.1",
+        "package": "servicemeshoperator",
+        "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:8b856a324490ecb3f7d61b3bd5b474ebadfb9a666130023964af17bdf7a49292",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMember",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMemberRoll",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "servicemeshoperator",
+                    "version": "2.0.7-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "v1_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v1_1.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v2_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:6c22db40d77225263ee88e449caad76a3730464c21adb50aca6acbaa44432cff"
+            },
+            {
+                "name": "v1_0.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:812b01b38300a2f0e9537c96f48caa22a49b5ddd436230f6ae2742dc91673cfa"
+            },
+            {
+                "name": "v1_1.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:a85c1cd7f4da38c25b8bd81c31e8a2a545b8275428790afc3a69a75479bae122"
+            },
+            {
+                "name": "v1_1.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:82057e6ec17626149dbe4718c5ace6f17ebf77713c66adbc2d52206b4689409e"
+            },
+            {
+                "name": "v1_0.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:b8f6562583ce68eb3819f25a43e82e1570173c8374c874d280da81f72dd296f5"
+            },
+            {
+                "name": "v2_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:0acdfd3e004cdf206568349a3803d24e1ccca9556a529821d5c48185fcf16b47"
+            },
+            {
+                "name": "v1_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:497bebd338d9c18871482e77e89470ece48d525e027a2d1a4ed971bd525c89cd"
+            },
+            {
+                "name": "v1_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:dcd495666ecff29fc612a571fff709bca73176fa2f24dc833aff6d32253fe664"
+            },
+            {
+                "name": "v1_1.ior",
+                "image": "registry.redhat.io/openshift-service-mesh/ior-rhel8@sha256:ee48f439a565048eebcac6f51d16658e06c5ac8d9f1ee843728dc2900ab7ea01"
+            },
+            {
+                "name": "v2_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:48f1459240af655fb39325c6b304fb732f8b0e2cfb26347b95adfd5d1c39f5e0"
+            },
+            {
+                "name": "v1_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:6312d3d5242bd60182a596453d9ccbfe36bf4144b9442bc5871001dbf1231c79"
+            },
+            {
+                "name": "v1_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:65a6e250709dd23bd0771ff5ac31dfa94f47d379eb62c0d346e1a25c716c0a42"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:8b856a324490ecb3f7d61b3bd5b474ebadfb9a666130023964af17bdf7a49292"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:574c2b05617a75cf9b216acd4c8332462b1710a36421700023614fea0b807b41"
+            },
+            {
+                "name": "v1_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:2fb223a02a72f721acd75311510a954479275605edc9602c04a4f574486fdd6e"
+            },
+            {
+                "name": "v1_1.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:3d07723a3239bfb4f5e969cc9c6ea3c7385f7e4e31f854d78a4aef4313df74a9"
+            },
+            {
+                "name": "v2_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:7c128fcbb48efa3db9353102dc6230cdf655a9824a2c5c04d4e18acf9213c412"
+            },
+            {
+                "name": "v1_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:0622a302ad88755421967733651786c23146c79236e0801f837c692eb14ad6b9"
+            },
+            {
+                "name": "v1_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:7edaf9e35f7ae32bc4731ef2ee6be144af20c9a68ab98594981ff1ec138511cf"
+            },
+            {
+                "name": "v2_0.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:9efad74f4dc7066fb25b2ccb8b7160f9c0546503796a2a3b968f21d3cfbe19de"
+            },
+            {
+                "name": "v2_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:9efad74f4dc7066fb25b2ccb8b7160f9c0546503796a2a3b968f21d3cfbe19de"
+            },
+            {
+                "name": "v2_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:4dc40d5aa022c1de70bfdb82eb6a7a477afcc025ccdada096f397430c378da46"
+            },
+            {
+                "name": "v1_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:6c32e8db039dd06429a0e71919e7d2b914baf8e28d35ca17e6c9e40179a0871f"
+            },
+            {
+                "name": "v1_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:701723ea4174a579ee4e2899ed47233b4ea572e0dca1ec855ecb5f0d7a3cc7eb"
+            },
+            {
+                "name": "v1_1.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:261d7719113bbe327e84359819c756d5a0abebb1f22ed95550e213aca5a85635"
+            },
+            {
+                "name": "v2_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:8c93d2ed3a8d0d04a3da6b58d74a25d8190b5ee0bfff5be5a1a75b71ab64a1f5"
+            },
+            {
+                "name": "v1_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:f965d1eb6e9139bfbf55b8e14fcd5cb28619cd89b6576b45aa33ae6211bc0963"
+            },
+            {
+                "name": "v1_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:2bff8d6ac9f661b63291b4ccf616520786fedc4c39d801f97c8e59af6fa76351"
+            },
+            {
+                "name": "v2_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:4df862d66b17b5e67cb1000a04bee48d12cbf7089e00a0a121a41b7c58e69375"
+            },
+            {
+                "name": "v1_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:6f8df84d1c20842ec1c31fd3171de8f4601b2a99ab77bae93c242763772971b7"
+            },
+            {
+                "name": "v1_1.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:3b68f2ea736b007cbc447aea9e26565f1779b3a553a007d1a2512d69c6622c05"
+            },
+            {
+                "name": "v1_0.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:baee6083db8c87d66035b3297b075e00c01b31b6701c25ec72ca438553e923dc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "servicemeshoperator.v2.0.8",
+        "package": "servicemeshoperator",
+        "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:f0bacde12a4b75d0eb435a3f62887abe57b56668d0e9f848792a0b7b7a7de8c6",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMember",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMemberRoll",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "servicemeshoperator",
+                    "version": "2.0.8-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "v1_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v1_1.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v2_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:6c22db40d77225263ee88e449caad76a3730464c21adb50aca6acbaa44432cff"
+            },
+            {
+                "name": "v1_0.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:812b01b38300a2f0e9537c96f48caa22a49b5ddd436230f6ae2742dc91673cfa"
+            },
+            {
+                "name": "v1_1.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:a85c1cd7f4da38c25b8bd81c31e8a2a545b8275428790afc3a69a75479bae122"
+            },
+            {
+                "name": "v1_1.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:82057e6ec17626149dbe4718c5ace6f17ebf77713c66adbc2d52206b4689409e"
+            },
+            {
+                "name": "v1_0.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:b8f6562583ce68eb3819f25a43e82e1570173c8374c874d280da81f72dd296f5"
+            },
+            {
+                "name": "v2_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:2b96d1f2dd49d664933ef2cef6e71dd84e8770f03120d0dfeb558b4f5ce7f51f"
+            },
+            {
+                "name": "v1_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:497bebd338d9c18871482e77e89470ece48d525e027a2d1a4ed971bd525c89cd"
+            },
+            {
+                "name": "v1_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:dcd495666ecff29fc612a571fff709bca73176fa2f24dc833aff6d32253fe664"
+            },
+            {
+                "name": "v1_1.ior",
+                "image": "registry.redhat.io/openshift-service-mesh/ior-rhel8@sha256:ee48f439a565048eebcac6f51d16658e06c5ac8d9f1ee843728dc2900ab7ea01"
+            },
+            {
+                "name": "v1_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:6312d3d5242bd60182a596453d9ccbfe36bf4144b9442bc5871001dbf1231c79"
+            },
+            {
+                "name": "v1_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:65a6e250709dd23bd0771ff5ac31dfa94f47d379eb62c0d346e1a25c716c0a42"
+            },
+            {
+                "name": "v2_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:fc06b8ee8abb5de40410925325dd5847c325b6db3d80b96036d610d19e945cb5"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:f0bacde12a4b75d0eb435a3f62887abe57b56668d0e9f848792a0b7b7a7de8c6"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:7540a00f9ae1850eddf01f95ab2bc642d0bd4bd304a434ed008c1b960b5f161c"
+            },
+            {
+                "name": "v1_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:2fb223a02a72f721acd75311510a954479275605edc9602c04a4f574486fdd6e"
+            },
+            {
+                "name": "v1_1.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:3d07723a3239bfb4f5e969cc9c6ea3c7385f7e4e31f854d78a4aef4313df74a9"
+            },
+            {
+                "name": "v2_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:6aa1e3b8aec15e5aac917971eb346bc173f268216b78ebb17ce9e8191e4cabe8"
+            },
+            {
+                "name": "v1_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:0622a302ad88755421967733651786c23146c79236e0801f837c692eb14ad6b9"
+            },
+            {
+                "name": "v2_0.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:4f3d8aeadcf588ff13cb296caeaa5846fe1ac54259bf546fa1f654723f137519"
+            },
+            {
+                "name": "v2_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:4f3d8aeadcf588ff13cb296caeaa5846fe1ac54259bf546fa1f654723f137519"
+            },
+            {
+                "name": "v1_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:7edaf9e35f7ae32bc4731ef2ee6be144af20c9a68ab98594981ff1ec138511cf"
+            },
+            {
+                "name": "v2_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:2e83a708b09ca1a563f59234718c9d55e400e73ccbd58f97c12efb8927e4620c"
+            },
+            {
+                "name": "v1_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:6c32e8db039dd06429a0e71919e7d2b914baf8e28d35ca17e6c9e40179a0871f"
+            },
+            {
+                "name": "v1_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:701723ea4174a579ee4e2899ed47233b4ea572e0dca1ec855ecb5f0d7a3cc7eb"
+            },
+            {
+                "name": "v1_1.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:261d7719113bbe327e84359819c756d5a0abebb1f22ed95550e213aca5a85635"
+            },
+            {
+                "name": "v2_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:7d34697624a0f90f79c31b3a87aca6943a6b87b662452fdc821b597df1ce9ef7"
+            },
+            {
+                "name": "v1_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:f965d1eb6e9139bfbf55b8e14fcd5cb28619cd89b6576b45aa33ae6211bc0963"
+            },
+            {
+                "name": "v2_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:03ba7a4bed6122c842ac0aeca626be7e6f3ec2106acee2ffda017c8cbf36e41b"
+            },
+            {
+                "name": "v1_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:2bff8d6ac9f661b63291b4ccf616520786fedc4c39d801f97c8e59af6fa76351"
+            },
+            {
+                "name": "v1_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:6f8df84d1c20842ec1c31fd3171de8f4601b2a99ab77bae93c242763772971b7"
+            },
+            {
+                "name": "v1_1.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:3b68f2ea736b007cbc447aea9e26565f1779b3a553a007d1a2512d69c6622c05"
+            },
+            {
+                "name": "v1_0.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:baee6083db8c87d66035b3297b075e00c01b31b6701c25ec72ca438553e923dc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "servicemeshoperator.v2.1.0",
+        "package": "servicemeshoperator",
+        "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:6444029a262a9cf526d2195b2bbec7b3c28e52c1473fe8d43d8167ea3c82fda0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMember",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMemberRoll",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "servicemeshoperator",
+                    "version": "2.1.0-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "v1_1.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v1_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v2_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:6c22db40d77225263ee88e449caad76a3730464c21adb50aca6acbaa44432cff"
+            },
+            {
+                "name": "v1_0.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:812b01b38300a2f0e9537c96f48caa22a49b5ddd436230f6ae2742dc91673cfa"
+            },
+            {
+                "name": "v1_1.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:a85c1cd7f4da38c25b8bd81c31e8a2a545b8275428790afc3a69a75479bae122"
+            },
+            {
+                "name": "v1_1.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:82057e6ec17626149dbe4718c5ace6f17ebf77713c66adbc2d52206b4689409e"
+            },
+            {
+                "name": "v1_0.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:b8f6562583ce68eb3819f25a43e82e1570173c8374c874d280da81f72dd296f5"
+            },
+            {
+                "name": "v2_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:2b96d1f2dd49d664933ef2cef6e71dd84e8770f03120d0dfeb558b4f5ce7f51f"
+            },
+            {
+                "name": "v1_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:497bebd338d9c18871482e77e89470ece48d525e027a2d1a4ed971bd525c89cd"
+            },
+            {
+                "name": "v1_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:dcd495666ecff29fc612a571fff709bca73176fa2f24dc833aff6d32253fe664"
+            },
+            {
+                "name": "v2_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:e93ab5852f979552467c0c331e24bef7b61dc67afd24af85e60c2d3c4d1d8031"
+            },
+            {
+                "name": "v1_1.ior",
+                "image": "registry.redhat.io/openshift-service-mesh/ior-rhel8@sha256:ee48f439a565048eebcac6f51d16658e06c5ac8d9f1ee843728dc2900ab7ea01"
+            },
+            {
+                "name": "v1_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:6312d3d5242bd60182a596453d9ccbfe36bf4144b9442bc5871001dbf1231c79"
+            },
+            {
+                "name": "v1_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:65a6e250709dd23bd0771ff5ac31dfa94f47d379eb62c0d346e1a25c716c0a42"
+            },
+            {
+                "name": "v2_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:b0549e76a6f7c78a21940802bb2f974e3dfdb7146dcfca6d8ca9cb6fa080bcf6"
+            },
+            {
+                "name": "v2_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:fc06b8ee8abb5de40410925325dd5847c325b6db3d80b96036d610d19e945cb5"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:6444029a262a9cf526d2195b2bbec7b3c28e52c1473fe8d43d8167ea3c82fda0"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:8dc4611e7069a3e671b79e290b76dc8151445e6dcca7c225f36fce9512de5fe5"
+            },
+            {
+                "name": "v1_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:2fb223a02a72f721acd75311510a954479275605edc9602c04a4f574486fdd6e"
+            },
+            {
+                "name": "v1_1.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:3d07723a3239bfb4f5e969cc9c6ea3c7385f7e4e31f854d78a4aef4313df74a9"
+            },
+            {
+                "name": "v2_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:6aa1e3b8aec15e5aac917971eb346bc173f268216b78ebb17ce9e8191e4cabe8"
+            },
+            {
+                "name": "v1_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:0622a302ad88755421967733651786c23146c79236e0801f837c692eb14ad6b9"
+            },
+            {
+                "name": "v2_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:4f3d8aeadcf588ff13cb296caeaa5846fe1ac54259bf546fa1f654723f137519"
+            },
+            {
+                "name": "v2_0.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:4f3d8aeadcf588ff13cb296caeaa5846fe1ac54259bf546fa1f654723f137519"
+            },
+            {
+                "name": "v1_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:7edaf9e35f7ae32bc4731ef2ee6be144af20c9a68ab98594981ff1ec138511cf"
+            },
+            {
+                "name": "v2_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:edfc344a4433d8c09c9f24c1f087d8bd904cab06319b0afb05df3b57573d0e9d"
+            },
+            {
+                "name": "v2_1.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:edfc344a4433d8c09c9f24c1f087d8bd904cab06319b0afb05df3b57573d0e9d"
+            },
+            {
+                "name": "v2_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:2e83a708b09ca1a563f59234718c9d55e400e73ccbd58f97c12efb8927e4620c"
+            },
+            {
+                "name": "v1_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:6c32e8db039dd06429a0e71919e7d2b914baf8e28d35ca17e6c9e40179a0871f"
+            },
+            {
+                "name": "v1_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:701723ea4174a579ee4e2899ed47233b4ea572e0dca1ec855ecb5f0d7a3cc7eb"
+            },
+            {
+                "name": "v2_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:9377cae1150cf06827cb865623e34ab242ad3a310b65e7ec2493370be963b4f0"
+            },
+            {
+                "name": "v1_1.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:261d7719113bbe327e84359819c756d5a0abebb1f22ed95550e213aca5a85635"
+            },
+            {
+                "name": "v2_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:7d34697624a0f90f79c31b3a87aca6943a6b87b662452fdc821b597df1ce9ef7"
+            },
+            {
+                "name": "v1_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:f965d1eb6e9139bfbf55b8e14fcd5cb28619cd89b6576b45aa33ae6211bc0963"
+            },
+            {
+                "name": "v2_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:03ba7a4bed6122c842ac0aeca626be7e6f3ec2106acee2ffda017c8cbf36e41b"
+            },
+            {
+                "name": "v1_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:2bff8d6ac9f661b63291b4ccf616520786fedc4c39d801f97c8e59af6fa76351"
+            },
+            {
+                "name": "v2_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:60234165ad886c03502c357ed5ed6f3e2f375958feac490d42ea5dbc330230cd"
+            },
+            {
+                "name": "v1_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:6f8df84d1c20842ec1c31fd3171de8f4601b2a99ab77bae93c242763772971b7"
+            },
+            {
+                "name": "v2_1.rls",
+                "image": "registry.redhat.io/openshift-service-mesh/ratelimit-rhel8@sha256:3fd4e8b907bdcfc2ef36114505de3911b48498d443d53bb4b8e1452713c7bbe1"
+            },
+            {
+                "name": "v1_1.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:3b68f2ea736b007cbc447aea9e26565f1779b3a553a007d1a2512d69c6622c05"
+            },
+            {
+                "name": "v1_0.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:baee6083db8c87d66035b3297b075e00c01b31b6701c25ec72ca438553e923dc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "servicemeshoperator.v2.1.1",
+        "package": "servicemeshoperator",
+        "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:614fb13639f36e60c4890c10c44f3dc2e3bb2b8813c8e8f4b4a6ab1a5c4102e7",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMember",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMemberRoll",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "servicemeshoperator",
+                    "version": "2.1.1-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "v1_1.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v1_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v2_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:6c22db40d77225263ee88e449caad76a3730464c21adb50aca6acbaa44432cff"
+            },
+            {
+                "name": "v1_0.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:812b01b38300a2f0e9537c96f48caa22a49b5ddd436230f6ae2742dc91673cfa"
+            },
+            {
+                "name": "v1_1.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:a85c1cd7f4da38c25b8bd81c31e8a2a545b8275428790afc3a69a75479bae122"
+            },
+            {
+                "name": "v1_1.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:82057e6ec17626149dbe4718c5ace6f17ebf77713c66adbc2d52206b4689409e"
+            },
+            {
+                "name": "v1_0.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:b8f6562583ce68eb3819f25a43e82e1570173c8374c874d280da81f72dd296f5"
+            },
+            {
+                "name": "v2_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:04e6353052768a659be13098de03fd7b16d863bbbe3e0882fd55daa823b0192c"
+            },
+            {
+                "name": "v2_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:2b96d1f2dd49d664933ef2cef6e71dd84e8770f03120d0dfeb558b4f5ce7f51f"
+            },
+            {
+                "name": "v1_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:497bebd338d9c18871482e77e89470ece48d525e027a2d1a4ed971bd525c89cd"
+            },
+            {
+                "name": "v1_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:dcd495666ecff29fc612a571fff709bca73176fa2f24dc833aff6d32253fe664"
+            },
+            {
+                "name": "v1_1.ior",
+                "image": "registry.redhat.io/openshift-service-mesh/ior-rhel8@sha256:ee48f439a565048eebcac6f51d16658e06c5ac8d9f1ee843728dc2900ab7ea01"
+            },
+            {
+                "name": "v2_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:290fe5c2f9ce5f800d4a6d4d84929e597849b39fdc896a26d0b06d182aaa6856"
+            },
+            {
+                "name": "v1_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:6312d3d5242bd60182a596453d9ccbfe36bf4144b9442bc5871001dbf1231c79"
+            },
+            {
+                "name": "v1_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:65a6e250709dd23bd0771ff5ac31dfa94f47d379eb62c0d346e1a25c716c0a42"
+            },
+            {
+                "name": "v2_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:fc06b8ee8abb5de40410925325dd5847c325b6db3d80b96036d610d19e945cb5"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:614fb13639f36e60c4890c10c44f3dc2e3bb2b8813c8e8f4b4a6ab1a5c4102e7"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:cbf60471ffbd5e1be8d46ebc3cbcef5e3acbe5a91923d7500ecec283db832988"
+            },
+            {
+                "name": "v1_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:2fb223a02a72f721acd75311510a954479275605edc9602c04a4f574486fdd6e"
+            },
+            {
+                "name": "v1_1.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:3d07723a3239bfb4f5e969cc9c6ea3c7385f7e4e31f854d78a4aef4313df74a9"
+            },
+            {
+                "name": "v2_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:6aa1e3b8aec15e5aac917971eb346bc173f268216b78ebb17ce9e8191e4cabe8"
+            },
+            {
+                "name": "v1_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:0622a302ad88755421967733651786c23146c79236e0801f837c692eb14ad6b9"
+            },
+            {
+                "name": "v2_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:4f3d8aeadcf588ff13cb296caeaa5846fe1ac54259bf546fa1f654723f137519"
+            },
+            {
+                "name": "v2_0.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:4f3d8aeadcf588ff13cb296caeaa5846fe1ac54259bf546fa1f654723f137519"
+            },
+            {
+                "name": "v1_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:7edaf9e35f7ae32bc4731ef2ee6be144af20c9a68ab98594981ff1ec138511cf"
+            },
+            {
+                "name": "v2_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:ffd1942cdfb5a3c644bc0b973a103340a664342f9717d271a7c0561df7b7fb78"
+            },
+            {
+                "name": "v2_1.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:ffd1942cdfb5a3c644bc0b973a103340a664342f9717d271a7c0561df7b7fb78"
+            },
+            {
+                "name": "v2_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:2e83a708b09ca1a563f59234718c9d55e400e73ccbd58f97c12efb8927e4620c"
+            },
+            {
+                "name": "v2_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:62b4b61f4f11787400f9e80191fc587bc776c53f8acb30ea20ac126e1f156e46"
+            },
+            {
+                "name": "v1_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:6c32e8db039dd06429a0e71919e7d2b914baf8e28d35ca17e6c9e40179a0871f"
+            },
+            {
+                "name": "v1_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:701723ea4174a579ee4e2899ed47233b4ea572e0dca1ec855ecb5f0d7a3cc7eb"
+            },
+            {
+                "name": "v1_1.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:261d7719113bbe327e84359819c756d5a0abebb1f22ed95550e213aca5a85635"
+            },
+            {
+                "name": "v2_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:a64724eef282aa43d2e0240d15bb33a249735d4fde85b4725f7af73f44ad6100"
+            },
+            {
+                "name": "v1_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:f965d1eb6e9139bfbf55b8e14fcd5cb28619cd89b6576b45aa33ae6211bc0963"
+            },
+            {
+                "name": "v2_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:03ba7a4bed6122c842ac0aeca626be7e6f3ec2106acee2ffda017c8cbf36e41b"
+            },
+            {
+                "name": "v2_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:13f566dca713189e5bdb4c67c1754fafc1ebc3f8b9696ccb2093f927d186737f"
+            },
+            {
+                "name": "v1_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:2bff8d6ac9f661b63291b4ccf616520786fedc4c39d801f97c8e59af6fa76351"
+            },
+            {
+                "name": "v1_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:6f8df84d1c20842ec1c31fd3171de8f4601b2a99ab77bae93c242763772971b7"
+            },
+            {
+                "name": "v2_1.rls",
+                "image": "registry.redhat.io/openshift-service-mesh/ratelimit-rhel8@sha256:0b0627a5a348d5b56d59fcd052d61ea5db9092765ff6c3532381dcdac70a53a7"
+            },
+            {
+                "name": "v1_1.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:3b68f2ea736b007cbc447aea9e26565f1779b3a553a007d1a2512d69c6622c05"
+            },
+            {
+                "name": "v1_0.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:baee6083db8c87d66035b3297b075e00c01b31b6701c25ec72ca438553e923dc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "servicemeshoperator.v2.1.2",
+        "package": "servicemeshoperator",
+        "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:11b295c524bb877801977156564ccfa1b7b0941b7ad6e21be857826bce6078ef",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMember",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMemberRoll",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "servicemeshoperator",
+                    "version": "2.1.2-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "v1_1.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v1_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v2_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:6c22db40d77225263ee88e449caad76a3730464c21adb50aca6acbaa44432cff"
+            },
+            {
+                "name": "v1_1.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:53ab1eb5e8dc70b10fa58accf1f8d34fb069fb945fc4ce556c6db3175e6057e8"
+            },
+            {
+                "name": "v1_0.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:812b01b38300a2f0e9537c96f48caa22a49b5ddd436230f6ae2742dc91673cfa"
+            },
+            {
+                "name": "v1_1.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:059c2e32c0b8c58778d381455b12ee4439fc4d4e9132f9f0bf31aa85ba93c1b5"
+            },
+            {
+                "name": "v1_0.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:b8f6562583ce68eb3819f25a43e82e1570173c8374c874d280da81f72dd296f5"
+            },
+            {
+                "name": "v1_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:497bebd338d9c18871482e77e89470ece48d525e027a2d1a4ed971bd525c89cd"
+            },
+            {
+                "name": "v2_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:741462a03480562dc3147d0b9b69556e339fb0f96f1da7784021b5124ed4e35a"
+            },
+            {
+                "name": "v1_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:9f52a4de31c23222b49fc98fbb1d18d244843e864926f64bf3756affdc4bdf7d"
+            },
+            {
+                "name": "v2_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:f00e97f91329b7be49e87f8f870b905967c76b233f91815023004e5139b32ed2"
+            },
+            {
+                "name": "v1_1.ior",
+                "image": "registry.redhat.io/openshift-service-mesh/ior-rhel8@sha256:cef3841255c1e856e5ee5f21cb40f97223b0849640555869f385ab6e401a8935"
+            },
+            {
+                "name": "v1_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:6312d3d5242bd60182a596453d9ccbfe36bf4144b9442bc5871001dbf1231c79"
+            },
+            {
+                "name": "v1_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:b31fc2dfbce78dd1874ef45cd438e54282b1edaded505522ff4e59459b87b039"
+            },
+            {
+                "name": "v2_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:b98edbc9dfd0b88919dc01632aa1bc63f5bdbee892db33bb7525d896e0ff2192"
+            },
+            {
+                "name": "v2_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:e282119365fe2b7ac5aa5fc04e772c30e7f79d82974fd81a6286648828990b46"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:11b295c524bb877801977156564ccfa1b7b0941b7ad6e21be857826bce6078ef"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:1679e52893f7227c9d9c1a1803e66702947682c6e9851ed6730a86ad927a5237"
+            },
+            {
+                "name": "v2_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:2e517a126a2152d7675648354356d6223962d3ea70391caa93d1d3189f5ea68f"
+            },
+            {
+                "name": "v1_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:2fb223a02a72f721acd75311510a954479275605edc9602c04a4f574486fdd6e"
+            },
+            {
+                "name": "v1_1.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:bc0b2e92ceee06f16b39d6caa5aed15af3e52a1320e12d64080c96a1757c8fa4"
+            },
+            {
+                "name": "v1_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:0622a302ad88755421967733651786c23146c79236e0801f837c692eb14ad6b9"
+            },
+            {
+                "name": "v2_0.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:0b83f3f252fa8aa3a43a3832a8d16aa0a989dcd82b4aeec62426d4ce5d54a737"
+            },
+            {
+                "name": "v2_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:0b83f3f252fa8aa3a43a3832a8d16aa0a989dcd82b4aeec62426d4ce5d54a737"
+            },
+            {
+                "name": "v1_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:4fdd8484c91436345c9b4ef12fa812c83fd99048991b0eb2792dfacebf8e78aa"
+            },
+            {
+                "name": "v2_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:e50eb8021ac638ac4ac2cf4f5bfac35ef6a7bd4a573dd0bb83d9c88c0e9fea9f"
+            },
+            {
+                "name": "v2_1.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:e50eb8021ac638ac4ac2cf4f5bfac35ef6a7bd4a573dd0bb83d9c88c0e9fea9f"
+            },
+            {
+                "name": "v2_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:2c3547f1ac8cdc33a648c2317d917c8da31ab8ac04529e478341828cb35d6ce9"
+            },
+            {
+                "name": "v2_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:4e5460053a283548a5686a945ce9d56fd1f9df745b26e466016feac56754a579"
+            },
+            {
+                "name": "v1_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:6c32e8db039dd06429a0e71919e7d2b914baf8e28d35ca17e6c9e40179a0871f"
+            },
+            {
+                "name": "v1_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:b30caa6bb105cc94ec54835b334112e20471196aec13b8fd5aa25e518eb78957"
+            },
+            {
+                "name": "v1_1.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:36d613989f8382e74f1b16ee04995ef74b83e7fecb9da63d953cfe8e29459050"
+            },
+            {
+                "name": "v2_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:3c2c85bd33c5394b943573c7c3eea8210edaa25e708d2ee42358467a8eef1ab5"
+            },
+            {
+                "name": "v1_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:f965d1eb6e9139bfbf55b8e14fcd5cb28619cd89b6576b45aa33ae6211bc0963"
+            },
+            {
+                "name": "v2_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:1d0b1923f82a06c1c318cb73bee362eaf396b66205e541509f36bea90a7a12aa"
+            },
+            {
+                "name": "v1_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:566cd2408638af57d4c4e7dceca851f05591d5435415470e27d4fe8b193e405e"
+            },
+            {
+                "name": "v1_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:6f8df84d1c20842ec1c31fd3171de8f4601b2a99ab77bae93c242763772971b7"
+            },
+            {
+                "name": "v2_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:8aa1bec558973fc4359ef2d19695f2a884dfb612253992451633060c1a608f3e"
+            },
+            {
+                "name": "v2_1.rls",
+                "image": "registry.redhat.io/openshift-service-mesh/ratelimit-rhel8@sha256:7ae12ac408fca5745fb7397eca3ccc0bfcf121af224840e261212ccd3b887b6d"
+            },
+            {
+                "name": "v1_1.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:6fc54e1c173ed3d6ee8ce5af883b6351a82eb2a1a702542a08c3fc31bbf896eb"
+            },
+            {
+                "name": "v1_0.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:baee6083db8c87d66035b3297b075e00c01b31b6701c25ec72ca438553e923dc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "servicemeshoperator.v2.1.3",
+        "package": "servicemeshoperator",
+        "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:736cd3ee2d60d0389cae87718eefc7bfc8c931f4f54f2d389870b9eb339411d3",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMember",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMemberRoll",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "servicemeshoperator",
+                    "version": "2.1.3-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "v1_1.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v1_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "v2_0.3scale-istio-adapter",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:6c22db40d77225263ee88e449caad76a3730464c21adb50aca6acbaa44432cff"
+            },
+            {
+                "name": "v1_1.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:2c4f8b06eb48701e342d0ee2db6f6fa1eb11a7f62fe4e18bfd4f4d7913a5df14"
+            },
+            {
+                "name": "v1_0.citadel",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:812b01b38300a2f0e9537c96f48caa22a49b5ddd436230f6ae2742dc91673cfa"
+            },
+            {
+                "name": "v1_0.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:b8f6562583ce68eb3819f25a43e82e1570173c8374c874d280da81f72dd296f5"
+            },
+            {
+                "name": "v1_1.galley",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:b9217c4efc369d12c125070b010bac6082e4055b510c5e8e180a2202a90bb447"
+            },
+            {
+                "name": "v2_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:46ecd5de072e29d419c54f2ce9f4e6d54175caa8d73304db12cd63e14f2b1903"
+            },
+            {
+                "name": "v1_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:497bebd338d9c18871482e77e89470ece48d525e027a2d1a4ed971bd525c89cd"
+            },
+            {
+                "name": "v1_1.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:7014a5443c6ffa600008b36c5da6d4fc7d4c7391ab9ef81bbd5f90e5f4c71897"
+            },
+            {
+                "name": "v2_0.grafana",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:79ad639e6d0e708b896f80969956dbc3af4d15fe7d832dfad1d7e1728e2b7fc0"
+            },
+            {
+                "name": "v1_1.ior",
+                "image": "registry.redhat.io/openshift-service-mesh/ior-rhel8@sha256:f8d550c20416cb76a37af786923152c0ed7494b58d3a187a72cb4f4620796993"
+            },
+            {
+                "name": "v1_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:6312d3d5242bd60182a596453d9ccbfe36bf4144b9442bc5871001dbf1231c79"
+            },
+            {
+                "name": "v1_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:77eddfbfade2da9b329079891e0f3ef361a0fe4abd3a31f5a9e3dd2831bf096c"
+            },
+            {
+                "name": "v2_0.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:ae9106ec4233495a2d43f8986f0514656817c760b86a508a166ded570fee0744"
+            },
+            {
+                "name": "v2_1.cni",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:c55aa1f95922548ff0d4010a32fcadcc883bfff479088618f79e3d7addcafc35"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:736cd3ee2d60d0389cae87718eefc7bfc8c931f4f54f2d389870b9eb339411d3"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:b22c190461727ca8acafe16ffd3851486f9cd91ce22a38c766639751fc701f78"
+            },
+            {
+                "name": "v1_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:2fb223a02a72f721acd75311510a954479275605edc9602c04a4f574486fdd6e"
+            },
+            {
+                "name": "v2_0.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:80eacfccdafc404531d515f3511392179bbc2d925cf3eedb582dd6156ae3659d"
+            },
+            {
+                "name": "v1_1.mixer",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:e96e538196050479eae6e137600be04e671eab32cf3a82431228f242c913c19f"
+            },
+            {
+                "name": "v1_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:0622a302ad88755421967733651786c23146c79236e0801f837c692eb14ad6b9"
+            },
+            {
+                "name": "v1_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:068243a90e4c2880a0699184dcc3b3e4c1635b233c22fb594fb6e120c14d4044"
+            },
+            {
+                "name": "v2_1.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:27343c763f079081c3d034026ee448ad080784ec0679b0a2bdaa26e05b04efac"
+            },
+            {
+                "name": "v2_1.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:27343c763f079081c3d034026ee448ad080784ec0679b0a2bdaa26e05b04efac"
+            },
+            {
+                "name": "v2_0.pilot",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:a09159b56307b7c91c9ca106a58e0a9a1828bc6501bc7c2a8b808259eb4a70de"
+            },
+            {
+                "name": "v2_0.wasm-cacher",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:a09159b56307b7c91c9ca106a58e0a9a1828bc6501bc7c2a8b808259eb4a70de"
+            },
+            {
+                "name": "v1_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:6c32e8db039dd06429a0e71919e7d2b914baf8e28d35ca17e6c9e40179a0871f"
+            },
+            {
+                "name": "v1_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:99c194f38d7f1772d1c0e7877e62cbace70ca011b7fb7bd5f3534a94765643d3"
+            },
+            {
+                "name": "v2_1.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:e2324dd46cfb0fd14a49d265af06a91af101b1c2126a2e237a4ef981d5d5737f"
+            },
+            {
+                "name": "v2_0.prometheus",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:f65583107e0af1f112fad96d0080daee74b29058a5495a2d196ce7767e6994a6"
+            },
+            {
+                "name": "v2_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:4de88913fc88bc01822f779629b651a4240e26d4da4e4b21f578df80c46e8934"
+            },
+            {
+                "name": "v1_1.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:5a2b23ec1e10909d5623656d3f797bc55bb8717b21dc26418d1650a96d127f39"
+            },
+            {
+                "name": "v1_0.proxy-init",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:f965d1eb6e9139bfbf55b8e14fcd5cb28619cd89b6576b45aa33ae6211bc0963"
+            },
+            {
+                "name": "v1_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:481cba7105b9864ea0c2051f848d59f36e70b1ec58450cf712d28bc7f3591007"
+            },
+            {
+                "name": "v1_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:6f8df84d1c20842ec1c31fd3171de8f4601b2a99ab77bae93c242763772971b7"
+            },
+            {
+                "name": "v2_1.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:887b747cc1586def69e88536d18bfeda1b2d5b81947291633244af11dac7dc68"
+            },
+            {
+                "name": "v2_0.proxyv2",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:942458946f08dc54e19c04d2e36211e2cf3cf3833b0285c591ab55f1b723bf49"
+            },
+            {
+                "name": "v2_1.rls",
+                "image": "registry.redhat.io/openshift-service-mesh/ratelimit-rhel8@sha256:1a67fef7694d9f8ee27ee9ebe7b6e855a17fbfe60c5d6202873b3e67fa69c0f8"
+            },
+            {
+                "name": "v1_1.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:4f56448ee93821edee42521df63ae7e7ad7b827301add9682b6c6c53f5908fad"
+            },
+            {
+                "name": "v1_0.sidecar-injector",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:baee6083db8c87d66035b3297b075e00c01b31b6701c25ec72ca438553e923dc"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "servicemeshoperator.v2.2.0",
+        "package": "servicemeshoperator",
+        "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:bbf7dd27b8c6b30137fa2933a07bdd03c6ba1b46d592604739f964715783d63c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMember",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMemberRoll",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "servicemeshoperator",
+                    "version": "2.2.0-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "3scale-istio-adapter-rhel8-2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "citadel-rhel8-2c4f8b06eb48701e342d0ee2db6f6fa1eb11a7f62fe4e18bfd4f4d7913a5df14-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:2c4f8b06eb48701e342d0ee2db6f6fa1eb11a7f62fe4e18bfd4f4d7913a5df14"
+            },
+            {
+                "name": "citadel-rhel8-b8da14d592545dab6f2bac8886f86dcc8ddd77c5d70b4230bd09fbb080865390-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:b8da14d592545dab6f2bac8886f86dcc8ddd77c5d70b4230bd09fbb080865390"
+            },
+            {
+                "name": "galley-rhel8-5db54dc3637f00e057f0433e5178b15b2a2c176265d031241224181bd8038c3a-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:5db54dc3637f00e057f0433e5178b15b2a2c176265d031241224181bd8038c3a"
+            },
+            {
+                "name": "galley-rhel8-b9217c4efc369d12c125070b010bac6082e4055b510c5e8e180a2202a90bb447-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:b9217c4efc369d12c125070b010bac6082e4055b510c5e8e180a2202a90bb447"
+            },
+            {
+                "name": "grafana-rhel8-070d8ffd0a11158a8a5769ef9854109e70d911bb9adcce35449db33037df99d0-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:070d8ffd0a11158a8a5769ef9854109e70d911bb9adcce35449db33037df99d0"
+            },
+            {
+                "name": "grafana-rhel8-2e9872d70a45a5ce3cb630f4a36d1e80e014b728a4e547c5cc63548fa1740195-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:2e9872d70a45a5ce3cb630f4a36d1e80e014b728a4e547c5cc63548fa1740195"
+            },
+            {
+                "name": "grafana-rhel8-46ecd5de072e29d419c54f2ce9f4e6d54175caa8d73304db12cd63e14f2b1903-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:46ecd5de072e29d419c54f2ce9f4e6d54175caa8d73304db12cd63e14f2b1903"
+            },
+            {
+                "name": "grafana-rhel8-7014a5443c6ffa600008b36c5da6d4fc7d4c7391ab9ef81bbd5f90e5f4c71897-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:7014a5443c6ffa600008b36c5da6d4fc7d4c7391ab9ef81bbd5f90e5f4c71897"
+            },
+            {
+                "name": "grafana-rhel8-79ad639e6d0e708b896f80969956dbc3af4d15fe7d832dfad1d7e1728e2b7fc0-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:79ad639e6d0e708b896f80969956dbc3af4d15fe7d832dfad1d7e1728e2b7fc0"
+            },
+            {
+                "name": "ior-rhel8-f8d550c20416cb76a37af786923152c0ed7494b58d3a187a72cb4f4620796993-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/ior-rhel8@sha256:f8d550c20416cb76a37af786923152c0ed7494b58d3a187a72cb4f4620796993"
+            },
+            {
+                "name": "istio-cni-rhel8-77eddfbfade2da9b329079891e0f3ef361a0fe4abd3a31f5a9e3dd2831bf096c-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:77eddfbfade2da9b329079891e0f3ef361a0fe4abd3a31f5a9e3dd2831bf096c"
+            },
+            {
+                "name": "istio-cni-rhel8-a20bb2eff2deda49d528951d31a92aa70bdf1e7a84d752b672c6e94d9bd78017-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:a20bb2eff2deda49d528951d31a92aa70bdf1e7a84d752b672c6e94d9bd78017"
+            },
+            {
+                "name": "istio-cni-rhel8-ae9106ec4233495a2d43f8986f0514656817c760b86a508a166ded570fee0744-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:ae9106ec4233495a2d43f8986f0514656817c760b86a508a166ded570fee0744"
+            },
+            {
+                "name": "istio-cni-rhel8-c55aa1f95922548ff0d4010a32fcadcc883bfff479088618f79e3d7addcafc35-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:c55aa1f95922548ff0d4010a32fcadcc883bfff479088618f79e3d7addcafc35"
+            },
+            {
+                "name": "istio-cni-rhel8-c81d22954240ab28f6785237581e05eef1417269ed9b7b81c4cfaa40ca1464f2-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:c81d22954240ab28f6785237581e05eef1417269ed9b7b81c4cfaa40ca1464f2"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:bbf7dd27b8c6b30137fa2933a07bdd03c6ba1b46d592604739f964715783d63c"
+            },
+            {
+                "name": "istio-rhel8-operator-52e03824dd512a38f445cc46a48d2e6a7b099b3881a9cb700f0bc99326f30542-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:52e03824dd512a38f445cc46a48d2e6a7b099b3881a9cb700f0bc99326f30542"
+            },
+            {
+                "name": "istio-operator",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:52e03824dd512a38f445cc46a48d2e6a7b099b3881a9cb700f0bc99326f30542"
+            },
+            {
+                "name": "mixer-rhel8-131789141773038257508ad3ea8682c48a567df1d7bc5dcfc02db1242a0ac1cc-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:131789141773038257508ad3ea8682c48a567df1d7bc5dcfc02db1242a0ac1cc"
+            },
+            {
+                "name": "mixer-rhel8-80eacfccdafc404531d515f3511392179bbc2d925cf3eedb582dd6156ae3659d-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:80eacfccdafc404531d515f3511392179bbc2d925cf3eedb582dd6156ae3659d"
+            },
+            {
+                "name": "mixer-rhel8-e96e538196050479eae6e137600be04e671eab32cf3a82431228f242c913c19f-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:e96e538196050479eae6e137600be04e671eab32cf3a82431228f242c913c19f"
+            },
+            {
+                "name": "pilot-rhel8-068243a90e4c2880a0699184dcc3b3e4c1635b233c22fb594fb6e120c14d4044-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:068243a90e4c2880a0699184dcc3b3e4c1635b233c22fb594fb6e120c14d4044"
+            },
+            {
+                "name": "pilot-rhel8-27343c763f079081c3d034026ee448ad080784ec0679b0a2bdaa26e05b04efac-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:27343c763f079081c3d034026ee448ad080784ec0679b0a2bdaa26e05b04efac"
+            },
+            {
+                "name": "pilot-rhel8-8c58be793b4b6fa4a6e171f8f49ba811c52704a2725d679174aa14d6afcdb6bf-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:8c58be793b4b6fa4a6e171f8f49ba811c52704a2725d679174aa14d6afcdb6bf"
+            },
+            {
+                "name": "pilot-rhel8-a09159b56307b7c91c9ca106a58e0a9a1828bc6501bc7c2a8b808259eb4a70de-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:a09159b56307b7c91c9ca106a58e0a9a1828bc6501bc7c2a8b808259eb4a70de"
+            },
+            {
+                "name": "pilot-rhel8-f7c468b5a35bfce54e53b4d8d00438f33a0861549697d14445eae52d8ead9a68-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:f7c468b5a35bfce54e53b4d8d00438f33a0861549697d14445eae52d8ead9a68"
+            },
+            {
+                "name": "prometheus-rhel8-1fcd8148ed9a57e0d77713152cadef4c867cdf31b7bf986b66e936072eeb15ef-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:1fcd8148ed9a57e0d77713152cadef4c867cdf31b7bf986b66e936072eeb15ef"
+            },
+            {
+                "name": "prometheus-rhel8-99c194f38d7f1772d1c0e7877e62cbace70ca011b7fb7bd5f3534a94765643d3-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:99c194f38d7f1772d1c0e7877e62cbace70ca011b7fb7bd5f3534a94765643d3"
+            },
+            {
+                "name": "prometheus-rhel8-e2324dd46cfb0fd14a49d265af06a91af101b1c2126a2e237a4ef981d5d5737f-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:e2324dd46cfb0fd14a49d265af06a91af101b1c2126a2e237a4ef981d5d5737f"
+            },
+            {
+                "name": "prometheus-rhel8-e2a0cf4f2036a3e31677f123a3d6073b16bda5c8551c36ab5390a101a7c9508d-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:e2a0cf4f2036a3e31677f123a3d6073b16bda5c8551c36ab5390a101a7c9508d"
+            },
+            {
+                "name": "prometheus-rhel8-f65583107e0af1f112fad96d0080daee74b29058a5495a2d196ce7767e6994a6-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:f65583107e0af1f112fad96d0080daee74b29058a5495a2d196ce7767e6994a6"
+            },
+            {
+                "name": "proxy-init-rhel7-4de88913fc88bc01822f779629b651a4240e26d4da4e4b21f578df80c46e8934-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:4de88913fc88bc01822f779629b651a4240e26d4da4e4b21f578df80c46e8934"
+            },
+            {
+                "name": "proxy-init-rhel7-5a2b23ec1e10909d5623656d3f797bc55bb8717b21dc26418d1650a96d127f39-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:5a2b23ec1e10909d5623656d3f797bc55bb8717b21dc26418d1650a96d127f39"
+            },
+            {
+                "name": "proxy-init-rhel7-e0da72d1f8b99975dbf05783a6207374114383178cddb6360f48a9c90e7e01b8-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:e0da72d1f8b99975dbf05783a6207374114383178cddb6360f48a9c90e7e01b8"
+            },
+            {
+                "name": "proxyv2-rhel8-156343ce8515401a29fc405e2142ffdbd5ef32ff2e5de7078baed3211a4f4fe5-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:156343ce8515401a29fc405e2142ffdbd5ef32ff2e5de7078baed3211a4f4fe5"
+            },
+            {
+                "name": "proxyv2-rhel8-481cba7105b9864ea0c2051f848d59f36e70b1ec58450cf712d28bc7f3591007-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:481cba7105b9864ea0c2051f848d59f36e70b1ec58450cf712d28bc7f3591007"
+            },
+            {
+                "name": "proxyv2-rhel8-887b747cc1586def69e88536d18bfeda1b2d5b81947291633244af11dac7dc68-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:887b747cc1586def69e88536d18bfeda1b2d5b81947291633244af11dac7dc68"
+            },
+            {
+                "name": "proxyv2-rhel8-942458946f08dc54e19c04d2e36211e2cf3cf3833b0285c591ab55f1b723bf49-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:942458946f08dc54e19c04d2e36211e2cf3cf3833b0285c591ab55f1b723bf49"
+            },
+            {
+                "name": "proxyv2-rhel8-9e9024597a0b0e44a7bf2198c8891e1abb796bf4800b0cb038cc401a71b45822-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:9e9024597a0b0e44a7bf2198c8891e1abb796bf4800b0cb038cc401a71b45822"
+            },
+            {
+                "name": "ratelimit-rhel8-1a67fef7694d9f8ee27ee9ebe7b6e855a17fbfe60c5d6202873b3e67fa69c0f8-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/ratelimit-rhel8@sha256:1a67fef7694d9f8ee27ee9ebe7b6e855a17fbfe60c5d6202873b3e67fa69c0f8"
+            },
+            {
+                "name": "ratelimit-rhel8-d2cc09bcdef310b5ef8a798e57b9cfa0564d756a22b844d91579946a3dca3774-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/ratelimit-rhel8@sha256:d2cc09bcdef310b5ef8a798e57b9cfa0564d756a22b844d91579946a3dca3774"
+            },
+            {
+                "name": "sidecar-injector-rhel8-4f56448ee93821edee42521df63ae7e7ad7b827301add9682b6c6c53f5908fad-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:4f56448ee93821edee42521df63ae7e7ad7b827301add9682b6c6c53f5908fad"
+            },
+            {
+                "name": "sidecar-injector-rhel8-8fafcbe10928630d69d6fde2a77639820c8314c7d478092f8b588e65f7caf07e-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:8fafcbe10928630d69d6fde2a77639820c8314c7d478092f8b588e65f7caf07e"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "servicemeshoperator.v2.2.1",
+        "package": "servicemeshoperator",
+        "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:e43a04f20b92276fe44ef70db7172291659b4ccabb3af8d009d6de031ac17408",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshControlPlane",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMember",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "maistra.io",
+                    "kind": "ServiceMeshMemberRoll",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "servicemeshoperator",
+                    "version": "2.2.1-0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "3scale-istio-adapter-rhel8-2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/3scale-istio-adapter-rhel8@sha256:2a15cb70a8a3290467f552821b50730fa7eaf6339f4f0fd9032cf2fe12d5c602"
+            },
+            {
+                "name": "citadel-rhel8-2c4f8b06eb48701e342d0ee2db6f6fa1eb11a7f62fe4e18bfd4f4d7913a5df14-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:2c4f8b06eb48701e342d0ee2db6f6fa1eb11a7f62fe4e18bfd4f4d7913a5df14"
+            },
+            {
+                "name": "citadel-rhel8-b8da14d592545dab6f2bac8886f86dcc8ddd77c5d70b4230bd09fbb080865390-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/citadel-rhel8@sha256:b8da14d592545dab6f2bac8886f86dcc8ddd77c5d70b4230bd09fbb080865390"
+            },
+            {
+                "name": "galley-rhel8-5db54dc3637f00e057f0433e5178b15b2a2c176265d031241224181bd8038c3a-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:5db54dc3637f00e057f0433e5178b15b2a2c176265d031241224181bd8038c3a"
+            },
+            {
+                "name": "galley-rhel8-b9217c4efc369d12c125070b010bac6082e4055b510c5e8e180a2202a90bb447-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/galley-rhel8@sha256:b9217c4efc369d12c125070b010bac6082e4055b510c5e8e180a2202a90bb447"
+            },
+            {
+                "name": "grafana-rhel8-070d8ffd0a11158a8a5769ef9854109e70d911bb9adcce35449db33037df99d0-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:070d8ffd0a11158a8a5769ef9854109e70d911bb9adcce35449db33037df99d0"
+            },
+            {
+                "name": "grafana-rhel8-2674641a31954dff05542f99a2af682e3c4e014052611c9dadfbf70e295740c0-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:2674641a31954dff05542f99a2af682e3c4e014052611c9dadfbf70e295740c0"
+            },
+            {
+                "name": "grafana-rhel8-7014a5443c6ffa600008b36c5da6d4fc7d4c7391ab9ef81bbd5f90e5f4c71897-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:7014a5443c6ffa600008b36c5da6d4fc7d4c7391ab9ef81bbd5f90e5f4c71897"
+            },
+            {
+                "name": "grafana-rhel8-74a88a197842836dc53629277feddf9ba6bd423f9de00e40c2710e17ba91fc43-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:74a88a197842836dc53629277feddf9ba6bd423f9de00e40c2710e17ba91fc43"
+            },
+            {
+                "name": "grafana-rhel8-f2c7d0792b0f57494fcaff730c2fabeb8abe449708b6f05b2ab0e5c159f77d2b-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/grafana-rhel8@sha256:f2c7d0792b0f57494fcaff730c2fabeb8abe449708b6f05b2ab0e5c159f77d2b"
+            },
+            {
+                "name": "ior-rhel8-f8d550c20416cb76a37af786923152c0ed7494b58d3a187a72cb4f4620796993-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/ior-rhel8@sha256:f8d550c20416cb76a37af786923152c0ed7494b58d3a187a72cb4f4620796993"
+            },
+            {
+                "name": "istio-cni-rhel8-77eddfbfade2da9b329079891e0f3ef361a0fe4abd3a31f5a9e3dd2831bf096c-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:77eddfbfade2da9b329079891e0f3ef361a0fe4abd3a31f5a9e3dd2831bf096c"
+            },
+            {
+                "name": "istio-cni-rhel8-a20bb2eff2deda49d528951d31a92aa70bdf1e7a84d752b672c6e94d9bd78017-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:a20bb2eff2deda49d528951d31a92aa70bdf1e7a84d752b672c6e94d9bd78017"
+            },
+            {
+                "name": "istio-cni-rhel8-a739f688bb1cfe7d909a5e33d134ee9c230010912e36107d3de5804fc10a7aa7-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:a739f688bb1cfe7d909a5e33d134ee9c230010912e36107d3de5804fc10a7aa7"
+            },
+            {
+                "name": "istio-cni-rhel8-d76e582e4236d8d42c90a590fd54315e55af0e0f8f5d514ec7b1662577dec68f-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:d76e582e4236d8d42c90a590fd54315e55af0e0f8f5d514ec7b1662577dec68f"
+            },
+            {
+                "name": "istio-cni-rhel8-e59a72d84ffe0a57c089217fb73de973243f83c7b75db7dc000b38845c05d439-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-cni-rhel8@sha256:e59a72d84ffe0a57c089217fb73de973243f83c7b75db7dc000b38845c05d439"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator-metadata@sha256:e43a04f20b92276fe44ef70db7172291659b4ccabb3af8d009d6de031ac17408"
+            },
+            {
+                "name": "istio-operator",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:b3002437213739f2eb99f13d3f84fd6cf08e6fc8a16a3cd8a635b6c325bc9db2"
+            },
+            {
+                "name": "istio-rhel8-operator-b3002437213739f2eb99f13d3f84fd6cf08e6fc8a16a3cd8a635b6c325bc9db2-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/istio-rhel8-operator@sha256:b3002437213739f2eb99f13d3f84fd6cf08e6fc8a16a3cd8a635b6c325bc9db2"
+            },
+            {
+                "name": "mixer-rhel8-131789141773038257508ad3ea8682c48a567df1d7bc5dcfc02db1242a0ac1cc-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:131789141773038257508ad3ea8682c48a567df1d7bc5dcfc02db1242a0ac1cc"
+            },
+            {
+                "name": "mixer-rhel8-52a0cef2897fdfdd49299a6ce5f460aca11d32968d9f37d171d2190774e6ade7-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:52a0cef2897fdfdd49299a6ce5f460aca11d32968d9f37d171d2190774e6ade7"
+            },
+            {
+                "name": "mixer-rhel8-e96e538196050479eae6e137600be04e671eab32cf3a82431228f242c913c19f-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/mixer-rhel8@sha256:e96e538196050479eae6e137600be04e671eab32cf3a82431228f242c913c19f"
+            },
+            {
+                "name": "pilot-rhel8-068243a90e4c2880a0699184dcc3b3e4c1635b233c22fb594fb6e120c14d4044-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:068243a90e4c2880a0699184dcc3b3e4c1635b233c22fb594fb6e120c14d4044"
+            },
+            {
+                "name": "pilot-rhel8-1bc22645e729521cfe168f666c7bcc4f4938129f7fba93ab97464fa1744d89e8-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:1bc22645e729521cfe168f666c7bcc4f4938129f7fba93ab97464fa1744d89e8"
+            },
+            {
+                "name": "pilot-rhel8-dd3ccf9428666d9fbc8296df4c00879949c0caba1b69930ebf97bfd26fb4ef28-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:dd3ccf9428666d9fbc8296df4c00879949c0caba1b69930ebf97bfd26fb4ef28"
+            },
+            {
+                "name": "pilot-rhel8-e48cbc8a612c5a86f98668b4cc9b5938df7ee01f7ed17736333af7961ddef079-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:e48cbc8a612c5a86f98668b4cc9b5938df7ee01f7ed17736333af7961ddef079"
+            },
+            {
+                "name": "pilot-rhel8-f7c468b5a35bfce54e53b4d8d00438f33a0861549697d14445eae52d8ead9a68-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/pilot-rhel8@sha256:f7c468b5a35bfce54e53b4d8d00438f33a0861549697d14445eae52d8ead9a68"
+            },
+            {
+                "name": "prometheus-rhel8-1fcd8148ed9a57e0d77713152cadef4c867cdf31b7bf986b66e936072eeb15ef-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:1fcd8148ed9a57e0d77713152cadef4c867cdf31b7bf986b66e936072eeb15ef"
+            },
+            {
+                "name": "prometheus-rhel8-2d14be312e3a6b027df533715741adfc8e8b8e616ac1bbe0cfe4b34829033aea-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:2d14be312e3a6b027df533715741adfc8e8b8e616ac1bbe0cfe4b34829033aea"
+            },
+            {
+                "name": "prometheus-rhel8-99253776804ea5e158d3134b567f467267ce0e46601687ccf1f499b426e4c4b6-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:99253776804ea5e158d3134b567f467267ce0e46601687ccf1f499b426e4c4b6"
+            },
+            {
+                "name": "prometheus-rhel8-99c194f38d7f1772d1c0e7877e62cbace70ca011b7fb7bd5f3534a94765643d3-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:99c194f38d7f1772d1c0e7877e62cbace70ca011b7fb7bd5f3534a94765643d3"
+            },
+            {
+                "name": "prometheus-rhel8-fd4f9fa4de3b63d3852a1e17e74f16b46fb0cc3ecda6d0cf9097703e62a781a5-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/prometheus-rhel8@sha256:fd4f9fa4de3b63d3852a1e17e74f16b46fb0cc3ecda6d0cf9097703e62a781a5"
+            },
+            {
+                "name": "proxy-init-rhel7-5a2b23ec1e10909d5623656d3f797bc55bb8717b21dc26418d1650a96d127f39-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:5a2b23ec1e10909d5623656d3f797bc55bb8717b21dc26418d1650a96d127f39"
+            },
+            {
+                "name": "proxy-init-rhel7-d71163a350032666bce7a5ca7d48698a766e6f111c5ec5a9c6bd4f33fafd2abf-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:d71163a350032666bce7a5ca7d48698a766e6f111c5ec5a9c6bd4f33fafd2abf"
+            },
+            {
+                "name": "proxy-init-rhel7-e0da72d1f8b99975dbf05783a6207374114383178cddb6360f48a9c90e7e01b8-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxy-init-rhel7@sha256:e0da72d1f8b99975dbf05783a6207374114383178cddb6360f48a9c90e7e01b8"
+            },
+            {
+                "name": "proxyv2-rhel8-1485769b50bf20c413d44840a5df955ad7a7979978937affe462fe7090ef61bd-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:1485769b50bf20c413d44840a5df955ad7a7979978937affe462fe7090ef61bd"
+            },
+            {
+                "name": "proxyv2-rhel8-481cba7105b9864ea0c2051f848d59f36e70b1ec58450cf712d28bc7f3591007-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:481cba7105b9864ea0c2051f848d59f36e70b1ec58450cf712d28bc7f3591007"
+            },
+            {
+                "name": "proxyv2-rhel8-75044611731de3331dfb949886a8977c63b0deca07977bcffd2d4ccf6b122f2b-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:75044611731de3331dfb949886a8977c63b0deca07977bcffd2d4ccf6b122f2b"
+            },
+            {
+                "name": "proxyv2-rhel8-9e9024597a0b0e44a7bf2198c8891e1abb796bf4800b0cb038cc401a71b45822-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:9e9024597a0b0e44a7bf2198c8891e1abb796bf4800b0cb038cc401a71b45822"
+            },
+            {
+                "name": "proxyv2-rhel8-efbedcbf2eaec82220a3a883a90023eb6c622729f59d12e09121ce56131032ae-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:efbedcbf2eaec82220a3a883a90023eb6c622729f59d12e09121ce56131032ae"
+            },
+            {
+                "name": "ratelimit-rhel8-32a59199a499082c8943fd21ff55b38d6a25fe971fd444a39b4bf392761aaa2a-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/ratelimit-rhel8@sha256:32a59199a499082c8943fd21ff55b38d6a25fe971fd444a39b4bf392761aaa2a"
+            },
+            {
+                "name": "ratelimit-rhel8-943550d49cd798210a67537e78a17b95efd11ac12fbe3f8e19493745ccd948ba-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/ratelimit-rhel8@sha256:943550d49cd798210a67537e78a17b95efd11ac12fbe3f8e19493745ccd948ba"
+            },
+            {
+                "name": "sidecar-injector-rhel8-4f56448ee93821edee42521df63ae7e7ad7b827301add9682b6c6c53f5908fad-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:4f56448ee93821edee42521df63ae7e7ad7b827301add9682b6c6c53f5908fad"
+            },
+            {
+                "name": "sidecar-injector-rhel8-8fafcbe10928630d69d6fde2a77639820c8314c7d478092f8b588e65f7caf07e-annotation",
+                "image": "registry.redhat.io/openshift-service-mesh/sidecar-injector-rhel8@sha256:8fafcbe10928630d69d6fde2a77639820c8314c7d478092f8b588e65f7caf07e"
+            }
+        ]
+    }

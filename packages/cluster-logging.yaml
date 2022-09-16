@@ -1,0 +1,286 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: cluster-logging
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "cluster-logging",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "cluster-logging",
+        "entries": [
+            {
+                "name": "cluster-logging.5.5.0",
+                "skipRange": ">=4.6.0-0 <5.5.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-5.2",
+        "package": "cluster-logging",
+        "entries": [
+            {
+                "name": "cluster-logging.5.2.12",
+                "skipRange": ">=4.6.0-0 <5.2.12"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-5.3",
+        "package": "cluster-logging",
+        "entries": [
+            {
+                "name": "cluster-logging.5.3.9",
+                "skipRange": ">=4.6.0-0 <5.3.9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-5.4",
+        "package": "cluster-logging",
+        "entries": [
+            {
+                "name": "cluster-logging.5.4.4",
+                "skipRange": ">=4.6.0-0 <5.4.4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-5.5",
+        "package": "cluster-logging",
+        "entries": [
+            {
+                "name": "cluster-logging.5.5.0",
+                "skipRange": ">=4.6.0-0 <5.5.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cluster-logging.5.2.12",
+        "package": "cluster-logging",
+        "image": "registry.redhat.io/openshift-logging/cluster-logging-operator-bundle@sha256:3609b489668d2337a2f59933980a75f3a2b6644d3f89de3e3923c7278a150397",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "ClusterLogForwarder",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "ClusterLogging",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cluster-logging",
+                    "version": "5.2.12"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/cluster-logging-operator-bundle@sha256:3609b489668d2337a2f59933980a75f3a2b6644d3f89de3e3923c7278a150397"
+            },
+            {
+                "name": "openshift-logging/cluster-logging-rhel8-operator",
+                "image": "registry.redhat.io/openshift-logging/cluster-logging-rhel8-operator@sha256:1cd7d2913fad8c3cb86edadbe2ed9a6ff319a33516a4338a4d1fa3bbb6b4f049"
+            },
+            {
+                "name": "openshift-logging/fluentd-rhel8",
+                "image": "registry.redhat.io/openshift-logging/fluentd-rhel8@sha256:fc4c3194ec60927b7c0fbc97ff0c7a9a56c6a317a76e78b4e5b55f99608abe9d"
+            },
+            {
+                "name": "openshift-logging/log-file-metric-exporter-rhel8",
+                "image": "registry.redhat.io/openshift-logging/log-file-metric-exporter-rhel8@sha256:ba4d7b775a6bfc90c2b1f57b92819701a99bb9a31b0d063b54958a04020e85e1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cluster-logging.5.3.9",
+        "package": "cluster-logging",
+        "image": "registry.redhat.io/openshift-logging/cluster-logging-operator-bundle@sha256:c1b22cf4537017864d0f83c287e3920d0ff2a67f1441b91483190dcd3c4c6a30",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "ClusterLogForwarder",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "ClusterLogging",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cluster-logging",
+                    "version": "5.3.9"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/cluster-logging-operator-bundle@sha256:c1b22cf4537017864d0f83c287e3920d0ff2a67f1441b91483190dcd3c4c6a30"
+            },
+            {
+                "name": "openshift-logging/cluster-logging-rhel8-operator",
+                "image": "registry.redhat.io/openshift-logging/cluster-logging-rhel8-operator@sha256:709c13682951aefba8edfd7f544850fa32faee614a898e295515503f8e14973b"
+            },
+            {
+                "name": "openshift-logging/fluentd-rhel8",
+                "image": "registry.redhat.io/openshift-logging/fluentd-rhel8@sha256:40f1e01d3c280a3e6399f6c6658ca5078317c4c2f0c07964fb778aaff8ae04aa"
+            },
+            {
+                "name": "openshift-logging/log-file-metric-exporter-rhel8",
+                "image": "registry.redhat.io/openshift-logging/log-file-metric-exporter-rhel8@sha256:bc51f3d9d71a4f7eac5f788f16841174907fe2645f5a8e7d724e79d80d9dc12d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cluster-logging.5.4.4",
+        "package": "cluster-logging",
+        "image": "registry.redhat.io/openshift-logging/cluster-logging-operator-bundle@sha256:d19c4b7b67a70b46b6b3ac43b2f285cc19c52f2795c8dfbea4315bd06e7485ca",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "ClusterLogForwarder",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "ClusterLogging",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": "4.11"
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cluster-logging",
+                    "version": "5.4.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/cluster-logging-operator-bundle@sha256:d19c4b7b67a70b46b6b3ac43b2f285cc19c52f2795c8dfbea4315bd06e7485ca"
+            },
+            {
+                "name": "openshift-logging/cluster-logging-rhel8-operator",
+                "image": "registry.redhat.io/openshift-logging/cluster-logging-rhel8-operator@sha256:b7c9cc2fdadbe78fc7fd9a302ab05a5efaf2dd699d801a8a4274b52d9d2ceb88"
+            },
+            {
+                "name": "openshift-logging/fluentd-rhel8",
+                "image": "registry.redhat.io/openshift-logging/fluentd-rhel8@sha256:4c7d3192989504ec365043efae67fac536bfbe9c7d8c1e80c07c26955e5a0452"
+            },
+            {
+                "name": "openshift-logging/log-file-metric-exporter-rhel8",
+                "image": "registry.redhat.io/openshift-logging/log-file-metric-exporter-rhel8@sha256:55977c7528c5a47a3cd4bf8281e7967936a2143f927e4b6d714cb71c27b08ae7"
+            },
+            {
+                "name": "openshift-logging/vector-rhel8",
+                "image": "registry.redhat.io/openshift-logging/vector-rhel8@sha256:0d2257cd3f1cf3689b3567d2f4c92bf5ddba24aa785f502e1b65892442c9508d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "cluster-logging.5.5.0",
+        "package": "cluster-logging",
+        "image": "registry.redhat.io/openshift-logging/cluster-logging-operator-bundle@sha256:b45d27fdcd7f8c574b818fe96b35d54b4039d9638b603e59df18125dfe9e1b9d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "ClusterLogForwarder",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "logging.openshift.io",
+                    "kind": "ClusterLogging",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.11
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "cluster-logging",
+                    "version": "5.5.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-logging/cluster-logging-operator-bundle@sha256:b45d27fdcd7f8c574b818fe96b35d54b4039d9638b603e59df18125dfe9e1b9d"
+            },
+            {
+                "name": "cluster-logging-operator",
+                "image": "registry.redhat.io/openshift-logging/cluster-logging-rhel8-operator@sha256:7c9b5decd2a1f865850f059c428b385b6435b26389b0ffe82a79a80ab1241640"
+            },
+            {
+                "name": "cluster-logging-rhel8-operator-7c9b5decd2a1f865850f059c428b385b6435b26389b0ffe82a79a80ab1241640-annotation",
+                "image": "registry.redhat.io/openshift-logging/cluster-logging-rhel8-operator@sha256:7c9b5decd2a1f865850f059c428b385b6435b26389b0ffe82a79a80ab1241640"
+            },
+            {
+                "name": "fluentd",
+                "image": "registry.redhat.io/openshift-logging/fluentd-rhel8@sha256:9792df63831be79219de676c12f027f43a3de95f1f87219e728d5de1a898baa9"
+            },
+            {
+                "name": "log_file_metric_exporter",
+                "image": "registry.redhat.io/openshift-logging/log-file-metric-exporter-rhel8@sha256:2fb882a8ba4da7c2d3c3a81a7322cf1af686bf36faab05cee596a7ac88e533bb"
+            },
+            {
+                "name": "logging_console_plugin",
+                "image": "registry.redhat.io/openshift-logging/logging-view-plugin-rhel8@sha256:b44b94417b697d64c1b87a5095c7defdffbef7d9de983fcfcaec6731e7e0d7b1"
+            },
+            {
+                "name": "vector",
+                "image": "registry.redhat.io/openshift-logging/vector-rhel8@sha256:87643f00a72d8fb8b397c7458432b714543874139c987aed63d85432c8bdf238"
+            }
+        ]
+    }

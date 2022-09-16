@@ -1,0 +1,509 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: integration-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "integration-operator",
+        "defaultChannel": "1.x"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "1.x",
+        "package": "integration-operator",
+        "entries": [
+            {
+                "name": "integration-operator.v1.0.0"
+            },
+            {
+                "name": "integration-operator.v1.0.1",
+                "replaces": "integration-operator.v1.0.0"
+            },
+            {
+                "name": "integration-operator.v1.0.4",
+                "replaces": "integration-operator.v1.0.1"
+            },
+            {
+                "name": "integration-operator.v1.0.5"
+            },
+            {
+                "name": "integration-operator.v1.0.5-0.1627560676.p",
+                "replaces": "integration-operator.v1.0.4",
+                "skips": [
+                    "integration-operator.v1.0.5"
+                ]
+            },
+            {
+                "name": "integration-operator.v1.0.6",
+                "replaces": "integration-operator.v1.0.5-0.1627560676.p"
+            },
+            {
+                "name": "integration-operator.v1.1.0",
+                "replaces": "integration-operator.v1.0.6"
+            },
+            {
+                "name": "integration-operator.v1.2.0",
+                "replaces": "integration-operator.v1.1.0"
+            },
+            {
+                "name": "integration-operator.v1.2.1",
+                "replaces": "integration-operator.v1.2.0"
+            },
+            {
+                "name": "integration-operator.v1.3.0"
+            },
+            {
+                "name": "integration-operator.v1.3.0-0.1647509606.p"
+            },
+            {
+                "name": "integration-operator.v1.3.0-0.1648516199.p",
+                "replaces": "integration-operator.v1.2.1",
+                "skips": [
+                    "integration-operator.v1.3.0-0.1647509606.p",
+                    "integration-operator.v1.3.0"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.0.0",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:f8ecfef4eadd0e8ea08b29a5e29b2f2d5ffc57ef6ea2bac413c02e72601782ae",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.0.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:f8ecfef4eadd0e8ea08b29a5e29b2f2d5ffc57ef6ea2bac413c02e72601782ae"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rhi-rhel8-operator@sha256:c936a2dc8bcc317c14e3f24ed03e123755a17cf3de1a9355a3f4d0f4681dc398"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.0.1",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:d9e5c9ac90477db021a4b5565ae0611d3b8457b90cdcdd433c2332236c858f5c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.0.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:d9e5c9ac90477db021a4b5565ae0611d3b8457b90cdcdd433c2332236c858f5c"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-07eeb951fd09765ee314ad2f6baa20555c99827dff8a3afad633b2464aa6dc99-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:07eeb951fd09765ee314ad2f6baa20555c99827dff8a3afad633b2464aa6dc99"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:07eeb951fd09765ee314ad2f6baa20555c99827dff8a3afad633b2464aa6dc99"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.0.4",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:9892206cd1c6e69ff2a4de8a0ee798ffe110e5cd1841cbdc867aea67cfe5466d",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.0.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:9892206cd1c6e69ff2a4de8a0ee798ffe110e5cd1841cbdc867aea67cfe5466d"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-5c5f23ec69843fd70a91b1e8a7b933c6c69c0b5d9211654b6d06525648a734d3-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:5c5f23ec69843fd70a91b1e8a7b933c6c69c0b5d9211654b6d06525648a734d3"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:5c5f23ec69843fd70a91b1e8a7b933c6c69c0b5d9211654b6d06525648a734d3"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.0.5",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:4dbbc861aca1cfc90ebd0d3cdbbc1325a94b2145c0fd83ee308c648a8221c888",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.0.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:4dbbc861aca1cfc90ebd0d3cdbbc1325a94b2145c0fd83ee308c648a8221c888"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-f785da15aec66e076a2a6eb3cfa4457e5da84f9fc7fa7aa923f7f260c896c398-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:f785da15aec66e076a2a6eb3cfa4457e5da84f9fc7fa7aa923f7f260c896c398"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:f785da15aec66e076a2a6eb3cfa4457e5da84f9fc7fa7aa923f7f260c896c398"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.0.5-0.1627560676.p",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:c505545ff572ad5cca55f56ae2390ab18c42bb852d105f13ad1422a42ada8942",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.0.5+0.1627560676.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:c505545ff572ad5cca55f56ae2390ab18c42bb852d105f13ad1422a42ada8942"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-511be3c5e6e0314652167b29fdffe57c8a48611c828f7d05fd1f8b4a6abae382-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:511be3c5e6e0314652167b29fdffe57c8a48611c828f7d05fd1f8b4a6abae382"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:511be3c5e6e0314652167b29fdffe57c8a48611c828f7d05fd1f8b4a6abae382"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.0.6",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:4ae669f9ef8d824b4e12c03b8b551ea0e64d381ec9872f3d420044cbd1c0f943",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.0.6"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:4ae669f9ef8d824b4e12c03b8b551ea0e64d381ec9872f3d420044cbd1c0f943"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-3137ac57701d56e4ef52624dece750d54945fcf6497089b708e85c4695a52c46-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:3137ac57701d56e4ef52624dece750d54945fcf6497089b708e85c4695a52c46"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:3137ac57701d56e4ef52624dece750d54945fcf6497089b708e85c4695a52c46"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.1.0",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:09f543a7cc89e6d3873ab27fb8d0f97413a47514102456caa3e1554a48f958e0",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.1.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:09f543a7cc89e6d3873ab27fb8d0f97413a47514102456caa3e1554a48f958e0"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-75bfe33433945ee15e1f134f8477d94d89d41abaf92373a8a9e8164cb4ee48cf-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:75bfe33433945ee15e1f134f8477d94d89d41abaf92373a8a9e8164cb4ee48cf"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:75bfe33433945ee15e1f134f8477d94d89d41abaf92373a8a9e8164cb4ee48cf"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.2.0",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:0492b1e74243830182f115279991e2d9efcce600fb020bfb27db2717f772ae64",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.2.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:0492b1e74243830182f115279991e2d9efcce600fb020bfb27db2717f772ae64"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-510d582b46a44f47d3d7bbc80b639f0936fbb0db260aba70f952483554b803b7-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:510d582b46a44f47d3d7bbc80b639f0936fbb0db260aba70f952483554b803b7"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:510d582b46a44f47d3d7bbc80b639f0936fbb0db260aba70f952483554b803b7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.2.1",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:b0d86e60169639245ae5678c63cad0746671fc4c64ac565ae0adbc45cefe6908",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.2.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:b0d86e60169639245ae5678c63cad0746671fc4c64ac565ae0adbc45cefe6908"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-77e0806ddf20415acb57b0e129ef13185af5b8cb610be5089efa356143fa6f4b-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:77e0806ddf20415acb57b0e129ef13185af5b8cb610be5089efa356143fa6f4b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:77e0806ddf20415acb57b0e129ef13185af5b8cb610be5089efa356143fa6f4b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.3.0",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:b7127c885500112a2aaed1a4d32acd5e328c704b96a66ddaa0d173fac5f5ebeb",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.3.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:b7127c885500112a2aaed1a4d32acd5e328c704b96a66ddaa0d173fac5f5ebeb"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-0ae328fb27528551083898a6050786ffe761b1325c9d98661ddaf0bd36ba3211-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:0ae328fb27528551083898a6050786ffe761b1325c9d98661ddaf0bd36ba3211"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:0ae328fb27528551083898a6050786ffe761b1325c9d98661ddaf0bd36ba3211"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.3.0-0.1647509606.p",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:0598da0c5fceb2da32af851c3200161d729a96dc2c8fe9f85362a5b081d4a368",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.3.0+0.1647509606.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:0598da0c5fceb2da32af851c3200161d729a96dc2c8fe9f85362a5b081d4a368"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-8fd27d004b4d098d0fdd289bdeaa0508f5afdb98ef26294469e82921d7fb8f71-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:8fd27d004b4d098d0fdd289bdeaa0508f5afdb98ef26294469e82921d7fb8f71"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:8fd27d004b4d098d0fdd289bdeaa0508f5afdb98ef26294469e82921d7fb8f71"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "integration-operator.v1.3.0-0.1648516199.p",
+        "package": "integration-operator",
+        "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:1aae72eaf623c16e8f0952ee23be9c59092ed9981da89bec1a4bf0476dc90785",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "integration.redhat.com",
+                    "kind": "Installation",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "integration-operator",
+                    "version": "1.3.0+0.1648516199.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/integration/rh-integration-operator-bundle@sha256:1aae72eaf623c16e8f0952ee23be9c59092ed9981da89bec1a4bf0476dc90785"
+            },
+            {
+                "name": "rh-integration-rhel8-operator-52a50be56ff478af4ab8f3dd6825d36e881d112d7dba293b16c005be905124c6-annotation",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:52a50be56ff478af4ab8f3dd6825d36e881d112d7dba293b16c005be905124c6"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/integration/rh-integration-rhel8-operator@sha256:52a50be56ff478af4ab8f3dd6825d36e881d112d7dba293b16c005be905124c6"
+            }
+        ]
+    }

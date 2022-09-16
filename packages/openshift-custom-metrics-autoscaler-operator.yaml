@@ -1,0 +1,98 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: openshift-custom-metrics-autoscaler-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "openshift-custom-metrics-autoscaler-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "openshift-custom-metrics-autoscaler-operator",
+        "entries": [
+            {
+                "name": "custom-metrics-autoscaler.v2.7.1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "custom-metrics-autoscaler.v2.7.1",
+        "package": "openshift-custom-metrics-autoscaler-operator",
+        "image": "registry.redhat.io/custom-metrics-autoscaler-tech-preview/custom-metrics-autoscaler-operator-bundle@sha256:0543af82d8b735509f7ee8fcb266ee96a0f3dee533ff8db99f5bf919d775f041",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keda.sh",
+                    "kind": "ClusterTriggerAuthentication",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keda.sh",
+                    "kind": "KedaController",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keda.sh",
+                    "kind": "ScaledJob",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keda.sh",
+                    "kind": "ScaledObject",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "keda.sh",
+                    "kind": "TriggerAuthentication",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-custom-metrics-autoscaler-operator",
+                    "version": "2.7.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "2",
+                "image": "registry.redhat.io/custom-metrics-autoscaler-tech-preview/custom-metrics-autoscaler-adapter-rhel8@sha256:4b2cee2c46fcc7712277853b50de7467c5c9667b285b11cb57f6ef3b2ce08241"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/custom-metrics-autoscaler-tech-preview/custom-metrics-autoscaler-operator-bundle@sha256:0543af82d8b735509f7ee8fcb266ee96a0f3dee533ff8db99f5bf919d775f041"
+            },
+            {
+                "name": "custom-metrics-autoscaler-rhel8-operator-cf66358f066306de39b26a26d52c0f51da0fdcd62ce3b2570740f5c787fa2067-annotation",
+                "image": "registry.redhat.io/custom-metrics-autoscaler-tech-preview/custom-metrics-autoscaler-rhel8-operator@sha256:cf66358f066306de39b26a26d52c0f51da0fdcd62ce3b2570740f5c787fa2067"
+            },
+            {
+                "name": "custom-metrics-autoscaler-operator",
+                "image": "registry.redhat.io/custom-metrics-autoscaler-tech-preview/custom-metrics-autoscaler-rhel8-operator@sha256:cf66358f066306de39b26a26d52c0f51da0fdcd62ce3b2570740f5c787fa2067"
+            },
+            {
+                "name": "1",
+                "image": "registry.redhat.io/custom-metrics-autoscaler-tech-preview/custom-metrics-autoscaler-rhel8@sha256:e8c3c6241dfe0c44cac8f1b7c1d11c8ff9429a9b7059ba8cfd3dfa6baf275b9b"
+            }
+        ]
+    }

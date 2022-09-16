@@ -1,0 +1,75 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: self-node-remediation
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "self-node-remediation",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "self-node-remediation",
+        "entries": [
+            {
+                "name": "self-node-remediation.v0.4.1",
+                "skipRange": ">=0.1.0 <0.4.1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "self-node-remediation.v0.4.1",
+        "package": "self-node-remediation",
+        "image": "registry.redhat.io/workload-availability/self-node-remediation-operator-bundle@sha256:eba04fb6e9329028441fa3d4bba9bd5725f25c237d145c71ff46df831346e31c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "self-node-remediation.medik8s.io",
+                    "kind": "SelfNodeRemediation",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "self-node-remediation.medik8s.io",
+                    "kind": "SelfNodeRemediationConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "self-node-remediation.medik8s.io",
+                    "kind": "SelfNodeRemediationTemplate",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "self-node-remediation",
+                    "version": "0.4.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/workload-availability/self-node-remediation-operator-bundle@sha256:eba04fb6e9329028441fa3d4bba9bd5725f25c237d145c71ff46df831346e31c"
+            },
+            {
+                "name": "self-node-remediation-rhel8-operator-ff830e96a8aceba7860b15e45b98141a8ef3d9ff8b3bd3e0a8fb8f3764ad4d3f-annotation",
+                "image": "registry.redhat.io/workload-availability/self-node-remediation-rhel8-operator@sha256:ff830e96a8aceba7860b15e45b98141a8ef3d9ff8b3bd3e0a8fb8f3764ad4d3f"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/workload-availability/self-node-remediation-rhel8-operator@sha256:ff830e96a8aceba7860b15e45b98141a8ef3d9ff8b3bd3e0a8fb8f3764ad4d3f"
+            }
+        ]
+    }

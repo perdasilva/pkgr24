@@ -1,0 +1,773 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: advanced-cluster-management
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "advanced-cluster-management",
+        "defaultChannel": "release-2.5"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "release-2.5",
+        "package": "advanced-cluster-management",
+        "entries": [
+            {
+                "name": "advanced-cluster-management.v2.5.0",
+                "skipRange": ">=2.4.0 <2.5.0"
+            },
+            {
+                "name": "advanced-cluster-management.v2.5.1",
+                "replaces": "advanced-cluster-management.v2.5.0",
+                "skipRange": ">=2.4.0 <2.5.1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "advanced-cluster-management.v2.5.0",
+        "package": "advanced-cluster-management",
+        "image": "registry.redhat.io/rhacm2/acm-operator-bundle@sha256:972a814a9c3277318bcc0280a17dd4c46db3a0df174484fed96e5fae9b4e3486",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.k8s.io",
+                    "kind": "Application",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "Channel",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "Deployable",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "GitOpsCluster",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "GitOpsCluster",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "HelmRelease",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "PlacementRule",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "Subscription",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "SubscriptionReport",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "SubscriptionStatus",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "core.observatorium.io",
+                    "kind": "Observatorium",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "observability.open-cluster-management.io",
+                    "kind": "MultiClusterObservability",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "observability.open-cluster-management.io",
+                    "kind": "MultiClusterObservability",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "observability.open-cluster-management.io",
+                    "kind": "ObservabilityAddon",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.open-cluster-management.io",
+                    "kind": "MultiClusterHub",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submarineraddon.open-cluster-management.io",
+                    "kind": "SubmarinerConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submarineraddon.open-cluster-management.io",
+                    "kind": "SubmarinerDiagnoseConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "advanced-cluster-management",
+                    "version": "2.5.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "prometheus-config-reloader",
+                "image": "registry.redhat.io/openshift4/ose-configmap-reloader@sha256:75a2cf5621e037f682f6a29ca7d653c4a29ea18d25582d7872cb80e5d0cf48d9"
+            },
+            {
+                "name": "oauth_proxy_48",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:341fc9ebbe33dbf52af02f282d851d19bf5e1c935deaff007f4e076b12e8a915"
+            },
+            {
+                "name": "oauth_proxy_49_and_up",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bc05cacc497f11558ab11975ff344a6b315bd2c464df579d46654bb181b4ef37"
+            },
+            {
+                "name": "prometheus-alertmanager",
+                "image": "registry.redhat.io/openshift4/ose-prometheus-alertmanager@sha256:502309a095287d6e13f0c41c66fbcd9380c7124c9725e3de5e22d6525ab40e1a"
+            },
+            {
+                "name": "cluster_proxy",
+                "image": "registry.redhat.io/rhacm2/acm-cluster-proxy-rhel8@sha256:d545c2d768c10c096004dc1fa6c2b4b3c40c07f4a26f1ca5441cdb49f9833f68"
+            },
+            {
+                "name": "governance_policy_addon_controller",
+                "image": "registry.redhat.io/rhacm2/acm-governance-policy-addon-controller-rhel8@sha256:0cdfce2c3645bb21fca663cd44d1c4de76cc233d1a85f32a75f2a63a7b0d63ae"
+            },
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/rhacm2/acm-grafana-rhel8@sha256:fa2967a463ee2e91ed6088d564f521f2e17a4eeb879481c94eb318102311d49e"
+            },
+            {
+                "name": "acm_must_gather",
+                "image": "registry.redhat.io/rhacm2/acm-must-gather-rhel8@sha256:70d93f595f2048794d0fde69b9dc854ccd6f4fca5a35094bfe499399d3f0054b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/acm-operator-bundle@sha256:972a814a9c3277318bcc0280a17dd4c46db3a0df174484fed96e5fae9b4e3486"
+            },
+            {
+                "name": "prometheus_config_reloader",
+                "image": "registry.redhat.io/rhacm2/acm-prometheus-config-reloader-rhel8@sha256:250a35e3ceaadab1765b221644aec74c9957d73fd8708d64484d036ca453d82c"
+            },
+            {
+                "name": "prometheus_operator",
+                "image": "registry.redhat.io/rhacm2/acm-prometheus-rhel8@sha256:e8dd9b65518552fe37349e922da23d388f8a6a6e8612e67f1bb2d5ce76f4bdf5"
+            },
+            {
+                "name": "volsync_addon_controller",
+                "image": "registry.redhat.io/rhacm2/acm-volsync-addon-controller-rhel8@sha256:f5f500ff6148cf87dee43dcb648a44a99121906c69b3ecba1d3c58480532e97f"
+            },
+            {
+                "name": "cert_policy_controller",
+                "image": "registry.redhat.io/rhacm2/cert-policy-controller-rhel8@sha256:5477e4ad9c411d263e02bb48f33fbc00f9859bef45c3beee4205d1606b1ddad8"
+            },
+            {
+                "name": "cluster_backup_controller",
+                "image": "registry.redhat.io/rhacm2/cluster-backup-rhel8-operator@sha256:51bd7137fa26dd3690dedd967722d616b70dfa3e89be5b8b29bbcacefd21da2c"
+            },
+            {
+                "name": "cluster_proxy_addon",
+                "image": "registry.redhat.io/rhacm2/cluster-proxy-addon-rhel8@sha256:8a7193f9bc58c26ea10632ac2f35575643c73b25ab4b1916d014b7359caa192c"
+            },
+            {
+                "name": "config_policy_controller",
+                "image": "registry.redhat.io/rhacm2/config-policy-controller-rhel8@sha256:8d5c9444ea18b1e8aa397a7f3cfb27c5bc89d517886db2334f5ae90c7961480c"
+            },
+            {
+                "name": "console",
+                "image": "registry.redhat.io/rhacm2/console-rhel8@sha256:901cbbc1a457937672bd8c6a2456e055dd57ba2c5612e36952d34b2589f956a0"
+            },
+            {
+                "name": "endpoint_monitoring_operator",
+                "image": "registry.redhat.io/rhacm2/endpoint-monitoring-rhel8-operator@sha256:dda56cfbd747deeae59227debe1177d60a74ae66980485b284667c00f91090c3"
+            },
+            {
+                "name": "governance_policy_propagator",
+                "image": "registry.redhat.io/rhacm2/governance-policy-propagator-rhel8@sha256:e141118f9f10404e3a7c7ae17fe42bb203fb2ef8f016fcc57d4e6a874d9523ac"
+            },
+            {
+                "name": "governance_policy_spec_sync",
+                "image": "registry.redhat.io/rhacm2/governance-policy-spec-sync-rhel8@sha256:f74415dd187591678cd38a2c5b9c01a937e05c8782471737a91781b58236f770"
+            },
+            {
+                "name": "governance_policy_status_sync",
+                "image": "registry.redhat.io/rhacm2/governance-policy-status-sync-rhel8@sha256:0755ea52d7d7f7ad33063ecbe64b4b6392891d91f4ded62eb31ab0eb0aab8cf9"
+            },
+            {
+                "name": "governance_policy_template_sync",
+                "image": "registry.redhat.io/rhacm2/governance-policy-template-sync-rhel8@sha256:00283f5a8223879174389c8e621528ff5979f2ed41c8d3d5f2e62ded7558fa62"
+            },
+            {
+                "name": "grafana_dashboard_loader",
+                "image": "registry.redhat.io/rhacm2/grafana-dashboard-loader-rhel8@sha256:71a85171e0df470b31a1ba363012429a3dcd60ce81d0c5d36cec984c427fb462"
+            },
+            {
+                "name": "iam_policy_controller",
+                "image": "registry.redhat.io/rhacm2/iam-policy-controller-rhel8@sha256:0451df098a2ef2c5132a87c88904df1174aff5bb710ab5be7b13715e25ff3114"
+            },
+            {
+                "name": "insights_client",
+                "image": "registry.redhat.io/rhacm2/insights-client-rhel8@sha256:10c87a8d4206d6aa6f3251c197523491c2a632a331d01cffeb83e69840842a25"
+            },
+            {
+                "name": "insights_metrics",
+                "image": "registry.redhat.io/rhacm2/insights-metrics-rhel8@sha256:330166f550e3f00c8c2a2e04f9a2932fa8276b16ed1ba446b8b7409747191d75"
+            },
+            {
+                "name": "klusterlet_addon_controller",
+                "image": "registry.redhat.io/rhacm2/klusterlet-addon-controller-rhel8@sha256:ac9b4fe15d87a4820a037a4068678e83c87b8685592330ee37e0469ee012a2b0"
+            },
+            {
+                "name": "klusterlet_addon_operator",
+                "image": "registry.redhat.io/rhacm2/klusterlet-addon-rhel8-operator@sha256:19273415846542c75417dcec39679bf736d3f9849d5820e81219b05ef2833325"
+            },
+            {
+                "name": "kube_rbac_proxy",
+                "image": "registry.redhat.io/rhacm2/kube-rbac-proxy-rhel8@sha256:ae038213583d286c95bfcd92fa442997cd84f56d1d1297212f36c32af7ad737c"
+            },
+            {
+                "name": "kube_state_metrics",
+                "image": "registry.redhat.io/rhacm2/kube-state-metrics-rhel8@sha256:fc45cb526477ec614c06c47df67aba2c3bb6abf76e69fdec2866cccf833f54ce"
+            },
+            {
+                "name": "management_ingress",
+                "image": "registry.redhat.io/rhacm2/management-ingress-rhel8@sha256:9f83b066c38a6f98a80a7202e08b53c6ffb8dfb4e197ae820b38acf86c6bfc83"
+            },
+            {
+                "name": "memcached_exporter",
+                "image": "registry.redhat.io/rhacm2/memcached-exporter-rhel8@sha256:9265457c7217905486f896ca8fa6cd0558082fd35c4e69cf4b91d8e1a213b71c"
+            },
+            {
+                "name": "memcached",
+                "image": "registry.redhat.io/rhacm2/memcached-rhel8@sha256:2fadb3ac61522fb088bd3364369fc95e26e295d7eef637e1d8e44be00ececc0a"
+            },
+            {
+                "name": "metrics_collector",
+                "image": "registry.redhat.io/rhacm2/metrics-collector-rhel8@sha256:c1c0c4d81430d87c4a2cb090c1f6b7490be4c2474e22d43215202553838cabc8"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicloud-integrations-rhel8@sha256:b9afa482079b780dbddcbe27c029b3753cd76df68f88c84dea2d77e4155f3f67"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicluster-observability-rhel8-operator@sha256:dd888f81c33bd51608b54fef35bd63de48ea0eb60502be8c497e1a63482b9a57"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicluster-operators-application-rhel8@sha256:f1c0cff09c1400e8fbbcb01802a4e8f698337750df46f579ccadc556032321d7"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicluster-operators-channel-rhel8@sha256:23a649f035db53a64b055e2a5e41455b751d802831e4ff2f5322a5a63a92909a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8@sha256:3dbeac53a78158661b913905a8a2dbd7ccad86c84bfc0490a04705fb6be3614e"
+            },
+            {
+                "name": "multiclusterhub_repo",
+                "image": "registry.redhat.io/rhacm2/multiclusterhub-repo-rhel8@sha256:5e6479e8a540af7d95a652689d97c0d3300ff5193029cf0207af4ddd104590f1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multiclusterhub-rhel8@sha256:2c4c921314c826ce46ebb78fee65af06fe921dbb4fdb50ca07acbe9bad7199a7"
+            },
+            {
+                "name": "node_exporter",
+                "image": "registry.redhat.io/rhacm2/node-exporter-rhel8@sha256:9bc9a530b54d56b887323d3973baa2cac0fa8724e03febbbb94ffea30a55a730"
+            },
+            {
+                "name": "observatorium_operator",
+                "image": "registry.redhat.io/rhacm2/observatorium-rhel8-operator@sha256:013674334f7a7cb59fd7d4a862157f3859b661238fb3a7a2a15d7af7c0d4309f"
+            },
+            {
+                "name": "observatorium",
+                "image": "registry.redhat.io/rhacm2/observatorium-rhel8@sha256:d6ae8e0f054fc8e0dc41ce4d130a4cd5802f55ddc2ce551ca20ff892f64346b3"
+            },
+            {
+                "name": "prometheus_alertmanager",
+                "image": "registry.redhat.io/rhacm2/prometheus-alertmanager-rhel8@sha256:43626a2dcd3192bd182cda4b7d7159ae40b2c298cc2f66ba726e0119732fa291"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/rhacm2/prometheus-rhel8@sha256:ffb925e59ab488bdf295477e213c20337176f1d5c0739aa06eac529e334cb5c7"
+            },
+            {
+                "name": "rbac_query_proxy",
+                "image": "registry.redhat.io/rhacm2/rbac-query-proxy-rhel8@sha256:cf894bd377cc6524c6734b4336c8fb9f35b0a9f59a3ec9c1e76493293a46536e"
+            },
+            {
+                "name": "redisgraph_tls",
+                "image": "registry.redhat.io/rhacm2/redisgraph-tls-rhel8@sha256:c1f1689bf5f0d9c186255df9316acc9f94ff565b5038d61524561a2091a58fb8"
+            },
+            {
+                "name": "search_aggregator",
+                "image": "registry.redhat.io/rhacm2/search-aggregator-rhel8@sha256:44d37e6c0949ead0b7865f7be1017587e3b6a56760a17d80b862fc9b63dd670d"
+            },
+            {
+                "name": "search_api",
+                "image": "registry.redhat.io/rhacm2/search-api-rhel8@sha256:9968999f0a034a043724f20881b27f8e212252018e3a789f800f1592720ceea4"
+            },
+            {
+                "name": "search_collector",
+                "image": "registry.redhat.io/rhacm2/search-collector-rhel8@sha256:1620610f55577f32b2e947c34700371081c6b5d9cb11118fa40503f7b0e4b548"
+            },
+            {
+                "name": "search_operator",
+                "image": "registry.redhat.io/rhacm2/search-rhel8@sha256:a6e254ea26fddbe90b52db664918f120158e5209d8d862500c9e0cc42835f192"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/submariner-addon-rhel8@sha256:f9e9cf9a157b40b738682c43c8c1bdf31268fca5391f2c96edc08ea0cd501f84"
+            },
+            {
+                "name": "thanos_receive_controller",
+                "image": "registry.redhat.io/rhacm2/thanos-receive-controller-rhel8@sha256:8cc55bbf87816f2905cf87e855ad91566da358393781de701c40895220bfdb77"
+            },
+            {
+                "name": "thanos",
+                "image": "registry.redhat.io/rhacm2/thanos-rhel8@sha256:aea8e456b2a7c8d948bce1c9a19b19df84713ec9987ef7525fdc334e1074e94d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "advanced-cluster-management.v2.5.1",
+        "package": "advanced-cluster-management",
+        "image": "registry.redhat.io/rhacm2/acm-operator-bundle@sha256:46b02d525ae1b7ab5b447f99e8f4fbb3f67fc0408eac4e4ce2b321e3a55f5cf9",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.k8s.io",
+                    "kind": "Application",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "Channel",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "Deployable",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "GitOpsCluster",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "GitOpsCluster",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "HelmRelease",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "PlacementRule",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "Subscription",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "SubscriptionReport",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.open-cluster-management.io",
+                    "kind": "SubscriptionStatus",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "core.observatorium.io",
+                    "kind": "Observatorium",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "observability.open-cluster-management.io",
+                    "kind": "MultiClusterObservability",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "observability.open-cluster-management.io",
+                    "kind": "MultiClusterObservability",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "observability.open-cluster-management.io",
+                    "kind": "ObservabilityAddon",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.open-cluster-management.io",
+                    "kind": "MultiClusterHub",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submarineraddon.open-cluster-management.io",
+                    "kind": "SubmarinerConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submarineraddon.open-cluster-management.io",
+                    "kind": "SubmarinerDiagnoseConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "advanced-cluster-management",
+                    "version": "2.5.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "prometheus-config-reloader",
+                "image": "registry.redhat.io/openshift4/ose-configmap-reloader@sha256:602c950285e23e0b49cf7b9eb81fab4eb5735bb2dde866cd1b1be733d614b881"
+            },
+            {
+                "name": "oauth_proxy_49_and_up",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:74355ce3dba8e93b49a8707695e0efbf87b7469aa396415540c44389b1dcc4bc"
+            },
+            {
+                "name": "oauth_proxy_48",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:81cc098158678059934b72b250d514fdf9563c662814915724b5663a11743fdd"
+            },
+            {
+                "name": "prometheus-alertmanager",
+                "image": "registry.redhat.io/openshift4/ose-prometheus-alertmanager@sha256:325e0eb000065a3a75b54a7c24f06094b2328e8521c3046a541cf689b21ec33b"
+            },
+            {
+                "name": "cluster_proxy",
+                "image": "registry.redhat.io/rhacm2/acm-cluster-proxy-rhel8@sha256:bb85c4a74f9d588f7ddd195616173e86f9b19ee2b1941683a6f0d29df0c53994"
+            },
+            {
+                "name": "governance_policy_addon_controller",
+                "image": "registry.redhat.io/rhacm2/acm-governance-policy-addon-controller-rhel8@sha256:9064bed98323d0d0a531581bf569a878fe48ac5ce6c0e1d4cbea39dff8df9b49"
+            },
+            {
+                "name": "grafana",
+                "image": "registry.redhat.io/rhacm2/acm-grafana-rhel8@sha256:5d2b6ae3cff000fadc857e1134dac219046f41676c51f89d62b857d6dccef9cb"
+            },
+            {
+                "name": "acm_must_gather",
+                "image": "registry.redhat.io/rhacm2/acm-must-gather-rhel8@sha256:a355b0cf5cb83d0a3b379785b8399ca6fae54ef9ffcf6c435ffc2037cf413110"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/acm-operator-bundle@sha256:46b02d525ae1b7ab5b447f99e8f4fbb3f67fc0408eac4e4ce2b321e3a55f5cf9"
+            },
+            {
+                "name": "prometheus_config_reloader",
+                "image": "registry.redhat.io/rhacm2/acm-prometheus-config-reloader-rhel8@sha256:6b6f2861cec4c49954480836142c159d72f27d9caf57f3529d4635d375953f1f"
+            },
+            {
+                "name": "prometheus_operator",
+                "image": "registry.redhat.io/rhacm2/acm-prometheus-rhel8@sha256:86d33a4d4471b99d44caa3ebae5a7d232db85929fe26cfe210478f48491b8a59"
+            },
+            {
+                "name": "volsync_addon_controller",
+                "image": "registry.redhat.io/rhacm2/acm-volsync-addon-controller-rhel8@sha256:a2572a731dc14ef6b236baebeec4f5d833588dfda8e417486d48d188fa6f9ead"
+            },
+            {
+                "name": "cert_policy_controller",
+                "image": "registry.redhat.io/rhacm2/cert-policy-controller-rhel8@sha256:68ac76f7451895584769a68b681bcd5411f9348fb1ec804ace1bc442204aaf3d"
+            },
+            {
+                "name": "cluster_backup_controller",
+                "image": "registry.redhat.io/rhacm2/cluster-backup-rhel8-operator@sha256:d29cfadaa6b127f97041b4b1937e457bcfbb004a979f22f9becf48a1740c8b39"
+            },
+            {
+                "name": "cluster_proxy_addon",
+                "image": "registry.redhat.io/rhacm2/cluster-proxy-addon-rhel8@sha256:baef841b5add92e091ee50deaa7f26d6f687bd98bd06166811370df0f235a020"
+            },
+            {
+                "name": "config_policy_controller",
+                "image": "registry.redhat.io/rhacm2/config-policy-controller-rhel8@sha256:d7c97fcd1f11829bc0ba8032d3310a2f3ff798948c4295d291d87b3ff895698f"
+            },
+            {
+                "name": "console",
+                "image": "registry.redhat.io/rhacm2/console-rhel8@sha256:f53c13b8d369baaaa26168d0cbdf56af75fdba7c3c0a4bc066706dfc589db2fe"
+            },
+            {
+                "name": "endpoint_monitoring_operator",
+                "image": "registry.redhat.io/rhacm2/endpoint-monitoring-rhel8-operator@sha256:cd3c4bd30f308c9e18332a024987167d1b5e9f792f66e36349077ff32d7759d2"
+            },
+            {
+                "name": "governance_policy_propagator",
+                "image": "registry.redhat.io/rhacm2/governance-policy-propagator-rhel8@sha256:0c9fa6814481cb34822c076e6e0e84e7e2215ce8f32416c5402f54f56e98b20c"
+            },
+            {
+                "name": "governance_policy_spec_sync",
+                "image": "registry.redhat.io/rhacm2/governance-policy-spec-sync-rhel8@sha256:f591c997f3556d6d95cb3639b6f5fb5cbecd90c17dedb3476e0ec9d10172877a"
+            },
+            {
+                "name": "governance_policy_status_sync",
+                "image": "registry.redhat.io/rhacm2/governance-policy-status-sync-rhel8@sha256:9bde522448e293a5b1270de1c7e2af4a6923fa9a931db344c6e32e62304102f1"
+            },
+            {
+                "name": "governance_policy_template_sync",
+                "image": "registry.redhat.io/rhacm2/governance-policy-template-sync-rhel8@sha256:eb3b01e24f3551350e4c9c79cf7ddaee7b5a6c40b1d678c888f70419a1d5703e"
+            },
+            {
+                "name": "grafana_dashboard_loader",
+                "image": "registry.redhat.io/rhacm2/grafana-dashboard-loader-rhel8@sha256:53bd12aec94b938982150cc2c7b78a2fe4ba40fbabc0ecad8776203b8dfd32a0"
+            },
+            {
+                "name": "iam_policy_controller",
+                "image": "registry.redhat.io/rhacm2/iam-policy-controller-rhel8@sha256:f73743b58d5a1f4a54259e07872ab9f0f1194fd6438bcdf6fdf4cb11cf8b64a2"
+            },
+            {
+                "name": "insights_client",
+                "image": "registry.redhat.io/rhacm2/insights-client-rhel8@sha256:0c49d0b28047185f744d42bf897c7b3d71ef0a6c5b68fede08f0cb6452a9ad70"
+            },
+            {
+                "name": "insights_metrics",
+                "image": "registry.redhat.io/rhacm2/insights-metrics-rhel8@sha256:2117f71549f5d484ddda52063036f8316e6c4f2f8d75b8793b5c970a5cebb69d"
+            },
+            {
+                "name": "klusterlet_addon_controller",
+                "image": "registry.redhat.io/rhacm2/klusterlet-addon-controller-rhel8@sha256:d340df3740c8800e8b648bf2f1a3b2b1ebfce37db327349a379c5ed15094b7a1"
+            },
+            {
+                "name": "klusterlet_addon_operator",
+                "image": "registry.redhat.io/rhacm2/klusterlet-addon-rhel8-operator@sha256:42057a179c4e91348d9aac1e89f70d9e8b172693fc1a2970eb60836940ac4e65"
+            },
+            {
+                "name": "kube_rbac_proxy",
+                "image": "registry.redhat.io/rhacm2/kube-rbac-proxy-rhel8@sha256:f6cd56e942be303d282c1f0470fbfa8f6f5fb20481ba58a7b580dc1ae92c6bc8"
+            },
+            {
+                "name": "kube_state_metrics",
+                "image": "registry.redhat.io/rhacm2/kube-state-metrics-rhel8@sha256:2c0e956c4a679697b1ec408e12a654737aa367275bd33148d3819bd2930cb860"
+            },
+            {
+                "name": "management_ingress",
+                "image": "registry.redhat.io/rhacm2/management-ingress-rhel8@sha256:5d8c71d051d2819e399bf933a5d33980c76f4803e0053b9f493a98b384693078"
+            },
+            {
+                "name": "memcached_exporter",
+                "image": "registry.redhat.io/rhacm2/memcached-exporter-rhel8@sha256:a0b3e42593155e9a6327ccd374804d5dc04336593c1f07c8a42d7a36e96b930c"
+            },
+            {
+                "name": "memcached",
+                "image": "registry.redhat.io/rhacm2/memcached-rhel8@sha256:eccdc134dc58182770fcd0d7b942e7a49a2d73fd11dea0b7e1f1f13a16c63443"
+            },
+            {
+                "name": "metrics_collector",
+                "image": "registry.redhat.io/rhacm2/metrics-collector-rhel8@sha256:6be83eebf67bd3abcd023e8a575297589e302c8aa2f2646de64b6c8b521a74c4"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicloud-integrations-rhel8@sha256:c4765de0fc0f9b39838c3220b07a49e54049326f11fffb0803b1bcb3af00617d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicluster-observability-rhel8-operator@sha256:1a4e1e586edcbcb4d2a395236a44acf2421d6908a63ab03cb2c0f3847d9a75ad"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicluster-operators-application-rhel8@sha256:7c0508eb47f99ddb2568f0c34000005594f45ce1db7442b8a1573063e2b39ae2"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicluster-operators-channel-rhel8@sha256:d24dd00d92b479f7254bcb4b8d138c8f4f11125b21861804777f96ee50d88cbc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8@sha256:53b89927edaf848beef590f2932745eb7ae38a648108eae015d85ab9eb1d2bb9"
+            },
+            {
+                "name": "multiclusterhub_repo",
+                "image": "registry.redhat.io/rhacm2/multiclusterhub-repo-rhel8@sha256:133782a9c8796814a78fbd0287290ecc9b5d66798318c62c428e2b11779aefed"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/multiclusterhub-rhel8@sha256:34de0b1ce8a9efd19cb01d6eb8d45af028781e2bbde432aa7efeca57bd658ca4"
+            },
+            {
+                "name": "node_exporter",
+                "image": "registry.redhat.io/rhacm2/node-exporter-rhel8@sha256:429921158ba9c26f84f4ef26a274dd3400603ef2b8542ec0e2ecdfde1e9e6655"
+            },
+            {
+                "name": "observatorium_operator",
+                "image": "registry.redhat.io/rhacm2/observatorium-rhel8-operator@sha256:b0a3c417cd5f933ab83f85c009b3b231f2c8e04f6b1b1510f6695c54a8ef78a2"
+            },
+            {
+                "name": "observatorium",
+                "image": "registry.redhat.io/rhacm2/observatorium-rhel8@sha256:1968d11464b481acc8d543b2d7c535c805f0408b7044bfd492aad0467ffbc04e"
+            },
+            {
+                "name": "prometheus_alertmanager",
+                "image": "registry.redhat.io/rhacm2/prometheus-alertmanager-rhel8@sha256:abdb65aab5cac9129f68eb491551e714282ff77bedd1f06a3442045d0498d390"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/rhacm2/prometheus-rhel8@sha256:952f0ba21a58ed56fbb9679260a1a2da8d4b863ba974da831e0e53de538ad989"
+            },
+            {
+                "name": "rbac_query_proxy",
+                "image": "registry.redhat.io/rhacm2/rbac-query-proxy-rhel8@sha256:6f6e82429a7a4c393ab37c6c261ca3db09de6b4642b40d23dfcadeee154ba0eb"
+            },
+            {
+                "name": "redisgraph_tls",
+                "image": "registry.redhat.io/rhacm2/redisgraph-tls-rhel8@sha256:f83636bf780ec2ea18e6d58f54335f4cffbafd5d7dc69ce5042a888e11d5536c"
+            },
+            {
+                "name": "search_aggregator",
+                "image": "registry.redhat.io/rhacm2/search-aggregator-rhel8@sha256:f988683a0263f0dceed91cf3fddc7e82e6e6ac5c7d84d95a837ece367df1958f"
+            },
+            {
+                "name": "search_api",
+                "image": "registry.redhat.io/rhacm2/search-api-rhel8@sha256:3d3d82bcd2f3e1526f4593479dd20123724ab9f2d1a46dab07d43f13a4d3dfa0"
+            },
+            {
+                "name": "search_collector",
+                "image": "registry.redhat.io/rhacm2/search-collector-rhel8@sha256:865eb12d0dcaf31798bd14aaccee11d4387bcc30b03744d0a955d73c2167d1c1"
+            },
+            {
+                "name": "search_operator",
+                "image": "registry.redhat.io/rhacm2/search-rhel8@sha256:0139ed017a8965d065a28c2936b2029fa6c7320efa7b229faeeb1ba033a47519"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/submariner-addon-rhel8@sha256:c260574273c6c2d87d98683cec1dd06369fd35d2a6eb235ad0239d75fe34a73c"
+            },
+            {
+                "name": "thanos_receive_controller",
+                "image": "registry.redhat.io/rhacm2/thanos-receive-controller-rhel8@sha256:4a89bd3c693955d86af4f6549e89c3b4cefc81c4e751b1d58ce6d272bcfda91c"
+            },
+            {
+                "name": "thanos",
+                "image": "registry.redhat.io/rhacm2/thanos-rhel8@sha256:673124dd24099c896990d6874f3757ab2cd614a8d93478eafb51c31bb4a40901"
+            }
+        ]
+    }

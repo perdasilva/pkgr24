@@ -1,0 +1,130 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: bamoe-businessautomation-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "bamoe-businessautomation-operator",
+        "defaultChannel": "8.x-stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "8.x-stable",
+        "package": "bamoe-businessautomation-operator",
+        "entries": [
+            {
+                "name": "bamoe-businessautomation-operator.8.0.0-1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "bamoe-businessautomation-operator.8.0.0-1",
+        "package": "bamoe-businessautomation-operator",
+        "image": "registry.redhat.io/ibm-bamoe/bamoe-operator-bundle@sha256:4b1d7ce5a7b0570839f9ae0f49894e43e1f93ded8d9c4e35d196d9f2656d35fd",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "bamoe-businessautomation-operator",
+                    "version": "8.0.0-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_8.0.0",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:ae79b5dab78c4f48993fd8999b09bdcaa918b8e30a9f750bf24d411710f71928"
+            },
+            {
+                "name": "datagrid_image_8.0.0",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:98e9a6618558bc8a1b9cb91d1c9b3380968d335092f6e953d1abe6af96abf65c"
+            },
+            {
+                "name": "pam_bc_monitoring_image_8.0.0",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-businesscentral-monitoring-rhel8@sha256:acdf52fbfa61f5287133e1e03bf377471524ea457a7f5ba95dcbcea39a2e88ea"
+            },
+            {
+                "name": "pam_bc_image_8.0.0",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-businesscentral-rhel8@sha256:f82bb4a264d4e1ffd38c5d2a1ba1c6d8d160182cbf08be30ad63b41cc9a1af78"
+            },
+            {
+                "name": "pam_controller_image_8.0.0",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-controller-rhel8@sha256:4e755f0ce45d378124107c7db14ada36e6e56239fe4affb0bac3b02eea6b5130"
+            },
+            {
+                "name": "pam_dashbuilder_image_8.0.0",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-dashbuilder-rhel8@sha256:0a92ce645ba5baadd33c304bd4bac93ad65ae02e4e06edd6a454a8e132f8b87d"
+            },
+            {
+                "name": "pam_kieserver_image_8.0.0",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-kieserver-rhel8@sha256:06644585e00dfaaaf7a7b87f0005ce053085e98e0a00f18308e592fcde9eaec7"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-operator-bundle@sha256:4b1d7ce5a7b0570839f9ae0f49894e43e1f93ded8d9c4e35d196d9f2656d35fd"
+            },
+            {
+                "name": "pam_process_migration_image_8.0.0",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-process-migration-rhel8@sha256:d7346bf5c5de570c4d91ad1f510c30ad037fbacc5bd7a76da2466e31891ed5cc"
+            },
+            {
+                "name": "bamoe-business-automation-operator",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-rhel8-operator@sha256:98a972a8cac1fdaac2166935b2a0694ea468316448602bb907753e6feb9528b9"
+            },
+            {
+                "name": "bamoe-rhel8-operator-98a972a8cac1fdaac2166935b2a0694ea468316448602bb907753e6feb9528b9-annotation",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-rhel8-operator@sha256:98a972a8cac1fdaac2166935b2a0694ea468316448602bb907753e6feb9528b9"
+            },
+            {
+                "name": "pam_smartrouter_image_8.0.0",
+                "image": "registry.redhat.io/ibm-bamoe/bamoe-smartrouter-rhel8@sha256:0303999c32db11886c4c5cb4355d3c2b1accd1768ca7d0c2f245776f82c1d5f1"
+            },
+            {
+                "name": "ose_cli_image_8.0.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:1f033730b321137c1b834b0bcb7ea15a72f21d51e1960f89fa2cf85268dd886b"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:12757e265f9b0a04939e9f7e2708867c2cc20b0b474b3a11e02edfa8b002d616"
+            },
+            {
+                "name": "oauth_proxy_image_4.9",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3af967f9441485adb4e628f0a967c971b02b63e75a0f6cbb2fa82acad2758a84"
+            },
+            {
+                "name": "oauth_proxy_image_4.8",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:4c936e3e49f977b169766e511c38a2b8f3e41a7d98aebc51cd12f6972063078c"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:845fe111f6f34812bd9101a5afce6392d7be2aa46f873979dde4357fcf8f7a7e"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:f6dda083cf1e01decfc89c026970c712ac417b90dc2caa8d6e4772828b7447f7"
+            },
+            {
+                "name": "oauth_proxy_image_4.10",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:f6dda083cf1e01decfc89c026970c712ac417b90dc2caa8d6e4772828b7447f7"
+            },
+            {
+                "name": "mysql_proxy_image_8.0.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:c1226474d080a8381d6d175dca327ba9c5e444d6c54115e10ca2f24948fd471b"
+            },
+            {
+                "name": "postgresql_proxy_image_8.0.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:b68f131a59318c61f88cdbd44dbac94a3ec54cf291cd4b5b87cc104830634006"
+            }
+        ]
+    }

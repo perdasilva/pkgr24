@@ -1,0 +1,289 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: skupper-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "skupper-operator",
+        "defaultChannel": "alpha"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "alpha",
+        "package": "skupper-operator",
+        "entries": [
+            {
+                "name": "skupper-operator.v0.6.0"
+            },
+            {
+                "name": "skupper-operator.v0.6.1"
+            },
+            {
+                "name": "skupper-operator.v0.7.0",
+                "replaces": "skupper-operator.v0.6.0",
+                "skips": [
+                    "skupper-operator.v0.6.1"
+                ]
+            },
+            {
+                "name": "skupper-operator.v0.8.1"
+            },
+            {
+                "name": "skupper-operator.v0.8.2",
+                "replaces": "skupper-operator.v0.7.0",
+                "skips": [
+                    "skupper-operator.v0.8.1"
+                ]
+            },
+            {
+                "name": "skupper-operator.v1.0.2"
+            },
+            {
+                "name": "skupper-operator.v1.0.4"
+            },
+            {
+                "name": "skupper-operator.v1.0.5",
+                "replaces": "skupper-operator.v0.8.2",
+                "skips": [
+                    "skupper-operator.v0.8.3",
+                    "skupper-operator.v1.0.2",
+                    "skupper-operator.v1.0.3",
+                    "skupper-operator.v1.0.4"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "skupper-operator.v0.6.0",
+        "package": "skupper-operator",
+        "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:cfd1e1a4d4d6c240995bffb7428ea2ed9ec47cb59cd699b4b03c265e77e13363",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "skupper-operator",
+                    "version": "0.6.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "site-controller-rhel8-a3260bbc588fe78704f8a93c0d671b516fe53010eba9ee27fd9aaa62c4681c63-annotation",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:a3260bbc588fe78704f8a93c0d671b516fe53010eba9ee27fd9aaa62c4681c63"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:a3260bbc588fe78704f8a93c0d671b516fe53010eba9ee27fd9aaa62c4681c63"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:cfd1e1a4d4d6c240995bffb7428ea2ed9ec47cb59cd699b4b03c265e77e13363"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "skupper-operator.v0.6.1",
+        "package": "skupper-operator",
+        "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:684c23ce0000ef194b0e9271cb700694a5ffa09f3dd9bb0a60e51a7d2cfa4f54",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "skupper-operator",
+                    "version": "0.6.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "site-controller-rhel8-6d0ded725875256bdd7ce2867c1cad9d4bcc7217a9a5ffd53be1b94c75b6635d-annotation",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:6d0ded725875256bdd7ce2867c1cad9d4bcc7217a9a5ffd53be1b94c75b6635d"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:6d0ded725875256bdd7ce2867c1cad9d4bcc7217a9a5ffd53be1b94c75b6635d"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:684c23ce0000ef194b0e9271cb700694a5ffa09f3dd9bb0a60e51a7d2cfa4f54"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "skupper-operator.v0.7.0",
+        "package": "skupper-operator",
+        "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:b4d98f6f460d63bf44f2a7579131160c38e05c7ecc5dccbbb240efa2390d117c",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "skupper-operator",
+                    "version": "0.7.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "site-controller-rhel8-113e3aa48a92e68ef9bd2d12afae90017ba4a080699419efac48170a243be357-annotation",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:113e3aa48a92e68ef9bd2d12afae90017ba4a080699419efac48170a243be357"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:113e3aa48a92e68ef9bd2d12afae90017ba4a080699419efac48170a243be357"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:b4d98f6f460d63bf44f2a7579131160c38e05c7ecc5dccbbb240efa2390d117c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "skupper-operator.v0.8.1",
+        "package": "skupper-operator",
+        "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:1da0ddf99633efa0e2270b0bd1119244dd99d551b99c55ed6c7e2783ea236c9d",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "skupper-operator",
+                    "version": "0.8.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "site-controller-rhel8-216e25a37a95c041a82869b6f62d53f69a2c65e34bf5d51fa6b6a5cf092b996e-annotation",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:216e25a37a95c041a82869b6f62d53f69a2c65e34bf5d51fa6b6a5cf092b996e"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:216e25a37a95c041a82869b6f62d53f69a2c65e34bf5d51fa6b6a5cf092b996e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:1da0ddf99633efa0e2270b0bd1119244dd99d551b99c55ed6c7e2783ea236c9d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "skupper-operator.v0.8.2",
+        "package": "skupper-operator",
+        "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:50661c9520dfdbd2f6213a65fd8493fcda18d5add52ed72f8f7a83bf6c2a4fc7",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "skupper-operator",
+                    "version": "0.8.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "site-controller-rhel8-c96b5ceffd774a864902e812d254f0766e7acf7ec8f143656199c58c596f834e-annotation",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:c96b5ceffd774a864902e812d254f0766e7acf7ec8f143656199c58c596f834e"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/skupper-tech-preview/site-controller-rhel8@sha256:c96b5ceffd774a864902e812d254f0766e7acf7ec8f143656199c58c596f834e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/skupper-tech-preview/skupper-operator-bundle@sha256:50661c9520dfdbd2f6213a65fd8493fcda18d5add52ed72f8f7a83bf6c2a4fc7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "skupper-operator.v1.0.2",
+        "package": "skupper-operator",
+        "image": "registry.redhat.io/application-interconnect/skupper-operator-bundle@sha256:000ece6ad53e4b971237f73c4366e5a739415dcf2b4002891f50e654469e6967",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "skupper-operator",
+                    "version": "1.0.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "site-controller-rhel8-fec0b1c65995cf71188aaebe8227066ad058b035e519b6c774e5be17cce22f29-annotation",
+                "image": "registry.redhat.io/application-interconnect/site-controller-rhel8@sha256:fec0b1c65995cf71188aaebe8227066ad058b035e519b6c774e5be17cce22f29"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/application-interconnect/site-controller-rhel8@sha256:fec0b1c65995cf71188aaebe8227066ad058b035e519b6c774e5be17cce22f29"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/application-interconnect/skupper-operator-bundle@sha256:000ece6ad53e4b971237f73c4366e5a739415dcf2b4002891f50e654469e6967"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "skupper-operator.v1.0.4",
+        "package": "skupper-operator",
+        "image": "registry.redhat.io/application-interconnect/skupper-operator-bundle@sha256:7bfd653df138d8db91a8f8118a6a1281cf8053146009da840f368a26dd66aa65",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "skupper-operator",
+                    "version": "1.0.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/application-interconnect/skupper-operator-bundle@sha256:7bfd653df138d8db91a8f8118a6a1281cf8053146009da840f368a26dd66aa65"
+            },
+            {
+                "name": "skupper-site-controller-rhel8-fec0b1c65995cf71188aaebe8227066ad058b035e519b6c774e5be17cce22f29-annotation",
+                "image": "registry.redhat.io/application-interconnect/skupper-site-controller-rhel8@sha256:fec0b1c65995cf71188aaebe8227066ad058b035e519b6c774e5be17cce22f29"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/application-interconnect/skupper-site-controller-rhel8@sha256:fec0b1c65995cf71188aaebe8227066ad058b035e519b6c774e5be17cce22f29"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "skupper-operator.v1.0.5",
+        "package": "skupper-operator",
+        "image": "registry.redhat.io/application-interconnect/skupper-operator-bundle@sha256:3476af8f2b72c6fb91f6d52c53bb254ed31753a7a5a3006504856a375120e301",
+        "properties": [
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "skupper-operator",
+                    "version": "1.0.5"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/application-interconnect/skupper-operator-bundle@sha256:3476af8f2b72c6fb91f6d52c53bb254ed31753a7a5a3006504856a375120e301"
+            },
+            {
+                "name": "skupper-site-controller-rhel8-d46adb8e9df4dd345d808999117f8fa9707b1bb1a9844e086d42beadddb6fb25-annotation",
+                "image": "registry.redhat.io/application-interconnect/skupper-site-controller-rhel8@sha256:d46adb8e9df4dd345d808999117f8fa9707b1bb1a9844e086d42beadddb6fb25"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/application-interconnect/skupper-site-controller-rhel8@sha256:d46adb8e9df4dd345d808999117f8fa9707b1bb1a9844e086d42beadddb6fb25"
+            }
+        ]
+    }

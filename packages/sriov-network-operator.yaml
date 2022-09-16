@@ -1,0 +1,130 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: sriov-network-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "sriov-network-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "4.11",
+        "package": "sriov-network-operator",
+        "entries": [
+            {
+                "name": "sriov-network-operator.4.11.0-202208211706",
+                "skipRange": ">=4.3.0-0 <4.11.0-202208211706"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "sriov-network-operator",
+        "entries": [
+            {
+                "name": "sriov-network-operator.4.11.0-202208211706",
+                "skipRange": ">=4.3.0-0 <4.11.0-202208211706"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "sriov-network-operator.4.11.0-202208211706",
+        "package": "sriov-network-operator",
+        "image": "registry.redhat.io/openshift4/ose-sriov-network-operator-bundle@sha256:85439fd70e4353c7b67289a3518550b0095ee2f1c4fd3e6bba1e67fbc211ba84",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "sriovnetwork.openshift.io",
+                    "kind": "SriovIBNetwork",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "sriovnetwork.openshift.io",
+                    "kind": "SriovNetwork",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "sriovnetwork.openshift.io",
+                    "kind": "SriovNetworkNodePolicy",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "sriovnetwork.openshift.io",
+                    "kind": "SriovNetworkNodeState",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "sriovnetwork.openshift.io",
+                    "kind": "SriovNetworkPoolConfig",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "sriovnetwork.openshift.io",
+                    "kind": "SriovOperatorConfig",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "sriov-network-operator",
+                    "version": "4.11.0-202208211706"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "ose-sriov-cni",
+                "image": "registry.redhat.io/openshift4/ose-sriov-cni@sha256:150c55e759c1fccf1b28dc1d6f8d33ec195024288137602986e94a90073a8fb4"
+            },
+            {
+                "name": "ose-sriov-dp-admission-controller",
+                "image": "registry.redhat.io/openshift4/ose-sriov-dp-admission-controller@sha256:4abe52245b594b3f44e7e376b3ef6226f5a69c127353a9f401a132856db74069"
+            },
+            {
+                "name": "ose-sriov-infiniband-cni",
+                "image": "registry.redhat.io/openshift4/ose-sriov-infiniband-cni@sha256:f95b430916ba223e733cb1512bf68b0effb09dd35c91ad8aaef1f8f735dbb399"
+            },
+            {
+                "name": "ose-sriov-network-config-daemon",
+                "image": "registry.redhat.io/openshift4/ose-sriov-network-config-daemon@sha256:e3286dab52c7a26313eab7a4e93d239f56d7f7028db843ab3eb66294595f1f61"
+            },
+            {
+                "name": "ose-sriov-network-device-plugin",
+                "image": "registry.redhat.io/openshift4/ose-sriov-network-device-plugin@sha256:ed08caaf12ed5586f6d22642e2b4eabbaf1ba8c18a2062ecb6180c93c36ce392"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/ose-sriov-network-operator-bundle@sha256:85439fd70e4353c7b67289a3518550b0095ee2f1c4fd3e6bba1e67fbc211ba84"
+            },
+            {
+                "name": "ose-sriov-network-operator",
+                "image": "registry.redhat.io/openshift4/ose-sriov-network-operator@sha256:fb2e55d20b73d15051642a013f482d129a4125b6674b014de5469382869560d7"
+            },
+            {
+                "name": "ose-sriov-network-webhook",
+                "image": "registry.redhat.io/openshift4/ose-sriov-network-webhook@sha256:5879f130a726515a0f6e852f05c6674c751407a669bc4cbdf059e59f2a38fbc5"
+            }
+        ]
+    }

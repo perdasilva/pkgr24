@@ -1,0 +1,384 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: submariner
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "submariner",
+        "defaultChannel": "stable-0.12"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "alpha-0.11",
+        "package": "submariner",
+        "entries": [
+            {
+                "name": "submariner.v0.11.0"
+            },
+            {
+                "name": "submariner.v0.11.2",
+                "replaces": "submariner.v0.11.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "alpha-0.9",
+        "package": "submariner",
+        "entries": [
+            {
+                "name": "submariner.v0.9.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-0.12",
+        "package": "submariner",
+        "entries": [
+            {
+                "name": "submariner.v0.12.1"
+            },
+            {
+                "name": "submariner.v0.12.1-0.1656541075.p",
+                "skips": [
+                    "submariner.v0.12.1"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "submariner.v0.11.0",
+        "package": "submariner",
+        "image": "registry.redhat.io/rhacm2-tech-preview/submariner-operator-bundle@sha256:3cec5cb33d54e62f66b13c1c60b5b0b5304b65566972a3c94ed2aacd2f10a5c1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Broker",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Submariner",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "submariner",
+                    "version": "0.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "lighthouse-agent-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/lighthouse-agent-rhel8@sha256:406ee7a116a34eaf64314984d5f37e77479221b0103b7ac91a614ade453a93f7"
+            },
+            {
+                "name": "lighthouse-coredns-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/lighthouse-coredns-rhel8@sha256:8f658d463ebef63bcdb20cfe8a02dd022c7f386a5414b3830dd9e5b3e937e1a6"
+            },
+            {
+                "name": "submariner-gateway-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-gateway-rhel8@sha256:51be5ffd22c895df73b2d89ef8583351f47a0891fab63ff0d8219fb7a47da82f"
+            },
+            {
+                "name": "submariner-globalnet-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-globalnet-rhel8@sha256:e3b94f8aeb28af910e466c002a66d325ffdbf845c4499a7e4dff13bd3cfe131a"
+            },
+            {
+                "name": "submariner-networkplugin-syncer-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-networkplugin-syncer-rhel8@sha256:db2ca9e2477c6de693cc1cfd55c2d8ae70530d96aad92acc26adc7c8a9c2a553"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-operator-bundle@sha256:3cec5cb33d54e62f66b13c1c60b5b0b5304b65566972a3c94ed2aacd2f10a5c1"
+            },
+            {
+                "name": "submariner-rhel8-operator",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-rhel8-operator@sha256:e52df6171cf1f1f932e03ebe0bb51b64634f780b30dca64b14daebe6b038a660"
+            },
+            {
+                "name": "submariner-route-agent-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-route-agent-rhel8@sha256:e727665029f7635a05d121627d55e392166724816b5c8d28b1bc8171ba13e893"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "submariner.v0.11.2",
+        "package": "submariner",
+        "image": "registry.redhat.io/rhacm2-tech-preview/submariner-operator-bundle@sha256:923b444cdde5e9f9bcee657d03c152c0b30cc837d6e2f35b6595fddfb4de0586",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Broker",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Submariner",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "submariner",
+                    "version": "0.11.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "lighthouse-agent-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/lighthouse-agent-rhel8@sha256:44995ebdabe954d87eee1df63ac6d0d4c8ac72c5b7f28d4fe7fc39984cc5bb71"
+            },
+            {
+                "name": "lighthouse-coredns-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/lighthouse-coredns-rhel8@sha256:9785867448400e3aeeb73b534a59319ff70a089301b279c40fa2c98fd404ad6d"
+            },
+            {
+                "name": "submariner-gateway-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-gateway-rhel8@sha256:6050a07d2f1ddcb6d3fdbadfd1bf861f7694cf93ef880a1b720279ad4ce3e32d"
+            },
+            {
+                "name": "submariner-globalnet-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-globalnet-rhel8@sha256:3dece88358e4eb74a9ee60f5d86c3ef8b499fe304cd51873c39831ae20b14f18"
+            },
+            {
+                "name": "submariner-networkplugin-syncer-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-networkplugin-syncer-rhel8@sha256:e560ea10538be13995df6e0efe78f134125cd80136d0defdf2eba0c9ed46b5e7"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-operator-bundle@sha256:923b444cdde5e9f9bcee657d03c152c0b30cc837d6e2f35b6595fddfb4de0586"
+            },
+            {
+                "name": "submariner-rhel8-operator",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-rhel8-operator@sha256:1ec21de673a2659b427c4d63719dabc272cc772a4b6924ad3cc23e7aec886a16"
+            },
+            {
+                "name": "submariner-route-agent-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-route-agent-rhel8@sha256:430b212dc93dd5438340202552ad8aa623f9cc3eead8c3fb7c474d29871fa5c7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "submariner.v0.12.1",
+        "package": "submariner",
+        "image": "registry.redhat.io/rhacm2-tech-preview/submariner-operator-bundle@sha256:37d35b9c625685040a66f113dfb2085692bb90aefd22bf4301962f0e26183bce",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Broker",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Submariner",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "submariner",
+                    "version": "0.12.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-operator-bundle@sha256:37d35b9c625685040a66f113dfb2085692bb90aefd22bf4301962f0e26183bce"
+            },
+            {
+                "name": "lighthouse-agent",
+                "image": "registry.redhat.io/rhacm2/lighthouse-agent-rhel8@sha256:08221caf5edb0cf5904b45cacc1ab3f4ef4047dbc44d0d9e646264bf9c463800"
+            },
+            {
+                "name": "lighthouse-coredns",
+                "image": "registry.redhat.io/rhacm2/lighthouse-coredns-rhel8@sha256:46b0c7ce1e3f2d733e29630c748a38a3ff570b2e4056ed6e7eac7e359cb40b00"
+            },
+            {
+                "name": "submariner-gateway",
+                "image": "registry.redhat.io/rhacm2/submariner-gateway-rhel8@sha256:f05e415d9148ab10f5a9376c8ac545c96cd64a877d65579dac1666198c2960e8"
+            },
+            {
+                "name": "submariner-globalnet",
+                "image": "registry.redhat.io/rhacm2/submariner-globalnet-rhel8@sha256:fbea9eb64b963913193e407341218fe7693535fc17c69c435029ad9129b920b3"
+            },
+            {
+                "name": "submariner-networkplugin-syncer",
+                "image": "registry.redhat.io/rhacm2/submariner-networkplugin-syncer-rhel8@sha256:7789c1b907b140639b209369b58c801f68b8a51338676694575a57e7a06e8976"
+            },
+            {
+                "name": "submariner-rhel8-operator-2601c6925023d75655b0d59099eaa6a6ceb1cfef5d3aaa91904a56aaa572af27-annotation",
+                "image": "registry.redhat.io/rhacm2/submariner-rhel8-operator@sha256:2601c6925023d75655b0d59099eaa6a6ceb1cfef5d3aaa91904a56aaa572af27"
+            },
+            {
+                "name": "submariner-operator",
+                "image": "registry.redhat.io/rhacm2/submariner-rhel8-operator@sha256:2601c6925023d75655b0d59099eaa6a6ceb1cfef5d3aaa91904a56aaa572af27"
+            },
+            {
+                "name": "submariner-route-agent",
+                "image": "registry.redhat.io/rhacm2/submariner-route-agent-rhel8@sha256:97aed989e34fb2ae466ac8996d28d4a4fe27fdcfb29bbb5ae357c8284da6684c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "submariner.v0.12.1-0.1656541075.p",
+        "package": "submariner",
+        "image": "registry.redhat.io/rhacm2/submariner-operator-bundle@sha256:5685b6be23fdc1f3110088229b5bd002cf76b7c9de8904250a9f260742824966",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Broker",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Submariner",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "submariner",
+                    "version": "0.12.1+0.1656541075.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "lighthouse-agent",
+                "image": "registry.redhat.io/rhacm2/lighthouse-agent-rhel8@sha256:4cd5b40be39079a03b4fbd2afe6e8e1b411f251887ae41cd1641bb4e1fb23d6e"
+            },
+            {
+                "name": "lighthouse-coredns",
+                "image": "registry.redhat.io/rhacm2/lighthouse-coredns-rhel8@sha256:86e1737f793bdcfc66f50777df20b322025656f98180c0bffba285e69bd747c2"
+            },
+            {
+                "name": "submariner-gateway",
+                "image": "registry.redhat.io/rhacm2/submariner-gateway-rhel8@sha256:ef6434e2b4565c5395fbfb6d7fb22c7230d4eab7ca502b48380cabf111fc0887"
+            },
+            {
+                "name": "submariner-globalnet",
+                "image": "registry.redhat.io/rhacm2/submariner-globalnet-rhel8@sha256:f59d06832e250115f2d0a1e9aa31fdeedfc9cd40a599c958635b702d69a41819"
+            },
+            {
+                "name": "submariner-networkplugin-syncer",
+                "image": "registry.redhat.io/rhacm2/submariner-networkplugin-syncer-rhel8@sha256:6fffc1f41fdee608b1c36c79c6241906a32f13fe33c26d7ee9d621c63297898a"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2/submariner-operator-bundle@sha256:5685b6be23fdc1f3110088229b5bd002cf76b7c9de8904250a9f260742824966"
+            },
+            {
+                "name": "submariner-rhel8-operator-863fb52fe5df1cdb151d16341d8298a6c93e7152946eee8d78be7d555df15d15-annotation",
+                "image": "registry.redhat.io/rhacm2/submariner-rhel8-operator@sha256:863fb52fe5df1cdb151d16341d8298a6c93e7152946eee8d78be7d555df15d15"
+            },
+            {
+                "name": "submariner-operator",
+                "image": "registry.redhat.io/rhacm2/submariner-rhel8-operator@sha256:863fb52fe5df1cdb151d16341d8298a6c93e7152946eee8d78be7d555df15d15"
+            },
+            {
+                "name": "submariner-route-agent",
+                "image": "registry.redhat.io/rhacm2/submariner-route-agent-rhel8@sha256:88a88b9d3cec00c14cbe14bc9826b9f0f94503a9fac51c421320b7dfc4489422"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "submariner.v0.9.0",
+        "package": "submariner",
+        "image": "registry.redhat.io/rhacm2-tech-preview/submariner-operator-bundle@sha256:7725b42971d6735cda68cac2cc46c39b972c8694d2ed21a203551912183aa90c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Broker",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "submariner.io",
+                    "kind": "Submariner",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "submariner",
+                    "version": "0.9.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "lighthouse-agent-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/lighthouse-agent-rhel8@sha256:badc80c6d8f3c8a22976c4021fdbf83502b192c48e5ed3b2282676690cd406e0"
+            },
+            {
+                "name": "lighthouse-coredns-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/lighthouse-coredns-rhel8@sha256:416d75ed61b07f5a404fb936e9a58717559ec1f84ccd79d004533c508d43e477"
+            },
+            {
+                "name": "submariner-gateway-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-gateway-rhel8@sha256:86f0ea98a6c7c2407f8d74066b30412c26096728375ecf8344d8683bf2c6c7d5"
+            },
+            {
+                "name": "submariner-globalnet-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-globalnet-rhel8@sha256:cdb51c5bc24d79c7b20b950bd9bc8a5a58d76d60f25f0ef0c8d35ede2542497c"
+            },
+            {
+                "name": "submariner-networkplugin-syncer-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-networkplugin-syncer-rhel8@sha256:617e25d489e33847aaf85744f6adad4f2b6657474c1a6d125a8497fb4754bcdc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-operator-bundle@sha256:7725b42971d6735cda68cac2cc46c39b972c8694d2ed21a203551912183aa90c"
+            },
+            {
+                "name": "submariner-rhel8-operator",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-rhel8-operator@sha256:d8fc118b04aaaa3f415cb278ec3bd2113a0d4b34c5f8a8bce831540e8d80076a"
+            },
+            {
+                "name": "submariner-route-agent-rhel8",
+                "image": "registry.redhat.io/rhacm2-tech-preview/submariner-route-agent-rhel8@sha256:4c8d495044d0a37314fde8198e4b46b8c5798b9e8d4d7a3afa69f1f78ef93d41"
+            }
+        ]
+    }

@@ -1,0 +1,115 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: jws-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "jws-operator",
+        "defaultChannel": "alpha"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "alpha",
+        "package": "jws-operator",
+        "entries": [
+            {
+                "name": "jws-operator.v2.0.0"
+            },
+            {
+                "name": "jws-operator.v2.0.1",
+                "replaces": "jws-operator.v2.0.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "jws-operator.v2.0.0",
+        "package": "jws-operator",
+        "image": "registry.redhat.io/jboss-webserver-5/jws5-operator-bundle@sha256:6b82db15d88d7b05a81617fea3fabb7733d9d459d1f2b6b62ed02a77a52500cc",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "web.servers.org",
+                    "kind": "WebServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "jws-operator",
+                    "version": "2.0.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-webserver-5/jws5-operator-bundle@sha256:6b82db15d88d7b05a81617fea3fabb7733d9d459d1f2b6b62ed02a77a52500cc"
+            },
+            {
+                "name": "jws5-rhel8-operator-033bc9fca553f67a9d1386c433132e7b5138c797232a494e2dc8071c2ecefb36-annotation",
+                "image": "registry.redhat.io/jboss-webserver-5/jws5-rhel8-operator@sha256:033bc9fca553f67a9d1386c433132e7b5138c797232a494e2dc8071c2ecefb36"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/jboss-webserver-5/jws5-rhel8-operator@sha256:033bc9fca553f67a9d1386c433132e7b5138c797232a494e2dc8071c2ecefb36"
+            },
+            {
+                "name": "jws56-openjdk8-openshift-rhel8-ed4f28495cebacb1500f009b0fca4a32634ef035964f65e872a48f94a0d78da7-annotation",
+                "image": "registry.redhat.io/jboss-webserver-5/jws56-openjdk8-openshift-rhel8@sha256:ed4f28495cebacb1500f009b0fca4a32634ef035964f65e872a48f94a0d78da7"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7bf24e0e579bd067ac8eb9b2b49760b78832582dc1f16dfcfdbe2d532de241ec"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "jws-operator.v2.0.1",
+        "package": "jws-operator",
+        "image": "registry.redhat.io/jboss-webserver-5/jws5-operator-bundle@sha256:3a3293e1ec3baab6f4fd7f2b7a3137e3f542a43dcc81145f5cf292396862fa3e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "web.servers.org",
+                    "kind": "WebServer",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "jws-operator",
+                    "version": "2.0.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/jboss-webserver-5/jws5-operator-bundle@sha256:3a3293e1ec3baab6f4fd7f2b7a3137e3f542a43dcc81145f5cf292396862fa3e"
+            },
+            {
+                "name": "jws5-rhel8-operator-336a465dfec07f99554b1cf51d6c64c8cde52f4ab54e448bb925bcde930f7ce3-annotation",
+                "image": "registry.redhat.io/jboss-webserver-5/jws5-rhel8-operator@sha256:336a465dfec07f99554b1cf51d6c64c8cde52f4ab54e448bb925bcde930f7ce3"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/jboss-webserver-5/jws5-rhel8-operator@sha256:336a465dfec07f99554b1cf51d6c64c8cde52f4ab54e448bb925bcde930f7ce3"
+            },
+            {
+                "name": "jws56-openjdk8-openshift-rhel8-ed4f28495cebacb1500f009b0fca4a32634ef035964f65e872a48f94a0d78da7-annotation",
+                "image": "registry.redhat.io/jboss-webserver-5/jws56-openjdk8-openshift-rhel8@sha256:ed4f28495cebacb1500f009b0fca4a32634ef035964f65e872a48f94a0d78da7"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/rhacm2/kube-rbac-proxy-rhel8@sha256:f6cd56e942be303d282c1f0470fbfa8f6f5fb20481ba58a7b580dc1ae92c6bc8"
+            }
+        ]
+    }

@@ -1,0 +1,75 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: opentelemetry-product
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "opentelemetry-product",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "opentelemetry-product",
+        "entries": [
+            {
+                "name": "opentelemetry-operator.v0.56.0-1",
+                "skipRange": ">=0.33.0 <0.56.0-1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "opentelemetry-operator.v0.56.0-1",
+        "package": "opentelemetry-product",
+        "image": "registry.redhat.io/rhosdt/opentelemetry-operator-bundle@sha256:ff28ea331d4ec54aec6060cd742460bb7fca4bde9be4344d5ac6bbf7a026f053",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "opentelemetry.io",
+                    "kind": "Instrumentation",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "opentelemetry.io",
+                    "kind": "OpenTelemetryCollector",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "opentelemetry-product",
+                    "version": "0.56.0-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:5788b159ae45b1ec72445700b3c34d5ad0aa9451234a06ed7e465034fa79edc2"
+            },
+            {
+                "name": "opentelemetry_collector",
+                "image": "registry.redhat.io/rhosdt/opentelemetry-collector-rhel8@sha256:2a70ab4e5dc4294090f4da0d7451bb101d03a057ebf364dad84c385e5fb63fb9"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhosdt/opentelemetry-operator-bundle@sha256:ff28ea331d4ec54aec6060cd742460bb7fca4bde9be4344d5ac6bbf7a026f053"
+            },
+            {
+                "name": "opentelemetry-rhel8-operator-cc36cd13dad38621c71661b0631880da1a5154bd8cdef1d357fa5140fdce4023-annotation",
+                "image": "registry.redhat.io/rhosdt/opentelemetry-rhel8-operator@sha256:cc36cd13dad38621c71661b0631880da1a5154bd8cdef1d357fa5140fdce4023"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/rhosdt/opentelemetry-rhel8-operator@sha256:cc36cd13dad38621c71661b0631880da1a5154bd8cdef1d357fa5140fdce4023"
+            }
+        ]
+    }

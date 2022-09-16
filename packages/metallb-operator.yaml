@@ -1,0 +1,139 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: metallb-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "metallb-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "metallb-operator",
+        "entries": [
+            {
+                "name": "metallb-operator.4.11.0-202208191307",
+                "skipRange": ">=4.8.0 <4.11.0-202208191307"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "metallb-operator.4.11.0-202208191307",
+        "package": "metallb-operator",
+        "image": "registry.redhat.io/openshift4/ose-metallb-operator-bundle@sha256:57ccdab6a8623b95034f8a3defd6e7532e28a364edcaa13660a159b3c99cdf68",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "AddressPool",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "AddressPool",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "BFDProfile",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "BGPAdvertisement",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "BGPPeer",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "BGPPeer",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "Community",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "IPAddressPool",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "L2Advertisement",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "metallb.io",
+                    "kind": "MetalLB",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "metallb-operator",
+                    "version": "4.11.0-202208191307"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "frr-rhel8",
+                "image": "registry.redhat.io/openshift4/frr-rhel8@sha256:546e186c10c7b10d0298d464e2712e51c0d29e2786f0baa42975989705f541ae"
+            },
+            {
+                "name": "metallb-rhel8-operator",
+                "image": "registry.redhat.io/openshift4/metallb-rhel8-operator@sha256:e2acb220d4be9687ff62b474d9f8a663a96ccdeee407bce002f28f3f97a035c1"
+            },
+            {
+                "name": "metallb-rhel8",
+                "image": "registry.redhat.io/openshift4/metallb-rhel8@sha256:ba38ed94b6f8df487213ca60b332347dabc5414f81a527304d710c3e689d36c3"
+            },
+            {
+                "name": "ose-kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7abede2caee5a935f87219f51732cff5a8c3bfca1eab1f0e9725ca93fd347b89"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/ose-metallb-operator-bundle@sha256:57ccdab6a8623b95034f8a3defd6e7532e28a364edcaa13660a159b3c99cdf68"
+            }
+        ]
+    }

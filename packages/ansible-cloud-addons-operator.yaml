@@ -1,0 +1,438 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: ansible-cloud-addons-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "ansible-cloud-addons-operator",
+        "defaultChannel": "stable-2.2-cluster-scoped"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-2.2-cluster-scoped",
+        "package": "ansible-cloud-addons-operator",
+        "entries": [
+            {
+                "name": "aca-operator.v2.2.0-0.1656025773",
+                "skipRange": ">=2.1.1-0.1645500829 <2.2.0"
+            },
+            {
+                "name": "aca-operator.v2.2.0-0.1657058636",
+                "skipRange": ">=2.1.1-0.1645500829 <2.2.0"
+            },
+            {
+                "name": "aca-operator.v2.2.0-0.1659934723",
+                "skipRange": ">=2.1.1-0.1645500829 <2.2.0"
+            },
+            {
+                "name": "aca-operator.v2.2.0-0.1660255587",
+                "skipRange": ">=2.1.1-0.1645500829 <2.2.0"
+            },
+            {
+                "name": "aca-operator.v2.2.0-0.1660687555",
+                "skips": [
+                    "aca-operator.v2.2.0-0.1659934723",
+                    "aca-operator.v2.2.0-0.1660255587",
+                    "aca-operator.v2.2.0-0.1654653032",
+                    "aca-operator.v2.2.0-0.1656025773",
+                    "aca-operator.v2.2.0-0.1653937352",
+                    "aca-operator.v2.2.0-0.1657058636"
+                ],
+                "skipRange": ">=2.1.1-0.1645500829 <2.2.0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable-cluster-scoped",
+        "package": "ansible-cloud-addons-operator",
+        "entries": [
+            {
+                "name": "aca-operator.v2.1.1-0.1645829566"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aca-operator.v2.1.1-0.1645829566",
+        "package": "ansible-cloud-addons-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:ebf2a4c346a2c04c4b44893fb80dd47d8a4a3eea2faeb59ad364d96fb89ddf35",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAzureBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AutomationPlatform",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-cloud-addons-operator",
+                    "version": "2.1.1+0.1645829566"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "aap-azure-billing-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-21/azure-billing-rhel8-operator@sha256:c2f899cbfa17e9a6259d9962649ecf0f47fe3879f016ea4ab8dd96ef9ff04da9"
+            },
+            {
+                "name": "azure_billing",
+                "image": "registry.redhat.io/ansible-automation-platform-21/azure-billing-rhel8@sha256:9780cd99c5a141d1d9498a2c0b10c0a26c3adea7918df00c56e702a80d308ffc"
+            },
+            {
+                "name": "aap-ui-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-21/azure-ui-rhel8-operator@sha256:008a2128b8771a2c3bf3891f61dd6f012cf2b17b3b19208b22cfd694f8b853fe"
+            },
+            {
+                "name": "aap_ui",
+                "image": "registry.redhat.io/ansible-automation-platform-21/azure-ui-rhel8@sha256:70b88905aecb111ace414e7c941aafdf72900119f7a7dc69e9314250692e307e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:ebf2a4c346a2c04c4b44893fb80dd47d8a4a3eea2faeb59ad364d96fb89ddf35"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b6fde43491c2e0733c8fe6ee8660f7f6435fe20c0b6d435cfc7f86eeab8b4748"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aca-operator.v2.2.0-0.1656025773",
+        "package": "ansible-cloud-addons-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:cdcf0c85161fa5257474bf067abd715210b3c2f0bc40e7bf0db869622ecd0f2f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAwsBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAzureBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AutomationPlatform",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-cloud-addons-operator",
+                    "version": "2.2.0+0.1656025773"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "aap-billing-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8-operator@sha256:1dfa1dceb68544752af059d0bedb6298ba00f7444093e541400f142014bdec6e"
+            },
+            {
+                "name": "billing",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8@sha256:46899f16cd4dd9fa60cd4df1fc7c49493aea588e101b6683780ef8aa7192dc26"
+            },
+            {
+                "name": "aap-ui-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8-operator@sha256:8da3092d196d16ba12533054d78c0010ba36bcb12b7305e37bef632597f7c152"
+            },
+            {
+                "name": "aap_ui",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8@sha256:e912af882a10fd754e39e2f6c24e81cfb8344da991c46e3286f1c4d673db02bd"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:cdcf0c85161fa5257474bf067abd715210b3c2f0bc40e7bf0db869622ecd0f2f"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:b6e06bf125c2c919f4a74098d9bf9bec05122b421213dd6d442de800f5ef3cf7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aca-operator.v2.2.0-0.1657058636",
+        "package": "ansible-cloud-addons-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:47bf17448f2f410d5057e3d8f46c8444c5ce899cc36b54ca5f19a73acaa86f82",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAwsBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAzureBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AutomationPlatform",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-cloud-addons-operator",
+                    "version": "2.2.0+0.1657058636"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "aap-billing-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8-operator@sha256:4c0d37d2408f6674e0ae8d32ee169523c6a7e401afd3c7fb456b4243e9e13307"
+            },
+            {
+                "name": "billing",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8@sha256:82029163c92e578ec1ab548e70ddb95af39e79599a6244b3587c16af99d63031"
+            },
+            {
+                "name": "aap-ui-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8-operator@sha256:44001ffbab1e7242795dc43b2ceeb64c4278e81294e1ed0b5a2124fae99b29ea"
+            },
+            {
+                "name": "aap_ui",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8@sha256:53c96401013bcb90e9d84e99a00c2e61b80fed5cdcfdeb9b48b263feee39734f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:47bf17448f2f410d5057e3d8f46c8444c5ce899cc36b54ca5f19a73acaa86f82"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:54406b529b0e9993f3421fafabb1b06305ed5234e456faa9408f0afbb41d0322"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aca-operator.v2.2.0-0.1659934723",
+        "package": "ansible-cloud-addons-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:86c0504b1221375d15cdea9d6bbb5483506f6d6398d7292aac7cda6b536580f2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAwsBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAzureBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AutomationPlatform",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-cloud-addons-operator",
+                    "version": "2.2.0+0.1659934723"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "aap-billing-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8-operator@sha256:229818332aa847164859950c16f58e511bf637ab0a4f85f0d8493447e121a3db"
+            },
+            {
+                "name": "billing",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8@sha256:6f3e7b1bd1cdc4a7f9c6e3640b325810953fcc0afb5547d2d8ca7a31fcc534d0"
+            },
+            {
+                "name": "aap-ui-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8-operator@sha256:10a18daef62d6dd00ace9443f404d62df94222f61af16cb4608103660856e100"
+            },
+            {
+                "name": "aap_ui",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8@sha256:e92000150010cf37c04621bb97ebfc2aa8d4a99e6e9883e1757cd7af9973f11c"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:86c0504b1221375d15cdea9d6bbb5483506f6d6398d7292aac7cda6b536580f2"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:036c78fea970d6bbe45aa1097a8ed701c72ce1117404450dd7e717a1bedd2b2a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aca-operator.v2.2.0-0.1660255587",
+        "package": "ansible-cloud-addons-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:23a9074fa7e68031da9aae8bed09424daedc024eddab65023a89f8fade9647f1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAwsBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAzureBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AutomationPlatform",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-cloud-addons-operator",
+                    "version": "2.2.0+0.1660255587"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "aap-billing-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8-operator@sha256:d3d29ceffc279a154f089fed92f1decc81c692575d2e46181ce994e726871191"
+            },
+            {
+                "name": "billing",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8@sha256:146a1dbf5bbf8963650af64496c0ecff37ecc8cbef7b75e35e580c5c60b087a1"
+            },
+            {
+                "name": "aap-ui-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8-operator@sha256:ad36dd049eab4d3dd57e1d18cac736bdc18f89e992fc4da4c7681a604bb00d8d"
+            },
+            {
+                "name": "aap_ui",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8@sha256:cf32338d597c8a14cf07e7ccee0a6f51a5c995db07962b5dbce4bfc3d11bfad6"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:23a9074fa7e68031da9aae8bed09424daedc024eddab65023a89f8fade9647f1"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:260ebab52c1e825e354bfa60827e314388fb7878bfa16d1dc061707962e95bea"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "aca-operator.v2.2.0-0.1660687555",
+        "package": "ansible-cloud-addons-operator",
+        "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:00cab2edaa0e1659487a42281e0df261dcf21af3f2282960124a96c38d984a6f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAwsBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AnsibleAutomationPlatformAzureBilling",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "platform.ansible.com",
+                    "kind": "AutomationPlatform",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "ansible-cloud-addons-operator",
+                    "version": "2.2.0+0.1660687555"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "aap-billing-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8-operator@sha256:ffa14e327f76f2d12649661e6d5ea65f8fa4eed82381784e8aca00a813cce2be"
+            },
+            {
+                "name": "billing",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-billing-rhel8@sha256:00ecd95d39dcafcfa6f1936e50a836eedfe95612b41a70dfddc862884b78704e"
+            },
+            {
+                "name": "aap-ui-manager",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8-operator@sha256:95fd45e8cbf963a41b426d7298c46f265356fbe2c84ac5c3ec87175701d211fe"
+            },
+            {
+                "name": "aap_ui",
+                "image": "registry.redhat.io/ansible-automation-platform-22/azure-ui-rhel8@sha256:0586024acf7dff087c0d241a6cd9df35af2f656e916006f55d9a52b60c9f7f09"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/ansible-automation-platform/cloud-addons-operator-bundle@sha256:00cab2edaa0e1659487a42281e0df261dcf21af3f2282960124a96c38d984a6f"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:260ebab52c1e825e354bfa60827e314388fb7878bfa16d1dc061707962e95bea"
+            }
+        ]
+    }

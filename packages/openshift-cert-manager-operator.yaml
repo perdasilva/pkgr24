@@ -1,0 +1,126 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: openshift-cert-manager-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "openshift-cert-manager-operator",
+        "defaultChannel": "tech-preview"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "tech-preview",
+        "package": "openshift-cert-manager-operator",
+        "entries": [
+            {
+                "name": "openshift-cert-manager.v1.7.1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "openshift-cert-manager.v1.7.1",
+        "package": "openshift-cert-manager-operator",
+        "image": "registry.redhat.io/cert-manager/cert-manager-operator-bundle@sha256:0cb53beabc016e0a3c2358cd3855fb35f37ef27417a955cf07e7668ca44487be",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "acme.cert-manager.io",
+                    "kind": "Challenge",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "acme.cert-manager.io",
+                    "kind": "Order",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "cert-manager.io",
+                    "kind": "Certificate",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "cert-manager.io",
+                    "kind": "CertificateRequest",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "cert-manager.io",
+                    "kind": "ClusterIssuer",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "cert-manager.io",
+                    "kind": "Issuer",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "config.openshift.io",
+                    "kind": "CertManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.openshift.io",
+                    "kind": "CertManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-cert-manager-operator",
+                    "version": "1.7.1-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/cert-manager/cert-manager-operator-bundle@sha256:0cb53beabc016e0a3c2358cd3855fb35f37ef27417a955cf07e7668ca44487be"
+            },
+            {
+                "name": "cert-manager-operator-rhel8-df17121252018cef0f914d72c3bbce8c30bd80d768c1140cdc6f8b4a50ec468c-annotation",
+                "image": "registry.redhat.io/cert-manager/cert-manager-operator-rhel8@sha256:df17121252018cef0f914d72c3bbce8c30bd80d768c1140cdc6f8b4a50ec468c"
+            },
+            {
+                "name": "cert-manager-operator",
+                "image": "registry.redhat.io/cert-manager/cert-manager-operator-rhel8@sha256:df17121252018cef0f914d72c3bbce8c30bd80d768c1140cdc6f8b4a50ec468c"
+            },
+            {
+                "name": "cert_manager_webhook",
+                "image": "registry.redhat.io/cert-manager/jetstack-cert-manager-rhel8@sha256:988870161bbc56ad2793b8563eb0ddb00c4e108b0d6bd604602c67ff4ff88ae8"
+            },
+            {
+                "name": "cert_manager_ca_injector",
+                "image": "registry.redhat.io/cert-manager/jetstack-cert-manager-rhel8@sha256:988870161bbc56ad2793b8563eb0ddb00c4e108b0d6bd604602c67ff4ff88ae8"
+            },
+            {
+                "name": "cert_manager_controller",
+                "image": "registry.redhat.io/cert-manager/jetstack-cert-manager-rhel8@sha256:988870161bbc56ad2793b8563eb0ddb00c4e108b0d6bd604602c67ff4ff88ae8"
+            }
+        ]
+    }

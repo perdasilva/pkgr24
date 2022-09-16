@@ -1,0 +1,59 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: dpu-network-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "dpu-network-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "dpu-network-operator",
+        "entries": [
+            {
+                "name": "dpu-network-operator.4.11.0-202208031306",
+                "skipRange": ">=4.10.0-0 <4.11.0-202208031306"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "dpu-network-operator.4.11.0-202208031306",
+        "package": "dpu-network-operator",
+        "image": "registry.redhat.io/openshift4/dpu-network-operator-bundle@sha256:0b6acec88ae1ce67dca8a66260dc600d1ac0ce66c407f7b684a5bf8fc3b85194",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "dpu.openshift.io",
+                    "kind": "OVNKubeConfig",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "dpu-network-operator",
+                    "version": "4.11.0-202208031306"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift4/dpu-network-operator-bundle@sha256:0b6acec88ae1ce67dca8a66260dc600d1ac0ce66c407f7b684a5bf8fc3b85194"
+            },
+            {
+                "name": "dpu-network-rhel8-operator",
+                "image": "registry.redhat.io/openshift4/dpu-network-rhel8-operator@sha256:1d382ff0e0e7e8f1c7721674f128e99c6e33de83b03a0416a89637e2ec6f6590"
+            },
+            {
+                "name": "ose-kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:7abede2caee5a935f87219f51732cff5a8c3bfca1eab1f0e9725ca93fd347b89"
+            }
+        ]
+    }

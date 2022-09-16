@@ -1,0 +1,3603 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: businessautomation-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "businessautomation-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "businessautomation-operator",
+        "entries": [
+            {
+                "name": "businessautomation-operator.7.10.0-1",
+                "replaces": "businessautomation-operator.7.9.1-1"
+            },
+            {
+                "name": "businessautomation-operator.7.10.0-2",
+                "replaces": "businessautomation-operator.7.10.0-1"
+            },
+            {
+                "name": "businessautomation-operator.7.10.1-1",
+                "replaces": "businessautomation-operator.7.10.0-2"
+            },
+            {
+                "name": "businessautomation-operator.7.10.1-2",
+                "replaces": "businessautomation-operator.7.10.1-1"
+            },
+            {
+                "name": "businessautomation-operator.7.11.0-1",
+                "replaces": "businessautomation-operator.7.10.1-2"
+            },
+            {
+                "name": "businessautomation-operator.7.11.0-2",
+                "replaces": "businessautomation-operator.7.11.0-1"
+            },
+            {
+                "name": "businessautomation-operator.7.11.1-1",
+                "replaces": "businessautomation-operator.7.11.0-2"
+            },
+            {
+                "name": "businessautomation-operator.7.11.1-2",
+                "replaces": "businessautomation-operator.7.11.1-1"
+            },
+            {
+                "name": "businessautomation-operator.7.11.1-3",
+                "replaces": "businessautomation-operator.7.11.1-2"
+            },
+            {
+                "name": "businessautomation-operator.7.12.0-1",
+                "replaces": "businessautomation-operator.7.11.1-3"
+            },
+            {
+                "name": "businessautomation-operator.7.12.0-2",
+                "replaces": "businessautomation-operator.7.12.0-1"
+            },
+            {
+                "name": "businessautomation-operator.7.12.1-1",
+                "replaces": "businessautomation-operator.7.12.0-2"
+            },
+            {
+                "name": "businessautomation-operator.7.12.1-2",
+                "replaces": "businessautomation-operator.7.12.1-1"
+            },
+            {
+                "name": "businessautomation-operator.7.12.1-3",
+                "replaces": "businessautomation-operator.7.12.1-2"
+            },
+            {
+                "name": "businessautomation-operator.7.8.1"
+            },
+            {
+                "name": "businessautomation-operator.7.9.0",
+                "replaces": "businessautomation-operator.7.8.1"
+            },
+            {
+                "name": "businessautomation-operator.7.9.0-2",
+                "replaces": "businessautomation-operator.7.9.0"
+            },
+            {
+                "name": "businessautomation-operator.7.9.1-1",
+                "replaces": "businessautomation-operator.7.9.0-2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.10.0-1",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:ee5ef1dfefb946f8eec41f05c0f7b496b431c04ddb16489ea4a0515a5a43f0c2",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.10.0-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.10.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:26c4a8e8d42d51229a34058cc470aa0221a7e34459f60cf1d30040d1879293c8"
+            },
+            {
+                "name": "broker_image_7.9.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:6cdd36d43872146e852daadae6882370f657a60a3b1e88318767fa9641f5e882"
+            },
+            {
+                "name": "broker_image_7.9.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:6cdd36d43872146e852daadae6882370f657a60a3b1e88318767fa9641f5e882"
+            },
+            {
+                "name": "datagrid_image_7.9.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.9.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.10.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "oauth_proxy_image_3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:bbdba78602bd0fd83358f0138d56f959070f637de4972edb53fed4f4fdb3169d"
+            },
+            {
+                "name": "ose_cli_image_7.9.1",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:1d34d4e57b7a29bf21f6cef827079c70834eac44c4543720dba6df33612ac1ee"
+            },
+            {
+                "name": "ose_cli_image_7.9.0",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:1d34d4e57b7a29bf21f6cef827079c70834eac44c4543720dba6df33612ac1ee"
+            },
+            {
+                "name": "ose_cli_image_7.10.0",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:1d34d4e57b7a29bf21f6cef827079c70834eac44c4543720dba6df33612ac1ee"
+            },
+            {
+                "name": "oauth_proxy_image_4.4",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3948de88df41ba184c0541146997dbfbc705e2a9489f6433fb8da2858eecd041"
+            },
+            {
+                "name": "oauth_proxy_image_4.1",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:53617362439fd6023ca406521b398bb2b32a2b760695b3206797280af182faf6"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:53fcf82997a5609d49bdc5f1b22a4032f3838844bb5397d5b1f9c9429129c332"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:53fcf82997a5609d49bdc5f1b22a4032f3838844bb5397d5b1f9c9429129c332"
+            },
+            {
+                "name": "oauth_proxy_image_4.3",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:5e31ce8745926e0116827b1b658800dd3e8b91cd1800be4f9943a84a1c023f78"
+            },
+            {
+                "name": "oauth_proxy_image_4.2",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bdb734df9006730bf572d235e36ed25c3842cd3031aaae8f48fc8f93ab47769f"
+            },
+            {
+                "name": "oauth_proxy_image_4.5",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:f8a7041e4701c634de1127654be88d613b938f2538328b629816e314b0e7335a"
+            },
+            {
+                "name": "dm_controller_image_7.9.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:2cb1b487e016c02ae9191ee96a93b2ff4c1576d10ca538253f139735533c3620"
+            },
+            {
+                "name": "dm_controller_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:36f4f88d0e462ff3878df0d50cbd6bcee4917bb2a0b92262a90689052a408c00"
+            },
+            {
+                "name": "dm_controller_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:684e9882c8e0eb16fb66ca3d82aa2537fa27b2c5fc9e7069721d55f21136220f"
+            },
+            {
+                "name": "dm_dc_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:24146aaa1d444dbe5c73046b66c241def47647ebb32b9bb6b1c74dd390a44786"
+            },
+            {
+                "name": "dm_dc_image_7.9.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:35c52deed1560b7a8f0d732748ddf11c7eefa7a2cb0eb3cc98900f11aad4d1f1"
+            },
+            {
+                "name": "dm_dc_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:e396759cdf81039b687e89440d5c8ce815a95d26f186bc09b23a1b1fb0d60c19"
+            },
+            {
+                "name": "dm_kieserver_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:0eb6637131238baa171fbaeea605181d613423cb628a8534e5c27034b91f1abe"
+            },
+            {
+                "name": "dm_kieserver_image_7.9.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:9bfd1df6084e2017e560f50e9ec2806fc9ce0c98052763dcead86805508e45f7"
+            },
+            {
+                "name": "dm_kieserver_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:bf6b434eab48768e8f30e243d72908d6fd2156afa8027c14de988a50f05bdc27"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:24e7da8a84a38054febc930eca770376bda2921c3e1f22c0e9a3e29a2f428a50"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:2b6600ae667079e3d45ed9e3db0216a00ddc211089704f6541e605c82e90bb36"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:84d9bf89a31bbe23565ffe2b0ac8857835fb09eeeafd83621bbad21157967a12"
+            },
+            {
+                "name": "pam_bc_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:028acb2a8a6b40bae2c62942cb94e85687d147b505674f9a354c69507522c20e"
+            },
+            {
+                "name": "pam_bc_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:175e9ea8e969d6bf4948f70a08c3a427a6a3b9a6dbb9cbd5c83fb4ed15d149e4"
+            },
+            {
+                "name": "pam_bc_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:999ed6e4d6974d662c15a41ef56d2feecf3e1d99441803e4fc0d7a62433b8f61"
+            },
+            {
+                "name": "pam_controller_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:1825155dd58ad58d76afbc285060ee926598282c857ddae04b2f69b2aac2003c"
+            },
+            {
+                "name": "pam_controller_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:4c43e7f47c56e713bd0b4283484a64343eebbdbf1c1ab1045a267348ad413103"
+            },
+            {
+                "name": "pam_controller_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:4d47d44f8d836e8549ba717b6ae331e7c9a09d356d8910b164ae6eddddbc27d1"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:a9668dfa65a8cf6dc699dbcd6147a66e877d8c16ec75d84ba220c0154a7ceee9"
+            },
+            {
+                "name": "pam_kieserver_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:3ad203b9e4509145b5c5acd9b3286ca0e01047dbd3e67615213e9cb3deb5fa69"
+            },
+            {
+                "name": "pam_kieserver_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:76e7f3197c9c618e596d7039a61ccc1046a636e48197e3cd794444a03d336df9"
+            },
+            {
+                "name": "pam_kieserver_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:c6f356793ce0b14340644e05a37fa1a9ddd8afad26e35a407bf87a7c9cc2f9fe"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:ee5ef1dfefb946f8eec41f05c0f7b496b431c04ddb16489ea4a0515a5a43f0c2"
+            },
+            {
+                "name": "pam_process_migration_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:172e91ce47635355baedbc7e7d296f075c3f09fcba8d0e03e951f214c5d9b573"
+            },
+            {
+                "name": "pam_process_migration_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:438253d08a1e7e1d37b88814a721cfc5172bf946b7758ddc584cdc1e31bd0f7d"
+            },
+            {
+                "name": "pam_process_migration_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:a9262a7beb468f32cdbf16c75a20ba8f760314c2f368b7f2728b39ce9a3bfb39"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:790b28b0145352cb244ea5f127f28d36fa88069f864f54e83ff2376caef82672"
+            },
+            {
+                "name": "rhpam-rhel8-operator-790b28b0145352cb244ea5f127f28d36fa88069f864f54e83ff2376caef82672-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:790b28b0145352cb244ea5f127f28d36fa88069f864f54e83ff2376caef82672"
+            },
+            {
+                "name": "pam_smartrouter_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:10656eb7d0bf0c0c11f94c930f30fdbbdb237c51d11988e33073c624aa8f70e8"
+            },
+            {
+                "name": "pam_smartrouter_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:2cb6346625d026c0507f66a39d239a17df2ce84771defe0c84be6c1a4685ff9c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:b5b56b790eeb7366fd09d6c7ffa57e96e86aa2df3d58c9c4cae8a44ea80fb557"
+            },
+            {
+                "name": "mysql_proxy_image_7.10.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:e4ee3ed89b48d0d1e6735d4fe8def217f92bc7f2308ea1a570a599b9b98d2520"
+            },
+            {
+                "name": "mysql_proxy_image_7.9.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:e4ee3ed89b48d0d1e6735d4fe8def217f92bc7f2308ea1a570a599b9b98d2520"
+            },
+            {
+                "name": "mysql_proxy_image_7.9.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:e4ee3ed89b48d0d1e6735d4fe8def217f92bc7f2308ea1a570a599b9b98d2520"
+            },
+            {
+                "name": "postgresql_proxy_image_7.9.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:642b55daec6d5754e7d2e47e3008b2684f6fbee2d86f03db90b7ad3a369a733a"
+            },
+            {
+                "name": "postgresql_proxy_image_7.10.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:642b55daec6d5754e7d2e47e3008b2684f6fbee2d86f03db90b7ad3a369a733a"
+            },
+            {
+                "name": "postgresql_proxy_image_7.9.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:642b55daec6d5754e7d2e47e3008b2684f6fbee2d86f03db90b7ad3a369a733a"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.10.0-2",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:42dd0fa00313fd075868fb81b07b1567169bd89b1168e1d4d29e8b62e63adfc4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.10.0-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.10.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:26c4a8e8d42d51229a34058cc470aa0221a7e34459f60cf1d30040d1879293c8"
+            },
+            {
+                "name": "broker_image_7.9.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:6cdd36d43872146e852daadae6882370f657a60a3b1e88318767fa9641f5e882"
+            },
+            {
+                "name": "broker_image_7.9.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:6cdd36d43872146e852daadae6882370f657a60a3b1e88318767fa9641f5e882"
+            },
+            {
+                "name": "datagrid_image_7.9.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.9.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.10.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "oauth_proxy_image_3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:bbdba78602bd0fd83358f0138d56f959070f637de4972edb53fed4f4fdb3169d"
+            },
+            {
+                "name": "ose_cli_image_7.9.1",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:1d34d4e57b7a29bf21f6cef827079c70834eac44c4543720dba6df33612ac1ee"
+            },
+            {
+                "name": "ose_cli_image_7.9.0",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:1d34d4e57b7a29bf21f6cef827079c70834eac44c4543720dba6df33612ac1ee"
+            },
+            {
+                "name": "ose_cli_image_7.10.0",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:1d34d4e57b7a29bf21f6cef827079c70834eac44c4543720dba6df33612ac1ee"
+            },
+            {
+                "name": "oauth_proxy_image_4.4",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3948de88df41ba184c0541146997dbfbc705e2a9489f6433fb8da2858eecd041"
+            },
+            {
+                "name": "oauth_proxy_image_4.1",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:53617362439fd6023ca406521b398bb2b32a2b760695b3206797280af182faf6"
+            },
+            {
+                "name": "oauth_proxy_image_4.3",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:5e31ce8745926e0116827b1b658800dd3e8b91cd1800be4f9943a84a1c023f78"
+            },
+            {
+                "name": "oauth_proxy_image_4.2",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bdb734df9006730bf572d235e36ed25c3842cd3031aaae8f48fc8f93ab47769f"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:e5557afaf93f1d043a785316219e40226a986f0b4880e00808df5ef61eee5359"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:e5557afaf93f1d043a785316219e40226a986f0b4880e00808df5ef61eee5359"
+            },
+            {
+                "name": "oauth_proxy_image_4.5",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:f8a7041e4701c634de1127654be88d613b938f2538328b629816e314b0e7335a"
+            },
+            {
+                "name": "dm_controller_image_7.9.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:2cb1b487e016c02ae9191ee96a93b2ff4c1576d10ca538253f139735533c3620"
+            },
+            {
+                "name": "dm_controller_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:36f4f88d0e462ff3878df0d50cbd6bcee4917bb2a0b92262a90689052a408c00"
+            },
+            {
+                "name": "dm_controller_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:684e9882c8e0eb16fb66ca3d82aa2537fa27b2c5fc9e7069721d55f21136220f"
+            },
+            {
+                "name": "dm_dc_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:24146aaa1d444dbe5c73046b66c241def47647ebb32b9bb6b1c74dd390a44786"
+            },
+            {
+                "name": "dm_dc_image_7.9.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:35c52deed1560b7a8f0d732748ddf11c7eefa7a2cb0eb3cc98900f11aad4d1f1"
+            },
+            {
+                "name": "dm_dc_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:e396759cdf81039b687e89440d5c8ce815a95d26f186bc09b23a1b1fb0d60c19"
+            },
+            {
+                "name": "dm_kieserver_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:0eb6637131238baa171fbaeea605181d613423cb628a8534e5c27034b91f1abe"
+            },
+            {
+                "name": "dm_kieserver_image_7.9.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:9bfd1df6084e2017e560f50e9ec2806fc9ce0c98052763dcead86805508e45f7"
+            },
+            {
+                "name": "dm_kieserver_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:bf6b434eab48768e8f30e243d72908d6fd2156afa8027c14de988a50f05bdc27"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:24e7da8a84a38054febc930eca770376bda2921c3e1f22c0e9a3e29a2f428a50"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:2b6600ae667079e3d45ed9e3db0216a00ddc211089704f6541e605c82e90bb36"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:84d9bf89a31bbe23565ffe2b0ac8857835fb09eeeafd83621bbad21157967a12"
+            },
+            {
+                "name": "pam_bc_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:028acb2a8a6b40bae2c62942cb94e85687d147b505674f9a354c69507522c20e"
+            },
+            {
+                "name": "pam_bc_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:175e9ea8e969d6bf4948f70a08c3a427a6a3b9a6dbb9cbd5c83fb4ed15d149e4"
+            },
+            {
+                "name": "pam_bc_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:999ed6e4d6974d662c15a41ef56d2feecf3e1d99441803e4fc0d7a62433b8f61"
+            },
+            {
+                "name": "pam_controller_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:1825155dd58ad58d76afbc285060ee926598282c857ddae04b2f69b2aac2003c"
+            },
+            {
+                "name": "pam_controller_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:4c43e7f47c56e713bd0b4283484a64343eebbdbf1c1ab1045a267348ad413103"
+            },
+            {
+                "name": "pam_controller_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:4d47d44f8d836e8549ba717b6ae331e7c9a09d356d8910b164ae6eddddbc27d1"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:a9668dfa65a8cf6dc699dbcd6147a66e877d8c16ec75d84ba220c0154a7ceee9"
+            },
+            {
+                "name": "pam_kieserver_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:3ad203b9e4509145b5c5acd9b3286ca0e01047dbd3e67615213e9cb3deb5fa69"
+            },
+            {
+                "name": "pam_kieserver_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:76e7f3197c9c618e596d7039a61ccc1046a636e48197e3cd794444a03d336df9"
+            },
+            {
+                "name": "pam_kieserver_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:c6f356793ce0b14340644e05a37fa1a9ddd8afad26e35a407bf87a7c9cc2f9fe"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:42dd0fa00313fd075868fb81b07b1567169bd89b1168e1d4d29e8b62e63adfc4"
+            },
+            {
+                "name": "pam_process_migration_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:172e91ce47635355baedbc7e7d296f075c3f09fcba8d0e03e951f214c5d9b573"
+            },
+            {
+                "name": "pam_process_migration_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:438253d08a1e7e1d37b88814a721cfc5172bf946b7758ddc584cdc1e31bd0f7d"
+            },
+            {
+                "name": "pam_process_migration_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:a9262a7beb468f32cdbf16c75a20ba8f760314c2f368b7f2728b39ce9a3bfb39"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:45114bed2a70b9a7b150757d2d91317fb5a5276a664b86b25d426dea9fa986f0"
+            },
+            {
+                "name": "rhpam-rhel8-operator-45114bed2a70b9a7b150757d2d91317fb5a5276a664b86b25d426dea9fa986f0-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:45114bed2a70b9a7b150757d2d91317fb5a5276a664b86b25d426dea9fa986f0"
+            },
+            {
+                "name": "pam_smartrouter_image_7.9.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:10656eb7d0bf0c0c11f94c930f30fdbbdb237c51d11988e33073c624aa8f70e8"
+            },
+            {
+                "name": "pam_smartrouter_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:2cb6346625d026c0507f66a39d239a17df2ce84771defe0c84be6c1a4685ff9c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:b5b56b790eeb7366fd09d6c7ffa57e96e86aa2df3d58c9c4cae8a44ea80fb557"
+            },
+            {
+                "name": "mysql_proxy_image_7.10.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:cab87d05a8e984936f5b48386a2f67abda1a012504aa4acfa79a22668b26318d"
+            },
+            {
+                "name": "mysql_proxy_image_7.9.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:cab87d05a8e984936f5b48386a2f67abda1a012504aa4acfa79a22668b26318d"
+            },
+            {
+                "name": "mysql_proxy_image_7.9.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:cab87d05a8e984936f5b48386a2f67abda1a012504aa4acfa79a22668b26318d"
+            },
+            {
+                "name": "postgresql_proxy_image_7.9.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:966f5503271ca0bea20fff8e9980d01953983ebc049d8c8f45bbbe1826d6c9f0"
+            },
+            {
+                "name": "postgresql_proxy_image_7.10.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:966f5503271ca0bea20fff8e9980d01953983ebc049d8c8f45bbbe1826d6c9f0"
+            },
+            {
+                "name": "postgresql_proxy_image_7.9.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:966f5503271ca0bea20fff8e9980d01953983ebc049d8c8f45bbbe1826d6c9f0"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.10.1-1",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:d59c5d8525cf543fc3c12ef631f9fa7a2dd59e2147cbd840437723bbeaa76008",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.10.1-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.9.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:6cdd36d43872146e852daadae6882370f657a60a3b1e88318767fa9641f5e882"
+            },
+            {
+                "name": "broker_image_7.10.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:836b70b8a1d1c855d2dbb843e667fae94da639e352d344327f298015c2404d98"
+            },
+            {
+                "name": "broker_image_7.10.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:836b70b8a1d1c855d2dbb843e667fae94da639e352d344327f298015c2404d98"
+            },
+            {
+                "name": "datagrid_image_7.10.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.10.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.9.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "oauth_proxy_image_3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:91860f3e97a2c2056bbec79a6eb1d991d85831618e32237eb3b2c4f78c18c9d7"
+            },
+            {
+                "name": "ose_cli_image_7.10.0",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:32c5a9545f64a98e85fe044eb7abef5732a92a167c281543ff27b4093683f881"
+            },
+            {
+                "name": "ose_cli_image_7.10.1",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:32c5a9545f64a98e85fe044eb7abef5732a92a167c281543ff27b4093683f881"
+            },
+            {
+                "name": "ose_cli_image_7.9.1",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:32c5a9545f64a98e85fe044eb7abef5732a92a167c281543ff27b4093683f881"
+            },
+            {
+                "name": "oauth_proxy_image_4.4",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3948de88df41ba184c0541146997dbfbc705e2a9489f6433fb8da2858eecd041"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:4d76057c03bebf8d9ca5a936dc3e98da19fcf31a3b37652118088cc2a85a8831"
+            },
+            {
+                "name": "oauth_proxy_image_4.1",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:53617362439fd6023ca406521b398bb2b32a2b760695b3206797280af182faf6"
+            },
+            {
+                "name": "oauth_proxy_image_4.5",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:5cd0dbbf9291cadf5a82e10d4e6fb6bf28dbcac9ae687e33dc38118fcfaec6de"
+            },
+            {
+                "name": "oauth_proxy_image_4.3",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:5e31ce8745926e0116827b1b658800dd3e8b91cd1800be4f9943a84a1c023f78"
+            },
+            {
+                "name": "oauth_proxy_image_4.2",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bdb734df9006730bf572d235e36ed25c3842cd3031aaae8f48fc8f93ab47769f"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:fc78a1487ec08dd0ceade275c3d9fa292e3f2d0953e2dd57a18147a59bc352e7"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:fc78a1487ec08dd0ceade275c3d9fa292e3f2d0953e2dd57a18147a59bc352e7"
+            },
+            {
+                "name": "dm_controller_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:36f4f88d0e462ff3878df0d50cbd6bcee4917bb2a0b92262a90689052a408c00"
+            },
+            {
+                "name": "dm_controller_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:4503ebd0e24346e3fe1dce701a80fd753b97429862dc28997bfa2039487d9683"
+            },
+            {
+                "name": "dm_controller_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:684e9882c8e0eb16fb66ca3d82aa2537fa27b2c5fc9e7069721d55f21136220f"
+            },
+            {
+                "name": "dm_dc_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:24146aaa1d444dbe5c73046b66c241def47647ebb32b9bb6b1c74dd390a44786"
+            },
+            {
+                "name": "dm_dc_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:e396759cdf81039b687e89440d5c8ce815a95d26f186bc09b23a1b1fb0d60c19"
+            },
+            {
+                "name": "dm_dc_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:f8961cf2144ae8021de70a95d4d9e06ee5aba46d6d007783d9f3eb108eacc9e7"
+            },
+            {
+                "name": "dm_kieserver_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:0eb6637131238baa171fbaeea605181d613423cb628a8534e5c27034b91f1abe"
+            },
+            {
+                "name": "dm_kieserver_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:340e01629a45a90d83172c010fb00ad000d930dea6623853d21ff205e909ad18"
+            },
+            {
+                "name": "dm_kieserver_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:bf6b434eab48768e8f30e243d72908d6fd2156afa8027c14de988a50f05bdc27"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:271c29fea6db32d5fc9658b564785ad5b4b4ef3d8e674e1a74340bfa39b241d1"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:2b6600ae667079e3d45ed9e3db0216a00ddc211089704f6541e605c82e90bb36"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:84d9bf89a31bbe23565ffe2b0ac8857835fb09eeeafd83621bbad21157967a12"
+            },
+            {
+                "name": "pam_bc_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:175e9ea8e969d6bf4948f70a08c3a427a6a3b9a6dbb9cbd5c83fb4ed15d149e4"
+            },
+            {
+                "name": "pam_bc_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:999ed6e4d6974d662c15a41ef56d2feecf3e1d99441803e4fc0d7a62433b8f61"
+            },
+            {
+                "name": "pam_bc_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:fe1c6e44eb75830386b45cb4bc53822dfe564dc3069b004b46a95180c4810f16"
+            },
+            {
+                "name": "pam_controller_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:1825155dd58ad58d76afbc285060ee926598282c857ddae04b2f69b2aac2003c"
+            },
+            {
+                "name": "pam_controller_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:3b56687015f9776d1ed5697e79ce5a6b8026180a31b730b1f15b7ebb9811a655"
+            },
+            {
+                "name": "pam_controller_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:4d47d44f8d836e8549ba717b6ae331e7c9a09d356d8910b164ae6eddddbc27d1"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:a9668dfa65a8cf6dc699dbcd6147a66e877d8c16ec75d84ba220c0154a7ceee9"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:aa3b1214cfe06d54165f5d2fb59cf8b7509fb984e9b58c735f9d8c8c57d3bb2f"
+            },
+            {
+                "name": "pam_kieserver_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:68b91ef5bea3d925f8c2405ba75ef5efe48e9b057207c53ff5709df5e5b2b8c1"
+            },
+            {
+                "name": "pam_kieserver_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:76e7f3197c9c618e596d7039a61ccc1046a636e48197e3cd794444a03d336df9"
+            },
+            {
+                "name": "pam_kieserver_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:c6f356793ce0b14340644e05a37fa1a9ddd8afad26e35a407bf87a7c9cc2f9fe"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:d59c5d8525cf543fc3c12ef631f9fa7a2dd59e2147cbd840437723bbeaa76008"
+            },
+            {
+                "name": "pam_process_migration_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:172e91ce47635355baedbc7e7d296f075c3f09fcba8d0e03e951f214c5d9b573"
+            },
+            {
+                "name": "pam_process_migration_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:9ee89081bdf259140e3bf2ca0a5ec655ea1469de4f0f5ee95ae53d30f915c55a"
+            },
+            {
+                "name": "pam_process_migration_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:a9262a7beb468f32cdbf16c75a20ba8f760314c2f368b7f2728b39ce9a3bfb39"
+            },
+            {
+                "name": "rhpam-rhel8-operator-243a00f818d766c224ef7e69cac17adb736624f89ff1be551069d7477e102db3-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:243a00f818d766c224ef7e69cac17adb736624f89ff1be551069d7477e102db3"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:243a00f818d766c224ef7e69cac17adb736624f89ff1be551069d7477e102db3"
+            },
+            {
+                "name": "pam_smartrouter_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:2cb6346625d026c0507f66a39d239a17df2ce84771defe0c84be6c1a4685ff9c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:7d339daf1a50dbcae49fdb09ff534c626592c99334a042c0f1e12702f3a288cd"
+            },
+            {
+                "name": "pam_smartrouter_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:b5b56b790eeb7366fd09d6c7ffa57e96e86aa2df3d58c9c4cae8a44ea80fb557"
+            },
+            {
+                "name": "mysql_proxy_image_7.10.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:50228695dd61de53f5502cf22b7a3a2057d2b1bd7b935c56460bbe77d87a4ea7"
+            },
+            {
+                "name": "mysql_proxy_image_7.9.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:50228695dd61de53f5502cf22b7a3a2057d2b1bd7b935c56460bbe77d87a4ea7"
+            },
+            {
+                "name": "mysql_proxy_image_7.10.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:50228695dd61de53f5502cf22b7a3a2057d2b1bd7b935c56460bbe77d87a4ea7"
+            },
+            {
+                "name": "postgresql_proxy_image_7.9.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:7b4f6f33cdbdeaa631fc0ef53050d6880749acd965cd655e4a6b7604a027ff91"
+            },
+            {
+                "name": "postgresql_proxy_image_7.10.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:7b4f6f33cdbdeaa631fc0ef53050d6880749acd965cd655e4a6b7604a027ff91"
+            },
+            {
+                "name": "postgresql_proxy_image_7.10.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:7b4f6f33cdbdeaa631fc0ef53050d6880749acd965cd655e4a6b7604a027ff91"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.10.1-2",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:aa942303f701c3f484cd5ff75eb231dbb2c3d5d2a9a748d57bb5b6c1b34d05f7",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.10.1-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.9.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:6cdd36d43872146e852daadae6882370f657a60a3b1e88318767fa9641f5e882"
+            },
+            {
+                "name": "broker_image_7.10.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:836b70b8a1d1c855d2dbb843e667fae94da639e352d344327f298015c2404d98"
+            },
+            {
+                "name": "broker_image_7.10.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:836b70b8a1d1c855d2dbb843e667fae94da639e352d344327f298015c2404d98"
+            },
+            {
+                "name": "datagrid_image_7.10.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.10.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.9.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "oauth_proxy_image_3",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:53ddd36d86e0ef9331c2df46b52eb63ddfaa452c59e1c528438ca0dbae232c64"
+            },
+            {
+                "name": "ose_cli_image_7.10.1",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:62a9a4dc91a23c04051e6dca040055efc82457af911a5e36db24fb1d2276db41"
+            },
+            {
+                "name": "ose_cli_image_7.10.0",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:62a9a4dc91a23c04051e6dca040055efc82457af911a5e36db24fb1d2276db41"
+            },
+            {
+                "name": "ose_cli_image_7.9.1",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:62a9a4dc91a23c04051e6dca040055efc82457af911a5e36db24fb1d2276db41"
+            },
+            {
+                "name": "oauth_proxy_image_4.4",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3948de88df41ba184c0541146997dbfbc705e2a9489f6433fb8da2858eecd041"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:490deca527ca167bed015cd90d42a06d139daaa710e22665a8095403484b476c"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:490deca527ca167bed015cd90d42a06d139daaa710e22665a8095403484b476c"
+            },
+            {
+                "name": "oauth_proxy_image_4.1",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:53617362439fd6023ca406521b398bb2b32a2b760695b3206797280af182faf6"
+            },
+            {
+                "name": "oauth_proxy_image_4.5",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:5955de8457ca5865fc49a1743fcc9988551a4719a3252d463562719f025b0db3"
+            },
+            {
+                "name": "oauth_proxy_image_4.3",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:5e31ce8745926e0116827b1b658800dd3e8b91cd1800be4f9943a84a1c023f78"
+            },
+            {
+                "name": "oauth_proxy_image_4.2",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bdb734df9006730bf572d235e36ed25c3842cd3031aaae8f48fc8f93ab47769f"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:cc560aef08f679e589b164492196ede1dbf442b21ecf7c3effa51087726206b4"
+            },
+            {
+                "name": "dm_controller_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:36f4f88d0e462ff3878df0d50cbd6bcee4917bb2a0b92262a90689052a408c00"
+            },
+            {
+                "name": "dm_controller_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:684e9882c8e0eb16fb66ca3d82aa2537fa27b2c5fc9e7069721d55f21136220f"
+            },
+            {
+                "name": "dm_controller_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:b8c514858cdf9251284f7e953e4debca8c2fa531aabd9b0b864cc1bfbe349d8d"
+            },
+            {
+                "name": "dm_dc_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:10e1645f02c441824a4192978ddbd0e7ab0f328cacbbbabc84c2a8e23a68c673"
+            },
+            {
+                "name": "dm_dc_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:24146aaa1d444dbe5c73046b66c241def47647ebb32b9bb6b1c74dd390a44786"
+            },
+            {
+                "name": "dm_dc_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:e396759cdf81039b687e89440d5c8ce815a95d26f186bc09b23a1b1fb0d60c19"
+            },
+            {
+                "name": "dm_kieserver_image_7.10.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:0eb6637131238baa171fbaeea605181d613423cb628a8534e5c27034b91f1abe"
+            },
+            {
+                "name": "dm_kieserver_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:a33273b38e8a94f884b4bca9994ac079ac5be1f6f521b2bfffa2bd8d0704de60"
+            },
+            {
+                "name": "dm_kieserver_image_7.9.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:bf6b434eab48768e8f30e243d72908d6fd2156afa8027c14de988a50f05bdc27"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:2b6600ae667079e3d45ed9e3db0216a00ddc211089704f6541e605c82e90bb36"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:84d9bf89a31bbe23565ffe2b0ac8857835fb09eeeafd83621bbad21157967a12"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:d4c08d66e49aac706c5604e47f75615b3547004c752c2fc536be52fa736b5ccf"
+            },
+            {
+                "name": "pam_bc_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:098345ac00ca157b774148f2b04c9ef295f91089cf6b330d83b3c5ab5f8be0a2"
+            },
+            {
+                "name": "pam_bc_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:175e9ea8e969d6bf4948f70a08c3a427a6a3b9a6dbb9cbd5c83fb4ed15d149e4"
+            },
+            {
+                "name": "pam_bc_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:999ed6e4d6974d662c15a41ef56d2feecf3e1d99441803e4fc0d7a62433b8f61"
+            },
+            {
+                "name": "pam_controller_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:1825155dd58ad58d76afbc285060ee926598282c857ddae04b2f69b2aac2003c"
+            },
+            {
+                "name": "pam_controller_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:4d47d44f8d836e8549ba717b6ae331e7c9a09d356d8910b164ae6eddddbc27d1"
+            },
+            {
+                "name": "pam_controller_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ce8564b2cc332d0065b0275aef0bf983001c1b74d45ecc42ea9b5fc4a50f5493"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:4ee6050cb1757bc8ece3e39c787319205bca843676013ba9eeb2717deef49693"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:a9668dfa65a8cf6dc699dbcd6147a66e877d8c16ec75d84ba220c0154a7ceee9"
+            },
+            {
+                "name": "pam_kieserver_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:76e7f3197c9c618e596d7039a61ccc1046a636e48197e3cd794444a03d336df9"
+            },
+            {
+                "name": "pam_kieserver_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:c6f356793ce0b14340644e05a37fa1a9ddd8afad26e35a407bf87a7c9cc2f9fe"
+            },
+            {
+                "name": "pam_kieserver_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:eb12d170c6fc40e314b62c449e024e71947bee9969e139297a91660a669458c7"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:aa942303f701c3f484cd5ff75eb231dbb2c3d5d2a9a748d57bb5b6c1b34d05f7"
+            },
+            {
+                "name": "pam_process_migration_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:172e91ce47635355baedbc7e7d296f075c3f09fcba8d0e03e951f214c5d9b573"
+            },
+            {
+                "name": "pam_process_migration_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:1846b2c6c083e555f988b6546b46e8456fbc5a1825b2399f1aa3edb7d3ab1e90"
+            },
+            {
+                "name": "pam_process_migration_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:a9262a7beb468f32cdbf16c75a20ba8f760314c2f368b7f2728b39ce9a3bfb39"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:4701aebfe7d78f402e64ce021a67ba79ef8ef87c3a790060a83d9655b30302c3"
+            },
+            {
+                "name": "rhpam-rhel8-operator-4701aebfe7d78f402e64ce021a67ba79ef8ef87c3a790060a83d9655b30302c3-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:4701aebfe7d78f402e64ce021a67ba79ef8ef87c3a790060a83d9655b30302c3"
+            },
+            {
+                "name": "pam_smartrouter_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:0ef412b4624587fb9d78e279d26e21e5bf485fa3c5cd31389e6cdd6f711ce15c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.9.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:2cb6346625d026c0507f66a39d239a17df2ce84771defe0c84be6c1a4685ff9c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.10.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:b5b56b790eeb7366fd09d6c7ffa57e96e86aa2df3d58c9c4cae8a44ea80fb557"
+            },
+            {
+                "name": "mysql_proxy_image_7.9.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:50228695dd61de53f5502cf22b7a3a2057d2b1bd7b935c56460bbe77d87a4ea7"
+            },
+            {
+                "name": "mysql_proxy_image_7.10.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:50228695dd61de53f5502cf22b7a3a2057d2b1bd7b935c56460bbe77d87a4ea7"
+            },
+            {
+                "name": "mysql_proxy_image_7.10.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:50228695dd61de53f5502cf22b7a3a2057d2b1bd7b935c56460bbe77d87a4ea7"
+            },
+            {
+                "name": "postgresql_proxy_image_7.9.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:7b4f6f33cdbdeaa631fc0ef53050d6880749acd965cd655e4a6b7604a027ff91"
+            },
+            {
+                "name": "postgresql_proxy_image_7.10.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:7b4f6f33cdbdeaa631fc0ef53050d6880749acd965cd655e4a6b7604a027ff91"
+            },
+            {
+                "name": "postgresql_proxy_image_7.10.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:7b4f6f33cdbdeaa631fc0ef53050d6880749acd965cd655e4a6b7604a027ff91"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.11.0-1",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:9d59749ec85ac601c326532492431cdabe86070bc2876ddf760daab08dd5e842",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.11.0-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.11.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:836b70b8a1d1c855d2dbb843e667fae94da639e352d344327f298015c2404d98"
+            },
+            {
+                "name": "broker_image_7.10.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:836b70b8a1d1c855d2dbb843e667fae94da639e352d344327f298015c2404d98"
+            },
+            {
+                "name": "datagrid_image_7.11.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.10.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.11.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:6b435886c79c17a70a61decf1f3ee95e569fa296644657de28fdc6fbd956aa00"
+            },
+            {
+                "name": "ose_cli_image_7.10.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:6b435886c79c17a70a61decf1f3ee95e569fa296644657de28fdc6fbd956aa00"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:67ddeee281bc0b3807cc279ac6dc564264ef5d719fb2f33fcefdbb027b27ae3d"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:67ddeee281bc0b3807cc279ac6dc564264ef5d719fb2f33fcefdbb027b27ae3d"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:c056106aadf2e15fd98a7be7afd3b33bf20fb885072c13397e317cea9c41e310"
+            },
+            {
+                "name": "dm_controller_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:b8c514858cdf9251284f7e953e4debca8c2fa531aabd9b0b864cc1bfbe349d8d"
+            },
+            {
+                "name": "dm_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:c364f4131257eb6a1b2a6578545692d5525b657ac4f6318a960ddc3c20dee516"
+            },
+            {
+                "name": "dm_dc_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:10e1645f02c441824a4192978ddbd0e7ab0f328cacbbbabc84c2a8e23a68c673"
+            },
+            {
+                "name": "dm_dc_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:d117340e18f3e8e520649b98d2a724b4e69b19611d198b1e926989108f162026"
+            },
+            {
+                "name": "dm_kieserver_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:a33273b38e8a94f884b4bca9994ac079ac5be1f6f521b2bfffa2bd8d0704de60"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:fd7e869dbad6593793e5b6f6d6be6a530eb08ba1f1e252796a23b7be991bbcf9"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:d4c08d66e49aac706c5604e47f75615b3547004c752c2fc536be52fa736b5ccf"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e57c9def2dbcf56d2a52996fcaf93f25c5dc9adc6ed1c09e35f7e4fc41c9863c"
+            },
+            {
+                "name": "pam_bc_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:098345ac00ca157b774148f2b04c9ef295f91089cf6b330d83b3c5ab5f8be0a2"
+            },
+            {
+                "name": "pam_bc_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:5a205f13181258d30059e454b54c837bb3f32ab85ef35f9811e2d9179f8498f2"
+            },
+            {
+                "name": "pam_controller_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ce8564b2cc332d0065b0275aef0bf983001c1b74d45ecc42ea9b5fc4a50f5493"
+            },
+            {
+                "name": "pam_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ea7d43e36260cd81115ef8d3f76e464cd8ae5cda031586ca2420b3e3105b918e"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:065a34d0b0670387d64178e94eabc818957a3c028285137e1b10472b5c8c8508"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:4ee6050cb1757bc8ece3e39c787319205bca843676013ba9eeb2717deef49693"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:4983fe5b3e9f5660519b84a93317b1ac80ac1f5a75e19b413342682ae986d91b"
+            },
+            {
+                "name": "pam_kieserver_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:eb12d170c6fc40e314b62c449e024e71947bee9969e139297a91660a669458c7"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:9d59749ec85ac601c326532492431cdabe86070bc2876ddf760daab08dd5e842"
+            },
+            {
+                "name": "pam_process_migration_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:1846b2c6c083e555f988b6546b46e8456fbc5a1825b2399f1aa3edb7d3ab1e90"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:9401aacf7baf6148afa2ae7ba61b8c7c2a855d318062f8a3fd860f29634e5af1"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:bae29d39156e43b311588669af118846271cdedf2c5074a8e8e4891a7186d41c"
+            },
+            {
+                "name": "rhpam-rhel8-operator-bae29d39156e43b311588669af118846271cdedf2c5074a8e8e4891a7186d41c-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:bae29d39156e43b311588669af118846271cdedf2c5074a8e8e4891a7186d41c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:0ef412b4624587fb9d78e279d26e21e5bf485fa3c5cd31389e6cdd6f711ce15c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:75f314def91a8dc45b09b972825d49d13057d4886bf20819e75dad01d051309e"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:e1cb590a84c7163306e40b299ebe55ced83853a2688837244854b6cd9b748f14"
+            },
+            {
+                "name": "mysql_proxy_image_7.10.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:e1cb590a84c7163306e40b299ebe55ced83853a2688837244854b6cd9b748f14"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:de1889e9742997c06390be07868b6d26f4fde65ab19bdaa9d942f787ef88391c"
+            },
+            {
+                "name": "postgresql_proxy_image_7.10.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:de1889e9742997c06390be07868b6d26f4fde65ab19bdaa9d942f787ef88391c"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.11.0-2",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:5dc16930b4d2f061eb32698cdd1b108e6e2ceb72df319b0a212bc2e4131429d8",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.11.0-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.11.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:836b70b8a1d1c855d2dbb843e667fae94da639e352d344327f298015c2404d98"
+            },
+            {
+                "name": "broker_image_7.10.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:836b70b8a1d1c855d2dbb843e667fae94da639e352d344327f298015c2404d98"
+            },
+            {
+                "name": "datagrid_image_7.11.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.10.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.11.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:c03232935befb06613729d7cc6cc8e0bd74ec8b890ef4c0d4a3f7a95c148979d"
+            },
+            {
+                "name": "ose_cli_image_7.10.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:c03232935befb06613729d7cc6cc8e0bd74ec8b890ef4c0d4a3f7a95c148979d"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:a642830fcf2875e678ce84b4d429abe4a2f933b58d8da60c4ae167a86a1289aa"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:e45c0daf77bfcc279dc6fec25c9450ffb20d3292b1d19115ad16669b036fffce"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:e45c0daf77bfcc279dc6fec25c9450ffb20d3292b1d19115ad16669b036fffce"
+            },
+            {
+                "name": "dm_controller_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:b8c514858cdf9251284f7e953e4debca8c2fa531aabd9b0b864cc1bfbe349d8d"
+            },
+            {
+                "name": "dm_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:c364f4131257eb6a1b2a6578545692d5525b657ac4f6318a960ddc3c20dee516"
+            },
+            {
+                "name": "dm_dc_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:10e1645f02c441824a4192978ddbd0e7ab0f328cacbbbabc84c2a8e23a68c673"
+            },
+            {
+                "name": "dm_dc_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:d117340e18f3e8e520649b98d2a724b4e69b19611d198b1e926989108f162026"
+            },
+            {
+                "name": "dm_kieserver_image_7.10.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:a33273b38e8a94f884b4bca9994ac079ac5be1f6f521b2bfffa2bd8d0704de60"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:fd7e869dbad6593793e5b6f6d6be6a530eb08ba1f1e252796a23b7be991bbcf9"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:d4c08d66e49aac706c5604e47f75615b3547004c752c2fc536be52fa736b5ccf"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e57c9def2dbcf56d2a52996fcaf93f25c5dc9adc6ed1c09e35f7e4fc41c9863c"
+            },
+            {
+                "name": "pam_bc_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:098345ac00ca157b774148f2b04c9ef295f91089cf6b330d83b3c5ab5f8be0a2"
+            },
+            {
+                "name": "pam_bc_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:5a205f13181258d30059e454b54c837bb3f32ab85ef35f9811e2d9179f8498f2"
+            },
+            {
+                "name": "pam_controller_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ce8564b2cc332d0065b0275aef0bf983001c1b74d45ecc42ea9b5fc4a50f5493"
+            },
+            {
+                "name": "pam_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ea7d43e36260cd81115ef8d3f76e464cd8ae5cda031586ca2420b3e3105b918e"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:065a34d0b0670387d64178e94eabc818957a3c028285137e1b10472b5c8c8508"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:4ee6050cb1757bc8ece3e39c787319205bca843676013ba9eeb2717deef49693"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:4983fe5b3e9f5660519b84a93317b1ac80ac1f5a75e19b413342682ae986d91b"
+            },
+            {
+                "name": "pam_kieserver_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:eb12d170c6fc40e314b62c449e024e71947bee9969e139297a91660a669458c7"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:5dc16930b4d2f061eb32698cdd1b108e6e2ceb72df319b0a212bc2e4131429d8"
+            },
+            {
+                "name": "pam_process_migration_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:1846b2c6c083e555f988b6546b46e8456fbc5a1825b2399f1aa3edb7d3ab1e90"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:9401aacf7baf6148afa2ae7ba61b8c7c2a855d318062f8a3fd860f29634e5af1"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:b665046782a31fb1112f1727329043886893bf92596c75cf2ec43f7ce3d75693"
+            },
+            {
+                "name": "rhpam-rhel8-operator-b665046782a31fb1112f1727329043886893bf92596c75cf2ec43f7ce3d75693-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:b665046782a31fb1112f1727329043886893bf92596c75cf2ec43f7ce3d75693"
+            },
+            {
+                "name": "pam_smartrouter_image_7.10.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:0ef412b4624587fb9d78e279d26e21e5bf485fa3c5cd31389e6cdd6f711ce15c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:75f314def91a8dc45b09b972825d49d13057d4886bf20819e75dad01d051309e"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:e1cb590a84c7163306e40b299ebe55ced83853a2688837244854b6cd9b748f14"
+            },
+            {
+                "name": "mysql_proxy_image_7.10.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:e1cb590a84c7163306e40b299ebe55ced83853a2688837244854b6cd9b748f14"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:1731d3793adc28d5664a549f3c79fce9705433789293cfb7fc94de7d18e12898"
+            },
+            {
+                "name": "postgresql_proxy_image_7.10.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:1731d3793adc28d5664a549f3c79fce9705433789293cfb7fc94de7d18e12898"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.11.1-1",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:f5819f66a1e6bbc890fa5e9529eca33154539dfe1a4ce35bdf681ebb1fd8f5b1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.11.1-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.11.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:e7281e1adeb24ac38e85394abdd8b53748b9be03d85dbfea4b61fc281b2ee805"
+            },
+            {
+                "name": "broker_image_7.11.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:e7281e1adeb24ac38e85394abdd8b53748b9be03d85dbfea4b61fc281b2ee805"
+            },
+            {
+                "name": "datagrid_image_7.11.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.11.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.11.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:7723c779775a97e0693eb3a5770d020f448c2012c844f911d581d1f1c95ffa4e"
+            },
+            {
+                "name": "ose_cli_image_7.11.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:7723c779775a97e0693eb3a5770d020f448c2012c844f911d581d1f1c95ffa4e"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:0f54a25b9b8e7ce4274abc90fb6224850f420b98cd7f697eba613602144c9fca"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3c99e0eb68ca247286ae88f49bc59843293d602339f46799410495552bee5a86"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:fac66e328b6083900a172008e80ef191f09265d70947fe720f27b490367d9606"
+            },
+            {
+                "name": "dm_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:31bf19c70d4d3395a5921562cd438a9ff11238072823d541b052e3b8e5b3610c"
+            },
+            {
+                "name": "dm_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:c364f4131257eb6a1b2a6578545692d5525b657ac4f6318a960ddc3c20dee516"
+            },
+            {
+                "name": "dm_dc_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:5a5d167bb43a82fe0d4eb39f905d0eca8d9aa3d798461141887442a5d3b352fb"
+            },
+            {
+                "name": "dm_dc_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:d117340e18f3e8e520649b98d2a724b4e69b19611d198b1e926989108f162026"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:bb03f29a3bc6021db903b46e99cb5273d47c7d23737334f6359c69f01ce2d431"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:fd7e869dbad6593793e5b6f6d6be6a530eb08ba1f1e252796a23b7be991bbcf9"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:0d87c3f511a455882b1675d79ecc646ab05e7b0900f296fcfc4afc6bb8fb79a0"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e57c9def2dbcf56d2a52996fcaf93f25c5dc9adc6ed1c09e35f7e4fc41c9863c"
+            },
+            {
+                "name": "pam_bc_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:5a205f13181258d30059e454b54c837bb3f32ab85ef35f9811e2d9179f8498f2"
+            },
+            {
+                "name": "pam_bc_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:6f828f227d8703fe8c204ce9bd8473988a91eb5c83bd1c88945b8ddeab1aa526"
+            },
+            {
+                "name": "pam_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:6a2abc0cffe628b3543f8d8c849695a6a417db4d7acaac2cd6fa5a5905f4402c"
+            },
+            {
+                "name": "pam_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ea7d43e36260cd81115ef8d3f76e464cd8ae5cda031586ca2420b3e3105b918e"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:065a34d0b0670387d64178e94eabc818957a3c028285137e1b10472b5c8c8508"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:a2eef7cc7ebf89e545c71e50324b2e9a9e656279d2e59e7c8eae17352d9a3f5d"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:3c4370a01f59ab9a3359eaea6d0e3d29140efd17c0d174bb9a4c666982a3106e"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:4983fe5b3e9f5660519b84a93317b1ac80ac1f5a75e19b413342682ae986d91b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:f5819f66a1e6bbc890fa5e9529eca33154539dfe1a4ce35bdf681ebb1fd8f5b1"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:35631e458323feab11ac405a3a7acd0fb83ce016d1668a4e6882ab1c6d4c1fd2"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:9401aacf7baf6148afa2ae7ba61b8c7c2a855d318062f8a3fd860f29634e5af1"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:96a576b3bacfda51ec9c09bcb52630275a0a6faca53d3ea816ebbc7db0830202"
+            },
+            {
+                "name": "rhpam-rhel8-operator-96a576b3bacfda51ec9c09bcb52630275a0a6faca53d3ea816ebbc7db0830202-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:96a576b3bacfda51ec9c09bcb52630275a0a6faca53d3ea816ebbc7db0830202"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:75f314def91a8dc45b09b972825d49d13057d4886bf20819e75dad01d051309e"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:870765da71f93165fb11f979c78ab6699faee84ae74bd5878fd248cc14c6f32e"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:bab11a0a0e1f19ceecd8fd2850d3d60eb920799d7bd0343e67b5bda97e7574a6"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:bab11a0a0e1f19ceecd8fd2850d3d60eb920799d7bd0343e67b5bda97e7574a6"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:bb0d5bb712b790426f88e6106db1c8ae26430236d046c31e758622147b63a330"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:bb0d5bb712b790426f88e6106db1c8ae26430236d046c31e758622147b63a330"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.11.1-2",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:2fa96b057c64653171e83bbfc1a1ceefe07326c5c8fa02cfa1c42459e03e7f7a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.11.1-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.11.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:69651fe3b101ae6d20290c2a54e0f8eb373d145c52a5c57b35a6bcf059872c3a"
+            },
+            {
+                "name": "broker_image_7.11.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:69651fe3b101ae6d20290c2a54e0f8eb373d145c52a5c57b35a6bcf059872c3a"
+            },
+            {
+                "name": "datagrid_image_7.11.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.11.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.11.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:757fc88ba0d6af0a6dd2fdb6123fc77d8225aa09c90c67a478b413dcba524bfb"
+            },
+            {
+                "name": "ose_cli_image_7.11.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:757fc88ba0d6af0a6dd2fdb6123fc77d8225aa09c90c67a478b413dcba524bfb"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3479da7ebc1fc984ef68e3840f7c0901179464d39ef724c4f32df687a1a6e271"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bafd85b0fd1256b8a60a2bb368a7e68f5dbad72718e5059a65660e01a425d8e2"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:dee06a88f4949af82071ea69515057c3fccfc328eb0392c5c5b8617663fd4888"
+            },
+            {
+                "name": "dm_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:1265798cb7ea9aa990c76f8e1c5d1d2bf993c83deaa4f691b71d3efe5efdac9f"
+            },
+            {
+                "name": "dm_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:c364f4131257eb6a1b2a6578545692d5525b657ac4f6318a960ddc3c20dee516"
+            },
+            {
+                "name": "dm_dc_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:9e4a97177621df83d63e33ce0b240d15ecca96a4e94a07816a98b5fd32ecf33f"
+            },
+            {
+                "name": "dm_dc_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:d117340e18f3e8e520649b98d2a724b4e69b19611d198b1e926989108f162026"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:e8ca6cce05c7bc9b14bec8d651c70754db83c5e25694a73fb8ab263e5ff52782"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:fd7e869dbad6593793e5b6f6d6be6a530eb08ba1f1e252796a23b7be991bbcf9"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:24fe8657395933e109e4fe49b3b70f45c721394c60fa83941bb3bc166a75fd05"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e57c9def2dbcf56d2a52996fcaf93f25c5dc9adc6ed1c09e35f7e4fc41c9863c"
+            },
+            {
+                "name": "pam_bc_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:5a205f13181258d30059e454b54c837bb3f32ab85ef35f9811e2d9179f8498f2"
+            },
+            {
+                "name": "pam_bc_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:e05c7eef0ffb13214557ea659a8a0940cdc0eb38682ee4f60a4fb89a37f27ba2"
+            },
+            {
+                "name": "pam_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:1c3fb119c181ef26b5de5f6dd870cd46348871a44c565dcf39fb3f93132e67f8"
+            },
+            {
+                "name": "pam_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ea7d43e36260cd81115ef8d3f76e464cd8ae5cda031586ca2420b3e3105b918e"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:065a34d0b0670387d64178e94eabc818957a3c028285137e1b10472b5c8c8508"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:ca579f37b54763297c4aa767d8a7e71dca7db999e6cc149e665a961d5b85cbdf"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:07dbcf7b934c114ca298ff8ad296f389522d0481f309d07ccd0624f35dfc3fe0"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:4983fe5b3e9f5660519b84a93317b1ac80ac1f5a75e19b413342682ae986d91b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:2fa96b057c64653171e83bbfc1a1ceefe07326c5c8fa02cfa1c42459e03e7f7a"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:9401aacf7baf6148afa2ae7ba61b8c7c2a855d318062f8a3fd860f29634e5af1"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:ab9da6c3bceccc04405044fdf4fef57e76a485603bbb6656192e94cc8386b77e"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:96a576b3bacfda51ec9c09bcb52630275a0a6faca53d3ea816ebbc7db0830202"
+            },
+            {
+                "name": "rhpam-rhel8-operator-96a576b3bacfda51ec9c09bcb52630275a0a6faca53d3ea816ebbc7db0830202-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:96a576b3bacfda51ec9c09bcb52630275a0a6faca53d3ea816ebbc7db0830202"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:75f314def91a8dc45b09b972825d49d13057d4886bf20819e75dad01d051309e"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:a92da38b38f87eac61f679be95db4c4c97c1d1c1ac9f33b4e81d30bd5813994a"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:186af1e2c9f6d6a4206fb7544ffba62e5357dd8345cfb09cac85b5d0b8f1d03a"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:186af1e2c9f6d6a4206fb7544ffba62e5357dd8345cfb09cac85b5d0b8f1d03a"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:15535509a4f72e720ceee196f0b10dcc16973fcca6a5561e6876f8ddc833cde5"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:15535509a4f72e720ceee196f0b10dcc16973fcca6a5561e6876f8ddc833cde5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.11.1-3",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:d1790a1c9f13fb0ee7675bccaf985c76e66b7ee35547a6fbb9f93f9556497990",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.11.1-3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.11.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:69651fe3b101ae6d20290c2a54e0f8eb373d145c52a5c57b35a6bcf059872c3a"
+            },
+            {
+                "name": "broker_image_7.11.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:69651fe3b101ae6d20290c2a54e0f8eb373d145c52a5c57b35a6bcf059872c3a"
+            },
+            {
+                "name": "datagrid_image_7.11.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "datagrid_image_7.11.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.11.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:757fc88ba0d6af0a6dd2fdb6123fc77d8225aa09c90c67a478b413dcba524bfb"
+            },
+            {
+                "name": "ose_cli_image_7.11.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:757fc88ba0d6af0a6dd2fdb6123fc77d8225aa09c90c67a478b413dcba524bfb"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:3479da7ebc1fc984ef68e3840f7c0901179464d39ef724c4f32df687a1a6e271"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bafd85b0fd1256b8a60a2bb368a7e68f5dbad72718e5059a65660e01a425d8e2"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:dee06a88f4949af82071ea69515057c3fccfc328eb0392c5c5b8617663fd4888"
+            },
+            {
+                "name": "dm_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:a15b2ee574bb061589965fc9f37c047b80b630bfd2d8ee3b7b39789504d7fd93"
+            },
+            {
+                "name": "dm_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:c364f4131257eb6a1b2a6578545692d5525b657ac4f6318a960ddc3c20dee516"
+            },
+            {
+                "name": "dm_dc_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:6a146ef3b05a204baf90284de723e80d7d2c611dc5b7e7ef1f84db40913ac248"
+            },
+            {
+                "name": "dm_dc_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:d117340e18f3e8e520649b98d2a724b4e69b19611d198b1e926989108f162026"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:2adf00733025905e4692c611086d9d2df37765948ee62e035fbda6f32312f0bb"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:fd7e869dbad6593793e5b6f6d6be6a530eb08ba1f1e252796a23b7be991bbcf9"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e57c9def2dbcf56d2a52996fcaf93f25c5dc9adc6ed1c09e35f7e4fc41c9863c"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e5df891b0d26cb033bac9dc2b34a86366eae60cee774795cc77a6c14f93f7f40"
+            },
+            {
+                "name": "pam_bc_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:5a205f13181258d30059e454b54c837bb3f32ab85ef35f9811e2d9179f8498f2"
+            },
+            {
+                "name": "pam_bc_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:77dacf06621a233f11679d1ae801ea4bee90bcaf42c66a7f285114db34f0db96"
+            },
+            {
+                "name": "pam_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ca13b70e7893b996c52b9268db106332c4b705fd716b30f970fa9d291fe90b88"
+            },
+            {
+                "name": "pam_controller_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ea7d43e36260cd81115ef8d3f76e464cd8ae5cda031586ca2420b3e3105b918e"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:065a34d0b0670387d64178e94eabc818957a3c028285137e1b10472b5c8c8508"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:bb3b6dadea5539faa71f6218261f305198e9b3d1ae03d7401ba42c6f09018b3c"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:0373667b5de7b2ae6b170a8d7be3e1ae05a8962c116d18d7f39b0099138b06bf"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:4983fe5b3e9f5660519b84a93317b1ac80ac1f5a75e19b413342682ae986d91b"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:d1790a1c9f13fb0ee7675bccaf985c76e66b7ee35547a6fbb9f93f9556497990"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:9401aacf7baf6148afa2ae7ba61b8c7c2a855d318062f8a3fd860f29634e5af1"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:aa76877cefeb26112db5bb7d1ea6efe066305f43f58260fce25ba3c7d6b84210"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:96a576b3bacfda51ec9c09bcb52630275a0a6faca53d3ea816ebbc7db0830202"
+            },
+            {
+                "name": "rhpam-rhel8-operator-96a576b3bacfda51ec9c09bcb52630275a0a6faca53d3ea816ebbc7db0830202-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:96a576b3bacfda51ec9c09bcb52630275a0a6faca53d3ea816ebbc7db0830202"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:75f314def91a8dc45b09b972825d49d13057d4886bf20819e75dad01d051309e"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:c9916b8eb8460e7f82ab33b39b229842b12ca17f4f6117554a26dfbb63701ed3"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:186af1e2c9f6d6a4206fb7544ffba62e5357dd8345cfb09cac85b5d0b8f1d03a"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:186af1e2c9f6d6a4206fb7544ffba62e5357dd8345cfb09cac85b5d0b8f1d03a"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:15535509a4f72e720ceee196f0b10dcc16973fcca6a5561e6876f8ddc833cde5"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:15535509a4f72e720ceee196f0b10dcc16973fcca6a5561e6876f8ddc833cde5"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.12.0-1",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:cff4b63f378b13c50504092243425e6e7b8db8f22df8c8eaae48e3d68eb75284",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.12.0-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.12.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:69651fe3b101ae6d20290c2a54e0f8eb373d145c52a5c57b35a6bcf059872c3a"
+            },
+            {
+                "name": "broker_image_7.11.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:69651fe3b101ae6d20290c2a54e0f8eb373d145c52a5c57b35a6bcf059872c3a"
+            },
+            {
+                "name": "datagrid_image_7.12.0",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:98e9a6618558bc8a1b9cb91d1c9b3380968d335092f6e953d1abe6af96abf65c"
+            },
+            {
+                "name": "datagrid_image_7.11.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.11.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:84ebf9e3be3e6c4776c4df82ff5f7a5a0b60152a91de135790af3458a8cb9ce2"
+            },
+            {
+                "name": "ose_cli_image_7.12.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:84ebf9e3be3e6c4776c4df82ff5f7a5a0b60152a91de135790af3458a8cb9ce2"
+            },
+            {
+                "name": "oauth_proxy_image_4.8",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:5fb23513dbe94e0322ef5428c6a5d3970fcc1a6997ca847082f55278c0424338"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:ab80c688b583a9e7142ea166a58b5d96b13dc8d21e8c2f824c7bcb0ea4571360"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:afded4d8e4f9f992dc4d257090cfe2cb151fa52b4963767abfb863f738ef6ca1"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bafd85b0fd1256b8a60a2bb368a7e68f5dbad72718e5059a65660e01a425d8e2"
+            },
+            {
+                "name": "dm_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:83ab1ba9336c7d56d3a1acf63a321f27ea6ed425dcef7a440222430e10b31e54"
+            },
+            {
+                "name": "dm_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:a15b2ee574bb061589965fc9f37c047b80b630bfd2d8ee3b7b39789504d7fd93"
+            },
+            {
+                "name": "dm_dc_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:6a146ef3b05a204baf90284de723e80d7d2c611dc5b7e7ef1f84db40913ac248"
+            },
+            {
+                "name": "dm_dc_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:8a65566903e9d584199746329100688dec48c90572f554b7eae36faeccc8ce40"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:2adf00733025905e4692c611086d9d2df37765948ee62e035fbda6f32312f0bb"
+            },
+            {
+                "name": "dm_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:8d8d1d4aedaa46489abc190ca2edc20e2cc7e536e86801f1b00705b78f4bbf7b"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:df8d190f8c185d6cef760bbab43d137599db8342161b7d7407b11c1b3141c23d"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e5df891b0d26cb033bac9dc2b34a86366eae60cee774795cc77a6c14f93f7f40"
+            },
+            {
+                "name": "pam_bc_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:714be85b0c2b34a1f746b5d04ab53f0160fdf94401a8599dfbb78eaf9386dc0e"
+            },
+            {
+                "name": "pam_bc_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:77dacf06621a233f11679d1ae801ea4bee90bcaf42c66a7f285114db34f0db96"
+            },
+            {
+                "name": "pam_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:42c24241ccfea58aebf5f00b315ea2b4a9b060e246b5c043ca0ec752fcab3f63"
+            },
+            {
+                "name": "pam_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ca13b70e7893b996c52b9268db106332c4b705fd716b30f970fa9d291fe90b88"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:bb3b6dadea5539faa71f6218261f305198e9b3d1ae03d7401ba42c6f09018b3c"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:d0c93600dfc86a0e891fc271ecc28fabb28c5b876890e26c91063bb18adca4bb"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:0373667b5de7b2ae6b170a8d7be3e1ae05a8962c116d18d7f39b0099138b06bf"
+            },
+            {
+                "name": "pam_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:35b7c2b161f0e5ea551c54498636c3f994f13495d9301b7b2b1f0bd2c1fbeec1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:cff4b63f378b13c50504092243425e6e7b8db8f22df8c8eaae48e3d68eb75284"
+            },
+            {
+                "name": "pam_process_migration_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:6501c1d7017598c5c5a59dcae5af165f7dc3adf0cb767deb1ef036ae88733269"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:aa76877cefeb26112db5bb7d1ea6efe066305f43f58260fce25ba3c7d6b84210"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:561816929ec4e4f03b0197845d849be49f6e9812acbc81c43579c70d17d01d51"
+            },
+            {
+                "name": "rhpam-rhel8-operator-561816929ec4e4f03b0197845d849be49f6e9812acbc81c43579c70d17d01d51-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:561816929ec4e4f03b0197845d849be49f6e9812acbc81c43579c70d17d01d51"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:c9916b8eb8460e7f82ab33b39b229842b12ca17f4f6117554a26dfbb63701ed3"
+            },
+            {
+                "name": "pam_smartrouter_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:da8c8032c90c5bc6114d2e6f75413f253c378e9596227e73fc25baf6c92fc4ec"
+            },
+            {
+                "name": "mysql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:1ccc488a0cc054defcff2ca5142ec95d80447f607e61d495086f02511930403d"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:1ccc488a0cc054defcff2ca5142ec95d80447f607e61d495086f02511930403d"
+            },
+            {
+                "name": "postgresql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.12.0-2",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:82af6859a504f6a24f0145fe06b7c79f984b4245e8eaf975a8c0d759b49d9a82",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.12.0-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.12.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:c3914b565bd1802f90721c86692a214d01dc629d2bd9038cefc14784a44a4b5b"
+            },
+            {
+                "name": "broker_image_7.11.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:c3914b565bd1802f90721c86692a214d01dc629d2bd9038cefc14784a44a4b5b"
+            },
+            {
+                "name": "datagrid_image_7.12.0",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:98e9a6618558bc8a1b9cb91d1c9b3380968d335092f6e953d1abe6af96abf65c"
+            },
+            {
+                "name": "datagrid_image_7.11.1",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.11.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:0e3dd3b0bc108276af3300df97914edd6d0c90abea494fd9e638bc107cd015b1"
+            },
+            {
+                "name": "ose_cli_image_7.12.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:0e3dd3b0bc108276af3300df97914edd6d0c90abea494fd9e638bc107cd015b1"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:50f6c39fb92887f7b3023f19469d80e41e4afd1658fce0d68c6c2979c71f7d16"
+            },
+            {
+                "name": "oauth_proxy_image_4.8",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:b7d0f1f7ce6ea0669bac635b27d0c68da459fe8042310f4443ffe2b310686d77"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:b9b658ea3f5e6ea1b3d677a46bd7a5354975472800e2c23f7a431ab9d537225b"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:cb915bd0111e1cc1417a214fa6e013e3af9e1f6d9c4bcaeb71d8c84775a7f071"
+            },
+            {
+                "name": "dm_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:83ab1ba9336c7d56d3a1acf63a321f27ea6ed425dcef7a440222430e10b31e54"
+            },
+            {
+                "name": "dm_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:a15b2ee574bb061589965fc9f37c047b80b630bfd2d8ee3b7b39789504d7fd93"
+            },
+            {
+                "name": "dm_dc_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:6a146ef3b05a204baf90284de723e80d7d2c611dc5b7e7ef1f84db40913ac248"
+            },
+            {
+                "name": "dm_dc_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:8a65566903e9d584199746329100688dec48c90572f554b7eae36faeccc8ce40"
+            },
+            {
+                "name": "dm_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:2adf00733025905e4692c611086d9d2df37765948ee62e035fbda6f32312f0bb"
+            },
+            {
+                "name": "dm_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:8d8d1d4aedaa46489abc190ca2edc20e2cc7e536e86801f1b00705b78f4bbf7b"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:df8d190f8c185d6cef760bbab43d137599db8342161b7d7407b11c1b3141c23d"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e5df891b0d26cb033bac9dc2b34a86366eae60cee774795cc77a6c14f93f7f40"
+            },
+            {
+                "name": "pam_bc_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:714be85b0c2b34a1f746b5d04ab53f0160fdf94401a8599dfbb78eaf9386dc0e"
+            },
+            {
+                "name": "pam_bc_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:77dacf06621a233f11679d1ae801ea4bee90bcaf42c66a7f285114db34f0db96"
+            },
+            {
+                "name": "pam_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:42c24241ccfea58aebf5f00b315ea2b4a9b060e246b5c043ca0ec752fcab3f63"
+            },
+            {
+                "name": "pam_controller_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:ca13b70e7893b996c52b9268db106332c4b705fd716b30f970fa9d291fe90b88"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:bb3b6dadea5539faa71f6218261f305198e9b3d1ae03d7401ba42c6f09018b3c"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:d0c93600dfc86a0e891fc271ecc28fabb28c5b876890e26c91063bb18adca4bb"
+            },
+            {
+                "name": "pam_kieserver_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:0373667b5de7b2ae6b170a8d7be3e1ae05a8962c116d18d7f39b0099138b06bf"
+            },
+            {
+                "name": "pam_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:35b7c2b161f0e5ea551c54498636c3f994f13495d9301b7b2b1f0bd2c1fbeec1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:82af6859a504f6a24f0145fe06b7c79f984b4245e8eaf975a8c0d759b49d9a82"
+            },
+            {
+                "name": "pam_process_migration_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:6501c1d7017598c5c5a59dcae5af165f7dc3adf0cb767deb1ef036ae88733269"
+            },
+            {
+                "name": "pam_process_migration_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:aa76877cefeb26112db5bb7d1ea6efe066305f43f58260fce25ba3c7d6b84210"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:1155f68cc97cb273fc83c65cddad23a2bae074d53e707a79b798c11c47dfda9c"
+            },
+            {
+                "name": "rhpam-rhel8-operator-1155f68cc97cb273fc83c65cddad23a2bae074d53e707a79b798c11c47dfda9c-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:1155f68cc97cb273fc83c65cddad23a2bae074d53e707a79b798c11c47dfda9c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.11.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:c9916b8eb8460e7f82ab33b39b229842b12ca17f4f6117554a26dfbb63701ed3"
+            },
+            {
+                "name": "pam_smartrouter_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:da8c8032c90c5bc6114d2e6f75413f253c378e9596227e73fc25baf6c92fc4ec"
+            },
+            {
+                "name": "mysql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:1ccc488a0cc054defcff2ca5142ec95d80447f607e61d495086f02511930403d"
+            },
+            {
+                "name": "mysql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:1ccc488a0cc054defcff2ca5142ec95d80447f607e61d495086f02511930403d"
+            },
+            {
+                "name": "postgresql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "postgresql_proxy_image_7.11.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.12.1-1",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:e640e076f2c09be483780e507ea52ef66805367bf3f82c55dbfdff7d5e551a24",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.12.1-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.12.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:e034d06de88e06fe5164851dcce75dbd3b713cc47903eee45275a7fd8dc63ebc"
+            },
+            {
+                "name": "broker_image_7.12.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:e034d06de88e06fe5164851dcce75dbd3b713cc47903eee45275a7fd8dc63ebc"
+            },
+            {
+                "name": "datagrid_image_7.12.1",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:98e9a6618558bc8a1b9cb91d1c9b3380968d335092f6e953d1abe6af96abf65c"
+            },
+            {
+                "name": "datagrid_image_7.12.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.12.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:3f840227b96a6cc7f4a42661dcd343e0d3e7ef434554f596562ce27d79316fb7"
+            },
+            {
+                "name": "ose_cli_image_7.12.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:3f840227b96a6cc7f4a42661dcd343e0d3e7ef434554f596562ce27d79316fb7"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:50f6c39fb92887f7b3023f19469d80e41e4afd1658fce0d68c6c2979c71f7d16"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:644840a85ba5651e4c7c77d2dd16bfca1cf7f590ced6dd4f8022645fb2bf5585"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:cb915bd0111e1cc1417a214fa6e013e3af9e1f6d9c4bcaeb71d8c84775a7f071"
+            },
+            {
+                "name": "oauth_proxy_image_4.8",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:f3902ed1bdcca26d74a58474fc2d120a706e7dc9268443e13c78f6b716136f1e"
+            },
+            {
+                "name": "dm_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:83ab1ba9336c7d56d3a1acf63a321f27ea6ed425dcef7a440222430e10b31e54"
+            },
+            {
+                "name": "dm_controller_image_7.12.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:8b2ff74de63a67892fae25a7590701eb0a4f2b911cf8c01f310445c08117ba10"
+            },
+            {
+                "name": "dm_dc_image_7.12.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:5bde846d404c7722f6e9175c49e2e6b2d1a0707a1a1b060614f97cf2c7147fba"
+            },
+            {
+                "name": "dm_dc_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:8a65566903e9d584199746329100688dec48c90572f554b7eae36faeccc8ce40"
+            },
+            {
+                "name": "dm_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:8d8d1d4aedaa46489abc190ca2edc20e2cc7e536e86801f1b00705b78f4bbf7b"
+            },
+            {
+                "name": "dm_kieserver_image_7.12.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:90df05b023f9a71974b519e671ca66d95c27b5d695a419cfaa0791dc2422d135"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:36b7056967b27d02f6ace1f29939fe1f6f60b1d10f88dc6bcefc075bb6bbc0b1"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:df8d190f8c185d6cef760bbab43d137599db8342161b7d7407b11c1b3141c23d"
+            },
+            {
+                "name": "pam_bc_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:714be85b0c2b34a1f746b5d04ab53f0160fdf94401a8599dfbb78eaf9386dc0e"
+            },
+            {
+                "name": "pam_bc_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:97a20ea8fad73dc925e984eea7131db81db92e55fee3655d4b437aa61a8f12c0"
+            },
+            {
+                "name": "pam_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:42c24241ccfea58aebf5f00b315ea2b4a9b060e246b5c043ca0ec752fcab3f63"
+            },
+            {
+                "name": "pam_controller_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:c70399d48fdd6dc758847234491044dde1ce4b95502cd5fca49ae2225ae3fd4e"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:12f4e8c38c22e177d1d7048c0d17b000ccf323237eec8095751b440e48b87c2c"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:d0c93600dfc86a0e891fc271ecc28fabb28c5b876890e26c91063bb18adca4bb"
+            },
+            {
+                "name": "pam_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:35b7c2b161f0e5ea551c54498636c3f994f13495d9301b7b2b1f0bd2c1fbeec1"
+            },
+            {
+                "name": "pam_kieserver_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:f53b923886c361126812ad8204d40c330f927a155a68e0ac03ae505cab233860"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:e640e076f2c09be483780e507ea52ef66805367bf3f82c55dbfdff7d5e551a24"
+            },
+            {
+                "name": "pam_process_migration_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:6501c1d7017598c5c5a59dcae5af165f7dc3adf0cb767deb1ef036ae88733269"
+            },
+            {
+                "name": "pam_process_migration_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:6b7ee5f4016cb8f537e6201717d95560efe7f703bcaa7296e80e6cd8c8a438a5"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:da1c72c14da2992c8605f1ee02b5b4d63ea71fb1f269798e8d7fc4a045f0eb28"
+            },
+            {
+                "name": "rhpam-rhel8-operator-da1c72c14da2992c8605f1ee02b5b4d63ea71fb1f269798e8d7fc4a045f0eb28-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:da1c72c14da2992c8605f1ee02b5b4d63ea71fb1f269798e8d7fc4a045f0eb28"
+            },
+            {
+                "name": "pam_smartrouter_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:da8c8032c90c5bc6114d2e6f75413f253c378e9596227e73fc25baf6c92fc4ec"
+            },
+            {
+                "name": "pam_smartrouter_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:e5ef855117482f3cb55b1605f8b9de2c4152bc551bc938e3e052308ec15cf814"
+            },
+            {
+                "name": "mysql_proxy_image_7.12.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:051c557f8dea504b7491606a09c9755dd725028618bb1847d1fa5c98442cdaa1"
+            },
+            {
+                "name": "mysql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:051c557f8dea504b7491606a09c9755dd725028618bb1847d1fa5c98442cdaa1"
+            },
+            {
+                "name": "postgresql_proxy_image_7.12.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:46e46a1f0f524daf01da33dc2ea3d394147096c2b03df15eebed6578db1ad40f"
+            },
+            {
+                "name": "postgresql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:46e46a1f0f524daf01da33dc2ea3d394147096c2b03df15eebed6578db1ad40f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.12.1-2",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:35fcb646712bff685f7420502d22cf3bcbf54aba1a19b8c9517f04a505a52283",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.12.1-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.12.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:b3999dc888e8038d0736275c615f5dd3f0a71382ef3d4d7b63720760dc9540a5"
+            },
+            {
+                "name": "broker_image_7.12.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:b3999dc888e8038d0736275c615f5dd3f0a71382ef3d4d7b63720760dc9540a5"
+            },
+            {
+                "name": "datagrid_image_7.12.1",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:98e9a6618558bc8a1b9cb91d1c9b3380968d335092f6e953d1abe6af96abf65c"
+            },
+            {
+                "name": "datagrid_image_7.12.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.12.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:f77865e6b29045c39f53724426b71cd7fe46954e973b42bf068dd54597ded76b"
+            },
+            {
+                "name": "ose_cli_image_7.12.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:f77865e6b29045c39f53724426b71cd7fe46954e973b42bf068dd54597ded76b"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:0347409b0f4387f93b96b7cc6e72709bb5a7db049a791007c6d520f84c6ae4df"
+            },
+            {
+                "name": "oauth_proxy_image_4.8",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:07198fe5558f247af0d30544e61967e310ee29cb580a3d20b3a14f4b053ca6c4"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:9787c61eab61caf278b1dff4dbead78e1a019392c0600064536c3d03e013b53a"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:b0563f49b31396437a68215001d23bf678026fd27ab2ec91bac865eeee2aeb31"
+            },
+            {
+                "name": "dm_controller_image_7.12.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:3d62250abad8a002a2c2b6385e91fe252774d0c52e45cf6b4bd54ea7881d5dc4"
+            },
+            {
+                "name": "dm_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:83ab1ba9336c7d56d3a1acf63a321f27ea6ed425dcef7a440222430e10b31e54"
+            },
+            {
+                "name": "dm_dc_image_7.12.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:0f347f3e766b0d1a3f276470f5fd3bcb7d20c11e42343baa3f57ac2af22631ce"
+            },
+            {
+                "name": "dm_dc_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:8a65566903e9d584199746329100688dec48c90572f554b7eae36faeccc8ce40"
+            },
+            {
+                "name": "dm_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:8d8d1d4aedaa46489abc190ca2edc20e2cc7e536e86801f1b00705b78f4bbf7b"
+            },
+            {
+                "name": "dm_kieserver_image_7.12.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:a8fc76bfee0501084df18f56ba403ff1e06c804575e8156709cc4cfaea9407b9"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:0d5581d19904810b78f389ca2b795b32ca5f0f7c9609dbfca0462f881eee7afb"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:df8d190f8c185d6cef760bbab43d137599db8342161b7d7407b11c1b3141c23d"
+            },
+            {
+                "name": "pam_bc_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:714be85b0c2b34a1f746b5d04ab53f0160fdf94401a8599dfbb78eaf9386dc0e"
+            },
+            {
+                "name": "pam_bc_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:ca18039cf447f48e7fc87a029058746e3b69014361d8a8068691d746bd71d160"
+            },
+            {
+                "name": "pam_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:42c24241ccfea58aebf5f00b315ea2b4a9b060e246b5c043ca0ec752fcab3f63"
+            },
+            {
+                "name": "pam_controller_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:d09ddc3488efcb9543c0f99dd16fd0e7c292cc1ef68246c24a23303d47d3a2f0"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:a9e651c2cf10565aee752e833d3305de3bc540f947237c5f33ee13671c57fda8"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:d0c93600dfc86a0e891fc271ecc28fabb28c5b876890e26c91063bb18adca4bb"
+            },
+            {
+                "name": "pam_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:35b7c2b161f0e5ea551c54498636c3f994f13495d9301b7b2b1f0bd2c1fbeec1"
+            },
+            {
+                "name": "pam_kieserver_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:d47c19799856ac7fe31ca3ac9f7eb18719b8ec6889cdd2ffce7e4dd39fd62d8f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:35fcb646712bff685f7420502d22cf3bcbf54aba1a19b8c9517f04a505a52283"
+            },
+            {
+                "name": "pam_process_migration_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:6501c1d7017598c5c5a59dcae5af165f7dc3adf0cb767deb1ef036ae88733269"
+            },
+            {
+                "name": "pam_process_migration_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:b13db87d2ce2003b04256ffaedfe6caca2f1b21adf0b7aa52a4a0b1748744e59"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:a4b777d32828bb3d82ef9fe38b55341f806f69cd2034b0a594951375cf6fc5d1"
+            },
+            {
+                "name": "rhpam-rhel8-operator-a4b777d32828bb3d82ef9fe38b55341f806f69cd2034b0a594951375cf6fc5d1-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:a4b777d32828bb3d82ef9fe38b55341f806f69cd2034b0a594951375cf6fc5d1"
+            },
+            {
+                "name": "pam_smartrouter_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:30b6754b0f52da61f506fedfb89af6fda0cfab845718fb167160933706ce663c"
+            },
+            {
+                "name": "pam_smartrouter_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:da8c8032c90c5bc6114d2e6f75413f253c378e9596227e73fc25baf6c92fc4ec"
+            },
+            {
+                "name": "mysql_proxy_image_7.12.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:6349f2d83ba25e5d693852f896cad2fad651fb2abb7d4b2dcdf746e0e760f480"
+            },
+            {
+                "name": "mysql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:6349f2d83ba25e5d693852f896cad2fad651fb2abb7d4b2dcdf746e0e760f480"
+            },
+            {
+                "name": "postgresql_proxy_image_7.12.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:549454058176b61dfe34ca7cbe851f3b73e5a0268d2c6be4a4333a9b1239d6cd"
+            },
+            {
+                "name": "postgresql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:549454058176b61dfe34ca7cbe851f3b73e5a0268d2c6be4a4333a9b1239d6cd"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.12.1-3",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:051929d585e065b574c8f5125a4c8ecd2a5c596b874c10758c25ffaa5b04847a",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.12.1-3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "broker_image_7.12.1",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:1ec0437bbd82722148fdbb02dc55682b114c311cd6f521a8bc621a8c1cb4b32b"
+            },
+            {
+                "name": "broker_image_7.12.0",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:1ec0437bbd82722148fdbb02dc55682b114c311cd6f521a8bc621a8c1cb4b32b"
+            },
+            {
+                "name": "datagrid_image_7.12.1",
+                "image": "registry.redhat.io/datagrid/datagrid-8-rhel8@sha256:98e9a6618558bc8a1b9cb91d1c9b3380968d335092f6e953d1abe6af96abf65c"
+            },
+            {
+                "name": "datagrid_image_7.12.0",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:4056b1cf8ff5995f56eecfdc087d9ece56a216dba6bd73acc5693f0778e8d573"
+            },
+            {
+                "name": "ose_cli_image_7.12.1",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:b4f365967dffa1a7d0b536f01d1b35f80d2a694a1c2caef9a1248b7adcaeb38e"
+            },
+            {
+                "name": "ose_cli_image_7.12.0",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:b4f365967dffa1a7d0b536f01d1b35f80d2a694a1c2caef9a1248b7adcaeb38e"
+            },
+            {
+                "name": "oauth_proxy_image_4.6",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:0869506e749f6dbf185b3b14195eff392d7418837ea32636bec69f1c560c4779"
+            },
+            {
+                "name": "oauth_proxy_image_latest",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:2c32dcf72d2f3b00a70bcf231e51106afb7858c65e1f1674a5bcc0394311695e"
+            },
+            {
+                "name": "oauth_proxy_image_4.7",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:4c62f5751df93320a7843aee05f800a574e9069fc8d02556fed01425c2051c85"
+            },
+            {
+                "name": "oauth_proxy_image_4.8",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:b9f8be67f4fedbc335960a05e69430d2703f076a1840db606dc7fffd985155fc"
+            },
+            {
+                "name": "dm_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:83ab1ba9336c7d56d3a1acf63a321f27ea6ed425dcef7a440222430e10b31e54"
+            },
+            {
+                "name": "dm_controller_image_7.12.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:fcc88d9558d962acd4e0b181ade657e911152601e104c10498cd1646c9e691d8"
+            },
+            {
+                "name": "dm_dc_image_7.12.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:46bf57a672bc56d3668114f08899d50b6619c10de91ae258625be1653e382a6f"
+            },
+            {
+                "name": "dm_dc_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:8a65566903e9d584199746329100688dec48c90572f554b7eae36faeccc8ce40"
+            },
+            {
+                "name": "dm_kieserver_image_7.12.1",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:31f647c71dd6677ccc316c7747eef6b6c2bdfbb9a1e134eaad7954755f5c4ebe"
+            },
+            {
+                "name": "dm_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:8d8d1d4aedaa46489abc190ca2edc20e2cc7e536e86801f1b00705b78f4bbf7b"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:2bd56f6fc729720f884fd0ee149e3bdfbc1951b4f71216a9f2f0ee6e895285b3"
+            },
+            {
+                "name": "pam_bc_monitoring_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:df8d190f8c185d6cef760bbab43d137599db8342161b7d7407b11c1b3141c23d"
+            },
+            {
+                "name": "pam_bc_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:714be85b0c2b34a1f746b5d04ab53f0160fdf94401a8599dfbb78eaf9386dc0e"
+            },
+            {
+                "name": "pam_bc_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:75f0a30cd76dc82d7896ec714e3261d056ba14043cd8d64025c0b067d33953fe"
+            },
+            {
+                "name": "pam_controller_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:1c71eb504a26c27e2f5a6e349bba9f40a8478c2073b44a2aaf7b171951c2f160"
+            },
+            {
+                "name": "pam_controller_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:42c24241ccfea58aebf5f00b315ea2b4a9b060e246b5c043ca0ec752fcab3f63"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:d0c93600dfc86a0e891fc271ecc28fabb28c5b876890e26c91063bb18adca4bb"
+            },
+            {
+                "name": "pam_dashbuilder_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-dashbuilder-rhel8@sha256:fd7ae475bac409389749b77ae39de662a4dd7e5020a64eca04ac79be131728f6"
+            },
+            {
+                "name": "pam_kieserver_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:35b7c2b161f0e5ea551c54498636c3f994f13495d9301b7b2b1f0bd2c1fbeec1"
+            },
+            {
+                "name": "pam_kieserver_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:6fbadbdb1ed8be2c166461402c7d67b220936ba78cd8b8bc4579fd931f5a05ca"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:051929d585e065b574c8f5125a4c8ecd2a5c596b874c10758c25ffaa5b04847a"
+            },
+            {
+                "name": "pam_process_migration_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:6501c1d7017598c5c5a59dcae5af165f7dc3adf0cb767deb1ef036ae88733269"
+            },
+            {
+                "name": "pam_process_migration_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:cb0a9bf7d8c23a8ad2e9688363d451f7f8fbf6c0235a1bd1b872676171ef9665"
+            },
+            {
+                "name": "business-automation-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:23d23ac0854bf7054b455b9c0aeb74f5f8e7bd20b924ea1d3ffe20813d0d9a32"
+            },
+            {
+                "name": "rhpam-rhel8-operator-23d23ac0854bf7054b455b9c0aeb74f5f8e7bd20b924ea1d3ffe20813d0d9a32-annotation",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:23d23ac0854bf7054b455b9c0aeb74f5f8e7bd20b924ea1d3ffe20813d0d9a32"
+            },
+            {
+                "name": "pam_smartrouter_image_7.12.1",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:7fa65bc7b3ef100e1270ec1207591c8134452b9f3bb95b79e7f04d1b0edc755a"
+            },
+            {
+                "name": "pam_smartrouter_image_7.12.0",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:da8c8032c90c5bc6114d2e6f75413f253c378e9596227e73fc25baf6c92fc4ec"
+            },
+            {
+                "name": "mysql_proxy_image_7.12.1",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:6349f2d83ba25e5d693852f896cad2fad651fb2abb7d4b2dcdf746e0e760f480"
+            },
+            {
+                "name": "mysql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:6349f2d83ba25e5d693852f896cad2fad651fb2abb7d4b2dcdf746e0e760f480"
+            },
+            {
+                "name": "postgresql_proxy_image_7.12.1",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:549454058176b61dfe34ca7cbe851f3b73e5a0268d2c6be4a4333a9b1239d6cd"
+            },
+            {
+                "name": "postgresql_proxy_image_7.12.0",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:549454058176b61dfe34ca7cbe851f3b73e5a0268d2c6be4a4333a9b1239d6cd"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.8.1",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:5a5429d84cc36ce29d95fe86d9b6a9eaef0c3ed3d1925fd9b653904c411cbcb4",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.8.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq-broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:7e81fec6e8fcb760829ab73512d1abf4da93e6e3bca42a12f517f793b34d6709"
+            },
+            {
+                "name": "amq-broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:ba5273b390a4762c21f005fdc92a837680417250dcd5e6d9d3c8f776e9cc372e"
+            },
+            {
+                "name": "datagrid73-openshift",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:3375ec169d274278da56d1401c5c1285f7d2812ea0bde2ac9ad9652b69f80893"
+            },
+            {
+                "name": "datagrid73-openshift",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:cfd8c4ac1c495b766dd3ff1a85c35afe092858f8f65b52a5b044811719482236"
+            },
+            {
+                "name": "oauth-proxy",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:8108991be049f722470166940f84c8a363801339758274ef51a132fa1e3168df"
+            },
+            {
+                "name": "ose-cli",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:e57a35bd9f41ed730a8d4031fdbe526a5fa219c5343a2f7c7d9f24fd2e2157c9"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:43fde141b6670727a1771fa52cd125b366275786b4be0a0a0c57005fd6e0c912"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:985230ae8c4c08a2aa64bb0634ad5ede16d87745eabd6ce94f14b22f4576a6ae"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:9aa4c23487fab1997f6d61bb893963ebd67b1403aaa9e51091566bc87a78970e"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:acf0e6508033273bed6dd1bbe0b33accc492b894fd601d00dd8df195311486d7"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:c6791f2cedd574a5b99ea5405b9d64c81c966cdee2fabbb180beb200b849919f"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:210f09a85d46d8ec8f6250353ce1d03b918bf08f446767f2718dfd84e19f771d"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:dd60210a91c833ae5899be8b445d9a3fed38caad8e22151ea807038342a79066"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:f4dec2be34e47603be6d0482a18b4627c370772f49bd79f70ec4645f91642011"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:1c41dc1f397d8c34124fc52c6d37059f4ff1a7f3416f10b00698e0ab08dcb72d"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:8228d3749303d9b29d85ece0bb51d373192dca4adca819596bb550a176fec44d"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:e72c16c705c88969fd5956d39e2e7fee185dda658f8f4ccafd9529d883b7c030"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:0b5a629570bc42687a21a55d2aa8ca8f2c4c35399770f8bebe2db3535629c44f"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:5e0ff998cd0378f74402fdaffb142be52ece272b974758773f3ec1ab69af8fd9"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:7f09d80dbd49ed905d739ec6425b539205a674289d87cd68c0f7b1854a1021d5"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:a390dd97226210f39a49eaa6d868e4c1b640c89d61542dde8d82bf24678edd09"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:de09d82511f20b6f5d4445ae66eb80704766d1af652b051ccf684e5f58743801"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:f82fb97294b08cb9dab3f309ec67132a2b20766116d07dbe29e41a1edf4859cf"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:b4ccbcf465ca14be9f3f284a504adc86e14775a64231d5fa5109fc69129271b2"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:ba51c9a88918371ae804982ee4a225e6182408506ffbff5412c722e966d11543"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:f396ef9944a38066446b04eef698101f44e6d84dcd9e54a947a776499fbbf2a6"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:37fb4c00de644ce7dc5dd17ec1222aa9657fb53944a927261b79ba97d6cfd217"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:911d5d594bf34fbec5048d0a86409451a4d49931a0739087578b999dfdefe5a6"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:fa831f7562139b99af65fa07ad2042043510a29b23dedd9a22279b90d2d6fb38"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:4aa8396411fad79d199c5d5a7f0927d3e22dbd71043040acba96aaf9e1e4984c"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:85c70bcb93142c68b404796a14a31446823dca6058c5bcc3f07e809f1c6be6ed"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:c7e459890edb463d05ceb2961da1573cf597b496e3ed8d70628a1350dbf94908"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:5a5429d84cc36ce29d95fe86d9b6a9eaef0c3ed3d1925fd9b653904c411cbcb4"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:3e3b937265e88f22513c7a69c2a7ff219546e3b58cc6fb1a12a996f9ccc56992"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:c6d21b586901c2829540922013408a6186318f2dfcc0e1831b69b8e592285e12"
+            },
+            {
+                "name": "rhpam-rhel8-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:758f424e9c7e9278f0d6a34877dbf4ffe34312b21ea408074c1faf1aa13fc74a"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:70b92cae5e37b9b37e99e044509ac14e7d1600d7a75e28e967c32d566efcce85"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:af4c3362d548e84f283aedcf8a647cd8aab453c4f9b18feca2c6f6faf0e5338c"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:eeb96f7a9acc483f95a9b5222027376a18a005bf08a54ac453f769006d2e760c"
+            },
+            {
+                "name": "mysql-57-rhel7",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe"
+            },
+            {
+                "name": "mysql-80-rhel7",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:62772b63c45a19a1559a8f13c103120f421a55d753a781dea1708f3053079457"
+            },
+            {
+                "name": "postgresql-10-rhel7",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:a145b5c2f38e25e832bef0be3a01a92a1f62d5c39c5edfcf074332f8642cb68f"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.9.0",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:f486e4a3085ce9245a7d0eec827f97b6d7fac61eeeca01563288d0370370af83",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.9.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq-broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:63ff12f8c582732b7e18be8a38e905b31200bcf21741e1bac90dd0cedc1c2a4a"
+            },
+            {
+                "name": "amq-broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:7e81fec6e8fcb760829ab73512d1abf4da93e6e3bca42a12f517f793b34d6709"
+            },
+            {
+                "name": "datagrid73-openshift",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:3375ec169d274278da56d1401c5c1285f7d2812ea0bde2ac9ad9652b69f80893"
+            },
+            {
+                "name": "datagrid73-openshift",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:da558fa9ad7c357ed794eb549ac12a799eab97951f2e3cbc9501e413a348119a"
+            },
+            {
+                "name": "oauth-proxy",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:0482bf957ab8c42f58ec9343b77dbddd765012439b2d732bb6fd127e6ac048db"
+            },
+            {
+                "name": "ose-cli",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:8b67915b731ff726be6941f800172d381c9aef64c7af7e614634c955ed4131a2"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:0cf895e446aa2a887ac8fd0d36b460bcbc40704dcc6cc838cc4a543a6deb38cf"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:12b11e2000b42ce1aaa228d9c1f4c9177395add2fa43835e667b7fc9007e40e6"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:12b11e2000b42ce1aaa228d9c1f4c9177395add2fa43835e667b7fc9007e40e6"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:15f27e01677044b93854ed3696daf22a4232126da6dc591c6759ed1a5c32995e"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:43fde141b6670727a1771fa52cd125b366275786b4be0a0a0c57005fd6e0c912"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:acf0e6508033273bed6dd1bbe0b33accc492b894fd601d00dd8df195311486d7"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:c6ea87ad809563e1744796821e62ba196abc20085cee5dcae20a2c242bfd469b"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:c11dd63fa0d484306e0ee6ddbac062a766445d90c101ba96cf7dcd6a870d50a9"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:dd60210a91c833ae5899be8b445d9a3fed38caad8e22151ea807038342a79066"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:fd2aa2048d914d8071e12e6c3d18868e9818557990679fda0b4125984c651455"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:16c8ca66d50829e0ed7d16c8e9bf5e0d2d42d1ffc3037877c676d1f093c461b7"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:1c41dc1f397d8c34124fc52c6d37059f4ff1a7f3416f10b00698e0ab08dcb72d"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:848c10073bce10629132e901b54ce4d04d70c3bb068cc6c360882c599696a20c"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:5e0ff998cd0378f74402fdaffb142be52ece272b974758773f3ec1ab69af8fd9"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:c9ee12321e0ef9dd6447e3acf1b0c8e9a81c266dd1ccb3a586ca113a1e114020"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:f21ff782e61fb7956f696ba158dab161c59b230a45ebe50aa151b7f3a9823ddd"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:7c5487fb8839d1c36d53556670423a879bd9825f6ee72e895235ac27cdb232a6"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e7f1d525f8eb9c10288f677d9e2698b0a4ee44122136e8ad0547e5546950f666"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:f82fb97294b08cb9dab3f309ec67132a2b20766116d07dbe29e41a1edf4859cf"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:41192dcac95c7ec30af876f4de01c93d7ad093a1dbc07a9eec20efa1b95e1c90"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:6e9aec3a774c446e367947963e5521cb9495899cd16b438ad5f202f399f218bf"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:f396ef9944a38066446b04eef698101f44e6d84dcd9e54a947a776499fbbf2a6"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:6a489c8b858d14aea7360ab286e61ebfd099f626f17c62e5771d131c18a8fbf0"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:af6344e06af50b883d791cd1f1de6f8e465916370c74ad1e8d9b56345d01d48d"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:fa831f7562139b99af65fa07ad2042043510a29b23dedd9a22279b90d2d6fb38"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:5d70a505d5850e8a845133a17dc9301a3a800c580681483958ebdce349d84f19"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:a636cb2c183ce14d7985dfc1efb0d4ad636c0ff6c07a8246d7e38c4092fe561e"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:c7e459890edb463d05ceb2961da1573cf597b496e3ed8d70628a1350dbf94908"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:f486e4a3085ce9245a7d0eec827f97b6d7fac61eeeca01563288d0370370af83"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:3e3b937265e88f22513c7a69c2a7ff219546e3b58cc6fb1a12a996f9ccc56992"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:57404e93f2fb3cc120a4df534b326975bec8e57752a5832fe391768dfbaa9a2e"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:677e32d5ebec1f8169c37826563a89cc8bfd13686d52d80084226748732ac8f7"
+            },
+            {
+                "name": "rhpam-rhel8-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:7cd4f0b811723819866f5ff8c676de737d7400a9c2c1316a4979d7adfed183db"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:52882d1b4548de4d2f4c481fd33f523130dd6636bb97b0824a81ac520f5b4edf"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:eeb96f7a9acc483f95a9b5222027376a18a005bf08a54ac453f769006d2e760c"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:fdfe21601cf39892ea8df099d09047c3cfdd48944a7751b5af4a3da0c41ac8d6"
+            },
+            {
+                "name": "mysql-57-rhel7",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe"
+            },
+            {
+                "name": "mysql-80-rhel7",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:a11549e0e409c57ea8d0d0b33311608284b813905b816d4e3d2f5c66ada9cdc4"
+            },
+            {
+                "name": "postgresql-10-rhel7",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:533f4c056fa38237fc8aed62d28159fcaca6d2632d8df57ab63b1451d37f0e4d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.9.0-2",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:af5a192a66fd81506cc5361103d7e3d510992f207343f6580a91022dc1bce745",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.9.0-2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq-broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:7e81fec6e8fcb760829ab73512d1abf4da93e6e3bca42a12f517f793b34d6709"
+            },
+            {
+                "name": "amq-broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:f63c10a569170402e79357835cf87c781c169adf4f6d63ff1bd8d4b93748ea5c"
+            },
+            {
+                "name": "datagrid73-openshift",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:3375ec169d274278da56d1401c5c1285f7d2812ea0bde2ac9ad9652b69f80893"
+            },
+            {
+                "name": "datagrid73-openshift",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:da558fa9ad7c357ed794eb549ac12a799eab97951f2e3cbc9501e413a348119a"
+            },
+            {
+                "name": "oauth-proxy",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:0482bf957ab8c42f58ec9343b77dbddd765012439b2d732bb6fd127e6ac048db"
+            },
+            {
+                "name": "ose-cli",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:8b67915b731ff726be6941f800172d381c9aef64c7af7e614634c955ed4131a2"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:0cf895e446aa2a887ac8fd0d36b460bcbc40704dcc6cc838cc4a543a6deb38cf"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:15f27e01677044b93854ed3696daf22a4232126da6dc591c6759ed1a5c32995e"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:1ca810c8beea151004b6010707332537eac4606ed03f9162fc2f0a7aae84c408"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:43fde141b6670727a1771fa52cd125b366275786b4be0a0a0c57005fd6e0c912"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:acf0e6508033273bed6dd1bbe0b33accc492b894fd601d00dd8df195311486d7"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:e83d591b61b3de88586822b3b85c3158607d19141e054dc43907ba75e9a5cfbc"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:e83d591b61b3de88586822b3b85c3158607d19141e054dc43907ba75e9a5cfbc"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:c11dd63fa0d484306e0ee6ddbac062a766445d90c101ba96cf7dcd6a870d50a9"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:dd60210a91c833ae5899be8b445d9a3fed38caad8e22151ea807038342a79066"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:fd2aa2048d914d8071e12e6c3d18868e9818557990679fda0b4125984c651455"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:16c8ca66d50829e0ed7d16c8e9bf5e0d2d42d1ffc3037877c676d1f093c461b7"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:1c41dc1f397d8c34124fc52c6d37059f4ff1a7f3416f10b00698e0ab08dcb72d"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:848c10073bce10629132e901b54ce4d04d70c3bb068cc6c360882c599696a20c"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:5e0ff998cd0378f74402fdaffb142be52ece272b974758773f3ec1ab69af8fd9"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:c9ee12321e0ef9dd6447e3acf1b0c8e9a81c266dd1ccb3a586ca113a1e114020"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:f21ff782e61fb7956f696ba158dab161c59b230a45ebe50aa151b7f3a9823ddd"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:7c5487fb8839d1c36d53556670423a879bd9825f6ee72e895235ac27cdb232a6"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e7f1d525f8eb9c10288f677d9e2698b0a4ee44122136e8ad0547e5546950f666"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:f82fb97294b08cb9dab3f309ec67132a2b20766116d07dbe29e41a1edf4859cf"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:41192dcac95c7ec30af876f4de01c93d7ad093a1dbc07a9eec20efa1b95e1c90"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:6e9aec3a774c446e367947963e5521cb9495899cd16b438ad5f202f399f218bf"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:f396ef9944a38066446b04eef698101f44e6d84dcd9e54a947a776499fbbf2a6"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:6a489c8b858d14aea7360ab286e61ebfd099f626f17c62e5771d131c18a8fbf0"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:af6344e06af50b883d791cd1f1de6f8e465916370c74ad1e8d9b56345d01d48d"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:fa831f7562139b99af65fa07ad2042043510a29b23dedd9a22279b90d2d6fb38"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:5d70a505d5850e8a845133a17dc9301a3a800c580681483958ebdce349d84f19"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:a636cb2c183ce14d7985dfc1efb0d4ad636c0ff6c07a8246d7e38c4092fe561e"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:c7e459890edb463d05ceb2961da1573cf597b496e3ed8d70628a1350dbf94908"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:af5a192a66fd81506cc5361103d7e3d510992f207343f6580a91022dc1bce745"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:3e3b937265e88f22513c7a69c2a7ff219546e3b58cc6fb1a12a996f9ccc56992"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:57404e93f2fb3cc120a4df534b326975bec8e57752a5832fe391768dfbaa9a2e"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:677e32d5ebec1f8169c37826563a89cc8bfd13686d52d80084226748732ac8f7"
+            },
+            {
+                "name": "rhpam-rhel8-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:c71a818cc9e6a45b6bb59413e2b282c3c30f2415eb506bfed34a8ebba5010288"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:52882d1b4548de4d2f4c481fd33f523130dd6636bb97b0824a81ac520f5b4edf"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:eeb96f7a9acc483f95a9b5222027376a18a005bf08a54ac453f769006d2e760c"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:fdfe21601cf39892ea8df099d09047c3cfdd48944a7751b5af4a3da0c41ac8d6"
+            },
+            {
+                "name": "mysql-57-rhel7",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe"
+            },
+            {
+                "name": "mysql-80-rhel7",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:a11549e0e409c57ea8d0d0b33311608284b813905b816d4e3d2f5c66ada9cdc4"
+            },
+            {
+                "name": "postgresql-10-rhel7",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:533f4c056fa38237fc8aed62d28159fcaca6d2632d8df57ab63b1451d37f0e4d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "businessautomation-operator.7.9.1-1",
+        "package": "businessautomation-operator",
+        "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:ce102ebf04a9854a71b1fdac0d9d9e17580fa18d8cb9f6ee507abcd77e6efeac",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "app.kiegroup.org",
+                    "kind": "KieApp",
+                    "version": "v2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "businessautomation-operator",
+                    "version": "7.9.1-1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq-broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:6ce6da749ca37e3a53fdf3a1b05f06cf0705c50400b4510345b6a1bdbb990e96"
+            },
+            {
+                "name": "amq-broker",
+                "image": "registry.redhat.io/amq7/amq-broker@sha256:7e81fec6e8fcb760829ab73512d1abf4da93e6e3bca42a12f517f793b34d6709"
+            },
+            {
+                "name": "datagrid73-openshift",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:3375ec169d274278da56d1401c5c1285f7d2812ea0bde2ac9ad9652b69f80893"
+            },
+            {
+                "name": "datagrid73-openshift",
+                "image": "registry.redhat.io/jboss-datagrid-7/datagrid73-openshift@sha256:da558fa9ad7c357ed794eb549ac12a799eab97951f2e3cbc9501e413a348119a"
+            },
+            {
+                "name": "oauth-proxy",
+                "image": "registry.redhat.io/openshift3/oauth-proxy@sha256:7d8daf8ca805794b98fee244323499f877f4f3287cbb54cfb56f9ce8146be38f"
+            },
+            {
+                "name": "ose-cli",
+                "image": "registry.redhat.io/openshift3/ose-cli@sha256:36a730dbee5940394ab48487ea854f1ab18b682242b70a6c2f013c916a2eab45"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:0777db164629ea5e91f7540bc7dca9e4ecacadb98a478909ba02b73219658b21"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:15f27e01677044b93854ed3696daf22a4232126da6dc591c6759ed1a5c32995e"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:2ae8260cbb607f5387261b2fa37165b0fc8382c118c04450bdb142e56e61b7e7"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:2ae8260cbb607f5387261b2fa37165b0fc8382c118c04450bdb142e56e61b7e7"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:43fde141b6670727a1771fa52cd125b366275786b4be0a0a0c57005fd6e0c912"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:acf0e6508033273bed6dd1bbe0b33accc492b894fd601d00dd8df195311486d7"
+            },
+            {
+                "name": "ose-oauth-proxy",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:c58256d0ce85226ed8f78f12bbd3651834e224d8d21dec934de1f6c01e6407f1"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:03503e3acda2e4e1cd4f7336f3e7b59de4569c34a5c437247d34883e7ed5bacd"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:c11dd63fa0d484306e0ee6ddbac062a766445d90c101ba96cf7dcd6a870d50a9"
+            },
+            {
+                "name": "rhdm-controller-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-controller-rhel8@sha256:fd2aa2048d914d8071e12e6c3d18868e9818557990679fda0b4125984c651455"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:16c8ca66d50829e0ed7d16c8e9bf5e0d2d42d1ffc3037877c676d1f093c461b7"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:848c10073bce10629132e901b54ce4d04d70c3bb068cc6c360882c599696a20c"
+            },
+            {
+                "name": "rhdm-decisioncentral-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8@sha256:bde26af1a981727a1040b4299a779662e1793501065b7a02c62c3db2be7f2496"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:c9ee12321e0ef9dd6447e3acf1b0c8e9a81c266dd1ccb3a586ca113a1e114020"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:e2c9d9dd2570779058d4e38cfc6708581eb1fb9c88670f85b2581d392aaa58d3"
+            },
+            {
+                "name": "rhdm-kieserver-rhel8",
+                "image": "registry.redhat.io/rhdm-7/rhdm-kieserver-rhel8@sha256:f21ff782e61fb7956f696ba158dab161c59b230a45ebe50aa151b7f3a9823ddd"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:7c5487fb8839d1c36d53556670423a879bd9825f6ee72e895235ac27cdb232a6"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:e7f1d525f8eb9c10288f677d9e2698b0a4ee44122136e8ad0547e5546950f666"
+            },
+            {
+                "name": "rhpam-businesscentral-monitoring-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8@sha256:fffee3e59e71ff0e28292e2281ea7b16cbda4888666d5a0b3ddc003c910dbac7"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:38172680f719cd8eeff1fdf4f2732e7cfdea5109d381ef9108e1c88b74390bc5"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:41192dcac95c7ec30af876f4de01c93d7ad093a1dbc07a9eec20efa1b95e1c90"
+            },
+            {
+                "name": "rhpam-businesscentral-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8@sha256:6e9aec3a774c446e367947963e5521cb9495899cd16b438ad5f202f399f218bf"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:6a489c8b858d14aea7360ab286e61ebfd099f626f17c62e5771d131c18a8fbf0"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:af6344e06af50b883d791cd1f1de6f8e465916370c74ad1e8d9b56345d01d48d"
+            },
+            {
+                "name": "rhpam-controller-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-controller-rhel8@sha256:b08f833c96c9ac3e5501cca34c63c9939aad3297b3d796b2b441c672b5a3791c"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:5d70a505d5850e8a845133a17dc9301a3a800c580681483958ebdce349d84f19"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:9ebc1bb85777b40912d84e97dd3c31617de5eb5b9e5761e158316b5f00315ec1"
+            },
+            {
+                "name": "rhpam-kieserver-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8@sha256:a636cb2c183ce14d7985dfc1efb0d4ad636c0ff6c07a8246d7e38c4092fe561e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/rhpam-7/rhpam-operator-bundle@sha256:ce102ebf04a9854a71b1fdac0d9d9e17580fa18d8cb9f6ee507abcd77e6efeac"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:0c10f39f6a79340e0d93902023c7476428096f63599f3fb36b8a39315d661e8e"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:57404e93f2fb3cc120a4df534b326975bec8e57752a5832fe391768dfbaa9a2e"
+            },
+            {
+                "name": "rhpam-process-migration-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8@sha256:677e32d5ebec1f8169c37826563a89cc8bfd13686d52d80084226748732ac8f7"
+            },
+            {
+                "name": "rhpam-rhel8-operator",
+                "image": "registry.redhat.io/rhpam-7/rhpam-rhel8-operator@sha256:9b9d8d51199d4437a5563ef62b0bb31b3ebddbdd3aaa011d33e38810d9839b85"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:52882d1b4548de4d2f4c481fd33f523130dd6636bb97b0824a81ac520f5b4edf"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:f55dccfae19c75b3ec2cdd60d2b6067cc073f55b79193dc6721670ca1e4d5359"
+            },
+            {
+                "name": "rhpam-smartrouter-rhel8",
+                "image": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8@sha256:fdfe21601cf39892ea8df099d09047c3cfdd48944a7751b5af4a3da0c41ac8d6"
+            },
+            {
+                "name": "mysql-57-rhel7",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe"
+            },
+            {
+                "name": "mysql-80-rhel7",
+                "image": "registry.redhat.io/rhscl/mysql-80-rhel7@sha256:9f352dda6828f9604e35c4cbb48f8488bf630865d132157b232f65c096c85d04"
+            },
+            {
+                "name": "postgresql-10-rhel7",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:2a2f1fe2ed8627cae3daa9194d555b689ac23c1d08ca0535806ab34a1f8070be"
+            }
+        ]
+    }

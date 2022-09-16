@@ -1,0 +1,2089 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: 3scale-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "3scale-operator",
+        "defaultChannel": "threescale-2.12"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "threescale-2.11",
+        "package": "3scale-operator",
+        "entries": [
+            {
+                "name": "3scale-operator.v0.8.0",
+                "skipRange": ">=0.7.0 <0.8.0"
+            },
+            {
+                "name": "3scale-operator.v0.8.0-0.1634606167.p",
+                "skips": [
+                    "3scale-operator.v0.8.0"
+                ],
+                "skipRange": ">=0.7.0 <0.8.0"
+            },
+            {
+                "name": "3scale-operator.v0.8.1",
+                "replaces": "3scale-operator.v0.8.0-0.1634606167.p"
+            },
+            {
+                "name": "3scale-operator.v0.8.2",
+                "replaces": "3scale-operator.v0.8.1"
+            },
+            {
+                "name": "3scale-operator.v0.8.3"
+            },
+            {
+                "name": "3scale-operator.v0.8.3-0.1645735250.p"
+            },
+            {
+                "name": "3scale-operator.v0.8.3-0.1646619125.p"
+            },
+            {
+                "name": "3scale-operator.v0.8.3-0.1646742992.p"
+            },
+            {
+                "name": "3scale-operator.v0.8.3-0.1649688682.p",
+                "replaces": "3scale-operator.v0.8.2",
+                "skips": [
+                    "3scale-operator.v0.8.3",
+                    "3scale-operator.v0.8.3-0.1646742992.p",
+                    "3scale-operator.v0.8.3-0.1646619125.p",
+                    "3scale-operator.v0.8.3-0.1645735250.p"
+                ]
+            },
+            {
+                "name": "3scale-operator.v0.8.4",
+                "replaces": "3scale-operator.v0.8.3-0.1649688682.p"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "threescale-2.12",
+        "package": "3scale-operator",
+        "entries": [
+            {
+                "name": "3scale-operator.v0.8.0",
+                "skipRange": ">=0.7.0 <0.8.0"
+            },
+            {
+                "name": "3scale-operator.v0.8.0-0.1634606167.p",
+                "skips": [
+                    "3scale-operator.v0.8.0"
+                ],
+                "skipRange": ">=0.7.0 <0.8.0"
+            },
+            {
+                "name": "3scale-operator.v0.8.1",
+                "replaces": "3scale-operator.v0.8.0-0.1634606167.p"
+            },
+            {
+                "name": "3scale-operator.v0.8.2",
+                "replaces": "3scale-operator.v0.8.1"
+            },
+            {
+                "name": "3scale-operator.v0.8.3"
+            },
+            {
+                "name": "3scale-operator.v0.8.3-0.1645735250.p"
+            },
+            {
+                "name": "3scale-operator.v0.8.3-0.1646619125.p"
+            },
+            {
+                "name": "3scale-operator.v0.8.3-0.1646742992.p"
+            },
+            {
+                "name": "3scale-operator.v0.8.3-0.1649688682.p",
+                "replaces": "3scale-operator.v0.8.2",
+                "skips": [
+                    "3scale-operator.v0.8.3",
+                    "3scale-operator.v0.8.3-0.1646742992.p",
+                    "3scale-operator.v0.8.3-0.1646619125.p",
+                    "3scale-operator.v0.8.3-0.1645735250.p"
+                ]
+            },
+            {
+                "name": "3scale-operator.v0.8.4",
+                "replaces": "3scale-operator.v0.8.3-0.1649688682.p"
+            },
+            {
+                "name": "3scale-operator.v0.9.0",
+                "replaces": "3scale-operator.v0.8.4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "threescale-mas",
+        "package": "3scale-operator",
+        "entries": [
+            {
+                "name": "3scale-operator.v0.8.0",
+                "skipRange": ">=0.7.0 <0.8.0"
+            },
+            {
+                "name": "3scale-operator.v0.8.0-0.1634606167.p",
+                "skips": [
+                    "3scale-operator.v0.8.0"
+                ],
+                "skipRange": ">=0.7.0 <0.8.0"
+            },
+            {
+                "name": "3scale-operator.v0.8.1",
+                "replaces": "3scale-operator.v0.8.0-0.1634606167.p"
+            },
+            {
+                "name": "3scale-operator.v0.8.2",
+                "replaces": "3scale-operator.v0.8.1"
+            },
+            {
+                "name": "3scale-operator.v0.9.0-mas",
+                "replaces": "3scale-operator.v0.8.2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.0",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:a8aee8352e2f1bd426255380412e401a63c76c147d5aab935ba32505487f7930",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:a8aee8352e2f1bd426255380412e401a63c76c147d5aab935ba32505487f7930"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:9b3d2fb6a8c86fad0dd6e89beab6f28bc837641c00bf7e36ad5684873565c1a7"
+            },
+            {
+                "name": "3scale-rhel7-operator-9b3d2fb6a8c86fad0dd6e89beab6f28bc837641c00bf7e36ad5684873565c1a7-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:9b3d2fb6a8c86fad0dd6e89beab6f28bc837641c00bf7e36ad5684873565c1a7"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:b1e7e399175b0afafbf75ffd105fde52bf2b9c340cd4091116e2ac9467f3b0ba"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:ab7c488623f350a0c5b6cb506c2aa97f7d6f5d9320f93a34e44689b4c138f0a3"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:d4e2ddb0f6184014a81406447161c71391fb3567cdb46064388667f02559a84c"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:a8ed682ad655e9428704a86e6c4cd22f261d5d759007f4e63ec03853de815415"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:6b06631f0e662e12dfc1ebbbca411fe748749f1465684d70afbd84584b78f279"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:279e04b357bde2f8045fd2c3a859cdfffe107cd6b4f91effe64e5b11cc30561e"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:484e26e348354e6dd28934aedbcd139c786284a88a4e16a7652b5a52bd0beeac"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:333e5f8814df86e5c28e9cef1b5df3562080f855d4ba65049cab741f3e140c0b"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:333e5f8814df86e5c28e9cef1b5df3562080f855d4ba65049cab741f3e140c0b"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:c4c6a926f10195f4e9871c0fe80dfe5730b479d5becfc73ba73fe4a663ebdca7"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:c4c6a926f10195f4e9871c0fe80dfe5730b479d5becfc73ba73fe4a663ebdca7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.0-0.1634606167.p",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:897775dc321e48a786a793be54a971392876df61069bb28761de89a2ed6c4aef",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.0+0.1634606167.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:897775dc321e48a786a793be54a971392876df61069bb28761de89a2ed6c4aef"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:9b3d2fb6a8c86fad0dd6e89beab6f28bc837641c00bf7e36ad5684873565c1a7"
+            },
+            {
+                "name": "3scale-rhel7-operator-9b3d2fb6a8c86fad0dd6e89beab6f28bc837641c00bf7e36ad5684873565c1a7-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:9b3d2fb6a8c86fad0dd6e89beab6f28bc837641c00bf7e36ad5684873565c1a7"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:b1e7e399175b0afafbf75ffd105fde52bf2b9c340cd4091116e2ac9467f3b0ba"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:ab7c488623f350a0c5b6cb506c2aa97f7d6f5d9320f93a34e44689b4c138f0a3"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:d4e2ddb0f6184014a81406447161c71391fb3567cdb46064388667f02559a84c"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:21f8a8c1ef1e24b016e7288e41afb50e43e7a2f7cf7e77bcc91c063430e1abc7"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:6b06631f0e662e12dfc1ebbbca411fe748749f1465684d70afbd84584b78f279"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:279e04b357bde2f8045fd2c3a859cdfffe107cd6b4f91effe64e5b11cc30561e"
+            },
+            {
+                "name": "kube-rbac-proxy",
+                "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:484e26e348354e6dd28934aedbcd139c786284a88a4e16a7652b5a52bd0beeac"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:333e5f8814df86e5c28e9cef1b5df3562080f855d4ba65049cab741f3e140c0b"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:333e5f8814df86e5c28e9cef1b5df3562080f855d4ba65049cab741f3e140c0b"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:c4c6a926f10195f4e9871c0fe80dfe5730b479d5becfc73ba73fe4a663ebdca7"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:c4c6a926f10195f4e9871c0fe80dfe5730b479d5becfc73ba73fe4a663ebdca7"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.1",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:52beda035f75cd318b9648736bcbb5450b1201d02e24991b9f283286822fef10",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:52beda035f75cd318b9648736bcbb5450b1201d02e24991b9f283286822fef10"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:ab41b3cc67be4dd3e9de21bd705c75e08aaae9b83b6422dcb04a83386291d833"
+            },
+            {
+                "name": "3scale-rhel7-operator-ab41b3cc67be4dd3e9de21bd705c75e08aaae9b83b6422dcb04a83386291d833-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:ab41b3cc67be4dd3e9de21bd705c75e08aaae9b83b6422dcb04a83386291d833"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:f5101946df8b157d23964cc98ef669b1b4e31dc88a094eb840dd4bb0548d1316"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:386332e0dfc8735b7cdbe0fc5952a7627826c5c6b04141289c56e16dc8c49070"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:928ea704460dffb4cf4aae0c41979112a26df2736846352d85422d4cdab7ec3b"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:e0de9bda45e93f9136f82caf96eea61990e6d4793f8f8fc6ec33298b3cb1be84"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:757fc88ba0d6af0a6dd2fdb6123fc77d8225aa09c90c67a478b413dcba524bfb"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:15535509a4f72e720ceee196f0b10dcc16973fcca6a5561e6876f8ddc833cde5"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:15535509a4f72e720ceee196f0b10dcc16973fcca6a5561e6876f8ddc833cde5"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:8fd6c253302f6c09ebd9d965e42ddbd6e370e6545361c265e8d084b0030e2ba9"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:8fd6c253302f6c09ebd9d965e42ddbd6e370e6545361c265e8d084b0030e2ba9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.2",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:024bfeb1c04d2a05e1ae06bffbb358f819be7a3d18f0db78c79cf6e169eaca89",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:024bfeb1c04d2a05e1ae06bffbb358f819be7a3d18f0db78c79cf6e169eaca89"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:478ac0414456075041b16ab1d6c0e0b026ecec5017e899a9c2c476c21753b04e"
+            },
+            {
+                "name": "3scale-rhel7-operator-478ac0414456075041b16ab1d6c0e0b026ecec5017e899a9c2c476c21753b04e-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:478ac0414456075041b16ab1d6c0e0b026ecec5017e899a9c2c476c21753b04e"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:f5101946df8b157d23964cc98ef669b1b4e31dc88a094eb840dd4bb0548d1316"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:386332e0dfc8735b7cdbe0fc5952a7627826c5c6b04141289c56e16dc8c49070"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:928ea704460dffb4cf4aae0c41979112a26df2736846352d85422d4cdab7ec3b"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:e0de9bda45e93f9136f82caf96eea61990e6d4793f8f8fc6ec33298b3cb1be84"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:757fc88ba0d6af0a6dd2fdb6123fc77d8225aa09c90c67a478b413dcba524bfb"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:15535509a4f72e720ceee196f0b10dcc16973fcca6a5561e6876f8ddc833cde5"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:15535509a4f72e720ceee196f0b10dcc16973fcca6a5561e6876f8ddc833cde5"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:8fd6c253302f6c09ebd9d965e42ddbd6e370e6545361c265e8d084b0030e2ba9"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:8fd6c253302f6c09ebd9d965e42ddbd6e370e6545361c265e8d084b0030e2ba9"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.3",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:1900b24a600385cede8fd15c4c8ef4a87a2f317491707e5bfdefca77384122bd",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:1900b24a600385cede8fd15c4c8ef4a87a2f317491707e5bfdefca77384122bd"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:1f9d3b822d166af055ea9ae5680f6568122b1683f5b95931598e9504c88e82f0"
+            },
+            {
+                "name": "3scale-rhel7-operator-1f9d3b822d166af055ea9ae5680f6568122b1683f5b95931598e9504c88e82f0-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:1f9d3b822d166af055ea9ae5680f6568122b1683f5b95931598e9504c88e82f0"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:1662c92f37a9e54a210f2022027c312b7d778d2481191fe020d5fe40d1adf39d"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:a2e4e92af1bf0345c2dcf20a45dce945d6499fa2c328b17271897240f9369966"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:589e960ddd2352283e10508cbc89fb318f2b4d6bc16f758fadece4a4d48a9b19"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:62b24bde0123a22241e02e6f7b9c7a55794e586b852420e587cc034a8cf76e9e"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:028ba12cbbf038dd57185f9ede402f15cef503c361efed8e94210b2b13a53933"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.3-0.1645735250.p",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:7cfbb1a8ce69f17d1716b19ce2e5d15679f17ea3b3322fb534186503db17b8f3",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.3+0.1645735250.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:7cfbb1a8ce69f17d1716b19ce2e5d15679f17ea3b3322fb534186503db17b8f3"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:1f9d3b822d166af055ea9ae5680f6568122b1683f5b95931598e9504c88e82f0"
+            },
+            {
+                "name": "3scale-rhel7-operator-1f9d3b822d166af055ea9ae5680f6568122b1683f5b95931598e9504c88e82f0-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:1f9d3b822d166af055ea9ae5680f6568122b1683f5b95931598e9504c88e82f0"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:1662c92f37a9e54a210f2022027c312b7d778d2481191fe020d5fe40d1adf39d"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:a2e4e92af1bf0345c2dcf20a45dce945d6499fa2c328b17271897240f9369966"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:35b900059313170e63c4100153ec8ac0ceee24c4b5d7859adb610b029df3d5c4"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:62b24bde0123a22241e02e6f7b9c7a55794e586b852420e587cc034a8cf76e9e"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:028ba12cbbf038dd57185f9ede402f15cef503c361efed8e94210b2b13a53933"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.3-0.1646619125.p",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:3c9c8f58d7848a5796ab55b99698387e9691daf910644d0093ed299f253c38d6",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.3+0.1646619125.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:3c9c8f58d7848a5796ab55b99698387e9691daf910644d0093ed299f253c38d6"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:1f9d3b822d166af055ea9ae5680f6568122b1683f5b95931598e9504c88e82f0"
+            },
+            {
+                "name": "3scale-rhel7-operator-1f9d3b822d166af055ea9ae5680f6568122b1683f5b95931598e9504c88e82f0-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:1f9d3b822d166af055ea9ae5680f6568122b1683f5b95931598e9504c88e82f0"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:c139d9681d3149dab8b5e04eef4f79bc9567b682428b826badd9227760527b28"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:a2e4e92af1bf0345c2dcf20a45dce945d6499fa2c328b17271897240f9369966"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:35b900059313170e63c4100153ec8ac0ceee24c4b5d7859adb610b029df3d5c4"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:0bcea004c8597e6dcf680111644f6b1d6da2513a1c5c027e98b4f4f081fd6523"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:028ba12cbbf038dd57185f9ede402f15cef503c361efed8e94210b2b13a53933"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.3-0.1646742992.p",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:bd95d5f4346063b9fb729da0efd4f6b223f4b9453bb8c2ee4d179ce8b7851f3e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.3+0.1646742992.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:bd95d5f4346063b9fb729da0efd4f6b223f4b9453bb8c2ee4d179ce8b7851f3e"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:06878a946d0011bcf45c35d6454e64054a7d7b54444edfc2af3769b95eb0c218"
+            },
+            {
+                "name": "3scale-rhel7-operator-06878a946d0011bcf45c35d6454e64054a7d7b54444edfc2af3769b95eb0c218-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:06878a946d0011bcf45c35d6454e64054a7d7b54444edfc2af3769b95eb0c218"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:1662c92f37a9e54a210f2022027c312b7d778d2481191fe020d5fe40d1adf39d"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:f31e07c6ec15bb823b40af5bd8c96bb0083f9c8cbcc643c43f1854e7002e480a"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:6834ddaa12ca1e15d2b96c3ae0e0fc4e890fe38ff48f6543d27143528d7aadbc"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:62b24bde0123a22241e02e6f7b9c7a55794e586b852420e587cc034a8cf76e9e"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:028ba12cbbf038dd57185f9ede402f15cef503c361efed8e94210b2b13a53933"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.3-0.1649688682.p",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:2b709b801c9d28b16e6dd3a4c4b1c529d03b07e51cca2556e4f9b6ab7c8248e4",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.3+0.1649688682.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:2b709b801c9d28b16e6dd3a4c4b1c529d03b07e51cca2556e4f9b6ab7c8248e4"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:69fdd166808dcc23bc03fce9e9c53ceaa459410a19173deac78837734f1a2e48"
+            },
+            {
+                "name": "3scale-rhel7-operator-69fdd166808dcc23bc03fce9e9c53ceaa459410a19173deac78837734f1a2e48-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:69fdd166808dcc23bc03fce9e9c53ceaa459410a19173deac78837734f1a2e48"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:14c01cbc43b3756850fa9732d9a2f588792ec375d6834866f04a28fbc6c04738"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:1662c92f37a9e54a210f2022027c312b7d778d2481191fe020d5fe40d1adf39d"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:aef06f236ee59c75c4d82db620c83b4211e16cbc56ef1355359fa39881c5ae24"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:bce53953b3fa2bdf92b15fc760d343b30423814a8d802ebc6a38efa414f61fb9"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:62b24bde0123a22241e02e6f7b9c7a55794e586b852420e587cc034a8cf76e9e"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:028ba12cbbf038dd57185f9ede402f15cef503c361efed8e94210b2b13a53933"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:c9fe30ba965144c918f67ab61feda55eb80e5e47c32fdbbe36831b78d56890a8"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:56aeb96ca9f727b9981a2ea5395d83bcb843bfbcaf865e9809dab8e267548df2"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.8.4",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:62c789e06dfaf24b3287a7e3ba22c2fb0b34df244b4aec85eeb35171ce3d5af1",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.8.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:62c789e06dfaf24b3287a7e3ba22c2fb0b34df244b4aec85eeb35171ce3d5af1"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:d9ecd9ffb167908d2825b96491edbc138b5b08456775feaaaf99b6fd4f50c19e"
+            },
+            {
+                "name": "3scale-rhel7-operator-d9ecd9ffb167908d2825b96491edbc138b5b08456775feaaaf99b6fd4f50c19e-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:d9ecd9ffb167908d2825b96491edbc138b5b08456775feaaaf99b6fd4f50c19e"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:f0e9f64c353fdbee3bf7ec0eaf070c3b75330ef659a881ec4ebc874ba584d085"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:c01bd40b54dabbbdb70e34ab1b2e23dd86f16d6381ea07606cb12c96b952f3a3"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:7a379aa1503d7f839e4b3250ad864506f2b417fe728d43fb29cd78c041089e0f"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:9989cbbcb37f0a1421ca61a8412efab22b23723e5e987177542166124c30f4f0"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:35f8ed5e67d87976b2317648d5422d62ed523f69075d30d4ff94a07210d3fc29"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:799c7680cb8b80236fc60eb611b1dac90e157c69c9abd5af9f2c13bbbe74fd29"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:2c8eb9b00914c537e4ce116a4b0060489963437437c3bb0de99bd9140b9ed0d9"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:2c8eb9b00914c537e4ce116a4b0060489963437437c3bb0de99bd9140b9ed0d9"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:d780a04150266166e830ad6b4de3c0bed72c5a8492dad29885e598635000cc1d"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:d780a04150266166e830ad6b4de3c0bed72c5a8492dad29885e598635000cc1d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.9.0",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:ef1be8def1cac511a539ed580fab1d1f922d90d247be1805807b6c299417a95e",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.9.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator-metadata@sha256:ef1be8def1cac511a539ed580fab1d1f922d90d247be1805807b6c299417a95e"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:b6805840aed8a3cdd58b25383a821c1f85bb4c1959259d9ac4812e56d6651202"
+            },
+            {
+                "name": "3scale-rhel7-operator-b6805840aed8a3cdd58b25383a821c1f85bb4c1959259d9ac4812e56d6651202-annotation",
+                "image": "registry.redhat.io/3scale-amp2/3scale-rhel7-operator@sha256:b6805840aed8a3cdd58b25383a821c1f85bb4c1959259d9ac4812e56d6651202"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:d7af57e97f10c4f2d8ac1ae8f4c4436b6323d2d2ba60dbbb3b50d6328c92133f"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-amp2/backend-rhel8@sha256:d08479d6a1607099f9a125bd21c3c8a685520e35c31aa799a57f211b3192389b"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-amp2/memcached-rhel7@sha256:4a69109a33167ac9a13088d1da608e32feb31cc394be1c350a7d36e1d88882d3"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-amp2/system-rhel7@sha256:27904327f838ab872c6adf1e4a025b8cd0ff1ca425bfc63816c5ec2253cb79b5"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-amp2/zync-rhel8@sha256:c231dfc49feb71f250a30e6f724fc29eefea3cf30b8bf92547fc28e616f01864"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:ce2345dd957992853271bf1d90bf76c2a4b2d0a4357461d11a9ced2a4c3783dd"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhel8/mysql-80@sha256:7abc5fb5eb86040c93061fc78f7c0b41f4c452bef731c48999eec1cf5d3adb08"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:b68f131a59318c61f88cdbd44dbac94a3ec54cf291cd4b5b87cc104830634006"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:b68f131a59318c61f88cdbd44dbac94a3ec54cf291cd4b5b87cc104830634006"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:91781cf512d695339f5a92da8bfae40b42a5585d3b5627d30e6fea08afc932a4"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:91781cf512d695339f5a92da8bfae40b42a5585d3b5627d30e6fea08afc932a4"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "3scale-operator.v0.9.0-mas",
+        "package": "3scale-operator",
+        "image": "registry.redhat.io/3scale-mas/3scale-operator-bundle@sha256:51493ae8d904f04f8a0c6f414f7582e8ad848065397d7819c09058756264663b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManager",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerBackup",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "apps.3scale.net",
+                    "kind": "APIManagerRestore",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "ActiveDoc",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Backend",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "CustomPolicyDefinition",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperAccount",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "DeveloperUser",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "OpenAPI",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Product",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "capabilities.3scale.net",
+                    "kind": "Tenant",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "3scale-operator",
+                    "version": "0.9.0-mas"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/3scale-mas/3scale-operator-bundle@sha256:51493ae8d904f04f8a0c6f414f7582e8ad848065397d7819c09058756264663b"
+            },
+            {
+                "name": "manager",
+                "image": "registry.redhat.io/3scale-mas/3scale-rhel7-operator@sha256:2cd827b47fb0d6d3c43b8bb9acd352b6a65015e719fa340b3f6e7f939b7de52f"
+            },
+            {
+                "name": "3scale-rhel7-operator-2cd827b47fb0d6d3c43b8bb9acd352b6a65015e719fa340b3f6e7f939b7de52f-annotation",
+                "image": "registry.redhat.io/3scale-mas/3scale-rhel7-operator@sha256:2cd827b47fb0d6d3c43b8bb9acd352b6a65015e719fa340b3f6e7f939b7de52f"
+            },
+            {
+                "name": "apicast",
+                "image": "registry.redhat.io/3scale-mas/apicast-gateway-rhel8@sha256:fa44e65ff88bd58a9ab26d278e852667af2ea557040484925078d7d3c0183e44"
+            },
+            {
+                "name": "backend",
+                "image": "registry.redhat.io/3scale-mas/backend-rhel8@sha256:423bddb7681389b445acecfa7262755a73699a7436f657bf9d77c63f06b83179"
+            },
+            {
+                "name": "system_memcached",
+                "image": "registry.redhat.io/3scale-mas/memcached-rhel7@sha256:7a7d0d6bd38560e518e141eb785e3b1952f2993bd4210f66bc64f68edb7a247d"
+            },
+            {
+                "name": "system",
+                "image": "registry.redhat.io/3scale-mas/system-rhel7@sha256:4b1dd814328bda4b81d8ef0bcbb501f3607754001db503469aea698afc9aafd0"
+            },
+            {
+                "name": "zync",
+                "image": "registry.redhat.io/3scale-mas/zync-rhel8@sha256:5122f4bfe639e0fc0cfe8bac37bde3c91a844c4cd51a3ba9e966605a6c78a05c"
+            },
+            {
+                "name": "oc_cli",
+                "image": "registry.redhat.io/openshift4/ose-cli@sha256:ce2345dd957992853271bf1d90bf76c2a4b2d0a4357461d11a9ced2a4c3783dd"
+            },
+            {
+                "name": "system_mysql",
+                "image": "registry.redhat.io/rhscl/mysql-57-rhel7@sha256:88d5bc2fbdf703c0b0e072751af2cd54fb527649433f38feb359489b252ec905"
+            },
+            {
+                "name": "system_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:b68f131a59318c61f88cdbd44dbac94a3ec54cf291cd4b5b87cc104830634006"
+            },
+            {
+                "name": "zync_postgresql",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:b68f131a59318c61f88cdbd44dbac94a3ec54cf291cd4b5b87cc104830634006"
+            },
+            {
+                "name": "system_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:91781cf512d695339f5a92da8bfae40b42a5585d3b5627d30e6fea08afc932a4"
+            },
+            {
+                "name": "backend_redis",
+                "image": "registry.redhat.io/rhscl/redis-5-rhel7@sha256:91781cf512d695339f5a92da8bfae40b42a5585d3b5627d30e6fea08afc932a4"
+            }
+        ]
+    }

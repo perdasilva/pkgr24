@@ -1,0 +1,1745 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: fuse-online
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "fuse-online",
+        "defaultChannel": "latest"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "7.10.x",
+        "package": "fuse-online",
+        "entries": [
+            {
+                "name": "fuse-online-operator.v7.8.1",
+                "skipRange": ">=7.7.0 <7.8.1"
+            },
+            {
+                "name": "fuse-online.v7.10.0",
+                "replaces": "fuse-online.v7.9.3"
+            },
+            {
+                "name": "fuse-online.v7.10.1",
+                "replaces": "fuse-online.v7.10.0"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1648491127.p"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1649640025.p",
+                "replaces": "fuse-online.v7.10.1",
+                "skips": [
+                    "fuse-online.v7.10.2-0.1648491127.p",
+                    "fuse-online.v7.10.2"
+                ]
+            },
+            {
+                "name": "fuse-online.v7.10.3",
+                "replaces": "fuse-online.v7.10.2-0.1649640025.p"
+            },
+            {
+                "name": "fuse-online.v7.10.4",
+                "replaces": "fuse-online.v7.10.3"
+            },
+            {
+                "name": "fuse-online.v7.9.0"
+            },
+            {
+                "name": "fuse-online.v7.9.1"
+            },
+            {
+                "name": "fuse-online.v7.9.2"
+            },
+            {
+                "name": "fuse-online.v7.9.3",
+                "replaces": "fuse-online-operator.v7.8.1",
+                "skips": [
+                    "fuse-online.v7.9.2",
+                    "fuse-online.v7.9.0",
+                    "fuse-online.v7.9.1"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "7.11.x",
+        "package": "fuse-online",
+        "entries": [
+            {
+                "name": "fuse-online-operator.v7.8.1",
+                "skipRange": ">=7.7.0 <7.8.1"
+            },
+            {
+                "name": "fuse-online.v7.10.0",
+                "replaces": "fuse-online.v7.9.3"
+            },
+            {
+                "name": "fuse-online.v7.10.1",
+                "replaces": "fuse-online.v7.10.0"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1648491127.p"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1649640025.p",
+                "replaces": "fuse-online.v7.10.1",
+                "skips": [
+                    "fuse-online.v7.10.2-0.1648491127.p",
+                    "fuse-online.v7.10.2"
+                ]
+            },
+            {
+                "name": "fuse-online.v7.10.3",
+                "replaces": "fuse-online.v7.10.2-0.1649640025.p"
+            },
+            {
+                "name": "fuse-online.v7.10.4",
+                "replaces": "fuse-online.v7.10.3"
+            },
+            {
+                "name": "fuse-online.v7.11.0"
+            },
+            {
+                "name": "fuse-online.v7.11.0-0.1659517286.p",
+                "replaces": "fuse-online.v7.10.4",
+                "skips": [
+                    "fuse-online.v7.11.0"
+                ]
+            },
+            {
+                "name": "fuse-online.v7.9.0"
+            },
+            {
+                "name": "fuse-online.v7.9.1"
+            },
+            {
+                "name": "fuse-online.v7.9.2"
+            },
+            {
+                "name": "fuse-online.v7.9.3",
+                "replaces": "fuse-online-operator.v7.8.1",
+                "skips": [
+                    "fuse-online.v7.9.2",
+                    "fuse-online.v7.9.0",
+                    "fuse-online.v7.9.1"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "7.9.x",
+        "package": "fuse-online",
+        "entries": [
+            {
+                "name": "fuse-online-operator.v7.8.1",
+                "skipRange": ">=7.7.0 <7.8.1"
+            },
+            {
+                "name": "fuse-online.v7.9.0"
+            },
+            {
+                "name": "fuse-online.v7.9.1"
+            },
+            {
+                "name": "fuse-online.v7.9.2"
+            },
+            {
+                "name": "fuse-online.v7.9.3",
+                "replaces": "fuse-online-operator.v7.8.1",
+                "skips": [
+                    "fuse-online.v7.9.2",
+                    "fuse-online.v7.9.0",
+                    "fuse-online.v7.9.1"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "candidate",
+        "package": "fuse-online",
+        "entries": [
+            {
+                "name": "fuse-online-operator.v7.8.1",
+                "skipRange": ">=7.7.0 <7.8.1"
+            },
+            {
+                "name": "fuse-online.v7.10.0",
+                "replaces": "fuse-online.v7.9.3"
+            },
+            {
+                "name": "fuse-online.v7.10.1",
+                "replaces": "fuse-online.v7.10.0"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1648491127.p"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1649640025.p",
+                "replaces": "fuse-online.v7.10.1",
+                "skips": [
+                    "fuse-online.v7.10.2-0.1648491127.p",
+                    "fuse-online.v7.10.2"
+                ]
+            },
+            {
+                "name": "fuse-online.v7.10.3",
+                "replaces": "fuse-online.v7.10.2-0.1649640025.p"
+            },
+            {
+                "name": "fuse-online.v7.10.4",
+                "replaces": "fuse-online.v7.10.3"
+            },
+            {
+                "name": "fuse-online.v7.11.0"
+            },
+            {
+                "name": "fuse-online.v7.11.0-0.1659517286.p",
+                "replaces": "fuse-online.v7.10.4",
+                "skips": [
+                    "fuse-online.v7.11.0"
+                ]
+            },
+            {
+                "name": "fuse-online.v7.9.0"
+            },
+            {
+                "name": "fuse-online.v7.9.1"
+            },
+            {
+                "name": "fuse-online.v7.9.2"
+            },
+            {
+                "name": "fuse-online.v7.9.3",
+                "replaces": "fuse-online-operator.v7.8.1",
+                "skips": [
+                    "fuse-online.v7.9.2",
+                    "fuse-online.v7.9.0",
+                    "fuse-online.v7.9.1"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "latest",
+        "package": "fuse-online",
+        "entries": [
+            {
+                "name": "fuse-online-operator.v7.8.1",
+                "skipRange": ">=7.7.0 <7.8.1"
+            },
+            {
+                "name": "fuse-online.v7.10.0",
+                "replaces": "fuse-online.v7.9.3"
+            },
+            {
+                "name": "fuse-online.v7.10.1",
+                "replaces": "fuse-online.v7.10.0"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1648491127.p"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1649640025.p",
+                "replaces": "fuse-online.v7.10.1",
+                "skips": [
+                    "fuse-online.v7.10.2-0.1648491127.p",
+                    "fuse-online.v7.10.2"
+                ]
+            },
+            {
+                "name": "fuse-online.v7.10.3",
+                "replaces": "fuse-online.v7.10.2-0.1649640025.p"
+            },
+            {
+                "name": "fuse-online.v7.10.4",
+                "replaces": "fuse-online.v7.10.3"
+            },
+            {
+                "name": "fuse-online.v7.11.0"
+            },
+            {
+                "name": "fuse-online.v7.11.0-0.1659517286.p",
+                "replaces": "fuse-online.v7.10.4",
+                "skips": [
+                    "fuse-online.v7.11.0"
+                ]
+            },
+            {
+                "name": "fuse-online.v7.9.0"
+            },
+            {
+                "name": "fuse-online.v7.9.1"
+            },
+            {
+                "name": "fuse-online.v7.9.2"
+            },
+            {
+                "name": "fuse-online.v7.9.3",
+                "replaces": "fuse-online-operator.v7.8.1",
+                "skips": [
+                    "fuse-online.v7.9.2",
+                    "fuse-online.v7.9.0",
+                    "fuse-online.v7.9.1"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "fuse-online",
+        "entries": [
+            {
+                "name": "fuse-online-operator.v7.8.1",
+                "skipRange": ">=7.7.0 <7.8.1"
+            },
+            {
+                "name": "fuse-online.v7.10.0",
+                "replaces": "fuse-online.v7.9.3"
+            },
+            {
+                "name": "fuse-online.v7.10.1",
+                "replaces": "fuse-online.v7.10.0"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1648491127.p"
+            },
+            {
+                "name": "fuse-online.v7.10.2-0.1649640025.p",
+                "replaces": "fuse-online.v7.10.1",
+                "skips": [
+                    "fuse-online.v7.10.2-0.1648491127.p",
+                    "fuse-online.v7.10.2"
+                ]
+            },
+            {
+                "name": "fuse-online.v7.10.3",
+                "replaces": "fuse-online.v7.10.2-0.1649640025.p"
+            },
+            {
+                "name": "fuse-online.v7.10.4",
+                "replaces": "fuse-online.v7.10.3"
+            },
+            {
+                "name": "fuse-online.v7.11.0"
+            },
+            {
+                "name": "fuse-online.v7.11.0-0.1659517286.p",
+                "replaces": "fuse-online.v7.10.4",
+                "skips": [
+                    "fuse-online.v7.11.0"
+                ]
+            },
+            {
+                "name": "fuse-online.v7.9.0"
+            },
+            {
+                "name": "fuse-online.v7.9.1"
+            },
+            {
+                "name": "fuse-online.v7.9.2"
+            },
+            {
+                "name": "fuse-online.v7.9.3",
+                "replaces": "fuse-online-operator.v7.8.1",
+                "skips": [
+                    "fuse-online.v7.9.2",
+                    "fuse-online.v7.9.0",
+                    "fuse-online.v7.9.1"
+                ]
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online-operator.v7.8.1",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-operator-bundle@sha256:0161c67a3c6be92306f68c2a3b7d9ce3edcf57fdeb1bf2843f988cc85fefc89b",
+        "properties": [
+            {
+                "type": "olm.deprecated",
+                "value": {}
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": 4.8
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.8.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-ignite-meta@sha256:f551b9fdd9d84aa239ca6d581815a501ea337138ce2f95436b1f74a9cb9d8c0d"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-ignite-s2i@sha256:47402670e8f83d530792318d8427c4aeef9c034e7622f0ded670acc9ffd4731f"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-ignite-server@sha256:c305b1d03e0e9b15756e5227ead03b3c616be5b0d1474871226ae4473e5be656"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-ignite-ui@sha256:369ec7a246b9afd26669ba2309ee1cd6643613edb831694202bc09ff9547bba5"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-ignite-upgrade@sha256:e2e2c2455adc8e051482981e796a2f6be3dd7f763ab2271aa827887bd7e8ba00"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-operator-bundle@sha256:0161c67a3c6be92306f68c2a3b7d9ce3edcf57fdeb1bf2843f988cc85fefc89b"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-operator@sha256:12c3da1bcc59759eff457fbaad254d5a3ac7697a73ca79f53529aa2e0c84ec14"
+            },
+            {
+                "name": "fuse-online-operator-12c3da1bcc59759eff457fbaad254d5a3ac7697a73ca79f53529aa2e0c84ec14-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-operator@sha256:12c3da1bcc59759eff457fbaad254d5a3ac7697a73ca79f53529aa2e0c84ec14"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel7@sha256:883c5ac097430e64d01f8762b85edce168472cf876bae3a71fb62bb284b6e73f"
+            },
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/jboss-amq-6/amq63-openshift@sha256:a86a05153e46d8abfca5cc0f3659cbcb518e826f44647bcfeede541324afc26e"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift3/prometheus@sha256:15ce3b0a98804495a4d453fd80cb5476d890725b8bf5136eb7ee99db65a459e2"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:b274283095ea28e8d1038aeff4ec1c47a1244e9a5dd8e6d8a6023ed93b16ed50"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhscl/php-72-rhel7@sha256:810920bdfb852166641f586f036973715f9348f62e1b30ea0eea0a2febcebb9b"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:1731d3793adc28d5664a549f3c79fce9705433789293cfb7fc94de7d18e12898"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhscl/postgresql-10-rhel7@sha256:1731d3793adc28d5664a549f3c79fce9705433789293cfb7fc94de7d18e12898"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.10.0",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:c4780b91b107dd800d1e862baa5fd6952598e821e7ce9c10298779b87e4e2152",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta3"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.10.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:75d5772c792a7c795281acec3d59e90021c109e9d7d1110868be0b882768aefb"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:8cba685c75e3e17efc3fd599ef556eca1ec40f5f5346eec7d613c420b1c759f2"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:4c05d6e0531c2288d7354ce487de8cc5ca27daabc1d65bdb3c6e044ac6bbd8e3"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:c4780b91b107dd800d1e862baa5fd6952598e821e7ce9c10298779b87e4e2152"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:1160e7a1e855ce68cfa097280ba5c67996a1dbd996ffb9719c12855f424e3b55"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-1160e7a1e855ce68cfa097280ba5c67996a1dbd996ffb9719c12855f424e3b55-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:1160e7a1e855ce68cfa097280ba5c67996a1dbd996ffb9719c12855f424e3b55"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:8f6c96dcabd9906ddd2a38885410980fcd9779e118fe87ba9988d32d3e4bb4a5"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:8084b26073710aa0ec120960f11484da764d85fdd5cb8c11d33edf1142d9344c"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:669ba628a1c24b6fd683f684c776ddd0356231313bcef4abe45df638243c2492"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:0b2ee28d274a7f5f0cde5ea1e7e2de8c41c95d03be48a2311bd3cdb4c32dad8c"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bafd85b0fd1256b8a60a2bb368a7e68f5dbad72718e5059a65660e01a425d8e2"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:13e9ea359cbcd3e0e94a6589b86b708dc84197f152701fd4092fffa234d11b58"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:6686ccd62d7087068507f4e161013d50674482045294e2f9530c2226de11dc90"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:6686ccd62d7087068507f4e161013d50674482045294e2f9530c2226de11dc90"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.10.1",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:f17f79a069e4c85ac9645336cecaeb3ed90dcac7a4a5d65da403bbfbf89d8d34",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta3"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.10.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:deb060ad65cf91c8389975b5dc20f5cd7e1871a192c1bd897660b63ce6c4d74a"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:aa1c39f2fb080bc2d2c3a096eff66cdcf0e3585fd45b7c9bc32b7901a1cdf700"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:560dd18ff6a95f12e1656b5329ba07a2b78da767c84477c4b80b5ff0ad135fb3"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:f17f79a069e4c85ac9645336cecaeb3ed90dcac7a4a5d65da403bbfbf89d8d34"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:fb5b282945e6fec5119204afe93c9f26442502d5f00210a0cf5f1046808a373d"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-fb5b282945e6fec5119204afe93c9f26442502d5f00210a0cf5f1046808a373d-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:fb5b282945e6fec5119204afe93c9f26442502d5f00210a0cf5f1046808a373d"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:12eedc44f2a439211e05d813cd99fa9b59f2e77c4c5e920c16e27590a5edf21d"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:b3634b62dd96a3d3635b0c7f110a3eca21fe5d7fdd49756aa6d04f116e5f9dab"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:2368e978025ddbf79577ca65b06090a4df1be37412d9c223eef2c47bc4b51a1e"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:2a7a9096a3781aa9adc5815daf7a695cf94b741f4600f30ca1340de1d879e716"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:0c733d5a196ec0025adf57e2e21762fcc266a626c03ab9b2ff181b6c933458cb"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:ff3dd31067c3b6de7908f33e6f06cc755df23210e28f7e57de57c3c3ed730747"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:da0b8d525b173ef472ff4c71fae60b396f518860d6313c4f3287b844aab6d622"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:da0b8d525b173ef472ff4c71fae60b396f518860d6313c4f3287b844aab6d622"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.10.2-0.1648491127.p",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:dc3cccafbd93474bfb310d7380875f886b76707fc571304cbd90ce4a80c71ab3",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta3"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.10.2+0.1648491127.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:4260662071f1421114111aa1e8a12a7ddc79e87e4986d1d079661a27b1a0157c"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:f91823b131ed9dd8e046cd25ad72f35d6bbef46105047676bfb27a22a3d4b7b3"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:4d29d5160fae7aacec1c47337c5b6d5d9e2565092b4a18111d27ea08f811366f"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:dc3cccafbd93474bfb310d7380875f886b76707fc571304cbd90ce4a80c71ab3"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:c26c92138431b6ed17662bda1a02ac9acb9cf3c59df94c29e5b710515fcd9704"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-c26c92138431b6ed17662bda1a02ac9acb9cf3c59df94c29e5b710515fcd9704-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:c26c92138431b6ed17662bda1a02ac9acb9cf3c59df94c29e5b710515fcd9704"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:b843d9a7879850c6a254d1bf15046cc9e28f6a6d69c768429455dba9b49a8fdb"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:b9876d24f77ae701f2250218282ebe3c3a446492e50c48af09310729513ac2a8"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:3a3cbcf280d97ddb5d43b1863f61c437aff7f266d094161f71e63c6129ca76fa"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:1b1902a80293611b810ad676be1a676bafc09c28800d5c922700e9416c203117"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:cb915bd0111e1cc1417a214fa6e013e3af9e1f6d9c4bcaeb71d8c84775a7f071"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:d1a8ef73a06b34f0a7120c9614da8fbd0b2ac58039ee5b19a0c75ebf1df4baf8"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:b006af9af125adce28546d0ed9d77421abe54182741f6b5e1d31c88dd763580b"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:b006af9af125adce28546d0ed9d77421abe54182741f6b5e1d31c88dd763580b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.10.2-0.1649640025.p",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:c9f80d87818bc0b426153277fedccc7b591af7a67bf48b2fda8c5471b2881717",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta3"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.10.2+0.1649640025.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:4260662071f1421114111aa1e8a12a7ddc79e87e4986d1d079661a27b1a0157c"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:c0488276f43bb3e6c9ff649424c13a83b1f70feca3c3eb5ed317115dbb8eaf01"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:d6f50df3ac516bf1e97d4d3cc061f19cb6eaacd5429cacb8c9ba7bde0916fc74"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:c9f80d87818bc0b426153277fedccc7b591af7a67bf48b2fda8c5471b2881717"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:bb7cb674ef8c82bf796ddaa18e97bea434cab30f7d6f6e864b90fec7d10c2e95"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-bb7cb674ef8c82bf796ddaa18e97bea434cab30f7d6f6e864b90fec7d10c2e95-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:bb7cb674ef8c82bf796ddaa18e97bea434cab30f7d6f6e864b90fec7d10c2e95"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:951d3c1f2437017d059faf512f0fe8f679a99e62732264ca7ea7bd73a6f522f8"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:af8447861e54610dc7373a42736946cfe2beb34a5bbc62d93769e530301daedb"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:8350a5a8c423cf742b3f8f02cf6b55229ea93cfd2e54ee384ceb552507da4bd4"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:d9f7d1ba7a5dfe26a21800914dd76bf12d1ee2312b9266cbbd3906968fc7af5b"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:cb915bd0111e1cc1417a214fa6e013e3af9e1f6d9c4bcaeb71d8c84775a7f071"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:d1a8ef73a06b34f0a7120c9614da8fbd0b2ac58039ee5b19a0c75ebf1df4baf8"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:b006af9af125adce28546d0ed9d77421abe54182741f6b5e1d31c88dd763580b"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:b006af9af125adce28546d0ed9d77421abe54182741f6b5e1d31c88dd763580b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.10.3",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:dac9d3344f855405ce5955ca66948274cad2a0df79ac1d3dcfeb9b6a3bcc18a3",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta3"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.10.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:dbceaa4b400d66c95bdbaafbad489b9fa28d63e06543ae69b0c427bb6341d319"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:1cdb25f6c2b3a2ee44ce97d8a11f76c296c4d6fab7e9ec3bf91cc11791b396fb"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:2e1cfba9ab0aacea49c817c03ec4ede4949aa5e7216d9e9924083a04beb5fb14"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:dac9d3344f855405ce5955ca66948274cad2a0df79ac1d3dcfeb9b6a3bcc18a3"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:b47e226bfd3cf1be0f99489ffe40ecaa00b673c459ee96f1fdc3853d5731b551"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-b47e226bfd3cf1be0f99489ffe40ecaa00b673c459ee96f1fdc3853d5731b551-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:b47e226bfd3cf1be0f99489ffe40ecaa00b673c459ee96f1fdc3853d5731b551"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:4c6b825dc366e3ec2a2f3b9eed339cefcadb0022d34b6dab32a7219b25b0b832"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:c390a1ee9ab948764efb1ca99da62d925a9c2f92c948cae5c8ed6d8381fe007c"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:93f864b38ec644e09df8787dd9ca136ca847bc7b251a54216d36ab149b0fa85e"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:005526b8ddf59b875a3270f21184309f51ff9ee8df1a3c5afb405937d2b4ce72"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:242e29befc6e860fe7479aa4135f4d536a3bdba504ed44c88a20ee17aaac3080"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:5ce45e4558b66dfbd82558856f62513382b68dbdc5dd4397a26e3d16aa9d0ae9"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:44215c5b244b190c82d9d371a8ffd39b0c83576bd85c980cc72782a5cf9e6e1b"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:44215c5b244b190c82d9d371a8ffd39b0c83576bd85c980cc72782a5cf9e6e1b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.10.4",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:53777788253eaa1199e1854d14782619aeec0df9844d86b83742fe0005671cde",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta3"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.10.4"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:fcdd0292ebfc7e9edc36241f63b54a9d924a7605329c934ff2b10373af26dbbf"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:5048cd4fab2f98e6000bc60835c539cc40b70dbe265e927cfe185595347d8054"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:3f0277e2c278740307c9b2d966f539ba12317e306198cb6c4c1c52a2ad9f4f40"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:53777788253eaa1199e1854d14782619aeec0df9844d86b83742fe0005671cde"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:ed4faedcb97bb6a45f568586ff19da19da31ecbc304f12e0ae7978381247744a"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-ed4faedcb97bb6a45f568586ff19da19da31ecbc304f12e0ae7978381247744a-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:ed4faedcb97bb6a45f568586ff19da19da31ecbc304f12e0ae7978381247744a"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:5dd1bc8f6b7e724736f4aeac86409bda3e0f64f62b736688e9572d14411232f1"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:ef229a4c8851ec495f28d0eeab83b137cd02698e283f76ea1b32271b7222621b"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:df2d55dd8092e9e94d034166890117cf5d1cfd5cf52ef0f90cfa2374cc9e2d06"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:4f8849362e9ed6ff95d318a04e287b7ba33254a2cf7abdaf9b90cab7cbba6646"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:96810c770f75057b8bba6b78a5ba414c8289315d8af1a387f681ae5e4fb7d6dd"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:7f679d6c03535e300dac366f4bc6dd8d781d96dc47592836713f8bb76be36fa9"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:44215c5b244b190c82d9d371a8ffd39b0c83576bd85c980cc72782a5cf9e6e1b"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:44215c5b244b190c82d9d371a8ffd39b0c83576bd85c980cc72782a5cf9e6e1b"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.11.0",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:1cb5285d3ab12f519cee2fa0aab7947b7b41cf6b623334a02667785d061e711b",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta3"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.11.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:ae79b5dab78c4f48993fd8999b09bdcaa918b8e30a9f750bf24d411710f71928"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:219bb1005c4befda822f888021344cfac777ac102d4a7efa51ed1509b507967e"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:05c4fa947f938a28cc5d92420f61d36e05c0b8d65cfaccde1a91dbee440080f1"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:1cb5285d3ab12f519cee2fa0aab7947b7b41cf6b623334a02667785d061e711b"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:44bd113da23f8ac4bc8099ce729184f20f35a1b7c62a75c24badf0090f15510c"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-44bd113da23f8ac4bc8099ce729184f20f35a1b7c62a75c24badf0090f15510c-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:44bd113da23f8ac4bc8099ce729184f20f35a1b7c62a75c24badf0090f15510c"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:38698c9cc46a00987a139bbbd6ff2e1b57e508592c3dbec4e9b49867e2fcca97"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:643e2b2e1965944dc59d12363d26ec6a3947e4758b2d76a12ffeaeaa01d221e0"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:58aa91e9f7196fc5a8eadcee9aa3638dc1a310350deb8b6115bc3f78eb01ac09"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:2c8e36d25e044383db384268b085d27b28d3b173406d734f2e5d1f1cf9215231"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:96810c770f75057b8bba6b78a5ba414c8289315d8af1a387f681ae5e4fb7d6dd"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:7f679d6c03535e300dac366f4bc6dd8d781d96dc47592836713f8bb76be36fa9"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:81d9bf20387ecfa85bf24dd53167242393075544a4368636a4bbda79d8769f49"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:81d9bf20387ecfa85bf24dd53167242393075544a4368636a4bbda79d8769f49"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.11.0-0.1659517286.p",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:e8679fffeccf3bcacd642c2e0a42fde0137dd0a2d8cb442fd67a83cb69a47f15",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta3"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.11.0+0.1659517286.p"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:ae79b5dab78c4f48993fd8999b09bdcaa918b8e30a9f750bf24d411710f71928"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:42a1ce36ffa06b51beb2dac0c4b276329de1bb73b502292cfe59444910c65eb9"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:aed0dd56aef06f1ca00e23beaabe6480db4728eb644c97de5c1f92ddeff99dbc"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:e8679fffeccf3bcacd642c2e0a42fde0137dd0a2d8cb442fd67a83cb69a47f15"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:44bd113da23f8ac4bc8099ce729184f20f35a1b7c62a75c24badf0090f15510c"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-44bd113da23f8ac4bc8099ce729184f20f35a1b7c62a75c24badf0090f15510c-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:44bd113da23f8ac4bc8099ce729184f20f35a1b7c62a75c24badf0090f15510c"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:97400a547c6264ae2dd045660f767eda6fede37efcf2bd3816fec3ab1383677e"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:643e2b2e1965944dc59d12363d26ec6a3947e4758b2d76a12ffeaeaa01d221e0"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:15337236af2ff65f55bba783877bd7756a8a163ff7984f89ad799d0284313c22"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:2c8e36d25e044383db384268b085d27b28d3b173406d734f2e5d1f1cf9215231"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:96810c770f75057b8bba6b78a5ba414c8289315d8af1a387f681ae5e4fb7d6dd"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:7f679d6c03535e300dac366f4bc6dd8d781d96dc47592836713f8bb76be36fa9"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:81d9bf20387ecfa85bf24dd53167242393075544a4368636a4bbda79d8769f49"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhel8/postgresql-12@sha256:81d9bf20387ecfa85bf24dd53167242393075544a4368636a4bbda79d8769f49"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.9.0",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:7b5402b2bba9beaaa5dc2c08572f1c6daf52d83b17a5bcc28c96d15a571a7b4c",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.9.0"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:67ae74e72927557c55611d0248347b2099b117ac1aa245dac05856fe782fb59c"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:d163a3c4b0e2245c27ad2f8671432dd206e040b9ddb4adefaf38ec7e8eeb316a"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:a2f5794b25fefa9e3ff64f1deac47bfd9934d0e06b5a393cbfbe439b2b057071"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:7b5402b2bba9beaaa5dc2c08572f1c6daf52d83b17a5bcc28c96d15a571a7b4c"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:a7c974e04775516d471feca4e5db58c90f030fd03f493aefda4605220bff7b88"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-a7c974e04775516d471feca4e5db58c90f030fd03f493aefda4605220bff7b88-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:a7c974e04775516d471feca4e5db58c90f030fd03f493aefda4605220bff7b88"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:f9de5cc23dd2d76a7d371f3e0bf9983627893138536f494dd05b806db4989141"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:eff9f8edf28ccbadcacab2022fff9e6bc93926af97521b49e3968eaf7b6fda65"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:3ee2ff7f4e1f21c614935260a9699acb8641fb5dfa7ebf3e173617bd67bf0161"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:f65600506db985689e5b7cd8b838e646d4268a0c4e272e19d7db3577a8dd7ac4"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:161d4899b38d187ff140004ecbb75c7b11e7e3276369e2605df742b05a124899"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:3c925d59f5acd935d904b244954c3b59c9ddcf481b4606e4dedbdb01bcc27d4a"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhscl/postgresql-12-rhel7@sha256:e90deb1f25f000329ffea3ec3ea7f9ddb7a2459c0bb5b44ed99493dfa265afbf"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhscl/postgresql-12-rhel7@sha256:e90deb1f25f000329ffea3ec3ea7f9ddb7a2459c0bb5b44ed99493dfa265afbf"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.9.1",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:8688b40617e770eb54785974aefa0599fcbbc68996fdc5bfee737d7018f4c299",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.9.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:67ae74e72927557c55611d0248347b2099b117ac1aa245dac05856fe782fb59c"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:d163a3c4b0e2245c27ad2f8671432dd206e040b9ddb4adefaf38ec7e8eeb316a"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:a2f5794b25fefa9e3ff64f1deac47bfd9934d0e06b5a393cbfbe439b2b057071"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:8688b40617e770eb54785974aefa0599fcbbc68996fdc5bfee737d7018f4c299"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:c70c5e76dc3db559c722bea2a767eb7dcba1eda786e1ef3a45c4cf32e1aca9ee"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-c70c5e76dc3db559c722bea2a767eb7dcba1eda786e1ef3a45c4cf32e1aca9ee-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:c70c5e76dc3db559c722bea2a767eb7dcba1eda786e1ef3a45c4cf32e1aca9ee"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:f9de5cc23dd2d76a7d371f3e0bf9983627893138536f494dd05b806db4989141"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:eff9f8edf28ccbadcacab2022fff9e6bc93926af97521b49e3968eaf7b6fda65"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:3ee2ff7f4e1f21c614935260a9699acb8641fb5dfa7ebf3e173617bd67bf0161"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:f65600506db985689e5b7cd8b838e646d4268a0c4e272e19d7db3577a8dd7ac4"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:41ef178766910ce62514d070e86686927cacd78e2f60f289ececb082adb50cdc"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:1d3af6767c6018e785962fdabb9c262f183194bea14cbc262e0ec8145b19e2af"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhscl/postgresql-12-rhel7@sha256:83a71b713287cd4516715107e7b45fa3af27046410b7b3a1d0f5ee9f3b7a43bf"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhscl/postgresql-12-rhel7@sha256:83a71b713287cd4516715107e7b45fa3af27046410b7b3a1d0f5ee9f3b7a43bf"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.9.2",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:34e1405c8094e8430e6f0d2eb910ce80ae88e86a0b981c62ad44d999b77cd318",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.9.2"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:c5f4c08e068b9721967cf7c7cbd9a9e93fb5e39b264dd13b653e99d8f3fa9e0e"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:6990b38fdd6a7dd51f6d16d241f6cf8337e751c29f244d102998095952050903"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:f79e6ab332752b652b789ee3ce632a63bbe1cdcf37014ea17f72def382fcf62e"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:34e1405c8094e8430e6f0d2eb910ce80ae88e86a0b981c62ad44d999b77cd318"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:c70c5e76dc3db559c722bea2a767eb7dcba1eda786e1ef3a45c4cf32e1aca9ee"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-c70c5e76dc3db559c722bea2a767eb7dcba1eda786e1ef3a45c4cf32e1aca9ee-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:c70c5e76dc3db559c722bea2a767eb7dcba1eda786e1ef3a45c4cf32e1aca9ee"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:d2ba4287ba5a60be0957247ff008b203d2c45648b96a276e678a5d954e9cec84"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:eff9f8edf28ccbadcacab2022fff9e6bc93926af97521b49e3968eaf7b6fda65"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:672faa7de5e44ae2e4c70f2d3a027625ed26e31ac0588595271c788650699293"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:f65600506db985689e5b7cd8b838e646d4268a0c4e272e19d7db3577a8dd7ac4"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:ea1764e583730f0443a954ef47b3c4c4bc5313d7665d2dd1287bf85e279feffe"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:dcd5ebe14dbb4c0ddee6c360981fa80fa8cf1686e0044c432e7bd09da49652da"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhscl/postgresql-12-rhel7@sha256:4fec529129cfb50ccad4411d773b570f40cd66b5c3adf543e4c93d96859b7e4d"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhscl/postgresql-12-rhel7@sha256:4fec529129cfb50ccad4411d773b570f40cd66b5c3adf543e4c93d96859b7e4d"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "fuse-online.v7.9.3",
+        "package": "fuse-online",
+        "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:31258400bb37f4b8837ef294820f8a728ae83f8031d4e01ff0392690a315a30f",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1alpha1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta1"
+                }
+            },
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "syndesis.io",
+                    "kind": "Syndesis",
+                    "version": "v1beta2"
+                }
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "fuse-online",
+                    "version": "7.9.3"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "amq",
+                "image": "registry.redhat.io/amq7/amq-broker-rhel8@sha256:75d5772c792a7c795281acec3d59e90021c109e9d7d1110868be0b882768aefb"
+            },
+            {
+                "name": "s2i",
+                "image": "registry.redhat.io/fuse7/fuse-online-builder-rhel8@sha256:c668fe1f5d25baddf627acd79df4c8d2ab8b05309d3d41784ddc0a10dd5f34ad"
+            },
+            {
+                "name": "meta",
+                "image": "registry.redhat.io/fuse7/fuse-online-meta-rhel8@sha256:d6f0c804c179fa559d3baed2e2d106c916a0439dc2215c4d34b878bc2e9bc281"
+            },
+            {
+                "name": "",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator-bundle@sha256:31258400bb37f4b8837ef294820f8a728ae83f8031d4e01ff0392690a315a30f"
+            },
+            {
+                "name": "syndesis-operator",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:c70c5e76dc3db559c722bea2a767eb7dcba1eda786e1ef3a45c4cf32e1aca9ee"
+            },
+            {
+                "name": "fuse-online-rhel8-operator-c70c5e76dc3db559c722bea2a767eb7dcba1eda786e1ef3a45c4cf32e1aca9ee-annotation",
+                "image": "registry.redhat.io/fuse7/fuse-online-rhel8-operator@sha256:c70c5e76dc3db559c722bea2a767eb7dcba1eda786e1ef3a45c4cf32e1aca9ee"
+            },
+            {
+                "name": "server",
+                "image": "registry.redhat.io/fuse7/fuse-online-server-rhel8@sha256:d6df09b15599e776b49e1d46aa01728fd02d5629cee65e77dc277c0166554e0a"
+            },
+            {
+                "name": "ui",
+                "image": "registry.redhat.io/fuse7/fuse-online-ui-rhel8@sha256:eff9f8edf28ccbadcacab2022fff9e6bc93926af97521b49e3968eaf7b6fda65"
+            },
+            {
+                "name": "upgrade",
+                "image": "registry.redhat.io/fuse7/fuse-online-upgrade-rhel8@sha256:60d5cf00411b03af3f1149a2bb3aeeb196c063d19625f876a094ae6baf46b54b"
+            },
+            {
+                "name": "psql_exporter",
+                "image": "registry.redhat.io/fuse7/fuse-postgres-exporter-rhel8@sha256:f65600506db985689e5b7cd8b838e646d4268a0c4e272e19d7db3577a8dd7ac4"
+            },
+            {
+                "name": "oauth",
+                "image": "registry.redhat.io/openshift4/ose-oauth-proxy@sha256:bafd85b0fd1256b8a60a2bb368a7e68f5dbad72718e5059a65660e01a425d8e2"
+            },
+            {
+                "name": "prometheus",
+                "image": "registry.redhat.io/openshift4/ose-prometheus@sha256:13e9ea359cbcd3e0e94a6589b86b708dc84197f152701fd4092fffa234d11b58"
+            },
+            {
+                "name": "todo",
+                "image": "registry.redhat.io/rhel8/php-72@sha256:48a5e695139a2ee45ee562960324b2e6875ad2689c7f102da7128936153adfd4"
+            },
+            {
+                "name": "database",
+                "image": "registry.redhat.io/rhscl/postgresql-12-rhel7@sha256:c3e95e808eecba8ac57632452d3553509131ca783f62c68754a582cf5c55efab"
+            },
+            {
+                "name": "postgres-version",
+                "image": "registry.redhat.io/rhscl/postgresql-12-rhel7@sha256:c3e95e808eecba8ac57632452d3553509131ca783f62c68754a582cf5c55efab"
+            }
+        ]
+    }

@@ -1,0 +1,63 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: openshift-secondary-scheduler-operator
+spec:
+  packageFBC: |
+    {
+        "schema": "olm.package",
+        "name": "openshift-secondary-scheduler-operator",
+        "defaultChannel": "stable"
+    }
+    {
+        "schema": "olm.channel",
+        "name": "stable",
+        "package": "openshift-secondary-scheduler-operator",
+        "entries": [
+            {
+                "name": "secondaryscheduleroperator.v1.0.1",
+                "skipRange": ">=1.0.0 <1.0.1"
+            }
+        ]
+    }
+    {
+        "schema": "olm.bundle",
+        "name": "secondaryscheduleroperator.v1.0.1",
+        "package": "openshift-secondary-scheduler-operator",
+        "image": "registry.redhat.io/openshift-secondary-scheduler-operator/secondary-scheduler-operator-bundle@sha256:fe7c1e7d3e7856203c58dd3e789ac0e1d7957093ebacea00331f42030caaf122",
+        "properties": [
+            {
+                "type": "olm.gvk",
+                "value": {
+                    "group": "operator.openshift.io",
+                    "kind": "SecondaryScheduler",
+                    "version": "v1"
+                }
+            },
+            {
+                "type": "olm.maxOpenShiftVersion",
+                "value": "4.11"
+            },
+            {
+                "type": "olm.package",
+                "value": {
+                    "packageName": "openshift-secondary-scheduler-operator",
+                    "version": "1.0.1"
+                }
+            }
+        ],
+        "relatedImages": [
+            {
+                "name": "",
+                "image": "registry.redhat.io/openshift-secondary-scheduler-operator/secondary-scheduler-operator-bundle@sha256:fe7c1e7d3e7856203c58dd3e789ac0e1d7957093ebacea00331f42030caaf122"
+            },
+            {
+                "name": "secondary-scheduler-operator-rhel8-dc1fbcd07505646a2ed0bb900def7536c23d7af7ab9e02fce469a5372ff2cde5-annotation",
+                "image": "registry.redhat.io/openshift-secondary-scheduler-operator/secondary-scheduler-operator-rhel8@sha256:dc1fbcd07505646a2ed0bb900def7536c23d7af7ab9e02fce469a5372ff2cde5"
+            },
+            {
+                "name": "secondary-scheduler-operator",
+                "image": "registry.redhat.io/openshift-secondary-scheduler-operator/secondary-scheduler-operator-rhel8@sha256:dc1fbcd07505646a2ed0bb900def7536c23d7af7ab9e02fce469a5372ff2cde5"
+            }
+        ]
+    }

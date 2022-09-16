@@ -1,0 +1,13 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: nginx-stable
+spec:
+  install: true
+  version: 1.7.9
+  removalPolicy: cascade
+  bundles:
+    - version: 1.14.2
+      repo: https://github.com/perdasilva/pkgr24-examples
+    - version: 1.7.9
+      repo: https://github.com/perdasilva/pkgr24-examples

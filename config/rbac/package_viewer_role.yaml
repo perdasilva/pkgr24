@@ -1,0 +1,20 @@
+# permissions for end users to view packages.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: package-viewer-role
+rules:
+- apiGroups:
+  - pkgr24.io.pkgr24.io
+  resources:
+  - packages
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - pkgr24.io.pkgr24.io
+  resources:
+  - packages/status
+  verbs:
+  - get

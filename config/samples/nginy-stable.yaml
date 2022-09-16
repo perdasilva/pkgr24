@@ -1,0 +1,10 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Package
+metadata:
+  name: nginy-stable
+spec:
+  install: false
+  removalPolicy: cascade
+  bundles:
+    - version: 1.3.8
+      repo: https://github.com/perdasilva/pkgr24-examples

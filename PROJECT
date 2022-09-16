@@ -1,0 +1,16 @@
+domain: pkgr24.io
+layout:
+- go.kubebuilder.io/v3
+projectName: packager24
+repo: github.com/perdasilva/pkgr24
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: pkgr24.io
+  group: pkgr24.io
+  kind: Package
+  path: github.com/perdasilva/pkgr24/api/v1alpha1
+  version: v1alpha1
+version: "3"

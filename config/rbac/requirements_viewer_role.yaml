@@ -1,0 +1,20 @@
+# permissions for end users to view requirements.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: requirements-viewer-role
+rules:
+- apiGroups:
+  - pkgr24.io.pkgr24.io
+  resources:
+  - requirements
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - pkgr24.io.pkgr24.io
+  resources:
+  - requirements/status
+  verbs:
+  - get

@@ -121,7 +121,7 @@ spec:
                 "type": "olm.gvk",
                 "value": {
                     "group": "compliance.openshift.io",
-                    "kind": "Variable",
+                    "kind": "*DeppyEntity",
                     "version": "v1alpha1"
                 }
             },
@@ -250,7 +250,7 @@ spec:
                 "type": "olm.gvk",
                 "value": {
                     "group": "compliance.openshift.io",
-                    "kind": "Variable",
+                    "kind": "*DeppyEntity",
                     "version": "v1alpha1"
                 }
             },

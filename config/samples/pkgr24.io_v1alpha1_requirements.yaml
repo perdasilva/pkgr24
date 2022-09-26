@@ -3,4 +3,26 @@ kind: Requirements
 metadata:
   name: requirements-sample
 spec:
-  # TODO(user): Add fields here
+  requirements:
+  - id: "devspaces"
+    meta: true
+    constraints:
+    - type: mandatory
+      mandatory: {}
+    - type: dependency
+      dependency:
+        selector:
+          expression: 'Entity.Properties["olm.package"][0] == "devspaces" && InSemverRange(Entity.Properties["olm.version"][0], ">= 3.0.0")'
+        comparator:
+          expression: 'EntityOne.Properties["olm.package"][0] != EntityTwo.Properties["olm.package"][0] ? EntityOne.Properties["olm.package"][0] < EntityTwo.Properties["olm.package"][0] ? -1 : 1 : EntityOne.Properties["olm.channel"][0] == EntityTwo.Properties["olm.channel"][0] ? -1*SemverCompare(EntityOne.Properties["olm.version"][0], EntityTwo.Properties["olm.version"][0]) : EntityOne.Properties["olm.channel"][0] == EntityOne.Properties["olm.defaultChannel"][0] ? -1 : EntityTwo.Properties["olm.channel"][0] == EntityTwo.Properties["olm.defaultChannel"][0] ? 1 : EntityOne.Properties["olm.channel"][0] < EntityTwo.Properties["olm.channel"][0] ? -1 : 1'
+  - id: "odf-operator"
+    meta: true
+    constraints:
+      - type: mandatory
+        mandatory: { }
+      - type: dependency
+        dependency:
+          selector:
+            expression: 'Entity.Properties["olm.package"][0] == "odf-operator" && Entity.Properties["olm.channel"][0] == "stable-4.11"'
+          comparator:
+            expression: 'EntityOne.Properties["olm.package"][0] != EntityTwo.Properties["olm.package"][0] ? EntityOne.Properties["olm.package"][0] < EntityTwo.Properties["olm.package"][0] ? -1 : 1 : EntityOne.Properties["olm.channel"][0] == EntityTwo.Properties["olm.channel"][0] ? -1*SemverCompare(EntityOne.Properties["olm.version"][0], EntityTwo.Properties["olm.version"][0]) : EntityOne.Properties["olm.channel"][0] == EntityOne.Properties["olm.defaultChannel"][0] ? -1 : EntityTwo.Properties["olm.channel"][0] == EntityTwo.Properties["olm.defaultChannel"][0] ? 1 : EntityOne.Properties["olm.channel"][0] < EntityTwo.Properties["olm.channel"][0] ? -1 : 1'

@@ -22,6 +22,7 @@ limitations under the License.
 package v1alpha1
 
 import (
+	"github.com/perdasilva/pkgr24/pkg/deppy/solver"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -178,8 +179,10 @@ func (in *RequirementsSpec) DeepCopyInto(out *RequirementsSpec) {
 	*out = *in
 	if in.Requirements != nil {
 		in, out := &in.Requirements, &out.Requirements
-		*out = make([]string, len(*in))
-		copy(*out, *in)
+		*out = make([]solver.DeppyEntity, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
 	}
 }
 

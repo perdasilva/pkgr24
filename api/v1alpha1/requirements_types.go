@@ -17,6 +17,7 @@ limitations under the License.
 package v1alpha1
 
 import (
+	"github.com/perdasilva/pkgr24/pkg/deppy/solver"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -29,7 +30,7 @@ type RequirementsSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Requirements. Edit requirements_types.go to remove/update
-	Requirements []string `json:"requirements,omitempty"`
+	Requirements []solver.DeppyEntity `json:"requirements,omitempty"`
 }
 
 // RequirementsStatus defines the observed state of Requirements

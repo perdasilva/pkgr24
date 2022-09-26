@@ -42,7 +42,104 @@ spec:
                 description: Foo is an example field of Requirements. Edit requirements_types.go
                   to remove/update
                 items:
-                  type: string
+                  properties:
+                    constraints:
+                      items:
+                        properties:
+                          atMost:
+                            properties:
+                              comparator:
+                                properties:
+                                  expression:
+                                    type: string
+                                required:
+                                - expression
+                                type: object
+                              groupBy:
+                                properties:
+                                  expression:
+                                    type: string
+                                required:
+                                - expression
+                                type: object
+                              ids:
+                                description: 'HACK: need to generalize this later'
+                                items:
+                                  description: Identifier values uniquely identify
+                                    particular Variables within the input to a single
+                                    call to Solve.
+                                  type: string
+                                type: array
+                              limit:
+                                type: string
+                              selector:
+                                properties:
+                                  expression:
+                                    type: string
+                                required:
+                                - expression
+                                type: object
+                            required:
+                            - limit
+                            - selector
+                            type: object
+                          conflicts:
+                            properties:
+                              id:
+                                type: string
+                            required:
+                            - id
+                            type: object
+                          dependency:
+                            properties:
+                              comparator:
+                                properties:
+                                  expression:
+                                    type: string
+                                required:
+                                - expression
+                                type: object
+                              ids:
+                                description: 'HACK: need to generalize this later'
+                                items:
+                                  description: Identifier values uniquely identify
+                                    particular Variables within the input to a single
+                                    call to Solve.
+                                  type: string
+                                type: array
+                              selector:
+                                properties:
+                                  expression:
+                                    type: string
+                                required:
+                                - expression
+                                type: object
+                            required:
+                            - selector
+                            type: object
+                          mandatory:
+                            type: object
+                          prohibited:
+                            type: object
+                          type:
+                            type: string
+                        required:
+                        - type
+                        type: object
+                      type: array
+                    id:
+                      type: string
+                    meta:
+                      type: boolean
+                    properties:
+                      additionalProperties:
+                        items:
+                          type: string
+                        type: array
+                      type: object
+                  required:
+                  - id
+                  type: object
                 type: array
             type: object
           status:

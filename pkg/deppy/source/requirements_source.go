@@ -8,19 +8,23 @@ import (
 )
 
 type RequirementsDeppySource struct {
-	entities []*solver.DeppyEntity
-}
-
-func (r RequirementsDeppySource) GetEntities(_ context.Context) ([]*solver.DeppyEntity, error) {
-	return r.entities, nil
+	constraints []solver.DeppyConstraint
 }
 
 func NewRequirementsDeppySource(requirements *pkgr24iov1alpha1.Requirements) solver.DeppySource {
-	entities := make([]*solver.DeppyEntity, len(requirements.Spec.Requirements))
-	for i, _ := range requirements.Spec.Requirements {
-		entities[i] = &requirements.Spec.Requirements[i]
+	constraints := make([]solver.DeppyConstraint, len(requirements.Spec.Constraints))
+	for i, _ := range requirements.Spec.Constraints {
+		constraints[i] = requirements.Spec.Constraints[i]
 	}
 	return &RequirementsDeppySource{
-		entities: entities,
+		constraints: constraints,
 	}
+}
+
+func (r RequirementsDeppySource) GetConstraints(ctx context.Context) ([]solver.DeppyConstraint, error) {
+	return r.constraints, nil
+}
+
+func (r RequirementsDeppySource) GetEntities(_ context.Context) ([]*solver.DeppyEntity, error) {
+	return nil, nil
 }

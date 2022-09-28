@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-var BenchmarkInput = func() []*DeppyEntity {
+var BenchmarkInput, BenchmarkConstraints = func() ([]*DeppyEntity, []DeppyConstraint) {
 	const (
 		length      = 256
 		seed        = 9
@@ -22,7 +22,7 @@ var BenchmarkInput = func() []*DeppyEntity {
 		return DeppyId(strconv.Itoa(i))
 	}
 
-	entity := func(i int) *DeppyEntity {
+	input := func(i int) (*DeppyEntity, []DeppyConstraint) {
 		var c []DeppyConstraint
 		if rand.Float64() < pMandatory {
 			constr := DeppyConstraint{
@@ -33,13 +33,13 @@ var BenchmarkInput = func() []*DeppyEntity {
 		}
 		if rand.Float64() < pDependency {
 			n := rand.Intn(nDependency-1) + 1
-			var d []Identifier
+			var d []DeppyId
 			for x := 0; x < n; x++ {
 				y := i
 				for y == i {
 					y = rand.Intn(length)
 				}
-				d = append(d, Identifier(id(y)))
+				d = append(d, id(y))
 			}
 			constr := DeppyConstraint{
 				Type: ConstraintTypeDependency,
@@ -58,30 +58,32 @@ var BenchmarkInput = func() []*DeppyEntity {
 				}
 				constr := DeppyConstraint{
 					Type: ConstraintTypeConflict,
-					Conflicts: &ConflictConstraint{
-						Id: id(y),
+					Conflict: &ConflictConstraint{
+						Ids: []DeppyId{id(y)},
 					},
 				}
 				c = append(c, constr)
 			}
 		}
 		return &DeppyEntity{
-			Identifier:  id(i),
-			Constraints: c,
-		}
+			Identifier: id(i),
+		}, c
 	}
 
 	rand.Seed(seed)
 	result := make([]*DeppyEntity, length)
+	constraints := make([]DeppyConstraint, 0)
 	for i := range result {
-		result[i] = entity(i)
+		entity, constrs := input(i)
+		result[i] = entity
+		constraints = append(constraints, constrs...)
 	}
-	return result
+	return result, constraints
 }()
 
 func BenchmarkSolve(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		s, err := New(WithInput(BenchmarkInput))
+		s, err := New(WithInput(BenchmarkInput, BenchmarkConstraints))
 		if err != nil {
 			b.Fatalf("failed to initialize solver: %s", err)
 		}
@@ -91,7 +93,7 @@ func BenchmarkSolve(b *testing.B) {
 
 func BenchmarkNewInput(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_, err := New(WithInput(BenchmarkInput))
+		_, err := New(WithInput(BenchmarkInput, BenchmarkConstraints))
 		if err != nil {
 			b.Fatalf("failed to initialize solver: %s", err)
 		}

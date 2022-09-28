@@ -29,8 +29,8 @@ type RequirementsSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Requirements. Edit requirements_types.go to remove/update
-	Requirements []solver.DeppyEntity `json:"requirements,omitempty"`
+	// Foo is an example field of Constraints. Edit requirements_types.go to remove/update
+	Constraints []solver.DeppyConstraint `json:"constraints,omitempty"`
 }
 
 // RequirementsStatus defines the observed state of Requirements

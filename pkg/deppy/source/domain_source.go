@@ -7,43 +7,49 @@ import (
 )
 
 type DomainDeppySource struct {
-	domainEntities []*solver.DeppyEntity
+	domainEntities    []*solver.DeppyEntity
+	domainConstraints []solver.DeppyConstraint
+}
+
+func (d DomainDeppySource) GetEntities(_ context.Context) ([]*solver.DeppyEntity, error) {
+	return d.domainEntities, nil
+}
+
+func (d DomainDeppySource) GetConstraints(_ context.Context) ([]solver.DeppyConstraint, error) {
+	return d.domainConstraints, nil
 }
 
 func NewDomainDeppySource() solver.DeppySource {
 	return &DomainDeppySource{
-		domainEntities: []*solver.DeppyEntity{
+		domainEntities: nil,
+		domainConstraints: []solver.DeppyConstraint{
 			{
-				Identifier: "at most one for bundle per gvk",
-				Constraints: []solver.DeppyConstraint{
-					{
+				Type: solver.ConstraintTypeGroupByBuilder,
+				GroupBy: &solver.GroupByConstraintBuilder{
+					GroupBy: solver.GroupByExpression{
+						Expression: `Entity.Properties["olm.gvk"]`,
+					},
+					Constraint: solver.DeppyConstraint{
 						Type: solver.ConstraintTypeAtMost,
 						AtMost: &solver.AtMostConstraint{
 							N: "1",
-							GroupBy: &solver.GroupByExpression{
-								Expression: `Entity.Properties["olm.gvk"]`,
-							},
 						},
 					},
 				},
 			}, {
-				Identifier: "at most one for bundle per package",
-				Constraints: []solver.DeppyConstraint{
-					{
+				Type: solver.ConstraintTypeGroupByBuilder,
+				GroupBy: &solver.GroupByConstraintBuilder{
+					GroupBy: solver.GroupByExpression{
+						Expression: `Entity.Properties["olm.package"]`,
+					},
+					Constraint: solver.DeppyConstraint{
 						Type: solver.ConstraintTypeAtMost,
 						AtMost: &solver.AtMostConstraint{
 							N: "1",
-							GroupBy: &solver.GroupByExpression{
-								Expression: `Entity.Properties["olm.package"]`,
-							},
 						},
 					},
 				},
 			},
 		},
 	}
-}
-
-func (s *DomainDeppySource) GetEntities(_ context.Context) ([]*solver.DeppyEntity, error) {
-	return s.domainEntities, nil
 }

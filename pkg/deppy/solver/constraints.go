@@ -115,7 +115,7 @@ func (constraint *dependency) Subject() Identifier {
 
 // Dependency returns a Constraint that will only permit solutions
 // containing a given *DeppyEntity on the condition that at least one
-// of the Variables identified by the given Identifiers also
+// of the Entities identified by the given Identifiers also
 // appears in the solution. Identifiers appearing earlier in the
 // argument list have higher preference than those appearing later.
 func Dependency(subject Identifier, dependencies ...Identifier) Constraint {
@@ -194,7 +194,7 @@ func (constraint *atMost) Subject() Identifier {
 }
 
 // AtMost returns a Constraint that forbids solutions that contain
-// more than n of the Variables identified by the given
+// more than n of the Entities identified by the given
 // Identifiers.
 func AtMost(n int, ids ...Identifier) Constraint {
 	return &atMost{

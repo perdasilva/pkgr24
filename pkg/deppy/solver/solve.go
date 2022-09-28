@@ -48,8 +48,8 @@ const (
 	unknown       = 0
 )
 
-// Solve takes a slice containing all Variables and returns a slice
-// containing only those Variables that were selected for
+// Solve takes a slice containing all Entities and returns a slice
+// containing only those Entities that were selected for
 // installation. If no solution is possible, or if the provided
 // Context times out or is cancelled, an error is returned.
 func (s *solver) Solve(ctx context.Context) (result []*DeppyEntity, err error) {
@@ -131,10 +131,10 @@ func New(options ...Option) (Solver, error) {
 
 type Option func(s *solver) error
 
-func WithInput(input []*DeppyEntity) Option {
+func WithInput(input []*DeppyEntity, constraints []DeppyConstraint) Option {
 	return func(s *solver) error {
 		var err error
-		s.litMap, err = NewLitMapping(input)
+		s.litMap, err = NewLitMapping(input, constraints)
 		return err
 	}
 }
@@ -150,7 +150,7 @@ var defaults = []Option{
 	func(s *solver) error {
 		if s.litMap == nil {
 			var err error
-			s.litMap, err = NewLitMapping(nil)
+			s.litMap, err = NewLitMapping(nil, nil)
 			return err
 		}
 		return nil

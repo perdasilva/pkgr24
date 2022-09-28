@@ -35,10 +35,10 @@ type LitMapping struct {
 }
 
 // NewLitMapping returns a new LitMapping with its state initialized based on
-// the provided slice of Variables. This includes construction of
-// the translation tables between Variables/Constraints and the
+// the provided slice of Entities. This includes construction of
+// the translation tables between Entities/Constraints and the
 // inputs to the underlying solver.
-func NewLitMapping(universe []*DeppyEntity) (*LitMapping, error) {
+func NewLitMapping(universe []*DeppyEntity, constraints []DeppyConstraint) (*LitMapping, error) {
 	d := LitMapping{
 		inorder:                universe,
 		variables:              make(map[z.Lit]*DeppyEntity, len(universe)),
@@ -58,13 +58,14 @@ func NewLitMapping(universe []*DeppyEntity) (*LitMapping, error) {
 		d.variables[im] = entity
 	}
 
-	for _, entity := range universe {
-		constrs, err := entity.ExportConstraints(universe)
+	for _, constraint := range constraints {
+		solverConstraints, err := constraint.ToSolverConstraints(universe)
 		if err != nil {
 			return nil, err
 		}
-		for _, constraint := range constrs {
-			m := constraint.Apply(d.c, &d)
+
+		for _, solverConstraint := range solverConstraints {
+			m := solverConstraint.Apply(d.c, &d)
 			if m == z.LitNull {
 				// This constraint doesn't have a
 				// useful representation in the SAT
@@ -72,10 +73,9 @@ func NewLitMapping(universe []*DeppyEntity) (*LitMapping, error) {
 				continue
 			}
 
-			d.constraints[m] = constraint
-
-			litForVar := d.lits[Identifier(entity.Identifier)]
-			d.constraintsForVariable[litForVar] = append(d.constraintsForVariable[litForVar], constraint)
+			d.constraints[m] = solverConstraint
+			litForVar := d.lits[solverConstraint.Subject()]
+			d.constraintsForVariable[litForVar] = append(d.constraintsForVariable[litForVar], solverConstraint)
 		}
 	}
 
@@ -102,9 +102,8 @@ func (d *LitMapping) VariableOf(m z.Lit) *DeppyEntity {
 	}
 	d.errs = append(d.errs, fmt.Errorf("no entity corresponding to %s", m))
 	return &DeppyEntity{
-		Identifier:  "",
-		Properties:  nil,
-		Constraints: nil,
+		Identifier: "",
+		Properties: nil,
 	}
 }
 

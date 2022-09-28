@@ -39,7 +39,7 @@ const (
 	// labelRequired   = "olm.label.required"
 )
 
-// RequirementsReconciler reconciles a Requirements object
+// RequirementsReconciler reconciles a Constraints object
 type RequirementsReconciler struct {
 	client.Client
 	Scheme *runtime.Scheme
@@ -52,7 +52,7 @@ type RequirementsReconciler struct {
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
 // TODO(user): Modify the Reconcile function to compare the state specified by
-// the Requirements object against the actual cluster state, and then
+// the Constraints object against the actual cluster state, and then
 // perform operations to make the cluster state reflect the state specified by
 // the user.
 //
@@ -92,9 +92,7 @@ func (r *RequirementsReconciler) Reconcile(ctx context.Context, req ctrl.Request
 	} else {
 		selectedBundles := make([]string, 0)
 		for _, b := range solution {
-			if !b.Meta {
-				selectedBundles = append(selectedBundles, fmt.Sprintf("%s", b.Identifier))
-			}
+			selectedBundles = append(selectedBundles, fmt.Sprintf("%s", b.Identifier))
 		}
 		requirementsCopy.Status.Solution = selectedBundles
 		requirementsCopy.Status.Message = "resolution successful"
@@ -120,18 +118,23 @@ func (r *RequirementsReconciler) SetupWithManager(mgr ctrl.Manager) error {
 func solveWithDeppy(ctx context.Context, srcs []solver.DeppySource) ([]*solver.DeppyEntity, error) {
 	// collect universe and great high level constraints
 	universe := make([]*solver.DeppyEntity, 0)
+	constraintUniverse := make([]solver.DeppyConstraint, 0)
 
 	for _, src := range srcs {
 		entities, err := src.GetEntities(ctx)
 		if err != nil {
 			return nil, err
 		}
-		for _, entity := range entities {
-			universe = append(universe, entity)
+		universe = append(universe, entities...)
+
+		constrs, err := src.GetConstraints(ctx)
+		if err != nil {
+			return nil, err
 		}
+		constraintUniverse = append(constraintUniverse, constrs...)
 	}
 
-	depSolver, err := solver.New(solver.WithInput(universe))
+	depSolver, err := solver.New(solver.WithInput(universe, constraintUniverse))
 	if err != nil {
 		return nil, err
 	}

@@ -1,6 +1,6 @@
 package solver
 
-// Identifier values uniquely identify particular Variables within
+// Identifier values uniquely identify particular Entities within
 // the input to a single call to Solve.
 type Identifier string
 
@@ -18,7 +18,7 @@ func IdentifierFromString(s string) Identifier {
 // understood by this package.
 type Variable interface {
 	// Identifier returns the Identifier that uniquely identifies
-	// this *DeppyEntity among all other Variables in a given
+	// this *DeppyEntity among all other Entities in a given
 	// problem.
 	Identifier() Identifier
 	// Constraints returns the set of constraints that apply to

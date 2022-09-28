@@ -31,7 +31,8 @@ func (c *TestScopeCounter) Untest() (result int) {
 func TestSearch(t *testing.T) {
 	type tc struct {
 		Name          string
-		Variables     []*DeppyEntity
+		Entities      []*DeppyEntity
+		Constraints   []DeppyConstraint
 		TestReturns   []int
 		UntestReturns []int
 		Result        int
@@ -41,10 +42,15 @@ func TestSearch(t *testing.T) {
 	for _, tt := range []tc{
 		{
 			Name: "children popped from back of deque when guess popped",
-			Variables: []*DeppyEntity{
-				entity("a", mandatoryConstraint(), dependencyConstraint("c")),
-				entity("b", mandatoryConstraint()),
+			Entities: []*DeppyEntity{
+				entity("a"),
+				entity("b"),
 				entity("c"),
+			},
+			Constraints: []DeppyConstraint{
+				mandatoryConstraint("a"),
+				dependencyConstraint("a", "c"),
+				mandatoryConstraint("b"),
 			},
 			TestReturns:   []int{0, -1},
 			UntestReturns: []int{-1, -1},
@@ -53,11 +59,17 @@ func TestSearch(t *testing.T) {
 		},
 		{
 			Name: "candidates exhausted",
-			Variables: []*DeppyEntity{
-				entity("a", mandatoryConstraint(), dependencyConstraint("x")),
-				entity("b", mandatoryConstraint(), dependencyConstraint("y")),
+			Entities: []*DeppyEntity{
+				entity("a"),
+				entity("b"),
 				entity("x"),
 				entity("y"),
+			},
+			Constraints: []DeppyConstraint{
+				mandatoryConstraint("a"),
+				dependencyConstraint("a", "x"),
+				mandatoryConstraint("b"),
+				dependencyConstraint("b", "y"),
 			},
 			TestReturns:   []int{0, 0, -1, 1},
 			UntestReturns: []int{0},
@@ -79,7 +91,7 @@ func TestSearch(t *testing.T) {
 			var depth int
 			counter := &TestScopeCounter{depth: &depth, S: &s}
 
-			lits, err := NewLitMapping(tt.Variables)
+			lits, err := NewLitMapping(tt.Entities, tt.Constraints)
 			assert.NoError(err)
 			h := search{
 				s:      counter,

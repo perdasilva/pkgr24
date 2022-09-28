@@ -28,7 +28,7 @@ func (t LoggingTracer) Trace(p SearchPosition) {
 	for _, i := range p.Variables() {
 		fmt.Fprintf(t.Writer, "- %s\n", i.Identifier)
 	}
-	fmt.Fprintf(t.Writer, "Conflicts:\n")
+	fmt.Fprintf(t.Writer, "Conflict:\n")
 	for _, a := range p.Conflicts() {
 		fmt.Fprintf(t.Writer, "- %s\n", a)
 	}

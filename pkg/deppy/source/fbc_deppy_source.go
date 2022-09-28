@@ -22,16 +22,22 @@ var SemverComparator = &solver.SortExpression{
 }
 
 type RegistryQuerierDeppySource struct {
-	entities []*solver.DeppyEntity
+	entities    []*solver.DeppyEntity
+	constraints []solver.DeppyConstraint
 }
 
-func NewRegistryQuerierDeppySource(ctx context.Context, registryQuerier *registry.Querier) (*RegistryQuerierDeppySource, error) {
+func (s *RegistryQuerierDeppySource) GetConstraints(ctx context.Context) ([]solver.DeppyConstraint, error) {
+	return s.constraints, nil
+}
+
+func NewRegistryQuerierDeppySource(ctx context.Context, registryQuerier *registry.Querier) (solver.DeppySource, error) {
 	bundles, err := registryQuerier.ListBundles(ctx)
 	if err != nil {
 		return nil, err
 	}
 
 	pkgDefaultChannel := map[string]string{}
+	sourceConstraints := make([]solver.DeppyConstraint, 0)
 	var entities = make([]*solver.DeppyEntity, len(bundles))
 	for i, bundle := range bundles {
 		if _, ok := pkgDefaultChannel[bundle.PackageName]; !ok {
@@ -41,15 +47,17 @@ func NewRegistryQuerierDeppySource(ctx context.Context, registryQuerier *registr
 			}
 			pkgDefaultChannel[bundle.PackageName] = pkg.DefaultChannelName
 		}
-		deppyEntity, err := bundleToDeppyEntity(bundle, pkgDefaultChannel[bundle.PackageName])
+		deppyEntity, constraints, err := bundleToDeppyEntity(bundle, pkgDefaultChannel[bundle.PackageName])
 		if err != nil {
 			return nil, err
 		}
 		entities[i] = deppyEntity
+		sourceConstraints = append(sourceConstraints, constraints...)
 	}
 
 	return &RegistryQuerierDeppySource{
-		entities: entities,
+		entities:    entities,
+		constraints: sourceConstraints,
 	}, nil
 }
 
@@ -57,7 +65,8 @@ func (s *RegistryQuerierDeppySource) GetEntities(_ context.Context) ([]*solver.D
 	return s.entities, nil
 }
 
-func bundleToDeppyEntity(apiBundle *api.Bundle, defaultChannel string) (*solver.DeppyEntity, error) {
+func bundleToDeppyEntity(apiBundle *api.Bundle, defaultChannel string) (*solver.DeppyEntity, []solver.DeppyConstraint, error) {
+	entityId := solver.DeppyId(fmt.Sprintf("%s:%s:%s", apiBundle.ChannelName, apiBundle.PackageName, apiBundle.Version))
 	properties := map[string][]string{}
 	for _, prop := range apiBundle.Properties {
 		switch prop.Type {
@@ -68,7 +77,7 @@ func bundleToDeppyEntity(apiBundle *api.Bundle, defaultChannel string) (*solver.
 				Version     string `json:"version"`
 			}{}
 			if err := json.Unmarshal([]byte(prop.Value), pkg); err != nil {
-				return nil, err
+				return nil, nil, err
 			}
 			properties[prop.Type] = []string{pkg.PackageName}
 			properties["olm.version"] = []string{pkg.Version}
@@ -89,13 +98,19 @@ func bundleToDeppyEntity(apiBundle *api.Bundle, defaultChannel string) (*solver.
 				Kind    string `json:"kind"`
 			}{}
 			if err := json.Unmarshal([]byte(dependency.Value), gvk); err != nil {
-				return nil, err
+				return nil, nil, err
 			}
 			deppyConstraints = append(deppyConstraints, solver.DeppyConstraint{
-				Type: solver.ConstraintTypeDependency,
-				Dependency: &solver.DependencyConstraint{
-					Selector:   GVKSelector(gvk.Group, gvk.Version, gvk.Kind),
-					Comparator: SemverComparator,
+				Type: solver.ConstraintTypeFilterBuilder,
+				Filter: &solver.FilterConstraintBuilder{
+					FilterExpression: *GVKSelector(gvk.Group, gvk.Version, gvk.Kind),
+					SortExpression:   SemverComparator,
+					Constraint: solver.DeppyConstraint{
+						Type: solver.ConstraintTypeDependency,
+						Dependency: &solver.DependencyConstraint{
+							Subject: entityId,
+						},
+					},
 				},
 			})
 		case property.TypePackage:
@@ -104,25 +119,30 @@ func bundleToDeppyEntity(apiBundle *api.Bundle, defaultChannel string) (*solver.
 				VersionRange string `json:"version"`
 			}{}
 			if err := json.Unmarshal([]byte(dependency.Value), pkgDep); err != nil {
-				return nil, err
+				return nil, nil, err
 			}
 			deppyConstraints = append(deppyConstraints, solver.DeppyConstraint{
-				Type: solver.ConstraintTypeDependency,
-				Dependency: &solver.DependencyConstraint{
-					Selector:   PkgSelector(pkgDep.PackageName, pkgDep.VersionRange),
-					Comparator: SemverComparator,
+				Type: solver.ConstraintTypeFilterBuilder,
+				Filter: &solver.FilterConstraintBuilder{
+					FilterExpression: *PkgSelector(pkgDep.PackageName, pkgDep.VersionRange),
+					SortExpression:   SemverComparator,
+					Constraint: solver.DeppyConstraint{
+						Type: solver.ConstraintTypeDependency,
+						Dependency: &solver.DependencyConstraint{
+							Subject: entityId,
+						},
+					},
 				},
 			})
 		default:
-			return nil, fmt.Errorf("unknown dependency type (%s)", dependency.Type)
+			return nil, nil, fmt.Errorf("unknown dependency type (%s)", dependency.Type)
 		}
 	}
 
 	return &solver.DeppyEntity{
-		Identifier:  solver.DeppyId(fmt.Sprintf("%s:%s:%s", apiBundle.ChannelName, apiBundle.PackageName, apiBundle.Version)),
-		Properties:  properties,
-		Constraints: deppyConstraints,
-	}, nil
+		Identifier: entityId,
+		Properties: properties,
+	}, deppyConstraints, nil
 }
 
 func GVKSelector(group string, version string, kind string) *solver.SelectorExpression {

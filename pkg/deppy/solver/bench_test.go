@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-var BenchmarkInput, BenchmarkConstraints = func() ([]*DeppyEntity, []DeppyConstraint) {
+var BenchmarkConstraints = func() []Constraint {
 	const (
 		length      = 256
 		seed        = 9
@@ -18,22 +18,19 @@ var BenchmarkInput, BenchmarkConstraints = func() ([]*DeppyEntity, []DeppyConstr
 		nConflict   = 3
 	)
 
-	id := func(i int) DeppyId {
-		return DeppyId(strconv.Itoa(i))
+	id := func(i int) Identifier {
+		return Identifier(strconv.Itoa(i))
 	}
 
-	input := func(i int) (*DeppyEntity, []DeppyConstraint) {
-		var c []DeppyConstraint
+	input := func(i int) []Constraint {
+		var c []Constraint
+		subject := id(i)
 		if rand.Float64() < pMandatory {
-			constr := DeppyConstraint{
-				Type:      ConstraintTypeMandatory,
-				Mandatory: &MandatoryConstraint{},
-			}
-			c = append(c, constr)
+			c = append(c, Mandatory(subject))
 		}
 		if rand.Float64() < pDependency {
 			n := rand.Intn(nDependency-1) + 1
-			var d []DeppyId
+			var d []Identifier
 			for x := 0; x < n; x++ {
 				y := i
 				for y == i {
@@ -41,13 +38,7 @@ var BenchmarkInput, BenchmarkConstraints = func() ([]*DeppyEntity, []DeppyConstr
 				}
 				d = append(d, id(y))
 			}
-			constr := DeppyConstraint{
-				Type: ConstraintTypeDependency,
-				Dependency: &DependencyConstraint{
-					Ids: d,
-				},
-			}
-			c = append(c, constr)
+			c = append(c, Dependency(subject, d...))
 		}
 		if rand.Float64() < pConflict {
 			n := rand.Intn(nConflict-1) + 1
@@ -56,34 +47,24 @@ var BenchmarkInput, BenchmarkConstraints = func() ([]*DeppyEntity, []DeppyConstr
 				for y == i {
 					y = rand.Intn(length)
 				}
-				constr := DeppyConstraint{
-					Type: ConstraintTypeConflict,
-					Conflict: &ConflictConstraint{
-						Ids: []DeppyId{id(y)},
-					},
-				}
-				c = append(c, constr)
+				c = append(c, Conflict(subject, id(y)))
 			}
 		}
-		return &DeppyEntity{
-			Identifier: id(i),
-		}, c
+		return c
 	}
 
 	rand.Seed(seed)
-	result := make([]*DeppyEntity, length)
-	constraints := make([]DeppyConstraint, 0)
-	for i := range result {
-		entity, constrs := input(i)
-		result[i] = entity
+	constraints := make([]Constraint, 0)
+	for i := 0; i < length; i++ {
+		constrs := input(i)
 		constraints = append(constraints, constrs...)
 	}
-	return result, constraints
+	return constraints
 }()
 
 func BenchmarkSolve(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		s, err := New(WithInput(BenchmarkInput, BenchmarkConstraints))
+		s, err := New(WithInput(BenchmarkConstraints))
 		if err != nil {
 			b.Fatalf("failed to initialize solver: %s", err)
 		}
@@ -93,7 +74,7 @@ func BenchmarkSolve(b *testing.B) {
 
 func BenchmarkNewInput(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_, err := New(WithInput(BenchmarkInput, BenchmarkConstraints))
+		_, err := New(WithInput(BenchmarkConstraints))
 		if err != nil {
 			b.Fatalf("failed to initialize solver: %s", err)
 		}

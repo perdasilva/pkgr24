@@ -161,8 +161,9 @@ func Conflict(subject Identifier, conlict Identifier) Constraint {
 }
 
 type atMost struct {
-	ids []Identifier
-	n   int
+	subject Identifier
+	ids     []Identifier
+	n       int
 }
 
 func (constraint *atMost) String() string {
@@ -196,10 +197,11 @@ func (constraint *atMost) Subject() Identifier {
 // AtMost returns a Constraint that forbids solutions that contain
 // more than n of the Entities identified by the given
 // Identifiers.
-func AtMost(n int, ids ...Identifier) Constraint {
+func AtMost(subject Identifier, n int, ids ...Identifier) Constraint {
 	return &atMost{
-		ids: ids,
-		n:   n,
+		subject: subject,
+		ids:     ids,
+		n:       n,
 	}
 }
 

@@ -31,8 +31,7 @@ func (c *TestScopeCounter) Untest() (result int) {
 func TestSearch(t *testing.T) {
 	type tc struct {
 		Name          string
-		Entities      []*DeppyEntity
-		Constraints   []DeppyConstraint
+		Constraints   []Constraint
 		TestReturns   []int
 		UntestReturns []int
 		Result        int
@@ -42,15 +41,10 @@ func TestSearch(t *testing.T) {
 	for _, tt := range []tc{
 		{
 			Name: "children popped from back of deque when guess popped",
-			Entities: []*DeppyEntity{
-				entity("a"),
-				entity("b"),
-				entity("c"),
-			},
-			Constraints: []DeppyConstraint{
-				mandatoryConstraint("a"),
-				dependencyConstraint("a", "c"),
-				mandatoryConstraint("b"),
+			Constraints: []Constraint{
+				Mandatory("a"),
+				Dependency("a", "c"),
+				Mandatory("b"),
 			},
 			TestReturns:   []int{0, -1},
 			UntestReturns: []int{-1, -1},
@@ -59,17 +53,11 @@ func TestSearch(t *testing.T) {
 		},
 		{
 			Name: "candidates exhausted",
-			Entities: []*DeppyEntity{
-				entity("a"),
-				entity("b"),
-				entity("x"),
-				entity("y"),
-			},
-			Constraints: []DeppyConstraint{
-				mandatoryConstraint("a"),
-				dependencyConstraint("a", "x"),
-				mandatoryConstraint("b"),
-				dependencyConstraint("b", "y"),
+			Constraints: []Constraint{
+				Mandatory("a"),
+				Dependency("a", "x"),
+				Mandatory("b"),
+				Dependency("b", "y"),
 			},
 			TestReturns:   []int{0, 0, -1, 1},
 			UntestReturns: []int{0},
@@ -91,7 +79,7 @@ func TestSearch(t *testing.T) {
 			var depth int
 			counter := &TestScopeCounter{depth: &depth, S: &s}
 
-			lits, err := NewLitMapping(tt.Entities, tt.Constraints)
+			lits, err := NewLitMapping(tt.Constraints)
 			assert.NoError(err)
 			h := search{
 				s:      counter,
@@ -109,9 +97,8 @@ func TestSearch(t *testing.T) {
 			assert.Equal(tt.Result, result)
 			var ids []Identifier
 			for _, m := range ms {
-				ids = append(ids, Identifier(lits.VariableOf(m).Identifier))
+				ids = append(ids, lits.IdentifierOf(m))
 			}
-
 			assert.Equal(tt.Assumptions, ids)
 			assert.Equal(0, depth)
 		})

@@ -32,7 +32,7 @@ func (e NotSatisfiable) Error() string {
 }
 
 type Solver interface {
-	Solve(context.Context) ([]*DeppyEntity, error)
+	Solve(context.Context) ([]Identifier, error)
 }
 
 type solver struct {
@@ -52,7 +52,7 @@ const (
 // containing only those Entities that were selected for
 // installation. If no solution is possible, or if the provided
 // Context times out or is cancelled, an error is returned.
-func (s *solver) Solve(ctx context.Context) (result []*DeppyEntity, err error) {
+func (s *solver) Solve(ctx context.Context) (result []Identifier, err error) {
 	defer func() {
 		// This likely indicates a bug, so discard whatever
 		// return values were produced.
@@ -106,7 +106,7 @@ func (s *solver) Solve(ctx context.Context) (result []*DeppyEntity, err error) {
 		for w := 0; w <= cs.N(); w++ {
 			s.g.Assume(cs.Leq(w))
 			if s.g.Solve() == satisfiable {
-				return s.litMap.Variables(s.g), nil
+				return s.litMap.Selection(s.g), nil
 			}
 		}
 		// Something is wrong if we can't find a model anymore
@@ -131,10 +131,10 @@ func New(options ...Option) (Solver, error) {
 
 type Option func(s *solver) error
 
-func WithInput(input []*DeppyEntity, constraints []DeppyConstraint) Option {
+func WithInput(constraints []Constraint) Option {
 	return func(s *solver) error {
 		var err error
-		s.litMap, err = NewLitMapping(input, constraints)
+		s.litMap, err = NewLitMapping(constraints)
 		return err
 	}
 }
@@ -150,7 +150,7 @@ var defaults = []Option{
 	func(s *solver) error {
 		if s.litMap == nil {
 			var err error
-			s.litMap, err = NewLitMapping(nil, nil)
+			s.litMap, err = NewLitMapping(nil)
 			return err
 		}
 		return nil

@@ -1,0 +1,28 @@
+apiVersion: pkgr24.io/v1alpha1
+kind: Requirements
+metadata:
+  name: requirements-sample-2
+spec:
+  constraints:
+  # global constraints
+    - pkgUniqueness()
+    - gvkUniqueness()
+
+  # require a package with dependencies
+    - requirePackage("odf-operator", "4.11.x", "stable-4.11")
+
+  # require a package from _any_ channel take latest 4.10 z-stream
+  #  - requirePackage("odf-operator", "4.10.x", "")
+
+  # everything still works after you mark things as installed
+  #  - installedPackage("ocs-operator", "4.10.5", "stable-4.10")
+  #  - installedPackage("odf-operator", "4.10.5", "stable-4.10")
+  #  - installedPackage("odf-csi-addons-operator", "4.10.5", "stable-4.10")
+
+  # upgrade graph
+  #  - requirePackage("mcg-operator", "4.10.x", "stable-4.10")
+    - installedPackage("mcg-operator", "4.10.3", "stable-4.10")
+
+  # runtime constraints
+  #  - requirePackage("amq-online", "1.5.0", "stable")
+  #  - maxOpenShiftVersion("4.11.0")

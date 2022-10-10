@@ -20,6 +20,8 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/perdasilva/pkgr24/pkg/deppy"
+	"github.com/perdasilva/pkgr24/pkg/deppy/constraints"
 	"github.com/perdasilva/pkgr24/pkg/deppy/solver"
 	"github.com/perdasilva/pkgr24/pkg/deppy/source"
 	"github.com/perdasilva/pkgr24/pkg/querier"
@@ -80,11 +82,20 @@ func (r *RequirementsReconciler) Reconcile(ctx context.Context, req ctrl.Request
 		return ctrl.Result{}, err
 	}
 
-	domainSource := source.NewDomainDeppySource()
-	requirementsSource := source.NewRequirementsDeppySource(requirementsInstance)
+	entities, err := deppySource.GetEntities(ctx)
+	if err != nil {
+		return ctrl.Result{}, err
+	}
+
+	universe := deppy.NewEntityUniverse(entities)
+	constraintBuilder := constraints.NewConstraintBuilder(universe)
+	constr, err := constraintBuilder.GatherConstraints(requirementsInstance)
+	if err != nil {
+		return ctrl.Result{}, err
+	}
 
 	requirementsCopy := requirementsInstance.DeepCopy()
-	solution, err := solveWithDeppy(ctx, []solver.DeppySource{deppySource, domainSource, requirementsSource})
+	solution, err := solveWithDeppy(ctx, constr)
 	if err != nil {
 		logger.Info(fmt.Sprintf("could not find solution: %s", err))
 		requirementsCopy.Status.Solution = []string{}
@@ -92,7 +103,9 @@ func (r *RequirementsReconciler) Reconcile(ctx context.Context, req ctrl.Request
 	} else {
 		selectedBundles := make([]string, 0)
 		for _, b := range solution {
-			selectedBundles = append(selectedBundles, fmt.Sprintf("%s", b.Identifier))
+			if universe.Get(b) != nil {
+				selectedBundles = append(selectedBundles, fmt.Sprintf("%s", b))
+			}
 		}
 		requirementsCopy.Status.Solution = selectedBundles
 		requirementsCopy.Status.Message = "resolution successful"
@@ -115,26 +128,9 @@ func (r *RequirementsReconciler) SetupWithManager(mgr ctrl.Manager) error {
 		Complete(r)
 }
 
-func solveWithDeppy(ctx context.Context, srcs []solver.DeppySource) ([]*solver.DeppyEntity, error) {
+func solveWithDeppy(ctx context.Context, constraints []solver.Constraint) ([]solver.Identifier, error) {
 	// collect universe and great high level constraints
-	universe := make([]*solver.DeppyEntity, 0)
-	constraintUniverse := make([]solver.DeppyConstraint, 0)
-
-	for _, src := range srcs {
-		entities, err := src.GetEntities(ctx)
-		if err != nil {
-			return nil, err
-		}
-		universe = append(universe, entities...)
-
-		constrs, err := src.GetConstraints(ctx)
-		if err != nil {
-			return nil, err
-		}
-		constraintUniverse = append(constraintUniverse, constrs...)
-	}
-
-	depSolver, err := solver.New(solver.WithInput(universe, constraintUniverse))
+	depSolver, err := solver.New(solver.WithInput(constraints))
 	if err != nil {
 		return nil, err
 	}

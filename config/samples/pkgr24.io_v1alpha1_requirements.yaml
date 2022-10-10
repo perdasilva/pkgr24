@@ -3,26 +3,26 @@ kind: Requirements
 metadata:
   name: requirements-sample
 spec:
-  requirements:
-  - id: "devspaces"
-    meta: true
-    constraints:
-    - type: mandatory
-      mandatory: {}
-    - type: dependency
-      dependency:
-        selector:
-          expression: 'Entity.Properties["olm.package"][0] == "devspaces" && InSemverRange(Entity.Properties["olm.version"][0], ">= 3.0.0")'
-        comparator:
-          expression: 'EntityOne.Properties["olm.package"][0] != EntityTwo.Properties["olm.package"][0] ? EntityOne.Properties["olm.package"][0] < EntityTwo.Properties["olm.package"][0] ? -1 : 1 : EntityOne.Properties["olm.channel"][0] == EntityTwo.Properties["olm.channel"][0] ? -1*SemverCompare(EntityOne.Properties["olm.version"][0], EntityTwo.Properties["olm.version"][0]) : EntityOne.Properties["olm.channel"][0] == EntityOne.Properties["olm.defaultChannel"][0] ? -1 : EntityTwo.Properties["olm.channel"][0] == EntityTwo.Properties["olm.defaultChannel"][0] ? 1 : EntityOne.Properties["olm.channel"][0] < EntityTwo.Properties["olm.channel"][0] ? -1 : 1'
-  - id: "odf-operator"
-    meta: true
-    constraints:
-      - type: mandatory
-        mandatory: { }
-      - type: dependency
-        dependency:
-          selector:
-            expression: 'Entity.Properties["olm.package"][0] == "odf-operator" && Entity.Properties["olm.channel"][0] == "stable-4.11"'
-          comparator:
-            expression: 'EntityOne.Properties["olm.package"][0] != EntityTwo.Properties["olm.package"][0] ? EntityOne.Properties["olm.package"][0] < EntityTwo.Properties["olm.package"][0] ? -1 : 1 : EntityOne.Properties["olm.channel"][0] == EntityTwo.Properties["olm.channel"][0] ? -1*SemverCompare(EntityOne.Properties["olm.version"][0], EntityTwo.Properties["olm.version"][0]) : EntityOne.Properties["olm.channel"][0] == EntityOne.Properties["olm.defaultChannel"][0] ? -1 : EntityTwo.Properties["olm.channel"][0] == EntityTwo.Properties["olm.defaultChannel"][0] ? 1 : EntityOne.Properties["olm.channel"][0] < EntityTwo.Properties["olm.channel"][0] ? -1 : 1'
+  constraints:
+  # global constraints
+    - pkgUniqueness()
+    - gvkUniqueness()
+
+  # require a package with dependencies
+  #  - requirePackage("odf-operator", "4.11.x", "stable-4.11")
+
+  # require a package from _any_ channel take latest 4.10 z-stream
+  #  - requirePackage("odf-operator", "4.10.x", "")
+
+  # everything still works after you mark things as installed
+  #  - installedPackage("ocs-operator", "4.10.5", "stable-4.10")
+  #  - installedPackage("odf-operator", "4.10.5", "stable-4.10")
+  #  - installedPackage("odf-csi-addons-operator", "4.10.5", "stable-4.10")
+
+  # upgrade graph
+  #  - requirePackage("mcg-operator", "4.10.x", "stable-4.10")
+    - installedPackage("mcg-operator", "4.10.3", "stable-4.10")
+
+  # runtime constraints
+  #  - requirePackage("amq-online", "1.5.0", "stable")
+  #  - maxOpenShiftVersion("4.11.0")

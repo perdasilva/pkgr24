@@ -202,11 +202,11 @@ func (h *search) Do(ctx context.Context, anchors []z.Lit) (int, []z.Lit, map[z.L
 	return result, lits, set
 }
 
-func (h *search) Variables() []*DeppyEntity {
-	result := make([]*DeppyEntity, 0, len(h.guesses))
+func (h *search) Variables() []Identifier {
+	result := make([]Identifier, 0, len(h.guesses))
 	for _, g := range h.guesses {
 		if g.m != z.LitNull {
-			result = append(result, h.lits.VariableOf(g.candidates[g.index]))
+			result = append(result, h.lits.IdentifierOf(g.candidates[g.index]))
 		}
 	}
 	return result
